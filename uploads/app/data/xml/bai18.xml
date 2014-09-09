@@ -1,0 +1,25 @@
+<data>
+  <name id="0" hiragana="できます" kanji="" romaji="dekimasu" vie="có thể" eng="be able" short="beable"/>
+  <name id="1" hiragana="うんてんします" kanji="運転します" romaji="untenshimasu" vie="lái" eng="drive" short="drive"/>
+  <name id="2" hiragana="あらいます" kanji="洗います" romaji="araimasu" vie="rửa" eng="wash" short="wash"/>
+  <name id="3" hiragana="うたいます" kanji="歌います" romaji="utaimasu" vie="hát" eng="sing" short="sing"/>
+  <name id="4" hiragana="かえます" kanji="換えます" romaji="kaemasu" vie="đổi" eng="exchange" short="exchange"/>
+  <name id="5" hiragana="すてます" kanji="捨てます" romaji="sutemasu" vie="vứt" eng="throw away" short="throwaway"/>
+  <name id="6" hiragana="あつめます" kanji="集めます" romaji="atsumemasu" vie="sưu tầm" eng="collect" short="collect"/>
+  <name id="7" hiragana="よやくします" kanji="予約します" romaji="yoyakushimasu" vie="đặt chỗ" eng="reserve" short="reserve"/>
+  <name id="8" hiragana="メートル" kanji="" romaji="meetoru" vie="mét" eng="meter" short="meter"/>
+  <name id="9" hiragana="しゅみ" kanji="趣味" romaji="shumi" vie="sở thích" eng="hobby" short="hobby"/>
+  <name id="10" hiragana="ひきます" kanji="弾きます" romaji="hikimasu" vie="chơi" eng="play" short="play"/>
+  <name id="11" hiragana="ピアノ" kanji="" romaji="piano" vie="piano" eng="piano" short="piano"/>
+  <name id="12" hiragana="げんきん" kanji="現金" romaji="genkin" vie="tiền mặt" eng="cash" short="cash"/>
+  <name id="13" hiragana="にっき" kanji="日記" romaji="nikki" vie="nhật ký" eng="diary" short="diary"/>
+  <name id="14" hiragana="かちょう" kanji="課長" romaji="kachou" vie="tổ trưởng" eng="group leader" short="groupleader"/>
+  <name id="15" hiragana="ぶちょう" kanji="部長" romaji="buchou" vie="trưởng phòng" eng="chief" short="chief"/>
+  <name id="16" hiragana="しゃちょう" kanji="社長" romaji="shachou" vie="giám đốc" eng="director" short="director"/>
+  <name id="17" hiragana="どうぶつ" kanji="動物" romaji="doubutsu" vie="động vật" eng="animal" short="animal"/>
+  <name id="18" hiragana="うま" kanji="馬" romaji="uma" vie="con ngựa" eng="horse" short="horse"/>
+  <name id="19" hiragana="ドル" kanji="" romaji="doru" vie="đô la" eng="dola" short="dola"/>
+  <name id="20" hiragana="けんがくします" kanji="見学します" romaji="kengakushimasu" vie="tham quan với mục đích học tập" eng="field trip" short="fieldtrip"/>
+  <name id="21" hiragana="こくさい" kanji="国際" romaji="kokusai" vie="quốc tế" eng="international" short="international"/>
+  <name id="22" hiragana="いのり" kanji="祈り" romaji="inori" vie="việc cầu nguyện" eng="pray" short="pray"/>
+</data>

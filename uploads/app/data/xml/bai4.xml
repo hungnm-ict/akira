@@ -1,0 +1,22 @@
+<data>
+  <name id="0" hiragana="はたらきます" kanji="働きます" romaji="hatarakimasu" vie="làm việc" eng="work" short="work"/>
+  <name id="1" hiragana="やすみます" kanji="休みます" romaji="yasumimasu" vie="nghỉ ngơi" eng="rest" short="rest"/>
+  <name id="2" hiragana="おわります" kanji="終わります" romaji="owarimasu" vie="xong, kết thúc" eng="finish" short="finish"/>
+  <name id="3" hiragana="おきます" kanji="起きます" romaji="okimasu" vie="thức dậy" eng="wake up" short="wakeup"/>
+  <name id="4" hiragana="ねます" kanji="寝ます" romaji="nemasu" vie="ngủ" eng="sleep" short="sleep"/>
+  <name id="5" hiragana="べんきょうします" kanji="勉強します" romaji="benkyoushimasu" vie="học" eng="study" short="study"/>
+  <name id="6" hiragana="デパート" kanji="" romaji="depa-to" vie="bách hóa" eng="department store" short="departmentstore"/>
+  <name id="7" hiragana="ぎんこう" kanji="銀行" romaji="ginkou" vie="ngân hàng" eng="bank" short="bank"/>
+  <name id="8" hiragana="ゆうびんきょく" kanji="郵便局" romaji="yuubinkyoku" vie="bưu điện" eng="post office" short="postoffice"/>
+  <name id="9" hiragana="としょかん" kanji="図書館" romaji="toshokan" vie="thư viện" eng="library" short="library"/>
+  <name id="10" hiragana="びじゅつかん" kanji="美術館" romaji="bijutsukan" vie="bảo tàng mỹ thuật" eng="art museum" short="artmuseum"/>
+  <name id="11" hiragana="しけん" kanji="試験" romaji="shiken" vie="kì thi" eng="exams" short="exams"/>
+  <name id="12" hiragana="かいぎ" kanji="会議" romaji="kaigi" vie="cuộc họp" eng="meeting" short="meeting"/>
+  <name id="13" hiragana="げつようび" kanji="月曜日" romaji="getsuyoubi" vie="thứ Hai" eng="Monday" short="monday"/>
+  <name id="14" hiragana="かようび" kanji="火曜日" romaji="kayoubi" vie="thứ Ba" eng="Tuesday" short="tuesday"/>
+  <name id="15" hiragana="すいようび" kanji="水曜日" romaji="suiyoubi" vie="thứ Tư" eng="Wednesday" short="wednesday"/>
+  <name id="16" hiragana="もくようび" kanji="木曜日" romaji="mokuyoubi" vie="thứ Năm" eng="Thursday" short="thursday"/>
+  <name id="17" hiragana="きんようび" kanji="金曜日" romaji="kinyoubi" vie="thứ Sáu" eng="Friday" short="friday"/>
+  <name id="18" hiragana="どようび" kanji="土曜日" romaji="doyoubi" vie="thứ Bảy" eng="Saturday" short="saturday"/>
+  <name id="19" hiragana="にちようび" kanji="日曜日" romaji="nichiyoubi" vie="Chủ Nhật" eng="Sunday" short="sunday"/>
+</data>

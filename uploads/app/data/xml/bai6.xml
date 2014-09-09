@@ -1,0 +1,26 @@
+<data>
+  <name id="0" hiragana="かいます" kanji="買います" romaji="kaimasu" vie="mua" eng="buy" short="buy"/>
+  <name id="1" hiragana="のみます" kanji="飲みます" romaji="nomimasu" vie="uống" eng="drink" short="drink"/>
+  <name id="2" hiragana="たべます" kanji="食べます" romaji="tabemasu" vie="ăn" eng="eat" short="eat"/>
+  <name id="3" hiragana="たまご" kanji="卵/玉子" romaji="tamago" vie="trứng" eng="egg" short="egg"/>
+  <name id="4" hiragana="さかな" kanji="魚" romaji="sakana" vie="cá" eng="fish" short="fish"/>
+  <name id="5" hiragana="くだもの" kanji="果物" romaji="kudamono" vie="hoa quả" eng="fruit" short="fruit"/>
+  <name id="6" hiragana="ききます" kanji="聞きます" romaji="kikimasu" vie="nghe" eng="hear" short="hear"/>
+  <name id="7" hiragana="しゅくだい" kanji="宿題" romaji="shukudai" vie="bài về nhà" eng="homework" short="homework"/>
+  <name id="8" hiragana="てがみ" kanji="手紙" romaji="tegami" vie="thư" eng="letter" short="letter"/>
+  <name id="9" hiragana="ごはん" kanji="ご飯" romaji="gohan" vie="bữa ăn" eng="meal" short="meal"/>
+  <name id="10" hiragana="にく" kanji="肉" romaji="niku" vie="thịt" eng="meat" short="meat"/>
+  <name id="11" hiragana="ぎゅうにゅう" kanji="牛乳" romaji="gyuunyuu" vie="sữa bò" eng="milk" short="milk"/>
+  <name id="12" hiragana="とります" kanji="撮ります" romaji="torimasu" vie="chụp" eng="photograph" short="photograph"/>
+  <name id="13" hiragana="よみます" kanji="読みます" romaji="yomimasu" vie="đọc" eng="read" short="read"/>
+  <name id="14" hiragana="レストラン" kanji="" romaji="resutoran" vie="nhà hàng" eng="restaurant" short="restaurant"/>
+  <name id="15" hiragana="みます" kanji="見ます" romaji="mimasu" vie="nhìn" eng="see" short="see"/>
+  <name id="16" hiragana="すいます" kanji="吸います" romaji="suimasu" vie="hút(thuốc)" eng="smoke" short="smoke"/>
+  <name id="17" hiragana="やさい" kanji="野菜" romaji="yasai" vie="rau" eng="vegetable" short="vegetable"/>
+  <name id="18" hiragana="みず" kanji="水" romaji="mizu" vie="nước" eng="water" short="water"/>
+  <name id="19" hiragana="かきます" kanji="書きます" romaji="kakimasu" vie="viết" eng="write" short="write"/>
+  <name id="20" hiragana="あいます" kanji="会います" romaji="aimasu" vie="gặp" eng="meet" short="meet"/>
+  <name id="21" hiragana="おちゃ" kanji="お茶" romaji="ocha" vie="trà" eng="tea" short="tea"/>
+  <name id="22" hiragana="しゃしん" kanji="写真" romaji="shashin" vie="ảnh" eng="photo" short="photo"/>
+  <name id="23" hiragana="えいが" kanji="映画" romaji="eiga" vie="phim" eng="movie" short="movie"/>
+</data>

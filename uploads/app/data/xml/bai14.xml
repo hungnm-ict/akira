@@ -1,0 +1,23 @@
+<data>
+  <name id="0" hiragana="はなします" kanji="話します" romaji="hanashimasu" vie="nói chuyện" eng="speak" short="speak"/>
+  <name id="1" hiragana="まちます" kanji="待ちます" romaji="machimasu" vie="đợi" eng="wait" short="wait"/>
+  <name id="2" hiragana="もちます" kanji="持ちます" romaji="mochimasu" vie="mang, cầm" eng="bring" short="bring"/>
+  <name id="3" hiragana="とります" kanji="取ります" romaji="torimasu" vie="lấy" eng="take" short="take"/>
+  <name id="4" hiragana="てつだいます" kanji="手伝います" romaji="tetsudaimasu" vie="giúp đỡ" eng="help" short="help"/>
+  <name id="5" hiragana="いそぎます" kanji="急ぎます" romaji="isogimasu" vie="vội, gấp" eng="hurry" short="hurry"/>
+  <name id="6" hiragana="よびます" kanji="呼びます" romaji="yobimasu" vie="gọi" eng="call" short="call"/>
+  <name id="7" hiragana="あけます" kanji="開けます" romaji="akemasu" vie="mở" eng="open" short="open"/>
+  <name id="8" hiragana="しめます" kanji="閉めます" romaji="shimemasu" vie="đóng" eng="close" short="close"/>
+  <name id="9" hiragana="つけます" kanji="点けます" romaji="tsukemasu" vie="bật" eng="turn on" short="turnon"/>
+  <name id="10" hiragana="けします" kanji="消します" romaji="keshimasu" vie="tắt" eng="turn off" short="turnoff"/>
+  <name id="11" hiragana="とめます" kanji="止めます" romaji="tomemasu" vie="dừng, đỗ" eng="stop" short="stop"/>
+  <name id="12" hiragana="ふります" kanji="降ります" romaji="furimasu" vie="rơi" eng="fall" short="fall"/>
+  <name id="13" hiragana="みせます" kanji="見せます" romaji="misemasu" vie="cho xem" eng="show" short="show"/>
+  <name id="14" hiragana="はじめます" kanji="始めます" romaji="hajimemasu" vie="bắt đầu" eng="start" short="start"/>
+  <name id="15" hiragana="まがります" kanji="曲がります" romaji="magarimasu" vie="rẽ, quẹo" eng="turn" short="turn"/>
+  <name id="16" hiragana="コピーします" kanji="" romaji="copiishimasu" vie="copy" eng="copy" short="copy"/>
+  <name id="17" hiragana="パスポート" kanji="" romaji="pasupoto" vie="hộ chiếu" eng="passport" short="passport"/>
+  <name id="18" hiragana="なまえ" kanji="名前" romaji="namae" vie="tên" eng="name" short="name"/>
+  <name id="19" hiragana="じゅうしょ" kanji="住所" romaji="juusho" vie="địa chỉ" eng="address" short="address"/>
+  <name id="20" hiragana="ちず" kanji="地図" romaji="chizu" vie="bản đồ" eng="map" short="map"/>
+</data>

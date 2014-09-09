@@ -1,0 +1,12 @@
+<data>
+  <name id="0" hiragana="くれます" kanji="" romaji="kuremasu" vie="cho" eng="give" short="give"/>
+  <name id="1" hiragana="おくります" kanji="送ります" romaji="okurimasu" vie="tiễn" eng="see off" short="seeoff"/>
+  <name id="2" hiragana="おじいさん" kanji="お祖父さん" romaji="ojiisan" vie="ông" eng="grandfather" short="grandfather"/>
+  <name id="3" hiragana="おばあさん" kanji="お祖母さん" romaji="obaasan" vie="bà" eng="grandmother" short="grandmother"/>
+  <name id="4" hiragana="しょうかいします" kanji="紹介します" romaji="shokaishimasu" vie="giới thiệu" eng="introduce" short="introduce"/>
+  <name id="5" hiragana="あんないします" kanji="案内します" romaji="annaishimasu" vie="hướng dẫn" eng="guide" short="guide"/>
+  <name id="6" hiragana="せつめいします" kanji="説明します" romaji="setsumeishimasu" vie="giải thích" eng="explain" short="explain"/>
+  <name id="7" hiragana="じゅんび" kanji="準備" romaji="junbi" vie="chuẩn bị" eng="prepare" short="prepare"/>
+  <name id="8" hiragana="かし" kanji="菓子" romaji="kashi" vie="bánh kẹo" eng="pastry" short="pastry"/>
+  <name id="9" hiragana="ははのひ" kanji="母の日" romaji="hahanohi" vie="ngày của mẹ" eng="Mother's Day" short="mothersday"/>
+</data>

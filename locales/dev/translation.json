@@ -1,0 +1,25 @@
+{
+	"menu":{
+		"japanese-n5" : "Japanese N5",
+		"kana"		  : "Kana",
+		"total-n5"       : "Total N5",
+		"kanji-n5"    : "Kanji N5",
+		"test-n5"     : "Test N5",
+		"japanese-n4" : "Japanese N4",
+		"total-n4"       : "Total N4",
+		"kanji-n4"    : "Kanji N4",
+		"test-n4"     : "Test N4",
+		"mobi"		  : "Mobi apps",
+		"support"	  : "Support"
+	},
+	"common":{
+		"lesson"	  : "Lesson",
+		"dayleft"	  : "Dayleft",
+		"login"		  : "Login"
+	},
+	"leaderboard":{
+		"leaderboard" : "Leaderboard",
+		"week"		  : "This week",
+		"all"		  : "All time"
+	}
+}

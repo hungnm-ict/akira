@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" /> 
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap-theme.min.css" />
+        <title>Trang chủ</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="libs/angular.min.js"></script>
+        <script type="text/javascript" src="libs/angular-route.min.js"></script>
+
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script src="spec/lib/i18next/i18next-1.7.4.js"></script>
+    </head>
+    <body>
+        <div class="app" id="index">
+            <div id="left-sidebar">
+                <div id="site-lang">
+                    <span id="vi">                    
+                    </span>
+                    <span id="en">                    
+                    </span>
+                </div>
+                <div id="logo">
+                    <img src="img/logo.png" alt="akira-logo" class="img-responsive" />
+                </div>
+
+            </div>
+            <div id="content" class="container-fluid">
+                <div class="btn-group-vertical" id="login">
+                    <h2 data-i18n="common.login"></h2>
+                    <button class="btn-group popover-content facebook" onclick="onFbLoginClick();">Facebook</button>   
+                    <button class="btn-group popover-content google" onclick="onGPLoginClick();">Google</button>   
+                    
+                </div>
+            </div>
+            <div id="right-sidebar">
+                
+            </div>
+        <script type="text/javascript">
+            app.initialize();
+
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : "721532401232192",
+                    status     : true, // check login status
+                    cookie     : true, // enable cookies to allow the server to access the session
+                    xfbml      : true  // parse XFBML
+                });
+            };
+
+            (function(d){
+                var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement('script'); js.id = id; js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js";
+                ref.parentNode.insertBefore(js, ref);
+            }(document));  
+
+            function onFbLoginClick(){
+                FB.login(function(response) {
+                        if (response.authResponse) {
+                            FB.api('/me', function(response) {                                  
+                                ajaxFbLogin(response);
+                            });
+                        } else {
+                            //user hit cancel button
+                            console.log('User cancelled login or did not fully authorize.');
+                        }
+                }, {
+                        scope: 'email'
+                    });
+            }
+
+            function ajaxFbLogin(response){
+                $.ajax({
+                    type:'POST',
+                    url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
+                    data: {type:"facebook_user_id",id:response.id}
+                }).done(function(success){
+                    sessionStorage.setItem("authorized","true");
+                    sessionStorage.setItem("user",JSON.stringify(success));
+                    window.location.href="dashboard.html";
+                }).fail(function(error){
+                    sessionStorage.setItem("authorized","false");
+                });
+            }
+
+            (function () {
+                var po = document.createElement('script');
+                po.type = 'text/javascript';
+                po.async = true;
+                po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(po, s);
+            })();
+
+            function onGooglePlusLoginSuccess(authResult){
+                if (authResult['code']) {
+                    gapi.client.load('plus','v1', function(){
+                        var request = gapi.client.plus.people.get({
+                            'userId': 'me'
+                        });
+                        request.execute(function(response) {
+                            ajaxGoogleLogin(response);
+                        });
+                    });
+                } else if (authResult['error']) {
+                    console.log('There was an error: ' + authResult['error']);
+                }
+            }
+            
+            function ajaxGoogleLogin(response){
+                console.log(response);
+                /*$.ajax({
+                    type:'POST',
+                    url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
+                    data: {type:"google_user_id",id:response.id}
+                }).done(function(success){
+                    sessionStorage.setItem("authorized","true");
+                    window.location.href="dashboard.html";
+                }).fail(function(error){
+                    sessionStorage.setItem("authorized","false");
+                });*/
+            }
+
+            function onGPLoginClick(){
+                var additionalParams = {
+                    'callback': ajaxGoogleLogin,
+                    'data-cookiepolicy' : none
+                };
+                gapi.auth.signIn(additionalParams); 
+            }
+
+
+            function gSignin(){
+            var additionalParams = {
+                    'callback': ajaxGoogleLogin
+                };
+                gapi.auth.signIn(additionalParams);
+            }
+
+            $("#language").popover({
+                html:true,
+                content:$(".popover-language").html(),
+                placement:'right',
+                trigger:'click'
+            });
+
+            $("#login").popover({
+                html:true,
+                content:$(".popover-login").html(),
+                placement:'right',
+                trigger:'click'
+            });
+        </script>
+    </body>
+</html>

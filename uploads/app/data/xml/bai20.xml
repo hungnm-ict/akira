@@ -1,0 +1,17 @@
+<data>
+  <name id="0" hiragana="しらべます" kanji="調べます" romaji="shirabemasu" vie="tìm hiểu" eng="check" short="check"/>
+  <name id="1" hiragana="しゅうりします" kanji="修理します" romaji="shuurishimasu" vie="sửa chữa" eng="repair" short="repair"/>
+  <name id="2" hiragana="ビザ" kanji="" romaji="biza" vie="thị thực" eng="visa" short="visa"/>
+  <name id="3" hiragana="みんなで" kanji="皆で" romaji="minnade" vie="mọi người cùng" eng="all together" short="alltogether"/>
+  <name id="4" hiragana="きもの" kanji="着物" romaji="kimono" vie="kimono" eng="kimono" short="kimono"/>
+  <name id="5" hiragana="おいのり" kanji="お祈り" romaji="oinori" vie="việc cầu nguyện" eng="praying" short="praying"/>
+  <name id="6" hiragana="インターネット" kanji="" romaji="intaanetto" vie="internet" eng="internet" short="internet"/>
+  <name id="7" hiragana="けんがくします" kanji="見学します" romaji="kengakushimasu" vie="kiến tập" eng="observe" short="observe"/>
+  <name id="8" hiragana="じんじゃ" kanji="神社" romaji="jinja" vie="đền thờ đạo thần" eng="shrine" short="shrine"/>
+  <name id="9" hiragana="みどり" kanji="緑" romaji="midori" vie="màu xanh lá cây" eng="green" short="green"/>
+  <name id="10" hiragana="ジョギング" kanji="" romaji="jogingu" vie="việc chạy bộ" eng="jogging" short="jogging"/>
+  <name id="11" hiragana="なおします" kanji="直します" romaji="naoshimasu" vie="sửa chữa,bảo trì" eng=" heal" short="heal"/>
+  <name id="12" hiragana="でんわします" kanji="電話します" romaji="denwashimasu" vie="gọi điện thoại" eng="call" short="call"/>
+  <name id="13" hiragana="サラリーマン" kanji="" romaji="sarariiman" vie="người làm việc cho các công ti" eng="worker" short="worker"/>
+  <name id="14" hiragana="ぶっか" kanji="物価" romaji="bukka" vie="giá cả" eng="cost" short="cost"/>
+</data>

@@ -1,0 +1,21 @@
+<data>
+  <name id="0" hiragana="わかります" kanji="分かります" romaji="wakarimasu" vie="hiểu" eng="understand" short="understand"/>
+  <name id="1" hiragana="すきな" kanji="好きな" romaji="sukina" vie="thích" eng="like" short="like"/>
+  <name id="2" hiragana="きらいな" kanji="嫌いな" romaji="kireina" vie="ghét" eng="hate" short="hate"/>
+  <name id="3" hiragana="じょうずな" kanji="上手な" romaji="jouzuna" vie="giỏi" eng="good" short="good"/>
+  <name id="4" hiragana="スポーツ" kanji="" romaji="supootsu" vie="thể thao" eng="sports" short="sport"/>
+  <name id="5" hiragana="おんがく" kanji="音楽" romaji="ongaku" vie="âm nhạc" eng="music" short="music"/>
+  <name id="6" hiragana="うた" kanji="歌" romaji="uta" vie="bài hát" eng="song" short="song"/>
+  <name id="7" hiragana="え" kanji="絵" romaji="e" vie="bức tranh" eng="picture" short="picture"/>
+  <name id="8" hiragana="じかん" kanji="時間" romaji="jikan" vie="thời gian" eng="time" short="time"/>
+  <name id="9" hiragana="へたな" kanji="下手な" romaji="hetana" vie="kém" eng="bad" short="bad"/>
+  <name id="10" hiragana="りょうり" kanji="料理" romaji="ryouri" vie="đồ ăn" eng="food" short="food"/>
+  <name id="11" hiragana="のみもの" kanji="飲み物" romaji="nomimono" vie="đồ uống" eng="drinks" short="drinks"/>
+  <name id="12" hiragana="ごしゅじん" kanji="ご主人" romaji="goshujin" vie="chồng" eng="husband" short="husband"/>
+  <name id="13" hiragana="おくさん" kanji="奥さん" romaji="okusan" vie="vợ" eng="wife" short="wife"/>
+  <name id="14" hiragana="こども" kanji="子供" romaji="kodomo" vie="trẻ con" eng="children" short="children"/>
+  <name id="15" hiragana="コンサート" kanji="" romaji="konsaato" vie="buổi hòa nhạc" eng="concert" short="concert"/>
+  <name id="16" hiragana="やくそく" kanji="約束" romaji="yakusoku" vie="lời hứa" eng="promise" short="promise"/>
+  <name id="17" hiragana="はやく" kanji="早く" romaji="hayaku" vie="sớm" eng="early" short="early"/>
+  <name id="18" hiragana="じ" kanji="字" romaji="ji" vie="chữ cái" eng="letter" short="letter"/>
+</data>

@@ -1,0 +1,28 @@
+<data>
+  <name id="0" hiragana="おもいます" kanji="思います" romaji="omoimasu" vie="nghĩ" eng="think" short="think"/>
+  <name id="1" hiragana="いいます" kanji="言います" romaji="iimasu" vie="nói" eng="say" short="say"/>
+  <name id="2" hiragana="かちます" kanji="勝ちます" romaji="kachimasu" vie="thắng" eng="win" short="win"/>
+  <name id="3" hiragana="まけます" kanji="負けます" romaji="makemasu" vie="thua" eng="lose" short="lose"/>
+  <name id="4" hiragana="やくにたちます" kanji="役に立ちます" romaji="yakunitachimasu" vie="hữu ích" eng="useful" short="useful"/>
+  <name id="5" hiragana="ふべんな" kanji="不便な" romaji="fubenna" vie="bất tiện" eng="inconvenient" short="inconvenient"/>
+  <name id="6" hiragana="むだな" kanji="無駄な" romaji="mudana" vie="lãng phí" eng="useless" short="useless"/>
+  <name id="7" hiragana="すごい" kanji="凄い" romaji="sugoi" vie="ghê quá" eng="awesome" short="awesome"/>
+  <name id="8" hiragana="ニュース" kanji="" romaji="nyuusu" vie="tin tức" eng="news" short="news"/>
+  <name id="9" hiragana="しあい" kanji="試合" romaji="shiai" vie="trận đấu" eng="match" short="match"/>
+  <name id="10" hiragana="いけん" kanji="意見" romaji="iken" vie="ý kiến" eng="comment" short="comment"/>
+  <name id="11" hiragana="はなし" kanji="話" romaji="hanashi" vie="câu chuyện" eng="story" short="story"/>
+  <name id="12" hiragana="デザイン" kanji="" romaji="dezain" vie="thiết kế" eng="design" short="design"/>
+  <name id="13" hiragana="うごきます" kanji="動きます" romaji="ugokimasu" vie="chuyển động" eng="move" short="move"/>
+  <name id="14" hiragana="こうつう" kanji="交通" romaji="koutsuu" vie="giao thông" eng="traffic" short="traffic"/>
+  <name id="15" hiragana="ぶっか" kanji="物価" romaji="bukka" vie="giá cả" eng="price" short="price"/>
+  <name id="16" hiragana="ゆめ" kanji="夢" romaji="yume" vie="giấc mơ" eng="dream" short="dream"/>
+  <name id="17" hiragana="たります" kanji="足ります" romaji="tarimasu" vie="đủ" eng="enough" short="enough"/>
+  <name id="18" hiragana="おなじ" kanji="同じ" romaji="onaji" vie="giống" eng="same" short="same"/>
+  <name id="19" hiragana="しゅしょう" kanji="首相" romaji="shushou" vie="thủ tướng" eng="Prime minister" short="primeminister"/>
+  <name id="20" hiragana="だいとうりょう" kanji="大統領" romaji="daitouryou" vie="tổng thống" eng="President" short="president"/>
+  <name id="21" hiragana="スピーチ" kanji="" romaji="supiichi" vie="bài phát biểu" eng="speech" short="speech"/>
+  <name id="22" hiragana="アルバイト" kanji="" romaji="arubaito" vie="việc làm thêm" eng="parttime" short="parttime"/>
+  <name id="23" hiragana="ユーモア" kanji="" romaji="yuumoa" vie="hài hước" eng="humour" short="humour"/>
+  <name id="24" hiragana="ラッシュ" kanji="" romaji="rasshu" vie="giờ cao điểm" eng="rush hour" short="rushhour"/>
+  <name id="25" hiragana="しばらく" kanji="暫く" romaji="shibaraku" vie="lâu" eng="long time" short="longtime"/>
+</data>

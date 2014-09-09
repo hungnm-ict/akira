@@ -1,0 +1,26 @@
+<data>
+  <name id="0" hiragana="ききます" kanji="聞きます" romaji="kikimasu" vie="hỏi" eng="ask" short="ask&#xD;"/>
+  <name id="1" hiragana="あるきます" kanji="歩きます" romaji="arukimasu" vie="đi bộ" eng="walk" short="walk&#xD;"/>
+  <name id="2" hiragana="かえます" kanji="変えます" romaji="kaemasu" vie="đổi" eng="exchange" short="exchange&#xD;"/>
+  <name id="3" hiragana="まわします" kanji="回します" romaji="mawashimasu" vie="vặn" eng="turn" short="turn&#xD;"/>
+  <name id="4" hiragana="ひきます" kanji="引きます" romaji="hikimasu" vie="kéo" eng="pull" short="pull&#xD;"/>
+  <name id="5" hiragana="でます" kanji="出ます" romaji="demasu" vie="ra" eng="come out" short="comeout&#xD;"/>
+  <name id="6" hiragana="さわります" kanji="触ります" romaji="sawarimasu" vie="chạm" eng="touch" short="touch&#xD;"/>
+  <name id="7" hiragana="わたります" kanji="渡ります" romaji="watarimasu" vie="đi qua" eng="cross" short="cross&#xD;"/>
+  <name id="8" hiragana="おと" kanji="音" romaji="oto" vie="âm thanh" eng="sound" short="sound&#xD;"/>
+  <name id="9" hiragana="みち" kanji="道" romaji="michi" vie="đường" eng="road" short="road&#xD;"/>
+  <name id="10" hiragana="こうさてん" kanji="交差点" romaji="kousaten" vie="ngã tư" eng="intersection" short="intersection&#xD;"/>
+  <name id="11" hiragana="しんごう" kanji="信号" romaji="shingou" vie="đèn tín hiệu" eng="traffic light" short="trafficlight&#xD;"/>
+  <name id="12" hiragana="はし" kanji="橋" romaji="hashi" vie="cầu" eng="bridge" short="bridge&#xD;"/>
+  <name id="13" hiragana="ちゅうしゃじょう" kanji="駐車場" romaji="chuushajou" vie="bãi đỗ xe" eng="parking" short="parking&#xD;"/>
+  <name id="14" hiragana="たてもの" kanji="建物" romaji="tatemono" vie="tòa nhà" eng="building" short="building&#xD;"/>
+  <name id="15" hiragana="かど" kanji="角" romaji="kado" vie="góc" eng="corner" short="corner&#xD;"/>
+  <name id="16" hiragana="サイズ" kanji="" romaji="saizu" vie="kích cỡ" eng="size" short="size&#xD;"/>
+  <name id="17" hiragana="うごきます" kanji="動きます" romaji="ugokimasu" vie="chuyển động" eng="move" short="move&#xD;"/>
+  <name id="18" hiragana="きをつけます" kanji="気を付けます" romaji="kiwotsukemasu" vie="cẩn thận" eng="careful" short="careful&#xD;"/>
+  <name id="19" hiragana="ひっこしします" kanji="引越しします" romaji="hikkoshishimasu" vie="chuyển nhà" eng="movehouse" short="movehouse&#xD;"/>
+  <name id="20" hiragana="きかい" kanji="機械" romaji="kikai" vie="máy móc" eng="machine" short="machine&#xD;"/>
+  <name id="21" hiragana="つまみ" kanji="摘み" romaji="tsumami" vie="núm vặn" eng="knob" short="knob&#xD;"/>
+  <name id="22" hiragana="こしょう" kanji="故障" romaji="koshou" vie="hỏng" eng="failure" short="failure&#xD;"/>
+  <name id="23" hiragana="しょうがつ" kanji="正月" romaji="shougatsu" vie="Tết dương lịch" eng="New Year" short="newyear&#xD;"/>
+</data>
