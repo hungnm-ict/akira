@@ -1,141 +1,152 @@
- <div id="wizard2" class="swMain">
+
+<div id="subtopicWizard" class="swMain">
   <ul>
       <li>
-          <a href="#step-1">
-              <label class="stepNumber">
-                  <!-- <span data-i18n="common.vocab"></span> -->
-                  <span>&nbsp;1</span>
-              </label>
-          </a>
+        <a href="#step-1" ng-click="partId=1">
+          <label class="stepNumber">
+            <!-- <span data-i18n="common.vocab"></span> -->
+            <span>&nbsp;1</span>
+          </label>
+        </a>
       </li>
       <li>
-          <a href="#step-2">
-              <label class="stepNumber">
-                  <!-- <span data-i18n="common.vocab"></span> --><span>&nbsp;2</span>
-              </label>
-          </a>
+        <a href="#step-2" ng-click="partId=2">
+          <label class="stepNumber">
+            <!-- <span data-i18n="common.vocab"></span> --><span>&nbsp;2</span>
+          </label>
+        </a>
       </li>
-      <li><a href="#step-3">
-      <label class="stepNumber">
-          <!-- <span data-i18n="common.grammar"></span> --><span>&nbsp;3</span></label>
-                      
-   </a></li>
+      <li>
+        <a href="#step-3" ng-click="partId=3">
+          <label class="stepNumber">
+            <!-- <span data-i18n="common.grammar"></span> -->
+            <span>&nbsp;3</span>
+          </label>
+        </a>
+      </li>
   </ul>
+
+  <!-- Step 1 start -->
   <div id="step-1">   
       <div class="row">
           <div class="col-md-4">
-            <a href="#/{{lessonId}}/learn" class="thumb">
+            <a ng-href="#/{{lessonId}}/{{partId}}/learn" class="thumb">
                <span data-i18n="common.learn"></span>
             </a>
           </div>
           <div class="col-md-4">
-            <a href="#/{{lessonId}}/picture" class="thumb">
+            <a ng-href="#/{{lessonId}}/{{partId}}/picture" class="thumb">
                <span data-i18n="common.picture"></span>
             </a>
           </div>
           <div class="col-md-4">
-            <a href="#/{{lessonId}}/word" class="thumb">
+            <a ng-href="#/{{lessonId}}/{{partId}}/word" class="thumb">
                <span data-i18n="common.word"></span>
             </a>
           </div>
       </div>
       <div class="row">
           <div class="col-md-4">
-               <a href="#/{{lessonId}}/listen" class="thumb">
+               <a ng-href="#/{{lessonId}}/{{partId}}/listen" class="thumb">
                <span data-i18n="common.listen"></span>
             </a>
           </div>
          <div class="col-md-4">
-               <a href="#/{{lessonId}}/connect" class="thumb">
+               <a ng-href="#/{{lessonId}}/{{partId}}/connect" class="thumb">
                <span data-i18n="common.connect"></span>
             </a>
           </div>
           <div class="col-md-4">
-              <a href="#/{{lessonId}}/write" class="thumb">
+              <a ng-href="#/{{lessonId}}/{{partId}}/write" class="thumb">
                <span data-i18n="common.write"></span>
             </a>
           </div>
       </div>
   </div>
+
+  <!-- Step 2 start -->
   <div id="step-2"> 
-        <div class="row">
-          <div class="col-md-4">
-            <a href="#/{{lessonId}}/learn" class="thumb">
-               <span data-i18n="common.learn"></span>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#/{{lessonId}}/picture" class="thumb">
-               <span data-i18n="common.picture"></span>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#/{{lessonId}}/word" class="thumb">
-               <span data-i18n="common.word"></span>
-            </a>
-          </div>
+    <div class="row">
+              <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/{{partId}}/learn" class="thumb">
+                   <span data-i18n="common.learn"></span>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/{{partId}}/picture" class="thumb">
+                   <span data-i18n="common.picture"></span>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/{{partId}}/word" class="thumb">
+                   <span data-i18n="common.word"></span>
+                </a>
+              </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+           <a ng-href="#/{{lessonId}}/{{partId}}/listen" class="thumb">
+           <span data-i18n="common.listen"></span>
+        </a>
       </div>
-      <div class="row">
-          <div class="col-md-4">
-               <a href="#/{{lessonId}}/listen" class="thumb">
-               <span data-i18n="common.listen"></span>
-            </a>
-          </div>
-         <div class="col-md-4">
-               <a href="#/{{lessonId}}/connect" class="thumb">
-               <span data-i18n="common.connect"></span>
-            </a>
-          </div>
-          <div class="col-md-4">
-              <a href="#/{{lessonId}}/write" class="thumb">
-               <span data-i18n="common.write"></span>
-            </a>
-          </div>
+     <div class="col-md-4">
+           <a ng-href="#/{{lessonId}}/{{partId}}/connect" class="thumb">
+           <span data-i18n="common.connect"></span>
+        </a>
       </div>
-  </div>                      
+      <div class="col-md-4">
+          <a ng-href="#/{{lessonId}}/{{partId}}/write" class="thumb">
+           <span data-i18n="common.write"></span>
+        </a>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Step 3 start -->
   <div id="step-3">
-      <div class="row">
-          <div class="col-md-4">
-            <a href="#/{{lessonId}}/learn" class="thumb">
-               <span data-i18n="common.learn"></span>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#/{{lessonId}}/picture" class="thumb">
-               <span data-i18n="common.picture"></span>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="#/{{lessonId}}/word" class="thumb">
-               <span data-i18n="common.word"></span>
-            </a>
-          </div>
+    <div class="row">
+      <div class="col-md-4">
+        <a ng-href="#/{{lessonId}}/{{partId}}/learn" class="thumb">
+           <span data-i18n="common.learn"></span>
+        </a>
       </div>
-      <div class="row">
-          <div class="col-md-4">
-               <a href="#/{{lessonId}}/listen" class="thumb">
-               <span data-i18n="common.listen"></span>
-            </a>
-          </div>
-         <div class="col-md-4">
-               <a href="#/{{lessonId}}/connect" class="thumb">
-               <span data-i18n="common.connect"></span>
-            </a>
-          </div>
-          <div class="col-md-4">
-              <a href="#/{{lessonId}}/write" class="thumb">
-               <span data-i18n="common.write"></span>
-            </a>
-          </div>
+      <div class="col-md-4">
+        <a ng-href="#/{{lessonId}}/{{partId}}/picture" class="thumb">
+           <span data-i18n="common.picture"></span>
+        </a>
       </div>
+      <div class="col-md-4">
+        <a ng-href="#/{{lessonId}}/{{partId}}/word" class="thumb">
+           <span data-i18n="common.word"></span>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+           <a ng-href="#/{{lessonId}}/{{partId}}/listen" class="thumb">
+           <span data-i18n="common.listen"></span>
+        </a>
+      </div>
+     <div class="col-md-4">
+           <a ng-href="#/{{lessonId}}/{{partId}}/connect" class="thumb">
+           <span data-i18n="common.connect"></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+          <a ng-href="#/{{lessonId}}/{{partId}}/write" class="thumb">
+           <span data-i18n="common.write"></span>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
 <script type="text/javascript">
-            app.initialize();
-             $('#wizard2').smartWizard({
-          enableAllSteps: true,
-          includeFinishButton: false
-        });
-        $('#wizard2 .actionBar').hide();
-        </script> 
+  app.initialize();
+  $('#subtopicWizard').smartWizard({
+    enableAllSteps : true,
+    includeFinishButton: false
+  });
+
+  $('#subtopicWizard .actionBar').hide();
+</script> 

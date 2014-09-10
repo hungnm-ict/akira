@@ -154,27 +154,27 @@
                             templateUrl: 'subtopic.html',
                             controller: 'subCtrl' 
                         })
-                        .when('/:lessonId/learn',{
+                        .when('/:lessonId/:partId/learn',{
                             templateUrl:'vocab/learn.html',
                             controller: 'learnCtrl'
                         })
-                        .when('/:lessonId/picture',{
+                        .when('/:lessonId/:partId/picture',{
                             templateUrl:'vocab/picture.html',
                             controller: 'pictureCtrl'
                         })
-                        .when('/:lessonId/word',{
+                        .when('/:lessonId/:partId/word',{
                             templateUrl:'vocab/word.html',
                             controller: 'wordCtrl'
                         })
-                        .when('/:lessonId/listen',{
+                        .when('/:lessonId/:partId/listen',{
                             templateUrl:'vocab/listen.html',
                             controller: 'listenCtrl'
                         })
-                        .when('/:lessonId/connect',{
+                        .when('/:lessonId/:partId/connect',{
                             templateUrl:'vocab/connect.html',
                             controller: 'connectCtrl'
                         })
-                        .when('/:lessonId/write',{
+                        .when('/:lessonId/:partId/write',{
                             templateUrl:'vocab/write.html',
                             controller: 'writeCtrl'
                         });
@@ -183,38 +183,50 @@
             var tplController = angular.module('tplControllers',[]);
 
             tplController.controller('mainCtrl',function($scope,$routeParams){
-                $scope.hira='Hello hira !';
                 $scope.lessonId=$routeParams.lessonId;
             });
 
             tplController.controller('subCtrl',function($scope,$routeParams){
-                $scope.kanji='Hello kanji !';
                 $scope.lessonId=$routeParams.lessonId;
+                $scope.partId = 1;
             });
 
 
             tplController.controller('learnCtrl',function($scope,$routeParams){
-                $scope.kanji='Hello kanji !';
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
             });
 
             tplController.controller('pictureCtrl',function($scope,$routeParams){
-                $scope.kanji='Hello kanji !';
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId = $routeParams.partId;
             });
 
-            tplController.controller('wordCtrl',function($scope,$routeParams){
-                $scope.kanji='Hello kanji !';
+            tplController.controller('wordCtrl',function($scope,$routeParams,$http){
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
             });
 
-            tplController.controller('listenCtrl',function($scope,$routeParams){
-                $scope.kanji='Hello kanji !';
+            tplController.controller('listenCtrl',function($scope,$routeParams,$http){
+                $http({method: "GET", url: "../../data/1.json"}).
+                success(function(data, status) {
+                    console.log(data);
+                    $scope.status = status;
+                    $scope.data =data;
+                });
+
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
             });
 
             tplController.controller('connectCtrl',function($scope,$routeParams){
-                $scope.kanji='Hello kanji !';
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
             });
 
             tplController.controller('writeCtrl',function($scope,$routeParams){
-                $scope.kanji='Hello kanji !';
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
             });
 
             angular.bootstrap(document,['demo']);

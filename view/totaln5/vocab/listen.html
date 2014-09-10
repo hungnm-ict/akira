@@ -1,1 +1,14 @@
-listen
+{{lessonId}}
+</br>
+{{partId}}
+</br>
+{{data}}
+<audio controls id="test" style="display:none;">
+  <source type="audio/mpeg" src="../../data/america.mp3">
+Your browser does not support the audio element.
+</audio>
+<ul>
+	<li ng-repeat="item in data">
+		{{item.hiragana}}
+	</li>
+</ul>
