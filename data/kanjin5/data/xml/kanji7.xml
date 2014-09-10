@@ -1,0 +1,10 @@
+<data>
+  <name id="0" hiragana="おおきい" kanji="大きい" romaji="Ookii" vie="to lớn" eng="big" short="big"/>
+  <name id="1" hiragana="だいがく" kanji="大学" romaji="daigaku" vie="đại học" eng="university" short="university"/>
+  <name id="2" hiragana="ちいさい" kanji="小さい" romaji="chiisaii" vie="nhỏ" eng="small" short="small"/>
+  <name id="3" hiragana="ふるい" kanji="古い" romaji="furui" vie="cũ" eng="old" short="old"/>
+  <name id="4" hiragana="たかい" kanji="高い" romaji="takai" vie="cao" eng="high" short="high"/>
+  <name id="5" hiragana="やすい" kanji="安い" romaji="yasui" vie="rẻ" eng="cheap" short="cheap"/>
+  <name id="6" hiragana="あたらしい" kanji="新しい" romaji="atarashii" vie="mới" eng="new" short="new"/>
+  <name id="7" hiragana="しんぶん" kanji="新聞" romaji="shinbun" vie="báo " eng="newspaper" short="newspaper"/>
+</data>

@@ -1,0 +1,10 @@
+<data>
+  <name id="0" hiragana="しろい" kanji="白い" romaji="shiroi" vie="màu trắng" eng="white" short="white"/>
+  <name id="1" hiragana="くろい" kanji="黒い" romaji="kuroi" vie="màu đen" eng="black" short="black"/>
+  <name id="2" hiragana="あかい" kanji="赤い" romaji="akai" vie="màu đỏ" eng="red" short="red"/>
+  <name id="3" hiragana="あおい" kanji="青い" romaji="aoi" vie="màu xanh dương" eng="blue" short="blue"/>
+  <name id="4" hiragana="さかな" kanji="魚" romaji="sakana" vie="cá" eng="fish" short="fish"/>
+  <name id="5" hiragana="うま" kanji="馬" romaji="uma" vie="ngựa" eng="horse" short="horse"/>
+  <name id="6" hiragana="うし" kanji="牛" romaji="ushi" vie="trâu" eng="buffalo" short="buffalo"/>
+  <name id="7" hiragana="にく" kanji="肉" romaji="niku" vie="thịt" eng="meat" short="meat"/>
+</data>

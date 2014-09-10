@@ -1,0 +1,8 @@
+<data>
+  <name id="0" hiragana="いいます" kanji="言います" romaji="iimasu" vie="nói" eng="speak" short="speak"/>
+  <name id="1" hiragana="はなします" kanji="話します" romaji="hanashimasu" vie="nói chuyện" eng="talk" short="talk"/>
+  <name id="2" hiragana="たちます" kanji="立ちます" romaji="tachimasu" vie="đứng" eng="stand" short="stand"/>
+  <name id="3" hiragana="はいります" kanji="入ります" romaji="hairimasu" vie="vào" eng="enter" short="enter"/>
+  <name id="4" hiragana="でます" kanji="出ます" romaji="demasu" vie="ra" eng="exit" short="exit"/>
+  <name id="5" hiragana="やすみます" kanji="休みます" romaji="yasumimasu" vie="nghỉ ngơi" eng="rest" short="rest"/>
+</data>

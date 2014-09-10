@@ -12,15 +12,21 @@
       <li>
         <a href="#step-2" ng-click="partId=2">
           <label class="stepNumber">
-            <!-- <span data-i18n="common.vocab"></span> --><span>&nbsp;2</span>
+            <i class="fa fa-lock"></i>
           </label>
         </a>
       </li>
       <li>
         <a href="#step-3" ng-click="partId=3">
           <label class="stepNumber">
-            <!-- <span data-i18n="common.grammar"></span> -->
-            <span>&nbsp;3</span>
+            <i class="fa fa-lock"></i>
+          </label>
+        </a>
+      </li>
+      <li>
+        <a href="#step-4" ng-click="partId=4">
+          <label class="stepNumber">
+            <i class="fa fa-lock"></i>
           </label>
         </a>
       </li>
@@ -103,6 +109,44 @@
   </div>  
 
   <!-- Step 3 start -->
+  <div id="step-3">
+    <div class="row">
+      <div class="col-md-4">
+        <a ng-href="#/{{lessonId}}/{{partId}}/learn" class="thumb">
+           <span data-i18n="common.learn"></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a ng-href="#/{{lessonId}}/{{partId}}/picture" class="thumb">
+           <span data-i18n="common.picture"></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a ng-href="#/{{lessonId}}/{{partId}}/word" class="thumb">
+           <span data-i18n="common.word"></span>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+           <a ng-href="#/{{lessonId}}/{{partId}}/listen" class="thumb">
+           <span data-i18n="common.listen"></span>
+        </a>
+      </div>
+     <div class="col-md-4">
+           <a ng-href="#/{{lessonId}}/{{partId}}/connect" class="thumb">
+           <span data-i18n="common.connect"></span>
+        </a>
+      </div>
+      <div class="col-md-4">
+          <a ng-href="#/{{lessonId}}/{{partId}}/write" class="thumb">
+           <span data-i18n="common.write"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 4 start -->
   <div id="step-3">
     <div class="row">
       <div class="col-md-4">

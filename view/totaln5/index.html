@@ -8,10 +8,12 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <title>Total N5</title>
 
-        <link rel="stylesheet" type="text/css" href="../../css/index.css" /> 
+        <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
         <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" /> 
+
         <script type="text/javascript" src="../../js/index.js"></script>
         <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
@@ -20,6 +22,11 @@
         <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
         <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
+        <style type="text/css" media="screen">
+            #left-sidebar,#right-sidebar{
+                display: none;
+            }    
+        </style>
     </head>
     <body>
         <div class="app row" id="dashboard">
@@ -195,26 +202,43 @@
             tplController.controller('learnCtrl',function($scope,$routeParams){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
+
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/1/json/1.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = data;
+                    });
             });
 
             tplController.controller('pictureCtrl',function($scope,$routeParams){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId = $routeParams.partId;
+
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/2/json/1.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = data;
+                    });
             });
 
             tplController.controller('wordCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
+
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/3/json/1.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = data;
+                    });
             });
 
             tplController.controller('listenCtrl',function($scope,$routeParams,$http){
-                $http({method: "GET", url: "../../data/1.json"}).
-                success(function(data, status) {
-                    console.log(data);
-                    $scope.status = status;
-                    $scope.data =data;
-                });
-
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/4/json/1.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = data;
+                    });
+                
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
             });
@@ -222,11 +246,23 @@
             tplController.controller('connectCtrl',function($scope,$routeParams){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
+
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/5/json/1.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = data;
+                    });
             });
 
             tplController.controller('writeCtrl',function($scope,$routeParams){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
+
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/6/json/1.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = data;
+                    });
             });
 
             angular.bootstrap(document,['demo']);

@@ -1,0 +1,9 @@
+<data>
+  <name id="0" hiragana="いち" kanji="一" romaji="ichi" vie="1" eng="one" short="one"/>
+  <name id="1" hiragana="に" kanji="二" romaji="ni" vie="2" eng="two" short="two"/>
+  <name id="2" hiragana="さん" kanji="三" romaji="san" vie="3" eng="three" short="three"/>
+  <name id="3" hiragana="よん" kanji="四" romaji="yon" vie="4" eng="four" short="four"/>
+  <name id="4" hiragana="ご" kanji="五" romaji="go" vie="5" eng="five" short="five"/>
+  <name id="5" hiragana="ろく" kanji="六" romaji="roku" vie="6" eng="six" short="six"/>
+  <name id="6" hiragana="なな" kanji="七" romaji="nana" vie="7" eng="seven" short="seven"/>
+</data>

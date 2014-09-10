@@ -4,28 +4,49 @@
 </br>
 connect
 <style type="text/css" media="screen">
-	div.q,div.a{
+	span.q,span.a{
 		width: 200px;
 		height: 20px;
-		background: red;
+		border:1px solid;
 		margin: 6px;
 	}	
 </style>
+
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text/html", ev.target.id);
+}
+
+function drop(ev) {
+	console.log(ev);
+	if(ev.toElement.id==2){
+
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text/html");
+	console.log($('#'+data).attr('class'));
+    ev.target.appendChild(document.getElementById(data));
+	}
+}
+</script>
 <div class="row">
 	<div class="col-md-6">
-		<div id="1" class="q">
+		<span id="1" class="couple1"  draggable ="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
 			Câu hỏi 1
-		</div>
-		<div id="2"  class="q">
-			Câu hỏi 1
-		</div>
+		</span>
+		<span id="2"  class="q 1" draggable ="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+			Câu hỏi 2
+		</span>
 	</div>
 	<div class="col-md-6">
-		<div id="3"  class="a">
-			Câu trả lời 1
-		</div>
-		<div id="4"  class="a">
-			Câu trả lời 2
-		</div>
+		<span id="3"  class="couple1"  ondrop="drop(event)" ondragover="allowDrop(event)" draggable ="true" ondragstart="drag(event)">
+		2
+		</span>
+		<span id="4"  class="couple1"  ondrop="drop(event)" ondragover="allowDrop(event)" draggable ="true" ondragstart="drag(event)">
+		3
+		</span>
 	</div>
 </div>
