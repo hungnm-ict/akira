@@ -23,9 +23,9 @@
         <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
         <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
         <style type="text/css" media="screen">
-            #left-sidebar,#right-sidebar{
-                display: none;
-            }    
+            /* #left-sidebar,#right-sidebar{
+                  display: none;
+              }   */  
         </style>
     </head>
     <body>
@@ -203,7 +203,7 @@
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/1/json/1.json";
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/1/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;
@@ -214,7 +214,7 @@
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId = $routeParams.partId;
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/2/json/1.json";
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/2/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;
@@ -225,7 +225,7 @@
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/3/json/1.json";
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/3/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;
@@ -233,7 +233,7 @@
             });
 
             tplController.controller('listenCtrl',function($scope,$routeParams,$http){
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/4/json/1.json";
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId +  "/" + $routeParams.partId +"/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;
@@ -243,11 +243,11 @@
                 $scope.partId= $routeParams.partId;
             });
 
-            tplController.controller('connectCtrl',function($scope,$routeParams){
+            tplController.controller('connectCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/5/json/1.json";
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;
@@ -258,13 +258,14 @@
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/6/json/1.json";
+                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/6/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;
                     });
             });
 
+            
             angular.bootstrap(document,['demo']);
         </script>
     </body>
