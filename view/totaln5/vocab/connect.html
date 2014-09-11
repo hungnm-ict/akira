@@ -7,6 +7,9 @@
 	}	
 </style>
 <script>
+	var scope= angular.element($("#dashboard")).scope();
+	console.log(scope);
+	
 	function allowDrop(ev) {
 	    ev.preventDefault();
 	}
@@ -25,7 +28,7 @@
 		}
 	}
 </script>
-<div class="row" ng-repeat="value in data | shuffle">
+<div class="row" ng-repeat="value in data | orderBy: reverse">
 	<div class="col-md-6">
 		<span id="hira-{{value.id}}" class="couple-{{value.id}}"  draggable ="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
 			{{value.hiragana}}

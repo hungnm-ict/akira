@@ -1,4 +1,4 @@
-<div id="listenWizard" class="swMain">
+<div id="listenWizard" class="swMain fuckingdirective">
 	<ul>
 		 <li ng-repeat="(key, value) in data">
 	        <a ng-href="#step-{{key}}" ng-click="partId={{key}}">
@@ -9,24 +9,20 @@
 	      </li>
 	</ul>
 	<div id="step-{{key}}" ng-repeat="(key, value) in data">
-		{{lessonId}}/{{partId}}
 		<!-- <img ng-src="../../data/totaln5/{{lessonId}}/{{partId}}/4/audio/america.mp3" alt="">
 		<audio controls id="{{key}}" style="display:none;">
 		  <source type="audio/mpeg" src="../../data/totaln5/{{lessonId}}/{{partId}}/4/audio/america.mp3">
 			Your browser does not support the audio element.
-		</audio>  -->
+		</audio>  -->{{key}}
 		<button type="btn btn-default" onclick='document.getElementById()'>Play</button>
-		<!-- <input></input> -->
+		<input></input>
 	</div>
 </div>
 <script type="text/javascript">
-/*$("document").ready(function({*/
-
   /*$('#listenWizard').smartWizard({
     enableAllSteps : true,
     includeFinishButton: false
   });*/
 
   /*$('#listenWizard .actionBar').hide();*/
-/*});*/
 </script> 

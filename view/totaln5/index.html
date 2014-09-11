@@ -23,9 +23,9 @@
         <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
         <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
         <style type="text/css" media="screen">
-            /* #left-sidebar,#right-sidebar{
+             #left-sidebar,#right-sidebar{
                   display: none;
-              }   */  
+              }     
         </style>
     </head>
     <body>
@@ -186,6 +186,13 @@
                             controller: 'writeCtrl'
                         });
                 }]);
+            
+           /* tpl.directive('fuckingdirective',function(){
+                $('#listenWizard').smartWizard({
+                    enableAllSteps : true,
+                    includeFinishButton: false
+                });
+            });*/
 
             var tplController = angular.module('tplControllers',[]);
 
@@ -241,12 +248,14 @@
                 
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
+                $scope.gameObject = {"life":3,"score":0};
             });
 
             tplController.controller('connectCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
-
+                $scope.gameObject = {"life":3,"score":0};   
+                
                 var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
