@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
         <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
         <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" /> 
+        <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 
         <script type="text/javascript" src="../../js/index.js"></script>
         <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
@@ -187,12 +188,23 @@
                         });
                 }]);
             
-           /* tpl.directive('fuckingdirective',function(){
-                $('#listenWizard').smartWizard({
-                    enableAllSteps : true,
-                    includeFinishButton: false
-                });
-            });*/
+            /*tpl.directive('fuckingdirective',function(){
+                //Set tab
+               /* setInterval(function () {
+                    $('#listenWizard').smartWizard({
+                        enableAllSteps : true,
+                        includeFinishButton : false,
+                        labelNext:"Check",
+                        labelPrevious: "",
+                        onLeaveStep:function(){alert("validate"); $('#listenWizard').smartWizard('showMessage','Hello! World');
+return true;}
+                    });
+/*$('#listenWizard ul.anchor').hide();*/
+/*                    clearInterval();
+                },200);*/
+
+                // Reload audio data
+           /* });*/
 
             var tplController = angular.module('tplControllers',[]);
 
@@ -248,14 +260,29 @@
                 
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
-                $scope.gameObject = {"life":3,"score":0};
+                
+                $scope.test =function(id){
+                    alert(id);
+                    /*document.getElementById(1).play();*/
+                };
+
+            }).directive('myCustomer', function() {
+                return {
+                  template: 'Name: {{gameObject.life}} Address: {{gameObject.score}}'
+                };
             });
 
             tplController.controller('connectCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
                 $scope.gameObject = {"life":3,"score":0};   
-                
+                $scope.removeLife =function(){
+                    $scope.gameObject.life --;
+                    if($scope.gameObject.life == 0){
+                        alert("Game over");
+                    }
+                };
+
                 var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {

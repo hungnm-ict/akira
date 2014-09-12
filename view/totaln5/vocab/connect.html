@@ -7,9 +7,6 @@
 	}	
 </style>
 <script>
-	var scope= angular.element($("#dashboard")).scope();
-	console.log(scope);
-	
 	function allowDrop(ev) {
 	    ev.preventDefault();
 	}
@@ -28,6 +25,8 @@
 		}
 	}
 </script>
+<button ng-click="removeLife()">Sub life</button>
+<input value="{{gameObject.life}}"></input>
 <div class="row" ng-repeat="value in data | orderBy: reverse">
 	<div class="col-md-6">
 		<span id="hira-{{value.id}}" class="couple-{{value.id}}"  draggable ="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -40,3 +39,4 @@
 		</span>
 	</div>
 </div>
+<div my-customer></div>

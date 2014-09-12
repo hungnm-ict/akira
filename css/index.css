@@ -428,3 +428,41 @@ background-color: transparent !important;
     height: 0; 
     width: 0; 
 }
+
+.swMain ul.anchor{
+    display: none;
+}
+
+/*No life remaining*/
+.life-0{
+    color: white;
+}
+
+/*One life remaining*/
+.life-1{
+    color: white;
+}
+
+.life-1 i:first-child{
+    color: red;
+}
+
+/*Two life remaining*/
+.life-2{
+    color: red;
+}
+
+.life-2 i:last-child{
+    /*color: white;*/
+    -webkit-animation: myfirst 2s;
+}
+
+@-webkit-keyframes myfirst {
+    from {color: red;}
+    to {color: white;}
+}
+
+/*Three life remaining*/
+.life-3{
+    color: red;
+}

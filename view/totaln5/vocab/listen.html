@@ -1,5 +1,5 @@
 <div id="listenWizard" class="swMain fuckingdirective">
-	<ul>
+<!-- 	<ul>
 		 <li ng-repeat="(key, value) in data">
 	        <a ng-href="#step-{{key}}" ng-click="partId={{key}}">
 	          <label class="stepNumber">
@@ -8,21 +8,20 @@
 	        </a>
 	      </li>
 	</ul>
-	<div id="step-{{key}}" ng-repeat="(key, value) in data">
-		<!-- <img ng-src="../../data/totaln5/{{lessonId}}/{{partId}}/4/audio/america.mp3" alt="">
-		<audio controls id="{{key}}" style="display:none;">
-		  <source type="audio/mpeg" src="../../data/totaln5/{{lessonId}}/{{partId}}/4/audio/america.mp3">
+	<span class="life-{{gameObject.life}}">
+		<i class="fa fa-heart fa-3x"></i>
+		<i class="fa fa-heart fa-3x"></i>
+		<i class="fa fa-heart fa-3x"></i>
+	</span> -->
+	<div ng-repeat="key in data">
+	{{key}}
+		<!-- <audio controls ng-id="{{key}}" style="display:none;">
+		  <source type="audio/mpeg" src="../../data/totaln5/1/1/4/audio/america.mp3">
 			Your browser does not support the audio element.
-		</audio>  -->{{key}}
-		<button type="btn btn-default" onclick='document.getElementById()'>Play</button>
-		<input></input>
+		</audio>  -->
+		<button type="btn btn-default" ng-click="test({{key.id}})">
+			<i class="fa fa-play fa-4x"></i>
+		</button>
+		<!-- <input></input> -->
 	</div>
 </div>
-<script type="text/javascript">
-  /*$('#listenWizard').smartWizard({
-    enableAllSteps : true,
-    includeFinishButton: false
-  });*/
-
-  /*$('#listenWizard .actionBar').hide();*/
-</script> 
