@@ -24,9 +24,9 @@
         <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
         <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
         <style type="text/css" media="screen">
-             #left-sidebar,#right-sidebar{
-                  display: none;
-              }     
+             /* #left-sidebar,#right-sidebar{
+                   display: none;
+               }     */ 
         </style>
     </head>
     <body>
@@ -114,10 +114,10 @@
                 </div>
                 <div id="social">
                   <div class="fb">
-                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-facebook fa-3x"></i>
                   </div>
                   <div class="gg">
-                    <i class="fa fa-google-plus"></i>
+                    <i class="fa fa-google-plus fa-3x"></i>
                   </div>
                 </div>
             </div>
@@ -188,23 +188,24 @@
                         });
                 }]);
             
-            /*tpl.directive('fuckingdirective',function(){
-                //Set tab
-               /* setInterval(function () {
+            tpl.directive('akiradirective',function(){
+               setInterval(function () {
                     $('#listenWizard').smartWizard({
                         enableAllSteps : true,
                         includeFinishButton : false,
                         labelNext:"Check",
-                        labelPrevious: "",
-                        onLeaveStep:function(){alert("validate"); $('#listenWizard').smartWizard('showMessage','Hello! World');
-return true;}
+                        onLeaveStep: leaveAStepCallback
                     });
-/*$('#listenWizard ul.anchor').hide();*/
-/*                    clearInterval();
-                },200);*/
+                    $('#listenWizard .buttonPrevious').hide();
+                    $('#listenWizard .buttonFinish').hide();
+                    clearInterval();
+                },200);
+               
+               return {
+                    restrict: 'A'
+                };
 
-                // Reload audio data
-           /* });*/
+            });
 
             var tplController = angular.module('tplControllers',[]);
 
@@ -251,8 +252,9 @@ return true;}
                     });
             });
 
+            /*AnhDN*/
             tplController.controller('listenCtrl',function($scope,$routeParams,$http){
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId +  "/" + $routeParams.partId +"/json/default.json";
+                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId +  "/sub" + $routeParams.partId +"/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;
@@ -260,19 +262,31 @@ return true;}
                 
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
-                
-                $scope.test =function(id){
-                    alert(id);
-                    /*document.getElementById(1).play();*/
+                $scope.gameObject = {"life":3,"score":0};   
+
+                $scope.playSound =function(id){
+                    var audioSrc = document.getElementById(id).getElementsByTagName('source');
+                    $("audio#"+ id + " source").attr("src","../../data/totaln5/lesson"+$routeParams.lessonId+"/sub"+ $routeParams.partId + "/audio/"+ $scope.data[id].short+".mp3");
+                    document.getElementById(id).load();
+                    document.getElementById(id).play();
                 };
 
-            }).directive('myCustomer', function() {
-                return {
-                  template: 'Name: {{gameObject.life}} Address: {{gameObject.score}}'
+                $scope.removeLife =function(){
+                    $scope.gameObject.life --;
+                    if($scope.gameObject.life == 0){
+                        alert("Game over");
+                    }
                 };
+
             });
 
             tplController.controller('connectCtrl',function($scope,$routeParams,$http){
+                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = data;
+                    });
+
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
                 $scope.gameObject = {"life":3,"score":0};   
@@ -282,19 +296,13 @@ return true;}
                         alert("Game over");
                     }
                 };
-
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
             });
 
             tplController.controller('writeCtrl',function($scope,$routeParams){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/6/json/default.json";
+                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;

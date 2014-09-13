@@ -1,7 +1,7 @@
-<div id="listenWizard" class="swMain fuckingdirective">
-<!-- 	<ul>
+<div id="listenWizard" class="swMain akiradirective">
+	<ul>
 		 <li ng-repeat="(key, value) in data">
-	        <a ng-href="#step-{{key}}" ng-click="partId={{key}}">
+	        <a ng-href="#step-{{key}}" click="partId={{key}}">
 	          <label class="stepNumber">
 	            <span>&nbsp;{{key}}</span>
 	          </label>
@@ -12,16 +12,17 @@
 		<i class="fa fa-heart fa-3x"></i>
 		<i class="fa fa-heart fa-3x"></i>
 		<i class="fa fa-heart fa-3x"></i>
-	</span> -->
-	<div ng-repeat="key in data">
-	{{key}}
-		<!-- <audio controls ng-id="{{key}}" style="display:none;">
-		  <source type="audio/mpeg" src="../../data/totaln5/1/1/4/audio/america.mp3">
+	</span> 
+	<div ng-repeat="(key,val) in data" id="step-{{key}}">
+		<audio controls id="{{key}}" style="display:none;">
+		  <source type="audio/mpeg">
 			Your browser does not support the audio element.
-		</audio>  -->
-		<button type="btn btn-default" ng-click="test({{key.id}})">
-			<i class="fa fa-play fa-4x"></i>
-		</button>
-		<!-- <input></input> -->
+		</audio>  
+		<div  ng-click="playSound(key)" class="btn-play">
+			<i class="fa fa-play fa-4x" ></i>
+		</div>
+		<input class="form-control" id="input-{{key}}"></input>
+		<input type="hidden" id="ans-{{key}}" value="{{val.hiragana}}">
 	</div>
 </div>
+

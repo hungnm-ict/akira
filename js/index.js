@@ -85,32 +85,19 @@ function getUser(){
   return JSON.parse(sessionStorage.user);
 }
 
-function ajaxGetScoreFromJs(movieName) {
-    /*var loggedin = 17;
-    if (loggedin != 0) { 
-      jQuery(".flashmovie object")[0].ajaxGetScore(2220,900,2000,"");
-    } else{
-      jQuery(".flashmovie object")[0].ajaxGetScore(0,0,0,"");
-    }*/ 
-} 
-
-function ajaxSaveScore(exp,gold,lesson,lessonStage){
-/*    var data = {
-      action: 'akira_save_score',
-      exp: exp,
-      gold: gold,
-      lesson: lesson,
-      lessonStage: lessonStage
-    };  
-
-    jQuery.post("http://akira.edu.vn/wp-admin/admin-ajax.php", data, function(response) {
-      console.log(response);
-    });
-  }*/ 
-}
-
 function get(name) {
     if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
         return decodeURIComponent(name[1]);
     return "";
 } 
+
+
+function leaveAStepCallback(obj, context){
+  return true;
+  compare($("#ans-"+ (context.fromStep -1)).val(),$("#input-"+ (context.fromStep -1)).val())
+};
+
+function compare(oldStr,newStr){
+  console.log(oldStr.trim().replace(/ /g,"") === newStr.trim().replace(/ /g,""));
+  return (oldStr.trim().replace(/ /g,"") === newStr.trim().replace(/ /g,""));
+}

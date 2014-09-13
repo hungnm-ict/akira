@@ -429,8 +429,12 @@ background-color: transparent !important;
     width: 0; 
 }
 
-.swMain ul.anchor{
-    display: none;
+#wordWizard ul.anchor,#learnWizard ul.anchor,#listenWizard ul.anchor,#connectWizard ul.anchor,#writeWizard ul.anchor,#pictureWizard ul.anchor{
+    /*display: none;*/
+}
+
+.stepContainer{
+    height: 650px !important;
 }
 
 /*No life remaining*/
@@ -465,4 +469,41 @@ background-color: transparent !important;
 /*Three life remaining*/
 .life-3{
     color: red;
+}
+
+.btn-play{
+    border: 1px solid green;
+    border-radius:50%;
+    color: green;
+    cursor: pointer;
+    line-height: 125px;
+    margin: 0px auto;
+    height: 100px;
+    text-align: center;
+    width: 100px;
+}
+
+#social{
+    text-align: center;
+}
+
+#social>div{
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 105px;
+    margin: 0px 6px;
+    height: 80px;
+    text-align: center;
+    width: 80px;
+
+}
+
+#social .fb{
+    color: #47639E; 
+}
+
+#social .gg{
+    color: #CE3E2B;
+
 }

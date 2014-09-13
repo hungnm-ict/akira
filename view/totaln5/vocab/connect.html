@@ -22,12 +22,17 @@
 		    ev.target.appendChild(document.getElementById(data));
 		}else{
 			alert("Failed! Scored minus");
+			$("sublife").trigger("click");
 		}
 	}
 </script>
-<button ng-click="removeLife()">Sub life</button>
-<input value="{{gameObject.life}}"></input>
-<div class="row" ng-repeat="value in data | orderBy: reverse">
+<button ng-click="removeLife()" id="sublife">Sub life</button>
+<span class="life-{{gameObject.life}}">
+		<i class="fa fa-heart fa-3x"></i>
+		<i class="fa fa-heart fa-3x"></i>
+		<i class="fa fa-heart fa-3x"></i>
+	</span> 
+<div class="row" ng-repeat="value in data">
 	<div class="col-md-6">
 		<span id="hira-{{value.id}}" class="couple-{{value.id}}"  draggable ="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
 			{{value.hiragana}}
