@@ -1,0 +1,60 @@
+<button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
+<div id="listenWizard" class="swMain akiradirective">
+	<ul>
+		 <li ng-repeat="(key, value) in data">
+	        <a ng-href="#step-{{key}}" click="partId={{key}}">
+	          <label class="stepNumber">
+	            <span>&nbsp;{{key}}</span>
+	          </label>
+	        </a>
+	      </li>
+	</ul>
+	<span class="row">
+		<div class="col-md-8 col-sm-8 col-xs-8">
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<span class="life-{{gameObject.life}}">
+				<i class="fa fa-heart fa-3x"></i>
+				<i class="fa fa-heart fa-3x"></i>
+				<i class="fa fa-heart fa-3x"></i>
+			</span> 
+		</div>
+	</span>
+	<div ng-repeat="(key,val) in data" id="step-{{key}}">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			{{val.questhira}}
+		</div>
+	</div>
+		<input class="form-control" id="input-{{key}}"></input>
+		<input type="hidden" id="ans-{{key}}" value="{{val.answer}}">
+		<div class="row hide" id="mess-{{key}}">
+			<div class="col-md-4 col-xs-4 col-sm-4">
+				<i class="fa fa-check fa-4x"></i>
+				<i class="fa fa-times fa-4x"></i>
+			</div>
+			<div class="col-md-8 col-xs-8 col-sm-8">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						Q: {{val.questhira}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						A: {{val.answer}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						{{val.vietnamese}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						{{val.english}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

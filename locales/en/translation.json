@@ -10,7 +10,9 @@
 		"kanji-n4"    : "Kanji N4",
 		"test-n4"     : "Test N4",
 		"mobi"		  : "Mobi apps",
-		"support"	  : "Support"
+		"support"	  : "Support",
+		"ios"		  : "iOS",
+		"android"     : "Android"
 	},
 	"common":{
 		"lesson"	  : "Lesson",
@@ -28,7 +30,12 @@
 		"write"       : "Write",
 		"choice"      : "Choice",
 		"translate"   : "Translate",
-		"read"        : "Read"
+		"read"        : "Read",
+		"choose-type" : "Choose your exam preparation content",
+		"choose-time" : "Choose your exam preparation time",
+		"listen-compre" : "Listen Comprehension",
+		"mins"			: "Minutes",
+		"start"			: "Start"
 	},
 	"leaderboard":{
 		"leaderboard" : "Leaderboard",

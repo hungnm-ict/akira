@@ -21,10 +21,7 @@ var app = {
     initialize: function() {
         this.bindEvents();
         hasViewPermission();
-        i18n.init({lng:"vi",resGetPath:'../../locales/__lng__/__ns__.json'},function(){
-          $('body').i18n();
-        }); 
-       
+        changeLang();
     },
     // Bind Event Listeners
     //
@@ -54,10 +51,10 @@ var app = {
 
 };
 
-function changeLang(code,val){
-    window.sessionStorage.setItem("locale",code);
-    window.sessionStorage.setItem("selectedLang",val)
-    window.location.reload();
+function changeLang(){
+    i18n.init({lng:i18n.lng(),resGetPath:'../../locales/__lng__/__ns__.json'},function(){
+      $('body').i18n();
+    });     
 }
 
 /**
@@ -66,19 +63,6 @@ function changeLang(code,val){
  */
 function hasViewPermission(){
     return sessionStorage.getItem("authorized")==="true";
-}
-
-/**
- * Navigate to specific page
- * @param  {[type]} page Page to navigate to
- * @return {[type]}      [description]
- */
-function navigateTo(page){
-  window.location.href=page.trim();
-}
-
-function loadPartialView(){
-
 }
 
 function getUser(){
@@ -91,13 +75,112 @@ function get(name) {
     return "";
 } 
 
-
 function leaveAStepCallback(obj, context){
-  return true;
-  compare($("#ans-"+ (context.fromStep -1)).val(),$("#input-"+ (context.fromStep -1)).val())
+  var classStr="success";
+  var ret = compare($("#ans-"+ (context.fromStep -1)).val(),$("#input-"+ (context.fromStep -1)).val())
+
+  if(!ret){
+    $("#sublife").trigger("click");
+    classStr="failed";
+  }
+  $(".swMain .actionBar .msgBox").removeClass("failed");
+  $(".swMain .actionBar .msgBox").removeClass("success");
+  $(".swMain .actionBar .msgBox").addClass(classStr);
+  $(".swMain").smartWizard('showMessage', $("#mess-"+ (context.fromStep -1)).html());
+
+  return ret;
 };
 
 function compare(oldStr,newStr){
-  console.log(oldStr.trim().replace(/ /g,"") === newStr.trim().replace(/ /g,""));
   return (oldStr.trim().replace(/ /g,"") === newStr.trim().replace(/ /g,""));
+}
+
+function filter(data,key,value){
+    var uniqueGroups = [];
+    $.each(data, function(idx,val) {
+        if(data[idx][key] == value){
+            uniqueGroups.push(data[idx]);
+        }
+    });
+    return uniqueGroups;
+}
+
+function gameOver(uid,xp){
+    alert("Game over");
+}
+
+function grammarChoiceLeaveStep(obj,context){
+  var ret = compare($("#ans-"+ (context.fromStep -1)).val(),$("#input-"+ (context.fromStep -1)).val());
+  if(!ret){
+    $("#sublife").trigger("click");
+    $(".swMain").smartWizard('showMessage', $("#mess-"+ (context.fromStep -1)).html());
+  }
+
+  return ret;
+}
+
+function akiraShuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+
+/**
+ * Need to shuffle the generated answer again
+ * @param  {[type]} data   [description]
+ * @param  {[type]} ansKey [description]
+ * @return {[type]}        [description]
+ */
+function genAnswers(data,ansKey,numberOfAns){
+    var uniqueGroups = [];
+    $.each(data, function(idx,val) {
+        var obj = [];
+
+        var rand1;
+        obj.push(data[idx][ansKey]);
+        
+        do{
+            rand1 = Math.floor((Math.random() * data.length));
+        }while(rand1 == idx);
+        obj.push(data[rand1][ansKey]);
+
+        if(numberOfAns==3){
+            var rand2;
+            do{
+                rand2 = Math.floor((Math.random() * data.length));
+            }while(rand2 == idx || rand2 == rand1);
+            obj.push(data[rand2][ansKey]);
+        }
+
+        uniqueGroups[idx]=akiraShuffle(obj);
+    });
+    return uniqueGroups;
+}
+
+/**
+ * Generate answer for translate game in grammar
+ * @return {[type]} [description]
+ */
+function genAnswers2(data){
+    var uniqueGroups = [];
+    $.each(data, function(idx,val) {
+        var obj = data[idx]["hiragana"].trim().replace(/ /g,"").split("") ;
+
+        uniqueGroups[idx]=akiraShuffle(obj);
+    });
+    return uniqueGroups;   
 }

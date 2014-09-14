@@ -1,0 +1,182 @@
+[
+  {
+    "id": 0,
+    "hiragana": "せんせい",
+    "kanji": "先生",
+    "romaji": "sensei",
+    "vie": "giáo viên",
+    "eng": "teacher",
+    "short": "teacher"
+  },
+  {
+    "id": 1,
+    "hiragana": "がくせい",
+    "kanji": "学生",
+    "romaji": "gakusei",
+    "vie": "học sinh",
+    "eng": "student",
+    "short": "student"
+  },
+  {
+    "id": 2,
+    "hiragana": "かいしゃいん",
+    "kanji": "会社員",
+    "romaji": "kaishain",
+    "vie": "Nhân viên công ty",
+    "eng": "officer",
+    "short": "officer"
+  },
+  {
+    "id": 3,
+    "hiragana": "だいがく",
+    "kanji": "大学",
+    "romaji": "daigaku",
+    "vie": "đại học",
+    "eng": "university",
+    "short": "university"
+  },
+  {
+    "id": 4,
+    "hiragana": "びょういん",
+    "kanji": "病院",
+    "romaji": "byouin",
+    "vie": "bệnh viện",
+    "eng": "hospital",
+    "short": "hospital"
+  },
+  {
+    "id": 5,
+    "hiragana": "だれ",
+    "kanji": {},
+    "romaji": "dare",
+    "vie": "ai",
+    "eng": "who",
+    "short": "who"
+  },
+  {
+    "id": 6,
+    "hiragana": "しゃいん",
+    "kanji": "社員",
+    "romaji": "shain",
+    "vie": "công ty",
+    "eng": "company",
+    "short": "company"
+  },
+  {
+    "id": 7,
+    "hiragana": "ぎんこういん",
+    "kanji": "銀行員",
+    "romaji": "ginkouin",
+    "vie": "nhân viên ngân hàng",
+    "eng": "banker",
+    "short": "banker"
+  },
+  {
+    "id": 8,
+    "hiragana": "いしゃ",
+    "kanji": "医者",
+    "romaji": "isha",
+    "vie": "Bác sĩ",
+    "eng": "doctor",
+    "short": "doctor"
+  },
+  {
+    "id": 9,
+    "hiragana": "けんきゅうしゃ",
+    "kanji": "研究者",
+    "romaji": "kenkyuusha",
+    "vie": "nhà nghiên cứu",
+    "eng": "researcher",
+    "short": "researcher"
+  },
+  {
+    "id": 10,
+    "hiragana": "エンジニア",
+    "kanji": {},
+    "romaji": "enjinia",
+    "vie": "kĩ sư",
+    "eng": "engineer",
+    "short": "engineer"
+  },
+  {
+    "id": 11,
+    "hiragana": "アメリカ",
+    "kanji": {},
+    "romaji": "amerika",
+    "vie": "Hoa Kỳ",
+    "eng": "America",
+    "short": "america"
+  },
+  {
+    "id": 12,
+    "hiragana": "にほん",
+    "kanji": "日本",
+    "romaji": "nihon",
+    "vie": "Nhật Bản",
+    "eng": "Japan",
+    "short": "japan"
+  },
+  {
+    "id": 13,
+    "hiragana": "かんこく",
+    "kanji": "韓国",
+    "romaji": "kankoku",
+    "vie": "Hàn Quốc",
+    "eng": "Korea",
+    "short": "korea"
+  },
+  {
+    "id": 14,
+    "hiragana": "ちゅうごく",
+    "kanji": "中国",
+    "romaji": "chuugoku",
+    "vie": "Trung Quốc",
+    "eng": "China",
+    "short": "china"
+  },
+  {
+    "id": 15,
+    "hiragana": "イギリス",
+    "kanji": {},
+    "romaji": "igirisu",
+    "vie": "Anh Quốc",
+    "eng": "England",
+    "short": "england"
+  },
+  {
+    "id": 16,
+    "hiragana": "タイ",
+    "kanji": {},
+    "romaji": "tai",
+    "vie": "Thái Lan",
+    "eng": "Thailand",
+    "short": "thailand"
+  },
+  {
+    "id": 17,
+    "hiragana": "ブラジル",
+    "kanji": {},
+    "romaji": "burajiru",
+    "vie": "Braxin",
+    "eng": "Brazil",
+    "short": "brazil"
+  },
+  {
+    "id": 18,
+    "hiragana": "ドイツ",
+    "kanji": {},
+    "romaji": "doitsu",
+    "vie": "Đức",
+    "eng": "Germany",
+    "short": "germany"
+  },
+  {
+    "id": 19,
+    "hiragana": "ベトナム",
+    "kanji": {},
+    "romaji": "betonamu",
+    "vie": "Việt Nam",
+    "eng": "Vietnam",
+    "short": "vietnam"
+  }
+]

@@ -10,7 +10,9 @@
 		"kanji-n4"    : "Kanji N4",
 		"test-n4"     : "Kiểm tra N4",
 		"mobi"		  : "Mobi apps",
-		"support"	  : "Trợ giúp"
+		"support"	  : "Trợ giúp",
+		"ios"		  : "iOS",
+		"android"     : "Android"
 	},
 	"common":{
 		"lesson"	  : "Bài",
@@ -28,7 +30,12 @@
 		"write"       : "Điền từ",
 		"choice"      : "Lựa chọn",
 		"translate"   : "Dịch",
-		"read"        : "Đọc hiểu"
+		"read"        : "Đọc hiểu",
+		"choose-type" : "Chọn nội dung luyện thi",
+		"choose-time" : "Chọn thời gian luyện thi",
+		"listen-compre" : "Nghe hiểu",
+		"mins"			: "Phút",
+		"start"			: "Bắt đầu"
 	},
 	"leaderboard":{
 		"leaderboard" : "Bảng xếp hạng",

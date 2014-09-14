@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -6,22 +6,32 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>Total N5</title>
 
-        <link rel="stylesheet" type="text/css" href="css/index.css" /> 
-        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap-theme.min.css" />
-        <title>Dashboard</title>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="libs/angular.min.js"></script>
-        <script type="text/javascript" src="libs/angular-route.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" /> 
+        <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script src="spec/lib/i18next/i18next-1.7.4.js"></script>
+        <script type="text/javascript" src="../../js/index.js"></script>
+        <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
+        <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
+
+        <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
+        <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
+        <style type="text/css" media="screen">
+             /* #left-sidebar,#right-sidebar{
+                   display: none;
+               }     */ 
+        </style>
     </head>
-    <body ng-controller="WelcomeController">
-        <div class="app" id="dashboard">
-            <div id="left-sidebar">
+    <body>
+        <div class="app row" id="dashboard">
+            <div id="left-sidebar"class="col-md-3">
                 <div id="site-lang">
                     <span id="vi">                    
                     </span>
@@ -29,7 +39,7 @@
                     </span>
                 </div>
                 <div id="logo">
-                  <img src="img/logo.png" alt="akira-logo" class="img-responsive" />
+                  <img src="../../img/logo.png" alt="akira-logo" class="img-responsive" />
                 </div>
                 <div class="panel-group" id="accordion">
                   <div class="panel panel-default">
@@ -43,16 +53,16 @@
                       <div class="panel-body">
                         <ul>
                             <li>
-                                <a href="#" data-i18n="menu.kana"></a>
+                                <a href="../kana" data-i18n="menu.kana"></a>
                             </li>
                             <li>
-                                <a href="#" data-i18n="menu.total-n5"></a>
+                                <a href="../totaln5" data-i18n="menu.total-n5"></a>
                             </li>
                             <li>
-                                <a href="#" data-i18n="menu.kanji-n5"></a>
+                                <a href="../kanjin5" data-i18n="menu.kanji-n5"></a>
                             </li>
                             <li>
-                                <a href="#" data-i18n="menu.test-n5"></a>
+                                <a href="../testn5" data-i18n="menu.test-n5"></a>
                             </li>
                         </ul>
                       </div>
@@ -69,13 +79,13 @@
                       <div class="panel-body">
                          <ul>
                             <li>
-                                <a href="#" data-i18n="menu.total-n4"></a>
+                                <a href="../totaln4" data-i18n="menu.total-n4"></a>
                             </li>
                             <li>
-                                <a href="#" data-i18n="menu.kanji-n4"></a>
+                                <a href="../kanjin4" data-i18n="menu.kanji-n4"></a>
                             </li>
                             <li>
-                                <a href="#" data-i18n="menu.test-n4"></a>
+                                <a href="../testn4" data-i18n="menu.test-n4"></a>
                             </li>
                         </ul>
                       </div>
@@ -92,13 +102,10 @@
                       <div class="panel-body">
                         <ul>
                             <li>
-                                <a href="#" >Android</a>
+                                <a href="../android" data-i18n="menu.android"></a>
                             </li>
                             <li>
-                                <a href="#">iOS</a>
-                            </li>
-                            <li>
-                                <a href="#">Windowsphone (Coming soon) </a>
+                               <a href="../ios" data-i18n="menu.ios"></a>
                             </li>
                         </ul>
                       </div>
@@ -107,23 +114,68 @@
                 </div>
                 <div id="social">
                   <div class="fb">
-                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-facebook fa-3x"></i>
                   </div>
                   <div class="gg">
-                    <i class="fa fa-google-plus"></i>
+                    <i class="fa fa-google-plus fa-3x"></i>
                   </div>
                 </div>
             </div>
-            <div id="content" class="container-fluid">
+            <div id="content" class="col-md-6">
+                <div ng-view></div> 
             </div>
-            <div id="right-sidebar">
-                
+            <div id="right-sidebar" class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-sm-12">
+                        Profile overview
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-sm-12">
+                        Leaderboard
+                    </div>
+                </div>
             </div>
+
         </div>
         
      
         <script type="text/javascript">
             app.initialize();
+
+            $('#wizard').smartWizard({
+              enableAllSteps: true,
+              includeFinishButton: false
+            });
+            $('#wizard .actionBar').hide();
+
+            var tpl= angular.module('demo',['ngRoute','tplControllers']);
+
+            tpl.config(['$routeProvider',
+                function($routeProvider) {
+                    $routeProvider.
+                        when('/', {
+                            templateUrl: 'main.html',
+                            controller: 'mainCtrl'
+                        })
+                        .when('/:lessonId',{
+                            templateUrl: 'game.html',
+                            controller: 'subCtrl' 
+                        })
+                }]);
+            
+            var tplController = angular.module('tplControllers',[]);
+
+            tplController.controller('mainCtrl',function($scope,$routeParams){
+                $scope.lessonId=$routeParams.lessonId;
+            });
+
+            tplController.controller('subCtrl',function($scope,$routeParams){
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId = 1;
+            });
+
+            angular.bootstrap(document,['demo']);
         </script>
     </body>
 </html>

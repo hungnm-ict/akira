@@ -19,29 +19,43 @@
 		if($('#'+ ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class') ){
 		    ev.preventDefault();
 		    var data = ev.dataTransfer.getData("text/html");
-		    ev.target.appendChild(document.getElementById(data));
+		    ev.target.style.visibility="hidden";
+		    document.getElementById(data).style.visibility="hidden";
 		}else{
 			alert("Failed! Scored minus");
-			$("sublife").trigger("click");
+			$("#sublife").trigger("click");
 		}
 	}
 </script>
-<button ng-click="removeLife()" id="sublife">Sub life</button>
-<span class="life-{{gameObject.life}}">
-		<i class="fa fa-heart fa-3x"></i>
-		<i class="fa fa-heart fa-3x"></i>
-		<i class="fa fa-heart fa-3x"></i>
-	</span> 
-<div class="row" ng-repeat="value in data">
+<button ng-click="removeLife()" id="sublife" style="display:none;">Sub life</button>
+<span class="row">
+	<div class="col-md-8 col-sm-8 col-xs-8">
+	</div>
+	<div class="col-md-4 col-sm-4 col-xs-4">
+		<span class="life-{{gameObject.life}}">
+			<i class="fa fa-heart fa-3x"></i>
+			<i class="fa fa-heart fa-3x"></i>
+			<i class="fa fa-heart fa-3x"></i>
+		</span> 
+	</div>
+</span>
+<div class="row">
 	<div class="col-md-6">
-		<span id="hira-{{value.id}}" class="couple-{{value.id}}"  draggable ="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
-			{{value.hiragana}}
-		</span>
+		<div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:6" >
+			<div class="col-md-12 hira-wrapper">
+				<span id="hira-{{value.id}}" class="couple-{{value.id}}"  draggable ="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+					{{value.hiragana}}
+				</span>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-6">
-		<span id="vie-{{value.id}}" class="couple-{{value.id}}"  ondrop="drop(event)" ondragover="allowDrop(event)" draggable ="true" ondragstart="drag(event)">
-			{{value.vie}}
-		</span>
+		<div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:6 ">
+			<div class="col-md-12 vi-wrapper">
+				<span id="vie-{{value.id}}" class="couple-{{value.id}}"  ondrop="drop(event)" ondragover="allowDrop(event)" draggable ="true" ondragstart="drag(event)">
+					{{value.vie}}
+				</span>
+			</div>
+		</div>
 	</div>
 </div>
-<div my-customer></div>

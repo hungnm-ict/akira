@@ -1,0 +1,87 @@
+<script>
+	function chooseAnswer(event,target){
+		$(event).parent().find('input').attr('value',$(event).text().trim());
+		$(".choosed").removeClass("choosed");
+		$(event).addClass("choosed");
+	}
+</script>
+
+<button style="display:none;" ng-click="removeLife()" id="sublife"></button>
+<div id="grammarChoiceWizard" class="swMain grammarChoiceDirective">
+	<ul>
+		 <li ng-repeat="(key, value) in data">
+	        <a ng-href="#step-{{key}}" click="partId={{key}}">
+	          <label class="stepNumber">
+	            <span>&nbsp;{{key}}</span>
+	          </label>
+	        </a>
+	      </li>
+	</ul>
+
+	<span class="row">
+		<div class="col-md-8 col-sm-8 col-xs-8">
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<span class="life-{{gameObject.life}}">
+				<i class="fa fa-heart fa-3x"></i>
+				<i class="fa fa-heart fa-3x"></i>
+				<i class="fa fa-heart fa-3x"></i>
+			</span> 
+		</div>
+	</span>
+	<div ng-repeat="(key,val) in data" id="step-{{key}}">
+	<div class="row">
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<audio controls id="{{key}}" style="display:none;">
+			  <source type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>  
+			<div  ng-click="playSound(key)" class="btn-play">
+				<i class="fa fa-play fa-4x"></i>
+			</div>
+		</div>
+		<div class="col-md-8 col-sm-8 col-xs-8">
+				<div class="ans-opt"  onclick="chooseAnswer(this);">
+					{{answers[key][0]}}
+				</div>
+				<div  class="ans-opt" onclick="chooseAnswer(this);">
+					{{answers[key][1]}}
+				</div>
+				<div  class="ans-opt" onclick="chooseAnswer(this);">
+					{{answers[key][2]}}
+				</div>
+				<input type="hidden" id="input-{{key}}">
+		</div>
+	</div>
+		<input type="hidden" id="ans-{{key}}" value="{{val.answer}}">
+
+		<div class="row hide" id="mess-{{key}}">
+			<div class="col-md-4 col-xs-4 col-sm-4">
+				<i class="fa fa-check fa-4x"></i>
+				<i class="fa fa-times fa-4x"></i>
+			</div>
+			<div class="col-md-8 col-xs-8 col-sm-8">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						Q: {{val.quest}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						{{val.vietnameseq}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						A: {{val.answer}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						{{val.vietnamesea}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

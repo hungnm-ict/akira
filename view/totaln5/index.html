@@ -24,14 +24,11 @@
         <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
         <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
         <style type="text/css" media="screen">
-             /* #left-sidebar,#right-sidebar{
-                   display: none;
-               }     */ 
         </style>
     </head>
     <body>
         <div class="app row" id="dashboard">
-            <div id="left-sidebar"class="col-md-3">
+            <div id="left-sidebar"class="col-md-2 col-sm-2 col-xs-2">
                 <div id="site-lang">
                     <span id="vi">                    
                     </span>
@@ -102,10 +99,10 @@
                       <div class="panel-body">
                         <ul>
                             <li>
-                                <a href="#" >Android</a>
+                                <a href="../android" data-i18n="menu.android"></a>
                             </li>
                             <li>
-                                <a href="#">iOS</a>
+                               <a href="../ios" data-i18n="menu.ios"></a>
                             </li>
                         </ul>
                       </div>
@@ -121,15 +118,52 @@
                   </div>
                 </div>
             </div>
-            <div id="content" class="col-md-6">
+            <div id="content" class="col-md-7 col-sm-7 col-xs-7">
                 <div ng-view></div> 
             </div>
-            <div id="right-sidebar" class="col-md-3">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-sm-12">
-                        Profile overview
+            <div id="right-sidebar" class="col-md-3 col-sm-3 col-xs-3">
+                <div class="row" id="profile">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <img src="" alt="xxx" class="img-thumbnail"/>
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 username">
+                                <span>Đinh Ngọc Anh</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                Day left: 200
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <button type="button" class="btn btn-default">
+                                  <!--  Star -->
+                                <i class="fa fa-plus"></i> Redeem code
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="progress level">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                    60%
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div class="progress mentor">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                                    60%
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-sm-12">
                         Leaderboard
@@ -142,6 +176,30 @@
      
         <script type="text/javascript">
             app.initialize();
+            
+            /**
+             * Create a DOM shuffle method for connect game
+             * @return {[type]} [description]
+             */
+            $.fn.shuffle = function() {
+         
+                var allElems = this.get(),
+                    getRandom = function(max) {
+                        return Math.floor(Math.random() * max);
+                    },
+                    shuffled = $.map(allElems, function(){
+                        var random = getRandom(allElems.length),
+                            randEl = $(allElems[random]).clone(true)[0];
+                        allElems.splice(random, 1);
+                        return randEl;
+                   });
+         
+                this.each(function(i){
+                    $(this).replaceWith($(shuffled[i]));
+                });
+         
+                return $(shuffled);         
+            };
 
             $('#wizard').smartWizard({
               enableAllSteps: true,
@@ -178,13 +236,38 @@
                             templateUrl:'vocab/listen.html',
                             controller: 'listenCtrl'
                         })
-                        .when('/:lessonId/:partId/connect',{
+                        .when('/:lessonId/4/choice',{
                             templateUrl:'vocab/connect.html',
                             controller: 'connectCtrl'
                         })
                         .when('/:lessonId/:partId/write',{
                             templateUrl:'vocab/write.html',
                             controller: 'writeCtrl'
+                        })
+
+
+                        .when('/:lessonId/4/listen1',{
+                            templateUrl:'grammar/listen.html',
+                            controller: 'grammarListenCtrl'
+                        })
+                        .when('/:lessonId/4/choice',{
+                            templateUrl:'grammar/choice.html',
+                            controller: 'grammarChoiceCtrl'
+                        })
+                        .when('/:lessonId/4/translate',{
+                            templateUrl:'grammar/translate.html',
+                            controller: 'grammarTranslateCtrl'
+                        })
+                        .when('/:lessonId/4/read',{
+                            templateUrl:'grammar/read.html',
+                            controller: 'grammarReadCtrl'
+                        })
+                        .when('/:lessonId/4/word1',{
+                            templateUrl:'grammar/word.html',
+                            controller: 'grammarWordCtrl'
+                        })
+                        .otherwise({
+                            redirectTo: '/'
                         });
                 }]);
             
@@ -198,13 +281,58 @@
                     });
                     $('#listenWizard .buttonPrevious').hide();
                     $('#listenWizard .buttonFinish').hide();
-                    clearInterval();
                 },200);
+                clearInterval();
                
                return {
                     restrict: 'A'
                 };
 
+            })
+            .directive('ngRepeatShuffle',function(){alert();
+                var id = setInterval(function () {
+                    $(".hira-wrapper span").shuffle();
+                    $(".vi-wrapper span").shuffle();
+                    window.clearInterval(id);
+                },200);
+
+                return {
+                    restrict: 'A'
+                };
+            })
+            .directive('grammarListenDirective',function(){
+                setInterval(function () {
+                    $('#grammarListenWizard').smartWizard({
+                        enableAllSteps : true,
+                        includeFinishButton : false,
+                        labelNext:"Check",
+                        onLeaveStep: leaveAStepCallback
+                    });
+                    $('#grammarListenWizard .buttonPrevious').hide();
+                    $('#grammarListenWizard .buttonFinish').hide();
+                },200);
+                clearInterval();
+               
+               return {
+                    restrict: 'A'
+                };                 
+            })
+            .directive('grammarChoiceDirective',function(){
+                setInterval(function () {
+                    $('#grammarChoiceWizard').smartWizard({
+                        enableAllSteps : true,
+                        includeFinishButton : false,
+                        labelNext:"Check",
+                        onLeaveStep: grammarChoiceLeaveStep
+                    });
+                    $('#grammarChoiceWizard .buttonPrevious').hide();
+                    $('#grammarChoiceWizard .buttonFinish').hide();
+                },200);
+                clearInterval();
+               
+               return {
+                    restrict: 'A'
+                };                 
             });
 
             var tplController = angular.module('tplControllers',[]);
@@ -219,6 +347,7 @@
             });
 
 
+            /*Vocabulary controller*/
             tplController.controller('learnCtrl',function($scope,$routeParams){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
@@ -262,7 +391,9 @@
                 
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
-                $scope.gameObject = {"life":3,"score":0};   
+                $scope.gameObject = {
+                    "life":3
+                    };   
 
                 $scope.playSound =function(id){
                     var audioSrc = document.getElementById(id).getElementsByTagName('source');
@@ -296,6 +427,8 @@
                         alert("Game over");
                     }
                 };
+
+
             });
 
             tplController.controller('writeCtrl',function($scope,$routeParams){
@@ -309,8 +442,131 @@
                     });
             });
 
+            /*Grammar controller*/
+            tplController.controller('grammarListenCtrl',function($scope,$routeParams,$http){
+                var urlStr="../../data/totaln5/data/grammar/json/type1.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = filter(data,'id',$routeParams.lessonId);
+                    });
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
+                $scope.gameObject = {
+                    "life":3
+                };   
+
+                $scope.playSound =function(id){
+                    var audioSrc = document.getElementById(id).getElementsByTagName('source');
+                    $("audio#"+ id + " source").attr("src","../../data/totaln5/lesson"+$routeParams.lessonId+"/sub4/audio/"+ $scope.data[id].filename+".mp3");
+                    document.getElementById(id).load();
+                    document.getElementById(id).play();
+                };
+
+                $scope.removeLife = function(){
+                    $scope.gameObject.life=$scope.gameObject.life-1;
+                    if($scope.gameObject.life == 0){
+                        gameOver();
+                    }
+                }
+            });
+
+            tplController.controller('grammarChoiceCtrl',function($scope,$routeParams,$http){
+                var urlStr="../../data/totaln5/data/grammar/json/type2.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = filter(data,'id',$routeParams.lessonId);
+                        $scope.answers = genAnswers( $scope.data,"answer",3);
+                    });
+
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
+                $scope.gameObject = {
+                    "life":3
+                };   
+                
+
+                $scope.playSound =function(id){
+                    var audioSrc = document.getElementById(id).getElementsByTagName('source');
+                    $("audio#"+ id + " source").attr("src","../../data/totaln5/lesson"+$routeParams.lessonId+"/sub4/audio/"+ $scope.data[id].filename+".mp3");
+                    document.getElementById(id).load();
+                    document.getElementById(id).play();
+                };
+
+                $scope.removeLife = function(){
+                    $scope.gameObject.life=$scope.gameObject.life-1;
+                    if($scope.gameObject.life == 0){
+                        gameOver();
+                    }
+                };
+            });
+
+            tplController.controller('grammarTranslateCtrl',function($scope,$routeParams,$http){
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
+                $scope.gameObject = {
+                    "life":3
+                };
+                $scope.removeLife = function(){
+                    $scope.gameObject.life=$scope.gameObject.life-1;
+                    if($scope.gameObject.life == 0){
+                        gameOver();
+                    }
+                };
+
+                var urlStr="../../data/totaln5/data/grammar/json/type1.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = filter(data,'id',$routeParams.lessonId);
+                        $scope.answers = genAnswers2($scope.data);
+                });
+            });
+
+            tplController.controller('grammarReadCtrl',function($scope,$routeParams,$http){
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
+                  $scope.gameObject = {
+                    "life":3
+                };
+                $scope.removeLife = function(){
+                    $scope.gameObject.life=$scope.gameObject.life-1;
+                    if($scope.gameObject.life == 0){
+                        gameOver();
+                    }
+                };
+
+                var urlStr="../../data/totaln5/data/grammar/json/type4.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = filter(data,'id',$routeParams.lessonId);
+                        $scope.answers = genAnswers( $scope.data,"answer1",2);
+                        console.log($scope.answers);
+                    });
+            });
+
+            tplController.controller('grammarWordCtrl',function($scope,$routeParams,$http){
+                $scope.lessonId=$routeParams.lessonId;
+                $scope.partId= $routeParams.partId;
+                $scope.gameObject = {
+                    "life":3
+                };
+                $scope.removeLife = function(){
+                    $scope.gameObject.life=$scope.gameObject.life-1;
+                    if($scope.gameObject.life == 0){
+                        gameOver();
+                    }
+                };
+
+                var urlStr="../../data/totaln5/data/grammar/json/type5.json";
+                $http({method: "GET", url: urlStr}).
+                    success(function(data, status) {
+                        $scope.data = filter(data,'id',$routeParams.lessonId);
+                    });
+            });
             
             angular.bootstrap(document,['demo']);
+
+            
+
         </script>
     </body>
 </html>

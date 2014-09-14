@@ -1,0 +1,1252 @@
+[
+  {
+    "id": 1,
+    "filename": "1.4.1",
+    "questhira": "わたしはかいしゃいんです。さとうさん＿＿かいしゃいんです。",
+    "questkanji": "私は会社員です。佐藤さん＿＿会社員です。",
+    "answer1": "も",
+    "answer2": "は",
+    "vietnamese": "Tôi là nhân viên công ty. Anh Sato cũng là nhân viên công ty.",
+    "english": "I am a company employee. Mr.Sato is a company employee, too."
+  },
+  {
+    "id": 1,
+    "filename": "1.4.2",
+    "questhira": "わたしは_____からきました。",
+    "questkanji": "私は_____から来ました。",
+    "answer1": "ブラジル",
+    "answer2": "ブラジルじん",
+    "vietnamese": "Tôi đến từ Brazil.",
+    "english": "I came from Brazil."
+  },
+  {
+    "id": 1,
+    "filename": "1.4.3",
+    "questhira": "やまださんはIMC_____しゃいんです。",
+    "questkanji": "山田さんはIMCの社員です。",
+    "answer1": "の",
+    "answer2": "も",
+    "vietnamese": "Anh Yamada là nhân viên công ty IMC.",
+    "english": "Mr.Yamada is IMC's employee."
+  },
+  {
+    "id": 1,
+    "filename": "1.4.4",
+    "questhira": "あなた_がくせいですか。\n",
+    "questkanji": "あなた_学生ですか。\n",
+    "answer1": "は",
+    "answer2": "に",
+    "vietnamese": "Bạn có phải học sinh không?\n",
+    "english": "Are you a student?\n"
+  },
+  {
+    "id": 1,
+    "filename": "1.4.5",
+    "questhira": "ワンさんはぎんこういん_____。",
+    "questkanji": "ワンさんは銀行員_____。",
+    "answer1": "じゃありません",
+    "answer2": "じゃあります",
+    "vietnamese": "Anh Wan không phải nhân viên ngân hàng.",
+    "english": "Mr.Wan  isn't a banker."
+  },
+  {
+    "id": 2,
+    "filename": "2.4.1",
+    "questhira": "_____はわたしのです。",
+    "questkanji": "_____は私のです。",
+    "answer1": "あれ",
+    "answer2": "あの",
+    "vietnamese": "Cái kia là của tôi.",
+    "english": "That is mine."
+  },
+  {
+    "id": 2,
+    "filename": "2.4.2",
+    "questhira": "_____かさはわたしのです。",
+    "questkanji": "_____傘は私のです。",
+    "answer1": "この",
+    "answer2": "これ",
+    "vietnamese": "Cái ô này là của tôi.",
+    "english": "This umbrella is mine."
+  },
+  {
+    "id": 2,
+    "filename": "2.4.3",
+    "questhira": "それはなん＿ざっしですか。\n",
+    "questkanji": "それはなん__雑誌ですか。\n",
+    "answer1": "の",
+    "answer2": "と",
+    "vietnamese": "Đó là quyển tạp chí về cái gì?\n",
+    "english": "What is that magazine about?\n"
+  },
+  {
+    "id": 2,
+    "filename": "2.4.4",
+    "questhira": "それは＿＿のカメラですか。\n",
+    "questkanji": "それは＿＿のカメラですか。\n",
+    "answer1": "だれ",
+    "answer2": "なに",
+    "vietnamese": "Cái máy ảnh đó là của ai?\n",
+    "english": "Whose camera is that?\n"
+  },
+  {
+    "id": 2,
+    "filename": "2.4.5",
+    "questhira": "カリナさん＿がくせいですか。\n",
+    "questkanji": "カリナさん＿学生ですか。\n",
+    "answer1": "は",
+    "answer2": "の",
+    "vietnamese": "Chị Karina có phải học sinh không?\n",
+    "english": "Is Ms.Karina a student?\n"
+  },
+  {
+    "id": 3,
+    "filename": "3.4.1",
+    "questhira": "トイレは_____です。",
+    "questkanji": "トイレは_____です。",
+    "answer1": "ここ",
+    "answer2": "これ",
+    "vietnamese": "Toilet ở đây.",
+    "english": "Toilet is here."
+  },
+  {
+    "id": 3,
+    "filename": "3.4.2",
+    "questhira": "おくには　＿＿＿ですか。\n",
+    "questkanji": "お国は　＿＿＿ですか。\n",
+    "answer1": "どちら　",
+    "answer2": "なん",
+    "vietnamese": "Nước bạn là nước nào?",
+    "english": " What is your country?"
+  },
+  {
+    "id": 3,
+    "filename": "3.4.3",
+    "questhira": "これは_____ですか。\n",
+    "questkanji": "これは_____ですか。\n",
+    "answer1": "いくら",
+    "answer2": "なん",
+    "vietnamese": "Cái kia bao nhiêu tiền?\n",
+    "english": "How much is that?\n"
+  },
+  {
+    "id": 3,
+    "filename": "3.4.4",
+    "questhira": "これは_____のネクタイですか。\n",
+    "questkanji": "これは_____のネクタイですか。\n",
+    "answer1": "どこ",
+    "answer2": "だれ",
+    "vietnamese": "Cái kia là cà vạt của nước nào?\n",
+    "english": "Which country is that necktie made in?\n"
+  },
+  {
+    "id": 3,
+    "filename": "3.4.5",
+    "questhira": "パワーでんきは_____かいしゃですか。\n",
+    "questkanji": "パワー電気は_____会社ですか。\n",
+    "answer1": "なんの",
+    "answer2": "どこの",
+    "vietnamese": "Công ty điện Power là công ty gì?\n",
+    "english": "What is the major of Power Electricity Comapy?\n"
+  },
+  {
+    "id": 4,
+    "filename": "4.4.1",
+    "questhira": "いま　＿＿ですか。\n",
+    "questkanji": "今　＿＿＿ですか。\n",
+    "answer1": "なんじ",
+    "answer2": "なじ",
+    "vietnamese": "Bây giờ là mấy giờ?\n",
+    "english": "What time is it?\n"
+  },
+  {
+    "id": 4,
+    "filename": "4.4.2",
+    "questhira": "デパートは　１０じ______です。",
+    "questkanji": "デパートは　１０時______です。",
+    "answer1": "から",
+    "answer2": "に",
+    "vietnamese": "Cửa hàng bách hóa mở cửa từ 10 giờ.",
+    "english": "Department is opened from 10 o'clock."
+  },
+  {
+    "id": 4,
+    "filename": "4.4.3",
+    "questhira": "ひるやすみは　１じ______　おわります。",
+    "questkanji": "昼休みは　１時______終わります。",
+    "answer1": "に",
+    "answer2": "まで",
+    "vietnamese": "Giờ nghỉ trưa kết thúc lúc 1 giờ.",
+    "english": "Lunch break finishes at 1'oclock."
+  },
+  {
+    "id": 4,
+    "filename": "4.4.4",
+    "questhira": "けさ　なんじ＿　おきましたか。\n",
+    "questkanji": "今朝　何時＿　起きましたか。\n",
+    "answer1": "に",
+    "answer2": "の",
+    "vietnamese": "Sáng nay bạn thức dậy lúc mấy giờ?\n",
+    "english": "What time did you get up this morning?\n"
+  },
+  {
+    "id": 4,
+    "filename": "4.4.5",
+    "questhira": "＿＿＿　はたらきましたか。\n",
+    "questkanji": "＿＿＿　働きましたか。\n",
+    "answer1": "きのう",
+    "answer2": "あした",
+    "vietnamese": "Hôm qua bạn có phải làm việc không?\n",
+    "english": "Did you go to work yesterday?\n"
+  },
+  {
+    "id": 5,
+    "filename": "5.4.1",
+    "questhira": "あした＿へいきますか。",
+    "questkanji": "明日＿へ行きますか。",
+    "answer1": "どこ",
+    "answer2": "どちら",
+    "vietnamese": "Ngày mai bạn đi đâu?",
+    "english": "Where will you go tomorrow?"
+  },
+  {
+    "id": 5,
+    "filename": "5.4.2",
+    "questhira": "にちようびどこ＿いきませんでした。",
+    "questkanji": "日曜日どこ＿行きませんでした。",
+    "answer1": "も",
+    "answer2": "へ",
+    "vietnamese": "Chủ nhật tôi chẳng đi đâu cả.",
+    "english": "I went to nowhere on Sunday."
+  },
+  {
+    "id": 5,
+    "filename": "5.4.3",
+    "questhira": "＿＿＿＿でとうきょうへいきます。　　　　　　　　　　　　　　　",
+    "questkanji": "＿＿＿＿で東京へ行きます。　　　　　　　　　　",
+    "answer1": "しんかんせん",
+    "answer2": "あるいて",
+    "vietnamese": "Tôi đi đến Tokyo bằng Shinkansen.",
+    "english": "I go to Tokyo by shinkansen."
+  },
+  {
+    "id": 5,
+    "filename": "5.4.4",
+    "questhira": "＿ととうきょうへいきます。",
+    "questkanji": "＿と東京へ行きます。",
+    "answer1": "やまださん",
+    "answer2": "だれ",
+    "vietnamese": "Tôi đi Tokyo với anh Yamada",
+    "english": "I go to Tokyo with Yamada."
+  },
+  {
+    "id": 5,
+    "filename": "5.4.5",
+    "questhira": "たんじょうびは＿ですか。",
+    "questkanji": "誕生日は＿ですか。",
+    "answer1": "いつ",
+    "answer2": "どこの",
+    "vietnamese": "Sinh nhật của bạn vào khi nào?",
+    "english": "When is your birthday?"
+  },
+  {
+    "id": 6,
+    "filename": "6.4.1",
+    "questhira": "__を　たべますか。\n",
+    "questkanji": "__を　食べますか。\n",
+    "answer1": "なん",
+    "answer2": "なに",
+    "vietnamese": "Bạn ăn cái gì?\n",
+    "english": "What do you eat?\n"
+  },
+  {
+    "id": 6,
+    "filename": "6.4.2",
+    "questhira": "あした　いっしょに　きょうとへ　______。\n",
+    "questkanji": "明日　一緒に　京都へ　______。\n",
+    "answer1": "いきませんか",
+    "answer2": "いきましたか、\n",
+    "vietnamese": "Ngày mai chúng ta đi Kyoto cùng nhau nhé?\n",
+    "english": "Would you like going to Kyoto with me tomorrow?\n"
+  },
+  {
+    "id": 6,
+    "filename": "6.4.3",
+    "questhira": "あした　______を　しますか。",
+    "questkanji": "明日　______を　しますか。",
+    "answer1": "なに",
+    "answer2": "なん",
+    "vietnamese": "Ngày mai bạn làm gì?",
+    "english": "What will you do tomorrow?"
+  },
+  {
+    "id": 6,
+    "filename": "6.4.4",
+    "questhira": "ともだち______　あいました。",
+    "questkanji": "友達______　会いました。",
+    "answer1": "に",
+    "answer2": "を",
+    "vietnamese": "Tôi sẽ gặp gỡ bạn bè.",
+    "english": "I will meet my friends."
+  },
+  {
+    "id": 6,
+    "filename": "6.4.5",
+    "questhira": "ともだち______　ごはんを　たべました。",
+    "questkanji": "友達______　ご飯を　食べました。",
+    "answer1": "と",
+    "answer2": "に",
+    "vietnamese": "Tôi đã ăn cơm cùng bạn mình.",
+    "english": "I ate with my friend."
+  },
+  {
+    "id": 7,
+    "filename": "7.4.1",
+    "questhira": "なんで　たべますか。",
+    "questkanji": "なんで　食べますか。",
+    "answer1": "はしで　食べます。",
+    "answer2": "しょくどうで　食べます。",
+    "vietnamese": "bạn ăn cơm bằng gì?",
+    "english": "how do you eat"
+  },
+  {
+    "id": 7,
+    "filename": "7.4.2",
+    "questhira": "ナイフで　きりますか。",
+    "questkanji": "ナイフで　切りますか。",
+    "answer1": "はい、ナイフです。",
+    "answer2": "はい、ナイフで　きります。",
+    "vietnamese": "cắt bằng dao à?",
+    "english": "do you cut it by knife?"
+  },
+  {
+    "id": 7,
+    "filename": "7.4.3",
+    "questhira": "もう　しゅくだいを　しましたか。",
+    "questkanji": "もう　宿題を　しましたか。",
+    "answer1": "いいえ、まだ　です。",
+    "answer2": "いいえ、もう　です。",
+    "vietnamese": "đã làm bài tập chưa đó?",
+    "english": "did you do your homework?"
+  },
+  {
+    "id": 7,
+    "filename": "7.4.4",
+    "questhira": "なんで　レポートを　おくりますか。",
+    "questkanji": "なんで　レポートを　送りますか。",
+    "answer1": "ファクスを　おくります。",
+    "answer2": "ファクスで　おくります。",
+    "vietnamese": "bạn gửi báo cáo đi bằng gì vậy?",
+    "english": "how do you send your report?"
+  },
+  {
+    "id": 7,
+    "filename": "7.4.5",
+    "questhira": "なにを　しますか。",
+    "questkanji": "なにを　しますか。",
+    "answer1": "ともだちに　でんわを　かけます。",
+    "answer2": "ともだちへ　でんわを　かけます。",
+    "vietnamese": "bạn đang làm gì thế?",
+    "english": "what are you doing?"
+  },
+  {
+    "id": 8,
+    "filename": "8.4.1",
+    "questhira": "にほんごは　おもしろいですか。",
+    "questkanji": "日本語は　面白いですか。",
+    "answer1": "はい、にほんごです。",
+    "answer2": "はい、おもしろいです。",
+    "vietnamese": "tiếng nhật có thú vị không?",
+    "english": "is japanese interesting?"
+  },
+  {
+    "id": 8,
+    "filename": "8.4.2",
+    "questhira": "あなたの　へやは　きれいですか。",
+    "questkanji": "あなたの　部屋は　きれいですか。",
+    "answer1": "いいえ、きれくないです。",
+    "answer2": "いいえ、きれいじゃ　ありません。",
+    "vietnamese": "phòng của bạn có đẹp không?",
+    "english": "is your flat beautiful?"
+  },
+  {
+    "id": 8,
+    "filename": "8.4.3",
+    "questhira": "あなたの　かばんは　おおきいですか。",
+    "questkanji": "あなたの　かばんは　大きいですか。",
+    "answer1": "いいえ、おおきくないです。",
+    "answer2": "いいえ、おおきいくないです。",
+    "vietnamese": "cặp của bạn có to không?",
+    "english": "is your bag big?"
+  },
+  {
+    "id": 8,
+    "filename": "8.4.4",
+    "questhira": "ワットさんは　どんなせんせいですか。",
+    "questkanji": "ワットさんは　どんな先生ですか。",
+    "answer1": "しんせつな　せんせいです。",
+    "answer2": "しんせつな　です。",
+    "vietnamese": "thấy watto là người thế nào vậy?",
+    "english": "how is watto teacher?"
+  },
+  {
+    "id": 8,
+    "filename": "8.4.5",
+    "questhira": "しごとは　どう　ですか。",
+    "questkanji": "仕事　どう　ですか。",
+    "answer1": "いそがしいです。",
+    "answer2": "いそがしい。",
+    "vietnamese": "công việc thế nào rồi?",
+    "english": "how is your work?"
+  },
+  {
+    "id": 9,
+    "filename": "9.4.1",
+    "questhira": "きょうは　しゅくだいが　＿＿＿＿　あります。",
+    "questkanji": "今日は宿題が＿＿＿あります。",
+    "answer1": "だいたい　",
+    "answer2": "たくさん",
+    "vietnamese": "hôm nay có nhiều bài tập",
+    "english": "today there's a lot of homework"
+  },
+  {
+    "id": 9,
+    "filename": "9.4.2",
+    "questhira": "ひらがなが＿＿＿わかります。",
+    "questkanji": "ひらがなが＿＿＿分かります。",
+    "answer1": "　よく　",
+    "answer2": "ぜんぜん",
+    "vietnamese": "tôi hiểu được hiragana",
+    "english": "I understand hiragana"
+  },
+  {
+    "id": 9,
+    "filename": "9.4.3",
+    "questhira": "にほんごが　＿＿＿　じょうずじゃ　ありません。",
+    "questkanji": "日本語が＿＿＿上手じゃありません。",
+    "answer1": "すこし",
+    "answer2": "あまり　",
+    "vietnamese": "tôi không giỏi tiếng nhật",
+    "english": "I'm not good at japanese"
+  },
+  {
+    "id": 9,
+    "filename": "9.4.4",
+    "questhira": "どうして　テニスを　しませんか。",
+    "questkanji": "どうして　テニスを　しませんか。",
+    "answer1": "じかんが　ありませんですから。",
+    "answer2": "じかんが　ありませんから。",
+    "vietnamese": "vì tôi không có thời gian",
+    "english": "because I didn't have time"
+  },
+  {
+    "id": 9,
+    "filename": "9.4.5",
+    "questhira": "１０じ＿＿＿、はやく　うちへ　かえりましょう。",
+    "questkanji": "１０時＿＿＿、早く家へ帰りましょう。",
+    "answer1": "ですから　",
+    "answer2": "から",
+    "vietnamese": "10 giờ rồi, về nhà thôi",
+    "english": "it's 10pm now, let's come home"
+  },
+  {
+    "id": 10,
+    "filename": "10.4.1",
+    "questhira": "だれ＿＿＿　いません。",
+    "questkanji": "だれ＿＿＿　いません。",
+    "answer1": "が",
+    "answer2": "も",
+    "vietnamese": "Không có ai",
+    "english": "Nobody is here."
+  },
+  {
+    "id": 10,
+    "filename": "10.4.2",
+    "questhira": "スーパーの　まえに　なに__　ありますか。",
+    "questkanji": "スーパ―の前に何__ありますか。",
+    "answer1": "も　",
+    "answer2": "が",
+    "vietnamese": "Trước siêu thị có gì không? ",
+    "english": "Are there any thing before the super market? "
+  },
+  {
+    "id": 10,
+    "filename": "10.4.3",
+    "questhira": "テープは　どこですか。",
+    "questkanji": "テープは　どこですか。",
+    "answer1": "した　から　２だんめです。",
+    "answer2": "した　の　２だんめです。",
+    "vietnamese": "từ dưới lên là tầng 2",
+    "english": "from bottom, it's on the second floor"
+  },
+  {
+    "id": 10,
+    "filename": "10.4.4",
+    "questhira": "うちの　ちかく＿ほんやが　あります。",
+    "questkanji": "うちの近く＿本屋があります。",
+    "answer1": "で　",
+    "answer2": "に　",
+    "vietnamese": "gần nhà có một hiệu sách",
+    "english": "there's a bookstore near my house"
+  },
+  {
+    "id": 10,
+    "filename": "10.4.5",
+    "questhira": "ノートは　かばん＿　なかに　あります。",
+    "questkanji": "ノートは鞄＿中にあります。",
+    "answer1": "の　",
+    "answer2": "と　",
+    "vietnamese": "vở ở trong cặp",
+    "english": "there's note on the bag"
+  },
+  {
+    "id": 11,
+    "filename": "11.4.1",
+    "questhira": "りんごが　________　あります。",
+    "questkanji": "りんごが　________　あります。",
+    "answer1": "ひとり",
+    "answer2": "ひとつ",
+    "vietnamese": "có hai quả táo",
+    "english": "there're two apples"
+  },
+  {
+    "id": 11,
+    "filename": "11.4.2",
+    "questhira": "かぞくは　____　げんきです。",
+    "questkanji": "家族は＿＿＿＿元気です。",
+    "answer1": "ぜんぶで",
+    "answer2": "みんな",
+    "vietnamese": "cả gia đình tôi đều khỏe mạnh",
+    "english": "my family are all healthy"
+  },
+  {
+    "id": 11,
+    "filename": "11.4.3",
+    "questhira": "にほんに　_____　います。",
+    "questkanji": "日本に＿＿＿います。",
+    "answer1": "７かげつ",
+    "answer2": "７がつ",
+    "vietnamese": "Tôi ở Nhật 7 tháng.",
+    "english": "I have lived in Japan for 7 months."
+  },
+  {
+    "id": 11,
+    "filename": "11.4.4",
+    "questhira": "＿＿＿かかります。",
+    "questkanji": "＿＿＿かかります。",
+    "answer1": "２じかんはん",
+    "answer2": "２じはん。",
+    "vietnamese": "mất khoảng 2 tiếng rưỡi",
+    "english": "it take 2 hours and a half"
+  },
+  {
+    "id": 11,
+    "filename": "11.4.5",
+    "questhira": "がいこくじんの　がくせいが　＿＿＿　います。",
+    "questkanji": "外国人の学生が＿＿＿います。",
+    "answer1": "ふたり",
+    "answer2": "ふたりが。",
+    "vietnamese": "có hai học sinh ngoại quốc",
+    "english": "there're two foreign students"
+  },
+  {
+    "id": 12,
+    "filename": "12.4.1",
+    "questhira": "きのうは　＿＿＿＿。",
+    "questkanji": "昨日は＿＿＿",
+    "answer1": "あめかったです。",
+    "answer2": "あめでした。",
+    "vietnamese": "hôm qua trời mưa",
+    "english": "it's rain yesterday"
+  },
+  {
+    "id": 12,
+    "filename": "12.4.2",
+    "questhira": "なつと　ふゆと　＿＿＿＿　がすきですか。",
+    "questkanji": "夏と冬と＿＿＿が好きですか。",
+    "answer1": "いつ　",
+    "answer2": "どちら",
+    "vietnamese": "bạn thích mùa hè hay mùa đông?",
+    "english": "which do you like more, summer or winter?"
+  },
+  {
+    "id": 12,
+    "filename": "12.4.3",
+    "questhira": "せかいで　＿＿＿が　いちばんひとが　おおいですか。",
+    "questkanji": "成果で＿＿＿が一番人が多いですか。",
+    "answer1": "どちら　",
+    "answer2": "どこ",
+    "vietnamese": "trong vũ trụ nơi nào là xa nhất?",
+    "english": "where's farthest in the worl"
+  },
+  {
+    "id": 12,
+    "filename": "12.4.4",
+    "questhira": "ちゅうごくは　にほん＿＿　おおきいです。",
+    "questkanji": "中国は日本＿＿大きいです。",
+    "answer1": "より　",
+    "answer2": "ほう　",
+    "vietnamese": "trung quốc rộng hơn nhật bản",
+    "english": "china is bigger than japan"
+  },
+  {
+    "id": 12,
+    "filename": "12.4.5",
+    "questhira": "このきょうしつで　だれ＿　いちばんげんきですか。",
+    "questkanji": "この教室でだれ＿一番元気ですか。",
+    "answer1": "が　",
+    "answer2": "を　",
+    "vietnamese": "trong phòng này ai khỏe mạnh nhất?",
+    "english": "who is strongest in this class?"
+  },
+  {
+    "id": 13,
+    "filename": "13.4.1",
+    "questhira": "テレビを　＿＿＿です。",
+    "questkanji": "テレビを　＿＿＿です。",
+    "answer1": "みまたい",
+    "answer2": "みたい",
+    "vietnamese": "tôi muốn xem ti vi",
+    "english": "I want to watch television"
+  },
+  {
+    "id": 13,
+    "filename": "13.4.2",
+    "questhira": "あのきっさてん＿　はいりましょう。",
+    "questkanji": "あの喫茶店＿入りましょう。",
+    "answer1": "に　",
+    "answer2": "を　",
+    "vietnamese": "hôm qua tôi vào quán giải khát",
+    "english": "I went to bar yesterday"
+  },
+  {
+    "id": 13,
+    "filename": "13.4.3",
+    "questhira": "わたしは　カメラ＿　ほしいです。",
+    "questkanji": "私はカメラ＿ほしいです。",
+    "answer1": "を　",
+    "answer2": "が",
+    "vietnamese": "tôi muốn có camera",
+    "english": "I want to have a camera"
+  },
+  {
+    "id": 13,
+    "filename": "13.4.4",
+    "questhira": "へや＿　でます。",
+    "questkanji": "部屋＿出ます。",
+    "answer1": "に　",
+    "answer2": "を　",
+    "vietnamese": "tôi ra khỏi nhà",
+    "english": "I leave my home"
+  },
+  {
+    "id": 13,
+    "filename": "13.4.5",
+    "questhira": "こうえん＿　さんぼします。",
+    "questkanji": "公園＿散歩します。",
+    "answer1": "に　",
+    "answer2": "を　",
+    "vietnamese": "tôi đi dạo trong công viên",
+    "english": "I walk in the park"
+  },
+  {
+    "id": 14,
+    "filename": "14.4.1",
+    "questhira": "じむしょへ　______ください",
+    "questkanji": "事務所へ　______ください。",
+    "answer1": "きて",
+    "answer2": "きいて",
+    "vietnamese": "Hãy đến văn phòng.",
+    "english": "Please come to the office."
+  },
+  {
+    "id": 14,
+    "filename": "14.4.2",
+    "questhira": "エアコンを　______ください。",
+    "questkanji": "エアコンを　______ください。",
+    "answer1": "つけて",
+    "answer2": "あけて",
+    "vietnamese": "Hãy bật điều hòa lên.",
+    "english": "Please turn on the air-conditioner."
+  },
+  {
+    "id": 14,
+    "filename": "14.4.3",
+    "questhira": "みぎ______　まがってください。",
+    "questkanji": "右______　曲がってください。",
+    "answer1": "へ",
+    "answer2": "で",
+    "vietnamese": "Hãy rẽ phải.",
+    "english": "Please turn right."
+  },
+  {
+    "id": 14,
+    "filename": "14.4.4",
+    "questhira": "あめ______　ふっています。",
+    "questkanji": "雨______　降っています。",
+    "answer1": "が",
+    "answer2": "を",
+    "vietnamese": "Trời đang mưa.",
+    "english": "It's raining."
+  },
+  {
+    "id": 14,
+    "filename": "14.4.5",
+    "questhira": "えき______　むかえにいきます。",
+    "questkanji": "駅______　迎えに行きます。",
+    "answer1": "まで",
+    "answer2": "で",
+    "vietnamese": "Tôi sẽ đến nhà ga đón bạn.",
+    "english": "I will go to the station to pick you up."
+  },
+  {
+    "id": 15,
+    "filename": "15.4.1",
+    "questhira": "ここに　にもつを　______ください。",
+    "questkanji": "ここに　荷物を　______ください。",
+    "answer1": "おいて",
+    "answer2": "おきて",
+    "vietnamese": "Hãy đặt hành lí ở đây.",
+    "english": "Please put your luggage here."
+  },
+  {
+    "id": 15,
+    "filename": "15.4.2",
+    "questhira": "このじしょを　______いいですか。",
+    "questkanji": "この辞書を　______いいですか。",
+    "answer1": "かりても",
+    "answer2": "かりては",
+    "vietnamese": "Tôi có thể mượn cuốn từ điển này được không?",
+    "english": "Is it OK if I borrow this dictionary?"
+  },
+  {
+    "id": 15,
+    "filename": "15.4.3",
+    "questhira": "ここでたばこを　______いけません。",
+    "questkanji": "ここでたばこを　______いけません。",
+    "answer1": "すっては",
+    "answer2": "すっても",
+    "vietnamese": "Không được hút thuốc lá ở đây.",
+    "english": "You must not smoke here."
+  },
+  {
+    "id": 15,
+    "filename": "15.4.4",
+    "questhira": "リンさんは　けっこん_____。\n",
+    "questkanji": "リンさんは　結婚_____。\n",
+    "answer1": "しています",
+    "answer2": "しました",
+    "vietnamese": "Chị Rin đã kết hôn chưa?\n",
+    "english": "Is Ms.Rin married?\n"
+  },
+  {
+    "id": 15,
+    "filename": "15.4.5",
+    "questhira": "わたしはじどうしゃを______。",
+    "questkanji": "私は自動車うを______。",
+    "answer1": "もっています",
+    "answer2": "あります",
+    "vietnamese": "Tôi có chiếc xe hơi.",
+    "english": "I have a car."
+  },
+  {
+    "id": 16,
+    "filename": "16.4.1",
+    "questhira": "でんしゃを　______ください。",
+    "questkanji": "電車を　______ください。",
+    "answer1": "降りて",
+    "answer2": "降って",
+    "vietnamese": "Làm ơn hãy xuống tàu.",
+    "english": "Please get off the train."
+  },
+  {
+    "id": 16,
+    "filename": "16.4.2",
+    "questhira": "とうきょうまで　______いきますか。\n",
+    "questkanji": "東京まで　______行きますか。\n",
+    "answer1": "どうやって",
+    "answer2": "どうして",
+    "vietnamese": "Tôi có thể đi Tokyo bằng cách nào?\n",
+    "english": "How can I go to Tokyo?\n"
+  },
+  {
+    "id": 16,
+    "filename": "16.4.3",
+    "questhira": "やまださんは______　しんせつです。",
+    "questkanji": "山田さんは______　親切です。",
+    "answer1": "きれいで",
+    "answer2": "きれくて",
+    "vietnamese": "Chị Yamada xinh đẹp và tốt bụng.",
+    "english": "Ms.Yamada is beautiful and nice."
+  },
+  {
+    "id": 16,
+    "filename": "16.4.4",
+    "questhira": "このパソコンは______　べんりです。",
+    "questkanji": "このパソコンは______　便利です。",
+    "answer1": "かるくて",
+    "answer2": "かるいで",
+    "vietnamese": "Chiếc máy tính này nhẹ và tiện lợi.",
+    "english": "This computer is light and convenient."
+  },
+  {
+    "id": 16,
+    "filename": "16.4.5",
+    "questhira": "かいしゃ______やめます。",
+    "questkanji": "会社______やめます。",
+    "answer1": "を",
+    "answer2": "から",
+    "vietnamese": "Tôi sẽ bỏ việc ở công ty.",
+    "english": "I will quit my job at the company."
+  },
+  {
+    "id": 17,
+    "filename": "17.4.1",
+    "questhira": "パスポートを______ないでください。",
+    "questkanji": "パスポートを______ないでください。",
+    "answer1": "なくさ",
+    "answer2": "なくし",
+    "vietnamese": "Đừng làm mất hộ chiếu nhé.",
+    "english": "Don't lose your passport."
+  },
+  {
+    "id": 17,
+    "filename": "17.4.2",
+    "questhira": "あした　がっこうへ______なくてもいいです。",
+    "questkanji": "明日　学校へ______なくてもいいです。",
+    "answer1": "こ",
+    "answer2": "き",
+    "vietnamese": "Ngày mai em không đến trường cũng được.",
+    "english": "It's OK if you don't go to school tomorrow."
+  },
+  {
+    "id": 17,
+    "filename": "17.4.3",
+    "questhira": "\nねつ＿あります。",
+    "questkanji": "\n熱＿あります。",
+    "answer1": "が",
+    "answer2": "は",
+    "vietnamese": "\nTôi bị sốt.",
+    "english": "\nI have a fever."
+  },
+  {
+    "id": 17,
+    "filename": "17.4.4",
+    "questhira": "おなか______いたいです。",
+    "questkanji": "おなか______痛いです。",
+    "answer1": "が",
+    "answer2": "を",
+    "vietnamese": "Tôi bị đau bụng.",
+    "english": "My belly hurts."
+  },
+  {
+    "id": 17,
+    "filename": "17.4.5",
+    "questhira": "ここ______　にもつをおかないでください。",
+    "questkanji": "ここ______　荷物を置かないでください。",
+    "answer1": "に",
+    "answer2": "で",
+    "vietnamese": "Làm ơn đừng để hành lí ở đây.",
+    "english": "Please don’t put your luggage here."
+  },
+  {
+    "id": 18,
+    "filename": "18.4.1",
+    "questhira": "わたしのしゅみは______。",
+    "questkanji": "私の趣味は______。",
+    "answer1": "ピアノをひくことです",
+    "answer2": "ピアノをひくことができます",
+    "vietnamese": "Sở thích của tôi là đánh đàn piano.",
+    "english": "My hobby is to play the piano."
+  },
+  {
+    "id": 18,
+    "filename": "18.4.2",
+    "questhira": "______まえに、シャワーをあびます。",
+    "questkanji": "______前に、シャワーを浴びます。",
+    "answer1": "ねる",
+    "answer2": "ねるの",
+    "vietnamese": "Trước khi đi ngủ, tôi tắm vòi sen.",
+    "english": "Before going to sleep, I take a shower."
+  },
+  {
+    "id": 18,
+    "filename": "18.4.3",
+    "questhira": "______まえに、くすりをのみます。",
+    "questkanji": "______前に、薬を飲みます。",
+    "answer1": "しょくじの",
+    "answer2": "しょくじ",
+    "vietnamese": "Trước bữa ăn, tôi uống thuốc.",
+    "english": "Before a meal, I take medicine."
+  },
+  {
+    "id": 18,
+    "filename": "18.4.4",
+    "questhira": "やすみに______あそびにきてください。",
+    "questkanji": "休みに______遊びに来てください。",
+    "answer1": "ぜひ",
+    "answer2": "よく",
+    "vietnamese": "Vào ngày nghỉ nhất định bạn hãy đến chơi nhé!",
+    "english": "On your days off please come to my place by all means."
+  },
+  {
+    "id": 18,
+    "filename": "18.4.5",
+    "questhira": "わたしはりょうり______できます。",
+    "questkanji": "私は料理______できます。",
+    "answer1": "が",
+    "answer2": "を",
+    "vietnamese": "Tôi có thể nấu ăn.",
+    "english": "I can cook."
+  },
+  {
+    "id": 19,
+    "filename": "19.4.1",
+    "questhira": "さくらを______ことがあります。",
+    "questkanji": "桜を______ことがあります。",
+    "answer1": "みた",
+    "answer2": "みて",
+    "vietnamese": "Tôi đã từng nhìn thấy hoa anh đào.",
+    "english": "I have seen cherry blossom."
+  },
+  {
+    "id": 19,
+    "filename": "19.4.2",
+    "questhira": "やすみのひはそうじしたり、______します。",
+    "questkanji": "休みの日は掃除したり、______します。",
+    "answer1": "せんたくしたり",
+    "answer2": "せんたく",
+    "vietnamese": "Ngày nghỉ tôi dọn nhà, giặt quần áo...",
+    "english": "On my days off, I clean the house, wash clothes..."
+  },
+  {
+    "id": 19,
+    "filename": "19.4.3",
+    "questhira": "こどもはだんだん______なりました。",
+    "questkanji": "子供はだんだん______なりました。",
+    "answer1": "おおきく",
+    "answer2": "おおきいに",
+    "vietnamese": "Lũ trẻ dần đàn lớn lên.",
+    "english": "The children grow up day by day."
+  },
+  {
+    "id": 19,
+    "filename": "19.4.4",
+    "questhira": "やまださんは______なりました。",
+    "questkanji": "山田さんは______なりました。",
+    "answer1": "きれいに",
+    "answer2": "きれく",
+    "vietnamese": "Chị Yamada đã trở nên xinh đẹp.",
+    "english": "Ms.Yamada become beautiful."
+  },
+  {
+    "id": 19,
+    "filename": "19.4.5",
+    "questhira": "______ダイエットしたことがあります。",
+    "questkanji": "______ダイエットしたことがあります。",
+    "answer1": "なんかいも",
+    "answer2": "なんかい",
+    "vietnamese": "Tôi đã từng ăn kiêng rất nhiều lần.",
+    "english": "I have been on a diet many times."
+  },
+  {
+    "id": 20,
+    "filename": "20.4.1",
+    "questhira": "おかねが＿＿？\n",
+    "questkanji": "お金が＿＿？\n",
+    "answer1": "ある",
+    "answer2": "あります",
+    "vietnamese": "Bạn có tiền không?\nKhông, không có.",
+    "english": "Do you have money?\nNo, I don't."
+  },
+  {
+    "id": 20,
+    "filename": "20.4.2",
+    "questhira": "きのう＿しけんむずかしかった？\n",
+    "questkanji": "昨日＿試験　難しかった？\n",
+    "answer1": "の",
+    "answer2": "に",
+    "vietnamese": "Bài thi ngày hôm qua có khó không?\n",
+    "english": "Was the exam yesterday hard?\n"
+  },
+  {
+    "id": 20,
+    "filename": "20.4.3",
+    "questhira": "これは______？\n",
+    "questkanji": "これは______？\n",
+    "answer1": "なに",
+    "answer2": "なん",
+    "vietnamese": "Đây là cái gì?\n",
+    "english": "What is this?\n"
+  },
+  {
+    "id": 20,
+    "filename": "20.4.4",
+    "questhira": "ビザ______いるよ。",
+    "questkanji": "ビザ______要るよ。",
+    "answer1": "が",
+    "answer2": "を",
+    "vietnamese": "Cần phải có visa đấy.",
+    "english": "You need a visa."
+  },
+  {
+    "id": 20,
+    "filename": "20.4.5",
+    "questhira": "りょこうはたのしかった______、ちょっとつかれた。",
+    "questkanji": "旅行は楽しかった______、ちょっと疲れた。",
+    "answer1": "けど",
+    "answer2": "から",
+    "vietnamese": "Chuyến đi rất vui nhưng hơi mệt.",
+    "english": "The trip was fun but a little tiring."
+  },
+  {
+    "id": 21,
+    "filename": "21.4.1",
+    "questhira": "おかねが______とおもいますか。",
+    "questkanji": "お金が______と思いますか。",
+    "answer1": "たりる",
+    "answer2": "たる",
+    "vietnamese": "Bạn có nghĩ là sẽ đủ tiền không?",
+    "english": "Do you think that you have enough money?"
+  },
+  {
+    "id": 21,
+    "filename": "21.4.2",
+    "questhira": "きむらさんはアルバイトは______といいました。",
+    "questkanji": "木村さんはアルバイトは______と言いました。",
+    "answer1": "むだだ",
+    "answer2": "むだ",
+    "vietnamese": "Anh Kimura đã nói rằng công việc làm thêm của anh ấy là vô ích.",
+    "english": "Mr.Kimura said his part-time job was useless."
+  },
+  {
+    "id": 21,
+    "filename": "21.4.3",
+    "questhira": "らいしゅうしけんが__でしょう。\n",
+    "questkanji": "来週試験が___でしょう。\n",
+    "answer1": "あります",
+    "answer2": "ある",
+    "vietnamese": "Tuần sau sẽ có bài kiểm tra đúng không?",
+    "english": "There will be a test next week, right?"
+  },
+  {
+    "id": 21,
+    "filename": "21.4.4",
+    "questhira": "しごとはそんなに______。",
+    "questkanji": "仕事はそんなに______。",
+    "answer1": "たいへんじゃありません",
+    "answer2": "たいへんです",
+    "vietnamese": "Công việc không vất vả đến thế đâu.",
+    "english": "The job is not that hard."
+  },
+  {
+    "id": 21,
+    "filename": "21.4.5",
+    "questhira": "にほんについて______おもいますか。",
+    "questkanji": "日本について______思いますか。",
+    "answer1": "どう",
+    "answer2": "どうと",
+    "vietnamese": "Bạn nghĩ gì về Nhật Bản?",
+    "english": "What do you think about Japan?"
+  },
+  {
+    "id": 22,
+    "filename": "22.4.1",
+    "questhira": "やまださんはユーモアが______ひとです。",
+    "questkanji": "山田さんはユーモアが______人です。",
+    "answer1": "わからない",
+    "answer2": "わかりません",
+    "vietnamese": "Anh Yamada là một người không hài hước",
+    "english": "Mr.Yamada is not a humorous person."
+  },
+  {
+    "id": 22,
+    "filename": "22.4.2",
+    "questhira": "たなかさんはくろいくつを______。",
+    "questkanji": "田中さんは黒い靴を______。",
+    "answer1": "はいています",
+    "answer2": "きています",
+    "vietnamese": "Anh Tanaka đang đi một đôi giày màu đen.",
+    "english": "Mr.Tanaka is wearing black shoes."
+  },
+  {
+    "id": 22,
+    "filename": "22.4.3",
+    "questhira": "ミラーさんは______ひとですか。\n",
+    "questkanji": "ミラーさんは______人ですか。\n",
+    "answer1": "どんな",
+    "answer2": "どの",
+    "vietnamese": "Anh Miller là người thế nào?\n",
+    "english": "What kind of person is Mr.Miller?\n"
+  },
+  {
+    "id": 22,
+    "filename": "22.4.4",
+    "questhira": "こどもとあそぶ______があります。",
+    "questkanji": "子供と遊ぶ______があります。",
+    "answer1": "やくそく",
+    "answer2": "ようじ",
+    "vietnamese": "Tôi đã hứa chơi với con tôi.",
+    "english": "I promised to play with my children."
+  },
+  {
+    "id": 22,
+    "filename": "22.4.5",
+    "questhira": "あれはミラーさん______つくったいすです。",
+    "questkanji": "あれはミラーさん______作ったいすです。",
+    "answer1": "が",
+    "answer2": "は",
+    "vietnamese": "Kia là chiếc ghế anh Miller đã làm.",
+    "english": "That is the chair made by Mr.Miller."
+  },
+  {
+    "id": 23,
+    "filename": "23.4.1",
+    "questhira": "にほんへ______とき、にほんのひこうきできました。",
+    "questkanji": "日本へ______とき、日本の飛行機で来ました。",
+    "answer1": "くる",
+    "answer2": "きた",
+    "vietnamese": "Khi đến Nhật Bản, tôi đã đi bằng máy bay của Nhật.",
+    "english": "When going to Japan, I went by Japanese plane."
+  },
+  {
+    "id": 23,
+    "filename": "23.4.2",
+    "questhira": "びょういんへ______とき、いしゃにはなしてください。",
+    "questkanji": "病院へ______とき、医者に話してください。",
+    "answer1": "いった",
+    "answer2": "いく",
+    "vietnamese": "Khi đến bệnh viện, hãy nói chuyện với bác sĩ.",
+    "english": "When going to hospital, let's talk to the doctor."
+  },
+  {
+    "id": 23,
+    "filename": "23.4.3",
+    "questhira": "びょういんへ______とき、ほけんしょうをわすれないでください。",
+    "questkanji": "病院へ______とき、保険証をわすれないでください。",
+    "answer1": "いく",
+    "answer2": "いった",
+    "vietnamese": "Khi đến bệnh viện, đừng quên mang theo thẻ bảo hiểm.",
+    "english": "When going to hospital, don't forget to bring your ensurance card."
+  },
+  {
+    "id": 23,
+    "filename": "23.4.4",
+    "questhira": "くにへ______とき、いもうとににほんのおみやげをあげます。",
+    "questkanji": "国へ______とき、妹に日本のお土産をあげます。",
+    "answer1": "かえった",
+    "answer2": "かえる",
+    "vietnamese": "Khi trở về, tôi tặng cho em gái một món quà Nhật Bản.",
+    "english": "When coming back, I will give my younger sister a Japanese present."
+  },
+  {
+    "id": 23,
+    "filename": "23.4.5",
+    "questhira": "らいねんくにへ______とき、にほんのひこうきでかえります。",
+    "questkanji": "来年国へ______とき、日本の飛行機で______。",
+    "answer1": "かえる",
+    "answer2": "かえった",
+    "vietnamese": "Sang năm, khi trở về, tôi sẽ đi bằng máy bay Nhật Bản.",
+    "english": "When coming back next year, I will go by Japanese plane."
+  },
+  {
+    "id": 24,
+    "filename": "24.4.1",
+    "questhira": "ちちはわたしのたんじょうびにネクタイを______。",
+    "questkanji": "父は私の誕生日にネクタイを______。",
+    "answer1": "くれました",
+    "answer2": "あげました",
+    "vietnamese": "Bố tôi đã tặng tôi một chiếc cà vạt nhân dịp sinh nhật.",
+    "english": "My father gave me a necktie for my birthday."
+  },
+  {
+    "id": 24,
+    "filename": "24.4.2",
+    "questhira": "わたしはさとうさんをびょういんまでつれていって______。",
+    "questkanji": "私は佐藤さんを病院まで連れて行って______。",
+    "answer1": "あげました",
+    "answer2": "くれました",
+    "vietnamese": "Tôi đã đưa anh Sato đến bệnh viện.",
+    "english": "I took Mr.Sato to the hospital."
+  },
+  {
+    "id": 24,
+    "filename": "24.4.3",
+    "questhira": "こどものとき、ははにおかしをつくって______。",
+    "questkanji": "子供のとき、母にお菓子を作って______。",
+    "answer1": "もらいました",
+    "answer2": "くれました",
+    "vietnamese": "Hồi tôi còn bé, tôi đã được mẹ làm bánh kẹo cho.",
+    "english": "When I was a kid, my mother made sweets for me."
+  },
+  {
+    "id": 24,
+    "filename": "24.4.4",
+    "questhira": "わたしはミラーさん______えいごをおしえてもらいました。",
+    "questkanji": "私はミラーさん______英語を教えてもらいました。",
+    "answer1": "に",
+    "answer2": "が",
+    "vietnamese": "Tôi đã được anh Miller dạy tiếng Anh cho.",
+    "english": "Mr.Miller taught English to me."
+  },
+  {
+    "id": 24,
+    "filename": "24.4.5",
+    "questhira": "サントスさん______くるまでおくってくれました。",
+    "questkanji": "サントスさん______車で送ってくれました。",
+    "answer1": "が",
+    "answer2": "に",
+    "vietnamese": "Anh Santos đã đưa tôi đi bằng ô tô.",
+    "english": "Mr.Santos escorted me by car."
+  },
+  {
+    "id": 25,
+    "filename": "25.4.1",
+    "questhira": "じかんが______、てがみをかきません。",
+    "questkanji": "時間が______、手紙を書きません。",
+    "answer1": "あっても",
+    "answer2": "あったら",
+    "vietnamese": "Dù có thời gian tôi cũng không viết thư.",
+    "english": "Even if I have time, I won't write a letter."
+  },
+  {
+    "id": 25,
+    "filename": "25.4.2",
+    "questhira": "バスが______、あるきましょう。",
+    "questkanji": "バスが______、歩きましょう。",
+    "answer1": "こなかったら",
+    "answer2": "きたら",
+    "vietnamese": "Nếu xe buýt không đến thì chúng ta hãy cùng đi bộ.",
+    "english": "If the bus doesn't come, let's walk together."
+  },
+  {
+    "id": 25,
+    "filename": "25.4.3",
+    "questhira": "てんきが______、さんぽしましょう。",
+    "questkanji": "天気が______、散歩しましょう。",
+    "answer1": "よかったら",
+    "answer2": "よくても",
+    "vietnamese": "Nếu trời đẹp thì chúng ta hãy cùng đi dạo.",
+    "english": "If the weather is nice, let's take a walk."
+  },
+  {
+    "id": 25,
+    "filename": "25.4.4",
+    "questhira": "______おかねがたくさんあったら、りゅうがくしたいです。",
+    "questkanji": "______お金がたくさんあったら、留学したいです。",
+    "answer1": "もし",
+    "answer2": "いくら",
+    "vietnamese": "Nếu tôi có thật nhiều tiền thì tôi muốn đi du học.",
+    "english": "If I had a lot of money, I would like to study abroad."
+  },
+  {
+    "id": 25,
+    "filename": "25.4.5",
+    "questhira": "おかねがなかったら、______。\n",
+    "questkanji": "お金がなかったら、______。\n",
+    "answer1": "どうしますか",
+    "answer2": "なにをしますか",
+    "vietnamese": "Nếu không có tiền thì bạn sẽ làm gì?\n",
+    "english": "If you don’t have money, what will you do?\n"
+  }
+]
