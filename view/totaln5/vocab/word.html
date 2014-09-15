@@ -1,2 +1,37 @@
-{{lessonId}}
-word
+<div id="listenWizard" class="swMain akiradirective">
+	<ul>
+	 	<li ng-repeat="(key, value) in data">
+	        <a ng-href="#step-{{key}}" click="partId={{key}}">
+	          <label class="stepNumber">
+	            <span>&nbsp;{{key}}</span>
+	          </label>
+	        </a>
+      	</li>
+	</ul>
+	<span class="life-{{gameObject.life}}">
+		<i class="fa fa-heart fa-3x"></i>
+		<i class="fa fa-heart fa-3x"></i>
+		<i class="fa fa-heart fa-3x"></i>
+	</span> 
+	<div ng-repeat="(key,val) in data" id="step-{{key}}">
+		<img src = "../../data/totaln5/lesson{{lessonId}}/sub{{partId}}/picture/200/{{val.short}}.png">
+		<div id="{{key}}">
+			<button type="button" ng-click = "select(key, 0)" class="btn btn-default" name="btn0">
+				{{choices[key][0]}}
+			</button>
+			<button type="button" ng-click = "select(key, 1)" class="btn btn-default" name="btn1">
+				{{choices[key][1]}}
+			</button>
+			<button type="button" ng-click = "select(key, 2)" class="btn btn-default" name="btn2">
+				{{choices[key][2]}}
+			</button>
+			<button type="button" ng-click = "select(key, 3)" class="btn btn-default" name="btn3">
+				{{choices[key][3]}}
+			</button>
+			<button type="button" ng-click="check(key)" class="btn btn-default">
+				Check
+			</button>
+		</div>
+	</div>
+</div>
+

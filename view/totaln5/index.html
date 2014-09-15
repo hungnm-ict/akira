@@ -145,10 +145,11 @@
                     $('#listenWizard').smartWizard({
                         enableAllSteps : true,
                         includeFinishButton : false,
-                        labelNext:"Check",
-                        onLeaveStep: leaveAStepCallback
+                        //labelNext:"Check",
+                        //onLeaveStep: leaveAStepCallback
                     });
                     $('#listenWizard .buttonPrevious').hide();
+                    $('#listenWizard .buttonNext').hide();
                     $('#listenWizard .buttonFinish').hide();
                 },200);
                 clearInterval();
@@ -269,26 +270,176 @@
                     });
             });
 
-            tplController.controller('pictureCtrl',function($scope,$routeParams,$http){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId = $routeParams.partId;
+            tplController.controller('pictureCtrl',function($scope, $routeParams, $http)
+            {
+                var urlStr="../../data/totaln5/lesson" + $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/2/json/default.json";
+                $scope.answer = [];
+                $scope.choices = [];
+
                 $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
+                    success(function(data, status)
+                    {
+                        $scope.data = akiraShuffle(data);
+
+                        for (i = 0; i < $scope.data.length; i++)
+                        {
+                            var answer = Math.floor(Math.random() * 4);
+                            $scope.answer[i] = answer;
+                            var temp = [];
+                            temp[answer] = $scope.data[i].short;
+                            for (j = 0; j < 4; j++)
+                            {
+                                if (j == answer)
+                                    continue;
+                                else
+                                {
+                                    var id;
+                                    do
+                                        id = Math.floor(Math.random() * data.length);
+                                    while ($.inArray($scope.data[id].short, temp) > -1);
+                                }
+                                temp[j] = $scope.data[id].short;
+                            }
+                            $scope.choices.push(temp);
+                        }
                     });
+                
+                $scope.lessonId = $routeParams.lessonId;
+                $scope.partId = $routeParams.partId;
+                $scope.gameObject = {"life":3};
+
+                $scope.removeLife = function()
+                {
+                    $scope.gameObject.life--;
+                    if ($scope.gameObject.life == 0)
+                    {
+                        alert("Game over");
+                    }
+                };
+
+                $scope.selected = -1;
+
+                $scope.select = function(id, btn)
+                {
+                    if ($scope.selected != btn)
+                    {
+                        $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
+                        if ($scope.selected != -1)
+                            $("div#" + id + " button[name='btn" + $scope.selected + "']").attr("class", 'btn btn-default');
+                        $scope.selected = btn;
+                    }
+                    else
+                    {
+                        $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-default');
+                        $scope.selected = -1;
+                    }
+                };
+
+                $scope.check = function(id)
+                {
+                    if ($scope.selected == -1)
+                        return;
+                    if ($scope.selected == $scope.answer[id])
+                    {
+                        if (id < $scope.data.length - 1)
+                            $("#listenWizard").smartWizard('goForward');
+                        else
+                            alert("Complete!");
+                        $scope.selected = -1;
+                    }
+                    else
+                    {
+                        $scope.removeLife();
+                    }
+                };
+
             });
 
-            tplController.controller('wordCtrl',function($scope,$routeParams,$http){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
+            tplController.controller('wordCtrl',function($scope,$routeParams,$http)
+            {
+                var urlStr="../../data/totaln5/lesson" + $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/3/json/default.json";
+                $scope.answer = [];
+                $scope.choices = [];
+
                 $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
+                    success(function(data, status)
+                    {
+                        $scope.data = akiraShuffle(data);
+
+                        for (i = 0; i < $scope.data.length; i++)
+                        {
+                            var answer = Math.floor(Math.random() * 4);
+                            $scope.answer[i] = answer;
+                            var temp = [];
+                            temp[answer] = $scope.data[i].hiragana;
+                            for (j = 0; j < 4; j++)
+                            {
+                                if (j == answer)
+                                    continue;
+                                else
+                                {
+                                    var id;
+                                    do
+                                        id = Math.floor(Math.random() * data.length);
+                                    while ($.inArray($scope.data[id].hiragana, temp) > -1);
+                                }
+                                temp[j] = $scope.data[id].hiragana;
+                            }
+                            $scope.choices.push(temp);
+                        }
                     });
+                
+                $scope.lessonId = $routeParams.lessonId;
+                $scope.partId = $routeParams.partId;
+                $scope.gameObject = {"life":3};
+
+                $scope.removeLife = function()
+                {
+                    $scope.gameObject.life--;
+                    if ($scope.gameObject.life == 0)
+                    {
+                        alert("Game over");
+                    }
+                };
+
+                $scope.selected = -1;
+
+                $scope.select = function(id, btn)
+                {
+                    if ($scope.selected != btn)
+                    {
+                        $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
+                        if ($scope.selected != -1)
+                            $("div#" + id + " button[name='btn" + $scope.selected + "']").attr("class", 'btn btn-default');
+                        $scope.selected = btn;
+                    }
+                    else
+                    {
+                        $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-default');
+                        $scope.selected = -1;
+                    }
+                };
+
+                $scope.check = function(id)
+                {
+                    if ($scope.selected == -1)
+                        return;
+                    if ($scope.selected == $scope.answer[id])
+                    {
+                        if (id < $scope.data.length - 1)
+                            $("#listenWizard").smartWizard('goForward');
+                        else
+                            alert("Complete!");
+                        $scope.selected = -1;
+                    }
+                    else
+                    {
+                        $scope.removeLife();
+                    }
+                };
+
             });
 
             tplController.controller('listenCtrl',function($scope,$routeParams,$http){
