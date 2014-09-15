@@ -17,6 +17,7 @@
 
         <script type="text/javascript" src="../../js/index.js"></script>
         <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
+                <script type="text/javascript" src="../../spec/lib/jquery-ui.js"></script>
         <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
         <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
 
@@ -28,152 +29,20 @@
     </head>
     <body>
         <div class="app row" id="dashboard">
-            <div id="left-sidebar"class="col-md-2 col-sm-2 col-xs-2">
-                <div id="site-lang">
-                    <span id="vi">                    
-                    </span>
-                    <span id="en">                    
-                    </span>
-                </div>
-                <div id="logo">
-                  <img src="../../img/logo.png" alt="akira-logo" class="img-responsive" />
-                </div>
-                <div class="panel-group" id="accordion">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" data-i18n="menu.japanese-n5">
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
-                      <div class="panel-body">
-                        <ul>
-                            <li>
-                                <a href="../kana" data-i18n="menu.kana"></a>
-                            </li>
-                            <li>
-                                <a href="../totaln5" data-i18n="menu.total-n5"></a>
-                            </li>
-                            <li>
-                                <a href="../kanjin5" data-i18n="menu.kanji-n5"></a>
-                            </li>
-                            <li>
-                                <a href="../testn5" data-i18n="menu.test-n5"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" data-i18n="menu.japanese-n4">
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse">
-                      <div class="panel-body">
-                         <ul>
-                            <li>
-                                <a href="../totaln4" data-i18n="menu.total-n4"></a>
-                            </li>
-                            <li>
-                                <a href="../kanjin4" data-i18n="menu.kanji-n4"></a>
-                            </li>
-                            <li>
-                                <a href="../testn4" data-i18n="menu.test-n4"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" data-i18n="menu.mobi">                          
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseThree" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                            <li>
-                                <a href="../android" data-i18n="menu.android"></a>
-                            </li>
-                            <li>
-                               <a href="../ios" data-i18n="menu.ios"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="social">
-                  <div class="fb">
-                    <i class="fa fa-facebook fa-2x"></i>
-                  </div>
-                  <div class="gg">
-                    <i class="fa fa-youtube fa-2x"></i>
-                  </div>
-                </div>
+            <div id="left-sidebar"class="col-md-2 col-sm-2 col-xs-2"  ng-include src="'../../view/common/menu.html'">
             </div>
             <div id="content" class="col-md-7 col-sm-7 col-xs-7">
                 <div ng-view></div> 
             </div>
             <div id="right-sidebar" class="col-md-3 col-sm-3 col-xs-3">
-                <div class="row" id="profile">
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                        <img src="" alt="xxx" class="img-thumbnail"/>
-                    </div>
-                    <div class="col-md-10 col-sm-10 col-xs-10">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 username">
-                                <span>Đinh Ngọc Anh</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                Day left: 200
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                <button type="button" class="btn btn-default">
-                                  <!--  Star -->
-                                <i class="fa fa-plus"></i> Redeem code
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="progress level">
-                                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                    60%
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                               <div class="progress mentor">
-                                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                    60%
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Custom Akira profile directive -->
+                <akiraprofile></akiraprofile>
 
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-sm-12">
-                        Leaderboard
-                    </div>
-                </div>
+                <!-- Custom Akira leaderboard directive -->
+                <akirarank></akirarank>
             </div>
-
         </div>
         
-     
         <script type="text/javascript">
             app.initialize();
             
@@ -287,7 +156,6 @@
                return {
                     restrict: 'A'
                 };
-
             })
             .directive('ngRepeatShuffle',function(){
                 var id = setInterval(function () {
@@ -311,11 +179,7 @@
                     $('#grammarListenWizard .buttonPrevious').hide();
                     $('#grammarListenWizard .buttonFinish').hide();
                 },200);
-                clearInterval();
-               
-               return {
-                    restrict: 'A'
-                };                 
+                clearInterval();                                 
             })
             .directive('grammarChoiceDirective',function(){
                 setInterval(function () {
@@ -333,15 +197,61 @@
                return {
                     restrict: 'A'
                 };                 
+            })
+            .directive('akirarank',function($http){
+                var urlStr="http://akira.edu.vn/wp-content/plugins/akira-api/akira_rank.php";
+                function link(scope, element, attrs) {
+                    $http({method:"GET",url:urlStr})
+                        .success(function(data,status){
+                           scope.rank= data;
+                        });
+                }
+                return {
+                    restrict: 'E',
+                    link:link,
+                    templateUrl: '../../view/common/leaderboard.html'
+                };
+            })
+            .directive('akiraprofile',function(){
+                localStorage.setItem("binding","test");
+                function link(scope, element, attrs) {
+                    scope.infomation=localStorage.getItem("binding");
+                }
+                return {
+                    restrict: 'E',
+                    link:link,
+                    templateUrl: '../../view/common/profileoverview.html'
+                };
+            })
+            .directive('akiraWizard',function(){
+                
+                function link(scope, element, attrs) {
+                    setInterval(function () {
+                        $('#'+ attrs.id).smartWizard({
+                            enableAllSteps : true,
+                            includeFinishButton : false,
+                            labelNext:"Check",
+                            onLeaveStep: grammarChoiceLeaveStep
+                        });
+                        $('#'+ attrs.id+' .buttonPrevious').hide();
+                        $('#'+ attrs.id+' .buttonFinish').hide();
+                    },200);
+                    clearInterval();
+                }
+
+                return {
+                    restrict: 'A',
+                    link:link
+                };                 
             });
 
             var tplController = angular.module('tplControllers',[]);
 
-            tplController.controller('mainCtrl',function($scope,$routeParams){
+            tplController.controller('mainCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
             });
 
-            tplController.controller('subCtrl',function($scope,$routeParams){
+            tplController.controller('subCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId = 1;
             });

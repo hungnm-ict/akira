@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="listenWizard" class="swMain akiradirective">
+<div id="writeWizard" class="swMain" akira-wizard="writeWizard">
 	<ul>
 		 <li ng-repeat="(key, value) in data">
 	        <a ng-href="#step-{{key}}" click="partId={{key}}">
@@ -33,7 +33,7 @@
 				<img ng-src="../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-thumbnail">
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-6">
-				<input class="form-control" id="input-{{key}}"></input>
+				<input class="form-control write-control" id="input-{{key}}"></input>
 			</div>
 		</div>
 
