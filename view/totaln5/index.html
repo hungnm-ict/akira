@@ -111,10 +111,10 @@
                 </div>
                 <div id="social">
                   <div class="fb">
-                    <i class="fa fa-facebook fa-3x"></i>
+                    <i class="fa fa-facebook fa-2x"></i>
                   </div>
                   <div class="gg">
-                    <i class="fa fa-google-plus fa-3x"></i>
+                    <i class="fa fa-youtube fa-2x"></i>
                   </div>
                 </div>
             </div>
@@ -236,7 +236,7 @@
                             templateUrl:'vocab/listen.html',
                             controller: 'listenCtrl'
                         })
-                        .when('/:lessonId/4/choice',{
+                        .when('/:lessonId/:partId/connect',{
                             templateUrl:'vocab/connect.html',
                             controller: 'connectCtrl'
                         })
@@ -289,7 +289,7 @@
                 };
 
             })
-            .directive('ngRepeatShuffle',function(){alert();
+            .directive('ngRepeatShuffle',function(){
                 var id = setInterval(function () {
                     $(".hira-wrapper span").shuffle();
                     $(".vi-wrapper span").shuffle();
@@ -348,7 +348,7 @@
 
 
             /*Vocabulary controller*/
-            tplController.controller('learnCtrl',function($scope,$routeParams){
+            tplController.controller('learnCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
 
@@ -359,7 +359,7 @@
                     });
             });
 
-            tplController.controller('pictureCtrl',function($scope,$routeParams){
+            tplController.controller('pictureCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId = $routeParams.partId;
 
@@ -381,7 +381,6 @@
                     });
             });
 
-            /*AnhDN*/
             tplController.controller('listenCtrl',function($scope,$routeParams,$http){
                 var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId +  "/sub" + $routeParams.partId +"/json/default.json";
                 $http({method: "GET", url: urlStr}).
@@ -408,7 +407,6 @@
                         alert("Game over");
                     }
                 };
-
             });
 
             tplController.controller('connectCtrl',function($scope,$routeParams,$http){
@@ -427,19 +425,20 @@
                         alert("Game over");
                     }
                 };
-
-
             });
 
-            tplController.controller('writeCtrl',function($scope,$routeParams){
+            tplController.controller('writeCtrl',function($scope,$routeParams,$http){
                 $scope.lessonId=$routeParams.lessonId;
                 $scope.partId= $routeParams.partId;
 
-                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
+                var urlStr="../../data/totaln5/data/vocab/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = data;
                     });
+                    $scope.gameObject = {
+                        "life":3
+                    };  
             });
 
             /*Grammar controller*/

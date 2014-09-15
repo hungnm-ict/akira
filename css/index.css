@@ -46,7 +46,7 @@ body{
     background:#FFFFFF;
     border-radius: 50%;
     height: 160px;
-    margin: 0px auto;
+    margin: 24px auto;
     padding-top: 35px;
     width: 160px;
 
@@ -223,6 +223,12 @@ position: relative;
     text-transform: uppercase;
     /* width: 15%; */
 }
+
+#left-sidebar .panel-title>a{
+    display: inline-block;
+    width: 100%;
+}
+
 #left-sidebar a:hover{
     text-decoration: none;
 }
@@ -242,7 +248,16 @@ position: relative;
 
 #left-sidebar li a{
     color: white;
+    display: inline-block;
+    padding: 6px;
+    width: 100%;
 }
+
+#left-sidebar .panel-body{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 #left-sidebar .panel div{
     background-color: #344C8C !important;
 }
@@ -512,11 +527,11 @@ background-color: transparent !important;
     background: white;
     border-radius: 50%;
     display: inline-block;
-    line-height: 105px;
+    line-height: 75px;
     margin: 0px 6px;
-    height: 80px;
+    height: 60px;
     text-align: center;
-    width: 80px;
+    width: 60px;
 
 }
 
@@ -614,6 +629,7 @@ background-color: transparent !important;
 
 #profile{
     border: 2px solid #344C8C;
+    padding: 12px;
 }
 
 .progress.level .progress-bar{
@@ -627,7 +643,6 @@ background-color: transparent !important;
 .username{
     font-size: 20px;
     font-weight: bold;
-    col
 }
 
 .hira-wrapper span, .vi-wrapper span{
@@ -709,13 +724,17 @@ a:hover{
 .failed .fa-check{
     display: none;
 }
-
+/* 
 .swMain {
     height: auto;
     width: auto;
-}
+} */
 
-.swMain .content{
+/* .swMain .content{
     height: auto !important;
     width: auto !important;
+} */
+
+.failed{
+    background: red;
 }
