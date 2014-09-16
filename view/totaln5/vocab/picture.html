@@ -1,4 +1,4 @@
-<div id="listenWizard" class="swMain akiradirective">
+<div id="listenWizard" class="swMain akiradirective pictureWizard">
 	<ul>
 	 	<li ng-repeat="(key, value) in data">
 	        <a ng-href="#step-{{key}}" click="partId={{key}}">
@@ -8,34 +8,57 @@
 	        </a>
       	</li>
 	</ul>
-	<span class="life-{{gameObject.life}}">
-		<i class="fa fa-heart fa-3x"></i>
-		<i class="fa fa-heart fa-3x"></i>
-		<i class="fa fa-heart fa-3x"></i>
-	</span> 
+	<span class="row">
+		<div class="col-md-8 col-sm-8 col-xs-8">
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
+			<span class="life-{{gameObject.life}}">
+				<i class="fa fa-heart fa-3x"></i>
+				<i class="fa fa-heart fa-3x"></i>
+				<i class="fa fa-heart fa-3x"></i>
+			</span> 
+		</div>
+	</span>
 	<div ng-repeat="(key,val) in data" id="step-{{key}}">
-		<div class="panel panel-default">
-			<div class="panel-body h2 text-center">
-				{{val.hiragana}}
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3" style="text-align:center;">
+				<h1>{{val.hiragana}}</h1>	
+				<h2>{{val.kanji}}</h2>
 			</div>
 		</div>
-		<div id="{{key}}">
-			<button type="button" ng-click = "select(key, 0)" class="btn btn-default" name="btn0">
-				<img src = "../../data/totaln5/lesson{{lessonId}}/sub{{partId}}/picture/200/{{choices[key][0]}}.png">
-			</button>
-			<button type="button" ng-click = "select(key, 1)" class="btn btn-default" name="btn1">
-				<img src = "../../data/totaln5/lesson{{lessonId}}/sub{{partId}}/picture/200/{{choices[key][1]}}.png">
-			</button>
-			<button type="button" ng-click = "select(key, 2)" class="btn btn-default" name="btn2">
-				<img src = "../../data/totaln5/lesson{{lessonId}}/sub{{partId}}/picture/200/{{choices[key][2]}}.png">
-			</button>
-			<button type="button" ng-click = "select(key, 3)" class="btn btn-default" name="btn3">
-				<img src = "../../data/totaln5/lesson{{lessonId}}/sub{{partId}}/picture/200/{{choices[key][3]}}.png">
-			</button>
-			<button type="button" ng-click="check(key)" class="btn btn-default">
-				Check
-			</button>
+		<div id="{{key}}" class="picture-wrapper row">
+			<div class="col-md-4 col-sm-4 col-xs-4">
+				<button type="button" ng-click = "select(key, 0)" class="btn btn-default" name="btn0">
+					<img ng-src = "../../data/totaln5/data/vocab/image/{{choices[key][0]}}.png" class="img-thumbnail">
+				</button>
+				<h3>1. {{choices[key][0]}}</h3>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-4">
+				<button type="button" ng-click = "select(key, 1)" class="btn btn-default" name="btn1" >
+					<img ng-src = "../../data/totaln5/data/vocab/image/{{choices[key][1]}}.png" class="img-thumbnail">
+				</button>
+				<h3>2. {{choices[key][1]}}</h3>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-4">
+				<button type="button" ng-click = "select(key, 2)" class="btn btn-default" name="btn2" >
+					<img ng-src = "../../data/totaln5/data/vocab/image/{{choices[key][2]}}.png" class="img-thumbnail">
+				</button>
+				<h3>3. {{choices[key][2]}}</h3>
+			</div> 
+		</div>
+		<div class="row" id="aki-answer-wrapper">
+			<div class="col-md-10 col-sm-10 col-xs-10">
+			</div>
+			<div class="col-md-2 col-sm-2 col-xs-2">
+				<button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg btn-pr">
+					Check
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+  changeLang();
+</script>
 

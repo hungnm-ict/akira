@@ -70,11 +70,11 @@
                 return $(shuffled);         
             };
 
-            $('#wizard').smartWizard({
+          /*  $('#wizard').smartWizard({
               enableAllSteps: true,
               includeFinishButton: false
             });
-            $('#wizard .actionBar').hide();
+            $('#wizard .actionBar').hide();*/
 
             var tpl= angular.module('demo',['ngRoute','tplControllers']);
 
@@ -272,7 +272,7 @@
 
             tplController.controller('pictureCtrl',function($scope, $routeParams, $http)
             {
-                var urlStr="../../data/totaln5/lesson" + $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
+                var urlStr="../../data/totaln5/data/vocab/json/default.json";
 
                 $scope.answer = [];
                 $scope.choices = [];
@@ -284,11 +284,11 @@
 
                         for (i = 0; i < $scope.data.length; i++)
                         {
-                            var answer = Math.floor(Math.random() * 4);
+                            var answer = Math.floor(Math.random() * 3);
                             $scope.answer[i] = answer;
                             var temp = [];
                             temp[answer] = $scope.data[i].short;
-                            for (j = 0; j < 4; j++)
+                            for (j = 0; j < 3; j++)
                             {
                                 if (j == answer)
                                     continue;
@@ -303,8 +303,11 @@
                             }
                             $scope.choices.push(temp);
                         }
+
+                        console.log($scope.data);
+                        console.log($scope.choices);
                     });
-                
+
                 $scope.lessonId = $routeParams.lessonId;
                 $scope.partId = $routeParams.partId;
                 $scope.gameObject = {"life":3};
@@ -370,11 +373,11 @@
 
                         for (i = 0; i < $scope.data.length; i++)
                         {
-                            var answer = Math.floor(Math.random() * 4);
+                            var answer = Math.floor(Math.random() * 3);
                             $scope.answer[i] = answer;
                             var temp = [];
                             temp[answer] = $scope.data[i].hiragana;
-                            for (j = 0; j < 4; j++)
+                            for (j = 0; j < 3; j++)
                             {
                                 if (j == answer)
                                     continue;
@@ -573,7 +576,7 @@
                     }
                 };
 
-                var urlStr="../../data/totaln5/data/grammar/json/type1.json";
+                var urlStr="../../data/totaln5/data/grammar/json/type3.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
                         $scope.data = filter(data,'id',$routeParams.lessonId);

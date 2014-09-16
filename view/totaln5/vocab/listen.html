@@ -9,10 +9,10 @@
 	        </a>
 	      </li>
 	</ul>
-	<span class="row">
+	<span class="row" >
 		<div class="col-md-8 col-sm-8 col-xs-8">
 		</div>
-		<div class="col-md-4 col-sm-4 col-xs-4">
+		<div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
 			<span class="life-{{gameObject.life}}">
 				<i class="fa fa-heart fa-3x"></i>
 				<i class="fa fa-heart fa-3x"></i>
@@ -21,15 +21,19 @@
 		</div>
 	</span>
 	<div ng-repeat="(key,val) in data" id="step-{{key}}">
-		<audio controls id="{{key}}" style="display:none;">
-		  <source type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio>  
-		<div  ng-click="playSound(key)" class="btn-play">
-			<i class="fa fa-play fa-4x" ></i>
+		<div class="wrapper">
+			
+			<audio controls id="{{key}}" style="display:none;">
+			  <source type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>  
+			<div  ng-click="playSound(key)" class="btn-play">
+				<i class="fa fa-play fa-4x" ></i>
+			</div>
+			<input class="form-control akira-input" id="input-{{key}}"></input>
+			<input type="hidden" id="ans-{{key}}" value="{{val.hiragana}}">
 		</div>
-		<input class="form-control" id="input-{{key}}"></input>
-		<input type="hidden" id="ans-{{key}}" value="{{val.hiragana}}">
+
 		<div class="row" id="mess-{{key}}" style="display:none;">
 			<div class="col-md-4 col-xs-4 col-sm-4">
 				<i class="fa fa-check fa-4x"></i>
@@ -53,3 +57,7 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+  changeLang();
+</script>

@@ -35,7 +35,9 @@
 		"choose-time" : "Chọn thời gian luyện thi",
 		"listen-compre" : "Nghe hiểu",
 		"mins"			: "Phút",
-		"start"			: "Bắt đầu"
+		"start"			: "Bắt đầu",
+		"check"			: "Kiểm tra",
+		"next"			: "Tiếp tục"
 	},
 	"leaderboard":{
 		"leaderboard" : "Bảng xếp hạng",

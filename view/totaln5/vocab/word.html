@@ -1,4 +1,4 @@
-<div id="listenWizard" class="swMain akiradirective">
+<div id="listenWizard" class="swMain akiradirective wordWizard">
 	<ul>
 	 	<li ng-repeat="(key, value) in data">
 	        <a ng-href="#step-{{key}}" click="partId={{key}}">
@@ -8,30 +8,52 @@
 	        </a>
       	</li>
 	</ul>
-	<span class="life-{{gameObject.life}}">
-		<i class="fa fa-heart fa-3x"></i>
-		<i class="fa fa-heart fa-3x"></i>
-		<i class="fa fa-heart fa-3x"></i>
-	</span> 
+	<span class="row">
+		<div class="col-md-8 col-sm-8 col-xs-8">
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-4">
+			<span class="life-{{gameObject.life}}">
+				<i class="fa fa-heart fa-3x"></i>
+				<i class="fa fa-heart fa-3x"></i>
+				<i class="fa fa-heart fa-3x"></i>
+			</span> 
+		</div>
+	</span>
 	<div ng-repeat="(key,val) in data" id="step-{{key}}">
-		<img src = "../../data/totaln5/lesson{{lessonId}}/sub{{partId}}/picture/200/{{val.short}}.png">
-		<div id="{{key}}">
-			<button type="button" ng-click = "select(key, 0)" class="btn btn-default" name="btn0">
-				{{choices[key][0]}}
-			</button>
-			<button type="button" ng-click = "select(key, 1)" class="btn btn-default" name="btn1">
-				{{choices[key][1]}}
-			</button>
-			<button type="button" ng-click = "select(key, 2)" class="btn btn-default" name="btn2">
-				{{choices[key][2]}}
-			</button>
-			<button type="button" ng-click = "select(key, 3)" class="btn btn-default" name="btn3">
-				{{choices[key][3]}}
-			</button>
-			<button type="button" ng-click="check(key)" class="btn btn-default">
-				Check
-			</button>
+		<div  class="row" style="text-align:center;">
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<img src = "../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-thumbnail">
+				<h3>{{val.vie}}</h3>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<div id="{{key}}" >
+					<button type="button" ng-click = "select(key, 0)" class="btn btn-default akr-btn" name="btn0">
+						1. {{choices[key][0]}}
+					</button>
+					<br>
+					<button type="button" ng-click = "select(key, 1)" class="btn btn-default akr-btn" name="btn1">
+						2. {{choices[key][1]}}
+					</button>
+					<br>
+					<button type="button" ng-click = "select(key, 2)" class="btn btn-default akr-btn" name="btn2">
+						3. {{choices[key][2]}}
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="aki-answer-wrapper">
+			<div class="col-md-10 col-sm-10 col-xs-10">
+			</div>
+			<div class="col-md-2 col-sm-2 col-xs-2">
+				<button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg btn-pr">
+					Check
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+  changeLang();
+</script>
 

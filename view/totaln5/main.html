@@ -94,10 +94,15 @@
 </div>
 
 <script type="text/javascript">
+  
   changeLang();
-  $('#wizard1').smartWizard({
-    enableAllSteps: true,
-    includeFinishButton: false
-  });
-  $('#wizard1 .actionBar').hide();
+  var intervalId = setInterval(function(){
+    $('#wizard1').smartWizard({
+      enableAllSteps: true,
+      includeFinishButton: false
+    });
+    $('#wizard1 .actionBar').hide();
+    clearInterval(intervalId);
+  },200);
+
 </script> 

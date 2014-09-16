@@ -46,11 +46,15 @@ body{
     background:#FFFFFF;
     border-radius: 50%;
     height: 160px;
-    margin: 24px auto;
-    padding-top: 35px;
+    margin: 30px auto;
+    padding: 12px;
     width: 160px;
-
 }
+
+#logo img{
+        margin-top: 30px;
+
+    }
 
 #sidebar{
     text-align: center;
@@ -264,11 +268,13 @@ position: relative;
 
 #content{
     display: inline-block;
+    padding-top: 48px;
     /* width: 65%; */
 }
 
 #right-sidebar{
     display: inline-block;
+    padding-top: 68px;
     /* width: 20%; */
 }
 
@@ -388,6 +394,10 @@ position: relative;
 }
 
 #leaderboard{
+    margin-top: 24px;
+    background: white;
+    border: 2px solid #344C8C;
+    border-radius: 5px;
     text-align: center;   
 }
 
@@ -629,6 +639,7 @@ background-color: transparent !important;
 
 #profile{
     border: 2px solid #344C8C;
+    border-radius: 5px;
     padding: 12px;
 }
 
@@ -687,7 +698,8 @@ a:hover{
 }
 
 .actionBar{
-    height: 130px !important;
+    margin-top: 0px !important;
+    height: 150px !important;
 }
 
 
@@ -728,14 +740,12 @@ a:hover{
 .swMain {
     min-width: 100%;
     height: auto;
-    overflow: scroll;
     width: auto;
 } 
 
 
  .swMain .content{
     min-width: 100%;
-    overflow: scroll;
     height: auto !important;
     width: auto !important;
 } 
@@ -765,4 +775,120 @@ a:hover{
 #writeWizard .write-control{
     font-size:10em;
     height: 358px;
+}
+
+.content{
+    background: #FFFFFF !important;
+    border-top: 0px !important;
+    border-top-left-radius:0px !important;
+    border-top-right-radius:0px !important;
+    min-height: inherit;
+    padding: 48px 0px 0px 0px !important;
+}
+
+.content .row{
+    padding-bottom: 12px;
+    padding-top:12px;
+}
+
+.content .wrapper{
+    padding: 0px 48px;
+}
+
+#star{
+    background: #FFFFFF;
+    border: 1px solid #CCC;
+    border-bottom: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-right: 12px;
+}
+
+#life-wrapper{
+    text-align: right;
+}
+
+.akira-input{
+    height: 3em;
+    font-size: 3em;
+    margin: 24px 0px;
+    text-align: center;
+}
+
+#writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizad{
+    background: #ffffff;
+    border: 2px solid #344c8c;
+    border-radius: 5px;
+
+}
+
+.img-thumbnail{
+    height: 200px !important;
+    width: 200px !important;
+}
+
+.picture-wrapper{
+    text-align: center;
+}
+
+.akr-btn-check{
+    background: #568ED4;
+    border: 0px;
+    border-radius: 30px;
+    color: #FFFFFF;
+    /*height: 60px;*/
+    /*text-transform: uppercase;*/
+    /*width: 140px;*/
+}
+
+#aki-answer-wrapper{
+    background: #F2F2F2;
+    height: 150px;
+    line-height: 150px;
+    margin-top: 50px;
+}
+
+.pictureWizard .actionBar,.wordWizard .actionBar{
+    display: none !important;
+}
+
+#wizard1 .progress{
+    margin: 4px auto;
+    width: 200px !important;
+}
+
+.wordWizard .akr-btn{
+    background: #FFFFFF;
+    border-radius: 25px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    margin:6px;
+    width: 200px;
+
+}
+
+.wordWizard .btn-success{
+    background: #FFFFFF;
+    color: #000000;
+    border-radius: 25px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    margin:6px;
+    width: 200px;
+}
+
+.wordWizard  .btn-default{
+    background: #FFFFFF;
+    border-radius: 25px;
+    height: 50px;
+    font-weight: bold;
+    line-height: 50px;
+    margin:6px;
+    width: 200px;
+}
+
+#leaderboardWizard .content{
+    border: 0px;
 }

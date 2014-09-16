@@ -105,7 +105,8 @@ function filter(data,key,value){
     return uniqueGroups;
 }
 
-function gameOver(uid,xp){
+function gameOver(xp){
+    saveScore(xp);
     alert("Game over");
 }
 
@@ -178,9 +179,17 @@ function genAnswers(data,ansKey,numberOfAns){
 function genAnswers2(data){
     var uniqueGroups = [];
     $.each(data, function(idx,val) {
-        var obj = data[idx]["hiragana"].trim().replace(/ /g,"").split("") ;
-
+        var obj = data[idx]["hiragana"].trim().replace(/ /g,",").split(",") ;
         uniqueGroups[idx]=akiraShuffle(obj);
     });
     return uniqueGroups;   
+}
+
+
+function saveScore(xp){
+  var uid = 0;
+    $.getJSON( "http://akira.edu.vn/wp-content/plugins/akira-api/akira_score.php",{ id: uid, score: xp })
+    .done(function( data ) {
+      console.info("Score saved");
+    });
 }
