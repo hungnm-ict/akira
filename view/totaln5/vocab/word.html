@@ -8,7 +8,7 @@
 	        </a>
       	</li>
 	</ul>
-	<span class="row">
+	<span class="row" id="akr-life-wrapper">
 		<div class="col-md-8 col-sm-8 col-xs-8">
 		</div>
 		<div class="col-md-4 col-sm-4 col-xs-4">
@@ -28,23 +28,23 @@
 			<div class="col-md-6 col-sm-6 col-xs-6">
 				<div id="{{key}}" >
 					<button type="button" ng-click = "select(key, 0)" class="btn btn-default akr-btn" name="btn0">
-						1. {{choices[key][0]}}
+						<span class="akr-key-2">1</span> {{choices[key][0]}}
 					</button>
 					<br>
 					<button type="button" ng-click = "select(key, 1)" class="btn btn-default akr-btn" name="btn1">
-						2. {{choices[key][1]}}
+						<span class="akr-key-2">2</span> {{choices[key][1]}}
 					</button>
 					<br>
 					<button type="button" ng-click = "select(key, 2)" class="btn btn-default akr-btn" name="btn2">
-						3. {{choices[key][2]}}
+						<span class="akr-key-2">3</span> {{choices[key][2]}}
 					</button>
 				</div>
 			</div>
 		</div>
 		<div class="row" id="aki-answer-wrapper">
-			<div class="col-md-10 col-sm-10 col-xs-10">
+			<div class="col-md-8 col-sm-8 col-xs-8">
 			</div>
-			<div class="col-md-2 col-sm-2 col-xs-2">
+			<div class="col-md-3 col-sm-3 col-xs-3">
 				<button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg btn-pr">
 					Check
 				</button>

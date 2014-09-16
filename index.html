@@ -22,7 +22,7 @@
         <script src="spec/lib/i18next/i18next-1.7.4.js"></script>
     </head>
     <body>
-        <div class="app" id="index">
+        <div class="app container-fluid" id="index">
             <div id="left-sidebar">
                 <div id="site-lang">
                     <span id="vi">                    
@@ -43,7 +43,7 @@
                             <button class="btn-group facebook" onclick="onFbLoginClick();">Facebook</button>   
                             <button class="btn-group google" onclick="onGPLoginClick();">Google</button>   
                         </div>
-                        <button class="btn btn-primary">Học thử miễn phí</button>   
+                        <!-- <button class="btn btn-primary">Học thử miễn phí</button>    -->
                     <!-- </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
                     </div>
@@ -93,11 +93,11 @@
                     url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
                     data: {type:"facebook_user_id",id:response.id}
                 }).done(function(success){
-                    sessionStorage.setItem("authorized","true");
-                    sessionStorage.setItem("user",JSON.stringify(success));
-                    window.location.href="dashboard.html";
+                    localStorage.setItem("authorized","true");
+                    localStorage.setItem("user",JSON.stringify(success));
+                    window.location.href="view/totaln5";
                 }).fail(function(error){
-                    sessionStorage.setItem("authorized","false");
+                    localStorage.setItem("authorized","false");
                 });
             }
 
@@ -149,25 +149,11 @@
 
 
             function gSignin(){
-            var additionalParams = {
+                var additionalParams = {
                     'callback': ajaxGoogleLogin
                 };
                 gapi.auth.signIn(additionalParams);
             }
-
-            $("#language").popover({
-                html:true,
-                content:$(".popover-language").html(),
-                placement:'right',
-                trigger:'click'
-            });
-
-            $("#login").popover({
-                html:true,
-                content:$(".popover-login").html(),
-                placement:'right',
-                trigger:'click'
-            });
         </script>
     </body>
 </html>

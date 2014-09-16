@@ -1,6 +1,6 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
 <div id="grammarListenWizard" class="swMain grammarListenDirective">
-	<ul>
+	<ul class="hide">
 		 <li ng-repeat="(key, value) in data">
 	        <a ng-href="#step-{{key}}" click="partId={{key}}">
 	          <label class="stepNumber">
@@ -9,10 +9,13 @@
 	        </a>
 	      </li>
 	</ul>
-	<span class="row">
+
+	<!-- Life wrapper -->
+    <span class="row" id="akr-life-wrapper">
 		<div class="col-md-8 col-sm-8 col-xs-8">
+			{{data.length}}
 		</div>
-		<div class="col-md-4 col-sm-4 col-xs-4">
+		<div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
 			<span class="life-{{gameObject.life}}">
 				<i class="fa fa-heart fa-3x"></i>
 				<i class="fa fa-heart fa-3x"></i>

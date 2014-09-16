@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -28,7 +28,7 @@
         </style>
     </head>
     <body>
-        <div class="app row" id="dashboard">
+        <div class="app row container-fluid" id="dashboard">
             <div id="left-sidebar"class="col-md-2 col-sm-2 col-xs-2"  ng-include src="'../../view/common/menu.html'">
             </div>
             <div id="content" class="col-md-7 col-sm-7 col-xs-7">
@@ -69,12 +69,6 @@
          
                 return $(shuffled);         
             };
-
-          /*  $('#wizard').smartWizard({
-              enableAllSteps: true,
-              includeFinishButton: false
-            });
-            $('#wizard .actionBar').hide();*/
 
             var tpl= angular.module('demo',['ngRoute','tplControllers']);
 
@@ -272,11 +266,14 @@
 
             tplController.controller('pictureCtrl',function($scope, $routeParams, $http)
             {
-                var urlStr="../../data/totaln5/data/vocab/json/default.json";
-
+                $scope.lessonId = $routeParams.lessonId;
+                $scope.partId = $routeParams.partId;
+                $scope.gameObject = {"life":3 };
+                $scope.selected = -1;
                 $scope.answer = [];
                 $scope.choices = [];
 
+                var urlStr="../../data/totaln5/data/vocab/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status)
                     {
@@ -303,28 +300,23 @@
                             }
                             $scope.choices.push(temp);
                         }
-
-                        console.log($scope.data);
-                        console.log($scope.choices);
                     });
-
-                $scope.lessonId = $routeParams.lessonId;
-                $scope.partId = $routeParams.partId;
-                $scope.gameObject = {"life":3};
 
                 $scope.removeLife = function()
                 {
-                    $scope.gameObject.life--;
+                    $scope.gameObject.life = $scope.gameObject.life - 1;
+                    console.info($scope.gameObject.life);
                     if ($scope.gameObject.life == 0)
                     {
-                        alert("Game over");
+                        gameOver();
                     }
                 };
 
-                $scope.selected = -1;
-
                 $scope.select = function(id, btn)
                 {
+                    $(".imageSelected").removeClass("imageSelected");
+                    $("#img-"+id+"-"+btn).addClass("imageSelected");
+                    
                     if ($scope.selected != btn)
                     {
                         $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
@@ -341,6 +333,7 @@
 
                 $scope.check = function(id)
                 {
+                    console.log(id);
                     if ($scope.selected == -1)
                         return;
                     if ($scope.selected == $scope.answer[id])
@@ -403,7 +396,7 @@
                     $scope.gameObject.life--;
                     if ($scope.gameObject.life == 0)
                     {
-                        alert("Game over");
+                        gameOver();
                     }
                 };
 
@@ -415,12 +408,12 @@
                     {
                         $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
                         if ($scope.selected != -1)
-                            $("div#" + id + " button[name='btn" + $scope.selected + "']").attr("class", 'btn btn-default');
+                            $("div#" + id + " button[name='btn" + $scope.selected + "']").attr("class", 'btn btn-default akr-btn');
                         $scope.selected = btn;
                     }
                     else
                     {
-                        $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-default');
+                        $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-default akr-btn');
                         $scope.selected = -1;
                     }
                 };
@@ -449,7 +442,7 @@
                 var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId +  "/sub" + $routeParams.partId +"/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
-                        $scope.data = data;
+                        $scope.data = akiraShuffle(data);
                     });
                 
                 $scope.lessonId=$routeParams.lessonId;
@@ -460,7 +453,7 @@
 
                 $scope.playSound =function(id){
                     var audioSrc = document.getElementById(id).getElementsByTagName('source');
-                    $("audio#"+ id + " source").attr("src","../../data/totaln5/lesson"+$routeParams.lessonId+"/sub"+ $routeParams.partId + "/audio/"+ $scope.data[id].short+".mp3");
+                    $("audio#"+ id + " source").attr("src","../../data/totaln5/data/vocab/audio/"+ $scope.data[id].short+".mp3");
                     document.getElementById(id).load();
                     document.getElementById(id).play();
                 };
@@ -468,16 +461,29 @@
                 $scope.removeLife =function(){
                     $scope.gameObject.life --;
                     if($scope.gameObject.life == 0){
-                        alert("Game over");
+                        gameOver();
                     }
                 };
+
+                $scope.check = function (id){
+                    var ret = akiraStepValidation(id);
+                    if(!ret){
+                        $scope.removeLife();
+                    }
+                    $("#btn-check-"+id).val("Next");
+                    $("#btn-check-"+id).attr("ng-click", "goForward("+id+")")
+                }
+
+                $scope.goForward = function(id){
+                    $("#listenWizard").smartWizard('goForward');
+                }
             });
 
             tplController.controller('connectCtrl',function($scope,$routeParams,$http){
                 var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
-                        $scope.data = data;
+                        $scope.data = akiraShuffle(data);
                     });
 
                 $scope.lessonId=$routeParams.lessonId;
@@ -498,11 +504,25 @@
                 var urlStr="../../data/totaln5/data/vocab/json/default.json";
                 $http({method: "GET", url: urlStr}).
                     success(function(data, status) {
-                        $scope.data = data;
+                        $scope.data = akiraShuffle(data);
                     });
                     $scope.gameObject = {
                         "life":3
                     };  
+
+                $scope.removeLife =function(){
+                    $scope.gameObject.life --;
+                    if($scope.gameObject.life == 0){
+                        alert("Game over");
+                    }
+                };
+
+                $scope.check = function (id){
+                    var ret = akiraStepValidation(id);
+                    if(!ret){
+                        $scope.removeLife();
+                    }
+                }
             });
 
             /*Grammar controller*/
@@ -627,9 +647,22 @@
             });
             
             angular.bootstrap(document,['demo']);
-
-            
-
         </script>
+        <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Game over</h4>
+                    </div>
+                    <div class="modal-body">
+                        Ban nhan duoc xxx XP
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" >Dong y</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

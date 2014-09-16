@@ -274,7 +274,7 @@ position: relative;
 
 #right-sidebar{
     display: inline-block;
-    padding-top: 68px;
+    padding-top: 48px;
     /* width: 20%; */
 }
 
@@ -476,7 +476,8 @@ background-color: transparent !important;
     width: 0; 
 }
 
-#wordWizard ul.anchor,#learnWizard ul.anchor,#listenWizard ul.anchor,#connectWizard ul.anchor,#writeWizard ul.anchor,#pictureWizard ul.anchor{
+#wordWizard ul.anchor,#learnWizard ul.anchor,#listenWizard ul.anchor,#connectWizard ul.anchor,#writeWizard ul.anchor,#pictureWizard ul.anchor
+{
     display: none;
 }
 
@@ -698,11 +699,8 @@ a:hover{
 }
 
 .actionBar{
-    margin-top: 0px !important;
-    height: 150px !important;
+    display: none !important;
 }
-
-
 
 .hira-wrapper span {
     background: #3873BA;
@@ -729,8 +727,16 @@ a:hover{
     border-color: red;
 }
 
+.success{
+    background: #DCE5F2 !important;
+}
+
 .success .fa-times{
     display: none;
+}
+
+.failed{
+    background: #FDEADB !important;
 }
 
 .failed .fa-check{
@@ -750,9 +756,6 @@ a:hover{
     width: auto !important;
 } 
 
-.failed{
-    background: red;
-}
 
 #leaderboardWizard{
     width: 100%;
@@ -773,8 +776,8 @@ a:hover{
 }
 
 #writeWizard .write-control{
-    font-size:10em;
-    height: 358px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .content{
@@ -783,7 +786,7 @@ a:hover{
     border-top-left-radius:0px !important;
     border-top-right-radius:0px !important;
     min-height: inherit;
-    padding: 48px 0px 0px 0px !important;
+    padding: 0px !important;
 }
 
 .content .row{
@@ -792,7 +795,7 @@ a:hover{
 }
 
 .content .wrapper{
-    padding: 0px 48px;
+    /*padding: 0px 48px;*/
 }
 
 #star{
@@ -827,6 +830,13 @@ a:hover{
     width: 200px !important;
 }
 
+.img-thumbnail-2{
+    border:2px solid #568ED4;
+    border-radius: 5px;
+    height:100%;
+    width: 100%;
+}
+
 .picture-wrapper{
     text-align: center;
 }
@@ -836,16 +846,20 @@ a:hover{
     border: 0px;
     border-radius: 30px;
     color: #FFFFFF;
-    /*height: 60px;*/
-    /*text-transform: uppercase;*/
-    /*width: 140px;*/
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 #aki-answer-wrapper{
-    background: #F2F2F2;
+    background: #CCC;
     height: 150px;
-    line-height: 150px;
+    line-height: 130px;
     margin-top: 50px;
+
+    /*Hotfix issue gap region below this wrapper*/
+    position: relative;
+    bottom: -10px;
 }
 
 .pictureWizard .actionBar,.wordWizard .actionBar{
@@ -857,13 +871,24 @@ a:hover{
     width: 200px !important;
 }
 
+/*Vocab word game*/
+.wordWizard .akr-btn:first-child{
+    margin-top: 0px;
+}
+
+.wordWizard .btn{
+    text-align: left;
+}
+
 .wordWizard .akr-btn{
     background: #FFFFFF;
-    border-radius: 25px;
+    border:2px solid #D9D9D9;
+    border-radius: 5px;
     font-weight: bold;
     height: 50px;
-    line-height: 50px;
+    line-height: 40px;
     margin:6px;
+    /*text-align: left;*/
     width: 200px;
 
 }
@@ -871,24 +896,79 @@ a:hover{
 .wordWizard .btn-success{
     background: #FFFFFF;
     color: #000000;
-    border-radius: 25px;
+    border:2px solid #5182BD;
+    border-radius: 5px;
     font-weight: bold;
     height: 50px;
-    line-height: 50px;
+    line-height: 40px;
     margin:6px;
     width: 200px;
 }
 
 .wordWizard  .btn-default{
     background: #FFFFFF;
-    border-radius: 25px;
+    border:2px solid #D9D9D9;
+    border-radius: 5px;
     height: 50px;
     font-weight: bold;
-    line-height: 50px;
+    line-height: 40px;
     margin:6px;
     width: 200px;
 }
 
+.wordWizard .img-thumbnail,.pictureWizard .img-thumbnail{
+    border : 2px solid #5182BD;
+    border-radius: 5px;
+}
+
 #leaderboardWizard .content{
     border: 0px;
+}
+
+.wordWizard #aki-answer-wrapper{
+    bottom: -70px;
+}
+
+/*Completely renew*/
+#akr-life-wrapper{
+    border-bottom: 1px solid #5182BD;
+    display: block;
+    margin: 24px;
+    padding: 12px 0px;
+}
+
+.akr-key{
+    border:2px solid #5182BD;
+    border-radius: 50%;
+    color: #5182BD;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    width: 36px;
+}
+
+.akr-key-2{
+    /*border:2px solid #5182BD;*/
+    /*border-radius: 50%;*/
+    color: #5182BD;
+    display: inline-block;
+    /*height: 36px;*/
+    /*line-height: 36px;*/
+    padding-right: 24px;
+    text-align: center;
+    vertical-align: middle;
+    /*width: 36px;*/
+}
+.listenWizard #aki-answer-wrapper{
+    bottom: -120px;
+}
+
+.writeWizard #aki-answer-wrapper{
+    bottom: -90px;
+}
+
+.imageSelected{
+    border-color: red !important;
 }

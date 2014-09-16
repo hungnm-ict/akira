@@ -21,7 +21,7 @@ var app = {
     initialize: function() {
         this.bindEvents();
         hasViewPermission();
-        changeLang();
+        changeLang(i18n.lng());
     },
     // Bind Event Listeners
     //
@@ -51,11 +51,14 @@ var app = {
 
 };
 
-function changeLang(){
-    i18n.init({lng:i18n.lng(),resGetPath:'../../locales/__lng__/__ns__.json'},function(){
+function changeLang(code){
+    var item= (code === undefined || code === "" || code === null) ? "vi" : code;
+
+    i18n.init({lng:code,resGetPath:'../../locales/__lng__/__ns__.json'},function(){
       $('body').i18n();
     });     
 }
+
 
 /**
  * Check current user have permission to view current page or not.
@@ -91,6 +94,12 @@ function leaveAStepCallback(obj, context){
   return ret;
 };
 
+/**
+ * Compare two string
+ * @param  {[type]} oldStr [description]
+ * @param  {[type]} newStr [description]
+ * @return {[type]}        [description]
+ */
 function compare(oldStr,newStr){
   return (oldStr.trim().replace(/ /g,"") === newStr.trim().replace(/ /g,""));
 }
@@ -107,7 +116,9 @@ function filter(data,key,value){
 
 function gameOver(xp){
     saveScore(xp);
-    alert("Game over");
+    $(".game-over-modal-sm").modal({
+      keyboard:false
+    });
 }
 
 function grammarChoiceLeaveStep(obj,context){
@@ -120,6 +131,11 @@ function grammarChoiceLeaveStep(obj,context){
   return ret;
 }
 
+/**
+ * Shuffle an array
+ * @param  {[type]} array [description]
+ * @return {[type]}       [description]
+ */
 function akiraShuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex ;
 
@@ -192,4 +208,45 @@ function saveScore(xp){
     .done(function( data ) {
       console.info("Score saved");
     });
+}
+
+/**
+ * Common validation method for answer check
+ * event fired -> get user ans -> compare with correct ans -> show message -> change fired event text & behave.
+ * @param  {[type]} e        [description]
+ * @param  {[type]} wizardId [description]
+ * @return {[type]}          [description]
+ */
+function akiraStepValidation(id){
+  //Get user ans
+  var ans = $("#input-" + id).val();
+  var correct = $("#ans-" + id).val();
+  var message = $("#mess-" + id).html();
+  
+  $(".mess-holder-" + id + " >div").first().html(message);
+  $(".failed").removeClass("failed");
+  $(".success").removeClass("success");
+  if(compare(ans,correct)){
+    $(".mess-holder-" + id).addClass("success");
+    $(".mess-holder-" + id + " >div").first().find(".fa").css("color","green");
+    return true;
+
+  }else{
+    $(".mess-holder-" + id).addClass("failed");
+    $(".mess-holder-" + id + " >div").first().find(".fa").css("color","red");
+    return false;
+
+    // $("#sublife").trigger("click");
+  }
+}
+
+
+/**
+ * Go to next step of the game.
+ * @param  {[type]} e        [description]
+ * @param  {[type]} wizardId [description]
+ * @return {[type]}          [description]
+ */
+function akiraStepForward(e,wizardId){
+
 }
