@@ -37,11 +37,17 @@
 		"mins"			: "Phút",
 		"start"			: "Bắt đầu",
 		"check"			: "Kiểm tra",
-		"next"			: "Tiếp tục"
+		"next"			: "Tiếp tục",
+		"prev"			: "Quay lại",
+		"save"			: "Lưu điểm",
+		"dayleft"		: "Ngày sử dụng"
 	},
 	"leaderboard":{
 		"leaderboard" : "Bảng xếp hạng",
 		"week"		  : "Theo tuần",
 		"all"		  : "Tất cả"
+	},
+	"message":{
+		"anonymous"	: "Đăng nhập để lưu được điểm"
 	}
 }

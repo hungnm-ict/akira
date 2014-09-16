@@ -1,59 +1,70 @@
 <div id="listenWizard" class="swMain akiradirective wordWizard">
-	<ul>
-	 	<li ng-repeat="(key, value) in data">
-	        <a ng-href="#step-{{key}}" click="partId={{key}}">
-	          <label class="stepNumber">
-	            <span>&nbsp;{{key}}</span>
-	          </label>
-	        </a>
-      	</li>
-	</ul>
-	<span class="row" id="akr-life-wrapper">
-		<div class="col-md-8 col-sm-8 col-xs-8">
-		</div>
-		<div class="col-md-4 col-sm-4 col-xs-4">
-			<span class="life-{{gameObject.life}}">
-				<i class="fa fa-heart fa-3x"></i>
-				<i class="fa fa-heart fa-3x"></i>
-				<i class="fa fa-heart fa-3x"></i>
-			</span> 
-		</div>
-	</span>
-	<div ng-repeat="(key,val) in data" id="step-{{key}}">
-		<div  class="row" style="text-align:center;">
-			<div class="col-md-6 col-sm-6 col-xs-6">
-				<img src = "../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-thumbnail">
-				<h3>{{val.vie}}</h3>
-			</div>
-			<div class="col-md-6 col-sm-6 col-xs-6">
-				<div id="{{key}}" >
-					<button type="button" ng-click = "select(key, 0)" class="btn btn-default akr-btn" name="btn0">
-						<span class="akr-key-2">1</span> {{choices[key][0]}}
-					</button>
-					<br>
-					<button type="button" ng-click = "select(key, 1)" class="btn btn-default akr-btn" name="btn1">
-						<span class="akr-key-2">2</span> {{choices[key][1]}}
-					</button>
-					<br>
-					<button type="button" ng-click = "select(key, 2)" class="btn btn-default akr-btn" name="btn2">
-						<span class="akr-key-2">3</span> {{choices[key][2]}}
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="row" id="aki-answer-wrapper">
-			<div class="col-md-8 col-sm-8 col-xs-8">
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-3">
-				<button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg btn-pr">
-					Check
-				</button>
-			</div>
-		</div>
-	</div>
+    <!-- Step navigator -->
+    <ul class="hide">
+        <li ng-repeat="(key, value) in data">
+            <a ng-href="#step-{{key}}" click="partId={{key}}">
+                <label class="stepNumber">
+                    <span>&nbsp;{{key}}</span>
+                </label>
+            </a>
+        </li>
+    </ul>
+
+    <!-- Life wrapper -->
+    <span class="row" id="akr-life-wrapper">
+        <div class="col-md-8 col-sm-8 col-xs-8">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{step/data.length*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/data.length*100}}%;">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <span class="life-{{gameObject.life}}">
+                <i class="fa fa-heart fa-3x"></i>
+                <i class="fa fa-heart fa-3x"></i>
+                <i class="fa fa-heart fa-3x"></i>
+            </span>
+        </div>
+    </span>
+
+    <!-- Step content -->
+    <div ng-repeat="(key,val) in data" id="step-{{key}}">
+        <div class="wrapper">
+            <div class="row" style="text-align:center;">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img src="../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-thumbnail">
+                    <h3>{{val.vie}}</h3>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div id="{{key}}">
+                        <button type="button" ng-click="select(key, 0)" class="btn btn-default akr-btn" name="btn0">
+                            <span class="akr-key-2">1</span>{{choices[key][0]}}
+                        </button>
+                        <br>
+                        <button type="button" ng-click="select(key, 1)" class="btn btn-default akr-btn" name="btn1">
+                            <span class="akr-key-2">2</span>{{choices[key][1]}}
+                        </button>
+                        <br>
+                        <button type="button" ng-click="select(key, 2)" class="btn btn-default akr-btn" name="btn2">
+                            <span class="akr-key-2">3</span>{{choices[key][2]}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mess-holder-{{key}}" id="aki-answer-wrapper">
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg btn-pr">
+                        Check
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
-  changeLang();
+changeLang();
 </script>
-
