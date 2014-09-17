@@ -1,2 +1,1 @@
-//Create rootscope for akira webapps
-angular.module('myApp', []);
+var phonecatApp = angular.module('phonecatApp', ['ui.router', 'modularCtrls', 'directiveModule']);

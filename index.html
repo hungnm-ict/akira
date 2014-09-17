@@ -39,106 +39,106 @@
             </div>
         </div>
 
-    <div class="col-md-7 col-sm-7 col-xs-7">
-        <div id="content">
-            <div class="btn-group-vertical" id="login">
-                <h2 data-i18n="common.login"></h2>
-                <button class="btn-group facebook" onclick="onFbLoginClick();">Facebook</button>
-                <button class="btn-group google" onclick="onGPLoginClick();">Google</button>
+        <div class="col-md-7 col-sm-7 col-xs-7">
+            <div id="content">
+                <div class="btn-group-vertical" id="login">
+                    <h2 data-i18n="common.login"></h2>
+                    <button class="btn-group facebook" onclick="onFbLoginClick();">Facebook</button>
+                    <button class="btn-group google" onclick="onGPLoginClick();">Google</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div  class="col-md-3 col-sm-3 col-xs-3">
-        <div id="right-sidebar">
-            
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <div id="right-sidebar">
+
+            </div>
         </div>
-    </div>
 
-    <script type="text/javascript">
-    app.initialize();
+        <script type="text/javascript">
+        app.initialize();
 
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId: "721532401232192",
-            status: true, // check login status
-            cookie: true, // enable cookies to allow the server to access the session
-            xfbml: true // parse XFBML
-        });
-    };
-
-    (function(d) {
-        var js, id = 'facebook-jssdk',
-            ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement('script');
-        js.id = id;
-        js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        ref.parentNode.insertBefore(js, ref);
-    }(document));
-
-    function onFbLoginClick() {
-        FB.login(function(response) {
-            if (response.authResponse) {
-                FB.api('/me', function(response) {
-                    ajaxFbLogin(response);
-                });
-            } else {
-                //user hit cancel button
-                console.log('User cancelled login or did not fully authorize.');
-            }
-        }, {
-            scope: 'email'
-        });
-    }
-
-    function ajaxFbLogin(response) {
-        $.ajax({
-            type: 'POST',
-            url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
-            data: {
-                type: "facebook_user_id",
-                id: response.id
-            }
-        }).done(function(success) {
-            localStorage.setItem("authorized", "true");
-            localStorage.setItem("user", JSON.stringify(success));
-            window.location.href = "view/totaln5";
-        }).fail(function(error) {
-            localStorage.setItem("authorized", "false");
-        });
-    }
-
-    (function() {
-        var po = document.createElement('script');
-        po.type = 'text/javascript';
-        po.async = true;
-        po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(po, s);
-    })();
-
-    function onGooglePlusLoginSuccess(authResult) {
-        if (authResult['code']) {
-            gapi.client.load('plus', 'v1', function() {
-                var request = gapi.client.plus.people.get({
-                    'userId': 'me'
-                });
-                request.execute(function(response) {
-                    ajaxGoogleLogin(response);
-                });
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: "721532401232192",
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                xfbml: true // parse XFBML
             });
-        } else if (authResult['error']) {
-            console.log('There was an error: ' + authResult['error']);
-        }
-    }
+        };
 
-    function ajaxGoogleLogin(response) {
-        console.log(response);
-        /*$.ajax({
+        (function(d) {
+            var js, id = 'facebook-jssdk',
+                ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement('script');
+            js.id = id;
+            js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+
+        function onFbLoginClick() {
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    FB.api('/me', function(response) {
+                        ajaxFbLogin(response);
+                    });
+                } else {
+                    //user hit cancel button
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            }, {
+                scope: 'email'
+            });
+        }
+
+        function ajaxFbLogin(response) {
+            $.ajax({
+                type: 'POST',
+                url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
+                data: {
+                    type: "facebook_user_id",
+                    id: response.id
+                }
+            }).done(function(success) {
+                localStorage.setItem("authorized", "true");
+                localStorage.setItem("user", JSON.stringify(success));
+                window.location.href = "view/totaln5";
+            }).fail(function(error) {
+                localStorage.setItem("authorized", "false");
+            });
+        }
+
+        (function() {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+
+        function onGooglePlusLoginSuccess(authResult) {
+            if (authResult['code']) {
+                gapi.client.load('plus', 'v1', function() {
+                    var request = gapi.client.plus.people.get({
+                        'userId': 'me'
+                    });
+                    request.execute(function(response) {
+                        ajaxGoogleLogin(response);
+                    });
+                });
+            } else if (authResult['error']) {
+                console.log('There was an error: ' + authResult['error']);
+            }
+        }
+
+        function ajaxGoogleLogin(response) {
+            console.log(response);
+            /*$.ajax({
                     type:'POST',
                     url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
                     data: {type:"google_user_id",id:response.id}
@@ -148,24 +148,24 @@
                 }).fail(function(error){
                     sessionStorage.setItem("authorized","false");
                 });*/
-    }
+        }
 
-    function onGPLoginClick() {
-        var additionalParams = {
-            'callback': ajaxGoogleLogin,
-            'data-cookiepolicy': none
-        };
-        gapi.auth.signIn(additionalParams);
-    }
+        function onGPLoginClick() {
+            var additionalParams = {
+                'callback': ajaxGoogleLogin,
+                'data-cookiepolicy': none
+            };
+            gapi.auth.signIn(additionalParams);
+        }
 
 
-    function gSignin() {
-        var additionalParams = {
-            'callback': ajaxGoogleLogin
-        };
-        gapi.auth.signIn(additionalParams);
-    }
-    </script>
+        function gSignin() {
+            var additionalParams = {
+                'callback': ajaxGoogleLogin
+            };
+            gapi.auth.signIn(additionalParams);
+        }
+        </script>
 
 </body>
 
