@@ -1,21 +1,29 @@
-var appCtrls = angular.module('modularCtrls', []);
+var appCtrls = angular.module('totalCtrls', []);
 
-appCtrls.service("UserService", function() {
-    var users = ["Peter", "Daniel", "Nina"];
-
-    this.all = function() {
-        console.log("ModuleCtrl -> UserService.all()");
-        return 1;
+appCtrls.controller('mainCtrl', function($scope, $location) {
+    $scope.type = 1;
+    $scope.time = 10;
+    $scope.modular = "moduleCtrl: Scope";
+    $scope.play = function(type, time) {
+        alert($scope.type + "|" + $scope.time);
+        $location.path("game/{{$scope.type}}/{{$scope.time}}");
     }
 
+    $scope.change = function(key, val) {
+        alert("change called!!!!!");
+        $scope.type = val;
+    }
 });
 
 
-appCtrls.controller('moduleCtrl', function($scope, UserService) {
+appCtrls.controller('gameCtrl', function($scope) {
     $scope.modular = "moduleCtrl: Scope";
-    $scope.
-     = UserService;
-    $scope.test = function(){
-    	console.log("WTF");
-    }
+});
+
+appCtrls.controller('menuCtrl', function($scope) {
+    $scope.v = "Hello from controller A";
+    $scope.hi = function() {
+        console.log('hi');
+    };
+
 });

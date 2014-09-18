@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="phonecatApp">
+<html ng-app="testN5App">
 
 <head>
     <meta charset="utf-8" />
@@ -18,7 +18,7 @@
     <!-- Required libs -->
     <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
-    <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
+    <!-- <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script> -->
     <script type="text/javascript" src="../../spec/lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
@@ -26,7 +26,7 @@
 
     <!-- Angular app libs -->
     <script type="text/javascript" src="../../js/controllers/TestN5.Ctrl.js"></script>
-    <script type="text/javascript" src="../../js/directives/TestN5.directive.js"></script>
+    <!--     <script type="text/javascript" src="../../js/directives/TestN5.directive.js"></script> -->
     <script type="text/javascript" src="../../js/apps.js"></script>
 
     <!-- Custom -->
@@ -34,11 +34,21 @@
 </head>
 
 <body>
-    <span ng-controller="moduleCtrl">
-        {{modular}}
-        <button click="users">ModuleCtrl-UsersFnc</button>
-        <button click="test()">ModuleCtrl-TestFnc</button>
-    </span>
+    <div class="row">
+        <div id="left-sidebar" class="col-md-2 col-sm-2 col-xs-2" ng-include src="'../../view/common/menu.html'" ng-controller='menuCtrl'>
+
+        </div>
+        <div id="content" class="col-md-2 col-sm-2 col-xs-2">
+            <div ui-view></div>
+        </div>
+        <div id="right-sidebar" class="col-md-2 col-sm-2 col-xs-2">
+            <!-- Custom Akira profile directive -->
+            <akiraprofile></akiraprofile>
+
+            <!-- Custom Akira leaderboard directive -->
+            <akirarank></akirarank>
+        </div>
+    </div>
 </body>
 
 </html>
