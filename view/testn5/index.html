@@ -26,7 +26,7 @@
 
     <!-- Angular app libs -->
     <script type="text/javascript" src="../../js/controllers/TestN5.Ctrl.js"></script>
-    <!--     <script type="text/javascript" src="../../js/directives/TestN5.directive.js"></script> -->
+        <script type="text/javascript" src="../../js/directives/shared.akrprofile.js"></script>
     <script type="text/javascript" src="../../js/apps.js"></script>
 
     <!-- Custom -->
@@ -35,10 +35,10 @@
 
 <body>
     <div class="row">
-        <div id="left-sidebar" class="col-md-2 col-sm-2 col-xs-2" ng-include src="'../../view/common/menu.html'" ng-controller='menuCtrl'>
+        <div id="left-sidebar" class="hide col-md-2 col-sm-2 col-xs-2" ng-include src="'../../view/common/menu.html'" ng-controller='menuCtrl'>
 
         </div>
-        <div id="content" class="col-md-2 col-sm-2 col-xs-2">
+        <div id="content" class="col-md-8 col-sm-8 col-xs-8 hide">
             <div ui-view></div>
         </div>
         <div id="right-sidebar" class="col-md-2 col-sm-2 col-xs-2">
