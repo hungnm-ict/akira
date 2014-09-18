@@ -1,4 +1,4 @@
-var testN5App = angular.module('testN5App', ['ui.router', 'totalCtrls','AKRProfile']);
+var testN5App = angular.module('testN5App', ['ui.router', 'totalCtrls','AKRProfile','AKRShuffle']);
 
 testN5App.config(function($stateProvider, $urlRouterProvider) {
     //

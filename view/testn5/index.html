@@ -26,11 +26,68 @@
 
     <!-- Angular app libs -->
     <script type="text/javascript" src="../../js/controllers/TestN5.Ctrl.js"></script>
-        <script type="text/javascript" src="../../js/directives/shared.akrprofile.js"></script>
+    <script type="text/javascript" src="../../js/directives/shared.akrprofile.js"></script>
+    <script type="text/javascript" src="../../js/directives/shared.akridomshuffle.js"></script>
     <script type="text/javascript" src="../../js/apps.js"></script>
 
     <!-- Custom -->
     <script type="text/javascript" src="../../js/index.js"></script>
+    <style type="text/css">
+    .shuffle {
+        border: 1px solid #CCC;
+        border-radius: 5px;
+        display: inline-block;
+        vertical-align: top;
+        zoom: 1;
+        /* Fix for IE7 */
+        *display: inline;
+        /* Fix for IE7 */
+        padding: 10px;
+    }
+    #drop-region {
+        width: 350px;
+        height: 70px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+    }
+    </style>
+    <script type="text/javascript">
+    $.fn.shuffle = function() {
+
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function() {
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+            });
+
+        this.each(function(i) {
+            $(this).replaceWith($(shuffled[i]));
+        });
+
+        return $(shuffled);
+    };
+
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text/html", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text/html")
+        console.log(data);
+        ev.target.appendChild(document.getElementById(data));
+    }
+    </script>
 </head>
 
 <body>
@@ -42,6 +99,14 @@
             <div ui-view></div>
         </div>
         <div id="right-sidebar" class="col-md-2 col-sm-2 col-xs-2">
+            <div akr-repeat-shuffle id="parent-wrapper">
+                <div ng-repeat='item in ["1","2","3","4"]' class="shuffle" ondragstart="drag(event)" draggable="true" id="{{item}}">
+                    {{item}}
+                </div>
+            </div>
+            <div ondragstart="drag(event)" draggable="true">Image</div>
+            <div id="drop-region" ondrop="drop(event)" ondragover="allowDrop(event)">`</div>
+
             <!-- Custom Akira profile directive -->
             <akiraprofile></akiraprofile>
 
