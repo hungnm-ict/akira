@@ -51,47 +51,50 @@ var app = {
 
 };
 
-function changeLang(code){
-    var item= (code === undefined || code === "" || code === null) ? "vi" : code;
+function changeLang(code) {
+    var item = (code === undefined || code === "" || code === null) ? "vi" : code;
 
-    i18n.init({lng:code,resGetPath:'../../locales/__lng__/__ns__.json'},function(){
-      $('body').i18n();
-    });     
+    i18n.init({
+        lng: code,
+        resGetPath: '../../locales/__lng__/__ns__.json'
+    }, function() {
+        $('body').i18n();
+    });
 }
 
 
 /**
  * Check current user have permission to view current page or not.
- * @return {Boolean}  
+ * @return {Boolean}
  */
-function hasViewPermission(){
-    return sessionStorage.getItem("authorized")==="true";
+function hasViewPermission() {
+    return sessionStorage.getItem("authorized") === "true";
 }
 
-function getUser(){
-  return JSON.parse(sessionStorage.user);
+function getUser() {
+    return JSON.parse(sessionStorage.user);
 }
 
 function get(name) {
     if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
         return decodeURIComponent(name[1]);
     return "";
-} 
+}
 
-function leaveAStepCallback(obj, context){
-  var classStr="success";
-  var ret = compare($("#ans-"+ (context.fromStep -1)).val(),$("#input-"+ (context.fromStep -1)).val())
+function leaveAStepCallback(obj, context) {
+    var classStr = "success";
+    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val())
 
-  if(!ret){
-    $("#sublife").trigger("click");
-    classStr="failed";
-  }
-  $(".swMain .actionBar .msgBox").removeClass("failed");
-  $(".swMain .actionBar .msgBox").removeClass("success");
-  $(".swMain .actionBar .msgBox").addClass(classStr);
-  $(".swMain").smartWizard('showMessage', $("#mess-"+ (context.fromStep -1)).html());
+    if (!ret) {
+        $("#sublife").trigger("click");
+        classStr = "failed";
+    }
+    $(".swMain .actionBar .msgBox").removeClass("failed");
+    $(".swMain .actionBar .msgBox").removeClass("success");
+    $(".swMain .actionBar .msgBox").addClass(classStr);
+    $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
 
-  return ret;
+    return ret;
 };
 
 /**
@@ -100,35 +103,35 @@ function leaveAStepCallback(obj, context){
  * @param  {[type]} newStr [description]
  * @return {[type]}        [description]
  */
-function compare(oldStr,newStr){
-  return (oldStr.trim().replace(/ /g,"") === newStr.trim().replace(/ /g,""));
+function compare(oldStr, newStr) {
+    return (oldStr.trim().replace(/ /g, "") === newStr.trim().replace(/ /g, ""));
 }
 
-function filter(data,key,value){
+function filter(data, key, value) {
     var uniqueGroups = [];
-    $.each(data, function(idx,val) {
-        if(data[idx][key] == value){
+    $.each(data, function(idx, val) {
+        if (data[idx][key] == value) {
             uniqueGroups.push(data[idx]);
         }
     });
     return uniqueGroups;
 }
 
-function gameOver(xp){
+function gameOver(xp) {
     saveScore(xp);
     $(".game-over-modal-sm").modal({
-      keyboard:false
+        keyboard: false
     });
 }
 
-function grammarChoiceLeaveStep(obj,context){
-  var ret = compare($("#ans-"+ (context.fromStep -1)).val(),$("#input-"+ (context.fromStep -1)).val());
-  if(!ret){
-    $("#sublife").trigger("click");
-    $(".swMain").smartWizard('showMessage', $("#mess-"+ (context.fromStep -1)).html());
-  }
+function grammarChoiceLeaveStep(obj, context) {
+    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val());
+    if (!ret) {
+        $("#sublife").trigger("click");
+        $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
+    }
 
-  return ret;
+    return ret;
 }
 
 /**
@@ -137,22 +140,23 @@ function grammarChoiceLeaveStep(obj,context){
  * @return {[type]}       [description]
  */
 function akiraShuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex ;
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
 
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
 
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
 
-  return array;
+    return array;
 }
 
 
@@ -162,28 +166,28 @@ function akiraShuffle(array) {
  * @param  {[type]} ansKey [description]
  * @return {[type]}        [description]
  */
-function genAnswers(data,ansKey,numberOfAns){
+function genAnswers(data, ansKey, numberOfAns) {
     var uniqueGroups = [];
-    $.each(data, function(idx,val) {
+    $.each(data, function(idx, val) {
         var obj = [];
 
         var rand1;
         obj.push(data[idx][ansKey]);
-        
-        do{
+
+        do {
             rand1 = Math.floor((Math.random() * data.length));
-        }while(rand1 == idx);
+        } while (rand1 == idx);
         obj.push(data[rand1][ansKey]);
 
-        if(numberOfAns==3){
+        if (numberOfAns == 3) {
             var rand2;
-            do{
+            do {
                 rand2 = Math.floor((Math.random() * data.length));
-            }while(rand2 == idx || rand2 == rand1);
+            } while (rand2 == idx || rand2 == rand1);
             obj.push(data[rand2][ansKey]);
         }
 
-        uniqueGroups[idx]=akiraShuffle(obj);
+        uniqueGroups[idx] = akiraShuffle(obj);
     });
     return uniqueGroups;
 }
@@ -192,22 +196,25 @@ function genAnswers(data,ansKey,numberOfAns){
  * Generate answer for translate game in grammar
  * @return {[type]} [description]
  */
-function genAnswers2(data){
+function genAnswers2(data) {
     var uniqueGroups = [];
-    $.each(data, function(idx,val) {
-        var obj = data[idx]["hiragana"].trim().replace(/ /g,",").split(",") ;
-        uniqueGroups[idx]=akiraShuffle(obj);
+    $.each(data, function(idx, val) {
+        var obj = data[idx]["hiragana"].trim().replace(/ /g, ",").split(",");
+        uniqueGroups[idx] = akiraShuffle(obj);
     });
-    return uniqueGroups;   
+    return uniqueGroups;
 }
 
 
-function saveScore(xp){
-  var uid = 0;
-    $.getJSON( "http://akira.edu.vn/wp-content/plugins/akira-api/akira_score.php",{ id: uid, score: xp })
-    .done(function( data ) {
-      console.info("Score saved");
-    });
+function saveScore(xp) {
+    var uid = 0;
+    $.getJSON("http://akira.edu.vn/wp-content/plugins/akira-api/akira_score.php", {
+        id: uid,
+        score: xp
+    })
+        .done(function(data) {
+            console.info("Score saved");
+        });
 }
 
 /**
@@ -217,27 +224,27 @@ function saveScore(xp){
  * @param  {[type]} wizardId [description]
  * @return {[type]}          [description]
  */
-function akiraStepValidation(id){
-  //Get user ans
-  var ans = $("#input-" + id).val();
-  var correct = $("#ans-" + id).val();
-  var message = $("#mess-" + id).html();
-  
-  $(".mess-holder-" + id + " >div").first().html(message);
-  $(".failed").removeClass("failed");
-  $(".success").removeClass("success");
-  if(compare(ans,correct)){
-    $(".mess-holder-" + id).addClass("success");
-    $(".mess-holder-" + id + " >div").first().find(".fa").css("color","green");
-    return true;
+function akiraStepValidation(id) {
+    //Get user ans
+    var ans = $("#input-" + id).val();
+    var correct = $("#ans-" + id).val();
+    var message = $("#mess-" + id).html();
 
-  }else{
-    $(".mess-holder-" + id).addClass("failed");
-    $(".mess-holder-" + id + " >div").first().find(".fa").css("color","red");
-    return false;
+    $(".mess-holder-" + id + " >div").first().html(message);
+    $(".failed").removeClass("failed");
+    $(".success").removeClass("success");
+    if (compare(ans, correct)) {
+        $(".mess-holder-" + id).addClass("success");
+        $(".mess-holder-" + id + " >div").first().find(".fa").css("color", "green");
+        return true;
 
-    // $("#sublife").trigger("click");
-  }
+    } else {
+        $(".mess-holder-" + id).addClass("failed");
+        $(".mess-holder-" + id + " >div").first().find(".fa").css("color", "red");
+        return false;
+
+        // $("#sublife").trigger("click");
+    }
 }
 
 
@@ -247,6 +254,31 @@ function akiraStepValidation(id){
  * @param  {[type]} wizardId [description]
  * @return {[type]}          [description]
  */
-function akiraStepForward(e,wizardId){
+function akiraStepForward(e, wizardId) {
 
 }
+
+
+/**
+ * Add DOM shuffle method to JQuery function
+ * @return {[type]} [description]
+ */
+$.fn.shuffle = function() {
+
+    var allElems = this.get(),
+        getRandom = function(max) {
+            return Math.floor(Math.random() * max);
+        },
+        shuffled = $.map(allElems, function() {
+            var random = getRandom(allElems.length),
+                randEl = $(allElems[random]).clone(true)[0];
+            allElems.splice(random, 1);
+            return randEl;
+        });
+
+    this.each(function(i) {
+        $(this).replaceWith($(shuffled[i]));
+    });
+
+    return $(shuffled);
+};

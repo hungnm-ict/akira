@@ -18,6 +18,7 @@
     <!-- Required libs -->
     <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
+
     <!-- <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script> -->
     <script type="text/javascript" src="../../spec/lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
@@ -25,95 +26,30 @@
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
     <!-- Angular app libs -->
-    <script type="text/javascript" src="../../js/controllers/TestN5.Ctrl.js"></script>
-    <script type="text/javascript" src="../../js/directives/shared.akrprofile.js"></script>
-    <script type="text/javascript" src="../../js/directives/shared.akridomshuffle.js"></script>
-    <script type="text/javascript" src="../../js/apps.js"></script>
+    <script type="text/javascript" src="../../js/controllers/testN5Ctrls.js"></script>
+    <script type="text/javascript" src="../../js/directives/testN5Directives.js"></script>
+    <script type="text/javascript" src="../../js/directives/sharedDirectives.js"></script>
+    <script type="text/javascript" src="../../js/testN5App.js"></script>
 
     <!-- Custom -->
     <script type="text/javascript" src="../../js/index.js"></script>
-    <style type="text/css">
-    .shuffle {
-        border: 1px solid #CCC;
-        border-radius: 5px;
-        display: inline-block;
-        vertical-align: top;
-        zoom: 1;
-        /* Fix for IE7 */
-        *display: inline;
-        /* Fix for IE7 */
-        padding: 10px;
-    }
-    #drop-region {
-        width: 350px;
-        height: 70px;
-        padding: 10px;
-        border: 1px solid #aaaaaa;
-    }
-    </style>
-    <script type="text/javascript">
-    $.fn.shuffle = function() {
-
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function() {
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-            });
-
-        this.each(function(i) {
-            $(this).replaceWith($(shuffled[i]));
-        });
-
-        return $(shuffled);
-    };
-
-
-    function allowDrop(ev) {
-        ev.preventDefault();
-    }
-
-    function drag(ev) {
-        ev.dataTransfer.setData("text/html", ev.target.id);
-    }
-
-    function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text/html")
-        console.log(data);
-        ev.target.appendChild(document.getElementById(data));
-    }
-    </script>
 </head>
 
 <body>
     <div class="row">
-        <div id="left-sidebar" class="hide col-md-2 col-sm-2 col-xs-2" ng-include src="'../../view/common/menu.html'" ng-controller='menuCtrl'>
+        <div id="left-sidebar" class="col-md-2 col-sm-2 col-xs-2" ng-include src="'../../view/common/menu.html'">
 
         </div>
-        <div id="content" class="col-md-8 col-sm-8 col-xs-8 hide">
+        <div id="content" class="col-md-8 col-sm-8 col-xs-8">
             <div ui-view></div>
         </div>
         <div id="right-sidebar" class="col-md-2 col-sm-2 col-xs-2">
-            <div akr-repeat-shuffle id="parent-wrapper">
-                <div ng-repeat='item in ["1","2","3","4"]' class="shuffle" ondragstart="drag(event)" draggable="true" id="{{item}}">
-                    {{item}}
-                </div>
-            </div>
-            <div ondragstart="drag(event)" draggable="true">Image</div>
-            <div id="drop-region" ondrop="drop(event)" ondragover="allowDrop(event)">`</div>
-
-            <!-- Custom Akira profile directive -->
-            <akiraprofile></akiraprofile>
-
-            <!-- Custom Akira leaderboard directive -->
-            <akirarank></akirarank>
+            <akranswersheet type="{{type}}" time="{{time}}"></akranswersheet>
         </div>
     </div>
 </body>
+<script type="text/javascript">
+app.initialize();
+</script>
 
 </html>

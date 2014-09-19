@@ -1,4 +1,4 @@
-var testN5App = angular.module('testN5App', ['ui.router', 'totalCtrls','AKRProfile','AKRShuffle']);
+var testN5App = angular.module('testN5App', ['ui.router', 'testN5Ctrls', 'testN5Directives', 'akrSharedDirectives']);
 
 testN5App.config(function($stateProvider, $urlRouterProvider) {
     //
@@ -13,7 +13,7 @@ testN5App.config(function($stateProvider, $urlRouterProvider) {
             controller: 'mainCtrl'
         })
         .state('game', {
-            url: "/game",
+            url: "/game/:type/:min",
             templateUrl: "game.html",
             controller: 'gameCtrl'
         });

@@ -1,3 +1,6 @@
-Game play page
-
-{{ $scope.modular }}
+Type: {{type}}, Time: {{time}}, Data: {{dataset}}
+<div>
+    <div ng-repeat="(key, value) in dataset">
+        {{value}}
+    </div>
+</div>
