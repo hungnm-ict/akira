@@ -1,0 +1,69 @@
+<style>
+#inittime {
+    font-weight: bold;
+}
+.normal {
+    color: #0080FF;
+}
+.warning {
+    color: yellow;
+}
+.danger {
+    color: red;
+}
+</style>
+<span id="inittime" class="hide">{{time}}</span>
+<button id="finish" data-i18n="common.submit"></button>
+<div id="timecount">
+    <h2 data-i18n="answersheet"></h2>
+    <span id="timeleft">{{time}}</span>
+</div>
+
+<div ng-repeat="(key, value) in dataset">
+    <ul>
+        <li>
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                    {{key}}
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <input type="radio" name="answer-{{key}}">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <input type="radio" name="answer-{{key}}">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <input type="radio" name="answer-{{key}}">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <input type="radio" name="answer-{{key}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+var initMin = angular.element("#game-scope").scope().time;
+console.log(initMin);
+var count = parseInt(initMin) * 60;
+var classStr = "normal";
+setInterval(function() {
+    count--;
+    console.log(count);
+    var mins = Math.floor(count / 60);
+    if (mins <= 5) {
+        classStr = "warning";
+    } else if (mins <= 3) {
+        classStr = "danger";
+    }
+    var sec = count - mins * 60;
+    $("#timeleft").text(mins + " : " + (sec <= 9) ? "0" + sec : sec);
+    $("#timeleft").addClass(classStr);
+}, 1000);
+changeLang();
+</script>

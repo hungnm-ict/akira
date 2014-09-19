@@ -1,13 +1,25 @@
-{{time}} {{type}}
+<style type="text/css">
+.active {
+    background-color: red;
+}
+</style>
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <span data-i18n="common.choose-type"></span>
+            <h2 data-i18n="common.choose-type"></h2>
         </div>
     </div>
+
     <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in courseCollection" ng-click="change(1,$index)">
+            <span ng-class="{'active': $index == courseSelectedIndex }" class="circle">
+            </span>
+            <h2 data-i18n="{{item}}"></h2>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-3">
-            <span class="circle" ng-click="change(1,1)">
+            <span class="circle" ng-click="change(1,1)" ng-class="{'course-active'} : $index == selectedIndex">
                 <span data-i18n="common.vocab"></span>
             </span>
         </div>
@@ -26,36 +38,43 @@
                 <span data-i18n="common.listen-compre"></span>
             </span>
         </div>
-    </div>
+    </div> -->
 
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <span data-i18n="common.choose-time"></span>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <span class="circle" ng-click="change(2,10)">
-                10
-                <span data-i18n="common.mins"></span>
-            </span>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <span class="circle" ng-click="change(2,20)">
-                20
-                <span data-i18n="common.mins"></span>
-            </span>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <span class="circle" ng-click="change(2,30)">
-                30
-                <span data-i18n="common.mins"></span>
-            </span>
+            <h2 data-i18n="common.choose-time"></h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12 col-xs-12 col-sm-12">
+        <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in timeCollection" ng-click="change(2,$index)">
+            <span ng-class="{'active': $index == timeSelectedIndex }" class="circle">
+            </span>
+            <h2>{{item}}</h2>
+            <span data-i18n="common.mins"></span>
+        </div>
+    </div>
+    <!--    <div class="row">
+     <div class="col-md-4 col-sm-4 col-xs-4">
+         <span class="circle" ng-click="change(2,10)">
+             10
+             <span data-i18n="common.mins"></span>
+         </span>
+     </div>
+     <div class="col-md-4 col-sm-4 col-xs-4">
+         <span class="circle" ng-click="change(2,20)">
+             20
+             <span data-i18n="common.mins"></span>
+         </span>
+     </div>
+     <div class="col-md-4 col-sm-4 col-xs-4">
+         <span class="circle" ng-click="change(2,30)">
+             30
+             <span data-i18n="common.mins"></span>
+         </span>
+     </div>
+ </div> -->
+    <div class="row">
+        <div class="col-md-2 col-xs-2 col-sm-2 right col-md-offset-7 col-sm-offset-7 col-xs-offset-7">
             <button data-i18n="common.start" class="btn btn-primary btn-lg" ng-click="play(1,2)"></button>
         </div>
     </div>

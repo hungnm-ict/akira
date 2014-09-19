@@ -1,6 +1,16 @@
-Type: {{type}}, Time: {{time}}, Data: {{dataset}}
-<div>
-    <div ng-repeat="(key, value) in dataset">
-        {{value}}
+<div class="row" id="game-scope">
+    <div class="col-md-9 col-sm-9 col-xs-9">
+        <div ng-repeat="(key, value) in dataset" class="question-{{key}}">
+            <span>
+                {{value.question}}
+            </span>
+            <div>{{value.answer1}}</div>
+            <div>{{value.answer2}}</div>
+            <div>{{value.answer3}}</div>
+            <div>{{value.answer4}}</div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs 3">
+        <akranswersheet></akranswersheet>
     </div>
 </div>

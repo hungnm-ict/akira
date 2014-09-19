@@ -40,7 +40,9 @@
 		"next"			: "Tiếp tục",
 		"prev"			: "Quay lại",
 		"save"			: "Lưu điểm",
-		"dayleft"		: "Ngày sử dụng"
+		"dayleft"		: "Ngày sử dụng",
+		"submit"		: "Nop bài",
+		"answersheet"      : "Bài lam"
 	},
 	"leaderboard":{
 		"leaderboard" : "Bảng xếp hạng",

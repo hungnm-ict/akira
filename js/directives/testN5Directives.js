@@ -32,15 +32,14 @@ testN5Directives.directive('akranswersheet', function() {
         // controller: function($scope, $element, $attrs, $transclude) {},
         // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
         restrict: 'AEC', // E = Element, A = Attribute, C = Class, M = Comment
-        template: 'Hello this is answer sheet',
-        // templateUrl: '',
+        templateUrl: '../../view/_shared/answersheet.html',
         // replace: true,
         // transclude: true,
         // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
         link: function($scope, iElm, iAttrs, controller) {
-        	alert();
-            console.info(iElm);
-            console.info(iAttrs);
+            alert();
+            $scope.time=iAttrs.time;
+            console.info(iAttrs.time);
         }
     };
 });
