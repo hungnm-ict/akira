@@ -1,6 +1,6 @@
 var appCtrls = angular.module('testN5Ctrls', []);
 
-appCtrls.controller('mainCtrl', function($scope, $location) {
+appCtrls.controller('mainCtrl', function($scope, $location,$sce) {
     $scope.courseCollection = ["common.vocab", "common.grammar", "common.read", "common.listen-compre"];
     $scope.courseSelectedIndex = 0;
     $scope.timeCollection = ["10", "20", "30"];
@@ -23,19 +23,36 @@ appCtrls.controller('mainCtrl', function($scope, $location) {
             $scope.time = 10 * selectedIndex + 10;
         }
     }
+    $scope.html="<u title='Hello world'>html </u> <br>asdsadsad＿★" ;
+    $scope.renderHtml = function(html_code) {
+        return $sce.trustAsHtml(html_code);
+    };
 });
 
 
 appCtrls.controller('gameCtrl', function($scope, $location, $stateParams, $http) {
-    var urlStr = "../../data/testn5/json/vocab.json"
+    courseCollection = ["common.vocab", "common.grammar", "common.read", "common.listen-compre"];
+    $scope.title = courseCollection[$stateParams.type];
+    var urlStr;
+    if ($stateParams.type == 0) {
+        urlStr = "../../data/testn5/json/vocab-1.json";
+    } else if ($stateParams.type == 1) {
+        urlStr = "../../data/testn5/json/grammar-1.json";
+    } else if ($stateParams.type == 2) {
+        urlStr = "../../data/testn5/json/read-1.json";
+    } else if ($stateParams.type == 3) {
+        urlStr = "../../data/testn5/json/write-1.json";
+    }
+
     $http({
         method: "GET",
         url: urlStr
     }).success(function(data, status) {
-        $scope.dataset = data;
+        $scope.dataset = akiraShuffle(data);
 
     });
-    console.info($stateParams);
     $scope.type = $stateParams.type;
     $scope.time = $stateParams.min;
+
 });
+

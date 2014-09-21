@@ -62,7 +62,11 @@ function changeLang(code) {
     });
 }
 
-
+function loadStar() {
+    $.getJSON("../../data/star.json", function(data) {
+        console.log(data);
+    });
+}
 /**
  * Check current user have permission to view current page or not.
  * @return {Boolean}
@@ -257,28 +261,3 @@ function akiraStepValidation(id) {
 function akiraStepForward(e, wizardId) {
 
 }
-
-
-/**
- * Add DOM shuffle method to JQuery function
- * @return {[type]} [description]
- */
-$.fn.shuffle = function() {
-
-    var allElems = this.get(),
-        getRandom = function(max) {
-            return Math.floor(Math.random() * max);
-        },
-        shuffled = $.map(allElems, function() {
-            var random = getRandom(allElems.length),
-                randEl = $(allElems[random]).clone(true)[0];
-            allElems.splice(random, 1);
-            return randEl;
-        });
-
-    this.each(function(i) {
-        $(this).replaceWith($(shuffled[i]));
-    });
-
-    return $(shuffled);
-};

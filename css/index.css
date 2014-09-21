@@ -820,3 +820,115 @@ a:hover {
     position: inherit;
 }
 /*-----  End of CSS for Vocab -> Connect game  ------*/
+
+/*======================================
+=            CSS for TestN5            =
+======================================*/
+
+.circle-n5 {
+    background: #D9D9D9;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    line-height: 150px;
+    height: 150px !important;
+    text-align: center;
+    width: 150px !important;
+}
+.test-active {
+    background: #92D050;
+}
+#game-scope {
+    padding: 0px 48px;
+}
+#game-scope #quiz, #game-scope #answer {
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid green;
+    padding: 0px 12px;
+}
+.answer-sheet .cell {
+    list-style: none;
+    border: 1px solid green;
+}
+#inittime {
+    font-weight: bold;
+}
+.normal {} .warning {} .danger {} .choosed {} .test-circle {
+    background: #FFFFFF;
+    border: 2px solid #344C8C;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    display: inline-block !important;
+    height: 40px !important;
+    width: 40px !important;
+    -moz-border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+}
+.choosed .test-circle {
+    background: #344C8C;
+}
+#finish {
+    background: #92D050;
+    border-radius: 20px;
+    color: #FFFFFF;
+    height: 40px;
+    margin-top: 24px;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+}
+#timecount {
+    margin: 6px 0px;
+}
+#timeleft {
+    padding: 6px 24px;
+    display: inline-block;
+    background: #C0C0C0;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    float: right;
+}
+#testn5.container {
+    background: white;
+    border-radius: 10px;
+    padding: 48px;
+}
+/*-----  End of CSS for TestN5  ------*/
+
+/*====================================
+=            CSS for menu            =
+====================================*/
+
+.navgroup-active .nav-active {
+    background: red;
+}
+.ans-options {
+    padding-left: 24px;
+}
+/*-----  End of CSS for menu  ------*/
+
+/*=======================================
+=            CSS for TotalN5            =
+=======================================*/
+
+#topicWizard ul.anchor li a .stepNumber {
+    display: inline-block;
+    font-size: 28px;
+    padding-top: 10px;
+    width: 100%;
+}
+#topicWizard ul.anchor li a {
+    background: #FFFFFF;
+    border: none;
+    border-radius: 30px;
+    color: #558ED5;
+}
+#topicWizard ul.anchor li a.selected {
+    background: #558ED5;
+    color: #FFFFFF;
+}
+/*-----  End of CSS for TotalN5  ------*/

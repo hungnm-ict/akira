@@ -16,23 +16,24 @@ akrSharedDirectives.directive('akrprofile', function() {
 });
 
 
-akrSharedDirectives.directive('akrLeaderboard', ['', function(){
+akrSharedDirectives.directive('akrleaderboard', function($http) {
+
     // Runs during compile
+    var urlStr = "http://akira.edu.vn/wp-content/plugins/akira-api/akira_rank.php";
+
+    function link(scope, element, attrs) {
+        $http({
+            method: "GET",
+            url: urlStr
+        })
+            .success(function(data, status) {
+                scope.rank = data;
+            });
+    }
     return {
-        // name: '',
-        // priority: 1,
-        // terminal: true,
-        // scope: {}, // {} = isolate, true = child, false/undefined = no change
-        // controller: function($scope, $element, $attrs, $transclude) {},
-        // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
-        // restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
-        // template: '',
-        // templateUrl: '',
-        // replace: true,
-        // transclude: true,
-        // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-        link: function($scope, iElm, iAttrs, controller) {
-            
-        }
+        restrict: 'E',
+        link: link,
+        templateUrl: '../../view/common/leaderboard.html'
     };
-}]);
+
+});

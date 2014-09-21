@@ -1,320 +1,754 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <title>Total N5</title>
 
-        <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" /> 
-        <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Total N5</title>
 
-        <script type="text/javascript" src="../../js/index.js"></script>
-        <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
-        <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 
-        <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
-        <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
-        <style type="text/css" media="screen">
-             /* #left-sidebar,#right-sidebar{
-                   display: none;
-               }     */ 
-        </style>
-    </head>
-    <body>
-        <div class="app row" id="dashboard">
-            <div id="left-sidebar"class="col-md-3">
-                <div id="site-lang">
-                    <span id="vi">                    
-                    </span>
-                    <span id="en">                    
-                    </span>
-                </div>
-                <div id="logo">
-                  <img src="../../img/logo.png" alt="akira-logo" class="img-responsive" />
-                </div>
-                <div class="panel-group" id="accordion">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" data-i18n="menu.japanese-n5">
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
-                      <div class="panel-body">
-                        <ul>
-                            <li>
-                                <a href="../kana" data-i18n="menu.kana"></a>
-                            </li>
-                            <li>
-                                <a href="../totaln5" data-i18n="menu.total-n5"></a>
-                            </li>
-                            <li>
-                                <a href="../kanjin5" data-i18n="menu.kanji-n5"></a>
-                            </li>
-                            <li>
-                                <a href="../testn5" data-i18n="menu.test-n5"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" data-i18n="menu.japanese-n4">
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse">
-                      <div class="panel-body">
-                         <ul>
-                            <li>
-                                <a href="../totaln4" data-i18n="menu.total-n4"></a>
-                            </li>
-                            <li>
-                                <a href="../kanjin4" data-i18n="menu.kanji-n4"></a>
-                            </li>
-                            <li>
-                                <a href="../testn4" data-i18n="menu.test-n4"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" data-i18n="menu.mobi">                          
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseThree" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                            <li>
-                                <a href="../android" data-i18n="menu.android"></a>
-                            </li>
-                            <li>
-                               <a href="../ios" data-i18n="menu.ios"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="social">
-                  <div class="fb">
-                    <i class="fa fa-facebook fa-3x"></i>
-                  </div>
-                  <div class="gg">
-                    <i class="fa fa-google-plus fa-3x"></i>
-                  </div>
-                </div>
-            </div>
-            <div id="content" class="col-md-6">
-                <div ng-view></div> 
-            </div>
-            <div id="right-sidebar" class="col-md-3">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-sm-12">
-                        Profile overview
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-sm-12">
-                        Leaderboard
-                    </div>
-                </div>
-            </div>
+    <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
+    <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
+     <script type="text/javascript" src="../../js/controllers/commonCtrls.js"></script>
+    <script type="text/javascript" src="../../js/directives/sharedDirectives.js"></script>
+    <script type="text/javascript" src="../../js/index.js"></script>
+    <style type="text/css" media="screen">
+    </style>
+</head>
+
+<body>
+    <div class="app row container-fluid" id="dashboard">
+        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=1;nav=1">
         </div>
-        
-     
-        <script type="text/javascript">
-            app.initialize();
+        <div id="content" class="col-md-7 col-sm-9 col-xs-7">
+            <div ng-view></div>
+        </div>
+        <div id="right-sidebar" class="col-md-3 col-sm-3 col-xs-3">
+             <!-- Custom Akira profile directive -->
+            <akrprofile></akrprofile>
 
-            $('#wizard').smartWizard({
-              enableAllSteps: true,
-              includeFinishButton: false
+            <!-- Custom Akira leaderboard directive -->
+            <akrleaderboard></akrleaderboard>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    app.initialize();
+
+    /**
+     * Create a DOM shuffle method for connect game
+     * @return {[type]} [description]
+     */
+    $.fn.shuffle = function() {
+
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function() {
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
             });
-            $('#wizard .actionBar').hide();
 
-            var tpl= angular.module('demo',['ngRoute','tplControllers']);
+        this.each(function(i) {
+            $(this).replaceWith($(shuffled[i]));
+        });
 
-            tpl.config(['$routeProvider',
-                function($routeProvider) {
-                    $routeProvider.
-                        when('/', {
-                            templateUrl: 'main.html',
-                            controller: 'mainCtrl'
-                        })
-                        .when('/:lessonId',{
-                            templateUrl: 'subtopic.html',
-                            controller: 'subCtrl' 
-                        })
-                        .when('/:lessonId/:partId/learn',{
-                            templateUrl:'vocab/learn.html',
-                            controller: 'learnCtrl'
-                        })
-                        .when('/:lessonId/:partId/picture',{
-                            templateUrl:'vocab/picture.html',
-                            controller: 'pictureCtrl'
-                        })
-                        .when('/:lessonId/:partId/word',{
-                            templateUrl:'vocab/word.html',
-                            controller: 'wordCtrl'
-                        })
-                        .when('/:lessonId/:partId/listen',{
-                            templateUrl:'vocab/listen.html',
-                            controller: 'listenCtrl'
-                        })
-                        .when('/:lessonId/:partId/connect',{
-                            templateUrl:'vocab/connect.html',
-                            controller: 'connectCtrl'
-                        })
-                        .when('/:lessonId/:partId/write',{
-                            templateUrl:'vocab/write.html',
-                            controller: 'writeCtrl'
-                        });
-                }]);
-            
-            tpl.directive('akiradirective',function(){
-               setInterval(function () {
-                    $('#listenWizard').smartWizard({
-                        enableAllSteps : true,
-                        includeFinishButton : false,
-                        labelNext:"Check",
-                        onLeaveStep: leaveAStepCallback
+        return $(shuffled);
+    };
+
+    var tpl = angular.module('demo', ['ngRoute', 'tplControllers','commonCtrls','akrSharedDirectives']);
+
+    tpl.config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider.
+            when('/', {
+                templateUrl: 'main.html',
+                controller: 'mainCtrl'
+            })
+                .when('/:lessonId', {
+                    templateUrl: 'subtopic.html',
+                    controller: 'subCtrl'
+                })
+                .when('/:lessonId/:partId/learn', {
+                    templateUrl: 'vocab/learn.html',
+                    controller: 'learnCtrl'
+                })
+                .when('/:lessonId/:partId/picture', {
+                    templateUrl: 'vocab/picture.html',
+                    controller: 'pictureCtrl'
+                })
+                .when('/:lessonId/:partId/word', {
+                    templateUrl: 'vocab/word.html',
+                    controller: 'wordCtrl'
+                })
+                .when('/:lessonId/:partId/listen', {
+                    templateUrl: 'vocab/listen.html',
+                    controller: 'listenCtrl'
+                })
+                .when('/:lessonId/:partId/connect', {
+                    templateUrl: 'vocab/connect.html',
+                    controller: 'connectCtrl'
+                })
+                .when('/:lessonId/:partId/write', {
+                    templateUrl: 'vocab/write.html',
+                    controller: 'writeCtrl'
+                })
+
+
+            .when('/:lessonId/4/listen1', {
+                templateUrl: 'grammar/listen.html',
+                controller: 'grammarListenCtrl'
+            })
+                .when('/:lessonId/4/choice', {
+                    templateUrl: 'grammar/choice.html',
+                    controller: 'grammarChoiceCtrl'
+                })
+                .when('/:lessonId/4/translate', {
+                    templateUrl: 'grammar/translate.html',
+                    controller: 'grammarTranslateCtrl'
+                })
+                .when('/:lessonId/4/read', {
+                    templateUrl: 'grammar/read.html',
+                    controller: 'grammarReadCtrl'
+                })
+                .when('/:lessonId/4/word1', {
+                    templateUrl: 'grammar/word.html',
+                    controller: 'grammarWordCtrl'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                });
+        }
+    ]);
+
+    tpl.directive('akiradirective', function() {
+        setInterval(function() {
+            $('#listenWizard').smartWizard({
+                enableAllSteps: true,
+                includeFinishButton: false,
+                //labelNext:"Check",
+                //onLeaveStep: leaveAStepCallback
+            });
+            $('#listenWizard .buttonPrevious').hide();
+            $('#listenWizard .buttonNext').hide();
+            $('#listenWizard .buttonFinish').hide();
+        }, 200);
+        clearInterval();
+
+        return {
+            restrict: 'A'
+        };
+    })
+        .directive('ngRepeatShuffle', function() {
+            var id = setInterval(function() {
+                $(".hira-wrapper span").shuffle();
+                $(".vi-wrapper span").shuffle();
+                window.clearInterval(id);
+            }, 200);
+
+            return {
+                restrict: 'A'
+            };
+        })
+        .directive('grammarListenDirective', function() {
+            setInterval(function() {
+                $('#grammarListenWizard').smartWizard({
+                    enableAllSteps: true,
+                    includeFinishButton: false,
+                    labelNext: "Check",
+                    onLeaveStep: leaveAStepCallback
+                });
+                $('#grammarListenWizard .buttonPrevious').hide();
+                $('#grammarListenWizard .buttonFinish').hide();
+            }, 200);
+            clearInterval();
+        })
+        .directive('grammarChoiceDirective', function() {
+            setInterval(function() {
+                $('#grammarChoiceWizard').smartWizard({
+                    enableAllSteps: true,
+                    includeFinishButton: false,
+                    labelNext: "Check",
+                    onLeaveStep: grammarChoiceLeaveStep
+                });
+                $('#grammarChoiceWizard .buttonPrevious').hide();
+                $('#grammarChoiceWizard .buttonFinish').hide();
+            }, 200);
+            clearInterval();
+
+            return {
+                restrict: 'A'
+            };
+        })
+        .directive('akirarank', function($http) {
+            var urlStr = "http://akira.edu.vn/wp-content/plugins/akira-api/akira_rank.php";
+
+            function link(scope, element, attrs) {
+                $http({
+                    method: "GET",
+                    url: urlStr
+                })
+                    .success(function(data, status) {
+                        scope.rank = data;
                     });
-                    $('#listenWizard .buttonPrevious').hide();
-                    $('#listenWizard .buttonFinish').hide();
-                    clearInterval();
-                },200);
-               
-               return {
-                    restrict: 'A'
-                };
+            }
+            return {
+                restrict: 'E',
+                link: link,
+                templateUrl: '../../view/common/leaderboard.html'
+            };
+        })
+        .directive('akiraprofile', function() {
+            localStorage.setItem("binding", "test");
 
-            });
+            function link(scope, element, attrs) {
+                if(sessionStorage.hasOwnProperty("user")){
+                    scope.user = JSON.parse(sessionStorage.getItem("user"));
+                }else{
+                    scope.user= "Anonymous";
+                }
+            }
+            return {
+                restrict: 'E',
+                link: link,
+                templateUrl: '../../view/common/profileoverview.html'
+            };
+        })
+        .directive('akiraWizard', function() {
 
-            var tplController = angular.module('tplControllers',[]);
-
-            tplController.controller('mainCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-            });
-
-            tplController.controller('subCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId = 1;
-            });
-
-
-            tplController.controller('learnCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
-
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/1/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
+            function link(scope, element, attrs) {
+                var trigger = setInterval(function() {
+                    $('#' + attrs.id).smartWizard({
+                        enableAllSteps: true,
+                        keyNavigation: false,
+                        transitionEffect: 'slideleft'
                     });
-            });
+                    $('#' + attrs.id + ' .actionBar').hide();
+                    changeLang();
+                    clearInterval(trigger);
+                }, 200);
 
-            tplController.controller('pictureCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId = $routeParams.partId;
+            }
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/2/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-            });
+            return {
+                restrict: 'A',
+                link: link
+            };
+        });
 
-            tplController.controller('wordCtrl',function($scope,$routeParams,$http){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
+    var tplController = angular.module('tplControllers', []);
 
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/3/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-            });
+    tplController.controller('mainCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+    });
 
-            /*AnhDN*/
-            tplController.controller('listenCtrl',function($scope,$routeParams,$http){
-                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId +  "/sub" + $routeParams.partId +"/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-                
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
-                $scope.gameObject = {
-                    "life":3
-                    };   
+    tplController.controller('subCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = 1;
+    });
 
-                $scope.playSound =function(id){
-                    var audioSrc = document.getElementById(id).getElementsByTagName('source');
-                    $("audio#"+ id + " source").attr("src","../../data/totaln5/lesson"+$routeParams.lessonId+"/sub"+ $routeParams.partId + "/audio/"+ $scope.data[id].short+".mp3");
-                    document.getElementById(id).load();
-                    document.getElementById(id).play();
-                };
 
-                $scope.removeLife =function(){
-                    $scope.gameObject.life --;
-                    if($scope.gameObject.life == 0){
-                        alert("Game over");
+    /*Vocabulary controller*/
+    tplController.controller('learnCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+        $scope.step = 0;
+
+        var urlStr = "../../data/totaln5/data/vocab/json/default.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = akiraShuffle(data);
+        });
+
+        $scope.prev = function(id) {
+            if (!angular.equals($scope.step, 0)) {
+                $scope.step--;
+                $('#' + id).smartWizard("goBackward");
+            }
+        }
+
+        $scope.next = function(id) {
+            if (!angular.equals($scope.step, $scope.data.length)) {
+                $scope.step++;
+                $('#' + id).smartWizard("goForward");
+            }
+        }
+    });
+
+    tplController.controller('pictureCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+        $scope.selected = -1;
+        $scope.step = 0;
+        $scope.answer = [];
+        $scope.choices = [];
+
+        var urlStr = "../../data/totaln5/data/vocab/json/default.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = akiraShuffle(data);
+
+            for (i = 0; i < $scope.data.length; i++) {
+                var answer = Math.floor(Math.random() * 3);
+                $scope.answer[i] = answer;
+                var temp = [];
+                temp[answer] = $scope.data[i].short;
+                for (j = 0; j < 3; j++) {
+                    if (j == answer)
+                        continue;
+                    else {
+                        var id;
+                        do
+                            id = Math.floor(Math.random() * data.length);
+                        while ($.inArray($scope.data[id].short, temp) > -1);
                     }
-                };
+                    temp[j] = $scope.data[id].short;
+                }
+                $scope.choices.push(temp);
+            }
+        });
 
-            });
+        $scope.removeLife = function() {
+            $scope.gameObject.life = $scope.gameObject.life - 1;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        };
 
-            tplController.controller('connectCtrl',function($scope,$routeParams,$http){
-                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
+        $scope.select = function(id, btn) {
+            $(".imageSelected").removeClass("imageSelected");
+            $("#img-" + id + "-" + btn).addClass("imageSelected");
 
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
-                $scope.gameObject = {"life":3,"score":0};   
-                $scope.removeLife =function(){
-                    $scope.gameObject.life --;
-                    if($scope.gameObject.life == 0){
-                        alert("Game over");
+            if ($scope.selected != btn) {
+                $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
+                if ($scope.selected != -1)
+                    $("div#" + id + " button[name='btn" + $scope.selected + "']").attr("class", 'btn btn-default');
+                $scope.selected = btn;
+            } else {
+                $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-default');
+                $scope.selected = -1;
+            }
+        };
+
+        $scope.check = function(id) {
+            if ($scope.selected == -1)
+                return;
+
+            if ($scope.selected == $scope.answer[id]) {
+                if (id < $scope.data.length - 1) {
+                    $("#listenWizard").smartWizard('goForward');
+                    $scope.step++;
+                } else {
+                    gameOver();
+                }
+                $scope.selected = -1;
+            } else {
+                $scope.removeLife();
+            }
+        };
+
+    });
+
+    tplController.controller('wordCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+        $scope.answer = [];
+        $scope.choices = [];
+        $scope.selected = -1;
+        $scope.step = 0;
+
+        var urlStr = "../../data/totaln5/data/vocab/json/default.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        })
+            .success(function(data, status) {
+                $scope.data = akiraShuffle(data);
+
+                for (i = 0; i < $scope.data.length; i++) {
+                    var answer = Math.floor(Math.random() * 3);
+                    $scope.answer[i] = answer;
+                    var temp = [];
+                    temp[answer] = $scope.data[i].hiragana;
+                    for (j = 0; j < 3; j++) {
+                        if (j == answer)
+                            continue;
+                        else {
+                            var id;
+                            do
+                                id = Math.floor(Math.random() * data.length);
+                            while ($.inArray($scope.data[id].hiragana, temp) > -1);
+                        }
+                        temp[j] = $scope.data[id].hiragana;
                     }
-                };
-
-
+                    $scope.choices.push(temp);
+                }
             });
 
-            tplController.controller('writeCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
 
-                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-            });
 
-            
-            angular.bootstrap(document,['demo']);
-        </script>
-    </body>
+        $scope.removeLife = function() {
+            $scope.gameObject.life--;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        };
+
+
+        $scope.select = function(id, btn) {
+            if ($scope.selected != btn) {
+                $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
+                if ($scope.selected != -1)
+                    $("div#" + id + " button[name='btn" + $scope.selected + "']").attr("class", 'btn btn-default akr-btn');
+                $scope.selected = btn;
+            } else {
+                $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-default akr-btn');
+                $scope.selected = -1;
+            }
+        };
+
+        $scope.check = function(id) {
+            if ($scope.selected == -1)
+                return;
+            if ($scope.selected == $scope.answer[id]) {
+                if (id < $scope.data.length - 1) {
+                    $("#listenWizard").smartWizard('goForward');
+                    $scope.step++;
+                } else {
+                    gameOver();
+                }
+                $scope.selected = -1;
+            } else {
+                $scope.removeLife();
+            }
+        };
+
+    });
+
+    tplController.controller('listenCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+        $scope.step = 0;
+
+        var urlStr = "../../data/totaln5/lesson" + $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = akiraShuffle(data);
+        });
+
+
+
+        $scope.playSound = function(id) {
+            var audioSrc = document.getElementById(id).getElementsByTagName('source');
+            $("audio#" + id + " source").attr("src", "../../data/totaln5/data/vocab/audio/" + $scope.data[id].short + ".mp3");
+            document.getElementById(id).load();
+            document.getElementById(id).play();
+        };
+
+        $scope.removeLife = function() {
+            $scope.gameObject.life--;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        };
+
+        $scope.check = function(id) {
+            var ret = akiraStepValidation(id);
+            if (!ret) {
+                $scope.removeLife();
+            }
+            $("#btn-check-" + id).hide();
+            $("#btn-next-" + id).show();
+        }
+
+        $scope.next = function(id) {
+            if (!angular.equals($scope.step, $scope.data.length)) {
+                $scope.step++;
+                $("#listenWizard").smartWizard('goForward');
+            } else {
+                gameOver();
+            }
+        }
+    });
+
+    tplController.controller('connectCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3,
+            "score": 0
+        };
+        $scope.step = 0;
+
+        var urlStr = "../../data/totaln5/data/vocab/json/default.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = akiraShuffle(data);
+        });
+
+
+        $scope.removeLife = function() {
+            $scope.gameObject.life--;
+            if (angular.equals($scope.gameObject.life, 0)) {
+                gameOver();
+            }
+        };
+
+        $scope.check = function() {
+            $scope.step++;
+            if (angular.equals($scope.step, 7)) {
+                gameOver();
+            }
+        }
+
+
+    });
+
+    tplController.controller('writeCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+        $scope.step = 0;
+
+        var urlStr = "../../data/totaln5/data/vocab/json/default.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = akiraShuffle(data);
+        });
+
+
+        $scope.removeLife = function() {
+            $scope.gameObject.life--;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        };
+
+        $scope.check = function(id) {
+            var ret = akiraStepValidation(id);
+            if (!ret) {
+                $scope.removeLife();
+            }
+            $("#btn-check-" + id).hide();
+            $("#btn-next-" + id).show();
+        }
+
+        $scope.next = function(id) {
+            if (!angular.equals($scope.step, $scope.data.length)) {
+                $scope.step++;
+                $("#writeWizard").smartWizard('goForward');
+            } else {
+                gameOver();
+            }
+        }
+    });
+
+    /*Grammar controller*/
+    tplController.controller('grammarListenCtrl', function($scope, $routeParams, $http) {
+        var urlStr = "../../data/totaln5/data/grammar/json/type1.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = filter(data, 'id', $routeParams.lessonId);
+        });
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+
+        $scope.playSound = function(id) {
+            var audioSrc = document.getElementById(id).getElementsByTagName('source');
+            $("audio#" + id + " source").attr("src", "../../data/totaln5/lesson" + $routeParams.lessonId + "/sub4/audio/" + $scope.data[id].filename + ".mp3");
+            document.getElementById(id).load();
+            document.getElementById(id).play();
+        };
+
+        $scope.removeLife = function() {
+            $scope.gameObject.life = $scope.gameObject.life - 1;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        }
+    });
+
+    tplController.controller('grammarChoiceCtrl', function($scope, $routeParams, $http) {
+        var urlStr = "../../data/totaln5/data/grammar/json/type2.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = filter(data, 'id', $routeParams.lessonId);
+            $scope.answers = genAnswers($scope.data, "answer", 3);
+        });
+
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+
+
+        $scope.playSound = function(id) {
+            var audioSrc = document.getElementById(id).getElementsByTagName('source');
+            $("audio#" + id + " source").attr("src", "../../data/totaln5/lesson" + $routeParams.lessonId + "/sub4/audio/" + $scope.data[id].filename + ".mp3");
+            document.getElementById(id).load();
+            document.getElementById(id).play();
+        };
+
+        $scope.removeLife = function() {
+            $scope.gameObject.life = $scope.gameObject.life - 1;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        };
+    });
+
+    tplController.controller('grammarTranslateCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+        $scope.removeLife = function() {
+            $scope.gameObject.life = $scope.gameObject.life - 1;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        };
+
+        var urlStr = "../../data/totaln5/data/grammar/json/type3.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = filter(data, 'id', $routeParams.lessonId);
+            $scope.answers = genAnswers2($scope.data);
+        });
+    });
+
+    tplController.controller('grammarReadCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+        $scope.removeLife = function() {
+            $scope.gameObject.life = $scope.gameObject.life - 1;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        };
+
+        var urlStr = "../../data/totaln5/data/grammar/json/type4.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = filter(data, 'id', $routeParams.lessonId);
+            $scope.answers = genAnswers($scope.data, "answer1", 2);
+            console.log($scope.answers);
+        });
+    });
+
+    tplController.controller('grammarWordCtrl', function($scope, $routeParams, $http) {
+        $scope.lessonId = $routeParams.lessonId;
+        $scope.partId = $routeParams.partId;
+        $scope.gameObject = {
+            "life": 3
+        };
+        $scope.removeLife = function() {
+            $scope.gameObject.life = $scope.gameObject.life - 1;
+            if ($scope.gameObject.life == 0) {
+                gameOver();
+            }
+        };
+
+        var urlStr = "../../data/totaln5/data/grammar/json/type5.json";
+        $http({
+            method: "GET",
+            url: urlStr
+        }).
+        success(function(data, status) {
+            $scope.data = filter(data, 'id', $routeParams.lessonId);
+        });
+    });
+
+    angular.bootstrap(document, ['demo']);
+    </script>
+    <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Game finished</h4>
+                </div>
+                <div class="modal-body">
+                    Ban nhan duoc xxx XP
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        <span data-i18n="common.save"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

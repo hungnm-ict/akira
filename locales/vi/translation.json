@@ -41,8 +41,8 @@
 		"prev"			: "Quay lại",
 		"save"			: "Lưu điểm",
 		"dayleft"		: "Ngày sử dụng",
-		"submit"		: "Nop bài",
-		"answersheet"      : "Bài lam"
+		"submit"		: "Nộp bài",
+		"answersheet"   : "Bài làm"
 	},
 	"leaderboard":{
 		"leaderboard" : "Bảng xếp hạng",

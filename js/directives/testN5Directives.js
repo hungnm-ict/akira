@@ -37,7 +37,6 @@ testN5Directives.directive('akranswersheet', function() {
         // transclude: true,
         // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
         link: function($scope, iElm, iAttrs, controller) {
-            alert();
             $scope.time=iAttrs.time;
             console.info(iAttrs.time);
         }

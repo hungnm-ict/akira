@@ -1,320 +1,53 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <title>Total N5</title>
 
-        <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
-        <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" /> 
-        <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Total N5</title>
 
-        <script type="text/javascript" src="../../js/index.js"></script>
-        <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
-        <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+    
+    <!-- Required libs -->
+    <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
+    <!-- <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script> -->
+    <script type="text/javascript" src="../../spec/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
+    <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
-        <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
-        <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
-        <style type="text/css" media="screen">
-             /* #left-sidebar,#right-sidebar{
-                   display: none;
-               }     */ 
-        </style>
-    </head>
-    <body>
-        <div class="app row" id="dashboard">
-            <div id="left-sidebar"class="col-md-3">
-                <div id="site-lang">
-                    <span id="vi">                    
-                    </span>
-                    <span id="en">                    
-                    </span>
-                </div>
-                <div id="logo">
-                  <img src="../../img/logo.png" alt="akira-logo" class="img-responsive" />
-                </div>
-                <div class="panel-group" id="accordion">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" data-i18n="menu.japanese-n5">
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse in">
-                      <div class="panel-body">
-                        <ul>
-                            <li>
-                                <a href="../kana" data-i18n="menu.kana"></a>
-                            </li>
-                            <li>
-                                <a href="../totaln5" data-i18n="menu.total-n5"></a>
-                            </li>
-                            <li>
-                                <a href="../kanjin5" data-i18n="menu.kanji-n5"></a>
-                            </li>
-                            <li>
-                                <a href="../testn5" data-i18n="menu.test-n5"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" data-i18n="menu.japanese-n4">
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse">
-                      <div class="panel-body">
-                         <ul>
-                            <li>
-                                <a href="../totaln4" data-i18n="menu.total-n4"></a>
-                            </li>
-                            <li>
-                                <a href="../kanjin4" data-i18n="menu.kanji-n4"></a>
-                            </li>
-                            <li>
-                                <a href="../testn4" data-i18n="menu.test-n4"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" data-i18n="menu.mobi">                          
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseThree" class="panel-collapse collapse">
-                      <div class="panel-body">
-                        <ul>
-                            <li>
-                                <a href="../android" data-i18n="menu.android"></a>
-                            </li>
-                            <li>
-                               <a href="../ios" data-i18n="menu.ios"></a>
-                            </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="social">
-                  <div class="fb">
-                    <i class="fa fa-facebook fa-3x"></i>
-                  </div>
-                  <div class="gg">
-                    <i class="fa fa-google-plus fa-3x"></i>
-                  </div>
-                </div>
-            </div>
-            <div id="content" class="col-md-6">
-                <div ng-view></div> 
-            </div>
-            <div id="right-sidebar" class="col-md-3">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-sm-12">
-                        Profile overview
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-sm-12">
-                        Leaderboard
-                    </div>
-                </div>
-            </div>
+    <!-- Angular app libs -->
+    <script type="text/javascript" src="../../js/controllers/testN5Ctrls.js"></script>
+    <script type="text/javascript" src="../../js/directives/testN5Directives.js"></script>
+    <script type="text/javascript" src="../../js/directives/sharedDirectives.js"></script>
+    <script type="text/javascript" src="../../js/testN5App.js"></script>
 
+    <!-- Custom -->
+    <script type="text/javascript" src="../../js/index.js"></script>
+</head>
+
+<body>
+    <div class="row">
+        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=1;nav=2">
         </div>
-        
-     
-        <script type="text/javascript">
-            app.initialize();
+        <div id="content" class="col-md-10 col-sm-10 col-xs-10">
+            <div ui-view></div>
+        </div>
+    </div>
+</body>
 
-            $('#wizard').smartWizard({
-              enableAllSteps: true,
-              includeFinishButton: false
-            });
-            $('#wizard .actionBar').hide();
+<script type="text/javascript">
+app.initialize();
+angular.bootstrap(document, ['testN5App']);
+</script>
 
-            var tpl= angular.module('demo',['ngRoute','tplControllers']);
-
-            tpl.config(['$routeProvider',
-                function($routeProvider) {
-                    $routeProvider.
-                        when('/', {
-                            templateUrl: 'main.html',
-                            controller: 'mainCtrl'
-                        })
-                        .when('/:lessonId',{
-                            templateUrl: 'subtopic.html',
-                            controller: 'subCtrl' 
-                        })
-                        .when('/:lessonId/:partId/learn',{
-                            templateUrl:'vocab/learn.html',
-                            controller: 'learnCtrl'
-                        })
-                        .when('/:lessonId/:partId/picture',{
-                            templateUrl:'vocab/picture.html',
-                            controller: 'pictureCtrl'
-                        })
-                        .when('/:lessonId/:partId/word',{
-                            templateUrl:'vocab/word.html',
-                            controller: 'wordCtrl'
-                        })
-                        .when('/:lessonId/:partId/listen',{
-                            templateUrl:'vocab/listen.html',
-                            controller: 'listenCtrl'
-                        })
-                        .when('/:lessonId/:partId/connect',{
-                            templateUrl:'vocab/connect.html',
-                            controller: 'connectCtrl'
-                        })
-                        .when('/:lessonId/:partId/write',{
-                            templateUrl:'vocab/write.html',
-                            controller: 'writeCtrl'
-                        });
-                }]);
-            
-            tpl.directive('akiradirective',function(){
-               setInterval(function () {
-                    $('#listenWizard').smartWizard({
-                        enableAllSteps : true,
-                        includeFinishButton : false,
-                        labelNext:"Check",
-                        onLeaveStep: leaveAStepCallback
-                    });
-                    $('#listenWizard .buttonPrevious').hide();
-                    $('#listenWizard .buttonFinish').hide();
-                    clearInterval();
-                },200);
-               
-               return {
-                    restrict: 'A'
-                };
-
-            });
-
-            var tplController = angular.module('tplControllers',[]);
-
-            tplController.controller('mainCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-            });
-
-            tplController.controller('subCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId = 1;
-            });
-
-
-            tplController.controller('learnCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
-
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/1/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-            });
-
-            tplController.controller('pictureCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId = $routeParams.partId;
-
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/2/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-            });
-
-            tplController.controller('wordCtrl',function($scope,$routeParams,$http){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
-
-                var urlStr="../../data/totaln5/"+ $routeParams.lessonId + "/" + $routeParams.partId + "/3/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-            });
-
-            /*AnhDN*/
-            tplController.controller('listenCtrl',function($scope,$routeParams,$http){
-                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId +  "/sub" + $routeParams.partId +"/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-                
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
-                $scope.gameObject = {
-                    "life":3
-                    };   
-
-                $scope.playSound =function(id){
-                    var audioSrc = document.getElementById(id).getElementsByTagName('source');
-                    $("audio#"+ id + " source").attr("src","../../data/totaln5/lesson"+$routeParams.lessonId+"/sub"+ $routeParams.partId + "/audio/"+ $scope.data[id].short+".mp3");
-                    document.getElementById(id).load();
-                    document.getElementById(id).play();
-                };
-
-                $scope.removeLife =function(){
-                    $scope.gameObject.life --;
-                    if($scope.gameObject.life == 0){
-                        alert("Game over");
-                    }
-                };
-
-            });
-
-            tplController.controller('connectCtrl',function($scope,$routeParams,$http){
-                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
-                $scope.gameObject = {"life":3,"score":0};   
-                $scope.removeLife =function(){
-                    $scope.gameObject.life --;
-                    if($scope.gameObject.life == 0){
-                        alert("Game over");
-                    }
-                };
-
-
-            });
-
-            tplController.controller('writeCtrl',function($scope,$routeParams){
-                $scope.lessonId=$routeParams.lessonId;
-                $scope.partId= $routeParams.partId;
-
-                var urlStr="../../data/totaln5/lesson"+ $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
-                $http({method: "GET", url: urlStr}).
-                    success(function(data, status) {
-                        $scope.data = data;
-                    });
-            });
-
-            
-            angular.bootstrap(document,['demo']);
-        </script>
-    </body>
 </html>

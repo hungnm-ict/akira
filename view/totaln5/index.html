@@ -16,32 +16,34 @@
     <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 
-    <script type="text/javascript" src="../../js/index.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery-ui.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
-
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
+
+     <script type="text/javascript" src="../../js/controllers/commonCtrls.js"></script>
+    <script type="text/javascript" src="../../js/directives/sharedDirectives.js"></script>
+    <script type="text/javascript" src="../../js/index.js"></script>
     <style type="text/css" media="screen">
     </style>
 </head>
 
 <body>
     <div class="app row container-fluid" id="dashboard">
-        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/common/menu.html'">
+        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=1">
         </div>
         <div id="content" class="col-md-7 col-sm-9 col-xs-7">
             <div ng-view></div>
         </div>
         <div id="right-sidebar" class="col-md-3 col-sm-3 col-xs-3">
-            <!-- Custom Akira profile directive -->
-            <akiraprofile></akiraprofile>
+             <!-- Custom Akira profile directive -->
+            <akrprofile></akrprofile>
 
             <!-- Custom Akira leaderboard directive -->
-            <akirarank></akirarank>
+            <akrleaderboard></akrleaderboard>
         </div>
     </div>
 
@@ -72,7 +74,7 @@
         return $(shuffled);
     };
 
-    var tpl = angular.module('demo', ['ngRoute', 'tplControllers']);
+    var tpl = angular.module('demo', ['ngRoute', 'tplControllers','commonCtrls','akrSharedDirectives']);
 
     tpl.config(['$routeProvider',
         function($routeProvider) {

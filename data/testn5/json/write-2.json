@@ -1,0 +1,251 @@
+[{
+    "id": 1,
+    "question": null,
+    "answer0": "1かい",
+    "answer1": "2かい",
+    "answer2": "3かい",
+    "answer3": "4かい",
+    "correct-index": "answer1",
+    "correct-value": "2かい",
+    "filename": "4.2.1"
+}, {
+    "id": 2,
+    "question": null,
+    "answer0": "１ばん",
+    "answer1": "３ばん",
+    "answer2": "５ばん",
+    "answer3": "７ばん",
+    "correct-index": "answer3",
+    "correct-value": "７ばん",
+    "filename": "4.2.2"
+}, {
+    "id": 3,
+    "question": null,
+    "answer0": "えきに　いく",
+    "answer1": "あたらしい　レストランに　いく",
+    "answer2": "ちかくの　しょくどうに　いく",
+    "answer3": "かいしゃから　かえる",
+    "correct-index": "answer2",
+    "correct-value": "ちかくの　しょくどうに　いく",
+    "filename": "4.2.3"
+}, {
+    "id": 4,
+    "question": null,
+    "answer0": "しろと　あかの　はな",
+    "answer1": "しろと　あおの　はな",
+    "answer2": "あかと　きいろの　はな",
+    "answer3": "あかと　あおの　はな",
+    "correct-index": "answer1",
+    "correct-value": "しろと　あおの　はな",
+    "filename": "4.2.4"
+}, {
+    "id": 5,
+    "question": null,
+    "answer0": "211の　へや",
+    "answer1": "218の　へや",
+    "answer2": "8の　へや",
+    "answer3": "としょかん",
+    "correct-index": "answer3",
+    "correct-value": "としょかん",
+    "filename": "4.2.5"
+}, {
+    "id": 6,
+    "question": null,
+    "answer0": "ドアの　かぎを　しめます",
+    "answer1": "てを　あらいます",
+    "answer2": "おかしを　たべます",
+    "answer3": "テーブルを　あらいます",
+    "correct-index": "answer0",
+    "correct-value": "ドアの　かぎを　しめます",
+    "filename": "4.2.6"
+}, {
+    "id": 7,
+    "question": null,
+    "answer0": "りょこうがいしゃへ　いきます",
+    "answer1": "りょこうへ　いきます",
+    "answer2": "インターネットを　みます",
+    "answer3": "でんしゃに　のります",
+    "correct-index": "answer2",
+    "correct-value": "インターネットを　みます",
+    "filename": "4.2.7"
+}, {
+    "id": 8,
+    "question": null,
+    "answer0": "かいしゃ",
+    "answer1": "かいしゃの　ちかく",
+    "answer2": "えいがかんの　まえ",
+    "answer3": "レストラン",
+    "correct-index": "answer1",
+    "correct-value": "かいしゃの　ちかく",
+    "filename": "4.2.8"
+}, {
+    "id": 9,
+    "question": null,
+    "answer0": "きょうしつの　でんきを　けす",
+    "answer1": "きょうしつの　かぎを　しめる",
+    "answer2": "せんせいに　かぎを　かりる",
+    "answer3": "せんせいを　よぶ",
+    "correct-index": "answer3",
+    "correct-value": "せんせいを　よぶ",
+    "filename": "4.2.9"
+}, {
+    "id": 10,
+    "question": null,
+    "answer0": "きょうの　ごご3じ",
+    "answer1": "きょうの　ごご4じ",
+    "answer2": "あしたの　ごご3じ",
+    "answer3": "あしたの　ごご4じ",
+    "correct-index": "answer2",
+    "correct-value": "あしたの　ごご3じ",
+    "filename": "4.2.10"
+}, {
+    "id": 11,
+    "question": null,
+    "answer0": "ともだちの　いえ",
+    "answer1": "えいが",
+    "answer2": "プール",
+    "answer3": "おねえちゃんの　いえ",
+    "correct-index": "answer2",
+    "correct-value": "プール",
+    "filename": "4.2.11"
+}, {
+    "id": 12,
+    "question": null,
+    "answer0": "1200えん",
+    "answer1": "1000えん",
+    "answer2": "600えん",
+    "answer3": "500えん",
+    "correct-index": "answer3",
+    "correct-value": "500えん",
+    "filename": "4.2.12"
+}, {
+    "id": 13,
+    "question": null,
+    "answer0": "でんしゃで　いく",
+    "answer1": "タクシーで　いく",
+    "answer2": "おとこの　せんせいの　くるまで　いく",
+    "answer3": "おんなの　せんせいの　くるまで　いく",
+    "correct-index": "answer1",
+    "correct-value": "タクシーで　いく",
+    "filename": "4.2.13"
+}, {
+    "id": 14,
+    "question": null,
+    "answer0": "ボールペン",
+    "answer1": "えんぴつ",
+    "answer2": "ほそい　ペン",
+    "answer3": "answer2",
+    "correct-index": "ほそい　ペン",
+    "correct-value": "ふとい　ペン",
+    "filename": "4.2.14"
+}, {
+    "id": 15,
+    "question": null,
+    "answer0": "おなかが　すいたから",
+    "answer1": "そうじを　したいから",
+    "answer2": "おかあさんが　きょうの　よる　くるから",
+    "answer3": "answer1",
+    "correct-index": "そうじを　したいから",
+    "correct-value": "おかあさんと　ごはんを　たべるから",
+    "filename": "4.2.15"
+}, {
+    "id": 16,
+    "question": null,
+    "answer0": "1じかん",
+    "answer1": "2じかん",
+    "answer2": "3じかん",
+    "answer3": "answer3",
+    "correct-index": "4じかん",
+    "correct-value": "4じかん",
+    "filename": "4.2.16"
+}, {
+    "id": 17,
+    "question": null,
+    "answer0": "512-7733",
+    "answer1": "512-7734",
+    "answer2": "512-7743",
+    "answer3": "answer2",
+    "correct-index": "512-7743",
+    "correct-value": "512-7744",
+    "filename": "4.2.17"
+}, {
+    "id": 18,
+    "question": null,
+    "answer0": "りょうしん",
+    "answer1": "あね",
+    "answer2": "いもうと",
+    "answer3": "answer1",
+    "correct-index": "あね",
+    "correct-value": "おとうと",
+    "filename": "4.2.18"
+}, {
+    "id": 19,
+    "question": null,
+    "answer0": "くろい　ボールペン",
+    "answer1": "あかい　ボールペン",
+    "answer2": "くろい　えんぴつ",
+    "answer3": "あかい　えんぴつ",
+    "correct-index": "answer0",
+    "correct-value": "くろい　ボールペン",
+    "filename": "4.2.19"
+}, {
+    "id": 20,
+    "question": null,
+    "answer0": "こうえん",
+    "answer1": "えき",
+    "answer2": "きっさてん",
+    "answer3": "レストラン",
+    "correct-index": "answer2",
+    "correct-value": "きっさてん",
+    "filename": "4.2.20"
+}, {
+    "id": 21,
+    "question": null,
+    "answer0": "1ぽん　かいます",
+    "answer1": "3ぼん　かいます",
+    "answer2": "12ほん　かいます",
+    "answer3": "たくさん　かいます",
+    "correct-index": "answer1",
+    "correct-value": "3ぼん　かいます",
+    "filename": "4.2.21"
+}, {
+    "id": 22,
+    "question": null,
+    "answer0": "５じまでです",
+    "answer1": "おひるです",
+    "answer2": "７じから　９じまでです",
+    "answer3": "きょうは　いきません",
+    "correct-index": "answer2",
+    "correct-value": "７じから　９じまでです",
+    "filename": "4.2.22"
+}, {
+    "id": 23,
+    "question": null,
+    "answer0": "いつも　いく　レストランです",
+    "answer1": "ホテルです",
+    "answer2": "おとこのひとの　うちです",
+    "answer3": "おんなのひとの　うちです",
+    "correct-index": "answer3",
+    "correct-value": "おんなのひとの　うちです",
+    "filename": "4.2.23"
+}, {
+    "id": 24,
+    "question": null,
+    "answer0": "きょう　テストを　します",
+    "answer1": "あした　テストを　します",
+    "answer2": "らいしゅうの　げつようびに　テストを　します",
+    "answer3": "いつ　テストを　するか　わかりません",
+    "correct-index": "answer1",
+    "correct-value": "あした　テストを　します",
+    "filename": "4.2.24"
+}, {
+    "id": 25,
+    "question": null,
+    "answer0": "５５ページ",
+    "answer1": "５６ページ",
+    "answer2": "５７ページ",
+    "answer3": "５８ページ",
+    "correct-index": "answer1",
+    "correct-value": "５６ページ",
+    "filename": "4.2.25"
+}]

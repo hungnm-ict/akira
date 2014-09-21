@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="testN5App">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -15,10 +15,10 @@
     <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
     <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+    
     <!-- Required libs -->
     <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
-
     <!-- <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script> -->
     <script type="text/javascript" src="../../spec/lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
@@ -37,8 +37,7 @@
 
 <body>
     <div class="row">
-        <div id="left-sidebar" class="col-md-2 col-sm-2 col-xs-2" ng-include src="'../../view/common/menu.html'">
-
+        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=3">
         </div>
         <div id="content" class="col-md-10 col-sm-10 col-xs-10">
             <div ui-view></div>
@@ -48,6 +47,7 @@
 
 <script type="text/javascript">
 app.initialize();
+angular.bootstrap(document, ['testN5App']);
 </script>
 
 </html>

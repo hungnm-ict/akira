@@ -1,16 +1,24 @@
 <div class="row" id="game-scope">
     <div class="col-md-9 col-sm-9 col-xs-9">
-        <div ng-repeat="(key, value) in dataset" class="question-{{key}}">
-            <span>
-                {{value.question}}
-            </span>
-            <div>{{value.answer1}}</div>
-            <div>{{value.answer2}}</div>
-            <div>{{value.answer3}}</div>
-            <div>{{value.answer4}}</div>
+        <h2>
+            <span>N5 TEST</span>-
+            <span data-i18n="{{title}}"></span>
+        </h2>
+        <div id="quiz">
+            <div ng-repeat="(key, value) in dataset" class="question-{{key}}">
+                <h3 class="question">
+                    {{key +1 }} . {{value.question}}
+                </h3>
+                <ol class="ans-options">
+                    <li>{{value.answer0}}</li>
+                    <li>{{value.answer1}}</li>
+                    <li>{{value.answer2}}</li>
+                    <li>{{value.answer3}}</li>
+                </ol>
+            </div>
         </div>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs 3">
+    <div class="col-md-3 col-sm-3 col-xs 3" id="answer">
         <akranswersheet></akranswersheet>
     </div>
 </div>

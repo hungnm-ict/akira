@@ -18,3 +18,9 @@ testN5App.config(function($stateProvider, $urlRouterProvider) {
             controller: 'gameCtrl'
         });
 });
+
+
+testN5App.controller('menuCtrl', function($scope) {
+});
+
+
