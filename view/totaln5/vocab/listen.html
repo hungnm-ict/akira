@@ -37,8 +37,16 @@
                 <source type="audio/mpeg">
                     Your browser does not support the audio element.
             </audio>
-            <div ng-click="playSound(key)" class="btn-play">
-                <i class="fa fa-play fa-4x"></i>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div ng-click="playSound(key,true)" class="btn-play f-right">
+                        <i class="fa fa-play fa-4x"></i>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div ng-click="playSound(key,false)" class="btn-play btn-slow f-left">
+                    </div>
+                </div>
             </div>
 
             <!-- Get user input  -->

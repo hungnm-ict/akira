@@ -61,6 +61,12 @@ body {
 .right {
     text-align: right;
 }
+.f-right {
+    float: right;
+}
+.f-left {
+    float: left
+}
 .ava-circle {
     background: #8CC63F;
     border-radius: 50% !important;
@@ -188,12 +194,10 @@ body {
     opacity: 0.7;
 }
 #site-lang span#vi {
-    background: white url('../img/flags/vi.png') no-repeat !important;
-    text-align: center;
+    background: url('../img/flags/vi.png') no-repeat center;
 }
 #site-lang span#en {
-    background: white url('../img/flags/en.png') no-repeat !important;
-    text-align: center;
+    background: url('../img/flags/en.png') no-repeat center;
 }
 #left-sidebar {
     background: #344C8C;
@@ -410,10 +414,8 @@ body {
     display: none;
 }
 .stepContainer {
-    min-height: 550px !important;
-}
-.stepContainer .content {
-    height: inherit !important;
+    /*min-height: 550px !important;*/
+    height: 500px !important;
 }
 /*No life remaining*/
 
@@ -634,11 +636,11 @@ a:hover {
     height: auto;
     width: auto;
 }
-.swMain .content {
+ .swMain .content {
     min-width: 100%;
-    height: auto !important;
+    height: inherit !important;
     width: auto !important;
-}
+} 
 #leaderboardWizard {
     width: 100%;
 }
@@ -930,5 +932,26 @@ a:hover {
 #topicWizard ul.anchor li a.selected {
     background: #558ED5;
     color: #FFFFFF;
+}
+.btn-slow {
+    background-image: url("../img/slow.png");
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+}
+.drag-ans {
+    border-radius: 5px;
+    border: 1px solid #C0C0C0;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0px 6px;
+    padding: 12px;
+}
+.drop-zone {
+    background: #FFFFF;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    min-height: 48px;
+    text-align: center;
 }
 /*-----  End of CSS for TotalN5  ------*/

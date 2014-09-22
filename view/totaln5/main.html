@@ -28,73 +28,29 @@
     </ul>
     <span id="star">
         <span>
-            4
+            {{vocabstar}} <i class="fa fa-star fa-3x vocab"></i>
         </span>
-        <i class="fa fa-star fa-3x vocab"></i>
         <span>
-            4
+            {{grammarstar}} <i class="fa fa-star fa-3x grammar"></i>
         </span>
-        <i class="fa fa-star fa-3x grammar"></i>
     </span>
-    <div id="step-1">
+    <div id="step-{{step}}" ng-repeat="step in [1,2,3]">
         <!-- Sample ngrepeat -->
-        <div class="row" ng-repeat="val in [0,1]">
+        <div class="row" ng-repeat="val in [step*2-2,step*2-1]">
             <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
-                <span data-i18n="common.lesson"></span>
-                <span>&nbsp;{{4* val + value}}</span>
+                <label>
+                    <span data-i18n="common.lesson"></span>
+                    <span>&nbsp;{{4*val + value}}</span>
+                </label>
                 <a ng-href="#/{{4* val + value}}" class="thumb">
-                    <img ng-src="../../data/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-thumbnail">
+                    <img ng-src="../../data/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-responsive">
                 </a>
                 <div class="progress vocab">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                        60%
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{progress[4*val + value].vocab}}%;">
                     </div>
                 </div>
                 <div class="progress grammar">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                        10%
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="step-2">
-        <div class="row" ng-repeat="val in [2,3]">
-            <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
-                <span data-i18n="common.lesson"></span>
-                <span>&nbsp;{{4* val + value}}</span>
-                <a ng-href="#/{{4* val + value}}" class="thumb">
-                    <img ng-src="../../data/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-thumbnail">
-                </a>
-                <div class="progress vocab">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                        60%
-                    </div>
-                </div>
-                <div class="progress grammar">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                        10%
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="step-3">
-        <div class="row" ng-repeat="val in [4,5]">
-            <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
-                <span data-i18n="common.lesson"></span>
-                <span>&nbsp;{{4* val + value}}</span>
-                <a ng-href="#/{{4* val + value}}" class="thumb">
-                    <img ng-src="../../data/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-thumbnail">
-                </a>
-                <div class="progress vocab">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                        60%
-                    </div>
-                </div>
-                <div class="progress grammar">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                        10%
+                    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: {{progress[4*val + value].grammar}}%;">
                     </div>
                 </div>
             </div>

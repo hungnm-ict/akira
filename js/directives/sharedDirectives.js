@@ -33,7 +33,7 @@ akrSharedDirectives.directive('akrleaderboard', function($http) {
     return {
         restrict: 'E',
         link: link,
-        templateUrl: '../../view/common/leaderboard.html'
+        templateUrl: '../../view/_shared/leaderboard.html'
     };
 
 });

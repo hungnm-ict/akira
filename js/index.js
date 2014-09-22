@@ -203,7 +203,7 @@ function genAnswers(data, ansKey, numberOfAns) {
 function genAnswers2(data) {
     var uniqueGroups = [];
     $.each(data, function(idx, val) {
-        var obj = data[idx]["hiragana"].trim().replace(/ /g, ",").split(",");
+        var obj = data[idx]["hiragana"].trim().replace(/ /g,String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288)+"{1,}", 'g'),"|").split("|");
         uniqueGroups[idx] = akiraShuffle(obj);
     });
     return uniqueGroups;

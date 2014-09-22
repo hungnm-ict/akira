@@ -1,63 +1,89 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
 <div id="grammarListenWizard" class="swMain grammarListenDirective">
-	<ul class="hide">
-		 <li ng-repeat="(key, value) in data">
-	        <a ng-href="#step-{{key}}" click="partId={{key}}">
-	          <label class="stepNumber">
-	            <span>&nbsp;{{key}}</span>
-	          </label>
-	        </a>
-	      </li>
-	</ul>
+    <ul class="hide">
+        <li ng-repeat="(key, value) in data">
+            <a ng-href="#step-{{key}}" click="partId={{key}}">
+                <label class="stepNumber">
+                    <span>&nbsp;{{key}}</span>
+                </label>
+            </a>
+        </li>
+    </ul>
 
-	<!-- Life wrapper -->
+    <!-- Life wrapper -->
     <span class="row" id="akr-life-wrapper">
-		<div class="col-md-8 col-sm-8 col-xs-8">
-			{{data.length}}
-		</div>
-		<div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
-			<span class="life-{{gameObject.life}}">
-				<i class="fa fa-heart fa-3x"></i>
-				<i class="fa fa-heart fa-3x"></i>
-				<i class="fa fa-heart fa-3x"></i>
-			</span> 
-		</div>
-	</span>
+        <div class="col-md-8 col-sm-8 col-xs-8">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{step/data.length*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/data.length*100}}%;">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
+            <span class="life-{{gameObject.life}}">
+                <i class="fa fa-heart fa-3x"></i>
+                <i class="fa fa-heart fa-3x"></i>
+                <i class="fa fa-heart fa-3x"></i>
+            </span>
+        </div>
+    </span>
 
-	<div ng-repeat="(key,val) in data" id="step-{{key}}">
-		<audio controls id="{{key}}" style="display:none;">
-		  <source type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio>  
-		<div  ng-click="playSound(key)" class="btn-play">
-			<i class="fa fa-play fa-4x" ></i>
-		</div>
-		
-		<input class="form-control" id="input-{{key}}"></input>
-		<input type="hidden" id="ans-{{key}}" value="{{val.hiragana}}">
+    <div ng-repeat="(key,val) in data" id="step-{{key}}">
+        <audio controls id="{{key}}" style="display:none;">
+            <source type="audio/mpeg">
+                Your browser does not support the audio element.
+        </audio>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div ng-click="playSound(key,true)" class="btn-play f-right">
+                    <i class="fa fa-play fa-4x"></i>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div ng-click="playSound(key,false)" class="btn-play btn-slow f-left">
+                </div>
+            </div>
+        </div>
+        <input class="form-control" id="input-{{key}}"></input>
+        <input type="hidden" id="ans-{{key}}" value="{{val.hiragana}}">
 
-		<div class="row hide" id="mess-{{key}}">
-			<div class="col-md-4 col-xs-4 col-sm-4">
-				<i class="fa fa-check fa-4x"></i>
-				<i class="fa fa-times fa-4x"></i>
-			</div>
-			<div class="col-md-8 col-xs-8 col-sm-8">
-				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						{{val.hiragana}}
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						{{val.kanji}}
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						{{val.vietnamese}}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="row hide" id="mess-{{key}}">
+            <div class="col-md-4 col-xs-4 col-sm-4">
+                <i class="fa fa-check fa-4x"></i>
+                <i class="fa fa-times fa-4x"></i>
+            </div>
+            <div class="col-md-8 col-xs-8 col-sm-8">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {{val.hiragana}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {{val.kanji}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {{val.vietnamese}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Answer wrapper-->
+        <div class="row mess-holder-{{key}}" id="aki-answer-wrapper">
+            <!-- Prepare message holder-->
+            <div class="col-md-8 col-sm-8 col-xs-8">
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg" id="btn-check-{{key}}">
+                    <span data-i18n="common.check"></span>
+                </button>
+                <button type="button" ng-click="next(key)" class="akr-btn-check btn btn-lg" id="btn-next-{{key}}" style="display:none;">
+                    <span data-i18n="common.next"></span>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
