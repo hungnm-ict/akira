@@ -414,8 +414,8 @@ body {
     display: none;
 }
 .stepContainer {
-    /*min-height: 550px !important;*/
-    height: 500px !important;
+    min-height: 650px !important;
+    /*height: 500px !important;*/
 }
 /*No life remaining*/
 

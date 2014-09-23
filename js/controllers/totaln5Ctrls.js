@@ -3,27 +3,25 @@ var totaln5Ctrls = angular.module('totaln5Ctrls', []);
 totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     //Get course stars objects
-    $scope.vocabstar="100";
-    $scope.progress=[];
-    var object={"vocab":60,"grammar":10}
-$scope.progress.push(object);
-    $scope.grammarstar="100";
+    $scope.vocabstar = "100";
+    $scope.progress = [];
+    var object = {
+        "vocab": 60,
+        "grammar": 10
+    }
+    $scope.progress.push(object);
+    $scope.grammarstar = "100";
 
-});
-
-totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
+}).controller('subCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = 1;
-    
+
     //Get lesson stars objects
-    $scope.vocabstar="10";
-    $scope.grammarstar="80";
+    $scope.vocabstar = "10";
+    $scope.grammarstar = "80";
     console.log($routeParams);
-});
 
-
-/*Vocabulary controller*/
-totaln5Ctrls.controller('learnCtrl', function($scope, $routeParams, $http) {
+}).controller('learnCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -51,11 +49,11 @@ totaln5Ctrls.controller('learnCtrl', function($scope, $routeParams, $http) {
         if (!angular.equals($scope.step, $scope.data.length)) {
             $scope.step++;
             $('#' + id).smartWizard("goForward");
+        }else{
+            gameOver();
         }
     }
-});
-
-totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
+}).controller('pictureCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -133,9 +131,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
         }
     };
 
-});
-
-totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
+}).controller('wordCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -269,9 +265,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
             gameOver();
         }
     }
-});
-
-totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http) {
+}).controller('connectCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -303,9 +297,7 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http) {
             gameOver();
         }
     }
-});
-
-totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http) {
+}).controller('writeCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
