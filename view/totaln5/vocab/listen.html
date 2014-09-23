@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="listenWizard" class="swMain akiradirective" akira-wizard="listenWizard">
+<div id="listenWizard" class="swMain" akirawizard="listenWizard">
     <!-- Step navigation -->
     <ul>
         <li ng-repeat="(key, value) in data">
@@ -50,7 +50,7 @@
             </div>
 
             <!-- Get user input  -->
-            <input class="form-control akira-input" id="input-{{key}}"></input>
+            <input class="form-control akira-input" id="input-{{key}}" placeholder="TYPING HERE"></input>
 
             <!-- Prepared correct answer -->
             <input type="hidden" id="ans-{{key}}" value="{{val.hiragana}}">
@@ -75,10 +75,10 @@
                 </div>
 
                 <div class="col-md-3 col-sm-3 col-xs-3">
-                    <button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg" id="btn-check-{{key}}">
+                    <button type="button" ng-click="check(key)" class="akr-btn akr-btn-init" id="btn-check-{{key}}">
                         <span data-i18n="common.check"></span>
                     </button>
-                    <button type="button" ng-click="next(key)" class="akr-btn-check btn btn-lg" id="btn-next-{{key}}" style="display:none;">
+                    <button type="button" ng-click="next(key)" class="akr-btn akr-btn-check" id="btn-next-{{key}}" style="display:none;">
                         <span data-i18n="common.next"></span>
                     </button>
                 </div>
@@ -86,3 +86,6 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    handleKey2("listenWizard");
+</script>

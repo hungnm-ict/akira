@@ -21,10 +21,7 @@
 =            Common css for all page            =
 ===============================================*/
 
-html {
-    background-color: !important;
-}
-body {
+html {} body {
     background-color: whitesmoke !important;
     background: whitesmoke url(../img/background.png) no-repeat right bottom;
     background-size: 35%;
@@ -72,12 +69,15 @@ body {
     border-radius: 50% !important;
     cursor: pointer !important;
     display: inline-block !important;
-    height: 80px !important;
-    width: 80px !important;
+    height: 40px !important;
+    width: 40px !important;
     -moz-border-radius: 50% !important;
     -webkit-border-radius: 50% !important;
 }
-/*-----  End of Section comment block  ------*/
+#akr-life-wrapper .progress-bar {
+    background: red !important;
+}
+/*-----  End of Common css for all page  ------*/
 
 #logo-wrapper {
     display: block;
@@ -342,31 +342,6 @@ body {
 }
 #board-type {
     text-align: center;
-}
-#leaderboard {
-    margin-top: 24px;
-    background: white;
-    border: 2px solid #344C8C;
-    border-radius: 5px;
-    text-align: center;
-}
-#board-detail .level>ul>li {
-    outline: none !important;
-    width: 30%;
-}
-#board-detail .level>ul>li a {
-    outline: none !important;
-}
-#board-detail .week, #board-detail .month, #board-detail .all {
-    padding: 0px;
-}
-#board-detail .week .row, #board-detail .month .row, #board-detail .all .row {
-    border-bottom: 1px solid black;
-    padding: 12px 0px;
-    margin: 0px;
-}
-#board-detail .week .row:last-child, #board-detail .month .row:last-child, #board-detail .all .row:last-child {
-    border-bottom: 0px;
 }
 /* MOBI APPS */
 
@@ -636,26 +611,10 @@ a:hover {
     height: auto;
     width: auto;
 }
- .swMain .content {
+.swMain .content {
     min-width: 100%;
     height: inherit !important;
     width: auto !important;
-} 
-#leaderboardWizard {
-    width: 100%;
-}
-#leaderboardWizard .stepNumber {
-    font-size: 1.7em;
-    text-align: center;
-}
-#leaderboardWizard .ui-tabs .ui-tabs-nav {
-    list-style: none;
-    padding: 0px;
-}
-#leaderboardWizard .ui-tabs .ui-tabs-nav li {
-    display: inline-block;
-    width: 49%;
-    text-align: center;
 }
 #writeWizard .write-control {
     font-weight: bold;
@@ -711,14 +670,27 @@ a:hover {
 .picture-wrapper {
     text-align: center;
 }
-.akr-btn-check {
-    background: #568ED4;
+.akr-btn {
+    border: 2px solid #D9D9D9;
+    border-radius: 5px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 40px;
+    margin: 6px;
+    /*text-align: left;*/
+    width: 200px;
     border: 0px;
     border-radius: 30px;
     color: #FFFFFF;
     font-weight: bold;
     text-transform: uppercase;
     width: 100%;
+}
+.akr-btn-init {
+    background: #C0C0C0;
+}
+.akr-btn-check {
+    background: #568ED4;
 }
 #aki-answer-wrapper {
     background: #CCC;
@@ -812,7 +784,8 @@ a:hover {
     /*width: 36px;*/
 }
 .imageSelected {
-    border-color: red !important;
+    border: 2px solid #4F81BD;
+    border-radius: 5px;
 }
 /*=====================================================
 =            CSS for Vocab -> Connect game            =
@@ -955,3 +928,55 @@ a:hover {
     text-align: center;
 }
 /*-----  End of CSS for TotalN5  ------*/
+
+/*===================================
+=           LEADERBOARD            =
+===================================*/
+
+#leaderboard {
+    margin-top: 24px;
+    background: white;
+    border: 2px solid #344C8C;
+    border-radius: 5px;
+    text-align: center;
+}
+#board-detail .level>ul>li {
+    outline: none !important;
+    width: 30%;
+}
+#board-detail .level>ul>li a {
+    outline: none !important;
+}
+#board-detail .week, #board-detail .month, #board-detail .all {
+    padding: 0px;
+}
+#board-detail .week .row, #board-detail .month .row, #board-detail .all .row {
+    border-bottom: 1px solid black;
+    padding: 12px 0px;
+    margin: 0px;
+}
+#board-detail .week .row:last-child, #board-detail .month .row:last-child, #board-detail .all .row:last-child {
+    border-bottom: 0px;
+}
+#leaderboardWizard {
+    width: 100%;
+}
+#leaderboardWizard .stepNumber {
+    font-size: 1.7em;
+    text-align: center;
+}
+#leaderboardWizard .ui-tabs .ui-tabs-nav {
+    list-style: none;
+    padding: 0px;
+}
+#leaderboardWizard .ui-tabs .ui-tabs-nav li {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+#leaderboardWizard div.ui-tabs-panel {
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+/*-----  End ofLEADERBOARD  ------*/

@@ -35,27 +35,27 @@
     <div class="app row" id="dashboard">
         <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=2;nav=1">
         </div>
-        <div id="content" class="col-md-6">
+        <div id="content" class="col-md-7 col-sm-7 col-xs-7">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-4">
                     <a href="http://bit.ly/KanjiN5-IOS">
-                        <img src="../../img/apps/japanese-n5-ios.png" alt="Japanese for iOS" />
+                        <img src="../../img/apps/japanese-n5-ios.png" alt="Japanese for iOS" class="img-responsive" />
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4">
                     <a href="http://bit.ly/KanjiN5-IOS">
-                        <img src="../../img/apps/kanji-n5-ios.png" alt="Kanji for iOS" />
+                        <img src="../../img/apps/kanji-n5-ios.png" alt="Kanji for iOS" class="img-responsive" />
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4">
                     <a href="http://bit.ly/KanjiN5-IOS">
-                        <img src="../../img/apps/elight-ios.png" alt="Elight for iOS" />
+                        <img src="../../img/apps/elight-ios.png" alt="Elight for iOS" class="img-responsive" />
                     </a>
                 </div>
             </div>
         </div>
-        <div id="right-sidebar" class="col-md-3">
-             <!-- Custom Akira profile directive -->
+        <div id="right-sidebar" class="col-md-3 col-sm-3 col-xs-3">
+            <!-- Custom Akira profile directive -->
             <akrprofile></akrprofile>
 
             <!-- Custom Akira leaderboard directive -->
@@ -67,7 +67,7 @@
 
 
     <script type="text/javascript">
-    var androidApp = angular.module("android", ['commonCtrls','akrSharedDirectives']);
+    var androidApp = angular.module("android", ['commonCtrls', 'akrSharedDirectives']);
     angular.bootstrap(document, ['android']);
     app.initialize();
     </script>

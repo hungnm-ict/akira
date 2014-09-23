@@ -37,3 +37,25 @@ akrSharedDirectives.directive('akrleaderboard', function($http) {
     };
 
 });
+
+akrSharedDirectives.directive('akirawizard', function() {
+
+    function link(scope, element, attrs) {
+        var trigger = setInterval(function() {
+            $('#' + attrs.id).smartWizard({
+                enableAllSteps: false,
+                // keyNavigation: false,
+                transitionEffect: 'slideleft'
+            });
+            $('#' + attrs.id + ' .actionBar').hide();
+            changeLang();
+            clearInterval(trigger);
+        }, 200);
+
+    }
+
+    return {
+        restrict: 'A',
+        link: link
+    };
+})

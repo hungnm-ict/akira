@@ -55,24 +55,4 @@ totaln5Directives.directive('akiradirective', function() {
     return {
         restrict: 'A'
     };
-}).directive('akiraWizard', function() {
-
-    function link(scope, element, attrs) {
-        var trigger = setInterval(function() {
-            $('#' + attrs.id).smartWizard({
-                enableAllSteps: true,
-                // keyNavigation: false,
-                transitionEffect: 'slideleft'
-            });
-            $('#' + attrs.id + ' .actionBar').hide();
-            changeLang();
-            clearInterval(trigger);
-        }, 200);
-
-    }
-
-    return {
-        restrict: 'A',
-        link: link
-    };
 });

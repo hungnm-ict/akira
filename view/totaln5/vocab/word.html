@@ -1,4 +1,4 @@
-<div id="listenWizard" class="swMain akiradirective wordWizard">
+<div id="wordWizard" class="swMain" akirawizard="wordValidate">
     <!-- Step navigator -->
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
@@ -30,6 +30,8 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
+
+            <!-- Question content -->
             <div class="row" style="text-align:center;">
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <img src="../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-thumbnail">
@@ -37,27 +39,34 @@
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div id="{{key}}">
-                        <button type="button" ng-click="select(key, 0)" class="btn btn-default akr-btn" name="btn0">
+                        <button type="button" ng-click="select(key, 0)" class="akr-btn-init akr-btn" name="btn0">
                             <span class="akr-key-2">1</span>{{choices[key][0]}}
                         </button>
                         <br>
-                        <button type="button" ng-click="select(key, 1)" class="btn btn-default akr-btn" name="btn1">
+                        <button type="button" ng-click="select(key, 1)" class="akr-btn-init  akr-btn" name="btn1">
                             <span class="akr-key-2">2</span>{{choices[key][1]}}
                         </button>
                         <br>
-                        <button type="button" ng-click="select(key, 2)" class="btn btn-default akr-btn" name="btn2">
+                        <button type="button" ng-click="select(key, 2)" class="akr-btn-init akr-btn" name="btn2">
                             <span class="akr-key-2">3</span>{{choices[key][2]}}
                         </button>
                     </div>
                 </div>
             </div>
 
+            <!-- Get user input  -->
+
+            <!-- Prepared correct answer -->
+
+            <!-- Prepared message template-->
+
+            <!-- Answer wrapper-->
             <div class="row mess-holder-{{key}}" id="aki-answer-wrapper">
                 <div class="col-md-8 col-sm-8 col-xs-8">
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-3">
-                    <button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg btn-pr">
-                        Check
+                    <button type="button" ng-click="check(key)" class="akr-btn akr-btn-init" data-i18n="common.check">
+
                     </button>
                 </div>
             </div>
@@ -66,5 +75,5 @@
 </div>
 
 <script type="text/javascript">
-changeLang();
+handleKey("wordWizard");
 </script>

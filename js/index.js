@@ -79,27 +79,6 @@ function getUser() {
     return JSON.parse(sessionStorage.user);
 }
 
-function get(name) {
-    if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
-        return decodeURIComponent(name[1]);
-    return "";
-}
-
-function leaveAStepCallback(obj, context) {
-    var classStr = "success";
-    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val())
-
-    if (!ret) {
-        $("#sublife").trigger("click");
-        classStr = "failed";
-    }
-    $(".swMain .actionBar .msgBox").removeClass("failed");
-    $(".swMain .actionBar .msgBox").removeClass("success");
-    $(".swMain .actionBar .msgBox").addClass(classStr);
-    $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
-
-    return ret;
-};
 
 /**
  * Compare two string
@@ -110,7 +89,13 @@ function leaveAStepCallback(obj, context) {
 function compare(oldStr, newStr) {
     return (oldStr.trim().replace(/ /g, "") === newStr.trim().replace(/ /g, ""));
 }
-
+/**
+ * Filter correct data for course, because now all data for a coures is in a file
+ * @param  {[type]} data  [description]
+ * @param  {[type]} key   [description]
+ * @param  {[type]} value [description]
+ * @return {[type]}       [description]
+ */
 function filter(data, key, value) {
     var uniqueGroups = [];
     $.each(data, function(idx, val) {
@@ -126,17 +111,13 @@ function gameOver(xp) {
     $(".game-over-modal-sm").modal({
         keyboard: false
     });
+
+    $('.game-over-modal-sm').on('hide.bs.modal', function(e) {
+        window.location.href = "./";
+    });
 }
 
-function grammarChoiceLeaveStep(obj, context) {
-    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val());
-    if (!ret) {
-        $("#sublife").trigger("click");
-        $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
-    }
 
-    return ret;
-}
 
 /**
  * Shuffle an array
@@ -203,7 +184,7 @@ function genAnswers(data, ansKey, numberOfAns) {
 function genAnswers2(data) {
     var uniqueGroups = [];
     $.each(data, function(idx, val) {
-        var obj = data[idx]["hiragana"].trim().replace(/ /g,String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288)+"{1,}", 'g'),"|").split("|");
+        var obj = data[idx]["hiragana"].trim().replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "|").split("|");
         uniqueGroups[idx] = akiraShuffle(obj);
     });
     return uniqueGroups;
@@ -250,14 +231,85 @@ function akiraStepValidation(id) {
         // $("#sublife").trigger("click");
     }
 }
+/*===================================
+=            UX handlers            =
+===================================*/
 
 
 /**
- * Go to next step of the game.
- * @param  {[type]} e        [description]
- * @param  {[type]} wizardId [description]
+ * Keyboard handler for TotalN5-Listen&Write(maybe) game
+ * @param  {[type]} idWizard [description]
  * @return {[type]}          [description]
  */
-function akiraStepForward(e, wizardId) {
-
+function handleKey2(idWizard){
+    $(document).keydown(function(e) {
+        var key = $("#" + idWizard).smartWizard('currentStep') - 1;
+        if (e.keyCode == 13) {
+            angular.element("#" + idWizard).scope().check(key);
+        }
+    });
 }
+
+
+/**
+ * Keyboard handler for TotalN5-Vocab&Grammar game
+ * @param  {[type]} idWizard [description]
+ * @return {[type]}          [description]
+ */
+function handleKey(idWizard) {
+    //Register event trigger for windows
+    $(document).keydown(function(e) {
+        console.log(e);
+        var key = $("#" + idWizard).smartWizard('currentStep') - 1;
+        if (e.keyCode == 13) {
+            angular.element("#" + idWizard).scope().check(key);
+        }
+        switch (e.keyCode) {
+            case 49:
+                angular.element("#" + idWizard).scope().select(key, 0);
+                break;
+            case 50:
+                angular.element("#" + idWizard).scope().select(key, 1);
+                break;
+            case 51:
+                angular.element("#" + idWizard).scope().select(key, 2);
+                break;
+        }
+    });
+}
+/*-----  End of UX handlers  ------*/
+
+/*=========================================
+=            Validation method            =
+=========================================*/
+function leaveAStepCallback(obj, context) {
+    var classStr = "success";
+    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val())
+
+    if (!ret) {
+        $("#sublife").trigger("click");
+        classStr = "failed";
+    }
+    $(".swMain .actionBar .msgBox").removeClass("failed");
+    $(".swMain .actionBar .msgBox").removeClass("success");
+    $(".swMain .actionBar .msgBox").addClass(classStr);
+    $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
+
+    return ret;
+};
+
+function learnValidate(obj, context) {
+    alert("Validating...");
+    return true;
+}
+
+function grammarChoiceLeaveStep(obj, context) {
+    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val());
+    if (!ret) {
+        $("#sublife").trigger("click");
+        $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
+    }
+
+    return ret;
+}
+/*-----  End of Validation method  ------*/

@@ -1,4 +1,4 @@
-<div id="listenWizard" class="swMain akiradirective pictureWizard">
+<div id="pictureWizard" class="swMain" akirawizard="pictureValidate">
     <!-- Step navigation -->
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
@@ -31,52 +31,54 @@
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3" style="text-align:center;">
-                <h1>{{val.hiragana}}</h1>
-                <h2>{{val.kanji}}</h2>
-            </div>
-        </div>
-        <div id="{{key}}" class="picture-wrapper row">
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <!-- <button type="button" ng-click = "select(key, 0)" class="btn btn-default" > -->
-                <img ng-src="../../data/totaln5/data/vocab/image/{{choices[key][0]}}.png" class="img-thumbnail" ng-click="select(key, 0)" id="img-{{key}}-0">
-                <!-- </button> -->
-                <h3>
-                    <span class="akr-key">1</span>{{choices[key][0]}}</h3>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <!-- <button type="button" ng-click = "select(key, 1)" class="btn btn-default" > -->
-                <img ng-src="../../data/totaln5/data/vocab/image/{{choices[key][1]}}.png" class="img-thumbnail" ng-click="select(key, 1)" id="img-{{key}}-1">
-                <!-- </button> -->
-                <h3>
-                    <span class="akr-key">2</span>{{choices[key][1]}}</h3>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                <!-- <button type="button" ng-click = "select(key, 2)" class="btn btn-default" > -->
-                <img ng-src="../../data/totaln5/data/vocab/image/{{choices[key][2]}}.png" class="img-thumbnail" ng-click="select(key, 2)" id="img-{{key}}-2">
-                <!-- </button> -->
-                <h3>
-                    <span class="akr-key">3</span>{{choices[key][2]}}</h3>
-            </div>
-        </div>
 
-        <!-- Answer wrapper-->
-        <div class="row" id="aki-answer-wrapper">
-            <!-- Prepare message holder-->
-            <div class="col-md-8 col-sm-8 col-xs-8">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3" style="text-align:center;">
+                    <h1>{{val.hiragana}}</h1>
+                    <h2>{{val.kanji}}</h2>
+                </div>
             </div>
-            <div class="col-md-3 col-sm-3 col-xs-3">
-                <button type="button" ng-click="check(key)" class="akr-btn-check btn btn-lg btn-pr">
-                    Check
-                </button>
+
+            <div id="{{key}}" class="picture-wrapper row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <!-- <button type="button" ng-click = "select(key, 0)" class="btn btn-default" > -->
+                    <img ng-src="../../data/totaln5/data/vocab/image/{{choices[key][0]}}.png" class="img-thumbnail" ng-click="select(key, 0)" id="img-{{key}}-0">
+                    <!-- </button> -->
+                    <h3>
+                        <span class="akr-key">1</span>{{choices[key][0]}}</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <!-- <button type="button" ng-click = "select(key, 1)" class="btn btn-default" > -->
+                    <img ng-src="../../data/totaln5/data/vocab/image/{{choices[key][1]}}.png" class="img-thumbnail" ng-click="select(key, 1)" id="img-{{key}}-1">
+                    <!-- </button> -->
+                    <h3>
+                        <span class="akr-key">2</span>{{choices[key][1]}}</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <!-- <button type="button" ng-click = "select(key, 2)" class="btn btn-default" > -->
+                    <img ng-src="../../data/totaln5/data/vocab/image/{{choices[key][2]}}.png" class="img-thumbnail" ng-click="select(key, 2)" id="img-{{key}}-2">
+                    <!-- </button> -->
+                    <h3>
+                        <span class="akr-key">3</span>{{choices[key][2]}}</h3>
+                </div>
             </div>
-        </div>
 
 
+            <!-- Answer wrapper-->
+            <div class="row" id="aki-answer-wrapper">
+                <!-- Prepare message holder-->
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <button type="button" ng-click="check(key)" class="akr-btn akr-btn-init" id="btn-{{key}}" data-i18n="common.check">
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script type="text/javascript">
-// changeLang();
+handleKey("pictureWizard");
 </script>

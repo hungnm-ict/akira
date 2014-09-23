@@ -19,7 +19,6 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
     //Get lesson stars objects
     $scope.vocabstar = "10";
     $scope.grammarstar = "80";
-    console.log($routeParams);
 
 }).controller('learnCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
@@ -49,7 +48,7 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
         if (!angular.equals($scope.step, $scope.data.length)) {
             $scope.step++;
             $('#' + id).smartWizard("goForward");
-        }else{
+        } else {
             gameOver();
         }
     }
@@ -101,7 +100,9 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
 
     $scope.select = function(id, btn) {
         $(".imageSelected").removeClass("imageSelected");
-        $("#img-" + id + "-" + btn).addClass("imageSelected");
+        // $("#img-" + id + "-" + btn).addClass("imageSelected");
+        $("#img-" + id + "-" + btn).parent().addClass("imageSelected");
+        $("#btn-" + id).removeClass("akr-btn-init").addClass("akr-btn-check");
 
         if ($scope.selected != btn) {
             $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
@@ -120,7 +121,7 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
 
         if ($scope.selected == $scope.answer[id]) {
             if (id < $scope.data.length - 1) {
-                $("#listenWizard").smartWizard('goForward');
+                $("#pictureWizard").smartWizard('goForward');
                 $scope.step++;
             } else {
                 gameOver();
@@ -182,12 +183,16 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
 
     $scope.select = function(id, btn) {
         if ($scope.selected != btn) {
-            $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
-            if ($scope.selected != -1)
-                $("div#" + id + " button[name='btn" + $scope.selected + "']").attr("class", 'btn btn-default akr-btn');
+            $("div#" + id + " button").removeClass("akr-btn-check");
+            $("div#" + id + " button[name='btn" + btn + "']").addClass("akr-btn-check");
+            if ($scope.selected != -1) {
+                $("div#" + id + " button").removeClass("akr-btn-check");
+                $("div#" + id + " button[name='btn" + $scope.selected + "']").addClass("akr-btn-check");
+            }
             $scope.selected = btn;
         } else {
-            $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-default akr-btn');
+            $("div#" + id + " button").removeClass("akr-btn-check");
+            $("div#" + id + " button[name='btn" + btn + "']").addClass("akr-btn-check");
             $scope.selected = -1;
         }
     };
@@ -197,7 +202,7 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
             return;
         if ($scope.selected == $scope.answer[id]) {
             if (id < $scope.data.length - 1) {
-                $("#listenWizard").smartWizard('goForward');
+                $("#wordWizard").smartWizard('goForward');
                 $scope.step++;
             } else {
                 gameOver();
@@ -218,7 +223,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
     };
     $scope.step = 0;
 
-    var urlStr = "../../data/totaln5/lesson" + $routeParams.lessonId + "/sub" + $routeParams.partId + "/json/default.json";
+    var urlStr = "../../data/totaln5/data/vocab/json/default.json";
     $http({
         method: "GET",
         url: urlStr
@@ -248,7 +253,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
         }
     };
 
-    $scope.check = function(id) {
+    $scope.check = function(id) {alert();
         var ret = akiraStepValidation(id);
         if (!ret) {
             $scope.removeLife();
