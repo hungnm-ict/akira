@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="writeWizard" class="swMain writeWizard" akira-wizard="writeWizard">
+<div id="writeWizard" class="swMain" akirawizard="writeWizard">
     <!-- Step navigation -->
     <ul>
         <li ng-repeat="(key, value) in data">
@@ -31,7 +31,20 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
-
+            
+            <!-- <div class="question-wrapper">
+            
+            </div>
+            <div class="user-input-wrapper">
+            
+            </div>
+            <div class="correct-answer-wrapper">
+            
+            </div>
+            <div class="aki-answer-wrapper">
+            
+            </div> -->
+            
             <!-- Question content && Get user input   -->
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">

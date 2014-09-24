@@ -277,6 +277,9 @@ function handleKey(idWizard) {
         }
     });
 }
+
+
+
 /*-----  End of UX handlers  ------*/
 
 /*=========================================

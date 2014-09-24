@@ -1,10 +1,10 @@
 <div id="topicWizard" class="swMain">
     <ul>
+
         <li>
             <a href="#step-1">
                 <label class="stepNumber">
-                    <span data-i18n="common.part"></span>
-                    <span>&nbsp;1</span>
+                    <span data-i18n="menu.kana"></span>
                 </label>
             </a>
         </li>
@@ -12,12 +12,20 @@
             <a href="#step-2">
                 <label class="stepNumber">
                     <span data-i18n="common.part"></span>
-                    <span>&nbsp;2</span>
+                    <span>&nbsp;1</span>
                 </label>
             </a>
         </li>
         <li>
             <a href="#step-3">
+                <label class="stepNumber">
+                    <span data-i18n="common.part"></span>
+                    <span>&nbsp;2</span>
+                </label>
+            </a>
+        </li>
+        <li>
+            <a href="#step-4">
                 <label class="stepNumber">
                     <span data-i18n="common.part"></span>
                     <span>&nbsp;3</span>
@@ -34,9 +42,12 @@
             {{grammarstar}} <i class="fa fa-star fa-3x grammar"></i>
         </span>
     </span>
-    <div id="step-{{step}}" ng-repeat="step in [1,2,3]">
+    <div id="step-1">
+        Kanra
+    </div>
+    <div id="step-{{step}}" ng-repeat="step in [2,3,4]">
         <!-- Sample ngrepeat -->
-        <div class="row" ng-repeat="val in [step*2-2,step*2-1]">
+        <div class="row" ng-repeat="val in [step*2-4,step*2-3]">
             <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
                 <label>
                     <span data-i18n="common.lesson"></span>

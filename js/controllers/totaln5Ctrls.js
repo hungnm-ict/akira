@@ -12,7 +12,9 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
     $scope.progress.push(object);
     $scope.grammarstar = "100";
 
-}).controller('subCtrl', function($scope, $routeParams, $http) {
+});
+
+totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = 1;
 
@@ -20,7 +22,9 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
     $scope.vocabstar = "10";
     $scope.grammarstar = "80";
 
-}).controller('learnCtrl', function($scope, $routeParams, $http) {
+});
+
+totaln5Ctrls.controller('learnCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -52,7 +56,9 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
             gameOver();
         }
     }
-}).controller('pictureCtrl', function($scope, $routeParams, $http) {
+});
+
+totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -132,7 +138,8 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
         }
     };
 
-}).controller('wordCtrl', function($scope, $routeParams, $http) {
+});
+totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -253,7 +260,8 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
         }
     };
 
-    $scope.check = function(id) {alert();
+    $scope.check = function(id) {
+        alert();
         var ret = akiraStepValidation(id);
         if (!ret) {
             $scope.removeLife();
