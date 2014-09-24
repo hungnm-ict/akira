@@ -77,6 +77,13 @@ html {} body {
 #akr-life-wrapper .progress-bar {
     background: red !important;
 }
+#akr-life-wrapper .progress-bar[aria-valuenow="0"] {
+    background: transparent !important;
+}
+.selected {
+    border: 2px solid #4F81BD !important;
+    border-radius: 5px;
+}
 /*-----  End of Common css for all page  ------*/
 
 #logo-wrapper {
@@ -597,11 +604,17 @@ a:hover {
 .success {
     background: #DCE5F2 !important;
 }
+.success .hide {
+    display: block !important;
+}
 .success .fa-times {
     display: none;
 }
 .failed {
     background: #FDEADB !important;
+}
+.failed .hide {
+    display: block !important;
 }
 .failed .fa-check {
     display: none;
@@ -632,8 +645,8 @@ a:hover {
     padding-bottom: 12px;
     padding-top: 12px;
 }
-.content .wrapper {
-    /*padding: 0px 48px;*/
+.content .wrapper>div {
+    padding: 0px 48px;
 }
 #star {
     background: #FFFFFF;

@@ -30,56 +30,73 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
-<!--             <div class="question-wrapper">
-
-</div>
-<div class="user-input-wrapper">
-
-</div>
-<div class="correct-answer-wrapper">
-
-</div>
-<div class="aki-answer-wrapper">
-
-</div> -->
-
-            <!-- Question content -->
             <div class="row" style="text-align:center;">
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                    <img src="../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-thumbnail">
-                    <h3>{{val.vie}}</h3>
+                    <!-- Question wrapper -->
+                    <div id="question-wrapper">
+                        <img src="../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-thumbnail">
+                        <h3>{{val.vie}}</h3>
+                    </div>
                 </div>
+
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div id="{{key}}">
-                        <button type="button" ng-click="select(key, 0)" class="akr-btn-init akr-btn" name="btn0">
-                            <span class="akr-key-2">1</span>{{choices[key][0]}}
-                        </button>
-                        <br>
-                        <button type="button" ng-click="select(key, 1)" class="akr-btn-init  akr-btn" name="btn1">
-                            <span class="akr-key-2">2</span>{{choices[key][1]}}
-                        </button>
-                        <br>
-                        <button type="button" ng-click="select(key, 2)" class="akr-btn-init akr-btn" name="btn2">
-                            <span class="akr-key-2">3</span>{{choices[key][2]}}
-                        </button>
+                    <!-- User answer wrapper -->
+                    <div id="user-input-wrapper">
+                        <div id="{{key}}">
+                            <button type="button" ng-click="keyPress(49)" class="akr-btn-init akr-btn" ng-class="{'selected': 49==keyCode}">
+                                <span class="akr-key-2"></span>{{choices[key][0]}}
+                            </button>
+                            <br>
+                            <button type="button" ng-click="keyPress(50)" class="akr-btn-init  akr-btn" ng-class="{'selected': 50==keyCode}">
+                                <span class="akr-key-2"></span>{{choices[key][1]}}
+                            </button>
+                            <br>
+                            <button type="button" ng-click="keyPress(51)" class="akr-btn-init akr-btn" ng-class="{'selected': 51==keyCode}">
+                                <span class="akr-key-2"></span>{{choices[key][2]}}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Get user input  -->
-
-            <!-- Prepared correct answer -->
-
-            <!-- Prepared message template-->
-
-            <!-- Answer wrapper-->
-            <div class="row mess-holder-{{key}}" id="aki-answer-wrapper">
-                <div class="col-md-8 col-sm-8 col-xs-8">
+            <!-- Correct answer wrapper -->
+            <div id="correct-answer-wrapper">
+                <div class="row hide">
+                    <div class=" col-md-12 col-sm-12 col-xs-12">
+                        {{val.hiragana}}
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-3">
-                    <button type="button" ng-click="check(key)" class="akr-btn akr-btn-init" data-i18n="common.check">
+            </div>
 
-                    </button>
+            <!-- Custom navigation wrapper-->
+            <div id="aki-answer-wrapper">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <div class="hide">
+                            <i class="fa fa-check fa-4x"></i>
+                            <i class="fa fa-times fa-4x"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div ng-switch on="stage">
+                            <div ng-switch-when="0">
+                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                </button>
+                            </div>
+                            <div ng-switch-when="1">
+                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                </button>
+                            </div>
+                            <div ng-switch-when="2">
+                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                </button>
+                            </div>
+                            <div ng-switch-default>
+                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,5 +104,12 @@
 </div>
 
 <script type="text/javascript">
-handleKey("wordWizard");
+$(document).keydown(function(e) {
+    if (13 == e.keyCode) {
+        angular.element("#wordWizard").scope().enterPress();
+    } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
+        angular.element("#wordWizard").scope().keyPress(e.keyCode);
+    }
+    changeLang();
+});
 </script>

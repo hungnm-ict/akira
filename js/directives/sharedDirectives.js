@@ -44,8 +44,8 @@ akrSharedDirectives.directive('akirawizard', function() {
         var trigger = setInterval(function() {
             $('#' + attrs.id).smartWizard({
                 enableAllSteps: false,
-                // keyNavigation: false,
-                transitionEffect: 'slideleft'
+                keyNavigation: false,
+                transitionEffect: 'fade'
             });
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();

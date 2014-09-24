@@ -24,77 +24,35 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
 
 });
 
-totaln5Ctrls.controller('learnCtrl', function($scope, $routeParams, $http) {
-    $scope.lessonId = $routeParams.lessonId;
-    $scope.partId = $routeParams.partId;
-    $scope.gameObject = {
-        "life": 3
-    };
-    $scope.step = 0;
-
-    var urlStr = "../../data/totaln5/data/vocab/json/default.json";
-    $http({
-        method: "GET",
-        url: urlStr
-    }).
-    success(function(data, status) {
-        $scope.data = akiraShuffle(data);
-    });
-
-    $scope.prev = function(id) {
-        if (!angular.equals($scope.step, 0)) {
-            $scope.step--;
-            $('#' + id).smartWizard("goBackward");
-        }
-    }
-
-    $scope.next = function(id) {
-        if (!angular.equals($scope.step, $scope.data.length)) {
-            $scope.step++;
-            $('#' + id).smartWizard("goForward");
-        } else {
-            gameOver();
-        }
-    }
-});
-
+/**
+ * Controller for Vocab - Picture game
+ * @param  {[type]} $scope       [description]
+ * @param  {[type]} $routeParams [description]
+ * @param  {[type]} $http        [description]
+ * @return {[type]}              [description]
+ */
 totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
-    $scope.gameObject = {
-        "life": 3
-    };
-    $scope.selected = -1;
     $scope.step = 0;
-    $scope.answer = [];
     $scope.choices = [];
+
+    $scope.gameObject = {
+        "life": 3,
+        "correct": 0
+    };
+
+    //UX behaviour
+    $scope.keyCode = 0;
+    $scope.stage = 0;
 
     var urlStr = "../../data/totaln5/data/vocab/json/default.json";
     $http({
         method: "GET",
         url: urlStr
-    }).
-    success(function(data, status) {
+    }).success(function(data, status) {
         $scope.data = akiraShuffle(data);
-
-        for (i = 0; i < $scope.data.length; i++) {
-            var answer = Math.floor(Math.random() * 3);
-            $scope.answer[i] = answer;
-            var temp = [];
-            temp[answer] = $scope.data[i].short;
-            for (j = 0; j < 3; j++) {
-                if (j == answer)
-                    continue;
-                else {
-                    var id;
-                    do
-                        id = Math.floor(Math.random() * data.length);
-                    while ($.inArray($scope.data[id].short, temp) > -1);
-                }
-                temp[j] = $scope.data[id].short;
-            }
-            $scope.choices.push(temp);
-        }
+        $scope.choices = genAnswers($scope.data, "short", 3);
     });
 
     $scope.removeLife = function() {
@@ -104,51 +62,67 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
         }
     };
 
-    $scope.select = function(id, btn) {
-        $(".imageSelected").removeClass("imageSelected");
-        // $("#img-" + id + "-" + btn).addClass("imageSelected");
-        $("#img-" + id + "-" + btn).parent().addClass("imageSelected");
-        $("#btn-" + id).removeClass("akr-btn-init").addClass("akr-btn-check");
-
-        if ($scope.selected != btn) {
-            $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-success');
-            if ($scope.selected != -1)
-                $("div#" + id + " button[name='btn" + $scope.selected + "']").attr("class", 'btn btn-default');
-            $scope.selected = btn;
-        } else {
-            $("div#" + id + " button[name='btn" + btn + "']").attr("class", 'btn btn-default');
-            $scope.selected = -1;
-        }
-    };
-
-    $scope.check = function(id) {
-        if ($scope.selected == -1)
-            return;
-
-        if ($scope.selected == $scope.answer[id]) {
-            if (id < $scope.data.length - 1) {
-                $("#pictureWizard").smartWizard('goForward');
-                $scope.step++;
-            } else {
-                gameOver();
+    $scope.keyPress = function(keyCode) {
+        if ($scope.stage != 2) {
+            if ([49, 50, 51].indexOf($scope.keyCode) == -1) {
+                $scope.stage = 1;
             }
-            $scope.selected = -1;
-        } else {
-            $scope.removeLife();
+            $scope.keyCode = keyCode;
         }
-    };
+        $scope.$apply();
+    }
 
+    $scope.enterPress = function() {
+        var step = $("#pictureWizard").smartWizard('currentStep') - 1;
+        if (1 == $scope.stage) {
+            //Nguoi dung dap an -> an enter -> kiem tra dung / sai
+            var userSlt = $("#pictureWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
+            var correct = $("#pictureWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+            console.log(userSlt + "---" + correct);
+            if (compare(correct, userSlt)) {
+                $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
+                $scope.gameObject.correct++;
+            } else {
+                $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
+                $scope.removeLife();
+            }
+
+            $scope.stage = 2;
+        } else if (2 == $scope.stage) {
+            //Nguoi dung dang o buoc continue va nhan enter
+            if ($scope.step < 9) {
+                $("#pictureWizard").smartWizard('goForward');
+            } else {
+                alert($scope.gameObject.correct);
+            }
+            $scope.keyCode = 0;
+            $scope.stage = 0;
+            $scope.step++;
+        }
+        $scope.$apply();
+    }
 });
+
+/**
+ * Controller for Vocab - Word game
+ * @param  {[type]} $scope       [description]
+ * @param  {[type]} $routeParams [description]
+ * @param  {[type]} $http        [description]
+ * @return {[type]}              [description]
+ */
 totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
-        "life": 3
+        "life": 3,
+        "correct": 0
     };
-    $scope.answer = [];
     $scope.choices = [];
-    $scope.selected = -1;
     $scope.step = 0;
+
+    //UX behaviour
+    $scope.keyCode = 0;
+    $scope.stage = 0;
 
     var urlStr = "../../data/totaln5/data/vocab/json/default.json";
     $http({
@@ -157,25 +131,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
     })
         .success(function(data, status) {
             $scope.data = akiraShuffle(data);
-
-            for (i = 0; i < $scope.data.length; i++) {
-                var answer = Math.floor(Math.random() * 3);
-                $scope.answer[i] = answer;
-                var temp = [];
-                temp[answer] = $scope.data[i].hiragana;
-                for (j = 0; j < 3; j++) {
-                    if (j == answer)
-                        continue;
-                    else {
-                        var id;
-                        do
-                            id = Math.floor(Math.random() * data.length);
-                        while ($.inArray($scope.data[id].hiragana, temp) > -1);
-                    }
-                    temp[j] = $scope.data[id].hiragana;
-                }
-                $scope.choices.push(temp);
-            }
+            $scope.choices = genAnswers($scope.data, "hiragana", 3);
         });
 
 
@@ -188,37 +144,45 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
     };
 
 
-    $scope.select = function(id, btn) {
-        if ($scope.selected != btn) {
-            $("div#" + id + " button").removeClass("akr-btn-check");
-            $("div#" + id + " button[name='btn" + btn + "']").addClass("akr-btn-check");
-            if ($scope.selected != -1) {
-                $("div#" + id + " button").removeClass("akr-btn-check");
-                $("div#" + id + " button[name='btn" + $scope.selected + "']").addClass("akr-btn-check");
+    $scope.keyPress = function(keyCode) {
+        if ($scope.stage != 2) {
+            if ([49, 50, 51].indexOf($scope.keyCode) == -1) {
+                $scope.stage = 1;
             }
-            $scope.selected = btn;
-        } else {
-            $("div#" + id + " button").removeClass("akr-btn-check");
-            $("div#" + id + " button[name='btn" + btn + "']").addClass("akr-btn-check");
-            $scope.selected = -1;
+            $scope.keyCode = keyCode;
         }
-    };
+        $scope.$apply();
+    }
 
-    $scope.check = function(id) {
-        if ($scope.selected == -1)
-            return;
-        if ($scope.selected == $scope.answer[id]) {
-            if (id < $scope.data.length - 1) {
-                $("#wordWizard").smartWizard('goForward');
-                $scope.step++;
+    $scope.enterPress = function() {
+        var step = $("#wordWizard").smartWizard('currentStep') - 1;
+        if (1 == $scope.stage) {
+            //Nguoi dung dap an -> an enter -> kiem tra dung / sai
+            var userSlt = $("#wordWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
+            var correct = $("#wordWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+
+            if (compare(correct, userSlt)) {
+                $("#wordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
+                $scope.gameObject.correct++;
             } else {
-                gameOver();
+                $("#wordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
+                $scope.removeLife();
             }
-            $scope.selected = -1;
-        } else {
-            $scope.removeLife();
+
+            $scope.stage = 2;
+        } else if (2 == $scope.stage) {
+            //Nguoi dung dang o buoc continue va nhan enter
+            if ($scope.step < 9) {
+                $("#wordWizard").smartWizard('goForward');
+            } else {
+                alert($scope.gameObject.correct);
+            }
+            $scope.keyCode = 0;
+            $scope.stage = 0;
+            $scope.step++;
         }
-    };
+        $scope.$apply();
+    }
 
 });
 

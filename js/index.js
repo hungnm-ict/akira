@@ -141,7 +141,7 @@ function akiraShuffle(array) {
         array[randomIndex] = temporaryValue;
     }
 
-    return array;
+    return array.splice(0,9);
 }
 
 
@@ -259,7 +259,6 @@ function handleKey2(idWizard){
 function handleKey(idWizard) {
     //Register event trigger for windows
     $(document).keydown(function(e) {
-        console.log(e);
         var key = $("#" + idWizard).smartWizard('currentStep') - 1;
         if (e.keyCode == 13) {
             angular.element("#" + idWizard).scope().check(key);
