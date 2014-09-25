@@ -106,8 +106,23 @@ function filter(data, key, value) {
     return uniqueGroups;
 }
 
-function gameOver(xp) {
+function gameOver(correctAns) {
+    console.log(correctAns);
+
+    var star;
+    if (correctAns >= 8) {
+        star = 3;
+    } else if (correctAns >= 5) {
+        star = 2;
+    } else if (correctAns >= 3) {
+        star = 1;
+    } else {
+        star = 0;
+    }
+    var xp = correctAns;
     saveScore(xp);
+    $(".game-over-modal-sm game-star").html(star);
+    $(".game-over-modal-sm game-score").html(xp);
     $(".game-over-modal-sm").modal({
         keyboard: false
     });
@@ -141,7 +156,7 @@ function akiraShuffle(array) {
         array[randomIndex] = temporaryValue;
     }
 
-    return array.splice(0,9);
+    return array.splice(0, 9);
 }
 
 
@@ -241,7 +256,7 @@ function akiraStepValidation(id) {
  * @param  {[type]} idWizard [description]
  * @return {[type]}          [description]
  */
-function handleKey2(idWizard){
+function handleKey2(idWizard) {
     $(document).keydown(function(e) {
         var key = $("#" + idWizard).smartWizard('currentStep') - 1;
         if (e.keyCode == 13) {

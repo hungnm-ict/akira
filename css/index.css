@@ -23,7 +23,6 @@
 
 html {} body {
     background-color: whitesmoke !important;
-    background: whitesmoke url(../img/background.png) no-repeat right bottom;
     background-size: 35%;
     bottom: 0px;
     position: absolute;
@@ -31,6 +30,7 @@ html {} body {
     width: 100%;
 }
 .app {
+    background: url(../../img/background.png) no-repeat right bottom;
     bottom: 0px;
     position: absolute;
     top: 0px;
@@ -83,6 +83,9 @@ html {} body {
 .selected {
     border: 2px solid #4F81BD !important;
     border-radius: 5px;
+}
+.google {
+    background: #DD4B39 !important;
 }
 /*-----  End of Common css for all page  ------*/
 
@@ -176,17 +179,17 @@ html {} body {
     border-radius: 3px;
 }
 #login h2 {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);
+    /*text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);*/
     text-transform: uppercase;
     text-align: center;
-    color: #666;
+    /*color: #666;*/
     margin: 0 0 30px 0;
     letter-spacing: 4px;
-    font: normal 26px/1 Verdana, Helvetica;
+    font: normal 26px;
     position: relative;
 }
 #site-lang {
-    background: #344c8c;
+    /*background: #344c8c;*/
     padding: 20px 0px;
     text-align: center;
 }
@@ -207,13 +210,17 @@ html {} body {
     background: url('../img/flags/en.png') no-repeat center;
 }
 #left-sidebar {
-    background: #344C8C;
+    background: #568ED4;
     display: inline-block;
     font-size: 20px;
     min-height: 760px;
     height: 100%;
     text-transform: uppercase;
     /* width: 15%; */
+}
+#left-sidebar .panel-heading {
+    background: #568ED4;
+    border-radius: 0px;
 }
 #left-sidebar .panel-title>a {
     display: inline-block;
@@ -225,6 +232,7 @@ html {} body {
 #left-sidebar .panel.panel-default {
     border: none;
     border-radius: 0px;
+    margin: 0px -15px !important;
 }
 #left-sidebar ul {
     padding: 0px;
@@ -232,10 +240,14 @@ html {} body {
 #left-sidebar li {
     list-style: none;
 }
+#left-sidebar li:hover {
+    background: #1659B0;
+}
 #left-sidebar li a {
     color: white;
     display: inline-block;
-    padding: 6px;
+    font-size: 16px;
+    padding-left: 24px;
     width: 100%;
 }
 #left-sidebar .panel-body {
@@ -243,16 +255,16 @@ html {} body {
     padding-right: 0px;
 }
 #left-sidebar .panel div {
-    background-color: #344C8C !important;
+    background-color: #568ED4 !important;
 }
 #content {
     display: inline-block;
-    padding-top: 48px;
+    padding-top: 20px;
     /* width: 65%; */
 }
 #right-sidebar {
     display: inline-block;
-    padding-top: 48px;
+    padding-top: 20px;
     /* width: 20%; */
 }
 /* DASHBOARD PAGE */
@@ -396,7 +408,7 @@ html {} body {
     display: none;
 }
 .stepContainer {
-    min-height: 650px !important;
+    min-height: 450px !important;
     /*height: 500px !important;*/
 }
 /*No life remaining*/
@@ -479,7 +491,7 @@ ul.anchor {
 .buttonNext {
     background: #568ed4 !important;
 }
-#star span {
+#star span.number {
     font-size: 3em;
 }
 .vocab {
@@ -502,7 +514,7 @@ ul.anchor {
     font-size: 20px;
     font-weight: bolder;
 }
-#subtopicWizard ul.anchor li a {
+#subtopicWizard ul.anchor li a, #leaderboardWizard ul.anchor li a {
     border: 3px solid #344C8C;
     background: #344C8C;
     border-radius: 50%;
@@ -632,6 +644,8 @@ a:hover {
 #writeWizard .write-control {
     font-weight: bold;
     text-align: center;
+    height: 215px;
+    border: 0px;
 }
 .content {
     background: #FFFFFF !important;
@@ -892,7 +906,7 @@ a:hover {
 ====================================*/
 
 .navgroup-active .nav-active {
-    background: red;
+    background: #3774c2;
 }
 .ans-options {
     padding-left: 24px;
@@ -905,7 +919,7 @@ a:hover {
 
 #topicWizard ul.anchor li a .stepNumber {
     display: inline-block;
-    font-size: 28px;
+    font-size: 18px;
     padding-top: 10px;
     width: 100%;
 }
@@ -914,6 +928,8 @@ a:hover {
     border: none;
     border-radius: 30px;
     color: #558ED5;
+    height: auto;
+    width: 100px;
 }
 #topicWizard ul.anchor li a.selected {
     background: #558ED5;
@@ -947,11 +963,15 @@ a:hover {
 ===================================*/
 
 #leaderboard {
-    margin-top: 24px;
     background: white;
     border: 2px solid #344C8C;
     border-radius: 5px;
+    margin-top: 24px;
     text-align: center;
+}
+#leaderboard .stepContainer {
+    height: 450px !important;
+    min-height: initial !important;
 }
 #board-detail .level>ul>li {
     outline: none !important;
@@ -993,3 +1013,10 @@ a:hover {
     overflow-y: scroll;
 }
 /*-----  End ofLEADERBOARD  ------*/
+
+#index #left-sidebar {
+    width: 100%;
+}
+.ui-tabs-active {
+    border-bottom-color: #344C8C !important;
+}

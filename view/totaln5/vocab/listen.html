@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="listenWizard" class="swMain" akirawizard="listenWizard">
+<div id="listenWizard" class="swMain" akirawizard="listenValidate">
     <!-- Step navigation -->
     <ul>
         <li ng-repeat="(key, value) in data">
@@ -31,73 +31,91 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
-            <!-- <div class="question-wrapper">
-            
-            </div>
-            <div class="user-input-wrapper">
-            
-            </div>
-            <div class="correct-answer-wrapper">
-            
-            </div>
-            <div class="aki-answer-wrapper">
-            
-            </div> -->
-
-            <!-- Question content -->
-            <audio controls id="{{key}}" style="display:none;">
-                <source type="audio/mpeg">
-                    Your browser does not support the audio element.
-            </audio>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div ng-click="playSound(key,true)" class="btn-play f-right">
-                        <i class="fa fa-play fa-4x"></i>
+            <!-- Question wrapper -->
+            <div id="question-wrapper">
+                <audio controls id="{{key}}" style="display:none;">
+                    <source type="audio/mpeg">
+                        Your browser does not support the audio element.
+                </audio>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div ng-click="playSound(key,true)" class="btn-play f-right">
+                            <i class="fa fa-play fa-4x"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div ng-click="playSound(key,false)" class="btn-play btn-slow f-left">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div ng-click="playSound(key,false)" class="btn-play btn-slow f-left">
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Get user input  -->
-            <input class="form-control akira-input" id="input-{{key}}" placeholder="TYPING HERE"></input>
-
-            <!-- Prepared correct answer -->
-            <input type="hidden" id="ans-{{key}}" value="{{val.hiragana}}">
-
-            <!-- Prepared message template-->
-            <div class="row" id="mess-{{key}}" style="display:none;">
-                <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:center;">
-                    <i class="fa fa-check fa-4x"></i>
-                    <i class="fa fa-times fa-4x"></i>
-                </div>
-                <div class="col-md-8 col-xs-8 col-sm-8">
-                    <h4>{{val.hiragana}}</h4>
-                    <h4>{{val.kanji}}</h4>
-                    <h4>{{val.vie}}</h4>
+            <!-- User answer wrapper -->
+            <div id="user-input-wrapper">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <input class="form-control akira-input" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" />
+                    </div>
                 </div>
             </div>
 
-            <!-- Answer wrapper-->
-            <div class="row mess-holder-{{key}}" id="aki-answer-wrapper">
-                <!-- Prepare message holder-->
-                <div class="col-md-8 col-sm-8 col-xs-8">
+            <!-- Correct answer wrapper -->
+            <div id="correct-answer-wrapper">
+                <div class="row hide">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {{val.hiragana}}
+                    </div>
                 </div>
+            </div>
 
-                <div class="col-md-3 col-sm-3 col-xs-3">
-                    <button type="button" ng-click="check(key)" class="akr-btn akr-btn-init" id="btn-check-{{key}}">
-                        <span data-i18n="common.check"></span>
-                    </button>
-                    <button type="button" ng-click="next(key)" class="akr-btn akr-btn-check" id="btn-next-{{key}}" style="display:none;">
-                        <span data-i18n="common.next"></span>
-                    </button>
+            <!-- Navigation wrapper-->
+            <div id="aki-answer-wrapper">
+                <div class="row mess-holder-{{key}}">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <div class="row hide" id="mess-{{key}}">
+                            <div class="col-md-4 col-xs-4 col-sm-4" style="text-align:center;">
+                                <i class="fa fa-check fa-4x"></i>
+                                <i class="fa fa-times fa-4x"></i>
+                            </div>
+                            <div class="col-md-8 col-xs-8 col-sm-8">
+                                <h4>{{val.hiragana}}</h4>
+                                <h4>{{val.kanji}}</h4>
+                                <h4>{{val.vie}}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div ng-switch on="stage">
+                            <div ng-switch-when="0">
+                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                </button>
+                            </div>
+                            <div ng-switch-when="1">
+                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                </button>
+                            </div>
+                            <div ng-switch-when="2">
+                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                </button>
+                            </div>
+                            <div ng-switch-default>
+                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
-    handleKey2("listenWizard");
+$(document).keydown(function(e) {
+    if (13 == e.keyCode) {
+        angular.element("#listenWizard").scope().enterPress();
+    }
+    changeLang();
+});
 </script>

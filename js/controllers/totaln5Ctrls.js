@@ -58,7 +58,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver();
+            gameOver($scope.gameObject.correct);
         }
     };
 
@@ -78,7 +78,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#pictureWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
             var correct = $("#pictureWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-            console.log(userSlt + "---" + correct);
+
             if (compare(correct, userSlt)) {
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
@@ -90,14 +90,14 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
-            if ($scope.step < 9) {
+            if (!angular.equals($scope.step, $scope.data.length)) {
+                $scope.keyCode = 0;
+                $scope.stage = 0;
+                $scope.step++;
                 $("#pictureWizard").smartWizard('goForward');
             } else {
-                alert($scope.gameObject.correct);
+                gameOver($scope.gameObject.correct);
             }
-            $scope.keyCode = 0;
-            $scope.stage = 0;
-            $scope.step++;
         }
         $scope.$apply();
     }
@@ -128,21 +128,17 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
     $http({
         method: "GET",
         url: urlStr
-    })
-        .success(function(data, status) {
-            $scope.data = akiraShuffle(data);
-            $scope.choices = genAnswers($scope.data, "hiragana", 3);
-        });
-
-
+    }).success(function(data, status) {
+        $scope.data = akiraShuffle(data);
+        $scope.choices = genAnswers($scope.data, "hiragana", 3);
+    });
 
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver();
+            gameOver($scope.gameObject.correct);
         }
     };
-
 
     $scope.keyPress = function(keyCode) {
         if ($scope.stage != 2) {
@@ -172,25 +168,33 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
-            if ($scope.step < 9) {
+            if (!angular.equals($scope.step, $scope.data.length)) {
+                $scope.keyCode = 0;
+                $scope.stage = 0;
+                $scope.step++;
                 $("#wordWizard").smartWizard('goForward');
             } else {
-                alert($scope.gameObject.correct);
+                gameOver($scope.gameObject.correct);
             }
-            $scope.keyCode = 0;
-            $scope.stage = 0;
-            $scope.step++;
         }
         $scope.$apply();
     }
-
 });
 
+
+/**
+ * Controller for Vocab - Listen game
+ * @param  {[type]} $scope       [description]
+ * @param  {[type]} $routeParams [description]
+ * @param  {[type]} $http        [description]
+ * @return {[type]}              [description]
+ */
 totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
-        "life": 3
+        "life": 3,
+        "correct": 0
     };
     $scope.step = 0;
 
@@ -202,8 +206,6 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
     success(function(data, status) {
         $scope.data = akiraShuffle(data);
     });
-
-
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
@@ -220,34 +222,69 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver();
+            gameOver($scope.gameObject.correct);
         }
     };
 
-    $scope.check = function(id) {
-        alert();
-        var ret = akiraStepValidation(id);
-        if (!ret) {
-            $scope.removeLife();
+
+
+    $scope.enterPress = function() {
+
+        var step = $("#listenWizard").smartWizard('currentStep') - 1;
+        if (1 == $scope.stage) {
+            //Nguoi dung dap an -> an enter -> kiem tra dung / sai
+            var userSlt = $("#listenWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            var correct = $("#listenWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+
+            if (compare(correct, userSlt)) {
+                $("#listenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
+                $scope.gameObject.correct++;
+            } else {
+                $("#listenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
+                $scope.removeLife();
+            }
+
+            $scope.stage = 2;
+        } else if (2 == $scope.stage) {
+            //Nguoi dung dang o buoc continue va nhan enter
+            if (!angular.equals($scope.step, $scope.data.length)) {
+                $scope.keyCode = 0;
+                $scope.stage = 0;
+                $scope.step++;
+                $("#listenWizard").smartWizard('goForward');
+            } else {
+                gameOver($scope.gameObject.correct);
+            }
         }
-        $("#btn-check-" + id).hide();
-        $("#btn-next-" + id).show();
+        $scope.$apply();
     }
 
-    $scope.next = function(id) {
-        if (!angular.equals($scope.step, $scope.data.length)) {
-            $scope.step++;
-            $("#listenWizard").smartWizard('goForward');
+    $scope.keyPress = function(e, keyCode) {
+        if (13 == keyCode) {
+            enterPress();
+        }
+
+        if ("" == $("#input-" + e).val()) {
+            $scope.stage = 0;
         } else {
-            gameOver();
+            $scope.stage = 1;
         }
     }
-}).controller('connectCtrl', function($scope, $routeParams, $http) {
+});
+
+/**
+ * Controller for Vocab - Connect game
+ * @param  {[type]} $scope       [description]
+ * @param  {[type]} $routeParams [description]
+ * @param  {[type]} $http        [description]
+ * @return {[type]}              [description]
+ */
+totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
         "life": 3,
-        "score": 0
+        "correct": 0
     };
     $scope.step = 0;
 
@@ -264,21 +301,23 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if (angular.equals($scope.gameObject.life, 0)) {
-            gameOver();
+            gameOver($scope.gameObject.correct);
         }
     };
 
     $scope.check = function() {
         $scope.step++;
         if (angular.equals($scope.step, 7)) {
-            gameOver();
+            gameOver($scope.gameObject.correct);
         }
     }
-}).controller('writeCtrl', function($scope, $routeParams, $http) {
+});
+totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
-        "life": 3
+        "life": 3,
+        "": 0
     };
     $scope.step = 0;
 
@@ -295,25 +334,50 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver();
+            gameOver($scope.gameObject.correct);
         }
     };
 
-    $scope.check = function(id) {
-        var ret = akiraStepValidation(id);
-        if (!ret) {
-            $scope.removeLife();
+    $scope.enterPress = function() {
+
+        var step = $("#writeWizard").smartWizard('currentStep') - 1;
+        if (1 == $scope.stage) {
+            //Nguoi dung dap an -> an enter -> kiem tra dung / sai
+            var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+            console.log(userSlt + "-" + correct);
+            if (compare(correct, userSlt)) {
+                $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
+                $scope.gameObject.correct++;
+            } else {
+                $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
+                $scope.removeLife();
+            }
+
+            $scope.stage = 2;
+        } else if (2 == $scope.stage) {
+            //Nguoi dung dang o buoc continue va nhan enter
+            if (!angular.equals($scope.step, $scope.data.length)) {
+                $scope.keyCode = 0;
+                $scope.stage = 0;
+                $scope.step++;
+                $("#writeWizard").smartWizard('goForward');
+            } else {
+                gameOver($scope.gameObject.correct);
+            }
         }
-        $("#btn-check-" + id).hide();
-        $("#btn-next-" + id).show();
+
+        $scope.$apply();
     }
 
-    $scope.next = function(id) {
-        if (!angular.equals($scope.step, $scope.data.length)) {
-            $scope.step++;
-            $("#writeWizard").smartWizard('goForward');
+    $scope.keyPress = function(e, keyCode) {
+        if (13 == keyCode) {
+            enterPress();
+        }
+        if ("" == $("#input-" + e).val()) {
+            $scope.stage = 0;
         } else {
-            gameOver();
+            $scope.stage = 1;
         }
     }
 });
