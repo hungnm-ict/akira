@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
-     <script type="text/javascript" src="../../js/controllers/commonCtrls.js"></script>
+    <script type="text/javascript" src="../../js/controllers/commonCtrls.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirectives.js"></script>
     <script type="text/javascript" src="../../js/index.js"></script>
     <style type="text/css" media="screen">
@@ -32,18 +32,28 @@
 </head>
 
 <body>
-    <div class="app row container-fluid" id="dashboard">
-        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=1;nav=0">
-        </div>
-        <div id="content" class="col-md-7 col-sm-9 col-xs-7">
-            <div ng-view></div>
-        </div>
-        <div id="right-sidebar" class="col-md-3 col-sm-3 col-xs-3">
-             <!-- Custom Akira profile directive -->
-            <akrprofile></akrprofile>
+    <div class="app container-full-height container-fluid" id="dashboard">
+        <div class="row row-full-height">
+            <div class="col-md-2 hidden-sm hidden-xs col-full-height">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=1;nav=0">
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-9 col-xs-7 col-full-height">
 
-            <!-- Custom Akira leaderboard directive -->
-            <akrleaderboard></akrleaderboard>
+                <div id="content">
+                    <div ng-view></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-full-height">
+
+                <div id="right-sidebar">
+                    <!-- Custom Akira profile directive -->
+                    <akrprofile></akrprofile>
+
+                    <!-- Custom Akira leaderboard directive -->
+                    <akrleaderboard></akrleaderboard>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -74,7 +84,7 @@
         return $(shuffled);
     };
 
-    var tpl = angular.module('demo', ['ngRoute', 'tplControllers','commonCtrls','akrSharedDirectives']);
+    var tpl = angular.module('demo', ['ngRoute', 'tplControllers', 'commonCtrls', 'akrSharedDirectives']);
 
     tpl.config(['$routeProvider',
         function($routeProvider) {
@@ -220,10 +230,10 @@
             localStorage.setItem("binding", "test");
 
             function link(scope, element, attrs) {
-                if(sessionStorage.hasOwnProperty("user")){
+                if (sessionStorage.hasOwnProperty("user")) {
                     scope.user = JSON.parse(sessionStorage.getItem("user"));
-                }else{
-                    scope.user= "Anonymous";
+                } else {
+                    scope.user = "Anonymous";
                 }
             }
             return {

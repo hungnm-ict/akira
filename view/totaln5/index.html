@@ -24,60 +24,46 @@
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
+    <script type="text/javascript" src="../../js/index.js"></script>
     <script type="text/javascript" src="../../js/controllers/commonCtrls.js"></script>
     <script type="text/javascript" src="../../js/controllers/totaln5Ctrls.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirectives.js"></script>
     <script type="text/javascript" src="../../js/directives/totaln5Directives.js"></script>
     <script type="text/javascript" src="../../js/totaln5App.js"></script>
-    <script type="text/javascript" src="../../js/index.js"></script>
     <style type="text/css" media="screen">
     </style>
 </head>
 
 <body>
-    <div class="app row container-fluid" id="dashboard">
-        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=1">
-        </div>
-        <div id="content" class="col-md-7 col-sm-7 col-xs-7">
-            <div ng-view></div>
-        </div>
-        <div id="right-sidebar" class="col-md-3 col-sm-3 col-xs-3">
-            <!-- Custom Akira profile directive -->
-            <akrprofile></akrprofile>
+    <div class="app container-full-height container-fluid" id="dashboard">
+        <div class="row row-full-height">
+            <div class="col-md-2 col-full-height hidden-sm hidden-xs">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=1">
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-7 col-full-height">
+                <div id="content">
+                    <div ng-view></div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-full-height">
 
-            <!-- Custom Akira leaderboard directive -->
-            <akrleaderboard></akrleaderboard>
+                <div id="right-sidebar">
+                    <!-- Custom Akira profile directive -->
+                    <akrprofile></akrprofile>
+
+                    <!-- Custom Akira leaderboard directive -->
+                    <akrleaderboard></akrleaderboard>
+                </div>
+            </div>
         </div>
     </div>
 
     <script type="text/javascript">
     angular.bootstrap(document, ['totaln5App']);
     app.initialize();
-
-    /**
-     * Create a DOM shuffle method for connect game
-     * @return {[type]} [description]
-     */
-    $.fn.shuffle = function() {
-
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function() {
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-            });
-
-        this.each(function(i) {
-            $(this).replaceWith($(shuffled[i]));
-        });
-
-        return $(shuffled);
-    };
     </script>
+
     <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">

@@ -53,7 +53,6 @@ var app = {
 
 function changeLang(code) {
     var item = (code === undefined || code === "" || code === null) ? "vi" : code;
-
     i18n.init({
         lng: code,
         resGetPath: '../../locales/__lng__/__ns__.json'
@@ -62,9 +61,17 @@ function changeLang(code) {
     });
 }
 
-function loadStar() {
+/**
+ * Loadstar information for specific
+ * @param  {[type]} courseName Availabel courses in website: kana/totaln5/kanjin5/totaln4/kanjin4
+ * @param  {[type]} lesson     Availabel lesson in each course: 1..25
+ * @param  {[type]} subtopic   Availabel subtopic in each lesson: hira,kana,vocab1,vocab2,vocab3,grammar
+ * @param  {[type]} game       Availabel skill in each subtopic: write,picture,word,listen,connect,write,listen(grammar),translate,read(grammar),write(grammar),chooice(grammar)
+ * @return {[type]}            [description]
+ */
+function loadStar(courseName, lesson, subtopic, game) {
     $.getJSON("../../data/star.json", function(data) {
-        console.log(data);
+        console.info("Get star for: " + courseName + " / " + lesson + " / " + subtopic + " / " + game);
     });
 }
 /**
@@ -121,8 +128,8 @@ function gameOver(correctAns) {
     }
     var xp = correctAns;
     saveScore(xp);
-    $(".game-over-modal-sm game-star").html(star);
-    $(".game-over-modal-sm game-score").html(xp);
+    $(".game-over-modal-sm .game-star").html(star);
+    $(".game-over-modal-sm .game-score").html(xp);
     $(".game-over-modal-sm").modal({
         keyboard: false
     });
@@ -296,6 +303,7 @@ function handleKey(idWizard) {
 
 /*-----  End of UX handlers  ------*/
 
+
 /*=========================================
 =            Validation method            =
 =========================================*/
@@ -315,11 +323,6 @@ function leaveAStepCallback(obj, context) {
     return ret;
 };
 
-function learnValidate(obj, context) {
-    alert("Validating...");
-    return true;
-}
-
 function grammarChoiceLeaveStep(obj, context) {
     var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val());
     if (!ret) {
@@ -329,4 +332,41 @@ function grammarChoiceLeaveStep(obj, context) {
 
     return ret;
 }
+
+/**
+ * Global leave step validation method
+ * @param  {[type]} obj     [description]
+ * @param  {[type]} context [description]
+ * @return {[type]}         [description]
+ */
+function akrLeaveStep(obj, context) {
+    console.info("Akira validation....");
+    return true;
+}
+
 /*-----  End of Validation method  ------*/
+(function($) {
+    /**
+     * Create a DOM shuffle method for connect game
+     * @return {[type]} [description]
+     */
+    $.fn.shuffle = function() {
+
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function() {
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+            });
+
+        this.each(function(i) {
+            $(this).replaceWith($(shuffled[i]));
+        });
+
+        return $(shuffled);
+    };
+})(jQuery);

@@ -39,19 +39,18 @@ akrSharedDirectives.directive('akrleaderboard', function($http) {
 });
 
 akrSharedDirectives.directive('akirawizard', function() {
-
     function link(scope, element, attrs) {
         var trigger = setInterval(function() {
             $('#' + attrs.id).smartWizard({
-                enableAllSteps: false,
+                enableAllSteps: "true" === attrs.enablestep,
                 keyNavigation: false,
+                onLeaveStep: akrLeaveStep,
                 transitionEffect: 'fade'
             });
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();
             clearInterval(trigger);
         }, 200);
-
     }
 
     return {

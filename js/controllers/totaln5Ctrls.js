@@ -2,16 +2,12 @@ var totaln5Ctrls = angular.module('totaln5Ctrls', []);
 
 totaln5Ctrls.controller('mainCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
-    //Get course stars objects
-    $scope.vocabstar = "100";
-    $scope.progress = [];
-    var object = {
-        "vocab": 60,
-        "grammar": 10
-    }
-    $scope.progress.push(object);
-    $scope.grammarstar = "100";
+    loadStar("totalN5");
 
+    //Get course stars objects: coursename/lesson/subtopic(1,2,3,4)/skill(1,2,3,4,5)
+    $scope.progress = [];
+    var object = {};
+    $scope.progress.push(object);
 });
 
 totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
@@ -19,9 +15,12 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
     $scope.partId = 1;
 
     //Get lesson stars objects
-    $scope.vocabstar = "10";
-    $scope.grammarstar = "80";
+    loadStar("totalN5", $routeParams.lessonId);
+    //Get lesson stars objects: coursename/lesson/subtopic(1,2,3,4)/skill(1,2,3,4,5)
+    $scope.progress = [];
+    var object = {};
 
+    $scope.progress.push(object);
 });
 
 /**
@@ -34,6 +33,7 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
 totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
+    loadStar("totalN5", $routeParams.lessonId, $routeParams.partId, "picture");
     $scope.step = 0;
     $scope.choices = [];
 
@@ -226,8 +226,6 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
         }
     };
 
-
-
     $scope.enterPress = function() {
 
         var step = $("#listenWizard").smartWizard('currentStep') - 1;
@@ -255,13 +253,15 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
             } else {
                 gameOver($scope.gameObject.correct);
             }
+            //if (!$scope.$$phase) {
+                // $scope.$apply();
+            //}
         }
-        $scope.$apply();
     }
 
     $scope.keyPress = function(e, keyCode) {
         if (13 == keyCode) {
-            enterPress();
+            $scope.enterPress();
         }
 
         if ("" == $("#input-" + e).val()) {
@@ -366,13 +366,14 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http) {
                 gameOver($scope.gameObject.correct);
             }
         }
-
-        $scope.$apply();
+        // if (!$scope.$$phase) {
+            $scope.$apply();
+        // }
     }
 
     $scope.keyPress = function(e, keyCode) {
         if (13 == keyCode) {
-            enterPress();
+            $scope.enterPress();
         }
         if ("" == $("#input-" + e).val()) {
             $scope.stage = 0;

@@ -26,46 +26,55 @@
     <script type="text/javascript" src="../../js/controllers/commonCtrls.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirectives.js"></script>
     <script type="text/javascript" src="../../js/index.js"></script>
-    
+
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 </head>
 
 <body>
-    <div class="app row" id="dashboard">
-        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=2;nav=0">
-        </div>
-
-        <div id="content" class="col-md-7 col-sm-7 col-xs-7">
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <a href="http://bit.ly/JapaneseN5">
-                        <img src="../../img/apps/japanese-n5-android.png" alt="Japanese for android" class="img-responsive"/>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <a href="http://bit.ly/KanjiN5">
-                        <img src="../../img/apps/kanji-n5-android.png" alt="Kanji for android" class="img-responsive"/>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <a href="http://bit.ly/LearningEnglishApps">
-                        <img src="../../img/apps/elight-android.png" alt="Elight for android" class="img-responsive" />
-                    </a>
+    <div class="app container-full-height container-fluid" id="dashboard">
+        <div class="row row-full-height">
+            <div class="col-md-2 col-full-height hidden-sm hidden-xs">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=2;nav=0">
                 </div>
             </div>
-        </div>
-        <div id="right-sidebar" class="col-md-3 col-sm-3 col-xs-3">
-            <!-- Custom Akira profile directive -->
-            <akrprofile></akrprofile>
+            <div class="col-md-7 col-sm-7 col-xs-7 col-full-height">
 
-            <!-- Custom Akira leaderboard directive -->
-            <akrleaderboard></akrleaderboard>
+                <div id="content">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <a href="http://bit.ly/JapaneseN5">
+                                <img src="../../img/apps/japanese-n5-android.png" alt="Japanese for android" class="img-responsive" />
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <a href="http://bit.ly/KanjiN5">
+                                <img src="../../img/apps/kanji-n5-android.png" alt="Kanji for android" class="img-responsive" />
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 ">
+                            <a href="http://bit.ly/LearningEnglishApps">
+                                <img src="../../img/apps/elight-android.png" alt="Elight for android" class="img-responsive" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3 col-full-height">
+                <div id="right-sidebar">
+                    <!-- Custom Akira profile directive -->
+                    <akrprofile></akrprofile>
+
+                    <!-- Custom Akira leaderboard directive -->
+                    <akrleaderboard></akrleaderboard>
+                </div>
+            </div>
         </div>
 
     </div>
 
     <script type="text/javascript">
-    var androidApp = angular.module("android", ['commonCtrls','akrSharedDirectives']);
+    var androidApp = angular.module("android", ['commonCtrls', 'akrSharedDirectives']);
     angular.bootstrap(document, ['android']);
     app.initialize();
     </script>

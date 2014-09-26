@@ -1,4 +1,4 @@
-<div id="pictureWizard" class="swMain" akirawizard="pictureValidate">
+<div id="pictureWizard" class="swMain" akirawizard enablestep="false">
     <!-- Step navigation -->
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
@@ -117,6 +117,7 @@
 
 <script type="text/javascript">
 $(document).keydown(function(e) {
+    console.info( angular.element("#pictureWizard").scope());
     if (13 == e.keyCode) {
         angular.element("#pictureWizard").scope().enterPress();
     } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {

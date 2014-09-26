@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
     <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/index.css" />
-    
+
     <!-- Required libs -->
     <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
@@ -36,11 +36,19 @@
 </head>
 
 <body>
-    <div class="row">
-        <div id="left-sidebar" class="col-md-2 hidden-sm hidden-xs" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=1;nav=2">
-        </div>
-        <div id="content" class="col-md-10 col-sm-10 col-xs-10">
-            <div ui-view></div>
+    <div class="app container-fluid container-full-height">
+
+        <div class="row row-full-height">
+            <div class="col-md-2 hidden-sm hidden-xs col-full-height">
+
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=1;nav=2">
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-10 col-xs-10 col-full-height">
+                <div id="content" class="col-md-10 col-sm-10 col-xs-10">
+                    <div ui-view></div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
