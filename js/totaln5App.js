@@ -16,11 +16,11 @@ totaln5App.config(['$routeProvider',
                 controller: 'hiraCtrl'
             })
             .when('/kana1', {
-                templateUrl: 'kana/kanasub.html',
+                templateUrl: 'kana/katasub.html',
                 controller: 'kataCtrl'
             })
             .when('/kana2', {
-                templateUrl: 'kana/kanasub.html',
+                templateUrl: 'kana/katasub.html',
                 controller: 'kataCtrl'
             })
             .when('/:lessonId', {

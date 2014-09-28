@@ -114,11 +114,11 @@
                 id: response.id
             }
         }).done(function(success) {
-            localStorage.setItem("authorized", "true");
-            localStorage.setItem("user", JSON.stringify(success));
+            sessionStorage.setItem("authorized", "true");
+            sessionStorage.setItem("user", JSON.stringify(success));
             window.location.href = "view/totaln5";
         }).fail(function(error) {
-            localStorage.setItem("authorized", "false");
+            sessionStorage.setItem("authorized", "false");
         });
     }
 

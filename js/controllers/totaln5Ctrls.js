@@ -44,11 +44,22 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
 totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
     $scope.course = "totaln5";
     $scope.lessonId = $routeParams.lessonId;
+    $scope.vocabstar = 0;
+    $scope.vocabprogress = [];
+    $scope.grammarstar = 0;
+    $scope.grammarprogress = [];
+    // Get totaln5 star information
     $http({
         method: "GET",
-        url: "../../data/star.json"
+        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln5&userid=" + getUser().id
     }).success(function(data, status) {
-        $scope.starData = data;
+        var stars = getTotalStar(data, 'totaln5');
+        $scope.vocabstar = stars.vocab;
+        $scope.grammarstar = stars.grammar;
+
+        var progress = getTotalProgress(data, 'totaln5', 4, 5);
+        $scope.vocabprogress = progress.vocab;
+        $scope.grammarprogress = progress.grammar;
     });
 });
 
@@ -162,8 +173,6 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
     //UX behaviour
     $scope.keyCode = 0;
     $scope.stage = 0;
-
-    $scope.starData = loadStar("totalN5", $routeParams.lessonId, $routeParams.partId, "picture");
 
     var urlStr = "../../data/totaln5/data/vocab/json/default.json";
     $http({

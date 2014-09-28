@@ -65,11 +65,8 @@ function changeLang(code) {
  * @return {[type]} [description]
  */
 function getUser() {
-    return {
-        "id": 17,
-        "name": "Đinh Ngọc Anh"
-    };
-    // return JSON.parse(sessionStorage.user);
+    return {"id":17};
+    return JSON.parse(sessionStorage.user);
 }
 
 
@@ -199,8 +196,23 @@ function genAnswers2(data) {
 
 
 function saveScore(course, lesson, subtopic, game, star, exp) {
-    var uid = 17;
-    $.post("http://akira.edu.vn/wp-content/plugins/akira-api/akira_score.php", {
+    $.ajax({
+        type: 'POST',
+        url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_score.php",
+        crossDomain: true,
+        data: {
+            userId: getUser().id,
+            course: course,
+            lesson: lesson,
+            subtopic: subtopic,
+            game: game,
+            star: star,
+            exp: exp
+        }
+    }).done(function(data) {
+        console.info("Score saved");
+    });
+    /*$.post("http://akira.edu.vn/wp-content/plugins/akira-api/akira_score.php", {
         userId: uid,
         course: course,
         lesson: lesson,
@@ -208,10 +220,7 @@ function saveScore(course, lesson, subtopic, game, star, exp) {
         game: game,
         star: star,
         exp: exp
-    })
-        .done(function(data) {
-            console.info("Score saved");
-        });
+    })*/
 }
 
 /**
@@ -339,6 +348,14 @@ function getCourseStar(data, course) {
         });
     });
     return totalStar;
+}
+
+function getLessonStar(data,course,lesson){
+
+}
+
+function getLessonStarProgress(data,course,lesson){
+
 }
 
 /**
