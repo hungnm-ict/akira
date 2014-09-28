@@ -1,4 +1,3 @@
-{{progress["totaln5"]}}
 <div id="subtopicWizard" class="swMain" akirawizard enablestep="true">
     <span class="header">
         <h2 data-i18n="common.lesson"></h2>
@@ -44,43 +43,42 @@
         </span>
     </span>
 
-    <!-- Step 1 start -->
-    <div id="step-1">
+    <div id="step-{{value}}" ng-repeat="value in [1,2,3]">
         <div class="row">
             <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/write" class="thumb">
+                <a ng-href="#/{{lessonId}}/{{value}}/write" class="thumb">
                     <span data-i18n="common.write"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/write.png">
                     </span>
                 </a>
-                <span class="star-1 vocab">
+                <span class="star-{{progress['totaln5'][lessonId][value][1]}} vocab">
                     <i class="fa fa-star fa-3x"></i>
                     <i class="fa fa-star fa-3x"></i>
                     <i class="fa fa-star fa-3x"></i>
                 </span>
             </div>
             <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/picture" class="thumb">
+                <a ng-href="#/{{lessonId}}/{{value}}/picture" class="thumb">
                     <span data-i18n="common.picture"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/picture.png">
                     </span>
                 </a>
-                <span class="vocab">
+                <span class="vocab star-{{progress['totaln5'][lessonId][value][2]}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                 </span>
             </div>
             <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/word" class="thumb">
+                <a ng-href="#/{{lessonId}}/{{value}}/word" class="thumb">
                     <span data-i18n="common.word"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/word.png">
                     </span>
                 </a>
-                <span class="vocab">
+                <span class="vocab star-{{progress['totaln5'][lessonId][value][3]}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
@@ -89,199 +87,26 @@
         </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-2">
-                <a ng-href="#/{{lessonId}}/{{partId}}/listen" class="thumb">
+                <a ng-href="#/{{lessonId}}/{{value}}/listen" class="thumb">
                     <span data-i18n="common.listen"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/listen.png">
                     </span>
                 </a>
-                <span class="vocab">
+                <span class="vocab star-{{progress['totaln5'][lessonId][value][4]}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                 </span>
             </div>
             <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/connect" class="thumb">
+                <a ng-href="#/{{lessonId}}/{{value}}/connect" class="thumb">
                     <span data-i18n="common.connect"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/connect.png">
                     </span>
                 </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Step 2 start -->
-    <div id="step-2">
-        <div class="row">
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/learn" class="thumb">
-                    <span data-i18n="common.learn"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/learn.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/picture" class="thumb">
-                    <span data-i18n="common.picture"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/picture.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/word" class="thumb">
-                    <span data-i18n="common.word"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/word.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/listen" class="thumb">
-                    <span data-i18n="common.listen"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/listen.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/connect" class="thumb">
-                    <span data-i18n="common.connect"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/connect.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/write" class="thumb">
-                    <span data-i18n="common.write"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/write.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Step 3 start -->
-    <div id="step-3">
-        <div class="row">
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/learn" class="thumb">
-                    <span data-i18n="common.learn"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/learn.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/picture" class="thumb">
-                    <span data-i18n="common.picture"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/picture.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/word" class="thumb">
-                    <span data-i18n="common.word"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/word.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/listen" class="thumb">
-                    <span data-i18n="common.listen"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/listen.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/connect" class="thumb">
-                    <span data-i18n="common.connect"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/connect.png">
-                    </span>
-                </a>
-                <span class="vocab">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/write" class="thumb">
-                    <span data-i18n="common.write"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/write.png">
-                    </span>
-                </a>
-                <span class="vocab">
+                <span class="vocab star-{{connect['totaln5'][lessonId][value][5]}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
@@ -294,70 +119,70 @@
     <div id="step-4">
         <div class="row">
             <div class="col-md-4 col-md-offset-2">
-                <a ng-href="#/{{lessonId}}/{{partId}}/listen1" class="thumb">
+                <a ng-href="#/{{lessonId}}/4/listen1" class="thumb">
                     <span data-i18n="common.listen"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/grammar/listen.png">
                     </span>
                 </a>
-                <span class="grammar">
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
+                <span class="grammar star-{{progress['totaln5'][lessonId][4][1]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
                 </span>
             </div>
             <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/choice" class="thumb">
+                <a ng-href="#/{{lessonId}}/4/choice" class="thumb">
                     <span data-i18n="common.choice"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/grammar/choice.png">
                     </span>
                 </a>
-                <span class="grammar">
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
+                <span class="grammar star-{{progress['totaln5'][lessonId][4][2]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
                 </span>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/translate" class="thumb">
+                <a ng-href="#/{{lessonId}}/4/translate" class="thumb">
                     <span data-i18n="common.translate"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/grammar/translate.png">
                     </span>
                 </a>
-                <span class="grammar">
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
+                <span class="grammar star-{{progress['totaln5'][lessonId][4][3]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
                 </span>
             </div>
             <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/read" class="thumb">
+                <a ng-href="#/{{lessonId}}/4/read" class="thumb">
                     <span data-i18n="common.read"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/grammar/read.png">
                     </span>
                 </a>
-                <span class="grammar">
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
+                <span class="grammar  star-{{progress['totaln5'][lessonId][4][4]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
                 </span>
             </div>
             <div class="col-md-4">
-                <a ng-href="#/{{lessonId}}/{{partId}}/word1" class="thumb">
+                <a ng-href="#/{{lessonId}}/4/word1" class="thumb">
                     <span data-i18n="common.word"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/grammar/word.png">
                     </span>
                 </a>
-                <span class="grammar">
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
-                    <i class="fa fa-star fa-3x grammar"></i>
+                <span class="grammar star-{{progress['totaln5'][lessonId][4][5]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
                 </span>
             </div>
         </div>

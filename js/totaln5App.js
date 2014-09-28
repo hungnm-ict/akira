@@ -1,13 +1,28 @@
 var totaln5App = angular.module('totaln5App', ['ngRoute', 'totaln5Ctrls', 'totaln5Directives', 'commonCtrls', 'akrSharedDirectives']);
 
-
 totaln5App.config(['$routeProvider',
     function($routeProvider) {
-        $routeProvider.
-        when('/', {
-            templateUrl: 'main.html',
-            controller: 'mainCtrl'
-        })
+        $routeProvider
+            .when('/', {
+                templateUrl: 'main.html',
+                controller: 'mainCtrl'
+            })
+            .when('/hira1', {
+                templateUrl: 'kana/hirasub.html',
+                controller: 'hiraCtrl'
+            })
+            .when('/hira2', {
+                templateUrl: 'kana/hirasub.html',
+                controller: 'hiraCtrl'
+            })
+            .when('/kana1', {
+                templateUrl: 'kana/kanasub.html',
+                controller: 'kataCtrl'
+            })
+            .when('/kana2', {
+                templateUrl: 'kana/kanasub.html',
+                controller: 'kataCtrl'
+            })
             .when('/:lessonId', {
                 templateUrl: 'subtopic.html',
                 controller: 'subCtrl'
@@ -36,12 +51,10 @@ totaln5App.config(['$routeProvider',
                 templateUrl: 'vocab/write.html',
                 controller: 'writeCtrl'
             })
-
-
-        .when('/:lessonId/4/listen1', {
-            templateUrl: 'grammar/listen.html',
-            controller: 'grammarListenCtrl'
-        })
+            .when('/:lessonId/4/listen1', {
+                templateUrl: 'grammar/listen.html',
+                controller: 'grammarListenCtrl'
+            })
             .when('/:lessonId/4/choice', {
                 templateUrl: 'grammar/choice.html',
                 controller: 'grammarChoiceCtrl'

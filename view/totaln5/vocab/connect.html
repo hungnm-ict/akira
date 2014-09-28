@@ -6,7 +6,7 @@
         <div class="col-md-8 col-sm-8 col-xs-8">
             <div class="col-md-8 col-sm-8 col-xs-8">
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{step/7*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/7*100}}%;">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{step/5*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/5*100}}%;">
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
 
 
             <div class="col-md-6">
-                <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:7">
+                <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:5">
                     <div class="col-md-12 hira-wrapper">
                         <span id="hira-{{value.id}}" class="couple-{{value.id}}" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
                             {{value.hiragana}}
@@ -47,7 +47,7 @@
             </div>
 
             <div class="col-md-6">
-                <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:7">
+                <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:5">
                     <div class="col-md-12 vi-wrapper">
                         <span id="vie-{{value.id}}" class="couple-{{value.id}}" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)">
                             {{value.vie}}

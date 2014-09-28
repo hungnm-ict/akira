@@ -189,6 +189,9 @@ html {} body {
     text-align: center;
     width: 50px;
 }
+.none-padding {
+    padding: 0px !important;
+}
 /* INDEX PAGE */
 
 .homepage {
@@ -199,6 +202,9 @@ html {} body {
     top: 30%;
 }
 #login {
+    border: 2px solid #568ED4;
+    border-radius: 5px;
+    padding: 12px;
     background-color: #fff;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
     background-image: -webkit-linear-gradient(top, #fff, #eee);
@@ -533,6 +539,11 @@ ul.anchor {
     font-size: 20px;
     font-weight: bolder;
 }
+.lesson-wrapper img {
+    max-height: 140px;
+    max-width: 140px;
+    margin: 0px auto;
+}
 #subtopicWizard ul.anchor li a, #leaderboardWizard ul.anchor li a {
     border: 3px solid #344C8C;
     background: #344C8C;
@@ -541,10 +552,26 @@ ul.anchor {
     text-align: center;
     width: 70px;
 }
-#subtopicWizard ul.anchor li a.selected {
+#subtopicWizard ul.anchor li {
+    margin: -5px;
+}
+#subtopicWizard ul.anchor li a {
+    margin-right: -5px;
+}
+#subtopicWizard ul.anchor li:after {
+    content: "-";
+    font-size: 48px;
+    font-weight: bold;
+    color: #344C8C;
+}
+#subtopicWizard ul.anchor li:last-child:after {
+    content: "";
+}
+#subtopicWizard ul.anchor li a.selected, #leaderboardWizard ul.anchor li a.selected {
     background: #FFFFFF;
     border: 3px solid #344C8C;
     color: #344C8C;
+    box-shadow: none;
 }
 #subtopicWizard ul.anchor li a label {
     width: 100%;
@@ -635,7 +662,7 @@ a:hover {
 .ans-opt.choosed {
     border-color: red;
 }
-.success {
+.success, .check {
     background: #DCE5F2 !important;
 }
 .success .hide {
@@ -646,6 +673,7 @@ a:hover {
 }
 .failed {
     background: #FDEADB !important;
+    color: red;
 }
 .failed .hide {
     display: block !important;
@@ -743,8 +771,8 @@ a:hover {
 }
 #aki-answer-wrapper {
     background: #CCC;
-    height: 150px;
-    line-height: 130px;
+    height: 100px;
+    line-height: 80px;
     margin-top: 50px;
 }
 .pictureWizard .actionBar, .wordWizard .actionBar {
@@ -1049,6 +1077,9 @@ a:hover {
 .star-0 {
     color: #C0C0C0;
 }
+.star- {
+    color: #C0C0C0;
+}
 /* VOCAB STAR MANAGEMENT */
 
 .star-1.vocab {
@@ -1090,4 +1121,70 @@ a:hover {
 
 .star-3.grammar {
     color: #92D050;
+}
+.progress {
+    border-radius: 5px;
+    height: 10px;
+}
+.write-btn-play {
+    display: inline-block;
+    position: absolute;
+    left: 240px;
+    top: 20px;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #568ED4;
+    color: #568ED4;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 10px;
+}
+#writeWizard .selected, #writeWizard .write-control {
+    border-radius: 20px;
+}
+#writeWizard .img-responsive {
+    max-width: 175px;
+    margin: 0px auto;
+}
+.failed .correct-child {
+    display: none;
+}
+.success .failed-child {
+    display: none;
+}
+.hint {
+    margin: 0px 12px;
+    font-size: 14px;
+}
+.first:before, .second:before, .third:before {
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid #1659B0;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+}
+.first:before {
+    content: "1";
+}
+.second:before {
+    content: "2";
+}
+.third:before {
+    content: "3";
+}
+#pictureWizard .img-thumbnail {
+    width: 140px !important;
+    height: 140px !important;
+}
+#pictureWizard .selected {
+    border: 0px !important;
+}
+#pictureWizard .selected img {
+    border: 2px solid #4F81BD !important;
+    border-radius: 5px;
+}
+#star .kana {
+    color: #568ED4;
 }

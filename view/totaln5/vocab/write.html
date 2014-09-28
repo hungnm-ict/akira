@@ -35,16 +35,21 @@
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
                     <!-- Question wrapper -->
                     <div id="question-wrapper">
-                        <img ng-src="../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-thumbnail">
+                        <audio controls id="{{key}}" style="display:none;">
+                            <source type="audio/mpeg">
+                                Your browser does not support the audio element.
+                        </audio>
+                        <i class="fa fa-play fa-2x write-btn-play" ng-click="playSound(key,true)"></i>
+                        <img ng-src="../../data/totaln5/data/vocab/image/{{val.short}}.png" class="img-responsive">
                         <h4 class="center" style="text-transform:captalize">{{val.vie}}</h4>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
                     <!-- User answer wrapper -->
                     <div id="user-input-wrapper">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" />
+                        <div class="row none-padding">
+                            <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
+                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" />
                             </div>
                         </div>
                     </div>
@@ -61,18 +66,22 @@
             </div>
 
             <!-- Navigation wrapper-->
-            <div id="aki-answer-wrapper">
+            <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
                 <div class="row mess-holder-{{key}}">
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <div class="row hide" id="mess-{{key}}">
                             <div class="col-md-4 col-xs-4 col-sm-4">
-                                <i class="fa fa-check fa-4x"></i>
-                                <i class="fa fa-times fa-4x"></i>
+                                <span class="correct-child">
+                                    <span class="test-circle"></span>
+                                </span>
+                                <span class="failed-child">
+                                    <i class="fa fa-times fa-4x"></i>
+                                </span>
                             </div>
                             <div class="col-md-8 col-xs-8 col-sm-8">
-                                <h4>{{val.hiragana}}</h4>
-                                <h4>{{val.kanji}}</h4>
-                                <h4>{{val.vie}}</h4>
+                                <span class="hint">{{val.hiragana}}</span>
+                                <span class="hint">{{val.kanji}}</span>
+                                <span class="hint">{{val.vie}}</span>
                             </div>
                         </div>
                     </div>
@@ -111,4 +120,5 @@ $(document).keydown(function(e) {
     }
     changeLang();
 });
+kanjiDict();
 </script>

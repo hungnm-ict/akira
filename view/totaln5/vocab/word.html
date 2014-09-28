@@ -39,21 +39,34 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                     <!-- User answer wrapper -->
                     <div id="user-input-wrapper">
                         <div id="{{key}}">
-                            <button type="button" ng-click="keyPress(49)" class="akr-btn-init akr-btn" ng-class="{'selected': 49==keyCode}">
-                                <span class="akr-key-2"></span>{{choices[key][0]}}
-                            </button>
-                            <br>
-                            <button type="button" ng-click="keyPress(50)" class="akr-btn-init  akr-btn" ng-class="{'selected': 50==keyCode}">
-                                <span class="akr-key-2"></span>{{choices[key][1]}}
-                            </button>
-                            <br>
-                            <button type="button" ng-click="keyPress(51)" class="akr-btn-init akr-btn" ng-class="{'selected': 51==keyCode}">
-                                <span class="akr-key-2"></span>{{choices[key][2]}}
-                            </button>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <span class="first"></span>
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <span ng-click="keyPress(49)" class="form-control" ng-class="{'selected': 49==keyCode}">{{choices[key][0]}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <span class="second"></span>
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <span ng-click="keyPress(50)" class="form-control" ng-class="{'selected': 50==keyCode}">{{choices[key][1]}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <span class="third"></span>
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <span ng-click="keyPress(51)" class="form-control" ng-class="{'selected': 51==keyCode}">{{choices[key][2]}}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,12 +82,23 @@
             </div>
 
             <!-- Custom navigation wrapper-->
-            <div id="aki-answer-wrapper">
+            <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="hide">
-                            <i class="fa fa-check fa-4x"></i>
-                            <i class="fa fa-times fa-4x"></i>
+                        <div class="row hide" id="mess-{{key}}">
+                            <div class="col-md-4 col-xs-4 col-sm-4">
+                                <span class="correct-child">
+                                    <span class="test-circle"></span>
+                                </span>
+                                <span class="failed-child">
+                                    <i class="fa fa-times fa-4x"></i>
+                                </span>
+                            </div>
+                            <div class="col-md-8 col-xs-8 col-sm-8">
+                                <span class="hint">{{val.hiragana}}</span>
+                                <span class="hint">{{val.kanji}}</span>
+                                <span class="hint">{{val.vie}}</span>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-3">
