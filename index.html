@@ -131,6 +131,18 @@
         s.parentNode.insertBefore(po, s);
     })();
 
+
+
+    function onGPLoginClick() {
+        var additionalParams = {
+            'callback': onGooglePlusLoginSuccess,
+            'cookiepolicy': 'single_host_origin',
+            'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read',
+            'clientid': '451560498175-gj7419dvh1t85n3pn38lgvsmot8smr4t.apps.googleusercontent.com'
+        };
+        gapi.auth.signIn(additionalParams);
+    }
+
     function onGooglePlusLoginSuccess(authResult) {
         if (authResult['code']) {
             gapi.client.load('plus', 'v1', function() {
@@ -147,35 +159,21 @@
     }
 
     function ajaxGoogleLogin(response) {
-        console.log(response);
-        /*$.ajax({
-                    type:'POST',
-                    url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
-                    data: {type:"google_user_id",id:response.id}
-                }).done(function(success){
-                    sessionStorage.setItem("authorized","true");
-                    window.location.href="dashboard.html";
-                }).fail(function(error){
-                    sessionStorage.setItem("authorized","false");
-                });*/
+        $.ajax({
+            type: 'POST',
+            url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
+            data: {
+                type: "google_user_id",
+                id: response.id
+            }
+        }).done(function(success) {
+            sessionStorage.setItem("authorized", "true");
+            sessionStorage.setItem("user", JSON.stringify(success));
+            window.location.href = "view/totaln5";
+        }).fail(function(error) {
+            sessionStorage.setItem("authorized", "false");
+        });
     }
-
-    function onGPLoginClick() {
-        var additionalParams = {
-            'callback': ajaxGoogleLogin,
-            'data-cookiepolicy': none
-        };
-        gapi.auth.signIn(additionalParams);
-    }
-
-
-    function gSignin() {
-        var additionalParams = {
-            'callback': ajaxGoogleLogin
-        };
-        gapi.auth.signIn(additionalParams);
-    }
-    
     app.initialize();
     </script>
 

@@ -39,6 +39,11 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
     $scope.show = function(e) {
         $scope.kana = e;
     }
+
+    $scope.check = function(e) {
+        console.log(e);
+        return false;
+    }
 });
 
 totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
@@ -53,13 +58,12 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
         method: "GET",
         url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln5&userid=" + getUser().id
     }).success(function(data, status) {
-        var stars = getTotalLessonStar(data, 'totaln5',$routeParams.lessonId);
+        var stars = getTotalLessonStar(data, 'totaln5', $routeParams.lessonId);
         $scope.vocabstar = stars.vocab;
         $scope.grammarstar = stars.grammar;
 
-        var progress = getTotalProgress(data, 'totaln5', 4, 5);
-        $scope.vocabprogress = progress.vocab;
-        $scope.grammarprogress = progress.grammar;
+        $scope.progress = data;
+        console.log(data);
     });
 });
 

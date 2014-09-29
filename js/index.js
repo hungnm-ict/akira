@@ -442,7 +442,38 @@ function getTotalProgress(data, course, subInLess, gameInSub) {
     }
 }
 
+/**
+ * Tinh tong so sao trong mot bai
+ * @param  {[type]} data   [description]
+ * @param  {[type]} course [description]
+ * @param  {[type]} lesson [description]
+ * @return {[type]}        [description]
+ */
 function getTotalLessonStar(data, course, lesson) {
+    var vocabStar = 0;
+    var grammarStar = 0;
+    $.each(data[course], function(lesson) {
+        if (lesson === lesson) {
+
+            $.each(data[course][lesson], function(sub) {
+                $.each(data[course][lesson][sub], function(game) {
+                    if (sub == 4) {
+                        grammarStar += parseInt(data[course][lesson][sub][game]);
+                    } else {
+                        vocabStar += parseInt(data[course][lesson][sub][game]);
+                    }
+                });
+            });
+        }
+    });
+
+    return {
+        "vocab": vocabStar,
+        "grammar": grammarStar
+    }
+}
+
+function getTotalGameStar(data, course, lesson) {
     var vocabStar = 0;
     var grammarStar = 0;
     $.each(data[course], function(lesson) {
