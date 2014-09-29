@@ -1188,3 +1188,9 @@ a:hover {
 #star .kana {
     color: #568ED4;
 }
+.kanji{
+    color: red;
+}
+.progress.kanji .progress-bar {
+    background-image: linear-gradient(to bottom, red 0, red 100%);
+}

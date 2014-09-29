@@ -65,7 +65,9 @@ function changeLang(code) {
  * @return {[type]} [description]
  */
 function getUser() {
-    return {"id":17};
+    return {
+        "id": 17
+    };
     return JSON.parse(sessionStorage.user);
 }
 
@@ -350,13 +352,7 @@ function getCourseStar(data, course) {
     return totalStar;
 }
 
-function getLessonStar(data,course,lesson){
 
-}
-
-function getLessonStarProgress(data,course,lesson){
-
-}
 
 /**
  * Tính progress của từng bài học trong một khoá học. Dành cho các khóa : kana,kanjin4,kanjin5
@@ -445,6 +441,31 @@ function getTotalProgress(data, course, subInLess, gameInSub) {
         "grammar": grammarProgress
     }
 }
+
+function getTotalLessonStar(data, course, lesson) {
+    var vocabStar = 0;
+    var grammarStar = 0;
+    $.each(data[course], function(lesson) {
+        if (lesson === lesson) {
+
+            $.each(data[course][lesson], function(sub) {
+                $.each(data[course][lesson][sub], function(game) {
+                    if (sub == 4) {
+                        grammarStar += parseInt(data[course][lesson][sub][game]);
+                    } else {
+                        vocabStar += parseInt(data[course][lesson][sub][game]);
+                    }
+                });
+            });
+        }
+    });
+
+    return {
+        "vocab": vocabStar,
+        "grammar": grammarStar
+    }
+}
+
 
 function kanjiDict() {
     $(".kanji-dict").hover(function(e) {

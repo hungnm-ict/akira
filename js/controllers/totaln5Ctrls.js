@@ -53,7 +53,7 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
         method: "GET",
         url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln5&userid=" + getUser().id
     }).success(function(data, status) {
-        var stars = getTotalStar(data, 'totaln5');
+        var stars = getTotalLessonStar(data, 'totaln5',$routeParams.lessonId);
         $scope.vocabstar = stars.vocab;
         $scope.grammarstar = stars.grammar;
 

@@ -1,5 +1,5 @@
 <div id="topicWizard" class="swMain" akirawizard enablestep="true">
-    <ul>
+    <ul class="hide">
         <li>
             <a href="#step-1">
                 <label class="stepNumber">
@@ -8,98 +8,27 @@
                 </label>
             </a>
         </li>
-        <li>
-            <a href="#step-2">
-                <label class="stepNumber">
-                    <span data-i18n="common.part"></span>
-                    <span>&nbsp;2</span>
-                </label>
-            </a>
-        </li>
-        <li>
-            <a href="#step-3">
-                <label class="stepNumber">
-                    <span data-i18n="common.part"></span>
-                    <span>&nbsp;3</span>
-                </label>
-
-            </a>
-        </li>
     </ul>
     <span id="star">
         <span>
-            4
+            
         </span>
-        <i class="fa fa-star fa-3x vocab"></i>
-        <span>
-            4
-        </span>
-        <i class="fa fa-star fa-3x grammar"></i>
+        <i class="fa fa-star fa-3x kanji"></i>
     </span>
     <div id="step-1">
         <div class="wrapper">
             <!-- Sample ngrepeat -->
             <div class="row" ng-repeat="val in [0,1]">
                 <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
-                    <span data-i18n="common.lesson"></span>
-                    <span>&nbsp;{{4* val + value}}</span>
+                    <label >
+                        <span data-i18n="common.lesson"></span>
+                        <span>&nbsp;{{4* val + value}}</span>
+                    </label>
                     <a ng-href="#/{{4* val + value}}" class="thumb">
-                        <img ng-src="../../img/kanjin5/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-thumbnail">
+                        <img ng-src="../../img/kanjin5/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-responsive">
                     </a>
-                    <div class="progress vocab">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            60%
-                        </div>
-                    </div>
-                    <div class="progress grammar">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                            10%
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="step-2">
-        <div class="wrapper">
-            <div class="row" ng-repeat="val in [2,3]">
-                <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
-                    <span data-i18n="common.lesson"></span>
-                    <span>&nbsp;{{4* val + value}}</span>
-                    <a ng-href="#/{{4* val + value}}" class="thumb">
-                        <img ng-src="../../img/kanjin5/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-thumbnail">
-                    </a>
-                    <div class="progress vocab">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            60%
-                        </div>
-                    </div>
-                    <div class="progress grammar">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                            10%
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="step-3">
-        <div class="wrapper">
-            <div class="row" ng-repeat="val in [4,5]">
-                <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
-                    <span data-i18n="common.lesson"></span>
-                    <span>&nbsp;{{4* val + value}}</span>
-                    <a ng-href="#/{{4* val + value}}" class="thumb">
-                        <img ng-src="../../img/kanjin5/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-thumbnail">
-                    </a>
-                    <div class="progress vocab">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            60%
-                        </div>
-                    </div>
-                    <div class="progress grammar">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-                            10%
+                    <div class="progress kanji">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
                         </div>
                     </div>
                 </div>

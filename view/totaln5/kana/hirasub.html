@@ -51,7 +51,7 @@
         <div class="row">
             <div class="col-md-4">
                 <a ng-href="#/{{lessonId}}/{{value}}/write" class="thumb">
-                    <span data-i18n="common.write"></span>
+                    <span data-i18n="common.learn"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/write.png">
                     </span>
@@ -90,20 +90,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-2">
-                <a ng-href="#/{{lessonId}}/{{value}}/listen" class="thumb">
-                    <span data-i18n="common.listen"></span>
-                    <span class="akira-circle">
-                        <img ng-src="../../img/totaln5/subtopic/listen.png">
-                    </span>
-                </a>
-                <span class="vocab star-{{progress['totaln5'][lessonId][value]['listen']}}">
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                    <i class="fa fa-star fa-3x "></i>
-                </span>
-            </div>
-            <div class="col-md-4">
+           
+            <div class="col-md-4  col-md-offset-2">
                 <a ng-href="#/{{lessonId}}/{{value}}/connect" class="thumb">
                     <span data-i18n="common.connect"></span>
                     <span class="akira-circle">
@@ -111,6 +99,19 @@
                     </span>
                 </a>
                 <span class="vocab star-{{connect['totaln5'][lessonId][value]['listen']}}">
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                </span>
+            </div>
+             <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/{{value}}/listen" class="thumb">
+                    <span data-i18n="common.write"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/listen.png">
+                    </span>
+                </a>
+                <span class="vocab star-{{progress['totaln5'][lessonId][value]['listen']}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
