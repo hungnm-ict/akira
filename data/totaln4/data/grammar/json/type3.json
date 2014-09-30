@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 1,
+    "filename": "1.1.1",
+    "hiragana": "わたし　は　マイクミラー　です　",
+    "kanji": "私は　マイクミラーです",
+    "vietnamese": "Tôi là Mike Miller",
+    "english": "I am Mike Miller"
+  },
+  {
+    "id": 1,
+    "filename": "1.1.2",
+    "hiragana": "サントスさん 　は 　がくせい 　じゃ　ありません",
+    "kanji": "サントスさんは　学生じゃ　ありません",
+    "vietnamese": "Anh Santos không phải là học sinh.",
+    "english": "Mr. Santos is not a student."
+  },
+  {
+    "id": 1,
+    "filename": "1.1.3",
+    "hiragana": "ミラーさん  は　かいしゃいん ですか",
+    "kanji": "ミラーさんは　会社員ですか",
+    "vietnamese": "Anh Miller có phải nhân viên công ty không?",
+    "english": "Is mr. Miller a company employee?"
+  },
+  {
+    "id": 1,
+    "filename": "1.1.4",
+    "hiragana": "サントスさん  も　かいしゃいん です",
+    "kanji": "サントスさんも　会社員です",
+    "vietnamese": "Anh Santos cũng là nhân viên công ty.",
+    "english": "Mr. Santos is a company employee, too."
+  },
+  {
+    "id": 1,
+    "filename": "1.1.5",
+    "hiragana": "あのひと  は　だれ ですか",
+    "kanji": "あの人は　誰ですか",
+    "vietnamese": "Người kia là ai?",
+    "english": "Who is that person?"
+  },
+  {
+    "id": 2,
+    "filename": "2.1.1",
+    "hiragana": "これ　 は　じしょ　です",
+    "kanji": "これは　辞書です",
+    "vietnamese": "Đây là cuốn từ điển.",
+    "english": "This is a dictionary."
+  },
+  {
+    "id": 2,
+    "filename": "2.1.2",
+    "hiragana": "それ　は　わたしの　かさ　です",
+    "kanji": "それは　私の　傘です",
+    "vietnamese": "Đó là cái ô của tôi.",
+    "english": "That is my umbrella."
+  },
+  {
+    "id": 2,
+    "filename": "2.1.3",
+    "hiragana": "この　ほん　は　わたしの　です",
+    "kanji": "この　本は　私のです",
+    "vietnamese": "Cái ô này là của tôi.",
+    "english": "This umbrella is mine."
+  },
+  {
+    "id": 2,
+    "filename": "2.1.4",
+    "hiragana": "これ　は　ボールペン　ですか、シャープペンシル　ですか",
+    "kanji": "これは　ボールペン　ですか、シャープペンシル　ですか",
+    "vietnamese": "Đây là bút bi hay bút chì kim?",
+    "english": "Is this a ballpen or a mechanical pencil?"
+  },
+  {
+    "id": 2,
+    "filename": "2.1.5",
+    "hiragana": "あれ　は　コンピュータの　ほん　です",
+    "kanji": "あれは　コンピュータの　本です",
+    "vietnamese": "Kia là quyển sách về máy vi tính.",
+    "english": "That is a book about computer."
+  },
+  {
+    "id": 3,
+    "filename": "3.1.1",
+    "hiragana": "ここ　は　しょくどう　です",
+    "kanji": "ここは　食堂です",
+    "vietnamese": "Đây là nhà ăn.",
+    "english": "This is a dining hall."
+  },
+  {
+    "id": 3,
+    "filename": "3.1.2",
+    "hiragana": "エレベーター　は　あそこ　です",
+    "kanji": "エレベーターは　あそこです",
+    "vietnamese": "Thang máy ở đằng kia.",
+    "english": "The elevator is over there."
+  },
+  {
+    "id": 3,
+    "filename": "3.1.3",
+    "hiragana": "やまださん　は　じむしょ　です",
+    "kanji": "山田さんは　事務所です",
+    "vietnamese": "Anh Yamada ở văn phòng.",
+    "english": "Mr. Yamada is in the office."
+  },
+  {
+    "id": 3,
+    "filename": "3.1.4",
+    "hiragana": "かいだん　は　どちら　ですか",
+    "kanji": "階段は　どちらですか",
+    "vietnamese": "Cầu thang ở chỗ nào vậy?",
+    "english": "Where is the stairs?"
+  },
+  {
+    "id": 3,
+    "filename": "3.1.5",
+    "hiragana": "これ　は　にほんの　くるま　です",
+    "kanji": "これは　日本の　車です",
+    "vietnamese": "Đây là xe hơi của Nhật.",
+    "english": "This is a car from Japan."
+  },
+  {
+    "id": 4,
+    "filename": "4.1.1",
+    "hiragana": "いま　４じ５ふん　です",
+    "kanji": "今　4時5分です",
+    "vietnamese": "Bây giờ là 4 giờ 5 phút.",
+    "english": "It's 5 past 4 now."
+  },
+  {
+    "id": 4,
+    "filename": "4.1.2",
+    "hiragana": "わたし　は　まいあさ　6じに　おきます",
+    "kanji": "私は　毎朝　6時に　起きます",
+    "vietnamese": "Mỗi sáng tôi dậy vào lúc 6 giờ.",
+    "english": "Every morning  I wake up at 6 o'clock."
+  },
+  {
+    "id": 4,
+    "filename": "4.1.3",
+    "hiragana": "わたし　は　きのう　べんきょうしました",
+    "kanji": "私は　昨日　勉強しました",
+    "vietnamese": "Hôm qua tôi đã học.",
+    "english": "I studied yesterday."
+  },
+  {
+    "id": 4,
+    "filename": "4.1.4",
+    "hiragana": "ぎんこう　は　９じから　３じまで　です",
+    "kanji": "銀行は　９時から　３時までです",
+    "vietnamese": "Ngân hàng mở cửa từ 9 giờ đến 3 giờ.",
+    "english": "The bank opens from 9 o'clock to 3 o'clock."
+  },
+  {
+    "id": 4,
+    "filename": "4.1.5",
+    "hiragana": "としょかん　の　やすみ　は　どようびと　にちようび　です",
+    "kanji": "図書館の休みは　土曜日と　日曜日です",
+    "vietnamese": "Thư viện đóng cửa vào thứ bảy và chủ nhật.",
+    "english": "The library closes on Saturday and Sunday."
+  },
+  {
+    "id": 5,
+    "filename": "5.1.1",
+    "hiragana": "わたし　は　きょうと　へ　いきます",
+    "kanji": "私は　京都へ　行きます",
+    "vietnamese": "Tôi đi Kyoto.",
+    "english": "I go to Kyoto."
+  },
+  {
+    "id": 5,
+    "filename": "5.1.2",
+    "hiragana": "わたし　は　タクシー　で　うち　へ　かえります",
+    "kanji": "私は　タクシーで　うちへ　帰ります",
+    "vietnamese": "Tôi về nhà bằng taxi.",
+    "english": "I go home by taxi."
+  },
+  {
+    "id": 5,
+    "filename": "5.1.3",
+    "hiragana": "わたし　は　かぞく　と　にほん　へ　きました",
+    "kanji": "私は　家族と　日本へ　来ました",
+    "vietnamese": "Tôi đến Nhật cùng gia đình.",
+    "english": "I came to Japan with my family."
+  },
+  {
+    "id": 5,
+    "filename": "5.1.4",
+    "hiragana": "なに　も　たべません",
+    "kanji": "何も　食べません",
+    "vietnamese": "Tôi không ăn gì cả.",
+    "english": "I don’t eat anything."
+  },
+  {
+    "id": 5,
+    "filename": "5.1.5",
+    "hiragana": "いつ　ひろしま　へ　いきますか",
+    "kanji": "いつ　広島へ　行きますか",
+    "vietnamese": "Khi nào bạn sẽ đi Hiroshima?",
+    "english": "When are you going to Hiroshima?"
+  },
+  {
+    "id": 6,
+    "filename": "6.1.1",
+    "hiragana": "わたし　は　ほん　を　よみます",
+    "kanji": "私は　本を　読みます",
+    "vietnamese": "Tôi đọc sách.",
+    "english": "I read books."
+  },
+  {
+    "id": 6,
+    "filename": "6.1.2",
+    "hiragana": "わたし　は　えきで　しんぶん　を　かいます",
+    "kanji": "私は　駅で　新聞を　買います",
+    "vietnamese": "Tôi mua báo ở nhà ga.",
+    "english": "I buy newspaper at the station."
+  },
+  {
+    "id": 6,
+    "filename": "6.1.3",
+    "hiragana": "いっしょに　こうべ　へ　いきませんか",
+    "kanji": "一緒に　神戸へ　行きませんか",
+    "vietnamese": "Bạn có cùng đi Kobe với tôi không?",
+    "english": "Shall we go to Kobe together?"
+  },
+  {
+    "id": 6,
+    "filename": "6.1.4",
+    "hiragana": "ちょっと　やすみましょう",
+    "kanji": "ちょっと　休みましょう",
+    "vietnamese": "Chúng ta hãy nghỉ một lát đi.",
+    "english": "Let's rest a bit."
+  },
+  {
+    "id": 6,
+    "filename": "6.1.5",
+    "hiragana": "あした　パーティーを　します",
+    "kanji": "明日　パーティーを　します",
+    "vietnamese": "Ngày mai tôi mở tiệc.",
+    "english": "I'm throwing a party tomorrow."
+  },
+  {
+    "id": 7,
+    "filename": "7.1.1",
+    "hiragana": "わたし　は　ワープロ　で　てがみ　を　かきます",
+    "kanji": "私は　ワープロで　手紙を　書きます",
+    "vietnamese": "Tôi viết thư bằng máy đánh chữ",
+    "english": "I write letters by typewriter."
+  },
+  {
+    "id": 7,
+    "filename": "7.1.2",
+    "hiragana": "わたし　は　きむらさん　に　はな　を　あげます",
+    "kanji": "私は　木村さんに　花を　あげます",
+    "vietnamese": "Tôi tặng hoa cho cô Kimura.",
+    "english": "I give flower to Ms.Kimura."
+  },
+  {
+    "id": 7,
+    "filename": "7.1.3",
+    "hiragana": "わたし　は　カリナさんに　チョコレート　を　もらいました",
+    "kanji": "わたしは　カリナさんに　チョコレートを　もらいました",
+    "vietnamese": "Tôi nhận được sô cô la của chị Karina",
+    "english": "I received chocolate from Ms.Karina."
+  },
+  {
+    "id": 7,
+    "filename": "7.1.4",
+    "hiragana": "にほんじん　は　はしで　ごはん　を　たべます",
+    "kanji": "日本人　は　はしで　ご飯を　食べます",
+    "vietnamese": "Người Nhật ăn cơm bằng đũa.",
+    "english": "Japanese people eat with chopsticks."
+  },
+  {
+    "id": 7,
+    "filename": "7.1.5",
+    "hiragana": "わたし　は　せんせい　に　ほん　を　かりました",
+    "kanji": "わたしは　先生に　本を　借りました",
+    "vietnamese": "Tôi mượn sách của giáo viên",
+    "english": "I borrow books from teacher."
+  },
+  {
+    "id": 8,
+    "filename": "8.1.1",
+    "hiragana": "さくら　は　きれい　です",
+    "kanji": "桜は　きれいです",
+    "vietnamese": "hoa anh đào rất đẹp",
+    "english": "cherry blossoms are beautiful"
+  },
+  {
+    "id": 8,
+    "filename": "8.1.2",
+    "hiragana": "ふじさん　は　たかい　です",
+    "kanji": "富士山は　たかいです",
+    "vietnamese": "núi phú sĩ rất cao",
+    "english": "Fuji is high"
+  },
+  {
+    "id": 8,
+    "filename": "8.1.3",
+    "hiragana": "さくら　は　きれいな　はな　です",
+    "kanji": "桜は　きれいな　花です",
+    "vietnamese": "hoa anh đào là loại hoa đẹp",
+    "english": "cherry blossoms are beautiful flowers"
+  },
+  {
+    "id": 8,
+    "filename": "8.1.4",
+    "hiragana": "ふじさん　は　たかい　やま　です",
+    "kanji": "富士山は　たかい　山です",
+    "vietnamese": "núi phú sĩ là ngọn núi cao",
+    "english": "Fuji is high mountain"
+  },
+  {
+    "id": 8,
+    "filename": "8.1.5",
+    "hiragana": "ミラーさん　は　しんせつ　です",
+    "kanji": "ミラーさんは　親切です",
+    "vietnamese": "mira rất thân thiện.",
+    "english": "mira is friendly"
+  },
+  {
+    "id": 9,
+    "filename": "9.1.1",
+    "hiragana": "わたし　は　イタリアりょうり　が　すきです",
+    "kanji": "わたしは　イタリア料理が　好きです",
+    "vietnamese": "tôi thích món ăn ý",
+    "english": "I like italia's food"
+  },
+  {
+    "id": 9,
+    "filename": "9.1.2",
+    "hiragana": "わたし　は　にほんご　が　すこし　わかります",
+    "kanji": "わたしは　日本語が　少し　わかります",
+    "vietnamese": "tôi hiểu một chút tiếng nhật",
+    "english": "I understand a bit japanese"
+  },
+  {
+    "id": 9,
+    "filename": "9.1.3",
+    "hiragana": "きょう　は　こども　の　たんじょうび　ですから、はやく　かえります",
+    "kanji": "きょうは　子供の　誕生日ですから、はやく　帰ります",
+    "vietnamese": "hôm nay là sinh nhật của con nên hãy về nhà sớm",
+    "english": "today is my child's birthday so come back home soon"
+  },
+  {
+    "id": 9,
+    "filename": "9.1.4",
+    "hiragana": "さとうさん　は　うた　が　じょうずです",
+    "kanji": "佐藤さんは　歌が　上手です",
+    "vietnamese": "sato hát rất hay",
+    "english": "sato sing very well"
+  },
+  {
+    "id": 9,
+    "filename": "9.1.5",
+    "hiragana": "じかん　が　ありません　から、タクシーで　いきます",
+    "kanji": "時間が　ありませんから、タクシーで　行きます",
+    "vietnamese": "vì không có thời gian nên tôi đi bằng taxi",
+    "english": "because there's no time so I go by taxi"
+  },
+  {
+    "id": 10,
+    "filename": "10.1.1",
+    "hiragana": "あそこ　に　さとうさん　が　います",
+    "kanji": "あそこに　佐藤さんが　います",
+    "vietnamese": "sato ở đằng kia kìa",
+    "english": "that's sato"
+  },
+  {
+    "id": 10,
+    "filename": "10.1.2",
+    "hiragana": "つくえ　の　うえ　に　しゃしん　が　あります",
+    "kanji": "机の　上に　写真が　あります",
+    "vietnamese": "trên mặt bàn có tờ báo",
+    "english": "there's a newspaper on the table"
+  },
+  {
+    "id": 10,
+    "filename": "10.1.3",
+    "hiragana": "かぞく　は　ニューヨーク　に　います",
+    "kanji": "かぞくは　ニューヨークに　います",
+    "vietnamese": "gia đình tôi sống ở new york",
+    "english": "my family is in new york"
+  },
+  {
+    "id": 10,
+    "filename": "10.1.4",
+    "hiragana": "きょうしつ　に　がくせい　が　います",
+    "kanji": "教室に　学生が　います",
+    "vietnamese": "có học sinh trong phòng học",
+    "english": "there're students in the class"
+  },
+  {
+    "id": 10,
+    "filename": "10.1.5",
+    "hiragana": "ドアの　みぎ　に　スイッチ　が　あります",
+    "kanji": "ドアの　右に　スイッチが　あります",
+    "vietnamese": "bên phải cánh cửa có cái công tắc",
+    "english": "there's switch on the right of the door"
+  },
+  {
+    "id": 11,
+    "filename": "11.1.1",
+    "hiragana": "かいぎしつ　に　テープル　が　７つ　あります",
+    "kanji": "会議室に　テープルが　７つ　あります",
+    "vietnamese": "trong phòng học có 7 cuộn băng cat-xét",
+    "english": "there're 7 cassttes in the class"
+  },
+  {
+    "id": 11,
+    "filename": "11.1.2",
+    "hiragana": "わたし　は　にほん　に　１ねん　います",
+    "kanji": "わたしは　日本に　１年　います",
+    "vietnamese": "tôi sống ở nhật 1 năm",
+    "english": "I lived in japan one year"
+  },
+  {
+    "id": 11,
+    "filename": "11.1.3",
+    "hiragana": "りんご　が　３つ　あります",
+    "kanji": "りんごが　３つ　あります",
+    "vietnamese": "có 3 quả quýt",
+    "english": "there're 3 oranges"
+  },
+  {
+    "id": 11,
+    "filename": "11.1.4",
+    "hiragana": "テレビ　が　２だい　あります",
+    "kanji": "テレビが　２台　あります",
+    "vietnamese": "coó 2 cái tivi",
+    "english": "there're 2 televisions"
+  },
+  {
+    "id": 11,
+    "filename": "11.1.5",
+    "hiragana": "がくせい　が　４にん　います",
+    "kanji": "学生が　４人　います",
+    "vietnamese": "có 4 học sinh",
+    "english": "there're 4 pupils"
+  },
+  {
+    "id": 12,
+    "filename": "12.1.1",
+    "hiragana": "きのう　は　あめでした",
+    "kanji": "きのうは　雨でした",
+    "vietnamese": "hôm qua trời mưa",
+    "english": "it was rain yesterday"
+  },
+  {
+    "id": 12,
+    "filename": "12.1.2",
+    "hiragana": "きのう　は　さむかったです",
+    "kanji": "きのうは　寒かったです",
+    "vietnamese": "hôm qua trời lạnh",
+    "english": "it was cold yesterday"
+  },
+  {
+    "id": 12,
+    "filename": "12.1.3",
+    "hiragana": "ほっかいどう　は　きゅうしゅうより　おおきい　です",
+    "kanji": "北海道は　九州より　大きいです",
+    "vietnamese": "hokkaido to hơn kyushuu",
+    "english": "hokkaido is bigger than kyushuu"
+  },
+  {
+    "id": 12,
+    "filename": "12.1.4",
+    "hiragana": "わたし　は　１ねん　で　なつ　が　いちばん　すきです",
+    "kanji": "わたしは　１年で　夏が　いちばん　すきです",
+    "vietnamese": "tôi thích mùa hè nhất trong năm",
+    "english": "I like summer the most"
+  },
+  {
+    "id": 12,
+    "filename": "12.1.5",
+    "hiragana": "きょうと　は　とても　きれいでした",
+    "kanji": "京都は　とても　きれいでした",
+    "vietnamese": "kyoto rất đẹp",
+    "english": "kyoto is very beautiful"
+  },
+  {
+    "id": 13,
+    "filename": "13.1.1",
+    "hiragana": "わたし　は　パソコン　が　ほしい　です",
+    "kanji": "わたしは　パソコンが　欲しいです",
+    "vietnamese": "tôi muốn có máy tính xách tay",
+    "english": "I want a laptop"
+  },
+  {
+    "id": 13,
+    "filename": "13.1.2",
+    "hiragana": "わたし　は　てんぷら　を　たべたい　です",
+    "kanji": "わたしは　てんぷらを　食べたいです",
+    "vietnamese": "tôi muốn ăn tempura",
+    "english": "I want to eat tempura"
+  },
+  {
+    "id": 13,
+    "filename": "13.1.3",
+    "hiragana": "わたし　は　フランス　へ　りょうりを　ならい　に　いきます",
+    "kanji": "わたしは　フランスへ　料理を　習いに　行きます",
+    "vietnamese": "tôi muốn đến pháp học nấu ăn",
+    "english": "I want to go to france to learn cooking"
+  },
+  {
+    "id": 13,
+    "filename": "13.1.4",
+    "hiragana": "わたし　は　ビデオ　を　かいたいです",
+    "kanji": "わたしは　ビデオを　買いたいです",
+    "vietnamese": "tôi muốn mua video",
+    "english": "I want to buy video"
+  },
+  {
+    "id": 13,
+    "filename": "13.1.5",
+    "hiragana": "イタリア　へ　ならい　に　いきます",
+    "kanji": "イタリアへ　ならいに　行きます",
+    "vietnamese": "tôi muốn đến italia",
+    "english": "I want to go to italia"
+  },
+  {
+    "id": 14,
+    "filename": "14.1.1",
+    "hiragana": "ちょっと　まって　ください",
+    "kanji": "ちょっと　待って　ください",
+    "vietnamese": "Anh/chị chờ một chút.",
+    "english": "Wait for a minute."
+  },
+  {
+    "id": 14,
+    "filename": "14.1.2",
+    "hiragana": "にもつ　を　もちましょうか",
+    "kanji": "荷物を　持ちましょうか",
+    "vietnamese": "Để tôi xách hành lý giúp chị nhé?",
+    "english": "Let me help you to take your luggage."
+  },
+  {
+    "id": 14,
+    "filename": "14.1.3",
+    "hiragana": "ミラ－さん　は　いま　でんわ　を　かけています",
+    "kanji": "ミラ－さんは　今　電話を　かけて　います",
+    "vietnamese": "Bây giở anh Miller đang gọi điện thoại.",
+    "english": "Mr.Miller is making a phone call now."
+  },
+  {
+    "id": 14,
+    "filename": "14.1.4",
+    "hiragana": "いま　あめ　が　ふって　いますか",
+    "kanji": "今　雨が　降って　いますか",
+    "vietnamese": "Trời có (đang) mưa không?",
+    "english": "Is it raining?"
+  },
+  {
+    "id": 14,
+    "filename": "14.1.5",
+    "hiragana": "すみませんが、しお　を　とって　ください",
+    "kanji": "すみませんが、塩を　取って　ください",
+    "vietnamese": "Xin lỗi, anh/chị lấy giúp tôi lọ muối.",
+    "english": "Excuse me, could you take the salt jar to me please!"
+  },
+  {
+    "id": 15,
+    "filename": "15.1.1",
+    "hiragana": "しゃしん　を　とっても　いいですか",
+    "kanji": "写真を　撮っても　いいですか",
+    "vietnamese": "Tôi chụp ảnh có được không?",
+    "english": "Could i take the photo?"
+  },
+  {
+    "id": 15,
+    "filename": "15.1.2",
+    "hiragana": "サントス　さん　は　でんしじしょ　を　もって　います",
+    "kanji": "サントスさんは　電子辞書を　持って　います",
+    "vietnamese": "Anh Santos có kim từ điển.",
+    "english": "Mr.Sato has an electronic dictionary"
+  },
+  {
+    "id": 15,
+    "filename": "15.1.3",
+    "hiragana": "ここ　で　たばこ　を　すって　は　いけません",
+    "kanji": "ここで　たばこを　吸っては　いけません",
+    "vietnamese": "Không được hút thuốc lá ở đây.",
+    "english": "No smoking in here"
+  },
+  {
+    "id": 15,
+    "filename": "15.1.4",
+    "hiragana": "IMC　は　コンピユーターソフト　を　つくって　います",
+    "kanji": "IMCは　コンピユーターソフトを　作って　います",
+    "vietnamese": "Công ty IMC chế tạo phần mềm máy tính.",
+    "english": "IMC company manufactures the computer software."
+  },
+  {
+    "id": 15,
+    "filename": "15.1.5",
+    "hiragana": "ここ　に　くるま　を　とめて　ください",
+    "kanji": "ここに　車を　止めて　ください",
+    "vietnamese": "Xin hãy đỗ xe ở đây.",
+    "english": "No parking in here, please."
+  },
+  {
+    "id": 16,
+    "filename": "16.1.1",
+    "hiragana": "あさ　ジョギングを　して、シャワ　を　あびて、かいしゃ　へ　いきます",
+    "kanji": "朝　ジョギングを　して、シャワを　浴びて、かいしゃへ　いきます　",
+    "vietnamese": "Buổi sáng tôi chạy bộ, tắm, rồi đến công ty.",
+    "english": "In the morning, i go jogging, have a bath and go to work."
+  },
+  {
+    "id": 16,
+    "filename": "16.1.2",
+    "hiragana": "コンサート　が　おわって　から、レストラン　で　しょくじしました",
+    "kanji": "コンサートが　終わってから、レストランで　食事しました",
+    "vietnamese": "Sau khi buổi hóa nhạc kết thúc, chúng tôi đạ đi ăn ở nhà hàng.",
+    "english": "After the concert had finished, we had a meal in restaurant."
+  },
+  {
+    "id": 16,
+    "filename": "16.1.3",
+    "hiragana": "おおさか　は　たべもの　が　おいしいです",
+    "kanji": "　大阪は　食べ物が　おいしいです",
+    "vietnamese": "Thức ăn ở Osaka rất ngon.",
+    "english": "Osaka's food is so tasty."
+  },
+  {
+    "id": 16,
+    "filename": "16.1.4",
+    "hiragana": "この　へやは　ひろくて、あかるいです",
+    "kanji": "この　部屋は　広くて、明るいです",
+    "vietnamese": "Căn phòng này rộng và sáng sủa.",
+    "english": "This room is big and bright."
+  },
+  {
+    "id": 16,
+    "filename": "16.1.5",
+    "hiragana": "７じ　に　うち　を　でます",
+    "kanji": "７時に　うちを　出ます",
+    "vietnamese": "Tôi sẽ ra khỏi nhà lúc 7h.",
+    "english": "I'll go out at 7 o'clock."
+  },
+  {
+    "id": 17,
+    "filename": "17.1.1",
+    "hiragana": "しゃしん　を　とらないで　ください",
+    "kanji": "写真を　撮らないで　ください",
+    "vietnamese": "Không chụp ảnh ở đây.",
+    "english": "No taking fotos in here"
+  },
+  {
+    "id": 17,
+    "filename": "17.1.2",
+    "hiragana": "パズポート　を　みせなければ　なりません",
+    "kanji": "パズポートを　見せなければ　なりません",
+    "vietnamese": "Anh/chị phải trình hộ chiếu.",
+    "english": "You must present your passport"
+  },
+  {
+    "id": 17,
+    "filename": "17.1.3",
+    "hiragana": "にちようび　は　はやく　おきなくても　いいです",
+    "kanji": "日曜日　早く　起きなくても　いいです",
+    "vietnamese": "Chủ nhật tôi không phải dậy sớm.",
+    "english": "I don't have to get up early on Sunday"
+  },
+  {
+    "id": 17,
+    "filename": "17.1.4",
+    "hiragana": "にもつ　は　ここ　に　おかないで　ください",
+    "kanji": "荷物は　ここに　置かないで　ください",
+    "vietnamese": "Hành lý thì xin đừng để ở đây.",
+    "english": "Don't put the luggage in here"
+  },
+  {
+    "id": 17,
+    "filename": "17.1.5",
+    "hiragana": "かいぎ　は　５じ　までに　おわります",
+    "kanji": "会議は　５時までに　終わります",
+    "vietnamese": "Cuộc họp sẽ kết thúc trước 5 giờ.",
+    "english": "The meeting will finish before 5 o'clock"
+  },
+  {
+    "id": 18,
+    "filename": "18.1.1",
+    "hiragana": "ミラー　は　かんじ　を　よむ　ことが　できます",
+    "kanji": "ミラーは　漢字を　よむ　ことが　できます",
+    "vietnamese": "Anh Miller có thể đọc chữ Hán.",
+    "english": "Miller can read Japanese's Chinese's words."
+  },
+  {
+    "id": 18,
+    "filename": "18.1.2",
+    "hiragana": "わたし　の　しゅみ　は　えいが　を　みる　ことです",
+    "kanji": "わたしの　趣味は　映画を　見る　ことです",
+    "vietnamese": "Sở thích của tôi là xem phim.",
+    "english": "My hobbyis watching film."
+  },
+  {
+    "id": 18,
+    "filename": "18.1.3",
+    "hiragana": "ねる　まえに、にっき　を　かきます",
+    "kanji": "寝る　まえに、日記を　書きます",
+    "vietnamese": "Trước khi đi ngủ tôi viết nhật ký.",
+    "english": "Before going to bed, I write up my dairy."
+  },
+  {
+    "id": 18,
+    "filename": "18.1.4",
+    "hiragana": "しごと　は　たくさん　あります　から、　なかなか　うち　へ　かえる　こと　が　できません　",
+    "kanji": "仕事が　たくさん　ありますから、なかなか　家へかえることが　できません",
+    "vietnamese": "Vì nhiều việc quá nên mãi mà cũng không về nhà được.",
+    "english": "Having a lot of work, i cann't still come back home."
+  },
+  {
+    "id": 18,
+    "filename": "18.1.5",
+    "hiragana": "ドル　を　えん　に　かえます",
+    "kanji": "ドルを　えんに　かえます",
+    "vietnamese": "Đổi tiền đô sang thành tiền yên.",
+    "english": "Changing money from dolar into Yen."
+  },
+  {
+    "id": 19,
+    "filename": "19.1.1",
+    "hiragana": "すもう　を　みた　こと　が　あります",
+    "kanji": "相撲を　見た　ことが　あります",
+    "vietnamese": "Tôi đã từng xem Sumo.",
+    "english": "I have seen Sumo before."
+  },
+  {
+    "id": 19,
+    "filename": "19.1.2",
+    "hiragana": "やすみ　の　ひ　は　テニス　を　したり、さんぽ　に　いったり　します",
+    "kanji": "休みの　日は　テニスを　したり、散歩に　行ったり　します",
+    "vietnamese": "Ngày nghỉ khi thì tôi chơi quần vợt, khi thì tản bộ.",
+    "english": "I usually play tennis or go for a walk on the day off."
+  },
+  {
+    "id": 19,
+    "filename": "19.1.3",
+    "hiragana": "これから　だんだん　あつく　なります",
+    "kanji": "これから　だんだん　暑く　なります",
+    "vietnamese": "Từ giờ trở  đi trời sẽ nóng dần lên.",
+    "english": "From now, it's become hotter and hotter."
+  },
+  {
+    "id": 19,
+    "filename": "19.1.4",
+    "hiragana": "いま　いしゃに　なりました",
+    "kanji": "今　医者に　なりました",
+    "vietnamese": "Bây giờ tôi đã trở thành bác sỹ.",
+    "english": "I have become tobe a doctor."
+  },
+  {
+    "id": 19,
+    "filename": "19.1.5",
+    "hiragana": "わたし　は　なんども　おおさか　じょうへ　いってことがあります",
+    "kanji": "私は　何度も　大阪城へ　行ってことがあります",
+    "vietnamese": "Tôi đã từng đến thành Osaka rất nhiều lần.",
+    "english": "I have gone to Osaka city many times."
+  },
+  {
+    "id": 20,
+    "filename": "20.1.1",
+    "hiragana": "サントス　は　パーティーに　きなかった　",
+    "kanji": "サントスは　パーティーに　来なかった　",
+    "vietnamese": "Anh Santos không đến dự tiệc.",
+    "english": "Mr.Satos didn't attend the meeting."
+  },
+  {
+    "id": 20,
+    "filename": "20.1.2",
+    "hiragana": "にほん　は　ぶっかが　たかい",
+    "kanji": "日本は　物価が　高い",
+    "vietnamese": "Ở Nhật giá cả đắt đỏ.",
+    "english": "it costs much in Japan."
+  },
+  {
+    "id": 20,
+    "filename": "20.1.3",
+    "hiragana": "おきなわ　の　うみ　は　きれいだった",
+    "kanji": "沖縄の　海は　きれいだった",
+    "vietnamese": "Biển ở Okinawa đẹp.",
+    "english": "Sea of Okinawa is beautiful."
+  },
+  {
+    "id": 20,
+    "filename": "20.1.4",
+    "hiragana": "きょう　は　たんじょうびだ",
+    "kanji": "きょうは　僕の　誕生日だ",
+    "vietnamese": "Hôm nay là sinh nhật tớ.",
+    "english": "Today is my birthday."
+  },
+  {
+    "id": 20,
+    "filename": "20.1.5",
+    "hiragana": "カリナさん　は　えが　じょうずだ",
+    "kanji": "カリナさんは　絵が　上手だ",
+    "vietnamese": "Chị Karina giỏi vẽ tranh.",
+    "english": "Karina is good at drawing."
+  },
+  {
+    "id": 21,
+    "filename": "21.1.1",
+    "hiragana": "あした　あめ　が　ふる　とおもいます",
+    "kanji": "あした　雨が　降と　悪います",
+    "vietnamese": "Tôi nghĩ ngày mai trời sẽ mưa.",
+    "english": "I think it will rain tomorrow."
+  },
+  {
+    "id": 21,
+    "filename": "21.1.2",
+    "hiragana": "しゅしょ　は　 らいげつ　アメリカ　へ いく　と いいました",
+    "kanji": "首相は来月　アメリカへいくと いいました",
+    "vietnamese": "Thủ tướng nói là tháng sau sẽ đi Mỹ.",
+    "english": "Prime minister said that he would go to America the next month."
+  },
+  {
+    "id": 21,
+    "filename": "21.1.3",
+    "hiragana": "マリアちゃん　は　 もう ねた　と おもいます",
+    "kanji": "マリアちゃんは もう 寝たと　悪います",
+    "vietnamese": "Tôi nghĩ là em Maria đã ngủ rồi.",
+    "english": "I think that Maria had slept."
+  },
+  {
+    "id": 21,
+    "filename": "21.1.4",
+    "hiragana": "ねるまえに、''おやすみなさい''　と いいます",
+    "kanji": "寝る前に、お休みなさいと 言います",
+    "vietnamese": "Trước khi đi ngủ chúng ta nói ''Oyasuminasai''.",
+    "english": "Before going to bed, we say "
+  },
+  {
+    "id": 21,
+    "filename": "21.1.5",
+    "hiragana": "ミラーさん　は 　らいしゅう とうきょう　へ　しゅっちょします　といいました",
+    "kanji": "ミラーさんは 来週　東京へ 出張しますと いいました",
+    "vietnamese": "Anh Miller đã nói là ''Tuần sau sẽ đi công tác ở Tokyo''.",
+    "english": "Miller said that he would be on a business trip in Tokyo the next week."
+  },
+  {
+    "id": 22,
+    "filename": "22.1.1",
+    "hiragana": "これ　は　ミラーさん　が　つくった　ケーキです",
+    "kanji": "これは　ミラーさんが　作った　ケーキです",
+    "vietnamese": "Đây là cái bánh ngọt anh Miller đã làm.",
+    "english": "This is the cake made by Mr.Miller."
+  },
+  {
+    "id": 22,
+    "filename": "22.1.2",
+    "hiragana": "あそこ　に　いる　ひと　は　ミラーさんです",
+    "kanji": "あそこに　いる　人は　ミラーさんです",
+    "vietnamese": "Người ở đằng kia là anh Miller.",
+    "english": "The person over there is Mr.Miller."
+  },
+  {
+    "id": 22,
+    "filename": "22.1.3",
+    "hiragana": "きのう　ならった　ことば　を　わすれました",
+    "kanji": "きのう　習った　ことばを　忘れました",
+    "vietnamese": "Tôi đã quên những từ học ngày hôm qua.",
+    "english": "I forgot what I learned yesterday."
+  },
+  {
+    "id": 22,
+    "filename": "22.1.4",
+    "hiragana": "かいもの　に　いく　じかん　が　ありません",
+    "kanji": "買い物に　行く　時間が　ありません",
+    "vietnamese": "Tôi không có thời gian để đi mua hàng.",
+    "english": "I don't have time to go shopping."
+  },
+  {
+    "id": 22,
+    "filename": "22.1.5",
+    "hiragana": "きのう　かった　かさ　を　たくしました",
+    "kanji": "きのう　買った　傘を　なくしました",
+    "vietnamese": "Tôi đã đánh mất cái ô mua ngày hôm qua.",
+    "english": "I lost the umbrella which I bought yesterday."
+  },
+  {
+    "id": 23,
+    "filename": "23.1.1",
+    "hiragana": "としょかん　で　 ほん　を　 かりる とき、カード　が　いります.",
+    "kanji": "図書館で 　本を　 借りるとき 、カードが　要ります",
+    "vietnamese": "Khi mượn sách ở thư viện thì cần có thẻ.",
+    "english": "When borrowing a book at the library, you need a card."
+  },
+  {
+    "id": 23,
+    "filename": "23.1.2",
+    "hiragana": "この 　ボタンを　 おすと、おつりが　 でます",
+    "kanji": "この　 ボタンを　 押すと、お釣りが　 出ます",
+    "vietnamese": "Ấn nút này là tiền thừa sẽ ra.",
+    "english": "Press this button, and the change will come out."
+  },
+  {
+    "id": 23,
+    "filename": "23.1.3",
+    "hiragana": "ひまな 　とき、うち　へ　 あそびに 　きませんか",
+    "kanji": "暇な　 とき、うちへ 　遊びに　 来ませんか",
+    "vietnamese": "Khi chị rảnh rỗi thì đến chơi nhà tôi nhé.",
+    "english": "Why don't you come to my place on your free time?"
+  },
+  {
+    "id": 23,
+    "filename": "23.1.4",
+    "hiragana": "がくせい　のとき、アルバイト　を　しましたか",
+    "kanji": "学生の　とき、アルバイトを　しましたか",
+    "vietnamese": "Thời sinh viên chị có đi làm thêm không?",
+    "english": "Did you work part-time when you were a student?"
+  },
+  {
+    "id": 23,
+    "filename": "23.1.5",
+    "hiragana": "そこ　を　おすと、でますよ",
+    "kanji": "そこを　押すと、出ますよ",
+    "vietnamese": "Nhấn nút này, nó sẽ đi ra.",
+    "english": "When pressing this knop , it comes out."
+  },
+  {
+    "id": 24,
+    "filename": "24.1.1",
+    "hiragana": "さとうさん　は　わたし　に　クリスマスカードを　くれました",
+    "kanji": "佐藤さんは　私に　クリスマスカードを　くれました",
+    "vietnamese": "Anh Sato đã tặng tôi thiệp mừng Giáng sinh.",
+    "english": "Mr.Sato gave me a Christmas card."
+  },
+  {
+    "id": 24,
+    "filename": "24.1.2",
+    "hiragana": "わたし　は　きむらさん　に　ほん　を　かして　あげました",
+    "kanji": "私は　木村さんに　本を　貸して　あげました",
+    "vietnamese": "Tôi đã cho chị Kimura mượn sách.",
+    "english": "I lent Ms.Kimura my book."
+  },
+  {
+    "id": 24,
+    "filename": "24.1.3",
+    "hiragana": "わたし　は　やまださん　に　びょいんの　でんわばんご　を　おしえて　もらいました",
+    "kanji": "私は　山田さんに　病院の　でんわばんごを　おしえて　もらいました",
+    "vietnamese": "Tôi đã được anh Yamada cho biết số điện thoại của bệnh viện.",
+    "english": "Mr.Yamada told me the hospital's telephone number."
+  },
+  {
+    "id": 24,
+    "filename": "24.1.4",
+    "hiragana": "ははは　わたし　に　セーターを　おくって　くれました",
+    "kanji": "母は　私に　セーターを　送って　くれました",
+    "vietnamese": "Mẹ gửi cho tôi một cái áo len.",
+    "english": "My mom sent me a sweater."
+  },
+  {
+    "id": 24,
+    "filename": "24.1.5",
+    "hiragana": "やまださん　に　ワゴンしゃ　を 　 かして  もらいました",
+    "kanji": "山田さんに　ワゴン車を　貸して　もらいました",
+    "vietnamese": "Anh Yamada đã cho tôi mượn chiếc xe Wagon.",
+    "english": "Mr.Yamada lent me a Wagon car."
+  },
+  {
+    "id": 25,
+    "filename": "25.1.1",
+    "hiragana": "あめ　が　ふったら、でかけません",
+    "kanji": "雨が　降ったら、でかけません",
+    "vietnamese": "Nếu trời mưa thì tôi sẽ không ra ngoài.",
+    "english": "If it rains, I won't go out."
+  },
+  {
+    "id": 25,
+    "filename": "25.1.2",
+    "hiragana": "あめ　が　ふっても、でかけます",
+    "kanji": "雨が　降っても、出かけます",
+    "vietnamese": "Cho dù trời mưa thì tôi cũng đi ra ngoài.",
+    "english": "Even if it rains, I will go out."
+  },
+  {
+    "id": 25,
+    "filename": "25.1.3",
+    "hiragana": "１ねん　ぐらい　いろいろな　くに　を　りょこうしたいです",
+    "kanji": "１年　ぐらい　色々な　国を　旅行したいです",
+    "vietnamese": "Tôi muốn đi du lịch các nước trong khoảng 1 năm.",
+    "english": "I want to travel to many countries in about a year."
+  },
+  {
+    "id": 25,
+    "filename": "25.1.4",
+    "hiragana": "とうきょう　へ　いっても、おおさか　の　こと　を　わすれないでくださいね",
+    "kanji": "東京へ　行っても、大阪の　ことを　忘れないでくださいね",
+    "vietnamese": "Cho dù đến Tokyo thì cũng đừng quên Osaka nhé.",
+    "english": "Even if you go to Tokyo, don't forget Osaka."
+  },
+  {
+    "id": 25,
+    "filename": "25.1.5",
+    "hiragana": "いくら　やすくても、わたし　は　グループ　りょこう　が　きらいです",
+    "kanji": "いくら　安くても、私は　グループ旅行が　嫌いです",
+    "vietnamese": "Cho dù có rẻ thì tôi cũng không thích đi du lịch theo đoàn.",
+    "english": "Even if it's cheap, I dislike traveling in groups."
+  }
+]

@@ -7,19 +7,11 @@ totaln5App.config(['$routeProvider',
                 templateUrl: 'main.html',
                 controller: 'mainCtrl'
             })
-            .when('/hira1', {
+            .when('/hira/:lessonId', {
                 templateUrl: 'kana/hirasub.html',
                 controller: 'hiraCtrl'
             })
-            .when('/hira2', {
-                templateUrl: 'kana/hirasub.html',
-                controller: 'hiraCtrl'
-            })
-            .when('/kana1', {
-                templateUrl: 'kana/katasub.html',
-                controller: 'kataCtrl'
-            })
-            .when('/kana2', {
+            .when('/kana/:lessonId', {
                 templateUrl: 'kana/katasub.html',
                 controller: 'kataCtrl'
             })
@@ -76,3 +68,6 @@ totaln5App.config(['$routeProvider',
             });
     }
 ]);
+
+
+totaln5App.service('dataService', function($q, $http) {});

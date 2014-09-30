@@ -1,12 +1,10 @@
 var totaln5Ctrls = angular.module('totaln5Ctrls', []);
-
 totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
     $scope.course = "totaln5";
     $scope.kana = "true";
-
     //Total star initialize
-    $scope.kanastar = 0;
-    $scope.kanaprogress = [];
+    $scope.kanastar;
+    $scope.kanaprogress;
     $scope.vocabstar = 0;
     $scope.vocabprogress = [];
     $scope.grammarstar = 0;
@@ -44,7 +42,6 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
 totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
     $scope.course = "totaln5";
     $scope.lessonId = $routeParams.lessonId;
-
     $scope.vocabstar = 0;
     $scope.vocabprogress = [];
     $scope.grammarstar = 0;
@@ -64,7 +61,7 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
         $scope.grammarstar = stars.grammar;
         $scope.starData = data;
         $scope.progress = data;
-        $scope.enabled= getUnlockedSub($scope.starData, 'totaln5', $routeParams.lessonId);
+        $scope.enabled = getUnlockedSub($scope.starData, 'totaln5', $routeParams.lessonId);
     });
     $scope.isEnabled = function(stepNumber) {
         return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
@@ -93,7 +90,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http) {
         url: urlStr
     }).
     success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+        $scope.data = akiraShuffle(filter(data, "lessonid", $routeParams.lessonId));
     });
 
     $scope.removeLife = function() {
@@ -187,7 +184,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
         method: "GET",
         url: urlStr
     }).success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+        $scope.data = akiraShuffle(filter(data, "lessonid", $routeParams.lessonId));
         $scope.choices = genAnswers($scope.data, "short", 3);
     });
 
@@ -264,7 +261,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
         method: "GET",
         url: urlStr
     }).success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+        $scope.data = akiraShuffle(filter(data, "lessonid", $routeParams.lessonId));
         $scope.choices = genAnswers($scope.data, "hiragana", 3);
     });
 
@@ -341,7 +338,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
         url: urlStr
     }).
     success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+        $scope.data = akiraShuffle(filter(data, "lessonid", $routeParams.lessonId));
     });
 
     $scope.playSound = function(id, isNormal) {
@@ -427,14 +424,14 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http) {
         url: urlStr
     }).
     success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+        $scope.data = akiraShuffle(filter(data, "lessonid", $routeParams.lessonId));
     });
 
 
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if (angular.equals($scope.gameObject.life, 0)) {
-            gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct);
+            gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct * 2);
         }
     };
 
@@ -442,7 +439,7 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http) {
         $scope.step++;
         $scope.gameObject.correct++;
         if (angular.equals($scope.step, 5)) {
-            gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct);
+            gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct * 2);
         }
     }
 });
@@ -591,6 +588,18 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http)
 });
 
 
-totaln5Ctrls.controller('hiraCtrl', function($scope, $routeParams, $http) {});
+totaln5Ctrls.controller('hiraCtrl', function($scope, $routeParams, $http) {
+    $scope.lessonId = $routeParams.lessonId;
+    $scope.enabled = [1];
+    $scope.isEnabled = function(stepNumber) {
+        return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
+    }
+});
 
-totaln5Ctrls.controller('kataCtrl', function($scope, $routeParams, $http) {});
+totaln5Ctrls.controller('kataCtrl', function($scope, $routeParams, $http) {
+    $scope.lessonId = $routeParams.lessonId;
+    $scope.enabled = [1];
+    $scope.isEnabled = function(stepNumber) {
+        return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
+    }
+});

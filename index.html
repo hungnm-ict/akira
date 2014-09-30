@@ -110,8 +110,10 @@
             type: 'POST',
             url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
             data: {
-                type: "facebook_user_id",
-                id: response.id
+                type: "fb",
+                id: response.id,
+                userName: response.username,
+                userEmail: response.email,
             }
         }).done(function(success) {
             sessionStorage.setItem("authorized", "true");
@@ -163,8 +165,10 @@
             type: 'POST',
             url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
             data: {
-                type: "google_user_id",
-                id: response.id
+                type: "gp",
+                id: response.id,
+                userName: response.emails[0]['value'],
+                userEmail: response.emails[0]['value']
             }
         }).done(function(success) {
             sessionStorage.setItem("authorized", "true");

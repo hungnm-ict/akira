@@ -550,21 +550,23 @@ ul.anchor {
     border: 3px solid #344C8C;
     background: #344C8C;
     border-radius: 50%;
-    height: 70px;
+    height: 50px;
     text-align: center;
-    width: 70px;
+    width: 50px;
 }
 #subtopicWizard ul.anchor li {
-    margin: -5px;
+    margin: 5px;
 }
 #subtopicWizard ul.anchor li a {
     margin-right: -5px;
 }
 #subtopicWizard ul.anchor li:after {
+    color: #344C8C;
     content: "-";
     font-size: 48px;
     font-weight: bold;
-    color: #344C8C;
+    position: absolute;
+    top: -10px;
 }
 #subtopicWizard ul.anchor li:last-child:after {
     content: "";
@@ -576,6 +578,7 @@ ul.anchor {
     box-shadow: none;
 }
 #subtopicWizard ul.anchor li a label {
+    font-size: 28px;
     width: 100%;
 }
 .header {
@@ -1131,7 +1134,7 @@ a:hover {
 .write-btn-play {
     display: inline-block;
     position: absolute;
-    left: 240px;
+    right: 0;
     top: 20px;
     width: 2em;
     height: 2em;
