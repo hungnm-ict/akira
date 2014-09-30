@@ -7,28 +7,52 @@
         <li>
             <a href="#step-1" ng-click="partId=1">
                 <label class="stepNumber">
-                    <span>1</span>
+                    <span ng-switch on="isEnabled(1)">
+                        <span ng-switch-when="true">1</span>
+                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
                 </label>
             </a>
         </li>
         <li>
             <a href="#step-2" ng-click="partId=2">
                 <label class="stepNumber">
-                    <i class="fa fa-lock"></i>
+                    <span ng-switch on="isEnabled(2)">
+                        <span ng-switch-when="true">2</span>
+                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
                 </label>
             </a>
         </li>
         <li>
             <a href="#step-3" ng-click="partId=3">
                 <label class="stepNumber">
-                    <i class="fa fa-lock"></i>
+                    <span ng-switch on="isEnabled(3)">
+                        <span ng-switch-when="true">3</span>
+                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
                 </label>
             </a>
         </li>
         <li>
-            <a href="#step-4" ng-click="partId=4">
+            <a href="#step-4" ng-click="partId=4" onclick="return false;">
                 <label class="stepNumber">
-                    <i class="fa fa-lock"></i>
+                    <span ng-switch on="isEnabled(4)">
+                        <span ng-switch-when="true">4</span>
+                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
                 </label>
             </a>
         </li>

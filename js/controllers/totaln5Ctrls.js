@@ -39,20 +39,21 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
     $scope.show = function(e) {
         $scope.kana = e;
     }
-
-    $scope.check = function(e) {
-        console.log(e);
-        return false;
-    }
 });
 
 totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
     $scope.course = "totaln5";
     $scope.lessonId = $routeParams.lessonId;
+
     $scope.vocabstar = 0;
     $scope.vocabprogress = [];
     $scope.grammarstar = 0;
     $scope.grammarprogress = [];
+
+    $scope.starData;
+    $scope.progress;
+    $scope.enabled;
+
     // Get totaln5 star information
     $http({
         method: "GET",
@@ -61,10 +62,13 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
         var stars = getTotalLessonStar(data, 'totaln5', $routeParams.lessonId);
         $scope.vocabstar = stars.vocab;
         $scope.grammarstar = stars.grammar;
-
+        $scope.starData = data;
         $scope.progress = data;
-        console.log(data);
+        $scope.enabled= getUnlockedSub($scope.starData, 'totaln5', $routeParams.lessonId);
     });
+    $scope.isEnabled = function(stepNumber) {
+        return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
+    }
 });
 
 /**
