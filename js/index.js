@@ -214,18 +214,10 @@ function saveScore(course, lesson, subtopic, game, star, exp) {
     }).done(function(data) {
         console.info("Score saved");
     });
-    /*$.post("http://akira.edu.vn/wp-content/plugins/akira-api/akira_score.php", {
-        userId: uid,
-        course: course,
-        lesson: lesson,
-        subtopic: subtopic,
-        game: game,
-        star: star,
-        exp: exp
-    })*/
 }
 
 /**
+ * @deprecated [description]
  * Common validation method for answer check
  * event fired -> get user ans -> compare with correct ans -> show message -> change fired event text & behave.
  * @param  {[type]} e        [description]
@@ -258,6 +250,12 @@ function akiraStepValidation(id) {
 /*=========================================
 =            Validation method            =
 =========================================*/
+/**
+ * @deprecated
+ * @param  {[type]} obj     [description]
+ * @param  {[type]} context [description]
+ * @return {[type]}         [description]
+ */
 function leaveAStepCallback(obj, context) {
     var classStr = "success";
     var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val())
@@ -291,12 +289,11 @@ function grammarChoiceLeaveStep(obj, context) {
  * @return {[type]}         [description]
  */
 function akrLeaveStep(obj, context) {
-    // return true;
+    // return false;
     var ngScope = angular.element("#" + obj.context.id).scope();
     if (ngScope.lessonId === undefined) {
         console.log("Bạn đang ở màn hình chọn lesson.");
     } else if (ngScope.lessonId !== undefined && ngScope.partId !== undefined && "subtopicWizard" === obj.context.id) {
-
         console.log("Bạn đang ở khóa học: " + ngScope.course + ", bài học: " + ngScope.lessonId + ", subtopic : " + context.fromStep + ", và đang chuyển sang subtopic: " + context.toStep);
         console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
         var stars = getCurrentStar(ngScope.starData, ngScope.course, ngScope.lessonId, context.toStep);
@@ -305,29 +302,27 @@ function akrLeaveStep(obj, context) {
             console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
             return false;
         }
-        if ((context.toStep - 1) * 10 > stars) {
+        if (stars < (context.toStep - 1) * 10) {
             console.info("Bạn chưa đạt đủ số sao yêu cầu. Bạn còn thiếu: " + (context.toStep * 10 - stars));
             return false;
         }
     } else {
         console.log("Bước này không xác định hoặc là chưa xác định được");
+
     }
     return true;
 }
 
 function getCurrentStar(data, courseName, lessonId, partId) {
     var totalStar = 0;
-
     //Each subtopic inside a lesson on a course
-    $.each(data[courseName][lessonId - 1], function(idx) {
-        console.log(partId);
-        if (idx + 1 > partId) {
+    $.each(data[courseName][lessonId], function(idx) {
+        if (idx > partId) {
             return false;
         }
         //Each game in a subtopic
-        $.each(data[courseName][lessonId - 1][idx], function(e) {
-            // console.log(data[courseName][lessonId - 1][idx][e].star);
-            totalStar = totalStar + parseInt(data[courseName][lessonId - 1][idx][e].star);
+        $.each(data[courseName][lessonId][idx], function(e) {
+            totalStar = totalStar + parseInt(data[courseName][lessonId][idx][e]);
         });
     });
 
@@ -335,7 +330,7 @@ function getCurrentStar(data, courseName, lessonId, partId) {
 }
 
 /**
- * Tính tổng số sao của một khóa học dùng cho các khóa sau: kana,kanjin5,kanjin5 -> Vì không chia sao ra từ vựng và ngữ pháp
+ * Tính tổng số sao của một khóa học dùng cho các khóa(kana,kanjin5,kanjin5) ở màn hình  lựa chọn lesson
  * @param  {[type]} data   [description]
  * @param  {[type]} course [description]
  * @return {[type]}        [description]
@@ -355,7 +350,7 @@ function getCourseStar(data, course) {
 
 
 /**
- * Tính progress của từng bài học trong một khoá học. Dành cho các khóa : kana,kanjin4,kanjin5
+ * Tính progress của từng bài học trong một khoá(kana,kanjin4,kanjin5) ở màn hình lựa chọn lesson phần progress bar
  * @param  {[type]} data      [description]
  * @param  {[type]} course    [description]
  * @param  {[type]} subInLess [description]
@@ -378,7 +373,7 @@ function getCourseProgress(data, course, subInLess, gameInSub) {
 }
 
 /**
- * Tính tổng số sao của một khóa học. Dành cho khóa: totaln5 và totaln4 vì phân chia là sao từ vựng và sao ngữ pháp
+ * Tính tổng số sao của một khóa( totaln5 và totaln4). ở màn hình lựa chọn lesson
  * @param  {[type]} data   [description]
  * @param  {[type]} course [description]
  * @return {[type]}        [description]
@@ -405,7 +400,7 @@ function getTotalStar(data, course) {
 }
 
 /**
- * Tính progress của từng bài học trong một khóa học. Dành cho khóa totaln5 và totaln4
+ * Tính progress của từng bài học trong một khóa( totaln5 và totaln4). ở màn hình lựa chọn lesson phần progress bar
  * @param  {[type]} data      [description]
  * @param  {[type]} course    [description]
  * @param  {[type]} subInLess [description]
@@ -442,23 +437,30 @@ function getTotalProgress(data, course, subInLess, gameInSub) {
     }
 }
 
+/**
+ * Tính tổng số sao trong một bài học của khóa(totaln5 và totaln4). Ở màn hình chọn subtopic và game
+ * @param  {[type]} data   [description]
+ * @param  {[type]} course [description]
+ * @param  {[type]} lesson [description]
+ * @return {[type]}        [description]
+ */
 function getTotalLessonStar(data, course, lesson) {
     var vocabStar = 0;
     var grammarStar = 0;
-    $.each(data[course], function(lesson) {
-        if (lesson === lesson) {
+    /*  $.each(data[course], function(lesson) {
+        if (lesson === lesson) {*/
 
-            $.each(data[course][lesson], function(sub) {
-                $.each(data[course][lesson][sub], function(game) {
-                    if (sub == 4) {
-                        grammarStar += parseInt(data[course][lesson][sub][game]);
-                    } else {
-                        vocabStar += parseInt(data[course][lesson][sub][game]);
-                    }
-                });
-            });
-        }
+    $.each(data[course][lesson], function(sub) {
+        $.each(data[course][lesson][sub], function(game) {
+            if (sub == 4) {
+                grammarStar += parseInt(data[course][lesson][sub][game]);
+            } else {
+                vocabStar += parseInt(data[course][lesson][sub][game]);
+            }
+        });
     });
+    /*        }
+    });*/
 
     return {
         "vocab": vocabStar,
@@ -481,6 +483,39 @@ function kanjiDict() {
 
 function translate(kanji) {
     return kanji;
+}
+
+/**
+ * Tính toán xem trong bài học(lesson) này của khóa học(course) đã mở được đến topic nào rồi
+ * @param  {[type]} data   [description]
+ * @param  {[type]} course [description]
+ * @param  {[type]} lesson [description]
+ * @return {[type]}        [description]
+ */
+function getUnlockedSub(data, course, lesson) {
+    var unlocked = [];
+    var currentStar = 0;
+
+    $.each(data[course][lesson], function(sub) {
+        var openSubStar = (sub - 1) * 10;
+
+        $.each(data[course][lesson][sub], function(game) {
+            currentStar += parseInt(data[course][lesson][sub][game]);
+        });
+
+        console.log("Số sao hiện tại là: " + currentStar);
+        console.log("Tổng số sao cần để mở subtopic: " + sub + " của bài " + lesson + " trong course " + course + " là " + openSubStar);
+        if (currentStar >= openSubStar) {
+            console.log(sub);
+            unlocked.push(parseInt(sub));
+        } else {
+            return false;
+        }
+
+    });
+
+    console.log(unlocked);
+    return unlocked;
 }
 
 /*-----  End of Validation method  ------*/

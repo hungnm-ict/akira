@@ -33,6 +33,11 @@ akrSharedDirectives.directive('akrleaderboard', function($http) {
     return {
         restrict: 'E',
         link: link,
+        controller: function($scope, $sce) {
+            $scope.renderHtml = function(e) {
+                return $sce.trustAsHtml(e);
+            }
+        },
         templateUrl: '../../view/_shared/leaderboard.html'
     };
 
@@ -50,7 +55,7 @@ akrSharedDirectives.directive('akirawizard', function() {
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();
             clearInterval(trigger);
-        }, 200);
+        }, 100);
     }
 
     return {

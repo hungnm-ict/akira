@@ -1,10 +1,10 @@
 <div class="row" id="profile">
-
     <!-- Show this when user is logged in -->
     <div class="col-md-12 col-sm-12 col-sm-12" ng-hide='user==="Anonymous"'>
         <div class="col-md-4 col-sm-4 col-xs-4">
             <span class="ava-circle">
-                <img src="" />
+                <!-- <img src="" /> -->
+                {{renderHtml(user.ava)}}
             </span>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-8">

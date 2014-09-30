@@ -66,6 +66,8 @@ html {} body {
     cursor: pointer !important;
     display: inline-block !important;
     height: 40px !important;
+    text-align: center;
+    line-height: 40px;
     width: 40px !important;
     -moz-border-radius: 50% !important;
     -webkit-border-radius: 50% !important;
@@ -1188,9 +1190,14 @@ a:hover {
 #star .kana {
     color: #568ED4;
 }
-.kanji{
+.kanji {
     color: red;
 }
 .progress.kanji .progress-bar {
     background-image: linear-gradient(to bottom, red 0, red 100%);
+}
+.swMain ul.anchor li a:hover {
+    background: #FFFFFF !important;
+    border: 3px solid #344C8C;
+    color: #344C8C !important;
 }
