@@ -1,5 +1,5 @@
-<div id="wordWizard" class="swMain" akirawizard enablestep="false">
-    <!-- Step navigator -->
+<div id="pictureWizard" class="swMain" akirawizard enablestep="false">
+    <!-- Step navigation -->
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
             <a ng-href="#step-{{key}}" click="partId={{key}}">
@@ -13,12 +13,14 @@
     <!-- Life wrapper -->
     <span class="row" id="akr-life-wrapper">
         <div class="col-md-8 col-sm-8 col-xs-8">
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="{{step/data.length*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/data.length*100}}%;">
+            <div class="col-md-8 col-sm-8 col-xs-8">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{step/data.length*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/data.length*100}}%;">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
+        <div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
             <span class="life-{{gameObject.life}}">
                 <i class="fa fa-heart fa-3x"></i>
                 <i class="fa fa-heart fa-3x"></i>
@@ -30,59 +32,57 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
-            <div class="row" style="text-align:center;">
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <!-- Question wrapper -->
-                    <div id="question-wrapper">
-                        <img src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{val.filename}}.png" class="img-thumbnail">
-                        <h3>{{val.vie}}</h3>
+            <div class="test">
+
+                <!-- Question wrapper -->
+                <div id="question-wrapper">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 center">
+                            <h2>{{val.vietnamese}}</h2>
+                            <!-- <h3>{{val.kanji}}</h3> -->
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                    <!-- User answer wrapper -->
-                    <div id="user-input-wrapper">
-                        <div id="{{key}}">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <span class="first"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <span ng-click="keyPress(49)" class="form-control" ng-class="{'selected': 49==keyCode}">{{choices[key][0]}}</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <span class="second"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <span ng-click="keyPress(50)" class="form-control" ng-class="{'selected': 50==keyCode}">{{choices[key][1]}}</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <span class="third"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <span ng-click="keyPress(51)" class="form-control" ng-class="{'selected': 51==keyCode}">{{choices[key][2]}}</span>
-                                </div>
-                            </div>
+                <!-- User answer wrapper -->
+                <div id="user-input-wrapper">
+                    <div id="{{key}}" class="picture-wrapper row">
+                        <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 49==keyCode}" ng-click="keyPress(49)">
+                            <!-- <img ng-src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{choices[key][0]}}.png" class="img-thumbnail" id="img-{{key}}-0"> -->
+                            <h3 class="first">
+                                <!-- <span class="akr-key">1</span> -->
+                                {{choices[key][0]}}
+                            </h3>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 50==keyCode}" ng-click="keyPress(50)">
+                            <!-- <img ng-src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{choices[key][1]}}.png" class="img-thumbnail" id="img-{{key}}-1"> -->
+                            <h3 class="second">
+                                <!-- <span class="akr-key">2</span> -->
+                                {{choices[key][1]}}
+                            </h3>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 51==keyCode}" ng-click="keyPress(51)">
+                            <!-- <img ng-src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{choices[key][2]}}.png" class="img-thumbnail" id="img-{{key}}-2"> -->
+                            <h3 class="third">
+                                <!-- <span class="akr-key">3</span> -->
+                                {{choices[key][2]}}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Correct answer wrapper -->
+                <div id="correct-answer-wrapper">
+                    <div class="row hide">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            {{val.hiragana}}
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Correct answer wrapper -->
-            <div id="correct-answer-wrapper">
-                <div class="row hide">
-                    <div class=" col-md-12 col-sm-12 col-xs-12">
-                        {{val.hiragana}}
-                    </div>
-                </div>
-            </div>
-
             <!-- Custom navigation wrapper-->
-            <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
+            <div id="aki-answer-wrapper" ng-class="{'check' : 1== stage}">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <div class="row hide" id="mess-{{key}}">
@@ -123,16 +123,19 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+
 </div>
 
 <script type="text/javascript">
 $(document).keydown(function(e) {
+    console.info(angular.element("#pictureWizard").scope());
     if (13 == e.keyCode) {
-        angular.element("#wordWizard").scope().enterPress();
+        angular.element("#pictureWizard").scope().enterPress();
     } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
-        angular.element("#wordWizard").scope().keyPress(e.keyCode);
+        angular.element("#pictureWizard").scope().keyPress(e.keyCode);
     }
     changeLang();
 });

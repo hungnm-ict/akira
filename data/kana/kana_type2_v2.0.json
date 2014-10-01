@@ -1,0 +1,1192 @@
+[
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 1,
+    "hiragana": "あし",
+    "romaji": "ashi",
+    "vietnamese": "bàn chân",
+    "english": "foot",
+    "filename": "foot"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 2,
+    "hiragana": "かい",
+    "romaji": "kai",
+    "vietnamese": "vỏ sò",
+    "english": "shell",
+    "filename": "shell"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 3,
+    "hiragana": "うし",
+    "romaji": "ushi",
+    "vietnamese": "con bò",
+    "english": "cow",
+    "filename": "cow"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 4,
+    "hiragana": "えき",
+    "romaji": "eki",
+    "vietnamese": "nhà ga",
+    "english": "station",
+    "filename": "station"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 5,
+    "hiragana": "しお",
+    "romaji": "shio",
+    "vietnamese": "muối",
+    "english": "salt",
+    "filename": "salt"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 6,
+    "hiragana": "くし",
+    "romaji": "kushi",
+    "vietnamese": "lược",
+    "english": "comb",
+    "filename": "comb"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 7,
+    "hiragana": "いけ",
+    "romaji": "ike",
+    "vietnamese": "cái ao",
+    "english": "pond",
+    "filename": "pond"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 8,
+    "hiragana": "ここ",
+    "romaji": "koko",
+    "vietnamese": "đây",
+    "english": "here",
+    "filename": "here"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 9,
+    "hiragana": "うち",
+    "romaji": "uchi",
+    "vietnamese": "nhà ",
+    "english": "home",
+    "filename": "home"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 10,
+    "hiragana": "くつ",
+    "romaji": "kutsu",
+    "vietnamese": "giày",
+    "english": "shoe",
+    "filename": "shoe"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 11,
+    "hiragana": "て",
+    "romaji": "te",
+    "vietnamese": "tay",
+    "english": "hand",
+    "filename": "hand"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 1,
+    "hiragana": "かさ",
+    "romaji": "kasa",
+    "vietnamese": "cái ô",
+    "english": "umbrella",
+    "filename": "umbrella"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 2,
+    "hiragana": "すいか",
+    "romaji": "suika",
+    "vietnamese": "dưa hấu",
+    "english": "watermelon",
+    "filename": "watermelon"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 3,
+    "hiragana": "あせ",
+    "romaji": "ase",
+    "vietnamese": "mồ hôi",
+    "english": "sweat",
+    "filename": "sweat"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 4,
+    "hiragana": "さかな",
+    "romaji": "sakana",
+    "vietnamese": "cá",
+    "english": "fish",
+    "filename": "fish"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 5,
+    "hiragana": "かに",
+    "romaji": "kani",
+    "vietnamese": "cua",
+    "english": "crab",
+    "filename": "crab"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 6,
+    "hiragana": "いぬ",
+    "romaji": "inu",
+    "vietnamese": "chó ",
+    "english": "dog",
+    "filename": "dog"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 7,
+    "hiragana": "ねこ",
+    "romaji": "neko",
+    "vietnamese": "mèo",
+    "english": "cat",
+    "filename": "cat"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 8,
+    "hiragana": "つの",
+    "romaji": "tsuno",
+    "vietnamese": "sừng",
+    "english": "horn",
+    "filename": "horn"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 9,
+    "hiragana": "はし",
+    "romaji": "hashi",
+    "vietnamese": "cây cầu",
+    "english": "bridge",
+    "filename": "bridge"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 10,
+    "hiragana": "ほし",
+    "romaji": "hoshi",
+    "vietnamese": "ngôi sao",
+    "english": "star",
+    "filename": "star"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 11,
+    "hiragana": "あに",
+    "romaji": "ani",
+    "vietnamese": "chị gái",
+    "english": "sister",
+    "filename": "sister"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 12,
+    "hiragana": "それ",
+    "romaji": "sore",
+    "vietnamese": "cái kia",
+    "english": "that",
+    "filename": "that"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 1,
+    "hiragana": "たばこ",
+    "romaji": "tabako",
+    "vietnamese": "thuốc lá",
+    "english": "tobacco",
+    "filename": "tobacco"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 2,
+    "hiragana": "ちかてつ",
+    "romaji": "chikatetsu",
+    "vietnamese": "tàu điện ngầm",
+    "english": "subway",
+    "filename": "subway"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 3,
+    "hiragana": "くつ",
+    "romaji": "kutsu",
+    "vietnamese": "giày",
+    "english": "shoe",
+    "filename": "shoe"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 4,
+    "hiragana": "てんぷら",
+    "romaji": "tenpura",
+    "vietnamese": "tenpura",
+    "english": "tenpura",
+    "filename": "tenpura"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 5,
+    "hiragana": "ふうとう",
+    "romaji": "fuutou",
+    "vietnamese": "phong bì",
+    "english": "envelope",
+    "filename": "envelope"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 6,
+    "hiragana": "はな",
+    "romaji": "hana",
+    "vietnamese": "hoa",
+    "english": "flower",
+    "filename": "flower"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 7,
+    "hiragana": "ひ",
+    "romaji": "hi",
+    "vietnamese": "ngày",
+    "english": "day",
+    "filename": "day"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 8,
+    "hiragana": "たいへん",
+    "romaji": "taihen",
+    "vietnamese": "vất vả",
+    "english": "hard",
+    "filename": "hard"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 9,
+    "hiragana": "ほん",
+    "romaji": "hon",
+    "vietnamese": "sách",
+    "english": "book",
+    "filename": "book"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 10,
+    "hiragana": "となり",
+    "romaji": "tonari",
+    "vietnamese": "bên cạnh",
+    "english": "next to",
+    "filename": "nextto"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 1,
+    "hiragana": "うま",
+    "romaji": "uma",
+    "vietnamese": "ngựa",
+    "english": "hose",
+    "filename": "uma"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 2,
+    "hiragana": "め",
+    "romaji": "me",
+    "vietnamese": "mắt",
+    "english": "eye",
+    "filename": "me"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 3,
+    "hiragana": "みみ",
+    "romaji": "mimi",
+    "vietnamese": "tai",
+    "english": "ear",
+    "filename": "mimi"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 4,
+    "hiragana": "くも",
+    "romaji": "kumo",
+    "vietnamese": "mây",
+    "english": "cloud",
+    "filename": "kumo"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 5,
+    "hiragana": "むし",
+    "romaji": "mushi",
+    "vietnamese": "côn trùng",
+    "english": "insect",
+    "filename": "mushi"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 6,
+    "hiragana": "やま",
+    "romaji": "yama",
+    "vietnamese": "núi",
+    "english": "mountain",
+    "filename": "yama"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 7,
+    "hiragana": "ゆき",
+    "romaji": "yuki",
+    "vietnamese": "tuyết",
+    "english": "snow",
+    "filename": "yuki"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 8,
+    "hiragana": "よる",
+    "romaji": "yoru",
+    "vietnamese": "đêm",
+    "english": "night",
+    "filename": "yoru"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 1,
+    "hiragana": "きれ",
+    "romaji": "kire",
+    "vietnamese": "vải",
+    "english": "cloth",
+    "filename": "kire"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 2,
+    "hiragana": "しろ",
+    "romaji": "shiro",
+    "vietnamese": "lâu đài",
+    "english": "castle",
+    "filename": "shiro"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 3,
+    "hiragana": "さくら",
+    "romaji": "sakura",
+    "vietnamese": "hoa anh đào",
+    "english": "cherry blossoms",
+    "filename": "sakura"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 4,
+    "hiragana": "かわ",
+    "romaji": "kawa",
+    "vietnamese": "sông",
+    "english": "river",
+    "filename": "kawa"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 5,
+    "hiragana": "はかり",
+    "romaji": "hakari",
+    "vietnamese": "cân",
+    "english": "scale",
+    "filename": "hakari"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 6,
+    "hiragana": "せんす",
+    "romaji": "sensu",
+    "vietnamese": "quạt giấy",
+    "english": "folding fan",
+    "filename": "sensu"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 7,
+    "hiragana": "さる",
+    "romaji": "saru",
+    "vietnamese": "khỉ",
+    "english": "monkey",
+    "filename": "saru"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 8,
+    "hiragana": "きんこ",
+    "romaji": "kinko",
+    "vietnamese": "an toàn",
+    "english": "safe",
+    "filename": "kinko"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 1,
+    "hiragana": "がか",
+    "romaji": "gaka",
+    "vietnamese": "họa sĩ",
+    "english": "painter",
+    "filename": "gaka"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 2,
+    "hiragana": "かぎ",
+    "romaji": "kagi",
+    "vietnamese": "chìa khóa",
+    "english": "key",
+    "filename": "kagi"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 3,
+    "hiragana": "めがね",
+    "romaji": "megane",
+    "vietnamese": "kính",
+    "english": "spectacles",
+    "filename": "megane"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 4,
+    "hiragana": "ぐんじん",
+    "romaji": "gunjin",
+    "vietnamese": "quân nhân",
+    "english": "soldier",
+    "filename": "gunjin"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 5,
+    "hiragana": "ぎんか",
+    "romaji": "ginka",
+    "vietnamese": "đồng xu bạc",
+    "english": "silver coin",
+    "filename": "ginka"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 6,
+    "hiragana": "かぐ",
+    "romaji": "kagu",
+    "vietnamese": "thiết bị",
+    "english": "furniture",
+    "filename": "kagu"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 7,
+    "hiragana": "げた",
+    "romaji": "geta",
+    "vietnamese": "guốc gỗ",
+    "english": "wooden clogs",
+    "filename": "geta"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 8,
+    "hiragana": "ふじさん",
+    "romaji": "fujisan",
+    "vietnamese": "núi Phú Sĩ",
+    "english": "Mt. Fuji",
+    "filename": "fujisan"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 9,
+    "hiragana": "わなげ",
+    "romaji": "wanage",
+    "vietnamese": "trò chơi ném vòng",
+    "english": "quoits",
+    "filename": "wanage"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 10,
+    "hiragana": "ちず",
+    "romaji": "chizu",
+    "vietnamese": "bản đồ",
+    "english": "map",
+    "filename": "chizu"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 11,
+    "hiragana": "ごはん",
+    "romaji": "gohan",
+    "vietnamese": "cơm",
+    "english": "rice",
+    "filename": "gohan"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 12,
+    "hiragana": "かぜ",
+    "romaji": "kaze",
+    "vietnamese": "gió",
+    "english": "wind",
+    "filename": "kaze"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 13,
+    "hiragana": "りんご",
+    "romaji": "ringo",
+    "vietnamese": "táo",
+    "english": "apple",
+    "filename": "ringo"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 14,
+    "hiragana": "はいざら",
+    "romaji": "haizara",
+    "vietnamese": "gạt tàn",
+    "english": "ash tray",
+    "filename": "haizara"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 15,
+    "hiragana": "くだもの",
+    "romaji": "kudamono",
+    "vietnamese": "hoa quả",
+    "english": "fruit",
+    "filename": "kudamono"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 16,
+    "hiragana": "かばん",
+    "romaji": "kaban",
+    "vietnamese": "túi",
+    "english": "bag",
+    "filename": "kaban"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 17,
+    "hiragana": "でんわ",
+    "romaji": "denwa",
+    "vietnamese": "điện thoại",
+    "english": "telephone",
+    "filename": "denwa"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 18,
+    "hiragana": "えび",
+    "romaji": "ebi",
+    "vietnamese": "tôm",
+    "english": "shrimp",
+    "filename": "ebi"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 19,
+    "hiragana": "まど",
+    "romaji": "mado",
+    "vietnamese": "cửa sổ",
+    "english": "window",
+    "filename": "mado"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 20,
+    "hiragana": "しんぶん",
+    "romaji": "shinbun",
+    "vietnamese": "báo",
+    "english": "newspaper",
+    "filename": "shinbun"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 21,
+    "hiragana": "かべ",
+    "romaji": "kabe",
+    "vietnamese": "tường",
+    "english": "wall of house",
+    "filename": "kabe"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 22,
+    "hiragana": "えんぴつ",
+    "romaji": "enpitsu",
+    "vietnamese": "bút chì",
+    "english": "pencil",
+    "filename": "enpitsu"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 23,
+    "hiragana": "おばん",
+    "romaji": "oban",
+    "vietnamese": "khay",
+    "english": "tray",
+    "filename": "oban"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 24,
+    "hiragana": "でんぱ",
+    "romaji": "denpa",
+    "vietnamese": "sóng radio",
+    "english": "radio wave",
+    "filename": "denpa"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 25,
+    "hiragana": "さんぽ",
+    "romaji": "sanpo",
+    "vietnamese": "đi bộ",
+    "english": "walk",
+    "filename": "sanpo"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 1,
+    "hiragana": "らっかさん",
+    "romaji": "rakkasan",
+    "vietnamese": "dù",
+    "english": "parachute",
+    "filename": "rakkasan"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 2,
+    "hiragana": "せっけん",
+    "romaji": "sekken",
+    "vietnamese": "xa bông",
+    "english": "soap",
+    "filename": "sekken"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 3,
+    "hiragana": "がっき",
+    "romaji": "gakki",
+    "vietnamese": "nhạc cụ",
+    "english": "musical intrument",
+    "filename": "gakki"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 4,
+    "hiragana": "けっこん",
+    "romaji": "kekkon",
+    "vietnamese": "kết hôn",
+    "english": "marriage",
+    "filename": "kekkon"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 5,
+    "hiragana": "ざっし",
+    "romaji": "zasshi",
+    "vietnamese": "tạp chí",
+    "english": "magazine",
+    "filename": "zasshi"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 6,
+    "hiragana": "きっぷ",
+    "romaji": "kippu",
+    "vietnamese": "vé",
+    "english": "ticket",
+    "filename": "kippu"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 7,
+    "hiragana": "きって",
+    "romaji": "kitte",
+    "vietnamese": "tem",
+    "english": "stamp",
+    "filename": "kitte"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 8,
+    "hiragana": "ほっぺた",
+    "romaji": "hoppeta",
+    "vietnamese": "mà",
+    "english": "cheek",
+    "filename": "hoppeta"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 9,
+    "hiragana": "らっぱ",
+    "romaji": "rappa",
+    "vietnamese": "kèn",
+    "english": "trumpet",
+    "filename": "rappa"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 10,
+    "hiragana": "おかあさん",
+    "romaji": "okaasan",
+    "vietnamese": "mẹ",
+    "english": "mother",
+    "filename": "okaasan"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 11,
+    "hiragana": "おにいさん",
+    "romaji": "oniisan",
+    "vietnamese": "anh trai",
+    "english": "elder brother",
+    "filename": "oniisan"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 12,
+    "hiragana": "おばあさん",
+    "romaji": "obaasan",
+    "vietnamese": "bà",
+    "english": "grandmother",
+    "filename": "obaasan"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 13,
+    "hiragana": "せんぷうき",
+    "romaji": "senpuuki",
+    "vietnamese": "quạt điện",
+    "english": "electric fan",
+    "filename": "senpuuki"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 14,
+    "hiragana": "おじいさん",
+    "romaji": "ojiisan",
+    "vietnamese": "ông",
+    "english": "grandfather",
+    "filename": "ojiisan"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 15,
+    "hiragana": "ふうとう",
+    "romaji": "futoo",
+    "vietnamese": "phong bì",
+    "english": "envelope",
+    "filename": "futoo"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 16,
+    "hiragana": "とけい",
+    "romaji": "tokei",
+    "vietnamese": "đồng hồ",
+    "english": "clock",
+    "filename": "tokei"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 17,
+    "hiragana": "ぼうし",
+    "romaji": "booshi",
+    "vietnamese": "mũ",
+    "english": "hat",
+    "filename": "booshi"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 18,
+    "hiragana": "れいぞうこ",
+    "romaji": "reizooko",
+    "vietnamese": "tủ lạnh",
+    "english": "refrigerator",
+    "filename": "reizooko"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 19,
+    "hiragana": "こおり",
+    "romaji": "koori",
+    "vietnamese": "dđá",
+    "english": "ice",
+    "filename": "koori"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 20,
+    "hiragana": "おねえさん",
+    "romaji": "oneesan",
+    "vietnamese": "chị gái",
+    "english": "elder sister",
+    "filename": "oneesan"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 21,
+    "hiragana": "おおかみ",
+    "romaji": "ookami",
+    "vietnamese": "con sói",
+    "english": "wolf",
+    "filename": "ookami"
+  },
+  {
+    "topicid": 2,
+    "subid": 2,
+    "questid": 22,
+    "hiragana": "ひこうき",
+    "romaji": "hikooki",
+    "vietnamese": "máy bay",
+    "english": "airplane",
+    "filename": "hikooki"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 1,
+    "hiragana": "きゃく",
+    "romaji": "kyaku",
+    "vietnamese": "khách",
+    "english": "guest",
+    "filename": "kyaku"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 2,
+    "hiragana": "けんびきょう",
+    "romaji": "kenbikyoo",
+    "vietnamese": "kính hiển vi",
+    "english": "microscope",
+    "filename": "kenbikyoo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 3,
+    "hiragana": "ちきゅう",
+    "romaji": "chikyuu",
+    "vietnamese": "trái đất",
+    "english": "earth",
+    "filename": "chikyuu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 4,
+    "hiragana": "きんぎょ",
+    "romaji": "kingyo",
+    "vietnamese": "cá vàng",
+    "english": "goldfish",
+    "filename": "kingyo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 5,
+    "hiragana": "すいぎゅう",
+    "romaji": "suigyuu",
+    "vietnamese": "trâu nước",
+    "english": "water bufalo",
+    "filename": "suigyuu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 6,
+    "hiragana": "にんぎょう",
+    "romaji": "ninngyoo",
+    "vietnamese": "búp bê",
+    "english": "doll",
+    "filename": "ninngyoo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 7,
+    "hiragana": "いしゃ",
+    "romaji": "isha",
+    "vietnamese": "bác sĩ",
+    "english": "doctor",
+    "filename": "isha"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 8,
+    "hiragana": "じゅうどう",
+    "romaji": "judoo",
+    "vietnamese": "võ Judo",
+    "english": "judo",
+    "filename": "judoo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 9,
+    "hiragana": "じてんしゃ",
+    "romaji": "jitensha",
+    "vietnamese": "xe đạp",
+    "english": "bicycle",
+    "filename": "jitensha"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 10,
+    "hiragana": "はつでんしょ",
+    "romaji": "hatsudensho",
+    "vietnamese": "nhà máy điện",
+    "english": "power station",
+    "filename": "hatsudensho"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 11,
+    "hiragana": "じんじゃ",
+    "romaji": "jinja",
+    "vietnamese": "đến thờ Shinto",
+    "english": "Shinto shrine",
+    "filename": "jinja"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 12,
+    "hiragana": "こうちゃ",
+    "romaji": "koucha",
+    "vietnamese": "trà đen",
+    "english": "black tea",
+    "filename": "koucha"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 13,
+    "hiragana": "ちゅうしゃ",
+    "romaji": "chuusha",
+    "vietnamese": "kim tiêm",
+    "english": "injection",
+    "filename": "chuusha"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 14,
+    "hiragana": "かばちゃ",
+    "romaji": "kabacha",
+    "vietnamese": "bí đao",
+    "english": "squash",
+    "filename": "kabacha"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 15,
+    "hiragana": "ちょっかく",
+    "romaji": "chokkaku",
+    "vietnamese": "góc vuông",
+    "english": "right angle",
+    "filename": "chokkaku"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 16,
+    "hiragana": "ちょうちん",
+    "romaji": "choochin",
+    "vietnamese": "đèn giấy",
+    "english": "paper lantern",
+    "filename": "choochin"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 17,
+    "hiragana": "びょういん",
+    "romaji": "byouin",
+    "vietnamese": "bệnh viện",
+    "english": "hospital",
+    "filename": "byouin"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 18,
+    "hiragana": "ぎゅうにゅう",
+    "romaji": "gyuunyuu",
+    "vietnamese": "sữa",
+    "english": "milk",
+    "filename": "gyuunyuu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 19,
+    "hiragana": "みゃく",
+    "romaji": "myaku",
+    "vietnamese": "mạch",
+    "english": "pulse",
+    "filename": "myaku"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 20,
+    "hiragana": "びゃくえん",
+    "romaji": "byakuen",
+    "vietnamese": "100 yên",
+    "english": "one hundred yen",
+    "filename": "byakuen"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 21,
+    "hiragana": "りょこう",
+    "romaji": "ryokoo",
+    "vietnamese": "du lịch",
+    "english": "travel",
+    "filename": "ryokoo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 22,
+    "hiragana": "びょうざん",
+    "romaji": "byouzan",
+    "vietnamese": "núi băng",
+    "english": "ice berg",
+    "filename": "byouzan"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 23,
+    "hiragana": "りゅう",
+    "romaji": "ryuu",
+    "vietnamese": "rồng",
+    "english": "dragon",
+    "filename": "ryuu"
+  }
+]

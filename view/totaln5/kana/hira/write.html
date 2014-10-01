@@ -1,6 +1,7 @@
-<div id="wordWizard" class="swMain" akirawizard enablestep="false">
-    <!-- Step navigator -->
-    <ul class="hide">
+<button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
+<div id="writeWizard" class="swMain" akirawizard enablestep="false">
+    <!-- Step navigation -->
+    <ul>
         <li ng-repeat="(key, value) in data">
             <a ng-href="#step-{{key}}" click="partId={{key}}">
                 <label class="stepNumber">
@@ -30,42 +31,28 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
-            <div class="row" style="text-align:center;">
-                <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
                     <!-- Question wrapper -->
-                    <div id="question-wrapper">
-                        <img src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{val.filename}}.png" class="img-thumbnail">
-                        <h3>{{val.vie}}</h3>
+                    <div id="question-wrapper" ng-click="playSound(key,true)">
+                        <audio controls id="{{key}}" style="display:none;">
+                            <source type="audio/mpeg">
+                                Your browser does not support the audio element.
+                        </audio>
+                        <i class="fa fa-play fa-2x write-btn-play"></i>
+                        <span class="img-responsive">
+                            {{val.hiragana}}
+                        </span>
+                        <!-- <img ng-src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{val.filename}}.png" class="img-responsive"> -->
+                        <!-- <h4 class="center" style="text-transform:captalize">{{val.vie}}</h4> -->
                     </div>
                 </div>
-
-                <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
                     <!-- User answer wrapper -->
                     <div id="user-input-wrapper">
-                        <div id="{{key}}">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <span class="first"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <span ng-click="keyPress(49)" class="form-control" ng-class="{'selected': 49==keyCode}">{{choices[key][0]}}</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <span class="second"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <span ng-click="keyPress(50)" class="form-control" ng-class="{'selected': 50==keyCode}">{{choices[key][1]}}</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <span class="third"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <span ng-click="keyPress(51)" class="form-control" ng-class="{'selected': 51==keyCode}">{{choices[key][2]}}</span>
-                                </div>
+                        <div class="row none-padding">
+                            <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
+                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" />
                             </div>
                         </div>
                     </div>
@@ -75,15 +62,15 @@
             <!-- Correct answer wrapper -->
             <div id="correct-answer-wrapper">
                 <div class="row hide">
-                    <div class=" col-md-12 col-sm-12 col-xs-12">
-                        {{val.hiragana}}
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {{val.romaji}}
                     </div>
                 </div>
             </div>
 
-            <!-- Custom navigation wrapper-->
-            <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
-                <div class="row">
+            <!-- Navigation wrapper-->
+            <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
+                <div class="row mess-holder-{{key}}">
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <div class="row hide" id="mess-{{key}}">
                             <div class="col-md-4 col-xs-4 col-sm-4">
@@ -97,10 +84,11 @@
                             <div class="col-md-8 col-xs-8 col-sm-8">
                                 <span class="hint">{{val.hiragana}}</span>
                                 <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vie}}</span>
+                                <span class="hint">{{val.vietnamese}}</span>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-3 col-sm-3 col-xs-3">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
@@ -123,6 +111,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
@@ -130,10 +119,9 @@
 <script type="text/javascript">
 $(document).keydown(function(e) {
     if (13 == e.keyCode) {
-        angular.element("#wordWizard").scope().enterPress();
-    } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
-        angular.element("#wordWizard").scope().keyPress(e.keyCode);
+        angular.element("#writeWizard").scope().enterPress();
     }
     changeLang();
 });
+kanjiDict();
 </script>
