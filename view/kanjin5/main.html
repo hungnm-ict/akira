@@ -10,17 +10,17 @@
         </li>
     </ul>
     <span id="star">
-        <span>
-            
+        <span class="number">
+            {{kanjistar}}
+            <i class="fa fa-star kanji"></i>
         </span>
-        <i class="fa fa-star fa-3x kanji"></i>
     </span>
     <div id="step-1">
         <div class="wrapper">
             <!-- Sample ngrepeat -->
             <div class="row" ng-repeat="val in [0,1]">
                 <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
-                    <label >
+                    <label>
                         <span data-i18n="common.lesson"></span>
                         <span>&nbsp;{{4* val + value}}</span>
                     </label>

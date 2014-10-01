@@ -57,10 +57,10 @@
             </a>
         </li>
         <li>
-            <a href="#step-4" ng-click="partId=5">
+            <a href="#step-5" ng-click="partId=5">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(5)">
-                        <span ng-switch-when="true">4</span>
+                        <span ng-switch-when="true">5</span>
                         <span ng-switch-when="false"><i class="fa fa-lock"></i>
                         </span>
                         <span ng-switch-default><i class="fa fa-lock"></i>
@@ -73,33 +73,33 @@
 
     <span id="star">
         <span>
-            {{hirastar}} <i class="fa fa-star fa-3x kana"></i>
+            {{kanaStar}} <i class="fa fa-star fa-3x kana"></i>
         </span>
     </span>
 
     <div id="step-{{value}}" ng-repeat="value in [1,2,3,4,5]">
         <div class="row">
             <div class="col-md-4   col-md-offset-2">
-                <a ng-href="#/kata/{{lessonId}}/{{value}}/learn" class="thumb">
+                <a ng-href="#/kana/{{lessonId}}/{{value}}/learn" class="thumb">
                     <span data-i18n="common.learn"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/learn.png">
                     </span>
                 </a>
-                <span class="star-{{progress['totaln5'][lessonId][value]['learn']}} vocab">
+                <span class="star-{{progress['kana'][lessonId][value]['learn']}} kana">
                     <i class="fa fa-star fa-3x"></i>
                     <i class="fa fa-star fa-3x"></i>
                     <i class="fa fa-star fa-3x"></i>
                 </span>
             </div>
             <div class="col-md-4">
-                <a ng-href="#/kata/{{lessonId}}/{{value}}/picture" class="thumb">
+                <a ng-href="#/kana/{{lessonId}}/{{value}}/picture" class="thumb">
                     <span data-i18n="common.picture"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/picture.png">
                     </span>
                 </a>
-                <span class="vocab star-{{progress['totaln5'][lessonId][value]['picture']}}">
+                <span class="kana star-{{progress['kana'][lessonId][value]['picture']}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
@@ -109,26 +109,26 @@
         </div>
         <div class="row">
             <div class="col-md-4   col-md-offset-2">
-                <a ng-href="#/kata/{{lessonId}}/{{value}}/word" class="thumb">
+                <a ng-href="#/kana/{{lessonId}}/{{value}}/word" class="thumb">
                     <span data-i18n="common.word"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/word.png">
                     </span>
                 </a>
-                <span class="vocab star-{{progress['totaln5'][lessonId][value]['word']}}">
+                <span class="kana star-{{progress['kana'][lessonId][value]['word']}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                 </span>
             </div>
             <div class="col-md-4">
-                <a ng-href="#/kata/{{lessonId}}/{{value}}/connect" class="thumb">
+                <a ng-href="#/kana/{{lessonId}}/{{value}}/connect" class="thumb">
                     <span data-i18n="common.connect"></span>
                     <span class="akira-circle">
                         <img ng-src="../../img/totaln5/subtopic/connect.png">
                     </span>
                 </a>
-                <span class="vocab star-{{connect['totaln5'][lessonId][value]['connect']}}">
+                <span class="kana star-{{connect['kana'][lessonId][value]['connect']}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>

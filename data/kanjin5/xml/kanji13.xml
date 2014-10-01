@@ -1,8 +1,0 @@
-<data>
-  <name id="0" hiragana="た" kanji="田" romaji="ta" vie="thửa ruộng" eng="rice field" short="ricefield"/>
-  <name id="1" hiragana="まち" kanji="町" romaji="machi" vie="thị trấn" eng="town" short="town"/>
-  <name id="2" hiragana="みち" kanji="道" romaji="michi" vie="con đường" eng="road" short="road"/>
-  <name id="3" hiragana="やま" kanji="山" romaji="yama" vie="núi" eng="mountain" short="mountain"/>
-  <name id="4" hiragana="かわ" kanji="川" romaji="kawa" vie="sông" eng="river" short="river"/>
-  <name id="5" hiragana="うみ" kanji="海" romaji="umi" vie="biển" eng="sea" short="sea"/>
-</data>

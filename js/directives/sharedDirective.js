@@ -55,7 +55,7 @@ akrSharedDirectives.directive('akirawizard', function() {
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();
             clearInterval(trigger);
-        }, 100);
+        }, 200);
     }
 
     return {

@@ -1,9 +1,0 @@
-<data>
-  <name id="0" hiragana="はち" kanji="八" romaji="hachi" vie="8" eng="eight" short="eight"/>
-  <name id="1" hiragana="きゅう" kanji="九" romaji="kyuu" vie="9" eng="nine" short="nine"/>
-  <name id="2" hiragana="じゅう" kanji="十" romaji="juu" vie="10" eng="ten" short="ten"/>
-  <name id="3" hiragana="ひゃく" kanji="百" romaji="hyaku" vie="100" eng="hundred" short="hundred"/>
-  <name id="4" hiragana="せん" kanji="千" romaji="sen" vie="1000" eng="thousand" short="thousand"/>
-  <name id="5" hiragana="いちまん" kanji="一万" romaji="ichiman" vie="10000" eng="ten thousand" short="10000"/>
-  <name id="6" hiragana="えん" kanji="円" romaji="en" vie="đổng yên" eng="yen" short="yen"/>
-</data>

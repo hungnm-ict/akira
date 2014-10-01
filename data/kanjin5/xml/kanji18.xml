@@ -1,8 +1,0 @@
-<data>
-  <name id="0" hiragana="ひがし" kanji="東" romaji="higashi" vie="phía đông" eng="east" short="east"/>
-  <name id="1" hiragana="にし" kanji="西" romaji="nishi" vie="phía tây" eng="west" short="west"/>
-  <name id="2" hiragana="みなみ" kanji="南" romaji="minami" vie="phía nam" eng="south" short="south"/>
-  <name id="3" hiragana="きた" kanji="北" romaji="kita" vie="phía bắc" eng="north" short="north"/>
-  <name id="4" hiragana="くに" kanji="国" romaji="kuni" vie="đất nước" eng="country" short="country"/>
-  <name id="5" hiragana="にほんご" kanji="日本語" romaji="nihongo" vie="tiếng nhật" eng="japanese" short="japanese"/>
-</data>

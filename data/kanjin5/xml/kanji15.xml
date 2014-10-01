@@ -1,9 +1,0 @@
-<data>
-  <name id="0" hiragana="くち" kanji="口" romaji="kuchi" vie="miệng" eng="mouth" short="mouth"/>
-  <name id="1" hiragana="め" kanji="目" romaji="me" vie="mắt" eng="eye" short="eye"/>
-  <name id="2" hiragana="みみ" kanji="耳" romaji="mimi" vie="tai" eng="ear" short="ear"/>
-  <name id="3" hiragana="ながい" kanji="長い" romaji="nagai" vie="dài" eng="long" short="long"/>
-  <name id="4" hiragana="て" kanji="手" romaji="te" vie="tay" eng="arm" short="arm"/>
-  <name id="5" hiragana="あし" kanji="足" romaji="ashi" vie="chân" eng="leg" short="leg"/>
-  <name id="6" hiragana="からだ" kanji="体" romaji="karada" vie="cơ thể" eng="body" short="body"/>
-</data>

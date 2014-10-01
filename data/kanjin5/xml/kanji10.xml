@@ -1,8 +1,0 @@
-<data>
-  <name id="0" hiragana="うえ" kanji="上" romaji="ue" vie="trên" eng="above" short="above"/>
-  <name id="1" hiragana="した" kanji="下" romaji="shita" vie="dưới" eng="under" short="under"/>
-  <name id="2" hiragana="みぎ" kanji="右" romaji="migi" vie="phải" eng="right" short="right"/>
-  <name id="3" hiragana="ひだり" kanji="左" romaji="hidari" vie="trái" eng="left" short="left"/>
-  <name id="4" hiragana="なか" kanji="中" romaji="naka" vie="trong" eng="inside" short="inside"/>
-  <name id="5" hiragana="そと" kanji="外" romaji="soto" vie="ngoài" eng="outside" short="outside"/>
-</data>

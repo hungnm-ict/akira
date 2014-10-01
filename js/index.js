@@ -313,7 +313,7 @@ function akrLeaveStep(obj, context) {
     return true;
 }
 
-function getCurrentStar(data, courseName, lessonId, partId) {
+function getCurrentStar(data, courseName, lessonId, partId) {console.log(data);
     var totalStar = 0;
     //Each subtopic inside a lesson on a course
     $.each(data[courseName][lessonId], function(idx) {
@@ -346,8 +346,6 @@ function getCourseStar(data, course) {
     });
     return totalStar;
 }
-
-
 
 /**
  * Tính progress của từng bài học trong một khoá(kana,kanjin4,kanjin5) ở màn hình lựa chọn lesson phần progress bar
@@ -468,6 +466,22 @@ function getTotalLessonStar(data, course, lesson) {
     }
 }
 
+/**
+ * Tinh tong so sao cua mot bai hoc trong cac khoa: Kana, KanjiN5, KanjiN4
+ * @param  {[type]} data   [description]
+ * @param  {[type]} course [description]
+ * @param  {[type]} lesson [description]
+ * @return {[type]}        [description]
+ */
+function getLessonStar(data, course, lesson) {
+    var star = 0;
+    $.each(data[course][lesson], function(sub) {
+        $.each(data[course][lesson][sub], function(game) {
+            star += parseInt(data[course][lesson][sub][game]);
+        });
+    });
+    return star;
+}
 
 function kanjiDict() {
     $(".kanji-dict").hover(function(e) {
@@ -495,7 +509,7 @@ function translate(kanji) {
 function getUnlockedSub(data, course, lesson) {
     var unlocked = [];
     var currentStar = 0;
-
+    console.log(data[course]);
     $.each(data[course][lesson], function(sub) {
         var openSubStar = (sub - 1) * 10;
 

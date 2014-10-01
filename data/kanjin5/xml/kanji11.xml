@@ -1,9 +1,0 @@
-<data>
-  <name id="0" hiragana="もん" kanji="門" romaji="mon" vie="cánh cửa" eng="gate" short="gate"/>
-  <name id="1" hiragana="ごぜん" kanji="午前" romaji="gozen" vie="sáng" eng="a.m" short="am"/>
-  <name id="2" hiragana="ごご" kanji="午後" romaji="gogo" vie="chiều" eng="p.m" short="pm"/>
-  <name id="3" hiragana="まえ" kanji="前" romaji="mae" vie="trước" eng="before" short="before"/>
-  <name id="4" hiragana="うしろ" kanji="後ろ" romaji="ushiro" vie="sau" eng="after" short="after"/>
-  <name id="5" hiragana="こんしゅう" kanji="今週" romaji="konshyuu" vie="tuần này" eng="this week" short="thisweek"/>
-  <name id="6" hiragana="なまえ" kanji="名前" romaji="namae" vie="tên" eng="name" short="name"/>
-</data>
