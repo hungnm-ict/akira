@@ -2,6 +2,7 @@ var totaln5Ctrls = angular.module('totaln5Ctrls', []);
 
 totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
     $scope.course = "totaln5";
+    $scope.pss = "Tao lao cha may";
     $scope.kana = "true";
     //Total star initialize
     $scope.kanastar;
@@ -600,6 +601,7 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
         "correct": 0
     };
     $scope.step = 0;
+    
 
     $scope.removeLife = function() {
         $scope.gameObject.life--;
@@ -610,16 +612,16 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
 
     $scope.enterPress = function() {
 
-        var step = $("#writeWizard").smartWizard('currentStep') - 1;
+        var step = $("#learnWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
-            var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
-            var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+            var userSlt = $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            var correct = $("#learnWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
-                $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
+                $("#learnWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
-                $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
+                $("#learnWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
 
@@ -632,7 +634,7 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
             $scope.keyCode = 0;
             $scope.stage = 0;
             $scope.step++;
-            $("#writeWizard").smartWizard('goForward');
+            $("#learnWizard").smartWizard('goForward');
         }
         $scope.$apply();
         changeLang();

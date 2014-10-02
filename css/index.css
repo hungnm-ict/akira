@@ -264,6 +264,9 @@ body {
     text-transform: uppercase;
     background: #568ed4;
 }
+#left-sidebar #accordion {
+    padding-bottom: 48px;
+}
 #left-sidebar .panel-heading {
     border-radius: 0;
     background: #568ed4;
@@ -702,8 +705,8 @@ a:hover {
     text-align: center;
     border: 0;
 }
-#writeWizard .write-control.img-responsive,#learnWizard .write-control.img-responsive, #pictureWizard .write-control.img-responsive, #wordWizard .write-control.img-responsive {
-    font-size: 10rem;
+#writeWizard .write-control.img-responsive, #learnWizard .write-control.img-responsive, #pictureWizard .write-control.img-responsive, #wordWizard .write-control.img-responsive {
+    line-height: 215px;
     font-weight: bold;
     color: black;
 }
@@ -977,6 +980,9 @@ a:hover {
 =            CSS for TotalN5            =
 =======================================*/
 
+ul.anchor li a .stepNumber {
+    cursor: pointer;
+}
 #topicWizard ul.anchor li a .stepNumber {
     font-size: 18px;
     display: inline-block;
@@ -1177,12 +1183,15 @@ a:hover {
 }
 .first:before {
     content: '1';
+    margin-left: -10px;
 }
 .second:before {
     content: '2';
+    margin-left: -10px;
 }
 .third:before {
     content: '3';
+    margin-left: -10px;
 }
 #pictureWizard .img-thumbnail {
     width: 140px !important;
@@ -1246,4 +1255,14 @@ a:hover {
     color: #344c8c !important;
     border: 3px solid #344c8c;
     background: #fff !important;
+}
+#pictureWizard .selected span.img-responsive {
+    border: 2px solid #1659B0 !important;
+    border-radius: 20px;
+}
+#pictureWizard span.img-responsive {
+    height: 150px !important;
+    border: 2px solid gray !important;
+    line-height: 150px !important;
+    border-radius: 20px;
 }

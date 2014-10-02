@@ -291,6 +291,7 @@ function grammarChoiceLeaveStep(obj, context) {
 function akrLeaveStep(obj, context) {
     // return false;
     var ngScope = angular.element("#" + obj.context.id).scope();
+    console.log(obj.context.id);
     if (ngScope.lessonId === undefined) {
         console.log("Bạn đang ở màn hình chọn lesson.");
     } else if (ngScope.lessonId !== undefined && ngScope.partId !== undefined && "subtopicWizard" === obj.context.id) {
@@ -298,7 +299,7 @@ function akrLeaveStep(obj, context) {
         console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
         var stars = getCurrentStar(ngScope.starData, ngScope.course, ngScope.lessonId, context.toStep);
         console.log("Số sao bạn có là: " + stars);
-        if (context.toStep === 4) {
+        if (context.toStep === 4) {            
             console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
             return false;
         }
