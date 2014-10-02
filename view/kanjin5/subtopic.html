@@ -1,26 +1,20 @@
 <div id="subtopicWizard" class="swMain" akirawizard enablestep="false">
     <span class="header">
-        <span data-i18n="common.lesson"></span>&nbsp;{{lessonId}}
+        <h2 data-i18n="common.lesson"></h2>
+        <h2>{{lessonId}}</h2>
     </span>
+
     <ul>
-        <li>
-            <a href="#step-1" ng-click="partId=1">
+        <li ng-repeat="val in [1,2,3]">
+            <a href="#step-{{val}}" ng-click="partId={{val}}">
                 <label class="stepNumber">
-                    <span>1</span>
-                </label>
-            </a>
-        </li>
-        <li>
-            <a href="#step-2" ng-click="partId=2">
-                <label class="stepNumber">
-                    <i class="fa fa-lock"></i>
-                </label>
-            </a>
-        </li>
-        <li>
-            <a href="#step-3" ng-click="partId=3">
-                <label class="stepNumber">
-                    <i class="fa fa-lock"></i>
+                    <span ng-switch on="isEnabled({{val}})">
+                        <span ng-switch-when="true">{{val}}</span>
+                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
                 </label>
             </a>
         </li>

@@ -21,7 +21,6 @@ kanjin5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
     $scope.starData;
     $scope.enabled;
 
-    // Get totaln5 star information
     $http({
         method: "GET",
         url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kanjin5&userid=" + getUser().id
@@ -36,13 +35,6 @@ kanjin5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
     }
 });
 
-/**
- * Controller for write game vocab
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
 kanjin5Ctrls.controller('learnCtrl', function($scope, $routeParams, $http, dataService) {
     dataService.promise.then(function(deferred) {
         $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
@@ -60,7 +52,7 @@ kanjin5Ctrls.controller('learnCtrl', function($scope, $routeParams, $http, dataS
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver('kana', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct);
+            gameOver('kanjin5', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct);
         }
     };
 
@@ -83,7 +75,7 @@ kanjin5Ctrls.controller('learnCtrl', function($scope, $routeParams, $http, dataS
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('kana', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct);
+                gameOver('kanjin5', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -118,15 +110,8 @@ kanjin5Ctrls.controller('learnCtrl', function($scope, $routeParams, $http, dataS
     };
 });
 
-/**
- * Controller for Vocab - Picture game
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
 kanjin5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sce, dataService) {
-    $scope.course = "kanji";
+    $scope.course = "kanjin5";
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
 
@@ -150,7 +135,7 @@ kanjin5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver("kanji", $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct);
+            gameOver("kanjin5", $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct);
         }
     };
 
@@ -183,7 +168,7 @@ kanjin5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver("kanji", $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct);
+                gameOver("kanjin5", $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -196,13 +181,6 @@ kanjin5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
     }
 });
 
-/**
- * Controller for Vocab - Word game
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
 kanjin5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
@@ -223,7 +201,7 @@ kanjin5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver("kanji", $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct);
+            gameOver("kanjin5", $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct);
         }
     };
 
@@ -256,7 +234,7 @@ kanjin5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver("kanji", $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct);
+                gameOver("kanjin5", $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -269,13 +247,6 @@ kanjin5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
     }
 });
 
-/**
- * Controller for Vocab - Connect game
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
 kanjin5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
@@ -292,7 +263,7 @@ kanjin5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if (angular.equals($scope.gameObject.life, 0)) {
-            gameOver("kanji", $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct * 2);
+            gameOver("kanjin5", $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct * 2);
         }
     };
 
@@ -300,7 +271,7 @@ kanjin5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
         $scope.step++;
         $scope.gameObject.correct++;
         if (angular.equals($scope.step, 5)) {
-            gameOver("kanji", $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct * 2);
+            gameOver("kanjin5", $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct * 2);
         }
     }
 });

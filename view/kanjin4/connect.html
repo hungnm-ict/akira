@@ -22,25 +22,11 @@
 
     <div class="stepContainer">
         <div class="wrapper row">
-            <!-- <div class="question-wrapper">
-            
-            </div>
-            <div class="user-input-wrapper">
-            
-            </div>
-            <div class="correct-answer-wrapper">
-            
-            </div>
-            <div class="aki-answer-wrapper">
-            
-            </div> -->
-
-
             <div class="col-md-6">
                 <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:5">
                     <div class="col-md-12 hira-wrapper">
                         <span id="hira-{{value.id}}" class="couple-{{value.id}}" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            {{value.hiragana}}
+                            {{value.kanji}}
                         </span>
                     </div>
                 </div>
@@ -50,7 +36,7 @@
                 <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:5">
                     <div class="col-md-12 vi-wrapper">
                         <span id="vie-{{value.id}}" class="couple-{{value.id}}" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)">
-                            {{value.vietnamese}}
+                            {{value.hiragana}}
                         </span>
                     </div>
                 </div>
@@ -77,7 +63,8 @@ function drag(ev) {
 }
 
 function drop(ev) {
-    if ($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) {
+
+    if (($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) && ($('#' + ev.dataTransfer.getData("text/html")).attr('id') != $(ev.target).attr('id'))) {
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text/html");
         ev.target.style.visibility = "hidden";

@@ -2,7 +2,6 @@ var totaln5Ctrls = angular.module('totaln4Ctrls', []);
 
 totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
     $scope.course = "totaln4";
-    $scope.kana = "true";
 
     //Total star initialize
     $scope.vocabstar = 0;
@@ -15,6 +14,7 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
         method: "GET",
         url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln4&userid=" + getUser().id
     }).success(function(data, status) {
+        console.log(data);
         var stars = getTotalStar(data, 'totaln4');
         $scope.vocabstar = stars.vocab;
         $scope.grammarstar = stars.grammar;
@@ -62,7 +62,7 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
  * @param  {[type]} $http        [description]
  * @return {[type]}              [description]
  */
-totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http) {
+totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -71,13 +71,8 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http) {
     };
     $scope.step = 0;
 
-    var urlStr = "../../data/totaln5/data/vocab/json/default.json";
-    $http({
-        method: "GET",
-        url: urlStr
-    }).
-    success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+    dataService.promise.then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
     });
 
     $scope.removeLife = function() {
@@ -131,7 +126,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http) {
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln4/data/vocab/audio/" + $scope.data[id].short + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/totaln4/vocab/audio/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         if (isNormal) {
             document.getElementById(id).playbackRate = 1;
@@ -149,7 +144,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http) {
  * @param  {[type]} $http        [description]
  * @return {[type]}              [description]
  */
-totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sce) {
+totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sce, dataService) {
     $scope.course = "totaln4";
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId; //Current step
@@ -166,13 +161,9 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
     $scope.keyCode = 0;
     $scope.stage = 0;
 
-    var urlStr = "../../data/totaln4/data/vocab/json/default.json";
-    $http({
-        method: "GET",
-        url: urlStr
-    }).success(function(data, status) {
-        $scope.data = akiraShuffle(data);
-        $scope.choices = genAnswers($scope.data, "short", 3);
+    dataService.promise.then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
+        $scope.choices = genAnswers($scope.data, "filename", 3);
     });
 
     $scope.removeLife = function() {
@@ -231,7 +222,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
  * @param  {[type]} $http        [description]
  * @return {[type]}              [description]
  */
-totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
+totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.choices = [];
@@ -242,13 +233,8 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
         "life": 3,
         "correct": 0
     };
-    var urlStr = "../../data/totaln4/data/vocab/json/default.json";
-
-    $http({
-        method: "GET",
-        url: urlStr
-    }).success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+    dataService.promise.then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
         $scope.choices = genAnswers($scope.data, "hiragana", 3);
     });
 
@@ -309,7 +295,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http) {
  * @param  {[type]} $http        [description]
  * @return {[type]}              [description]
  */
-totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
+totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.step = 0;
@@ -318,19 +304,14 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
         "life": 3,
         "correct": 0
     };
-    var urlStr = "../../data/totaln4/data/vocab/json/default.json";
 
-    $http({
-        method: "GET",
-        url: urlStr
-    }).
-    success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+    dataService.promise.then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
     });
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln4/data/vocab/audio/" + $scope.data[id].short + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/totaln4/vocab/n4vocab.audio-v2.0/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         if (isNormal) {
             document.getElementById(id).playbackRate = 1;
@@ -396,7 +377,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http) {
  * @param  {[type]} $http        [description]
  * @return {[type]}              [description]
  */
-totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http) {
+totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -405,13 +386,8 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http) {
     };
     $scope.step = 0;
 
-    var urlStr = "../../data/totaln4/data/vocab/json/default.json";
-    $http({
-        method: "GET",
-        url: urlStr
-    }).
-    success(function(data, status) {
-        $scope.data = akiraShuffle(data);
+    dataService.promise.then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
     });
 
 

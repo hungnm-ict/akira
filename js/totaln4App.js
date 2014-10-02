@@ -1,6 +1,6 @@
-var totaln5App = angular.module('totaln4App', ['ngRoute', 'totaln4Ctrls', 'totaln4Directives', 'commonCtrls', 'akrSharedDirectives']);
+var totaln4App = angular.module('totaln4App', ['ngRoute', 'totaln4Ctrls', 'totaln4Directives', 'commonCtrls', 'akrSharedDirectives']);
 
-totaln5App.config(['$routeProvider',
+totaln4App.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -60,3 +60,20 @@ totaln5App.config(['$routeProvider',
             });
     }
 ]);
+
+totaln4App.service('dataService', function($http) {
+    this.promise = $http({
+        method: "GET",
+        url: "../../data/totaln4/vocab/n4vocab_v2.0.json"
+    });
+
+    this.filter = function(data, key1, lessonId, key2, partId) {
+        var uniqueGroups = [];
+        $.each(data, function(idx, val) {
+            if (data[idx][key1] == lessonId && data[idx][key2] == partId) {
+                uniqueGroups.push(data[idx]);
+            }
+        });
+        return uniqueGroups;
+    }
+});
