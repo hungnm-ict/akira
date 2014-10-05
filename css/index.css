@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 /*===============================================
 =            Common css for all page            =
 ===============================================*/
@@ -229,14 +228,17 @@ body {
     font: normal 26px;
     position: relative;
     /*color: #666;*/
+    
     margin: 0 0 30px 0;
     text-align: center;
     letter-spacing: 4px;
     /*text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);*/
+    
     text-transform: uppercase;
 }
 #site-lang {
     /*background: #344c8c;*/
+    
     padding: 20px 0;
     text-align: center;
 }
@@ -667,7 +669,7 @@ a:hover {
     border: 1px solid gray;
     border-radius: 20px;
 }
-.ans-opt.choosed {
+.ans-opt.selected {
     border-color: red;
 }
 .success, .check {
@@ -707,6 +709,8 @@ a:hover {
 }
 #writeWizard .write-control.img-responsive, #learnWizard .write-control.img-responsive, #pictureWizard .write-control.img-responsive, #wordWizard .write-control.img-responsive {
     line-height: 215px;
+    cursor: pointer;
+    font-size: 10rem;
     font-weight: bold;
     color: black;
 }
@@ -742,7 +746,7 @@ a:hover {
     margin: 24px 0;
     text-align: center;
 }
-#writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizard {
+#writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizard, #grammarListenWizard,#grammarChoiceWizard,#grammarReadWizard,#grammarTranslateWizard,#grammarWordWizard {
     border: 2px solid #344c8c;
     border-radius: 5px;
     background: #fff;
@@ -765,6 +769,7 @@ a:hover {
     font-weight: bold;
     line-height: 40px;
     /*text-align: left;*/
+    
     width: 200px;
     width: 100%;
     height: 50px;
@@ -807,6 +812,7 @@ a:hover {
     font-weight: bold;
     line-height: 40px;
     /*text-align: left;*/
+    
     width: 200px;
     height: 50px;
     margin: 6px;
@@ -865,11 +871,13 @@ a:hover {
     display: inline-block;
     /*height: 36px;*/
     /*line-height: 36px;*/
+    
     padding-right: 24px;
     text-align: center;
     vertical-align: middle;
     /*border:2px solid #5182BD;*/
     /*border-radius: 50%;*/
+    
     color: #5182bd;
     /*width: 36px;*/
 }
@@ -885,7 +893,6 @@ a:hover {
     position: inherit;
 }
 /*-----  End of CSS for Vocab -> Connect game  ------*/
-
 /*======================================
 =            CSS for TestN5            =
 ======================================*/
@@ -963,7 +970,6 @@ a:hover {
     background: white;
 }
 /*-----  End of CSS for TestN5  ------*/
-
 /*====================================
 =            CSS for menu            =
 ====================================*/
@@ -975,7 +981,6 @@ a:hover {
     padding-left: 24px;
 }
 /*-----  End of CSS for menu  ------*/
-
 /*=======================================
 =            CSS for TotalN5            =
 =======================================*/
@@ -1024,7 +1029,6 @@ ul.anchor li a .stepNumber {
     background: #fffff;
 }
 /*-----  End of CSS for TotalN5  ------*/
-
 /*===================================
 =           LEADERBOARD            =
 ===================================*/
@@ -1162,6 +1166,10 @@ ul.anchor li a .stepNumber {
     max-width: 175px;
     margin: 0 auto;
 }
+.failed-child, .correct-child {
+    display: inline-block;
+    margin-right: 48px;
+}
 .failed .correct-child {
     display: none;
 }
@@ -1178,8 +1186,13 @@ ul.anchor li a .stepNumber {
     width: 40px;
     height: 40px;
     text-align: center;
-    border: 2px solid #1659b0;
+    border: 2px solid #c0c0c0;
+    /* #1659b0; */
+    
     border-radius: 50%;
+}
+.selected .first:before, .selected .second:before, .selected .third:before {
+    border-color: #1659b0;
 }
 .first:before {
     content: '1';
@@ -1262,7 +1275,10 @@ ul.anchor li a .stepNumber {
 }
 #pictureWizard span.img-responsive {
     height: 150px !important;
-    border: 2px solid gray !important;
+    border: 2px solid #c0c0c0 !important;
     line-height: 150px !important;
     border-radius: 20px;
+}
+.kana .hint {
+    font-size: 5rem;
 }

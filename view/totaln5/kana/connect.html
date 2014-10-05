@@ -1,6 +1,6 @@
 <button ng-click="removeLife()" id="sublife" style="display:none;"></button>
 <button ng-click="check()" id="check" style="display:none;"></button>
-<div id="connectWizard">
+<div id="connectWizard" class="kana">
     <!-- Life wrapper -->
     <span class="row" id="akr-life-wrapper">
         <div class="col-md-8 col-sm-8 col-xs-8">
@@ -23,9 +23,9 @@
     <div class="stepContainer">
         <div class="wrapper row">
             <div class="col-md-6">
-                <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:5">
-                    <div class="col-md-12 hira-wrapper">
-                        <span id="hira-{{value.id}}" class="couple-{{value.id}}" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="row ngRepeatShuffle " ng-repeat="value in data | limitTo:5">
+                    <div class="col-md-12 hira-wrapper f-right">
+                        <span id="hira-{{value.questid}}" class="couple-{{value.questid}}" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
                             {{value.hiragana}}
                         </span>
                     </div>
@@ -33,9 +33,9 @@
             </div>
 
             <div class="col-md-6">
-                <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:5">
+                <div class="row ngRepeatShuffle " ng-repeat="value in data | limitTo:5">
                     <div class="col-md-12 vi-wrapper">
-                        <span id="vie-{{value.id}}" class="couple-{{value.id}}" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)">
+                        <span id="vie-{{value.questid}}" class="couple-{{value.questid}}" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)">
                             {{value.vietnamese}}
                         </span>
                     </div>
@@ -64,7 +64,9 @@ function drag(ev) {
 
 function drop(ev) {
 
-    if (($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) && ($('#' + ev.dataTransfer.getData("text/html")).attr('id') != $(ev.target).attr('id'))) {
+    if (
+        ($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) 
+        && ($('#' + ev.dataTransfer.getData("text/html")).attr('id') != $(ev.target).attr('id'))) {
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text/html");
         ev.target.style.visibility = "hidden";

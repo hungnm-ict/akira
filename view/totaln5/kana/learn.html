@@ -1,8 +1,8 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="learnWizard" class="swMain" akirawizard enablestep="false">
+<div id="learnWizard" class="swMain kana" akirawizard enablestep="false">
     <!-- Step navigation -->
     <ul>
-        <li ng-repeat="(key, value) in data">
+        <li ng-repeat="(key, value) in data" >
             <a ng-href="#step-{{key}}" click="partId={{key}}">
                 <label class="stepNumber">
                     <span>&nbsp;{{key}}</span>

@@ -114,3 +114,14 @@ totaln5App.service('dataService', function($http) {
         return uniqueGroups;
     }
 });
+
+
+totaln5App.controller('rootController', function($scope) {
+    $scope.rootPlay = function(data, course, step, id) {
+        var selId = "choices-" + step + "-" + id;
+        var audioSrc = document.getElementById(selId).getElementsByTagName('source');
+        $("audio#" + selId + " source").attr("src", "../../data/kana/kana_audio_v2.0/" + data[step][id].filename + ".mp3");
+        document.getElementById(selId).load();
+        document.getElementById(selId).play();
+    }
+});

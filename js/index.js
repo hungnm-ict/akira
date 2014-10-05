@@ -153,6 +153,7 @@ function akiraShuffle(array) {
 
 /**
  * Need to shuffle the generated answer again
+ * @deprecated [description]
  * @param  {[type]} data   [description]
  * @param  {[type]} ansKey [description]
  * @return {[type]}        [description]
@@ -182,6 +183,40 @@ function genAnswers(data, ansKey, numberOfAns) {
     });
     return uniqueGroups;
 }
+
+/**
+ * New function to genenate random answer
+ * @param  {[type]} data        [description]
+ * @param  {[type]} ansKey      [description]
+ * @param  {[type]} numberOfAns [description]
+ * @return {[type]}             [description]
+ */
+function genAnswers3(data, numberOfAns) {
+    var uniqueGroups = [];
+    $.each(data, function(idx, val) {
+        var obj = [];
+
+        var rand1;
+        obj.push(data[idx]);
+
+        do {
+            rand1 = Math.floor((Math.random() * data.length));
+        } while (rand1 == idx);
+        obj.push(data[rand1]);
+
+        if (numberOfAns == 3) {
+            var rand2;
+            do {
+                rand2 = Math.floor((Math.random() * data.length));
+            } while (rand2 == idx || rand2 == rand1);
+            obj.push(data[rand2]);
+        }
+
+        uniqueGroups[idx] = akiraShuffle(obj);
+    });
+    return uniqueGroups;
+}
+
 
 /**
  * Generate answer for translate game in grammar
@@ -289,9 +324,9 @@ function grammarChoiceLeaveStep(obj, context) {
  * @return {[type]}         [description]
  */
 function akrLeaveStep(obj, context) {
-    // return false;
+    return true;
     var ngScope = angular.element("#" + obj.context.id).scope();
-    console.log(obj.context.id);
+
     if (ngScope.lessonId === undefined) {
         console.log("Bạn đang ở màn hình chọn lesson.");
     } else if (ngScope.lessonId !== undefined && ngScope.partId !== undefined && "subtopicWizard" === obj.context.id) {
@@ -299,7 +334,7 @@ function akrLeaveStep(obj, context) {
         console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
         var stars = getCurrentStar(ngScope.starData, ngScope.course, ngScope.lessonId, context.toStep);
         console.log("Số sao bạn có là: " + stars);
-        if (context.toStep === 4) {            
+        if (context.toStep === 4 && ("totaln5" == ngScope.course || "totaln4" == ngScope.course)) {
             console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
             return false;
         }
@@ -309,12 +344,11 @@ function akrLeaveStep(obj, context) {
         }
     } else {
         console.log("Bước này không xác định hoặc là chưa xác định được");
-
     }
     return true;
 }
 
-function getCurrentStar(data, courseName, lessonId, partId) {console.log(data);
+function getCurrentStar(data, courseName, lessonId, partId) {
     var totalStar = 0;
     //Each subtopic inside a lesson on a course
     $.each(data[courseName][lessonId], function(idx) {
