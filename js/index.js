@@ -65,10 +65,14 @@ function changeLang(code) {
  * @return {[type]} [description]
  */
 function getUser() {
-    return {
-        "id": 17
-    };
-    return JSON.parse(sessionStorage.user);
+    /*    return {
+            "id": 17
+        };*/
+    if (sessionStorage.getItem("user") == null) {
+        return 0;
+    } else {
+        return JSON.parse(sessionStorage.user);
+    }
 }
 
 
@@ -324,7 +328,7 @@ function grammarChoiceLeaveStep(obj, context) {
  * @return {[type]}         [description]
  */
 function akrLeaveStep(obj, context) {
-    return true;
+    // return true;
     var ngScope = angular.element("#" + obj.context.id).scope();
 
     if (ngScope.lessonId === undefined) {
@@ -346,6 +350,21 @@ function akrLeaveStep(obj, context) {
         console.log("Bước này không xác định hoặc là chưa xác định được");
     }
     return true;
+}
+
+function akrShowStep(obj, context) {
+    var ngScope = angular.element("#" + obj.context.id).scope();
+    //Check if this is autoplay audio
+    if ($("#" + obj.context.id).attr("akrautoplayaudio") == "true") {
+        ngScope.playSound(context.toStep - 1, true);
+    }
+
+    //Check if this is autofocus input
+    if ($("#" + obj.context.id).attr("akrfocus") == "true") {
+        setTimeout(function() {
+            $("#input-" + (context.toStep - 1)).focus();
+        }, 1);
+    }
 }
 
 function getCurrentStar(data, courseName, lessonId, partId) {
@@ -544,7 +563,6 @@ function translate(kanji) {
 function getUnlockedSub(data, course, lesson) {
     var unlocked = [];
     var currentStar = 0;
-    console.log(data[course]);
     $.each(data[course][lesson], function(sub) {
         var openSubStar = (sub - 1) * 10;
 

@@ -1,4 +1,4 @@
-<div id="topicWizard" class="swMain" akirawizard enablestep="true" >
+<div id="topicWizard" class="swMain" akirawizard enablestep="true" ng-cloak>
     <ul>
         <li>
             <a href="#step-1" ng-click="show(true)">
@@ -61,6 +61,10 @@
         <div class="wrapper">
             <div class="row">
                 <div class="col-md-3 col-md-offset-3  lesson-wrapper">
+
+                    <label>
+                        <span>Hiragana I</span>
+                    </label>
                     <a ng-href="#/kana/1" class="thumb">
                         <img src="../../img/totaln5/hira.png" class="img-responsive">
                     </a>
@@ -70,6 +74,9 @@
                     </div>
                 </div>
                 <div class="col-md-3  lesson-wrapper">
+                    <label>
+                        <span>Hiragana II</span>
+                    </label>
                     <a ng-href="#/kana/2" class="thumb">
                         <img src="../../img/totaln5/hira2.png" class="img-responsive">
                     </a>
@@ -81,6 +88,9 @@
             </div>
             <div class="row">
                 <div class="col-md-3 col-md-offset-3  lesson-wrapper">
+                    <label>
+                        <span>Katakana I</span>
+                    </label>
                     <a ng-href="#/kana/3" class="thumb">
                         <img src="../../img/totaln5/kana.png" class="img-responsive">
                     </a>
@@ -90,6 +100,9 @@
                     </div>
                 </div>
                 <div class="col-md-3  lesson-wrapper">
+                    <label>
+                        <span>Katakana II</span>
+                    </label>
                     <a ng-href="#/kana/4" class="thumb">
                         <img src="../../img/totaln5/kana2.png" class="img-responsive">
                     </a>
@@ -101,7 +114,7 @@
             </div>
         </div>
     </div>
-    <div id="step-{{step}}" ng-repeat="step in [2,3,4]" >
+    <div id="step-{{step}}" ng-repeat="step in [2,3,4]">
         <div class="wrapper">
             <!-- Sample ngrepeat -->
             <div class="row" ng-repeat="val in [step*2-4,step*2-3]">

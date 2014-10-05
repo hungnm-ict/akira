@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="writeWizard" class="swMain kana" akirawizard enablestep="false">
+<div id="writeWizard" class="swMain kana" akirawizard enablestep="false" akrfocus="true">
     <!-- Step navigation -->
     <ul>
         <li ng-repeat="(key, value) in data">
@@ -40,11 +40,11 @@
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
                     <!-- Question wrapper -->
                     <div id="question-wrapper" ng-click="playSound(key,true)">
-                        <audio controls id="{{key}}" style="display:none;">
-                            <source type="audio/mpeg">
-                                Your browser does not support the audio element.
-                        </audio>
-                        <i class="fa fa-play fa-2x write-btn-play"></i>
+                       <!--  <audio controls id="{{key}}" style="display:none;">
+                           <source type="audio/mpeg">
+                               Your browser does not support the audio element.
+                       </audio>
+                       <i class="fa fa-play fa-2x write-btn-play"></i> -->
                         <span class="img-responsive write-control">
                             {{val.hiragana}}
                         </span>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-md-3 col-sm-3 col-xs-3  col-md-offset-1 col-sm-offset-1 col-xs-offset-1 ">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
                                 <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">

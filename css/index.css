@@ -543,7 +543,7 @@ ul.anchor {
     text-transform: uppercase;
 }
 .lesson-wrapper span {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bolder;
 }
 .lesson-wrapper img {
@@ -551,16 +551,19 @@ ul.anchor {
     max-height: 140px;
     margin: 0 auto;
 }
+.lesson-wrapper img:hover {
+    opacity: 0.5 !important;
+}
 #subtopicWizard ul.anchor li a, #leaderboardWizard ul.anchor li a {
     width: 50px;
     height: 50px;
     text-align: center;
-    border: 3px solid #344c8c;
+    border: 3px solid #568ED4;
     border-radius: 50%;
-    background: #344c8c;
+    background: #568ED4;
 }
 #subtopicWizard ul.anchor li {
-    margin: 5px;
+    margin: 4px;
 }
 #subtopicWizard ul.anchor li a {
     margin-right: -5px;
@@ -571,7 +574,7 @@ ul.anchor {
     position: absolute;
     top: -10px;
     content: '-';
-    color: #344c8c;
+    color: #568ED4;
 }
 #subtopicWizard ul.anchor li:last-child:after {
     content: '';
@@ -598,7 +601,7 @@ ul.anchor {
 #profile {
     min-height: 150px;
     padding: 12px;
-    border: 2px solid #344c8c;
+    border: 2px solid #C0C0C0;
     border-radius: 5px;
 }
 .progress.level .progress-bar {
@@ -632,10 +635,10 @@ ul.anchor {
     text-transform: uppercase;
 }
 .akira-circle {
-    line-height: 140px;
+    line-height: 120px;
     display: block;
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     margin: 0 auto;
     padding: 6px;
     cursor: pointer;
@@ -798,7 +801,7 @@ a:hover {
     /*line-height: 80px;*/
     
     height: 100px;
-    margin-top: 50px;
+    padding-top: 10px;
     background: #ccc;
 }
 .pictureWizard .actionBar, .wordWizard .actionBar {
@@ -1003,11 +1006,11 @@ ul.anchor li a .stepNumber {
     padding-top: 10px;
 }
 #topicWizard ul.anchor li a {
-    width: 100px;
+    width: 150px;
     height: auto;
     color: #558ed5;
-    border: 2px solid #558ed5;
-    border-radius: 30px;
+    border-color: #FFFFFF;
+    border-radius: 20px;
     background: #fff;
     box-shadow: none;
 }
@@ -1044,7 +1047,8 @@ ul.anchor li a .stepNumber {
 #leaderboard {
     margin-top: 24px;
     text-align: center;
-    border: 2px solid #344c8c;
+    /*border: 2px solid #344c8c;*/
+    
     border-radius: 5px;
     background: white;
 }
@@ -1079,6 +1083,7 @@ ul.anchor li a .stepNumber {
 }
 #leaderboardWizard .ui-tabs .ui-tabs-nav {
     padding: 0;
+    padding-right: 20px;
     list-style: none;
 }
 #leaderboardWizard .ui-tabs .ui-tabs-nav li {
@@ -1156,8 +1161,8 @@ ul.anchor li a .stepNumber {
 }
 .write-btn-play {
     position: absolute;
-    top: 20px;
-    right: 0;
+    top: 12px;
+    right: 12px;
     display: inline-block;
     width: 2em;
     height: 2em;
@@ -1185,7 +1190,7 @@ ul.anchor li a .stepNumber {
     display: none;
 }
 .hint {
-    font-size: 14px;
+    font-size: 17px;
     margin: 0 12px;
 }
 .first:before, .second:before, .third:before {
@@ -1197,7 +1202,7 @@ ul.anchor li a .stepNumber {
     border: 2px solid #1659b0;
     border-radius: 50%;
 }
-.selected .first:before, .selected .second:before, .selected .third:before {
+.selected .first:before, .selected .second:before, .selected .third:before, .actived.first:before, .actived.second:before, .actived.third:before {
     color: #fff;
     background: #1659b0;
 }
@@ -1271,10 +1276,10 @@ ul.anchor li a .stepNumber {
 .progress.kanji .progress-bar {
     background-image: linear-gradient(to bottom, red 0, red 100%);
 }
-.swMain ul.anchor li a:hover {
-    color: #344c8c !important;
-    border: 3px solid #344c8c;
-    background: #fff !important;
+#subtopicWizard.swMain ul.anchor li a:hover {
+    color: #FFF !important;
+    /*border: 3px solid #344c8c;*/
+    /*background: #fff !important;*/
 }
 #pictureWizard .selected span.img-responsive {
     border: 2px solid #1659B0 !important;
@@ -1294,4 +1299,26 @@ ul.anchor li a .stepNumber {
 }
 .vocab#writeWizard div#question-wrapper img.img-responsive {
     height: 200px !important;
+}
+#topicWizard .lesson-wrapper .img-responsive {
+    border: 1px solid #C0C0C0;
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+#topicWizard .progress.vocab {
+    margin-bottom: 6px;
+}
+#leaderboard .row {
+    line-height: 45px;
+}
+.kana#learnWizard .content .wrapper>.row, .kana#wordWizard .content .wrapper>.row, .kana#writeWizard .content .wrapper>.row ,.vocab#writeWizard .content .wrapper>.row,.vocab#wordWizard .content .wrapper>.row {
+    position: relative;
+    top: 50px;
+}
+#subtopicWizard .akira-circle img:hover {
+    opacity: 0.5;
+}
+
+.vocab#writeWizard .hint{
+    font-size: 17px;
 }

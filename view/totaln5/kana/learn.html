@@ -1,6 +1,5 @@
-
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="learnWizard" class="swMain kana" akirawizard enablestep="false">
+<div id="learnWizard" class="swMain kana" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
     <!-- Step navigation -->
     <ul>
         <li ng-repeat="(key, value) in data">
@@ -45,7 +44,7 @@
                             <source type="audio/mpeg">
                                 Your browser does not support the audio element.
                         </audio>
-                        <i class="fa fa-play fa-2x write-btn-play"></i>
+                        <i class="fa fa-volume-up fa-2x write-btn-play"></i>
                         <span class="write-control img-responsive">
                             {{val.hiragana}}
                         </span>
@@ -78,7 +77,7 @@
                 <div class="row mess-holder-{{key}}">
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <div class="row hide" id="mess-{{key}}">
-                            <div class="col-md-4 col-xs-4 col-sm-4">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
                                 <span class="correct-child">
                                     <span class="test-circle"></span>
                                 </span>
@@ -90,7 +89,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
                                 <button  type="button" class="akr-btn akr-btn-init" data-i18n="common.check" />

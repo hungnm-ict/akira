@@ -23,9 +23,9 @@ akrSharedDirectives.directive('akrleaderboard', function($http) {
 
     function link(scope, element, attrs) {
         $http({
-            method: "GET",
-            url: urlStr
-        })
+                method: "GET",
+                url: urlStr
+            })
             .success(function(data, status) {
                 scope.rank = data;
             });
@@ -45,17 +45,24 @@ akrSharedDirectives.directive('akrleaderboard', function($http) {
 
 akrSharedDirectives.directive('akirawizard', function() {
     function link(scope, element, attrs) {
-        var trigger = setInterval(function() {
+        setTimeout(function() {
+            //Jquery Smart Wizard
             $('#' + attrs.id).smartWizard({
                 enableAllSteps: "true" === attrs.enablestep,
                 keyNavigation: false,
                 onLeaveStep: akrLeaveStep,
-                transitionEffect: 'fade'
+                onShowStep: akrShowStep,
+                transitionEffect: 'slide'
             });
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();
-            clearInterval(trigger);
+            //Popover information
+            $.each($('#' + attrs.id + " ul li").has("i.fa.fa-lock"), function(k, v) {
+                $(v).popover();
+            });
+
         }, 200);
+
     }
 
     return {

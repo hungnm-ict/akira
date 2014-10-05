@@ -17,7 +17,7 @@
                 </label>
             </a>
         </li>
-        <li>
+        <li data-toggle="popover" data-placement="bottom" data-content="10 stars to unlock" data-trigger="hover">
             <a href="#step-2" ng-click="partId=2">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(2)">
@@ -30,7 +30,7 @@
                 </label>
             </a>
         </li>
-        <li>
+        <li data-toggle="popover" data-placement="bottom" data-content="20 stars to unlock" data-trigger="hover">
             <a href="#step-3" ng-click="partId=3">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(3)">
@@ -43,7 +43,7 @@
                 </label>
             </a>
         </li>
-        <li>
+        <li data-toggle="popover" data-placement="bottom" data-content="30 stars to unlock" data-trigger="hover">
             <a href="#step-4" ng-click="partId=4">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(4)">
@@ -56,7 +56,7 @@
                 </label>
             </a>
         </li>
-        <li>
+        <li data-toggle="popover" data-placement="bottom" data-content="40 stars to unlock" data-trigger="hover">
             <a href="#step-5" ng-click="partId=5">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(5)">
@@ -72,8 +72,8 @@
     </ul>
 
     <span id="star">
-        <span>
-            {{kanaStar}} <i class="fa fa-star fa-3x kana"></i>
+        <span class="number">
+            {{kanaStar}} <i class="fa fa-star kana"></i>
         </span>
     </span>
 
@@ -86,7 +86,7 @@
                         <img ng-src="../../img/totaln5/subtopic/learn.png">
                     </span>
                 </a>
-                <span class="star-{{progress['kana'][lessonId][value]['learn']}} kana">
+                <span class="star-{{progress['kana'][lessonId][value][1]}} kana">
                     <i class="fa fa-star fa-3x"></i>
                     <i class="fa fa-star fa-3x"></i>
                     <i class="fa fa-star fa-3x"></i>
@@ -99,7 +99,7 @@
                         <img ng-src="../../img/totaln5/subtopic/picture.png">
                     </span>
                 </a>
-                <span class="kana star-{{progress['kana'][lessonId][value]['picture']}}">
+                <span class="kana star-{{progress['kana'][lessonId][value][2]}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
@@ -115,7 +115,7 @@
                         <img ng-src="../../img/totaln5/subtopic/word.png">
                     </span>
                 </a>
-                <span class="kana star-{{progress['kana'][lessonId][value]['word']}}">
+                <span class="kana star-{{progress['kana'][lessonId][value][3]}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
@@ -128,7 +128,7 @@
                         <img ng-src="../../img/totaln5/subtopic/connect.png">
                     </span>
                 </a>
-                <span class="kana star-{{connect['kana'][lessonId][value]['connect']}}">
+                <span class="kana star-{{connect['kana'][lessonId][value][4]}}">
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>
                     <i class="fa fa-star fa-3x "></i>

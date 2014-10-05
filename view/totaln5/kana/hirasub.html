@@ -1,4 +1,4 @@
-<div id="subtopicWizard" class="swMain" akirawizard enablestep="true">
+<div id="subtopicWizard" class="swMain" akirawizard  enablestep="true">
     <span class="header">
         <h2 data-i18n="common.lesson"></h2>
         <h2>Hiragana {{lessonId}}</h2>
@@ -17,7 +17,7 @@
                 </label>
             </a>
         </li>
-        <li data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover" >
+        <li data-toggle="popover" data-placement="bottom" data-content="10 stars to unlock" data-trigger="hover" >
             <a href="#step-2" ng-click="partId=2">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(2)">
@@ -30,7 +30,7 @@
                 </label>
             </a>
         </li>
-        <li>
+        <li data-toggle="popover" data-placement="bottom" data-content="20 stars to unlock" data-trigger="hover">
             <a href="#step-3" ng-click="partId=3">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(3)">
@@ -43,7 +43,7 @@
                 </label>
             </a>
         </li>
-        <li>
+        <li data-toggle="popover" data-placement="bottom" data-content="30 stars to unlock" data-trigger="hover">
             <a href="#step-4" ng-click="partId=4">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(4)">
@@ -56,7 +56,7 @@
                 </label>
             </a>
         </li>
-        <li>
+        <li  data-toggle="popover" data-placement="bottom" data-content="30 stars to unlock" data-trigger="hover">
             <a href="#step-5" ng-click="partId=5">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(5)">
@@ -151,7 +151,3 @@
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-    $("ul li").popover();
-</script>
