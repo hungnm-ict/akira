@@ -23,24 +23,23 @@ appCtrls.controller('mainCtrl', function($scope, $location,$sce) {
             $scope.time = 10 * selectedIndex + 10;
         }
     }
-    $scope.html="<u title='Hello world'>html </u> <br>asdsadsad＿★" ;
     $scope.renderHtml = function(html_code) {
         return $sce.trustAsHtml(html_code);
     };
 });
 
 
-appCtrls.controller('gameCtrl', function($scope, $location, $stateParams, $http) {
+appCtrls.controller('gameCtrl', function($scope, $location, $routeParams, $http) {
     courseCollection = ["common.vocab", "common.grammar", "common.read", "common.listen-compre"];
-    $scope.title = courseCollection[$stateParams.type];
+    $scope.title = courseCollection[$routeParams.type];
     var urlStr;
-    if ($stateParams.type == 0) {
+    if ($routeParams.type == 0) {
         urlStr = "../../data/testn5/json/vocab-1.json";
-    } else if ($stateParams.type == 1) {
+    } else if ($routeParams.type == 1) {
         urlStr = "../../data/testn5/json/grammar-1.json";
-    } else if ($stateParams.type == 2) {
+    } else if ($routeParams.type == 2) {
         urlStr = "../../data/testn5/json/read-1.json";
-    } else if ($stateParams.type == 3) {
+    } else if ($routeParams.type == 3) {
         urlStr = "../../data/testn5/json/write-1.json";
     }
 
@@ -51,8 +50,8 @@ appCtrls.controller('gameCtrl', function($scope, $location, $stateParams, $http)
         $scope.dataset = akiraShuffle(data);
 
     });
-    $scope.type = $stateParams.type;
-    $scope.time = $stateParams.min;
+    $scope.type = $routeParams.type;
+    $scope.time = $routeParams.min;
 
 });
 

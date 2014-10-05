@@ -19,20 +19,20 @@
     <!-- Required libs -->
     <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
-    <!-- <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script> -->
-    <script type="text/javascript" src="../../spec/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
+    <!-- <script type="text/javascript" src="../../spec/lib/angular-ui-router/release/angular-ui-router.js"></script> -->
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
     <!-- Angular app libs -->
-    <script type="text/javascript" src="../../js/controllers/testN5Ctrls.js"></script>
-    <script type="text/javascript" src="../../js/directives/testN5Directives.js"></script>
-    <script type="text/javascript" src="../../js/directives/sharedDirectives.js"></script>
-    <script type="text/javascript" src="../../js/testN5App.js"></script>
-
-    <!-- Custom -->
     <script type="text/javascript" src="../../js/index.js"></script>
+
+    <script type="text/javascript" src="../../js/controllers/testN5Ctrl.js"></script>
+    <script type="text/javascript" src="../../js/directives/testN5Directive.js"></script>
+    <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
+    <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
+    <script type="text/javascript" src="../../js/testN5App.js"></script>
 </head>
 
 <body>
@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-10 col-sm-10 col-xs-10 col-full-height">
                 <div id="content">
-                    <div ui-view></div>
+                    <div ng-view></div>
                 </div>
             </div>
         </div>

@@ -3,11 +3,14 @@
 <div id="connectWizard" class="kana">
     <!-- Life wrapper -->
     <span class="row" id="akr-life-wrapper">
-        <div class="col-md-8 col-sm-8 col-xs-8">
-            <div class="col-md-8 col-sm-8 col-xs-8">
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{step/5*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/5*100}}%;">
-                    </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <a href="../../view/totaln5">
+                <i class="fa fa-home fa-4x"></i>
+            </a>
+        </div>
+        <div class="col-md-7 col-sm-7 col-xs-7">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{step/5*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/5*100}}%;">
                 </div>
             </div>
         </div>
@@ -65,8 +68,7 @@ function drag(ev) {
 function drop(ev) {
 
     if (
-        ($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) 
-        && ($('#' + ev.dataTransfer.getData("text/html")).attr('id') != $(ev.target).attr('id'))) {
+        ($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) && ($('#' + ev.dataTransfer.getData("text/html")).attr('id') != $(ev.target).attr('id'))) {
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text/html");
         ev.target.style.visibility = "hidden";

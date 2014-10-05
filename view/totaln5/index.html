@@ -45,6 +45,12 @@
             </div>
             <div class="col-md-7 col-sm-7 col-xs-7 col-full-height">
                 <div id="content" ng-controller="rootController">
+                    <audio controls id="sound-true" class="hide">
+                        <source src="../../audio/true.mp3" type="audio/mp3">
+                    </audio>
+                    <audio controls id="sound-fail" class="hide">
+                        <source src="../../audio/fail.mp3" type="audio/mp3">
+                    </audio>
                     <div ng-view></div>
                 </div>
             </div>

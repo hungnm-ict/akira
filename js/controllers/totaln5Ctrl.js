@@ -99,11 +99,12 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-            if (compare(correct, userSlt)) {
+            if (compare(correct, userSlt)) {playCorrect();
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
-            } else {
+            } else {playFail();
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -194,10 +195,10 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
             var userSlt = $("#pictureWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
             var correct = $("#pictureWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
-            if (compare(correct, userSlt)) {
+            if (compare(correct, userSlt)) { playCorrect();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
-            } else {
+            } else {playFail();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -260,10 +261,10 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
             var userSlt = $("#wordWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
             var correct = $("#wordWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
-            if (compare(correct, userSlt)) {
+            if (compare(correct, userSlt)) {playCorrect();
                 $("#wordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
-            } else {
+            } else {playFail();
                 $("#wordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -324,10 +325,10 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
             var userSlt = $("#listenWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
             var correct = $("#listenWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
-            if (compare(correct, userSlt)) {
+            if (compare(correct, userSlt)) {playCorrect();
                 $("#listenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
-            } else {
+            } else {playFail();
                 $("#listenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -792,12 +793,15 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
         var step = $("#learnWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
+            $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var userSlt = $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
             var correct = $("#learnWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#learnWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#learnWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -818,13 +822,15 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
     }
 
     $scope.keyPress = function(e, keyCode) {
-        if (13 != keyCode) {
-            if ("" == $("#input-" + e).val()) {
-                $scope.stage = 0;
-            } else {
-                $scope.stage = 1;
+        if ($scope.stage != 2) {
+            if (13 != keyCode) {
+                if ("" == $("#input-" + e).val()) {
+                    $scope.stage = 0;
+                } else {
+                    $scope.stage = 1;
+                }
+                changeLang();
             }
-            changeLang();
         }
     }
 
@@ -907,9 +913,11 @@ totaln5Ctrls.controller('kanaPictureCtrl', function($scope, $routeParams, $http,
             var correct = $("#pictureWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             console.log(correct + "-" + userSlt);
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -991,9 +999,11 @@ totaln5Ctrls.controller('kanaWordCtrl', function($scope, $routeParams, $http, da
             var correct = $("#wordWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#wordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#wordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -1076,6 +1086,7 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");

@@ -1,8 +1,9 @@
+
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
 <div id="learnWizard" class="swMain kana" akirawizard enablestep="false">
     <!-- Step navigation -->
     <ul>
-        <li ng-repeat="(key, value) in data" >
+        <li ng-repeat="(key, value) in data">
             <a ng-href="#step-{{key}}" click="partId={{key}}">
                 <label class="stepNumber">
                     <span>&nbsp;{{key}}</span>
@@ -13,13 +14,18 @@
 
     <!-- Life wrapper -->
     <span class="row" id="akr-life-wrapper">
-        <div class="col-md-8 col-sm-8 col-xs-8">
+       <div class="col-md-1 col-sm-1 col-xs-1">
+            <a href="../../view/totaln5">
+                <i class="fa fa-home fa-4x"></i>
+            </a>
+        </div>
+        <div class="col-md-7 col-sm-7 col-xs-7">
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="{{step/data.length*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/data.length*100}}%;">
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
+        <div class="col-md-4 col-sm-4 col-xs-4 right">
             <span class="life-{{gameObject.life}}">
                 <i class="fa fa-heart fa-3x"></i>
                 <i class="fa fa-heart fa-3x"></i>
@@ -43,16 +49,15 @@
                         <span class="write-control img-responsive">
                             {{val.hiragana}}
                         </span>
-                        <!-- <img ng-src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{val.filename}}.png" class="img-responsive"> -->
-                        <!-- <h4 class="center" style="text-transform:captalize">{{val.vie}}</h4> -->
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
+
                     <!-- User answer wrapper -->
                     <div id="user-input-wrapper">
                         <div class="row none-padding">
                             <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" />
+                                <input class="form-control write-control" type="text" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" />
                             </div>
                         </div>
                     </div>
@@ -80,11 +85,7 @@
                                 <span class="failed-child">
                                     <i class="fa fa-times fa-4x"></i>
                                 </span>
-                            </div>
-                            <div class="col-md-8 col-xs-8 col-sm-8">
-                                <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vie}}</span>
+                                <span class="hint">{{val.hiragana}} {{val.kanji}} {{val.vietnamese}}</span>
                             </div>
                         </div>
                     </div>
@@ -92,20 +93,16 @@
                     <div class="col-md-3 col-sm-3 col-xs-3">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
-                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                </button>
+                                <button  type="button" class="akr-btn akr-btn-init" data-i18n="common.check" />
                             </div>
                             <div ng-switch-when="1">
-                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                </button>
+                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()" />
                             </div>
                             <div ng-switch-when="2">
-                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                </button>
+                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()" />
                             </div>
                             <div ng-switch-default>
-                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                </button>
+                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check" />
                             </div>
                         </div>
                     </div>
@@ -117,11 +114,12 @@
 </div>
 
 <script type="text/javascript">
-$(document).keydown(function(e) {
-    if (13 == e.keyCode) {
-        angular.element("#learnWizard").scope().enterPress();
-    }
-    changeLang();
-});
-kanjiDict();
+setTimeout(function() {
+    $(document).keydown(function(e) {
+        if (13 == e.keyCode) {
+            angular.element("#learnWizard").scope().enterPress();
+        }
+        changeLang();
+    });
+}, 500)
 </script>

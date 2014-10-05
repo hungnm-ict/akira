@@ -705,14 +705,21 @@ a:hover {
     font-weight: bold;
     height: 215px;
     text-align: center;
+    line-height: 215px;
+    cursor: pointer;
     border: 0;
 }
 #writeWizard .write-control.img-responsive, #learnWizard .write-control.img-responsive, #pictureWizard .write-control.img-responsive, #wordWizard .write-control.img-responsive {
-    line-height: 215px;
-    cursor: pointer;
     font-size: 10rem;
     font-weight: bold;
     color: black;
+}
+#writeWizard .write-control.img-responsive {
+    font-size: 3rem !important;
+}
+#writeWizard .write-control[type='text'], #learnWizard .write-control[type='text'] {
+    line-height: initial !important;
+    /*color: red;*/
 }
 .content {
     min-height: inherit;
@@ -746,7 +753,7 @@ a:hover {
     margin: 24px 0;
     text-align: center;
 }
-#writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizard, #grammarListenWizard,#grammarChoiceWizard,#grammarReadWizard,#grammarTranslateWizard,#grammarWordWizard {
+#writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizard, #grammarListenWizard, #grammarChoiceWizard, #grammarReadWizard, #grammarTranslateWizard, #grammarWordWizard {
     border: 2px solid #344c8c;
     border-radius: 5px;
     background: #fff;
@@ -788,7 +795,8 @@ a:hover {
     background: #568ed4;
 }
 #aki-answer-wrapper {
-    line-height: 80px;
+    /*line-height: 80px;*/
+    
     height: 100px;
     margin-top: 50px;
     background: #ccc;
@@ -1167,8 +1175,8 @@ ul.anchor li a .stepNumber {
     margin: 0 auto;
 }
 .failed-child, .correct-child {
-    display: inline-block;
-    margin-right: 48px;
+    /*display: inline-block;*/
+    /*margin-right: 48px;*/
 }
 .failed .correct-child {
     display: none;
@@ -1186,13 +1194,12 @@ ul.anchor li a .stepNumber {
     width: 40px;
     height: 40px;
     text-align: center;
-    border: 2px solid #c0c0c0;
-    /* #1659b0; */
-    
+    border: 2px solid #1659b0;
     border-radius: 50%;
 }
 .selected .first:before, .selected .second:before, .selected .third:before {
-    border-color: #1659b0;
+    color: #fff;
+    background: #1659b0;
 }
 .first:before {
     content: '1';
@@ -1281,4 +1288,10 @@ ul.anchor li a .stepNumber {
 }
 .kana .hint {
     font-size: 5rem;
+}
+.vocab#writeWizard div#question-wrapper {
+    cursor: pointer;
+}
+.vocab#writeWizard div#question-wrapper img.img-responsive {
+    height: 200px !important;
 }

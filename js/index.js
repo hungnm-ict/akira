@@ -563,8 +563,15 @@ function getUnlockedSub(data, course, lesson) {
 
     });
 
-    console.log(unlocked);
     return unlocked;
+}
+
+function playCorrect() {
+    document.getElementById("sound-true").play();
+}
+
+function playFail() {
+    document.getElementById("sound-fail").play();
 }
 
 /*-----  End of Validation method  ------*/
