@@ -1,25 +1,41 @@
 <div id="topicWizard" class="swMain" akirawizard enablestep="true">
     <ul>
-        <li ng-repeat="key in [1,2,3]">
-            <a href="#step-{{key}}">
+        <li>
+            <a href="#step-1" ng-click="show(true)">
                 <label class="stepNumber">
-                    <span data-i18n="common.part"></span>&nbsp;{{key}}
+                    <span data-i18n="common.part"></span>
+                    <span>&nbsp;1</span>
                 </label>
             </a>
         </li>
-    </ul>
-    <span id="star">
-        <span class="number">
-            {{vocabstar}}
-            <i class="fa fa-star vocab"></i>
-        </span>
-        <span class="number">
-            {{grammarstar}}
-            <i class="fa fa-star  grammar"></i>
-        </span>
-    </span>
+        <li>
+            <a href="#step-2" ng-click="show(false)">
+                <label class="stepNumber">
+                    <span data-i18n="common.part"></span>
+                    <span>&nbsp;2</span>
+                </label>
+            </a>
+        </li>
+        <li>
+            <a href="#step-3" ng-click="show(false)">
+                <label class="stepNumber">
+                    <span data-i18n="common.part"></span>
+                    <span>&nbsp;3</span>
+                </label>
+            </a>
+        </li>
+        <li>
+            <a href="#step-4" ng-click="show(false)">
+                <label class="stepNumber">
+                    <span data-i18n="common.part"></span>
+                    <span>&nbsp;4</span>
+                </label>
 
-    <div id="step-{{step}}" ng-repeat="step in [1,2,3]">
+            </a>
+        </li>
+    </ul>
+
+    <div id="step-{{step}}" ng-repeat="step in [1,2,3,4]">
         <div class="wrapper">
             <!-- Sample ngrepeat -->
             <div class="row" ng-repeat="val in [step*2-2,step*2-1]">
@@ -28,7 +44,7 @@
                         <span data-i18n="common.lesson"></span>
                         <span>&nbsp;{{4*val + value}}</span>
                     </label>
-                    <a ng-href="#/{{4* val + value}}" class="thumb" ng-click="check(4*val + value)">
+                    <a ng-href="#/{{4* val + value}}" class="thumb" ng-click="check(this.event,4*val + value)">
                         <img ng-src="../../img/totaln4/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-responsive">
                     </a>
                     <div class="progress vocab">

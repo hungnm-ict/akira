@@ -1,7 +1,7 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="writeWizard" class="swMain vocab" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
+<div id="grammarWordWizard" class="swMain" akirawizard>
     <!-- Step navigation -->
-    <ul>
+    <ul class="hide">
         <li ng-repeat="(key, value) in data">
             <a ng-href="#step-{{key}}" click="partId={{key}}">
                 <label class="stepNumber">
@@ -14,7 +14,7 @@
     <!-- Life wrapper -->
     <span class="row" id="akr-life-wrapper">
         <div class="col-md-1 col-sm-1 col-xs-1">
-            <a href="../../view/totaln4">
+            <a href="../../view/totaln5">
                 <i class="fa fa-home fa-4x"></i>
             </a>
         </div>
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4 right">
+        <div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
             <span class="life-{{gameObject.life}}">
                 <i class="fa fa-heart fa-3x"></i>
                 <i class="fa fa-heart fa-3x"></i>
@@ -36,60 +36,51 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
-                    <!-- Question wrapper -->
-                    <div id="question-wrapper" ng-click="playSound(key,true)">
-                        <audio controls id="{{key}}" style="display:none;">
-                            <source type="audio/mpeg">
-                                Your browser does not support the audio element.
-                        </audio>
-                        <i class="fa fa-volume-up fa-2x write-btn-play"></i>
-                        <img ng-src="../../data/totaln4/vocab/n4vocab.image-v2.0/{{val.filename}}.png" class="img-responsive">
-                        <h4 class="center" style="text-transform:captalize">{{val.vie}}</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
-                    <!-- User answer wrapper -->
-                    <div id="user-input-wrapper">
-                        <div class="row none-padding">
-                            <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" type="text" />
-                            </div>
-                        </div>
+            <div id="question-wrapper" class="center">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        {{val.questhira}}
                     </div>
                 </div>
             </div>
 
-            <!-- Correct answer wrapper -->
+            <div id="user-input-wrapper">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <input class="form-control akira-input" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- <input type="hidden" id="ans-{{key}}" value="{{val.answer}}"> -->
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        {{val.hiragana}}
+                        {{val.answer}}
                     </div>
                 </div>
             </div>
 
-            <!-- Navigation wrapper-->
-            <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
+
+            <div id="aki-answer-wrapper">
                 <div class="row mess-holder-{{key}}">
-                    <div class="col-md-8 col-sm-8 col-xs-8">
+                    <div class="col-md-8 col-xs-8 col-sm-8">
                         <div class="row hide" id="mess-{{key}}">
-                            <div class="col-md-12 col-xs-12 col-sm-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                 <span class="correct-child">
                                     <span class="test-circle"></span>
                                 </span>
                                 <span class="failed-child">
                                     <i class="fa fa-times fa-4x"></i>
                                 </span>
-                                <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vietnamese}}</span>
+                                <span>
+                                    Q: {{val.questhira}} A: {{val.answer}} {{val.vietnamese}} {{val.english}}
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
                                 <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
@@ -111,7 +102,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -119,9 +109,8 @@
 <script type="text/javascript">
 $(document).keydown(function(e) {
     if (13 == e.keyCode) {
-        angular.element("#writeWizard").scope().enterPress();
+        angular.element("#grammarWordWizard").scope().enterPress();
     }
     changeLang();
 });
-kanjiDict();
 </script>

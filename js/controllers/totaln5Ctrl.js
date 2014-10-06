@@ -98,7 +98,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
-            $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+            //$("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
                 playCorrect();
@@ -831,7 +831,7 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
         var step = $("#learnWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
-            $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+            //$("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var userSlt = $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
             var correct = $("#learnWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
@@ -1124,7 +1124,7 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
-            $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+            //$("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");

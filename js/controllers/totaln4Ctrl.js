@@ -164,6 +164,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
     dataService.promise.then(function(deferred) {
         $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
         $scope.choices = genAnswers($scope.data, "filename", 3);
+        $scope.choices2 = genAnswers3($scope.data, 3);
     });
 
     $scope.removeLife = function() {
@@ -174,6 +175,20 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
     };
 
     $scope.keyPress = function(keyCode) {
+        switch (keyCode) {
+            case 49:
+                $scope.$parent.rootPlay($scope.choices2, "totaln4/vocab", $scope.step, 0);
+                break;
+            case 50:
+                $scope.$parent.rootPlay($scope.choices2, "totaln4/vocab", $scope.step, 1);
+                break;
+            case 51:
+                $scope.$parent.rootPlay($scope.choices2, "totaln4/vocab", $scope.step, 2);
+                break;
+            default:
+                break;
+        }
+
         if ($scope.stage != 2) {
             if ([49, 50, 51].indexOf($scope.keyCode) == -1) {
                 $scope.stage = 1;
@@ -192,9 +207,11 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
             var correct = $("#pictureWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -236,6 +253,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
     dataService.promise.then(function(deferred) {
         $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
         $scope.choices = genAnswers($scope.data, "hiragana", 3);
+        $scope.choices2 = genAnswers3($scope.data, 3);
     });
 
     $scope.removeLife = function() {
@@ -246,6 +264,19 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
     };
 
     $scope.keyPress = function(keyCode) {
+        switch (keyCode) {
+            case 49:
+                $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 0);
+                break;
+            case 50:
+                $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 1);
+                break;
+            case 51:
+                $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 2);
+                break;
+            default:
+                break;
+        }
         if ($scope.stage != 2) {
             if ([49, 50, 51].indexOf($scope.keyCode) == -1) {
                 $scope.stage = 1;
@@ -264,9 +295,11 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
             var correct = $("#wordWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#wordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#wordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -336,9 +369,11 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
             var correct = $("#listenWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#listenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#listenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }

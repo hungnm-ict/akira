@@ -77,3 +77,13 @@ totaln4App.service('dataService', function($http) {
         return uniqueGroups;
     }
 });
+
+totaln4App.controller('rootController', function($scope) {
+    $scope.rootPlay = function(data, course, step, id) {
+        var selId = "choices-" + step + "-" + id;
+        var audioSrc = document.getElementById(selId).getElementsByTagName('source');
+        $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
+        document.getElementById(selId).load();
+        document.getElementById(selId).play();
+    }
+});
