@@ -138,7 +138,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln5/vocab/n5vocab.audio-v2.0/" + $scope.data[id].filename + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/totaln5/vocab/audio/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         if (isNormal) {
             document.getElementById(id).playbackRate = 1;
@@ -335,7 +335,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln5/vocab/n5vocab.audio-v2.0/" + $scope.data[id].filename + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/totaln5/vocab/audio/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         if (isNormal) {
             document.getElementById(id).playbackRate = 1;
@@ -874,7 +874,7 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/kana/kana_audio_v2.0/" + $scope.data[id].filename + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/kana/audio/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         if (isNormal) {
             document.getElementById(id).playbackRate = 1;
@@ -1162,7 +1162,7 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/kana/kana_audio_v2.0/" + $scope.data[id].filename + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/kana/audio/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         if (isNormal) {
             document.getElementById(id).playbackRate = 1;

@@ -213,16 +213,7 @@ body {
     background-image: -ms-linear-gradient(top, #fff, #eee);
     background-image: -o-linear-gradient(top, #fff, #eee);
     background-image: linear-gradient(top, #fff, #eee);
-    /*  
-    height: 240px;
-    width: 400px;
-    margin: -150px 0 0 -230px;
-    padding: 30px;
-    left: 50%;
-    z-index: 0;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px; */
+    right: 20%;
 }
 #login h2 {
     font: normal 26px;
