@@ -1,4 +1,4 @@
-var testN5Directives = angular.module('testN5Directives', []);
+var testN5Directives = angular.module('testDirectives', []);
 
 testN5Directives.directive('akrCountdown', function() {
     // Runs during compile

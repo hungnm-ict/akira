@@ -28,18 +28,18 @@
     <!-- Angular app libs -->
     <script type="text/javascript" src="../../js/index.js"></script>
 
-    <script type="text/javascript" src="../../js/controllers/testN5Ctrl.js"></script>
-    <script type="text/javascript" src="../../js/directives/testN5Directive.js"></script>
+    <script type="text/javascript" src="../../js/controllers/testCtrl.js"></script>
+    <script type="text/javascript" src="../../js/directives/testDirective.js"></script>
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
-    <script type="text/javascript" src="../../js/testN5App.js"></script>
+    <script type="text/javascript" src="../../js/testApp.js"></script>
 </head>
 
-<body>
+<body ng-controller="root">
     <div class="app container-fluid container-full-height">
         <div class="row row-full-height">
             <div class="col-md-2 hidden-sm hidden-xs col-full-height">
-                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=3">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup={{navgroup}};nav={{nav}}">
                 </div>
             </div>
             <div class="col-md-10 col-sm-10 col-xs-10 col-full-height">
@@ -53,7 +53,7 @@
 
 <script type="text/javascript">
 app.initialize();
-angular.bootstrap(document, ['testN5App']);
+angular.bootstrap(document, ['testApp']);
 </script>
 
 </html>

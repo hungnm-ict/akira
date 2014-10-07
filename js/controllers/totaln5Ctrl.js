@@ -474,12 +474,15 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#grammarListenWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            $("#grammarListenWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#grammarListenWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarListenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarListenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -552,9 +555,11 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
             var userSlt = $("#grammarChoiceWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
             var correct = $("#grammarChoiceWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarChoiceWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarChoiceWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -622,10 +627,15 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#grammarTranslateWizard #step-" + step + " #user-input-wrapper #input-" + step).text().trim();
             var correct = $("#grammarTranslateWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+            console.info(userSlt);
+            console.info(correct.replace(/ /g, String.fromCharCode(12288)));
+
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarTranslateWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarTranslateWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -679,9 +689,11 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http)
             var userSlt = $("#grammarReadWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
             var correct = $("#grammarReadWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarReadWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarReadWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -740,11 +752,14 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http)
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#grammarWordWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            $("#grammarWordWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#grammarWordWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarWordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarWordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -765,11 +780,13 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http)
     }
 
     $scope.keyPress = function(e, keyCode) {
-        if (13 != keyCode) {
-            if ("" == $("#input-" + e).val()) {
-                $scope.stage = 0;
-            } else {
-                $scope.stage = 1;
+        if ($scope.stage != 2) {
+            if (13 != keyCode) {
+                if ("" == $("#input-" + e).val()) {
+                    $scope.stage = 0;
+                } else {
+                    $scope.stage = 1;
+                }
             }
         }
         changeLang();

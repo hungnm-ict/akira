@@ -65,11 +65,11 @@ function changeLang(code) {
  * @return {[type]} [description]
  */
 function getUser() {
-    /*    return {
-            "id": 17
-        };*/
     if (sessionStorage.getItem("user") == null) {
-        return 0;
+        return {
+            "id": 17
+        };
+        // return 0;
     } else {
         return JSON.parse(sessionStorage.user);
     }
@@ -328,7 +328,7 @@ function grammarChoiceLeaveStep(obj, context) {
  * @return {[type]}         [description]
  */
 function akrLeaveStep(obj, context) {
-    // return true;
+    return true;
     var ngScope = angular.element("#" + obj.context.id).scope();
 
     if (ngScope.lessonId === undefined) {

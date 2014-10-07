@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="grammarWordWizard" class="swMain" akirawizard>
+<div id="grammarWordWizard" class="swMain" akirawizard akrfocus="true">
     <!-- Step navigation -->
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
@@ -39,7 +39,7 @@
             <div id="question-wrapper" class="center">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        {{val.questhira}}
+                        <h2>{{val.questhira}}</h2>
                     </div>
                 </div>
             </div>
@@ -47,12 +47,11 @@
             <div id="user-input-wrapper">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <input class="form-control akira-input" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" />
+                        <input class="form-control akira-input" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" />
                     </div>
                 </div>
             </div>
 
-            <!-- <input type="hidden" id="ans-{{key}}" value="{{val.answer}}"> -->
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -80,7 +79,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
                                 <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
