@@ -1,4 +1,4 @@
-<div id="pictureWizard" class="swMain" akirawizard enablestep="false">
+<div id="pictureWizard" class="swMain kana" akirawizard enablestep="false">
     <!-- Step navigation -->
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
@@ -13,7 +13,7 @@
     <!-- Life wrapper -->
     <span class="row" id="akr-life-wrapper">
         <div class="col-md-1 col-sm-1 col-xs-1">
-            <a href="../../view/totaln4">
+            <a href="../../view/totaln5">
                 <i class="fa fa-home fa-4x"></i>
             </a>
         </div>
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 col-sm-4 col-xs-4 right" id="life-wrapper">
+        <div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
             <span class="life-{{gameObject.life}}">
                 <i class="fa fa-heart fa-3x"></i>
                 <i class="fa fa-heart fa-3x"></i>
@@ -41,8 +41,7 @@
                 <div id="question-wrapper">
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 center">
-                            <h2>{{val.hiragana}}</h2>
-                            <h3>{{val.kanji}}</h3>
+                            <h2>{{val.vietnamese}}</h2>
                         </div>
                     </div>
                 </div>
@@ -55,30 +54,33 @@
                                 <source type="audio/mpeg">
                                     Your browser does not support the audio element.</source>
                             </audio>
-                            <img ng-src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{choices2[key][0].filename}}.png" class="img-thumbnail" id="img-{{key}}-0">
-                            <h5 class="first">
-                                {{choices2[key][0].vietnamese}}
-                            </h5>
+                            <span class="img-responsive write-control">
+                                {{choices2[key][0].hiragana}}
+                            </span>
+                            <h3 class="first">
+                            </h3>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 50==keyCode}" ng-click="keyPress(50)">
-                        <audio controls id="choices-{{key}}-1" style="display:none;">
+                            <audio controls id="choices-{{key}}-1" style="display:none;">
                                 <source type="audio/mpeg">
                                     Your browser does not support the audio element.</source>
                             </audio>
-                            <img ng-src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{choices2[key][1].filename}}.png" class="img-thumbnail" id="img-{{key}}-1">
-                            <h5 class="second">
-                                {{choices2[key][1].vietnamese}}
-                            </h5>
+                            <span class="img-responsive write-control">
+                                {{choices2[key][1].hiragana}}
+                            </span>
+                            <h3 class="second">
+                            </h3>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 51==keyCode}" ng-click="keyPress(51)">
-                        <audio controls id="choices-{{key}}-2" style="display:none;">
+                            <audio controls id="choices-{{key}}-2" style="display:none;">
                                 <source type="audio/mpeg">
                                     Your browser does not support the audio element.</source>
                             </audio>
-                            <img ng-src="../../data/totaln5/vocab/n5vocab.image-v2.0/{{choices2[key][2].filename}}.png" class="img-thumbnail" id="img-{{key}}-2">
-                            <h5 class="third">
-                                {{choices2[key][2].vietnamese}}
-                            </h5>
+                            <span class="img-responsive write-control">
+                                {{choices2[key][2].hiragana}}
+                            </span>
+                            <h3 class="third">
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -87,7 +89,7 @@
                 <div id="correct-answer-wrapper">
                     <div class="row hide">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            {{val.vietnamese}}
+                            {{val.hiragana}}
                         </div>
                     </div>
                 </div>
@@ -98,18 +100,15 @@
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <div class="row hide" id="mess-{{key}}">
-                            <div class="col-md-4 col-xs-4 col-sm-4">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
                                 <span class="correct-child">
                                     <span class="test-circle"></span>
                                 </span>
                                 <span class="failed-child">
                                     <i class="fa fa-times fa-4x"></i>
                                 </span>
-                            </div>
-                            <div class="col-md-8 col-xs-8 col-sm-8">
                                 <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vie}}</span>
+                                <span class="hint">{{val.romaji}}</span>
                             </div>
                         </div>
                     </div>
@@ -142,13 +141,14 @@
 </div>
 
 <script type="text/javascript">
-$(document).keydown(function(e) {
-    console.info(angular.element("#pictureWizard").scope());
-    if (13 == e.keyCode) {
-        angular.element("#pictureWizard").scope().enterPress();
-    } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
-        angular.element("#pictureWizard").scope().keyPress(e.keyCode);
-    }
-    changeLang();
-});
+setTimeout(function() {
+    $(document).keydown(function(e) {
+        if (13 == e.keyCode) {
+            angular.element("#pictureWizard").scope().enterPress();
+        } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
+            angular.element("#pictureWizard").scope().keyPress(e.keyCode);
+        }
+        changeLang();
+    });
+}, 500);
 </script>

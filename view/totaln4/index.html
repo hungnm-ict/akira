@@ -38,13 +38,19 @@
 <body>
     <div class="app container-full-height container-fluid" id="dashboard">
         <div class="row row-full-height">
-            <div class="col-md-2 hidden-sm hidden-xs col-full-height">
+            <div class="col-md-2 col-full-height hidden-sm hidden-xs" style="padding-left: 0px;">
                 <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=1;nav=0">
                 </div>
             </div>
             <div class="col-md-7 col-sm-9 col-xs-7 col-full-height">
 
-                <div id="content">
+                <div id="content" ng-controller="rootController">
+                    <audio controls id="sound-true" class="hide">
+                        <source src="../../audio/true.mp3" type="audio/mp3">
+                    </audio>
+                    <audio controls id="sound-fail" class="hide">
+                        <source src="../../audio/fail.mp3" type="audio/mp3">
+                    </audio>
                     <div ng-view></div>
                 </div>
             </div>

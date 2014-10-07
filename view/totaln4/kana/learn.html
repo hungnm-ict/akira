@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="writeWizard" class="swMain vocab" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
+<div id="learnWizard" class="swMain kana" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
     <!-- Step navigation -->
     <ul>
         <li ng-repeat="(key, value) in data">
@@ -13,8 +13,8 @@
 
     <!-- Life wrapper -->
     <span class="row" id="akr-life-wrapper">
-        <div class="col-md-1 col-sm-1 col-xs-1">
-            <a href="../../view/totaln4">
+       <div class="col-md-1 col-sm-1 col-xs-1">
+            <a href="../../view/totaln5">
                 <i class="fa fa-home fa-4x"></i>
             </a>
         </div>
@@ -45,16 +45,18 @@
                                 Your browser does not support the audio element.
                         </audio>
                         <i class="fa fa-volume-up fa-2x write-btn-play"></i>
-                        <img ng-src="../../data/totaln4/vocab/n4vocab.image-v2.0/{{val.filename}}.png" class="img-responsive">
-                        <h4 class="center" style="text-transform:captalize">{{val.vie}}</h4>
+                        <span class="write-control img-responsive">
+                            {{val.hiragana}}
+                        </span>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
+
                     <!-- User answer wrapper -->
                     <div id="user-input-wrapper">
                         <div class="row none-padding">
                             <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" type="text" />
+                                <input class="form-control write-control" type="text" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" />
                             </div>
                         </div>
                     </div>
@@ -65,7 +67,7 @@
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        {{val.hiragana}}
+                        {{val.vietnamese}}
                     </div>
                 </div>
             </div>
@@ -82,9 +84,7 @@
                                 <span class="failed-child">
                                     <i class="fa fa-times fa-4x"></i>
                                 </span>
-                                <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vietnamese}}</span>
+                                <span class="hint">{{val.hiragana}} {{val.kanji}} {{val.vietnamese}}</span>
                             </div>
                         </div>
                     </div>
@@ -92,20 +92,16 @@
                     <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
-                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                </button>
+                                <button  type="button" class="akr-btn akr-btn-init" data-i18n="common.check" />
                             </div>
                             <div ng-switch-when="1">
-                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                </button>
+                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()" />
                             </div>
                             <div ng-switch-when="2">
-                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                </button>
+                                <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()" />
                             </div>
                             <div ng-switch-default>
-                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                </button>
+                                <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check" />
                             </div>
                         </div>
                     </div>
@@ -117,11 +113,12 @@
 </div>
 
 <script type="text/javascript">
-$(document).keydown(function(e) {
-    if (13 == e.keyCode) {
-        angular.element("#writeWizard").scope().enterPress();
-    }
-    changeLang();
-});
-kanjiDict();
+setTimeout(function() {
+    $(document).keydown(function(e) {
+        if (13 == e.keyCode) {
+            angular.element("#learnWizard").scope().enterPress();
+        }
+        changeLang();
+    });
+}, 500)
 </script>
