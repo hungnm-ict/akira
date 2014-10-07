@@ -627,9 +627,8 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#grammarTranslateWizard #step-" + step + " #user-input-wrapper #input-" + step).text().trim();
             var correct = $("#grammarTranslateWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-            console.info(userSlt);
-            console.info(correct.replace(/ /g, String.fromCharCode(12288)));
-
+            correct = correct.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
+            
             if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#grammarTranslateWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
@@ -848,7 +847,7 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
         var step = $("#learnWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
-            //$("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+            $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var userSlt = $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
             var correct = $("#learnWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
@@ -991,8 +990,6 @@ totaln5Ctrls.controller('kanaPictureCtrl', function($scope, $routeParams, $http,
         $scope.$apply();
         changeLang();
     }
-
-
 });
 
 totaln5Ctrls.controller('kanaWordCtrl', function($scope, $routeParams, $http, dataService) {

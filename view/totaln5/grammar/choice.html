@@ -19,26 +19,7 @@ function chooseAnswer(event, target) {
     </ul>
 
     <!-- Life wrapper -->
-    <span class="row" id="akr-life-wrapper">
-        <div class="col-md-1 col-sm-1 col-xs-1">
-            <a href="../../view/totaln5">
-                <i class="fa fa-home fa-4x"></i>
-            </a>
-        </div>
-        <div class="col-md-7 col-sm-7 col-xs-7">
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="{{step/data.length*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{step/data.length*100}}%;">
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4" id="life-wrapper">
-            <span class="life-{{gameObject.life}}">
-                <i class="fa fa-heart fa-3x"></i>
-                <i class="fa fa-heart fa-3x"></i>
-                <i class="fa fa-heart fa-3x"></i>
-            </span>
-        </div>
-    </span>
+    <akrlife ret="../../view/totaln5" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
@@ -64,7 +45,7 @@ function chooseAnswer(event, target) {
                     <div id="user-input-wrapper">
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-xs-2">
-                                <span class="first"  ng-class="{'actived': 49==keyCode}"></span>
+                                <span class="first" ng-class="{'actived': 49==keyCode}"></span>
                             </div>
                             <div class="col-md-10 col-sm-10 col-xs-10">
                                 <div class="form-control" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
@@ -74,7 +55,7 @@ function chooseAnswer(event, target) {
                         </div>
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-xs-2 ">
-                                <span class="second"  ng-class="{'actived': 50==keyCode}"></span>
+                                <span class="second" ng-class="{'actived': 50==keyCode}"></span>
                             </div>
                             <div class="col-md-10 col-sm-10 col-xs-10">
                                 <div class="form-control" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
@@ -84,7 +65,7 @@ function chooseAnswer(event, target) {
                         </div>
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-xs-2">
-                                <span class="third"  ng-class="{'actived': 51==keyCode}"></span>
+                                <span class="third" ng-class="{'actived': 51==keyCode}"></span>
                             </div>
                             <div class="col-md-10 col-sm-10 col-xs-10">
                                 <div class="form-control" ng-click="keyPress(51)" ng-class="{'selected': 51==keyCode}">

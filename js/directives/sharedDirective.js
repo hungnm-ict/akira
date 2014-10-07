@@ -69,4 +69,23 @@ akrSharedDirectives.directive('akirawizard', function() {
         restrict: 'A',
         link: link
     };
-})
+});
+
+akrSharedDirectives.directive('akrlife', function() {
+    function link(scope, element, attrs) {
+        scope.ret = attrs.ret;
+        attrs.$observe('life', function(value) {
+            scope.life = attrs.life;
+        });
+
+        attrs.$observe('progress', function(value) {
+            scope.progress = attrs.progress;
+        });
+    }
+
+    return {
+        restrict: 'E',
+        link: link,
+        templateUrl: '../../view/_shared/life.html'
+    };
+});

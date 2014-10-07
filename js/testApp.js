@@ -18,7 +18,7 @@ testApp.config(['$routeProvider',
                 controller: 'gameCtrl',
                 templateUrl: function(urlAttrs) {
                     var validCourse = ["n5", "n4"]
-                    var validType = ["1", "2", "3", "4"];
+                    var validType = ["0","1", "2", "3"];
                     var validTime = ["10", "20", "30"];
 
                     if (validCourse.indexOf(urlAttrs.degree) != -1 && validType.indexOf(urlAttrs.type) != -1 && validTime.indexOf(urlAttrs.min) != -1) {

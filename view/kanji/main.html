@@ -1,0 +1,38 @@
+<div id="topicWizard" class="swMain" akirawizard enablestep="true">
+    <ul class="hide">
+        <li>
+            <a href="#step-1">
+                <label class="stepNumber">
+                    <span data-i18n="common.part"></span>
+                    <span>&nbsp;1</span>
+                </label>
+            </a>
+        </li>
+    </ul>
+    <span id="star">
+        <span class="number">
+            {{kanjistar}}
+            <i class="fa fa-star kanji"></i>
+        </span>
+    </span>
+    <div id="step-1">
+        <div class="wrapper">
+            <!-- Sample ngrepeat -->
+            <div class="row" ng-repeat="val in [0,1]">
+                <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
+                    <label>
+                        <span data-i18n="common.lesson"></span>
+                        <span>&nbsp;{{4* val + value}}</span>
+                    </label>
+                    <a ng-href="#/{{degree}}/{{4* val + value}}" class="thumb">
+                        <img ng-src="../../img/kanjin5/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-responsive">
+                    </a>
+                    <div class="progress kanji">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{kanjiprogress[4* val + value]}}%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
