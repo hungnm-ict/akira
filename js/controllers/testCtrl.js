@@ -27,10 +27,15 @@ appCtrls.controller('mainCtrl', function($scope, $routeParams, $location) {
     }
 
     $scope.change = function(selectedType, selectedIndex) {
-        if (selectedType == 1) {
+        if (selectedType == 1)
+        {
+            if (selectedIndex == 3)
+                return;
             $scope.courseSelectedIndex = selectedIndex;
             $scope.type = selectedIndex;
-        } else if (selectedType == 2) {
+        }
+        else if (selectedType == 2)
+        {
             $scope.timeSelectedIndex = selectedIndex;
             $scope.time = 10 * selectedIndex + 10;
         }

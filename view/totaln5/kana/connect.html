@@ -51,14 +51,22 @@ function drag(ev) {
 
 function drop(ev) {
 
-    if (
-        ($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) && ($('#' + ev.dataTransfer.getData("text/html")).attr('id') != $(ev.target).attr('id'))) {
+    if (($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) && ($('#' + ev.dataTransfer.getData("text/html")).attr('id') != $(ev.target).attr('id')))
+    {
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text/html");
         ev.target.style.visibility = "hidden";
         document.getElementById(data).style.visibility = "hidden";
         $("#check").trigger("click");
-    } else {
+        playCorrect();
+    }
+    else if ($('#' + ev.dataTransfer.getData("text/html")).attr('id')[0] === $(ev.target).attr('id')[0] || $('#' + ev.dataTransfer.getData("text/html")).attr('id') == "undefined")
+    {
+        ;//do nothing
+    }
+    else
+    {
+        playFail();
         $("#sublife").trigger("click");
     }
 }
