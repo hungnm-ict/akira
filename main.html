@@ -1,0 +1,158 @@
+<div class="app container-fluid container-full-height" id="index">
+    <div class="row row-full-height">
+        <div class="col-md-2 col-sm-2 hidden-xs col-full-height" style="padding-left: 0px;">
+            <div id="left-sidebar">
+                <div id="site-lang">
+                    <span id="vi">
+                    </span>
+                    <span id="en">
+                    </span>
+                </div>
+
+                <div id="logo">
+                    <a href="http://akira.edu.vn/">
+                        <img src="img/logo.png" alt="akira-logo" class="img-responsive" />
+                    </a>
+                </div>
+
+                <div id="social">
+                    <div class="row center">
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 ">
+                            <a href="https://www.facebook.com/WOW.Japanese" target="_blank" class="social-circle">
+                                <i class="fa fa-facebook fb"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <a href="https://www.youtube.com/user/WowJapanese" target="_blank" class="social-circle">
+                                <i class="fa fa-youtube youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10 col-sm-10 col-xs-12 col-full-height center">
+            <div id="content">
+                <div class="btn-group-vertical" id="login">
+                    <h2>Login</h2>
+                    <button class="btn-group facebook" onclick="onFbLoginClick();">Facebook</button>
+                    <button class="btn-group google" onclick="onGPLoginClick();">Google</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    FB.init({
+        appId: "721532401232192",
+        status: true, // check login status
+        cookie: true, // enable cookies to allow the server to access the session
+        xfbml: true // parse XFBML
+    });
+};
+
+(function(d) {
+    var js, id = 'facebook-jssdk',
+        ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) {
+        return;
+    }
+    js = d.createElement('script');
+    js.id = id;
+    js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    ref.parentNode.insertBefore(js, ref);
+}(document));
+
+function onFbLoginClick() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+            FB.api('/me', function(response) {
+                ajaxFbLogin(response);
+            });
+        } else {
+            //user hit cancel button
+            console.log('User cancelled login or did not fully authorize.');
+        }
+    }, {
+        scope: 'email'
+    });
+}
+
+function ajaxFbLogin(response) {
+    $.ajax({
+        type: 'POST',
+        url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
+        data: {
+            type: "fb",
+            id: response.id,
+            userName: response.username,
+            userEmail: response.email,
+        }
+    }).done(function(success) {
+        sessionStorage.setItem("authorized", "true");
+        sessionStorage.setItem("user", JSON.stringify(success));
+        window.location.href = "view/totaln5";
+    }).fail(function(error) {
+        sessionStorage.setItem("authorized", "false");
+    });
+}
+
+(function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+})();
+
+
+
+function onGPLoginClick() {
+    var additionalParams = {
+        'callback': onGooglePlusLoginSuccess,
+        'cookiepolicy': 'single_host_origin',
+        'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read',
+        'clientid': '451560498175-gj7419dvh1t85n3pn38lgvsmot8smr4t.apps.googleusercontent.com'
+    };
+    gapi.auth.signIn(additionalParams);
+}
+
+function onGooglePlusLoginSuccess(authResult) {
+    if (authResult['code']) {
+        gapi.client.load('plus', 'v1', function() {
+            var request = gapi.client.plus.people.get({
+                'userId': 'me'
+            });
+            request.execute(function(response) {
+                ajaxGoogleLogin(response);
+            });
+        });
+    } else if (authResult['error']) {
+        console.log('There was an error: ' + authResult['error']);
+    }
+}
+
+function ajaxGoogleLogin(response) {
+    $.ajax({
+        type: 'POST',
+        url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
+        data: {
+            type: "gp",
+            id: response.id,
+            userName: response.emails[0]['value'],
+            userEmail: response.emails[0]['value']
+        }
+    }).done(function(success) {
+        sessionStorage.setItem("authorized", "true");
+        sessionStorage.setItem("user", JSON.stringify(success));
+        window.location.href = "view/totaln5";
+    }).fail(function(error) {
+        sessionStorage.setItem("authorized", "false");
+    });
+}
+</script>
