@@ -30,6 +30,7 @@ body {
 }
 .app {
     background: url(../../img/background.png) no-repeat right bottom;
+    background-size: 50%;
 }
 .wrapper {
     position: absolute;
@@ -106,6 +107,12 @@ body {
     float: none;
     height: 100%;
     vertical-align: middle;
+}
+.col-full-height-bottom {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    vertical-align: bottom;
 }
 /*-----  End of Common css for all page  ------*/
 
@@ -317,6 +324,7 @@ body {
     display: inline-block;
     width: 100%;
     padding-top: 20px;
+    padding-right: 40px;
 }
 /* DASHBOARD PAGE */
 
@@ -1028,13 +1036,13 @@ ul.anchor li a .stepNumber {
 .drag-ans {
     display: inline-block;
     margin: 0 6px;
-    padding: 12px;
+    padding: 32px;
     cursor: pointer;
     border: 1px solid #c0c0c0;
     border-radius: 5px;
 }
 .drop-zone {
-    min-height: 48px;
+    min-height: 85px;
     text-align: center;
     border: 1px solid #c0c0c0;
     border-radius: 5px;
@@ -1339,6 +1347,24 @@ ul.anchor li a .stepNumber {
 #game-scope #quiz {
     max-height: 550px;
 }
-#kanji{
-    vertical-align: bottom;
+#kanji #topicWizard{
+    padding-top: 74px;
+}
+
+#listenWizard .akira-input{
+    border-radius: 15px !important;
+}
+#grammarChoiceWizard .wrapper{
+    top: 60px;
+}
+
+#kanji #wordWizard .wrapper{
+    top: 30px;
+}
+#wordWizard .write-control.selected{
+    border-radius: 30px !important;
+}
+
+#kanji #learnWizard .wrapper{
+    top:40px;
 }

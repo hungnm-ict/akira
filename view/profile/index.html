@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+    <script type="text/javascript" src="../../js/directives/totaln5Directive.js"></script>
+    <script type="text/javascript" src="../../js/controllers/totaln5Ctrl.js"></script>
+    <script type="text/javascript" src="../../js/totaln5App.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../../js/index.js"></script>
+    <title>
+        Profile
+    </title>
+
+</head>
+
+<body>
+    <div class="app container-full-height container-fluid" id="dashboard">
+        <div class="row row-full-height">
+            <div class="col-md-2 col-full-height hidden-sm hidden-xs" style="padding-left: 0px;">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=1">
+                </div>
+            </div>
+
+            <div class="col-md-10  main-content">
+                <div class="col-md-4 col-xs-4 col-sm-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label id="akira-gold">
+                                Gold
+                            </label>
+                        </div>
+
+                        <div class="col-md-4 col-md-offset-2">
+                            900
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label id="akira-day-remain">
+                                Day remain
+                            </label>
+                            <br/>
+                        </div>
+                        <div class="col-md-4 col-md-offset-2">
+                            265
+                            <span class="btn btn-default glyphicon glyphicon-arrow-up" data-toggle="modal" data-target="#redeem">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label id="akira-level">
+                                Level
+                            </label>
+                        </div>
+                        <div class="col-md-4 col-md-offset-2">
+                            3
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                            40 %
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label id="akira-mentor-level">
+                                Sempai level
+                            </label>
+                        </div>
+                        <div class="col-md-4 col-md-offset-2">
+                            4
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                            60%
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="classCode">
+                                Lớp:
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <span>
+
+                            </span>
+                        </div>
+                        <div class="col-md-1 col-md-offset-4">
+                            <button class="btn btn-default" data-toggle="modal" data-target="#classModal">
+                                Cập nhập
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="mentorId">
+                                Sempai của bạn:
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <span>
+                                ( Level: 1 )
+                            </span>
+                        </div>
+                        <div class="col-md-1 col-md-offset-4">
+                            <button class="btn btn-default" data-toggle="modal" data-target="#mentorModal">
+                                Cập nhập
+                            </button>
+                        </div>
+                    </div>
+
+                    <h3>
+                        Tình hình học tập
+                    </h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="col-md-2">
+                                    Hira
+                                </th>
+                                <th class="col-md-2">
+                                    Từ vựng
+                                </th>
+                                <th class="col-md-2">
+                                    Ngữ pháp
+                                </th>
+                                <th class="col-md-2">
+                                    Nghe
+                                </th>
+                                <th class="col-md-2">
+                                    Kanji
+                                </th>
+                                <th class="col-md-2">
+                                    Nâng cao
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>
+                        Sempai của
+                    </h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="col-md-1">
+                                    Id
+                                </th>
+                                <th class="col-md-9">
+                                    Tên
+                                </th>
+                                <th class="col-md-2">
+                                    Level
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+    app.initialize();
+    $("#tabs").tabs();
+    if (!hasViewAuth()) {
+        //window.location.href="index.html";
+    }
+    </script>
+</body>
+
+</html>

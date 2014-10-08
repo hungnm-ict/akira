@@ -1141,9 +1141,11 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
             //$("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }

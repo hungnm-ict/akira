@@ -34,7 +34,16 @@
             </a>
         </li>
     </ul>
-
+    <span id="star">
+        <span class="number">
+            {{vocabstar}}
+            <i class="fa fa-star vocab"></i>
+        </span>
+        <span class="number">
+            {{grammarstar}}
+            <i class="fa fa-star  grammar"></i>
+        </span>
+    </span>
     <div id="step-{{step}}" ng-repeat="step in [1,2,3,4]">
         <div class="wrapper">
             <!-- Sample ngrepeat -->

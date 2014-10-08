@@ -328,7 +328,7 @@ function grammarChoiceLeaveStep(obj, context) {
  * @return {[type]}         [description]
  */
 function akrLeaveStep(obj, context) {
-    return true;
+    // return true;
     var ngScope = angular.element("#" + obj.context.id).scope();
 
     if (ngScope.lessonId === undefined) {
