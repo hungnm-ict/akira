@@ -117,6 +117,20 @@ totaln5App.service('dataService', function($http) {
         });
         return uniqueGroups;
     }
+
+    this.numOfSub = function(data, lessonId) {
+        var currSub;
+        var numOfSub = [];
+        $.each(data, function(idx, val) {
+            if (data[idx]["topic"] == lessonId) {
+                if (currSub != data[idx]["sub"]) {
+                    numOfSub.push(data[idx]["sub"]);
+                    currSub = data[idx]["sub"];
+                }
+            }
+        });
+        return numOfSub;
+    }
 });
 
 totaln5App.controller('rootController', function($scope) {

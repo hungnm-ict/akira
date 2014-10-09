@@ -1,1 +1,21 @@
-N4 - Main content
+<ion-nav-bar></ion-nav-bar>
+<ion-nav-view class="slide-left-right">
+    <ion-view title="My Page">
+
+        <div class="bar bar-header bar-balanced">
+            <button class="button" ng-click="toggleLeft();">S</button>
+            <h1 class="title" ng-bind="course"></h1>
+            <button class="button" ng-click="toggleRight()">I</button>
+        </div>
+
+        <ion-tabs class="tabs-positive tabs-top">
+            <ion-tab title="Total">
+                Total
+            </ion-tab>
+
+            <ion-tab title="Kanji">
+                kanji
+            </ion-tab>
+        </ion-tabs>
+    </ion-view>
+</ion-nav-view>

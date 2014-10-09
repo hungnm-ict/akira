@@ -26,11 +26,11 @@ body {
     bottom: 0;
     width: 100%;
     background-color: whitesmoke !important;
-    background-size: 35%;
+    /*background-size: 35%;*/
 }
 .app {
     background: url(../../img/background.png) no-repeat right bottom;
-    background-size: 50%;
+    background-size: 40%;
 }
 .wrapper {
     position: absolute;
@@ -1347,24 +1347,53 @@ ul.anchor li a .stepNumber {
 #game-scope #quiz {
     max-height: 550px;
 }
-#kanji #topicWizard{
+#kanji #topicWizard {
     padding-top: 74px;
 }
-
-#listenWizard .akira-input{
+#listenWizard .akira-input {
     border-radius: 15px !important;
 }
-#grammarChoiceWizard .wrapper{
+#grammarChoiceWizard .wrapper {
     top: 60px;
 }
-
-#kanji #wordWizard .wrapper{
+#kanji #wordWizard .wrapper {
     top: 30px;
 }
-#wordWizard .write-control.selected{
+#wordWizard .write-control.selected {
     border-radius: 30px !important;
 }
-
-#kanji #learnWizard .wrapper{
-    top:40px;
+#kanji #learnWizard .wrapper {
+    top: 40px;
 }
+#game-scope ::-webkit-scrollbar {
+    width: 15px;
+    /*display: none;*/
+}
+#game-scope ::-webkit-scrollbar:hover {
+    width: 15px;
+    display: initial;
+}
+#game-scope ::-webkit-scrollbar-track {
+    /*background-color: #b46868;*/
+}
+/* the new scrollbar will have a flat appearance with the set background color */
+
+#game-scope ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /*display: none;*/
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#game-scope ::-webkit-scrollbar-thumb:hover {
+    display: initial;
+}
+/* this will style the thumb, ignoring the track */
+
+#game-scope ::-webkit-scrollbar-button {
+    /*background-color: #7c2929;*/
+}
+/* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+#game-scope ::-webkit-scrollbar-corner {
+    background-color: black;
+}
+/* if

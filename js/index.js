@@ -332,22 +332,22 @@ function akrLeaveStep(obj, context) {
     var ngScope = angular.element("#" + obj.context.id).scope();
 
     if (ngScope.lessonId === undefined) {
-        console.log("Bạn đang ở màn hình chọn lesson.");
+        // console.log("Bạn đang ở màn hình chọn lesson.");
     } else if (ngScope.lessonId !== undefined && ngScope.partId !== undefined && "subtopicWizard" === obj.context.id) {
-        console.log("Bạn đang ở khóa học: " + ngScope.course + ", bài học: " + ngScope.lessonId + ", subtopic : " + context.fromStep + ", và đang chuyển sang subtopic: " + context.toStep);
-        console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
+        // console.log("Bạn đang ở khóa học: " + ngScope.course + ", bài học: " + ngScope.lessonId + ", subtopic : " + context.fromStep + ", và đang chuyển sang subtopic: " + context.toStep);
+        // console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
         var stars = getCurrentStar(ngScope.starData, ngScope.course, ngScope.lessonId, context.toStep);
-        console.log("Số sao bạn có là: " + stars);
+        // console.log("Số sao bạn có là: " + stars);
         if (context.toStep === 4 && ("totaln5" == ngScope.course || "totaln4" == ngScope.course)) {
-            console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
+            // console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
             return false;
         }
         if (stars < (context.toStep - 1) * 10) {
-            console.info("Bạn chưa đạt đủ số sao yêu cầu. Bạn còn thiếu: " + (context.toStep * 10 - stars));
+            // console.info("Bạn chưa đạt đủ số sao yêu cầu. Bạn còn thiếu: " + (context.toStep * 10 - stars));
             return false;
         }
     } else {
-        console.log("Bước này không xác định hoặc là chưa xác định được");
+        // console.log("Bước này không xác định hoặc là chưa xác định được");
     }
     return true;
 }
@@ -460,6 +460,7 @@ function getTotalStar(data, course) {
  * @return {[type]}           [description]
  */
 function getTotalProgress(data, course, subInLess, gameInSub) {
+    consol.log(data);
     var vocabProgress = [];
     var grammarProgress = [];
     var maxVocabStar = (subInLess - 1) * gameInSub * 3;
@@ -471,7 +472,7 @@ function getTotalProgress(data, course, subInLess, gameInSub) {
 
         $.each(data[course][lesson], function(sub) {
             $.each(data[course][lesson][sub], function(game) {
-                if (sub == 4) {
+                if (sub == subInLess) {
                     grammarStar += parseInt(data[course][lesson][sub][game]);
                 } else {
                     vocabStar += parseInt(data[course][lesson][sub][game]);
@@ -570,10 +571,10 @@ function getUnlockedSub(data, course, lesson) {
             currentStar += parseInt(data[course][lesson][sub][game]);
         });
 
-        console.log("Số sao hiện tại là: " + currentStar);
-        console.log("Tổng số sao cần để mở subtopic: " + sub + " của bài " + lesson + " trong course " + course + " là " + openSubStar);
+        // console.log("Số sao hiện tại là: " + currentStar);
+        // console.log("Tổng số sao cần để mở subtopic: " + sub + " của bài " + lesson + " trong course " + course + " là " + openSubStar);
         if (currentStar >= openSubStar) {
-            console.log(sub);
+            // console.log(sub);
             unlocked.push(parseInt(sub));
         } else {
             return false;

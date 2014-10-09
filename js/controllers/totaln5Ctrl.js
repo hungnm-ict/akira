@@ -1,6 +1,11 @@
 var totaln5Ctrls = angular.module('totaln5Ctrls', []);
 
-totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
+totaln5Ctrls.controller('mainCtrl', function($scope, $http,dataService) {
+    dataService.promise.then(function(deferred) {
+        $scope.data = deferred.data;
+        console.log(data);
+    });
+
     $scope.course = "totaln5";
     $scope.kana = "true";
     //Total star initialize
@@ -29,7 +34,7 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
         $scope.vocabstar = stars.vocab;
         $scope.grammarstar = stars.grammar;
 
-        var progress = getTotalProgress(data, 'totaln5', 4, 5);
+        var progress = getTotalProgress(data, 'totaln5',4, 5);
         $scope.vocabprogress = progress.vocab;
         $scope.grammarprogress = progress.grammar;
     });
@@ -39,7 +44,14 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
     }
 });
 
-totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
+totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService) {
+    //Find the number of subtopic in a lesson
+    dataService.promise.then(function(deferred) {
+        $scope.noSub = dataService.numOfSub(deferred.data, $routeParams.lessonId);
+    });
+
+
+
     $scope.course = "totaln5";
     $scope.lessonId = $routeParams.lessonId;
     $scope.vocabstar = 0;
@@ -63,8 +75,13 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
         $scope.progress = data;
         $scope.enabled = getUnlockedSub($scope.starData, 'totaln5', $routeParams.lessonId);
     });
+
     $scope.isEnabled = function(stepNumber) {
         return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
+    }
+
+    $scope.isLast = function($last){
+        console.log("this is last element");
     }
 });
 
@@ -628,7 +645,7 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
             var userSlt = $("#grammarTranslateWizard #step-" + step + " #user-input-wrapper #input-" + step).text().trim();
             var correct = $("#grammarTranslateWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             correct = correct.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
-            
+
             if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#grammarTranslateWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
