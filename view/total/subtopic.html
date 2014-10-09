@@ -1,0 +1,224 @@
+<div id="subtopicWizard" class="swMain" akirawizard enablestep="true">
+    <span class="header">
+        <h2 data-i18n="common.lesson"></h2>
+        <h2>{{lessonId}}</h2>
+    </span>
+    <ul>
+        <li>
+            <a href="#step-1" ng-click="partId=1">
+                <label class="stepNumber">
+                    <span ng-switch on="isEnabled(1)">
+                        <span ng-switch-when="true">1</span>
+                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
+                </label>
+            </a>
+        </li>
+        <li data-toggle="popover" data-placement="bottom" data-content="10 stars to unlock" data-trigger="hover">
+            <a href="#step-2" ng-click="partId=2">
+                <label class="stepNumber">
+                    <span ng-switch on="isEnabled(2)">
+                        <span ng-switch-when="true">2</span>
+                        <span ng-switch-when="false">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
+                </label>
+            </a>
+        </li>
+        <li data-toggle="popover" data-placement="bottom" data-content="20 stars to unlock" data-trigger="hover">
+            <a href="#step-3" ng-click="partId=3">
+                <label class="stepNumber">
+                    <span ng-switch on="isEnabled(3)">
+                        <span ng-switch-when="true">3</span>
+                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
+                </label>
+            </a>
+        </li>
+        <li data-toggle="popover" data-placement="bottom" data-content="30 stars to unlock" data-trigger="hover">
+            <a href="#step-4" ng-click="partId=4" onclick="return false;">
+                <label class="stepNumber">
+                    <span ng-switch on="isEnabled(4)">
+                        <span ng-switch-when="true">4</span>
+                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        </span>
+                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        </span>
+                    </span>
+                </label>
+            </a>
+        </li>
+    </ul>
+
+    <span id="star">
+        <span class="number">
+            {{vocabstar}}
+            <i class="fa fa-star vocab"></i>
+        </span>
+        <span class="number">
+            {{grammarstar}}
+            <i class="fa fa-star  grammar"></i>
+        </span>
+    </span>
+
+    <div id="step-{{value}}" ng-repeat="value in [1,2,3]">
+
+        <div class="row">
+            <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/{{value}}/write" class="thumb">
+                    <span data-i18n="common.write"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/write.png">
+                    </span>
+                </a>
+                <span class="star-{{progress['totaln5'][lessonId][value][1]}} vocab">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                </span>
+            </div>
+            <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/{{value}}/picture" class="thumb">
+                    <span data-i18n="common.picture"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/picture.png">
+                    </span>
+                </a>
+                <span class="vocab star-{{progress['totaln5'][lessonId][value][2]}}">
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                </span>
+            </div>
+            <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/{{value}}/word" class="thumb">
+                    <span data-i18n="common.word"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/word.png">
+                    </span>
+                </a>
+                <span class="vocab star-{{progress['totaln5'][lessonId][value][3]}}">
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <a ng-href="#/{{lessonId}}/{{value}}/listen" class="thumb">
+                    <span data-i18n="common.listen"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/listen.png">
+                    </span>
+                </a>
+                <span class="vocab star-{{progress['totaln5'][lessonId][value][4]}}">
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                </span>
+            </div>
+            <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/{{value}}/connect" class="thumb">
+                    <span data-i18n="common.connect"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/connect.png">
+                    </span>
+                </a>
+                <span class="vocab star-{{progress['totaln5'][lessonId][value][5]}}">
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                    <i class="fa fa-star fa-3x "></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Step 4 start -->
+    <div id="step-4">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <a ng-href="#/{{lessonId}}/4/listen1" class="thumb">
+                    <span data-i18n="common.listen"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/grammar/listen.png">
+                    </span>
+                </a>
+                <span class="grammar star-{{progress['totaln5'][lessonId][4][1]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                </span>
+            </div>
+            <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/4/choice" class="thumb">
+                    <span data-i18n="common.choice"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/grammar/choice.png">
+                    </span>
+                </a>
+                <span class="grammar star-{{progress['totaln5'][lessonId][4][2]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/4/translate" class="thumb">
+                    <span data-i18n="common.translate"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/grammar/translate.png">
+                    </span>
+                </a>
+                <span class="grammar star-{{progress['totaln5'][lessonId][4][3]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                </span>
+            </div>
+            <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/4/read" class="thumb">
+                    <span data-i18n="common.read"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/grammar/read.png">
+                    </span>
+                </a>
+                <span class="grammar  star-{{progress['totaln5'][lessonId][4][4]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                </span>
+            </div>
+            <div class="col-md-4">
+                <a ng-href="#/{{lessonId}}/4/word1" class="thumb">
+                    <span data-i18n="common.word"></span>
+                    <span class="akira-circle">
+                        <img ng-src="../../img/totaln5/subtopic/grammar/word.png">
+                    </span>
+                </a>
+                <span class="grammar star-{{progress['totaln5'][lessonId][4][5]}}">
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                    <i class="fa fa-star fa-3x"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//Popover information
+$.each($("#subtopicWizard ul li").has("i.fa.fa-lock"), function(k, v) {
+    $(v).popover();
+});
+</script>
