@@ -37,6 +37,10 @@ akrSharedDirectives.directive('akrleaderboard', function($http) {
             $scope.renderHtml = function(e) {
                 return $sce.trustAsHtml(e);
             }
+
+            $scope.callChat = function(uname) {
+                chatWith(uname);
+            }
         },
         templateUrl: '../../view/_shared/leaderboard.html'
     };

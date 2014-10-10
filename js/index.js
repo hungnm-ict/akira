@@ -67,7 +67,9 @@ function changeLang(code) {
 function getUser() {
     if (sessionStorage.getItem("user") == null) {
         return {
-            "id": 17
+            "id": 17,
+            "loginname": "anonymous",
+            "display": "Anonymous"
         };
         // return 0;
     } else {
@@ -328,7 +330,10 @@ function grammarChoiceLeaveStep(obj, context) {
  * @return {[type]}         [description]
  */
 function akrLeaveStep(obj, context) {
-    // return true;
+    if (14 === getUser.id && 17 === getUser.id) {
+        return true;
+    };
+
     var ngScope = angular.element("#" + obj.context.id).scope();
 
     if (ngScope.lessonId === undefined) {
@@ -460,7 +465,6 @@ function getTotalStar(data, course) {
  * @return {[type]}           [description]
  */
 function getTotalProgress(data, course, subInLess, gameInSub) {
-    consol.log(data);
     var vocabProgress = [];
     var grammarProgress = [];
     var maxVocabStar = (subInLess - 1) * gameInSub * 3;

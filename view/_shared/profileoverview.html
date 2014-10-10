@@ -1,25 +1,30 @@
 <div class="row" id="profile">
     <!-- Show this when user is logged in -->
     <div class="col-md-12 col-sm-12 col-sm-12" ng-hide='user==="Anonymous"'>
-        <div class="col-md-4 col-sm-4 col-xs-4">
+        <div class="col-md-3 col-sm-3 col-xs-3">
             <span class="ava-circle">
                 <!-- <img src="" /> -->
                 {{renderHtml(user.ava)}}
             </span>
         </div>
-        <div class="col-md-8 col-sm-8 col-xs-8">
+        <div class="col-md-9 col-sm-9 col-xs-9">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 username">
-                    <span>{{user.loginname}}</span>
+                    <!-- <span>{{user.loginname}}</span> -->
+                    <a href="../../view/profile">
+                        <span ng-bind="user.displayname">
+                        </span>
+                    </a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <span data-i18n="common.dayleft"></span>: {{user.dayremain}}
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <span data-i18n="common.dayleft"></span>:
+                    <span ng-bind="user.dayremain"></span>
+                    <i class="fa fa-plus-circle fa-2x f-right" data-toggle="modal" data-target="#myModal"></i>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:right;">
-                    <i class="fa fa-plus" data-toggle="modal" data-target="#myModal"></i>
-                </div>
+                <!-- <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:right;"> -->
+                <!-- </div> -->
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">

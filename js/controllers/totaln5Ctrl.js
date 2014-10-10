@@ -1,10 +1,10 @@
 var totaln5Ctrls = angular.module('totaln5Ctrls', []);
 
 totaln5Ctrls.controller('mainCtrl', function($scope, $http,dataService) {
-    dataService.promise.then(function(deferred) {
-        $scope.data = deferred.data;
-        console.log(data);
-    });
+    // dataService.promise.then(function(deferred) {
+    //     $scope.data = deferred.data;
+    //     console.log(data);
+    // });
 
     $scope.course = "totaln5";
     $scope.kana = "true";

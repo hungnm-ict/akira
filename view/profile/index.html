@@ -13,15 +13,22 @@
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+
+    <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
+    <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
+    <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
+    <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
     <script type="text/javascript" src="../../js/directives/totaln5Directive.js"></script>
     <script type="text/javascript" src="../../js/controllers/totaln5Ctrl.js"></script>
     <script type="text/javascript" src="../../js/totaln5App.js"></script>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
-
     <script type="text/javascript" src="../../js/index.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <title>
         Profile
     </title>
@@ -38,15 +45,9 @@
 
             <div class="col-md-10  main-content">
                 <div class="col-md-4 col-xs-4 col-sm-4">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label id="akira-gold">
-                                Gold
-                            </label>
-                        </div>
-
-                        <div class="col-md-4 col-md-offset-2">
-                            900
+                    <div class="row center">
+                        <div class="col-md-12 col-xs-12 col-sm-12">
+                            <img src="#" alt="Avatar" class="img-thumbnail">
                         </div>
                     </div>
                     <div class="row">
@@ -137,22 +138,19 @@
                         <thead>
                             <tr>
                                 <th class="col-md-2">
-                                    Hira
+                                    Kana
                                 </th>
                                 <th class="col-md-2">
-                                    Từ vựng
+                                    Total N5
                                 </th>
                                 <th class="col-md-2">
-                                    Ngữ pháp
+                                    Kanji N5
                                 </th>
                                 <th class="col-md-2">
-                                    Nghe
+                                    Total N4
                                 </th>
                                 <th class="col-md-2">
-                                    Kanji
-                                </th>
-                                <th class="col-md-2">
-                                    Nâng cao
+                                    Kanji N4
                                 </th>
                             </tr>
                         </thead>
@@ -160,9 +158,6 @@
                             <tr>
                                 <td>
                                     4
-                                </td>
-                                <td>
-                                    0
                                 </td>
                                 <td>
                                     0
@@ -205,6 +200,7 @@
     </div>
     </div>
     <script type="text/javascript">
+    angular.bootstrap(document, ['totaln5App']);
     app.initialize();
     $("#tabs").tabs();
     if (!hasViewAuth()) {

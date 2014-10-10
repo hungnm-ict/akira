@@ -611,6 +611,9 @@ ul.anchor {
     border: 2px solid #C0C0C0;
     border-radius: 5px;
 }
+#profile  .fa-plus-circle{
+    color: #8CC63F;
+}
 .progress.level .progress-bar {
     background-image: linear-gradient(to bottom, #568ed4 0, #568ed4 100%);
 }
@@ -618,6 +621,7 @@ ul.anchor {
     background-image: linear-gradient(to bottom, #e91717 0, #e91717 100%);
 }
 .username {
+    cursor: pointer;
     font-size: 20px;
     font-weight: bold;
 }
@@ -1396,4 +1400,6 @@ ul.anchor li a .stepNumber {
 #game-scope ::-webkit-scrollbar-corner {
     background-color: black;
 }
-/* if
+.chatbox{
+    z-index: 100;
+}

@@ -19,17 +19,17 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 */
 
+define ('DBPATH','localhost');
+define ('DBUSER','root');
+define ('DBPASS','');
+define ('DBNAME','akira');
 
-// define ('DBPATH','localhost');
-// define ('DBUSER','root');
-// define ('DBPASS','password');
-// define ('DBNAME','chat');
 
 session_start();
 
-// global $dbh;
-// $dbh = mysql_connect(DBPATH,DBUSER,DBPASS);
-// mysql_selectdb(DBNAME,$dbh);
+global $dbh;
+$dbh = mysql_connect(DBPATH,DBUSER,DBPASS);
+mysql_selectdb(DBNAME,$dbh);
 
 if ($_GET['action'] == "chatheartbeat") { chatHeartbeat(); } 
 if ($_GET['action'] == "sendchat") { sendChat(); } 
@@ -46,14 +46,14 @@ if (!isset($_SESSION['openChatBoxes'])) {
 
 function chatHeartbeat() {
 
-	// $sql = "select * from chat where (chat.to = '".mysql_real_escape_string($_SESSION['username'])."' AND recd = 0) order by id ASC";
-	// $query = mysql_query($sql);
+	$sql = "select * from wp_chat where (wp_chat.to = '".mysql_real_escape_string($_GET['username'])."' AND recd = 0) order by id ASC";
+	$query = mysql_query($sql);
 	$items = '';
 
 	$chatBoxes = array();
 
-	// while ($chat = mysql_fetch_array($query)) {
-	while (null) {
+	while ($chat = mysql_fetch_array($query)) {
+	// while (null) {
 		if (!isset($_SESSION['openChatBoxes'][$chat['from']]) && isset($_SESSION['chatHistory'][$chat['from']])) {
 			$items = $_SESSION['chatHistory'][$chat['from']];
 		}
@@ -117,8 +117,8 @@ EOD;
 	}
 }
 
-	// $sql = "update chat set recd = 1 where chat.to = '".mysql_real_escape_string($_SESSION['username'])."' and recd = 0";
-	// $query = mysql_query($sql);
+	$sql = "update wp_chat set recd = 1 where wp_chat.to = '".mysql_real_escape_string($_GET['username'])."' and recd = 0";
+	$query = mysql_query($sql);
 
 	if ($items != '') {
 		$items = substr($items, 0, -1);
@@ -162,7 +162,7 @@ function startChatSession() {
 header('Content-type: application/json');
 ?>
 {
-		"username": "<?php echo $_SESSION['username'];?>",
+		"username": "<?php echo $_GET['username'];?>",
 		"items": [
 			<?php echo $items;?>
         ]
@@ -175,7 +175,7 @@ header('Content-type: application/json');
 }
 
 function sendChat() {
-	$from = $_SESSION['username'];
+	$from = $_POST['username'];
 	$to = $_POST['to'];
 	$message = $_POST['message'];
 
@@ -198,8 +198,8 @@ EOD;
 
 	unset($_SESSION['tsChatBoxes'][$_POST['to']]);
 
-	// $sql = "insert into chat (chat.from,chat.to,message,sent) values ('".mysql_real_escape_string($from)."', '".mysql_real_escape_string($to)."','".mysql_real_escape_string($message)."',NOW())";
-	// $query = mysql_query($sql);
+	$sql = "insert into wp_chat (wp_chat.from,wp_chat.to,message,sent) values ('".mysql_real_escape_string($from)."', '".mysql_real_escape_string($to)."','".mysql_real_escape_string($message)."',NOW())";
+	$query = mysql_query($sql);
 	echo "1";
 	exit(0);
 }
