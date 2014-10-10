@@ -1,42 +1,75 @@
 <div class="bar bar-header  bar-balanced">
     <button class="button" ng-click="toggleLeft();">S</button>
-    <h1 class="title" ng-bind="course"></h1>
+    <h1 class="title" ng-bind="coursename"></h1>
     <button class="button" ng-click="toggleRight()">I</button>
 </div>
 <ion-tabs class="tabs-positive tabs-top">
     <ion-tab title="Kana">
-        <div class="row">
-            <div class="col">
-                <a href="#/{{degree}}/kana/1">
+        <ion-content class="center">
+            <div class="row">
+                <div class="col">
+                    <a href="#/{{degree}}/kana/1">
                 Hiragana 1
                 </a>
-            </div>
-            <div class="col">
-                <a href="#/kana/2">
-                
-                Hiragana 2</div>
-            </a>
+                </div>
+                <div class="col">
+                    <a href="#/{{degree}}/kana/2">                
+                    Hiragana 2
+                </a>
+                </div>
             </div>
             <div class="row">
-                <div class="col">Katakana 1</div>
-                <div class="col">Katakan 2</div>
+                <div class="col">
+                    <a href="#/{{degree}}/kana/3">
+                        Katakana 1
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#/{{degree}}/kana/4">
+                        Katakan 2
+                    </a>
+                </div>
             </div>
+        </ion-content>
     </ion-tab>
 
     <ion-tab title="Total">
-        <ion-content>
+        <ion-content class="center">
             <div class="row">
                 <div class="col">
-                    <a href="#/total/1"></a>1</div>
-                <div class="col">2</div>
+                    <a href="#/{{degree}}/total/1">
+                        1
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#/{{degree}}/total/2">
+                    2
+                    </a>
+                </div>
             </div>
             <div class="row">
-                <div class="col">3</div>
-                <div class="col">4</div>
-                <div class="col">5</div>
+                <div class="col">
+                    <a href="#/{{degree}}/total/3">
+                        3
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#/{{degree}}/total/4">
+                        4
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#/{{degree}}/total/5">
+                        5
+                    </a>
+                </div>
             </div>
             <div class="row">
-                <div class="col">6</div>
+                <div class="col">
+                    <a href="#/{{degree}}/total/6">
+                        6
+                    </a>
+                </div>
                 <div class="col">Lock</div>
             </div>
             <!--    <ion-slide-box auto-play="true" pager-click="">
@@ -59,20 +92,30 @@
     </ion-tab>
 
     <ion-tab title="Kanji">
-        <div class="row">
-            <div class="col">
-                <a href="#/kanji/1">1</a>
+        <ion-content class="center">
+            <div class="row">
+                <div class="col">
+                    <a href="#/{{degree}}/kanji/1">1</a>
+                </div>
+                <div class="col">
+                    <a href="#/{{degree}}/kanji/2">2</a>
+                </div>
             </div>
-            <div class="col">2</div>
-        </div>
-        <div class="row">
-            <div class="col">3</div>
-            <div class="col">Lock</div>
-            <div class="col">4</div>
-        </div>
-        <div class="row">
-            <div class="col">5</div>
-            <div class="col">6</div>
-        </div>
+            <div class="row">
+                <div class="col">
+                    <a href="#/{{degree}}/kanji/3">3</a>
+                </div>
+                <div class="col">Lock</div>
+                <div class="col">
+                    <a href="#/{{degree}}/kanji/4">4</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><a href="#/{{degree}}/kanji/5">5</a>
+                </div>
+                <div class="col"><a href="#/{{degree}}/kanji/6">6</a>
+                </div>
+            </div>
+        </ion-content>
     </ion-tab>
 </ion-tabs>

@@ -39,14 +39,18 @@
 
 </head>
 
-<body ng-controller="rootCtrl">
+<body ng-controller="rootCtrl" id="mobi">
     <ion-side-menus>
 
         <!-- Center content -->
         <ion-side-menu-content>
-            <div ng-view>
-
-            </div>
+            <audio controls id="sound-true" class="hide">
+                <source src="../../audio/true.mp3" type="audio/mp3">
+            </audio>
+            <audio controls id="sound-fail" class="hide">
+                <source src="../../audio/fail.mp3" type="audio/mp3">
+            </audio>
+            <div ng-view></div>
         </ion-side-menu-content>
 
         <!-- Left menu -->
@@ -59,11 +63,11 @@
                 <ion-list>
                     <ion-item nav-clear menu-close>
                         Ngôn ngữ
-                        <i class="fa fa-angle-right" style="float:right;"></i>
+                        <i class="ion-chevron-right" style="float:right;"></i>
                     </ion-item>
                     <ion-item nav-clear menu-close>
                         Nhạc nền
-                        <i class="fa fa-angle-right" style="float:right;"></i>
+                        <i class="ion-chevron-right" style="float:right;"></i>
 
                     </ion-item>
                     <div class="item item-divider">
@@ -71,21 +75,21 @@
                     </div>
                     <ion-item nav-clear menu-close>
                         About us
-                        <i class="fa fa-angle-right" style="float:right;"></i>
+                        <i class="ion-chevron-right" style="float:right;"></i>
 
                     </ion-item>
 
                     <ion-item nav-clear menu-close>
                         Follow Facebook
-                        <i class="fa fa-angle-right" style="float:right;"></i>
+                        <i class="ion-chevron-right" style="float:right;"></i>
                     </ion-item>
                     <ion-item nav-clear menu-close>
                         Send feedback
-                        <i class="fa fa-angle-right" style="float:right;"></i>
+                        <i class="ion-chevron-right" style="float:right;"></i>
                     </ion-item>
                     <ion-item nav-clear menu-close>
                         Rate
-                        <i class="fa fa-angle-right" style="float:right;"></i>
+                        <i class="ion-chevron-right" style="float:right;"></i>
                     </ion-item>
                     <div class="item item-divider">
                         Recomment Apps
@@ -95,11 +99,20 @@
         </ion-side-menu>
         <!-- Right menu -->
         <ion-side-menu side="right">
-            <ion-header-bar class="bar-dark">
-            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                    <ion-item>
+                        <akrprofile></akrprofile>
+                    </ion-item>
+                    <ion-item>
+                        <akrleaderboard></akrleaderboard>
+                    </ion-item>
+                </ion-list>
+            </ion-content>
         </ion-side-menu>
     </ion-side-menus>
 </body>
+
 <script type="text/javascript">
 angular.bootstrap(document, ['mobiRoot']);
 app.initialize();

@@ -611,7 +611,7 @@ ul.anchor {
     border: 2px solid #C0C0C0;
     border-radius: 5px;
 }
-#profile  .fa-plus-circle{
+#profile .fa-plus-circle {
     color: #8CC63F;
 }
 .progress.level .progress-bar {
@@ -1369,37 +1369,55 @@ ul.anchor li a .stepNumber {
 #kanji #learnWizard .wrapper {
     top: 40px;
 }
-#game-scope ::-webkit-scrollbar {
+#game-scope::-webkit-scrollbar {
     width: 15px;
     /*display: none;*/
 }
-#game-scope ::-webkit-scrollbar:hover {
+#game-scope::-webkit-scrollbar:hover {
     width: 15px;
     display: initial;
 }
-#game-scope ::-webkit-scrollbar-track {
+#game-scope::-webkit-scrollbar-track {
     /*background-color: #b46868;*/
 }
 /* the new scrollbar will have a flat appearance with the set background color */
 
-#game-scope ::-webkit-scrollbar-thumb {
+#game-scope::-webkit-scrollbar-thumb {
     border-radius: 10px;
     /*display: none;*/
+    
     background-color: rgba(0, 0, 0, 0.2);
 }
-#game-scope ::-webkit-scrollbar-thumb:hover {
+#game-scope::-webkit-scrollbar-thumb:hover {
     display: initial;
 }
 /* this will style the thumb, ignoring the track */
 
-#game-scope ::-webkit-scrollbar-button {
+#game-scope::-webkit-scrollbar-button {
     /*background-color: #7c2929;*/
 }
 /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
 
-#game-scope ::-webkit-scrollbar-corner {
+#game-scope::-webkit-scrollbar-corner {
     background-color: black;
 }
-.chatbox{
+.chatbox {
     z-index: 100;
 }
+#feedback {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: rotate(90deg);
+       -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+         -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+}
+/*==============================================
+=            CSS for mobile version            =
+==============================================*/
+
+#mobi .swMain {
+    width: auto !important;
+}
+/*-----  End of CSS for mobile version  ------*/

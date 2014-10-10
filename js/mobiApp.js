@@ -1,4 +1,4 @@
-var mobi = angular.module('mobiRoot', ['ngRoute', 'ionic', 'mobiCtrl']);
+var mobi = angular.module('mobiRoot', ['ngRoute', 'ionic', 'mobiCtrl', 'commonCtrls', 'akrSharedDirectives']);
 
 mobi.config(['$routeProvider',
     function($routeProvider) {
@@ -74,9 +74,9 @@ mobi.config(['$routeProvider',
                 templateUrl: 'read.html',
                 controller: 'readCtrl'
             })
-            .when('/:degree/:course/:lessonId/:subid/word', {
-                templateUrl: 'connect.html',
-                controller: 'connectCtrl'
+            .when('/:degree/:course/:lessonId/:subid/write', {
+                templateUrl: 'write.html',
+                controller: 'writeCtrl'
             })
             .otherwise({
                 redirectTo: '/n5'
@@ -84,12 +84,95 @@ mobi.config(['$routeProvider',
     }
 ]);
 
-mobi.controller('rootCtrl', function($scope, $ionicSideMenuDelegate, $routeParams) {
+
+mobi.service('mobiService', function($http) {
+    //Data for totaln5
+    this.kanaPromise = $http({
+        method: "GET",
+        url: "../../data/totaln5/vocab/n5vocab_v2.0.json"
+    });
+
+    this.totalN5Promise = $http({
+        method: "GET",
+        url: "../../data/totaln5/vocab/n5vocab_v2.0.json"
+    });
+
+    this.kanjiN5Promise = $http({
+        method: "GET",
+        url: "../../data/totaln5/vocab/n5vocab_v2.0.json"
+    });
+
+
+    this.totalN4Promise = $http({
+        method: "GET",
+        url: "../../data/totaln5/vocab/n5vocab_v2.0.json"
+    });
+
+    this.kanjiN4Promise = $http({
+        method: "GET",
+        url: "../../data/totaln5/vocab/n5vocab_v2.0.json"
+    });
+
+    this.getPromise = function(degree, course) {
+        return this.totalN5Promise;
+        switch (degree) {
+            case "n5":
+                switch (course) {
+                    case "kana":
+                        return kanaPromise;
+                        break;
+                    case "total":
+                        return totalN5Promise;
+                        break;
+                    case "kanji":
+                        return kanjiN5Promise;
+                        break;
+                    default:
+                        return null;
+                        break;
+                }
+                break;
+            case "n4":
+                switch (course) {
+                    case "total":
+                        return totalN4Promise;
+                        break;
+                    case "kanji":
+                        return kanjiN4Promise;
+                        break;
+                    default:
+                        return null;
+                        break;
+                }
+                break;
+            default:
+                return null;
+                break;
+        }
+    };
+
+    this.filterData = function(data, lessonId, subtopic) {
+        var uniqueGroups = [];
+        $.each(data, function(idx, val) {
+            if (data[idx]["topic"] == lessonId && data[idx]["sub"] == subtopic) {
+                uniqueGroups.push(data[idx]);
+            }
+        });
+        return uniqueGroups;
+    }
+
+});
+
+mobi.controller('rootCtrl', function($scope, $ionicSideMenuDelegate, $routeParams, $ionicSlideBoxDelegate) {
     $scope.toggleLeft = function() {
         $ionicSideMenuDelegate.toggleLeft();
     };
 
     $scope.toggleRight = function() {
         $ionicSideMenuDelegate.toggleRight();
+    };
+
+    $scope.rootPlay = function(degree, course, lesson, sub, skill, audioTagId, playSpeed) {
+
     };
 });
