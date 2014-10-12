@@ -552,6 +552,7 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
 
     $http({
         method: "GET",
+        // Duong dan toi du lieu course
         url: "../../data/totaln5/grammar/json/type1.json"
     }).success(function(data, status) {
         $scope.data = filter(data, 'id', $routeParams.lessonId);
