@@ -37,3 +37,21 @@ testApp.controller('root', function($scope) {
     $scope.navgroup = 1;
     $scope.nav = 2;
 })
+
+// jQuery(document).ready(function(){
+//   AngularCtrl.setUserName();
+// }
+
+// angular.element(document).ready(function () {
+//     alert(document.documentElement.clientHeight);
+//     console.log(angular.element(document.querySelector('#quiz')));
+//     document.getElementById("quiz").style.maxHeight= document.documentElement.clientHeight;
+//     angular.element(document.querySelector('#quiz')).style.maxHeight = document.documentElement.clientHeight;
+// });
+
+function SomeController($scope) {
+   $scope.$on('$viewContentLoaded', function() {
+        alert(document.documentElement.clientHeight);
+        }
+    );
+}
