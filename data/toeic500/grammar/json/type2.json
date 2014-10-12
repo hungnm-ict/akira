@@ -1,40 +1,282 @@
-[{"id":1,"filename":"1.1.1","filename":"whoareyou","englishq":"Who are you?","englisha":"We are parents.","vietnameseq":"Bạn là ai?"},
-{"id":1,"filename":"1.1.2","filename":"whoisshe","englishq":"Who is she?","englisha":"She is a wife.","vietnameseq":"Cô ấy là ai?"},
-{"id":1,"filename":"1.1.3","filename":"whoishe","englishq":"Who is he?","englisha":"He is my father.","vietnameseq":"Anh ấy là ai?"},
-{"id":1,"filename":"1.1.4","filename":"issheyourwoman","englishq":"Is she your woman?","englisha":"Yes. She is my woman.","vietnameseq":"Cô ấy có phải là người phụ nữ của bạn."},
-{"id":1,"filename":"1.1.5","filename":"isyourchildagirl","englishq":"Is your child a girl?","englisha":"Yes. Our child is a girl.","vietnameseq":"Đứa trẻ của bạn có phải là một bé gái không?"},
-{"id":2,"filename":"2.1.1","filename":"issheadoctor","englishq":"Is she a doctor?","englisha":"Yes. She is a doctor.","vietnameseq":"Có phải cô ấy là bác sỹ không?"},
-{"id":2,"filename":"2.1.2","filename":"whoisthis","englishq":"Who is this?","englisha":"This is a child.","vietnameseq":"Đây là ai?"},
-{"id":2,"filename":"2.1.3","filename":"whatdoesyourfatherdo","englishq":"What does your father do?","englisha":"My father is an engineer.","vietnameseq":"Bố của bạn làm nghề gì?"},
-{"id":2,"filename":"2.1.4","filename":"areyoustudents","englishq":"Are you students?","englisha":"Yes. We are students.","vietnameseq":"Các bạn là những học sinh phải không?"},
-{"id":2,"filename":"2.1.5","filename":"whatdoyourparentsdo","englishq":"What do your parents do?","englisha":"My parents are doctors.","vietnameseq":"Bố mẹ của bạn làm nghề gì?"},
-{"id":3,"filename":"3.1.1","filename":"howdoesshelike","englishq":"How does she like?","englisha":"She is a humourous girl.","vietnameseq":"Cô ấy như thế nào?"},
-{"id":3,"filename":"3.1.2","filename":"isheyourstudent","englishq":"Is he your student?","englisha":"No. He is not my student.","vietnameseq":"Có phải anh ấy là học sinh không?"},
-{"id":3,"filename":"3.1.3","filename":"whereisyoursister","englishq":"Where is your sister?","englisha":"My sister is at home.","vietnameseq":"Chị gái của bạn ở đâu?"},
-{"id":3,"filename":"3.1.4","filename":"whatdoyoudo","englishq":"What do you do?","englisha":"I am a dancer.","vietnameseq":"Bạn làm nghề gì?"},
-{"id":3,"filename":"3.1.5","filename":"areyourparentsboring","englishq":"Are your parents boring?","englisha":"No. My parents are not boring.","vietnameseq":"Có phải bố mẹ của bạn rất tẻ nhạt không?"},
-{"id":4,"filename":"4.1.1","filename":"doyoureadbooks","englishq":"Do you read books?","englisha":"No. I do not read books.","vietnameseq":"Bạn có đọc những quyển sách không?"},
-{"id":4,"filename":"4.1.2","filename":"whatdoyoulike","englishq":"What do you like?","englisha":"We like a movie.","vietnameseq":"Bạn thích cái gì?"},
-{"id":4,"filename":"4.1.3","filename":"dotheybuyadressandabook","englishq":"Do they buy a dress and a book?","englisha":"No. They do not buy a dress and a book.","vietnameseq":"Có phải họ mua một chiếc váy và một quyển sách không?"},
-{"id":4,"filename":"4.1.4","filename":"whatdoyourparentslove","englishq":"What do your parents love?","englisha":"My parents love hummorous movies.","vietnameseq":"Bố mẹ của bạn yêu cái gì?"},
-{"id":4,"filename":"4.1.5","filename":"whatdoherbrotherandsisterhave","englishq":"What do her brother and sister have?","englisha":"Her brother and sister have a big picture.","vietnameseq":"Anh trai và chị gái của cô ấy có cái gì?"},
-{"id":5,"filename":"5.1.1","filename":"whatdoesshewant","englishq":"What does she want?","englisha":"She wants a book.","vietnameseq":"Cô ấy muốn gì?"},
-{"id":5,"filename":"5.1.2","filename":"doeshereadoldbooks","englishq":"Does he read old books?","englisha":"No. He does not read old book.","vietnameseq":"Anh ấy có đọc những quyển sách cũ không?"},
-{"id":5,"filename":"5.1.3","filename":"howoftendoesyourmothermakecakes","englishq":"How often does your mother make cakes?","englisha":"Our mother makes cake everyday.","vietnameseq":"Mẹ bạn có thường làm những chiếc bánh không?"},
-{"id":5,"filename":"5.1.4","filename":"doesthishumorouswomanspeakChinese","englishq":"Does this humorous woman speak Chinese?","englisha":"Yes. She speaks Chinese.","vietnameseq":"Có phải người phụ nữ hài hước kia nói tiếng Trung Quốc không?"},
-{"id":5,"filename":"5.1.5","filename":"doesshedohomeworkeverymorning","englishq":"Does she do homework every morning?","englisha":"No. She does not do homework every morning.","vietnameseq":"Có phải cô ấy làm bài tập về nhà mỗi sáng không?"},
-{"id":6,"filename":"6.1.1","filename":"whatcanyoudo","englishq":"What can you do?","englisha":"I can play foodball.","vietnameseq":"Bạn có thể làm gì?"},
-{"id":6,"filename":"6.1.2","filename":"whatshouldyourfatherdo","englishq":"What should your father do?","englisha":"My father should sleep.","vietnameseq":"Bố của bạn nên làm gì?"},
-{"id":6,"filename":"6.1.3","filename":"canyouswimfast","englishq":"Can you swim fast?","englisha":"No. I can not swim fast.","vietnameseq":"Bạn có thể bơi nhanh được không?"},
-{"id":6,"filename":"6.1.4","filename":"shouldtheylearncarefully","englishq":"Should they learn carefully?","englisha":"Yes. They should learn carefully.","vietnameseq":"Họ có nên học cẩn thận không?"},
-{"id":6,"filename":"6.1.5","filename":"canyourmothereatbeef","englishq":"Can your mother eat beef?","englisha":"No. My mother can not eat beef.","vietnameseq":"Mẹ của bạn có ăn được thịt bò không?"},
-{"id":7,"filename":"7.1.1","filename":"whatisthis","englishq":"What is this?","englisha":"This is a beautiful book.","vietnameseq":"Đây là cái gì?"},
-{"id":7,"filename":"7.1.2","filename":"whoisthat","englishq":"Who is that?","englisha":"That is his sister.","vietnameseq":"Kia là ai?"},
-{"id":7,"filename":"7.1.3","filename":"isthisapen","englishq":"Is this a pen?","englisha":"No. This is a pencil.","vietnameseq":"Đây có phải một chiếc bút không?"},
-{"id":7,"filename":"7.1.4","filename":"aretheseyourbooks","englishq":"Are these your books?","englisha":"Yes. These are my books.","vietnameseq":"Đây có phải là những quyển sách của bạn không?"},
-{"id":7,"filename":"7.1.5","filename":"arethosepresidents","englishq":"Are those presidents?","englisha":"No. Those are not presidents.","vietnameseq":"Kia có phải là những chủ tịch không?"},
-{"id":8,"filename":"8.1.1","filename":"isthereacar","englishq":"Is there a car?","englisha":"No. There is not a car.","vietnameseq":"Đây có phải là một chiếc xe ô tô không?"},
-{"id":8,"filename":"8.1.2","filename":"howmanyapplesonthetable","englishq":"How many apples on the table?","englisha":"There is an apple on the table.","vietnameseq":"Có bao nhiêu quả táo ở trên bàn?"},
-{"id":8,"filename":"8.1.3","filename":"arethere3pensinthebag","englishq":"Are there 3 pens in the bag?","englisha":"Yes. There are 3 pens in the bag.","vietnameseq":"Có 3 chiếc bút ở trong cặp có phải không?"},
-{"id":8,"filename":"8.1.4","filename":"howmanypeopleinyourfamily","englishq":"How many people in your family?","englisha":"There are 5 people in my family.","vietnameseq":"Có bao nhiêu người trong gia đình của bạn?"},
-{"id":8,"filename":"8.1.5","filename":"aretherereddresses","englishq":"Are there red dresses?","englisha":"No. There are not red dresses.","vietnameseq":"Đây có phải những chiếc váy màu đỏ không?"}]
+[  
+   {  
+      "id":1,
+      "filename":"whoareyou",
+      "englishq":"Who are you?",
+      "englisha":"We are parents.",
+      "vietnameseq":"Bạn là ai?"
+   },
+   {  
+      "id":1,
+      "filename":"whoisshe",
+      "englishq":"Who is she?",
+      "englisha":"She is a wife.",
+      "vietnameseq":"Cô ấy là ai?"
+   },
+   {  
+      "id":1,
+      "filename":"whoishe",
+      "englishq":"Who is he?",
+      "englisha":"He is my father.",
+      "vietnameseq":"Anh ấy là ai?"
+   },
+   {  
+      "id":1,
+      "filename":"issheyourwoman",
+      "englishq":"Is she your woman?",
+      "englisha":"Yes. She is my woman.",
+      "vietnameseq":"Cô ấy có phải là người phụ nữ của bạn."
+   },
+   {  
+      "id":1,
+      "filename":"isyourchildagirl",
+      "englishq":"Is your child a girl?",
+      "englisha":"Yes. Our child is a girl.",
+      "vietnameseq":"Đứa trẻ của bạn có phải là một bé gái không?"
+   },
+   {  
+      "id":2,
+      "filename":"issheadoctor",
+      "englishq":"Is she a doctor?",
+      "englisha":"Yes. She is a doctor.",
+      "vietnameseq":"Có phải cô ấy là bác sỹ không?"
+   },
+   {  
+      "id":2,
+      "filename":"whoisthis",
+      "englishq":"Who is this?",
+      "englisha":"This is a child.",
+      "vietnameseq":"Đây là ai?"
+   },
+   {  
+      "id":2,
+      "filename":"whatdoesyourfatherdo",
+      "englishq":"What does your father do?",
+      "englisha":"My father is an engineer.",
+      "vietnameseq":"Bố của bạn làm nghề gì?"
+   },
+   {  
+      "id":2,
+      "filename":"areyoustudents",
+      "englishq":"Are you students?",
+      "englisha":"Yes. We are students.",
+      "vietnameseq":"Các bạn là những học sinh phải không?"
+   },
+   {  
+      "id":2,
+      "filename":"whatdoyourparentsdo",
+      "englishq":"What do your parents do?",
+      "englisha":"My parents are doctors.",
+      "vietnameseq":"Bố mẹ của bạn làm nghề gì?"
+   },
+   {  
+      "id":3,
+      "filename":"howdoesshelike",
+      "englishq":"How does she like?",
+      "englisha":"She is a humourous girl.",
+      "vietnameseq":"Cô ấy như thế nào?"
+   },
+   {  
+      "id":3,
+      "filename":"isheyourstudent",
+      "englishq":"Is he your student?",
+      "englisha":"No. He is not my student.",
+      "vietnameseq":"Có phải anh ấy là học sinh không?"
+   },
+   {  
+      "id":3,
+      "filename":"whereisyoursister",
+      "englishq":"Where is your sister?",
+      "englisha":"My sister is at home.",
+      "vietnameseq":"Chị gái của bạn ở đâu?"
+   },
+   {  
+      "id":3,
+      "filename":"whatdoyoudo",
+      "englishq":"What do you do?",
+      "englisha":"I am a dancer.",
+      "vietnameseq":"Bạn làm nghề gì?"
+   },
+   {  
+      "id":3,
+      "filename":"areyourparentsboring",
+      "englishq":"Are your parents boring?",
+      "englisha":"No. My parents are not boring.",
+      "vietnameseq":"Có phải bố mẹ của bạn rất tẻ nhạt không?"
+   },
+   {  
+      "id":4,
+      "filename":"doyoureadbooks",
+      "englishq":"Do you read books?",
+      "englisha":"No. I do not read books.",
+      "vietnameseq":"Bạn có đọc những quyển sách không?"
+   },
+   {  
+      "id":4,
+      "filename":"whatdoyoulike",
+      "englishq":"What do you like?",
+      "englisha":"We like a movie.",
+      "vietnameseq":"Bạn thích cái gì?"
+   },
+   {  
+      "id":4,
+      "filename":"dotheybuyadressandabook",
+      "englishq":"Do they buy a dress and a book?",
+      "englisha":"No. They do not buy a dress and a book.",
+      "vietnameseq":"Có phải họ mua một chiếc váy và một quyển sách không?"
+   },
+   {  
+      "id":4,
+      "filename":"whatdoyourparentslove",
+      "englishq":"What do your parents love?",
+      "englisha":"My parents love hummorous movies.",
+      "vietnameseq":"Bố mẹ của bạn yêu cái gì?"
+   },
+   {  
+      "id":4,
+      "filename":"whatdoherbrotherandsisterhave",
+      "englishq":"What do her brother and sister have?",
+      "englisha":"Her brother and sister have a big picture.",
+      "vietnameseq":"Anh trai và chị gái của cô ấy có cái gì?"
+   },
+   {  
+      "id":5,
+      "filename":"whatdoesshewant",
+      "englishq":"What does she want?",
+      "englisha":"She wants a book.",
+      "vietnameseq":"Cô ấy muốn gì?"
+   },
+   {  
+      "id":5,
+      "filename":"doeshereadoldbooks",
+      "englishq":"Does he read old books?",
+      "englisha":"No. He does not read old book.",
+      "vietnameseq":"Anh ấy có đọc những quyển sách cũ không?"
+   },
+   {  
+      "id":5,
+      "filename":"howoftendoesyourmothermakecakes",
+      "englishq":"How often does your mother make cakes?",
+      "englisha":"Our mother makes cake everyday.",
+      "vietnameseq":"Mẹ bạn có thường làm những chiếc bánh không?"
+   },
+   {  
+      "id":5,
+      "filename":"doesthishumorouswomanspeakChinese",
+      "englishq":"Does this humorous woman speak Chinese?",
+      "englisha":"Yes. She speaks Chinese.",
+      "vietnameseq":"Có phải người phụ nữ hài hước kia nói tiếng Trung Quốc không?"
+   },
+   {  
+      "id":5,
+      "filename":"doesshedohomeworkeverymorning",
+      "englishq":"Does she do homework every morning?",
+      "englisha":"No. She does not do homework every morning.",
+      "vietnameseq":"Có phải cô ấy làm bài tập về nhà mỗi sáng không?"
+   },
+   {  
+      "id":6,
+      "filename":"whatcanyoudo",
+      "englishq":"What can you do?",
+      "englisha":"I can play foodball.",
+      "vietnameseq":"Bạn có thể làm gì?"
+   },
+   {  
+      "id":6,
+      "filename":"whatshouldyourfatherdo",
+      "englishq":"What should your father do?",
+      "englisha":"My father should sleep.",
+      "vietnameseq":"Bố của bạn nên làm gì?"
+   },
+   {  
+      "id":6,
+      "filename":"canyouswimfast",
+      "englishq":"Can you swim fast?",
+      "englisha":"No. I can not swim fast.",
+      "vietnameseq":"Bạn có thể bơi nhanh được không?"
+   },
+   {  
+      "id":6,
+      "filename":"shouldtheylearncarefully",
+      "englishq":"Should they learn carefully?",
+      "englisha":"Yes. They should learn carefully.",
+      "vietnameseq":"Họ có nên học cẩn thận không?"
+   },
+   {  
+      "id":6,
+      "filename":"canyourmothereatbeef",
+      "englishq":"Can your mother eat beef?",
+      "englisha":"No. My mother can not eat beef.",
+      "vietnameseq":"Mẹ của bạn có ăn được thịt bò không?"
+   },
+   {  
+      "id":7,
+      "filename":"whatisthis",
+      "englishq":"What is this?",
+      "englisha":"This is a beautiful book.",
+      "vietnameseq":"Đây là cái gì?"
+   },
+   {  
+      "id":7,
+      "filename":"whoisthat",
+      "englishq":"Who is that?",
+      "englisha":"That is his sister.",
+      "vietnameseq":"Kia là ai?"
+   },
+   {  
+      "id":7,
+      "filename":"isthisapen",
+      "englishq":"Is this a pen?",
+      "englisha":"No. This is a pencil.",
+      "vietnameseq":"Đây có phải một chiếc bút không?"
+   },
+   {  
+      "id":7,
+      "filename":"aretheseyourbooks",
+      "englishq":"Are these your books?",
+      "englisha":"Yes. These are my books.",
+      "vietnameseq":"Đây có phải là những quyển sách của bạn không?"
+   },
+   {  
+      "id":7,
+      "filename":"arethosepresidents",
+      "englishq":"Are those presidents?",
+      "englisha":"No. Those are not presidents.",
+      "vietnameseq":"Kia có phải là những chủ tịch không?"
+   },
+   {  
+      "id":8,
+      "filename":"isthereacar",
+      "englishq":"Is there a car?",
+      "englisha":"No. There is not a car.",
+      "vietnameseq":"Đây có phải là một chiếc xe ô tô không?"
+   },
+   {  
+      "id":8,
+      "filename":"howmanyapplesonthetable",
+      "englishq":"How many apples on the table?",
+      "englisha":"There is an apple on the table.",
+      "vietnameseq":"Có bao nhiêu quả táo ở trên bàn?"
+   },
+   {  
+      "id":8,
+      "filename":"arethere3pensinthebag",
+      "englishq":"Are there 3 pens in the bag?",
+      "englisha":"Yes. There are 3 pens in the bag.",
+      "vietnameseq":"Có 3 chiếc bút ở trong cặp có phải không?"
+   },
+   {  
+      "id":8,
+      "filename":"howmanypeopleinyourfamily",
+      "englishq":"How many people in your family?",
+      "englisha":"There are 5 people in my family.",
+      "vietnameseq":"Có bao nhiêu người trong gia đình của bạn?"
+   },
+   {  
+      "id":8,
+      "filename":"aretherereddresses",
+      "englishq":"Are there red dresses?",
+      "englisha":"No. There are not red dresses.",
+      "vietnameseq":"Đây có phải những chiếc váy màu đỏ không?"
+   }
+]

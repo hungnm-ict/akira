@@ -10,36 +10,6 @@ toeic500App.config(['$routeProvider',
                 },
                 controller: 'mainCtrl'
             })
-            // .when('/kana/:lessonId', {
-            //     controller: 'kanaCtrl',
-            //     templateUrl: function(urlattr) {
-            //         if (urlattr.lessonId == 1 || urlattr.lessonId == 2)
-            //             return 'kana/hirasub.html';
-
-            //         if (urlattr.lessonId == 3 || urlattr.lessonId == 4)
-            //             return 'kana/katasub.html';
-            //     },
-            // })
-            // .when('/kana/:lessonId/:partId/learn', {
-            //     templateUrl: 'kana/learn.html',
-            //     controller: 'kanaLearnCtrl'
-            // })
-            // .when('/kana/:lessonId/:partId/picture', {
-            //     templateUrl: 'kana/picture.html',
-            //     controller: 'kanaPictureCtrl'
-            // })
-            // .when('/kana/:lessonId/:partId/word', {
-            //     templateUrl: 'kana/word.html',
-            //     controller: 'kanaWordCtrl'
-            // })
-            // .when('/kana/:lessonId/:partId/connect', {
-            //     templateUrl: 'kana/connect.html',
-            //     controller: 'kanaConnectCtrl'
-            // })
-            // .when('/kana/:lessonId/:partId/write', {
-            //     templateUrl: 'kana/write.html',
-            //     controller: 'kanaWriteCtrl'
-            // })
             .when('/:lessonId', {
                 templateUrl: function(urlAttr) {
                     return 'subtopic.html';
@@ -66,23 +36,23 @@ toeic500App.config(['$routeProvider',
                 templateUrl: 'vocab/write.html',
                 controller: 'writeCtrl'
             })
-            .when('/:lessonId/4/listen1', {
+            .when('/:lessonId/:partId/listen1', {
                 templateUrl: 'grammar/listen.html',
                 controller: 'grammarListenCtrl'
             })
-            .when('/:lessonId/4/choice', {
+            .when('/:lessonId/:partId/choice', {
                 templateUrl: 'grammar/choice.html',
                 controller: 'grammarChoiceCtrl'
             })
-            .when('/:lessonId/4/translate', {
+            .when('/:lessonId/:partId/translate', {
                 templateUrl: 'grammar/translate.html',
                 controller: 'grammarTranslateCtrl'
             })
-            .when('/:lessonId/4/read', {
+            .when('/:lessonId/:partId/read', {
                 templateUrl: 'grammar/read.html',
                 controller: 'grammarReadCtrl'
             })
-            .when('/:lessonId/4/word1', {
+            .when('/:lessonId/:partId/word1', {
                 templateUrl: 'grammar/word.html',
                 controller: 'grammarWordCtrl'
             })
@@ -98,21 +68,6 @@ toeic500App.service('dataService', function($http) {
         method: "GET",
         url: "../../data/toeic500/vocab/toeic500vocab.json"
     });
-
-    this.grammarPromise = $http({
-        method: "GET",
-        url: "../../data/toeic500/vocab/toeic500vocab.json"
-    });
-
-    // this.kanaPromise1 = $http({
-    //     method: "GET",
-    //     url: "../../data/kana/kana_type1_v2.0.json"
-    // });
-
-    // this.kanaPromise2 = $http({
-    //     method: "GET",
-    //     url: "../../data/kana/kana_type1_v2.0.json"
-    // });
 
     this.filter = function(data, key1, lessonId, key2, partId) {
         var uniqueGroups = [];
@@ -135,6 +90,7 @@ toeic500App.service('dataService', function($http) {
                 }
             }
         });
+        console.log(numOfSub);
         return numOfSub;
     }
 });

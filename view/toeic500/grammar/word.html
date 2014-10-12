@@ -20,7 +20,7 @@
             <div id="question-wrapper" class="center">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h2>{{val.questhira}}</h2>
+                        <h2>{{val.english}}</h2>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,8 @@
                                     <i class="fa fa-times fa-4x"></i>
                                 </span>
                                 <span>
-                                    Q: {{val.questhira}} A: {{val.answer}} {{val.vietnamese}} {{val.english}}
+                                <!-- CuongDD -->
+                                    Q: {{val.english.replace("_", " " + val.answer + " ")}} - Meaning: {{val.vietnamese}}
                                 </span>
                             </div>
                         </div>
