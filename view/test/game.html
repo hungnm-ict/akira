@@ -4,17 +4,29 @@
             <span>N5 TEST</span>-
             <span data-i18n="{{title}}"></span>
         </h2>
+        
         <div id="quiz">
-            <div ng-repeat="(key, value) in dataset" class="question-{{key}}">
-                <h3 class="question">
-                    {{key +1 }} . {{value.question}}
-                </h3>
-                <ol class="ans-options">
-                    <li>{{value.answer0}}</li>
-                    <li>{{value.answer1}}</li>
-                    <li>{{value.answer2}}</li>
-                    <li>{{value.answer3}}</li>
-                </ol>
+            <ul>
+                <li ng-repeat="(key, value) in dataset">
+                    <a href="#tabs-{{key + 1}}">
+                        <span data-i18n="common.part"></span>
+                        <span ng-bind="key + 1"></span>
+                    </a>
+                </li>
+            </ul>
+
+            <div id="tabs-{{key +1 }}" ng-repeat="(key, value) in dataset">
+                <div class="quest-content" ng-repeat="(k, v) in value">
+                    <div class="row">
+                        <div class="col-md-12" ng-bind="v.question"></div>
+                    </div>
+                    <ol class="ans-options">
+                        <li ng-bind="v.answer0"></li>
+                        <li ng-bind="v.answer1"></li>
+                        <li ng-bind="v.answer2"></li>
+                        <li ng-bind="v.answer3"></li>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
@@ -24,3 +36,10 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+setTimeout(function() {
+    $("#quiz").tabs();
+}, 200);
+</script>

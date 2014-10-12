@@ -6,7 +6,8 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in courseCollection" ng-click="change(1,$index)">
+        <div class="col-md-2"></div>
+        <div class="col-md-2" ng-repeat="item in courseCollection" ng-click="change(1,$index)">
             <span ng-class="{'test-active': $index == courseSelectedIndex }" class="circle-n5" data-i18n="{{item}}">
             </span>
         </div>
@@ -19,7 +20,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-3" ng-repeat="item in timeCollection" ng-click="change(2,$index)">
+        <div class="col-md-3"></div>
+        <div class="col-md-2" ng-repeat="item in timeCollection" ng-click="change(2,$index)">
             <span ng-class="{'test-active': $index == timeSelectedIndex }" class="circle-n5">
                 {{item}} p
             </span>

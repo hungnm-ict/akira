@@ -27,15 +27,10 @@ appCtrls.controller('mainCtrl', function($scope, $routeParams, $location) {
     }
 
     $scope.change = function(selectedType, selectedIndex) {
-        if (selectedType == 1)
-        {
-            if (selectedIndex == 3)
-                return;
+        if (selectedType == 1) {
             $scope.courseSelectedIndex = selectedIndex;
             $scope.type = selectedIndex;
-        }
-        else if (selectedType == 2)
-        {
+        } else if (selectedType == 2) {
             $scope.timeSelectedIndex = selectedIndex;
             $scope.time = 10 * selectedIndex + 10;
         }
@@ -43,19 +38,10 @@ appCtrls.controller('mainCtrl', function($scope, $routeParams, $location) {
 });
 
 
-appCtrls.controller('gameCtrl', function($scope, $routeParams, $http) {
+appCtrls.controller('gameCtrl', function($scope, $routeParams, $http, dataService, data) {
+
     courseCollection = ["common.vocab", "common.grammar", "common.read", "common.listen-compre"];
     $scope.title = courseCollection[$routeParams.type];
-    var urlStr;
-    if ($routeParams.type == 0) {
-        urlStr = "../../data/test" + $routeParams.degree + "/json/vocab-1.json";
-    } else if ($routeParams.type == 1) {
-        urlStr = "../../data/test" + $routeParams.degree + "/json/grammar-1.json";
-    } else if ($routeParams.type == 2) {
-        urlStr = "../../data/test" + $routeParams.degree + "/json/read-1.json";
-    } else if ($routeParams.type == 3) {
-        urlStr = "../../data/test" + $routeParams.degree + "/json/write-1.json";
-    };
 
     switch ($routeParams.degree) {
         case "n4":
@@ -72,13 +58,7 @@ appCtrls.controller('gameCtrl', function($scope, $routeParams, $http) {
             break;
     }
 
-    $http({
-        method: "GET",
-        url: urlStr
-    }).success(function(data, status) {
-        $scope.dataset = akiraShuffle(data);
-
-    });
     $scope.type = $routeParams.type;
     $scope.time = $routeParams.min;
+    $scope.dataset = dataService.genDataSet(data, $routeParams.type, $routeParams.min);
 });

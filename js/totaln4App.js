@@ -90,6 +90,7 @@ totaln4App.service('dataService', function($http) {
         url: "../../data/totaln4/grammar/json/type5.json"
     });
 
+
     this.filter = function(data, key1, lessonId, key2, partId) {
         var uniqueGroups = [];
         $.each(data, function(idx, val) {
@@ -100,15 +101,15 @@ totaln4App.service('dataService', function($http) {
         return uniqueGroups;
     }
 
-        this.getDataPromise = function(course, lessonId, subId, skill) {
+    this.getDataPromise = function(course, lessonId, subId, skill) {
         switch (course) {
             case "totaln4":
                 switch (subId) {
                     case "1":
                     case "2":
                     case "3":
-                    return this.n4Vocab;
-                    break;
+                        return this.n4Vocab;
+                        break;
                     case "4":
                         switch (skill) {
                             case 1:

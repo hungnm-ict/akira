@@ -42,9 +42,14 @@ app.config(['$routeProvider',
 
 
 app.service('dataService', function($http) {
-    this.promise = $http({
+    this.n4Kanji = $http({
         method: "GET",
-        url: "../../data/kanjin4/n4kanji_v2.0.json"
+        url: "../../data/kanjin4/json/n4kanji.json"
+    });
+
+    this.n5Kanji = $http({
+        method: "GET",
+        url: "../../data/kanjin5/json/n5kanji.json"
     });
 
     this.filter = function(data, key1, lessonId, key2, partId) {
@@ -57,20 +62,54 @@ app.service('dataService', function($http) {
         return uniqueGroups;
     };
 
-    this.getData = function(course) {
-        this.promise = $http({
-            method: "GET",
-            url: "../../data/" + course + "/n4kanji_v2.0.json"
-        });
-
-        
+    this.getDataPromise = function(course, lessonId, subId, skill) {
+        switch (course) {
+            case "kanjin4":
+                return this.n4Kanji;
+                break;
+            case "kanjin5":
+                return this.n5Kanji;
+                break
+            default:
+                return null;
+                break;
+        }
     };
 });
+
+app.service('restService', function($http) {
+    this.n4Star = $http({
+        method: "GET",
+        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kanjin4&userid=" + getUser().id
+    });
+
+    this.n5Star = $http({
+        method: "GET",
+        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kanjin5&userid=" + getUser().id
+    });
+
+
+    this.getRestPromise = function(course) {
+        switch (course) {
+            case "kanjin4":
+                return this.n4Star;
+                break;
+            case "kanjin5":
+                return this.n5Star;
+                break
+            default:
+                return null;
+                break;
+        }
+    }
+
+});
+
 
 
 app.controller('root', function($scope, $routeParams) {
     $scope.navgroup = 0;
-    $scope.nav = 2;
+    $scope.nav = 1;
 
     $scope.rootPlay = function(data, course, step, id) {
         var selId = "choices-" + step + "-" + id;

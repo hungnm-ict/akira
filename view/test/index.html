@@ -14,13 +14,14 @@
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
     <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 
     <!-- Required libs -->
     <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/jquery-ui.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
-    <!-- <script type="text/javascript" src="../../spec/lib/angular-ui-router/release/angular-ui-router.js"></script> -->
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
@@ -28,21 +29,21 @@
     <!-- Angular app libs -->
     <script type="text/javascript" src="../../js/index.js"></script>
 
-    <script type="text/javascript" src="../../js/controllers/testCtrl.js"></script>
-    <script type="text/javascript" src="../../js/directives/testDirective.js"></script>
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
+    <script type="text/javascript" src="../../js/controllers/testCtrl.js"></script>
+    <script type="text/javascript" src="../../js/directives/testDirective.js"></script>
     <script type="text/javascript" src="../../js/testApp.js"></script>
 </head>
 
 <body ng-controller="root">
     <div class="app container-fluid container-full-height">
         <div class="row row-full-height">
-            <div class="col-md-2 hidden-sm hidden-xs col-full-height" style="padding-left:0px;">
+            <div class="col-md-3 hidden-sm hidden-xs col-full-height" style="padding-left:0px;">
                 <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup={{navgroup}};nav={{nav}}">
                 </div>
             </div>
-            <div class="col-md-10 col-full-height">
+            <div class="col-md-9 col-full-height">
                 <div id="content">
                     <div ng-view></div>
                 </div>

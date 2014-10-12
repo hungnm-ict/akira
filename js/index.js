@@ -105,13 +105,13 @@ function filter(data, key, value) {
     return uniqueGroups;
 }
 
-function gameOver(course, lesson, subtopic, game, correctAns,noOfQuestion) {
+function gameOver(course, lesson, subtopic, game, correctAns, noOfQuestion) {
     var star = 0;
-    if (correctAns/noOfQuestion >= 0.8) {
+    if (correctAns / noOfQuestion >= 0.8) {
         star = 3;
-    } else if (correctAns/noOfQuestion >= 0.5) {
+    } else if (correctAns / noOfQuestion >= 0.5) {
         star = 2;
-    } else if (correctAns/noOfQuestion >= 0.3) {
+    } else if (correctAns / noOfQuestion >= 0.3) {
         star = 1;
     } else {
         star = 0;
@@ -595,6 +595,16 @@ function playCorrect() {
 
 function playFail() {
     document.getElementById("sound-fail").play();
+}
+
+function randTake(data, no) {
+    var ret = [];
+    for (var i = 0; i < no; i++) {
+        var randIdx = Math.floor(Math.random() * data.length);
+        ret.push(data[randIdx]);
+        data.splice(randIdx);
+    }
+    return ret;
 }
 
 /*-----  End of Validation method  ------*/
