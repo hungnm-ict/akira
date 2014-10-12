@@ -105,13 +105,13 @@ function filter(data, key, value) {
     return uniqueGroups;
 }
 
-function gameOver(course, lesson, subtopic, game, correctAns) {
+function gameOver(course, lesson, subtopic, game, correctAns,noOfQuestion) {
     var star = 0;
-    if (correctAns >= 8) {
+    if (correctAns/noOfQuestion >= 0.8) {
         star = 3;
-    } else if (correctAns >= 5) {
+    } else if (correctAns/noOfQuestion >= 0.5) {
         star = 2;
-    } else if (correctAns >= 3) {
+    } else if (correctAns/noOfQuestion >= 0.3) {
         star = 1;
     } else {
         star = 0;
@@ -125,7 +125,7 @@ function gameOver(course, lesson, subtopic, game, correctAns) {
     });
 
     $('.game-over-modal-sm').on('hide.bs.modal', function(e) {
-        window.location.href = "./";
+        window.history.back();
     });
 }
 
@@ -330,7 +330,7 @@ function grammarChoiceLeaveStep(obj, context) {
  * @return {[type]}         [description]
  */
 function akrLeaveStep(obj, context) {
-    if (14 === getUser.id && 17 === getUser.id) {
+    if (14 == getUser().id || 17 == getUser().id) {
         return true;
     };
 

@@ -3,7 +3,7 @@
     "id": 1,
     "filename": "1.1.1",
     "hiragana": "わたしは　マイクミラーです。",
-    "kanji": "私は　マイクミラーです。",
+    "kanji": "<u class='kanji-dict'>私</u>は　<u class='kanji-dict'>山田</u>です",
     "vietnamese": "Tôi là Mike Miller",
     "english": "I am Mike Miller"
   },

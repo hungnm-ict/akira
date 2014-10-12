@@ -1,6 +1,6 @@
-var totaln5Ctrls = angular.module('totaln4Ctrls', []);
+var totaln4Ctrls = angular.module('totaln4Ctrls', []);
 
-totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
+totaln4Ctrls.controller('mainCtrl', function($scope, $http,restService) {
     $scope.course = "totaln4";
 
     //Total star initialize
@@ -9,23 +9,18 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http) {
     $scope.grammarstar = 0;
     $scope.grammarprogress = [];
 
-    // Get totaln5 star information
-    $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln4&userid=" + getUser().id
-    }).success(function(data, status) {
-        console.log(data);
-        var stars = getTotalStar(data, 'totaln4');
+    restService.getRestPromise("totaln4").then(function(deferred) {
+        var stars = getTotalStar(deferred.data, 'totaln4');
         $scope.vocabstar = stars.vocab;
         $scope.grammarstar = stars.grammar;
 
-        var progress = getTotalProgress(data, 'totaln4', 4, 5);
+        var progress = getTotalProgress(deferred.data, 'totaln4', 4, 5);
         $scope.vocabprogress = progress.vocab;
         $scope.grammarprogress = progress.grammar;
     });
 });
 
-totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
+totaln4Ctrls.controller('subCtrl', function($scope, $routeParams, $http,restService) {
     $scope.course = "totaln4";
     $scope.lessonId = $routeParams.lessonId;
 
@@ -38,31 +33,29 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http) {
     $scope.progress;
     $scope.enabled;
 
-    // Get totaln5 star information
-    $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln4&userid=" + getUser().id
-    }).success(function(data, status) {
-        var stars = getTotalLessonStar(data, 'totaln4', $routeParams.lessonId);
+    restService.getRestPromise("totaln4").then(function(deferred) {
+        var stars = getTotalLessonStar(deferred.data, 'totaln4', $routeParams.lessonId);
         $scope.vocabstar = stars.vocab;
         $scope.grammarstar = stars.grammar;
-        $scope.starData = data;
-        $scope.progress = data;
+        $scope.starData = deferred.data;
+        $scope.progress = deferred.data;
         $scope.enabled = getUnlockedSub($scope.starData, 'totaln4', $routeParams.lessonId);
     });
+
     $scope.isEnabled = function(stepNumber) {
         return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
     }
 });
 
-/**
- * Controller for write game vocab
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
-totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataService) {
+/*===========================================================
+=            Controller for totaln4 - Vocab game            =
+===========================================================*/
+
+totaln4Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataService) {
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
+    });
+
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -71,14 +64,10 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
     };
     $scope.step = 0;
 
-    dataService.promise.then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
-    });
-
     $scope.removeLife = function() {
-        $scope.gameObject.life--;
+        $scope.gameObject.life -= 1;
         if ($scope.gameObject.life == 0) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -88,11 +77,14 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -101,7 +93,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct);
+                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -114,7 +106,6 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
 
     $scope.keyPress = function(e, keyCode) {
         if (13 != keyCode) {
-            // $scope.enterPress();
             if ("" == $("#input-" + e).val()) {
                 $scope.stage = 0;
             } else {
@@ -137,17 +128,10 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
     };
 });
 
-/**
- * Controller for Vocab - Picture game
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
-totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sce, dataService) {
+totaln4Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.course = "totaln4";
     $scope.lessonId = $routeParams.lessonId;
-    $scope.partId = $routeParams.partId; //Current step
+    $scope.partId = $routeParams.partId;
 
     $scope.step = 0;
     $scope.choices = [];
@@ -161,16 +145,15 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
     $scope.keyCode = 0;
     $scope.stage = 0;
 
-    dataService.promise.then(function(deferred) {
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 2).then(function(deferred) {
         $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
-        $scope.choices = genAnswers($scope.data, "filename", 3);
         $scope.choices2 = genAnswers3($scope.data, 3);
     });
 
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -203,9 +186,9 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
         var step = $("#pictureWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
-            var userSlt = $("#pictureWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
+            var userSlt = $("#pictureWizard #step-" + step + " #user-input-wrapper .selected h5").text().trim();
             var correct = $("#pictureWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-
+            console.log(userSlt + "-" + correct);
             if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
@@ -219,7 +202,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct);
+                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -232,14 +215,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, $sc
     }
 });
 
-/**
- * Controller for Vocab - Word game
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
-totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService) {
+totaln4Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.choices = [];
@@ -250,29 +226,29 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
         "life": 3,
         "correct": 0
     };
-    dataService.promise.then(function(deferred) {
+
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 3).then(function(deferred) {
         $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
-        $scope.choices = genAnswers($scope.data, "hiragana", 3);
         $scope.choices2 = genAnswers3($scope.data, 3);
     });
 
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
     $scope.keyPress = function(keyCode) {
         switch (keyCode) {
             case 49:
-                $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 0);
+                $scope.$parent.rootPlay($scope.choices2, "totaln4/vocab", $scope.step, 0);
                 break;
             case 50:
-                $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 1);
+                $scope.$parent.rootPlay($scope.choices2, "totaln4/vocab", $scope.step, 1);
                 break;
             case 51:
-                $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 2);
+                $scope.$parent.rootPlay($scope.choices2, "totaln4/vocab", $scope.step, 2);
                 break;
             default:
                 break;
@@ -307,7 +283,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct);
+                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -320,15 +296,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
     }
 });
 
-
-/**
- * Controller for Vocab - Listen game
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
-totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, dataService) {
+totaln4Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.step = 0;
@@ -338,13 +306,13 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
         "correct": 0
     };
 
-    dataService.promise.then(function(deferred) {
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 4).then(function(deferred) {
         $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
     });
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln4/vocab/n4vocab.audio-v2.0/" + $scope.data[id].filename + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/totaln4/vocab/audio/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         if (isNormal) {
             document.getElementById(id).playbackRate = 1;
@@ -357,7 +325,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct,$scope.data.length);
         }
     };
 
@@ -382,7 +350,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct);
+                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct,$scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -405,14 +373,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
     }
 });
 
-/**
- * Controller for Vocab - Connect game
- * @param  {[type]} $scope       [description]
- * @param  {[type]} $routeParams [description]
- * @param  {[type]} $http        [description]
- * @return {[type]}              [description]
- */
-totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService) {
+totaln4Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -421,15 +382,14 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
     };
     $scope.step = 0;
 
-    dataService.promise.then(function(deferred) {
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 5).then(function(deferred) {
         $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
     });
-
 
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if (angular.equals($scope.gameObject.life, 0)) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct * 2);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct ,5);
         }
     };
 
@@ -437,110 +397,21 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
         $scope.step++;
         $scope.gameObject.correct++;
         if (angular.equals($scope.step, 5)) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct * 2);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct ,5);
         }
     }
 });
+/*-----  End of Controller for totaln4 - Vocab game  ------*/
 
-
-/*Grammar controller*/
-totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $http) {
-    $scope.lessonId = $routeParams.lessonId;
-    $scope.partId = $routeParams.partId;
-    $scope.gameObject = {
-        "life": 3
-    };
-    var urlStr = "../../data/totaln5/data/grammar/json/type1.json";
-    $http({
-        method: "GET",
-        url: urlStr
-    }).
-    success(function(data, status) {
-        $scope.data = filter(data, 'id', $routeParams.lessonId);
-    });
-
-    $scope.playSound = function(id, isNormal) {
-        var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln5/data/grammar/audio/" + $scope.data[id].filename + ".mp3");
-        $("audio#" + id + " source").attr
-        document.getElementById(id).load();
-        if (isNormal) {
-            document.getElementById(id).playbackRate = 1;
-        } else {
-            document.getElementById(id).playbackRate = 0.5;
-        }
-        document.getElementById(id).play();
-    };
-
-    $scope.removeLife = function() {
-        $scope.gameObject.life = $scope.gameObject.life - 1;
-        if ($scope.gameObject.life == 0) {
-            gameOver();
-        }
-    }
-});
-
-totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $http) {
-    var urlStr = "../../data/totaln5/data/grammar/json/type2.json";
-    $http({
-        method: "GET",
-        url: urlStr
-    }).
-    success(function(data, status) {
-        $scope.data = filter(data, 'id', $routeParams.lessonId);
-        $scope.answers = genAnswers($scope.data, "answer", 3);
-    });
-
-    $scope.lessonId = $routeParams.lessonId;
-    $scope.partId = $routeParams.partId;
-    $scope.gameObject = {
-        "life": 3
-    };
-
-
-    $scope.playSound = function(id) {
-        var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln5/lesson" + $routeParams.lessonId + "/sub4/audio/" + $scope.data[id].filename + ".mp3");
-        document.getElementById(id).load();
-        document.getElementById(id).play();
-    };
-
-    $scope.removeLife = function() {
-        $scope.gameObject.life = $scope.gameObject.life - 1;
-        if ($scope.gameObject.life == 0) {
-            gameOver();
-        }
-    };
-});
-
-totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $http) {
-    $scope.lessonId = $routeParams.lessonId;
-    $scope.partId = $routeParams.partId;
-    $scope.gameObject = {
-        "life": 3
-    };
-    $scope.removeLife = function() {
-        $scope.gameObject.life = $scope.gameObject.life - 1;
-        if ($scope.gameObject.life == 0) {
-            gameOver();
-        }
-    };
-
-    var urlStr = "../../data/totaln5/data/grammar/json/type3.json";
-    $http({
-        method: "GET",
-        url: urlStr
-    }).
-    success(function(data, status) {
-        $scope.data = filter(data, 'id', $routeParams.lessonId);
-        $scope.answers = genAnswers2($scope.data);
-    });
-});
 /*=============================================================
-=            Controller for totaln5 - Grammar game            =
+=            Controller for totaln4 - Grammar game            =
 =============================================================*/
 
-totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $http) {
+totaln4Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $http, dataService) {
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
+        $scope.data = akiraShuffle(filter(deferred.data, 'id', $routeParams.lessonId));
+    });
+
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.step = 0;
@@ -550,16 +421,9 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
         "correct": 0
     };
 
-    $http({
-        method: "GET",
-        url: "../../data/totaln5/grammar/json/type1.json"
-    }).success(function(data, status) {
-        $scope.data = filter(data, 'id', $routeParams.lessonId);
-    });
-
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln5/grammar/audio/" + $scope.data[id].filename + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/totaln4/grammar/audio/" + $scope.data[id].filename + ".mp3");
         $("audio#" + id + " source").attr
         document.getElementById(id).load();
         if (isNormal) {
@@ -573,7 +437,7 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct,$scope.data.length);
         }
     }
 
@@ -582,12 +446,15 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#grammarListenWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            $("#grammarListenWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#grammarListenWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarListenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarListenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -596,7 +463,7 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct);
+                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct,$scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -619,13 +486,9 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
     }
 });
 
-
-totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $http) {
-    $http({
-        method: "GET",
-        url: "../../data/totaln5/grammar/json/type2.json"
-    }).success(function(data, status) {
-        $scope.data = filter(data, 'id', $routeParams.lessonId);
+totaln4Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $http,dataService) {
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 2).then(function(deferred) {
+        $scope.data = akiraShuffle(filter(deferred.data, 'id', $routeParams.lessonId));
         $scope.answers = genAnswers($scope.data, "answer", 3);
     });
 
@@ -641,7 +504,7 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
 
     $scope.playSound = function(id) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/totaln5/grammar/audio/" + $scope.data[id].filename + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/totaln4/grammar/audio/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         document.getElementById(id).play();
     };
@@ -649,7 +512,7 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver();
+           gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct,$scope.data.length);
         }
     };
 
@@ -660,9 +523,11 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
             var userSlt = $("#grammarChoiceWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
             var correct = $("#grammarChoiceWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarChoiceWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarChoiceWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -671,7 +536,7 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct);
+                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct,$scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -694,14 +559,7 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
     }
 });
 
-/**
-
-    TODO:
-    - Lỗi kéo thả ở câu tiếp theo
-    - Lỗi check đúng sai
-
-**/
-totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $http) {
+totaln4Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $http,dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.stage = 0;
@@ -709,31 +567,33 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
         "life": 3,
         "correct": 0
     };
+
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct,$scope.data.length);
         }
     };
-    $http({
-        method: "GET",
-        url: "../../data/totaln5/grammar/json/type3.json"
-    }).
-    success(function(data, status) {
-        $scope.data = filter(data, 'id', $routeParams.lessonId);
+
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 3).then(function(deferred) {
+        $scope.data = akiraShuffle(filter(deferred.data, 'id', $routeParams.lessonId));
         $scope.answers = genAnswers2($scope.data);
     });
-
+    
     $scope.enterPress = function() {
         var step = $("#grammarTranslateWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#grammarTranslateWizard #step-" + step + " #user-input-wrapper #input-" + step).text().trim();
             var correct = $("#grammarTranslateWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+            correct = correct.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
+
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarTranslateWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarTranslateWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -742,7 +602,7 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct);
+                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct,$scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -754,7 +614,7 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
     }
 });
 
-totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http) {
+totaln4Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http,dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -771,12 +631,9 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http)
         }
     };
 
-    $http({
-        method: "GET",
-        url: "../../data/totaln5/grammar/json/type4.json"
-    }).
-    success(function(data, status) {
-        $scope.data = filter(data, 'id', $routeParams.lessonId);
+
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 4).then(function(deferred) {
+        $scope.data = akiraShuffle(filter(deferred.data, 'id', $routeParams.lessonId));
         $scope.answers = genAnswers($scope.data, "answer1", 2);
     });
 
@@ -787,9 +644,11 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http)
             var userSlt = $("#grammarReadWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
             var correct = $("#grammarReadWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarReadWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarReadWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -821,7 +680,7 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http)
     }
 });
 
-totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http) {
+totaln4Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http,dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -831,28 +690,27 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http)
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct);
+            gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct,$scope.data.length);
         }
     };
 
-    $http({
-        method: "GET",
-        url: "../../data/totaln5/grammar/json/type5.json"
-    }).
-    success(function(data, status) {
-        $scope.data = filter(data, 'id', $routeParams.lessonId);
+    dataService.getDataPromise("totaln4", $routeParams.lessonId, $routeParams.partId, 4).then(function(deferred) {
+        $scope.data = akiraShuffle(filter(deferred.data, 'id', $routeParams.lessonId));
     });
-
+    
     $scope.enterPress = function() {
         var step = $("#grammarWordWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#grammarWordWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            $("#grammarWordWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#grammarWordWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
+                playCorrect();
                 $("#grammarWordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
             } else {
+                playFail();
                 $("#grammarWordWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
                 $scope.removeLife();
             }
@@ -861,7 +719,7 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http)
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct);
+                gameOver('totaln4', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct,$scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -873,15 +731,17 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http)
     }
 
     $scope.keyPress = function(e, keyCode) {
-        if (13 != keyCode) {
-            if ("" == $("#input-" + e).val()) {
-                $scope.stage = 0;
-            } else {
-                $scope.stage = 1;
+        if ($scope.stage != 2) {
+            if (13 != keyCode) {
+                if ("" == $("#input-" + e).val()) {
+                    $scope.stage = 0;
+                } else {
+                    $scope.stage = 1;
+                }
             }
         }
         changeLang();
     }
 });
 
-/*-----  End of Controller for totaln5 - Grammar game  ------*/
+/*-----  End of Controller for totaln4 - Grammar game  ------*/

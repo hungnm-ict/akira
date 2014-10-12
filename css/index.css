@@ -60,7 +60,7 @@ body {
 .f-left {
     float: left;
 }
-.ava-circle {
+.avatar.avatar-32.wp-user-avatar,.ava-circle {
     line-height: 40px;
     display: inline-block !important;
     width: 40px !important;
@@ -1406,13 +1406,7 @@ ul.anchor li a .stepNumber {
     z-index: 100;
 }
 #feedback {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: rotate(90deg);
-       -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-         -o-transform: rotate(90deg);
-            transform: rotate(90deg);
+ 
 }
 
 

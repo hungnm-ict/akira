@@ -42,8 +42,14 @@ var initMin = angular.element("#game-scope").scope().time;
 var count = parseInt(initMin) * 60;
 var classStr = "normal";
 $("#timeleft").text(initMin + " : 00");
-setInterval(function() {
+var timer = setInterval(function() {
     count--;
+    if (count == -1)
+    {
+        clearInterval(timer);
+        //do stuffs
+        return;
+    }
     var mins = Math.floor(count / 60);
     if (mins <= 5) {
         classStr = "warning";

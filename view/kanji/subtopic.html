@@ -8,8 +8,8 @@
         <li ng-repeat="val in [1,2,3]">
             <a href="#step-{{val}}" ng-click="partId={{val}}">
                 <label class="stepNumber">
-                    <span ng-switch on="isEnabled({{val}})">
-                        <span ng-switch-when="true">{{val}}</span>
+                    <span ng-switch on="isEnabled(val)">
+                        <span ng-switch-when="true" ng-bind="val"></span>
                         <span ng-switch-when="false"><i class="fa fa-lock"></i>
                         </span>
                         <span ng-switch-default><i class="fa fa-lock"></i>

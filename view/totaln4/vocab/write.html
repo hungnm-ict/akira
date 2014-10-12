@@ -26,7 +26,7 @@
                                 Your browser does not support the audio element.
                         </audio>
                         <i class="fa fa-volume-up fa-2x write-btn-play"></i>
-                        <img ng-src="../../data/totaln4/vocab/n4vocab.image-v2.0/{{val.filename}}.png" class="img-responsive">
+                        <img ng-src="../../data/totaln4/vocab/image/{{val.filename}}.png" class="img-responsive">
                         <h4 class="center" style="text-transform:captalize">{{val.vie}}</h4>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                     <div id="user-input-wrapper">
                         <div class="row none-padding">
                             <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" onfocus="this.placeholder=''" type="text" />
+                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)"  type="text" />
                             </div>
                         </div>
                     </div>

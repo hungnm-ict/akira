@@ -102,7 +102,6 @@ mobi.service('mobiService', function($http) {
         url: "../../data/totaln5/vocab/n5vocab_v2.0.json"
     });
 
-
     this.totalN4Promise = $http({
         method: "GET",
         url: "../../data/totaln5/vocab/n5vocab_v2.0.json"

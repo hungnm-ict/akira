@@ -65,23 +65,23 @@ totaln5App.config(['$routeProvider',
                 templateUrl: 'vocab/write.html',
                 controller: 'writeCtrl'
             })
-            .when('/:lessonId/4/listen1', {
+            .when('/:lessonId/:partId/listen1', {
                 templateUrl: 'grammar/listen.html',
                 controller: 'grammarListenCtrl'
             })
-            .when('/:lessonId/4/choice', {
+            .when('/:lessonId/:partId/choice', {
                 templateUrl: 'grammar/choice.html',
                 controller: 'grammarChoiceCtrl'
             })
-            .when('/:lessonId/4/translate', {
+            .when('/:lessonId/:partId/translate', {
                 templateUrl: 'grammar/translate.html',
                 controller: 'grammarTranslateCtrl'
             })
-            .when('/:lessonId/4/read', {
+            .when('/:lessonId/:partId/read', {
                 templateUrl: 'grammar/read.html',
                 controller: 'grammarReadCtrl'
             })
-            .when('/:lessonId/4/word1', {
+            .when('/:lessonId/:partId/word1', {
                 templateUrl: 'grammar/word.html',
                 controller: 'grammarWordCtrl'
             })
@@ -93,19 +93,45 @@ totaln5App.config(['$routeProvider',
 
 
 totaln5App.service('dataService', function($http) {
-    this.promise = $http({
+
+    this.kana1 = $http({
         method: "GET",
-        url: "../../data/totaln5/vocab/n5vocab_v2.0.json"
+        url: "../../data/kana/json/kana_1.json"
     });
 
-    this.kanaPromise1 = $http({
+    this.kana2 = $http({
         method: "GET",
-        url: "../../data/kana/kana_type1_v2.0.json"
+        url: "../../data/kana/json/kana_2.json"
     });
 
-    this.kanaPromise2 = $http({
+    this.n5Vocab = $http({
         method: "GET",
-        url: "../../data/kana/kana_type1_v2.0.json"
+        url: "../../data/totaln5/vocab/json/n5vocab.json"
+    });
+
+    this.n5Grammar1 = $http({
+        method: "GET",
+        url: "../../data/totaln5/grammar/json/type1.json"
+    });
+
+    this.n5Grammar2 = $http({
+        method: "GET",
+        url: "../../data/totaln5/grammar/json/type2.json"
+    });
+
+    this.n5Grammar3 = $http({
+        method: "GET",
+        url: "../../data/totaln5/grammar/json/type3.json"
+    });
+
+    this.n5Grammar4 = $http({
+        method: "GET",
+        url: "../../data/totaln5/grammar/json/type4.json"
+    });
+
+    this.n5Grammar5 = $http({
+        method: "GET",
+        url: "../../data/totaln5/grammar/json/type5.json"
     });
 
     this.filter = function(data, key1, lessonId, key2, partId) {
@@ -118,20 +144,85 @@ totaln5App.service('dataService', function($http) {
         return uniqueGroups;
     }
 
-    this.numOfSub = function(data, lessonId) {
-        var currSub;
-        var numOfSub = [];
-        $.each(data, function(idx, val) {
-            if (data[idx]["topic"] == lessonId) {
-                if (currSub != data[idx]["sub"]) {
-                    numOfSub.push(data[idx]["sub"]);
-                    currSub = data[idx]["sub"];
+    this.getDataPromise = function(course, lessonId, subId, skill) {
+        switch (course) {
+            case "totaln5":
+                switch (subId) {
+                    case "1":
+                    case "2":
+                    case "3":
+                    return this.n5Vocab;
+                    break;
+                    case "4":
+                        switch (skill) {
+                            case 1:
+                                return this.n5Grammar1;
+                                break;
+                            case 2:
+                                return this.n5Grammar2;
+                                break;
+                            case 3:
+                                return this.n5Grammar3;
+                                break;
+                            case 4:
+                                return this.n5Grammar4;
+                                break;
+                            case 5:
+                                return this.n5Grammar5;
+                                break;
+                            default:
+                                return null;
+                                break;
+                        }
+                        break;
                 }
-            }
-        });
-        return numOfSub;
+                break;
+            case "kana":
+                switch (lessonId) {
+                    case "1":
+                    case "3":
+                        return this.kana1;
+                        break;
+                    case "2":
+                    case "4":
+                        return this.kana2;
+                        break;
+                }
+                break;
+            default:
+                return null;
+                break;
+        }
     }
 });
+
+totaln5App.service('restService', function($http) {
+    this.n5Star = $http({
+        method: "GET",
+        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln5&userid=" + getUser().id
+    });
+
+    this.kanaStar = $http({
+        method: "GET",
+        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kana&userid=" + getUser().id
+    });
+
+    this.getRestPromise = function(course) {
+        switch (course) {
+            case "totaln5":
+                return this.n5Star;
+                break;
+            case "kana":
+                return this.kanaStar;
+                break;
+            default:
+                return null;
+                break;
+        }
+    }
+
+});
+
 
 totaln5App.controller('rootController', function($scope) {
     $scope.rootPlay = function(data, course, step, id) {
