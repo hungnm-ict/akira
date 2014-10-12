@@ -24,15 +24,6 @@
                 </label>
             </a>
         </li>
-        <li>
-            <a href="#step-4" ng-click="show(false)">
-                <label class="stepNumber">
-                    <span data-i18n="common.part"></span>
-                    <span>&nbsp;4</span>
-                </label>
-
-            </a>
-        </li>
     </ul>
     <span id="star">
         <span class="number">
@@ -44,7 +35,7 @@
             <i class="fa fa-star  grammar"></i>
         </span>
     </span>
-    <div id="step-{{step}}" ng-repeat="step in [1,2,3,4] ">
+    <div id="step-{{step}}" ng-repeat="step in [1,2,3] ">
         <div class="wrapper">
             <!-- Sample ngrepeat -->
             <div class="row" ng-repeat="val in [step*2-2,step*2-1]">

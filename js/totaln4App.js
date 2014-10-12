@@ -8,12 +8,10 @@ totaln4App.config(['$routeProvider',
                 controller: 'mainCtrl'
             })
             .when('/:lessonId', {
-                templateUrl: 'subtopic.html',
+                templateUrl: function(urlAttr) {
+                    return 'subtopic.html';
+                },
                 controller: 'subCtrl'
-            })
-            .when('/:lessonId/:partId/learn', {
-                templateUrl: 'vocab/learn.html',
-                controller: 'learnCtrl'
             })
             .when('/:lessonId/:partId/picture', {
                 templateUrl: 'vocab/picture.html',
@@ -35,23 +33,23 @@ totaln4App.config(['$routeProvider',
                 templateUrl: 'vocab/write.html',
                 controller: 'writeCtrl'
             })
-            .when('/:lessonId/4/listen1', {
+            .when('/:lessonId/:partId/listen1', {
                 templateUrl: 'grammar/listen.html',
                 controller: 'grammarListenCtrl'
             })
-            .when('/:lessonId/4/choice', {
+            .when('/:lessonId/:partId/choice', {
                 templateUrl: 'grammar/choice.html',
                 controller: 'grammarChoiceCtrl'
             })
-            .when('/:lessonId/4/translate', {
+            .when('/:lessonId/:partId/translate', {
                 templateUrl: 'grammar/translate.html',
                 controller: 'grammarTranslateCtrl'
             })
-            .when('/:lessonId/4/read', {
+            .when('/:lessonId/:partId/read', {
                 templateUrl: 'grammar/read.html',
                 controller: 'grammarReadCtrl'
             })
-            .when('/:lessonId/4/word1', {
+            .when('/:lessonId/:partId/word1', {
                 templateUrl: 'grammar/word.html',
                 controller: 'grammarWordCtrl'
             })
@@ -62,9 +60,34 @@ totaln4App.config(['$routeProvider',
 ]);
 
 totaln4App.service('dataService', function($http) {
-    this.promise = $http({
+    this.n4Vocab = $http({
         method: "GET",
-        url: "../../data/totaln4/vocab/n4vocab_v2.0.json"
+        url: "../../data/totaln4/vocab/json/n4vocab.json"
+    });
+
+    this.n4Grammar1 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type1.json"
+    });
+
+    this.n4Grammar2 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type2.json"
+    });
+
+    this.n4Grammar3 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type3.json"
+    });
+
+    this.n4Grammar4 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type4.json"
+    });
+
+    this.n4Grammar5 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type5.json"
     });
 
     this.filter = function(data, key1, lessonId, key2, partId) {
@@ -76,6 +99,66 @@ totaln4App.service('dataService', function($http) {
         });
         return uniqueGroups;
     }
+
+        this.getDataPromise = function(course, lessonId, subId, skill) {
+        switch (course) {
+            case "totaln4":
+                switch (subId) {
+                    case "1":
+                    case "2":
+                    case "3":
+                    return this.n4Vocab;
+                    break;
+                    case "4":
+                        switch (skill) {
+                            case 1:
+                                return this.n4Grammar1;
+                                break;
+                            case 2:
+                                return this.n4Grammar2;
+                                break;
+                            case 3:
+                                return this.n4Grammar3;
+                                break;
+                            case 4:
+                                return this.n4Grammar4;
+                                break;
+                            case 5:
+                                return this.n4Grammar5;
+                                break;
+                            default:
+                                return null;
+                                break;
+                        }
+                        break;
+                }
+                break;
+            default:
+                return null;
+                break;
+        }
+    }
+});
+
+
+totaln4App.service('restService', function($http) {
+    this.n4Star = $http({
+        method: "GET",
+        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln4&userid=" + getUser().id
+    });
+
+
+    this.getRestPromise = function(course) {
+        switch (course) {
+            case "totaln4":
+                return this.n4Star;
+                break;
+            default:
+                return null;
+                break;
+        }
+    }
+
 });
 
 totaln4App.controller('rootController', function($scope) {

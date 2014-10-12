@@ -1,0 +1,1702 @@
+[
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 1,
+    "hiragana": "あ",
+    "romaji": "a",
+    "vietnamese": "a",
+    "english": "a",
+    "filename": "a"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 2,
+    "hiragana": "い",
+    "romaji": "i",
+    "vietnamese": "i",
+    "english": "i",
+    "filename": "i"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 3,
+    "hiragana": "う",
+    "romaji": "u",
+    "vietnamese": "u",
+    "english": "u",
+    "filename": "u"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 4,
+    "hiragana": "え",
+    "romaji": "e",
+    "vietnamese": "e",
+    "english": "e",
+    "filename": "e"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 5,
+    "hiragana": "お",
+    "romaji": "o",
+    "vietnamese": "o",
+    "english": "o",
+    "filename": "o"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 6,
+    "hiragana": "か",
+    "romaji": "ka",
+    "vietnamese": "ka",
+    "english": "ka",
+    "filename": "ka"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 7,
+    "hiragana": "き",
+    "romaji": "ki",
+    "vietnamese": "ki",
+    "english": "ki",
+    "filename": "ki"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 8,
+    "hiragana": "く",
+    "romaji": "ku",
+    "vietnamese": "ku",
+    "english": "ku",
+    "filename": "ku"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 9,
+    "hiragana": "け",
+    "romaji": "ke",
+    "vietnamese": "ke",
+    "english": "ke",
+    "filename": "ke"
+  },
+  {
+    "topicid": 1,
+    "subid": 1,
+    "questid": 10,
+    "hiragana": "こ",
+    "romaji": "ko",
+    "vietnamese": "ko",
+    "english": "ko",
+    "filename": "ko"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 1,
+    "hiragana": "さ",
+    "romaji": "sa",
+    "vietnamese": "sa",
+    "english": "sa",
+    "filename": "sa"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 2,
+    "hiragana": "し",
+    "romaji": "shi",
+    "vietnamese": "shi",
+    "english": "shi",
+    "filename": "shi"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 3,
+    "hiragana": "す",
+    "romaji": "su",
+    "vietnamese": "su",
+    "english": "su",
+    "filename": "su"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 4,
+    "hiragana": "せ",
+    "romaji": "se",
+    "vietnamese": "se",
+    "english": "se",
+    "filename": "se"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 5,
+    "hiragana": "そ",
+    "romaji": "so",
+    "vietnamese": "so",
+    "english": "so",
+    "filename": "so"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 6,
+    "hiragana": "な",
+    "romaji": "na",
+    "vietnamese": "na",
+    "english": "na",
+    "filename": "na"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 7,
+    "hiragana": "に",
+    "romaji": "ni",
+    "vietnamese": "ni",
+    "english": "ni",
+    "filename": "ni"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 8,
+    "hiragana": "ぬ",
+    "romaji": "nu",
+    "vietnamese": "nu",
+    "english": "nu",
+    "filename": "nu"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 9,
+    "hiragana": "ね",
+    "romaji": "ne",
+    "vietnamese": "ne",
+    "english": "ne",
+    "filename": "ne"
+  },
+  {
+    "topicid": 1,
+    "subid": 2,
+    "questid": 10,
+    "hiragana": "の",
+    "romaji": "no",
+    "vietnamese": "no",
+    "english": "no",
+    "filename": "no"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 1,
+    "hiragana": "た",
+    "romaji": "ta",
+    "vietnamese": "ta",
+    "english": "ta",
+    "filename": "ta"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 2,
+    "hiragana": "ち",
+    "romaji": "chi",
+    "vietnamese": "chi",
+    "english": "chi",
+    "filename": "chi"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 3,
+    "hiragana": "つ",
+    "romaji": "tsu",
+    "vietnamese": "tsu",
+    "english": "tsu",
+    "filename": "tsu"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 4,
+    "hiragana": "て",
+    "romaji": "te",
+    "vietnamese": "te",
+    "english": "te",
+    "filename": "te"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 5,
+    "hiragana": "と",
+    "romaji": "to",
+    "vietnamese": "to",
+    "english": "to",
+    "filename": "to"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 6,
+    "hiragana": "は",
+    "romaji": "ha",
+    "vietnamese": "ha",
+    "english": "ha",
+    "filename": "ha"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 7,
+    "hiragana": "ひ",
+    "romaji": "hi",
+    "vietnamese": "hi",
+    "english": "hi",
+    "filename": "hi"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 8,
+    "hiragana": "ふ",
+    "romaji": "fu",
+    "vietnamese": "fu",
+    "english": "fu",
+    "filename": "fu"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 9,
+    "hiragana": "へ",
+    "romaji": "he",
+    "vietnamese": "he",
+    "english": "he",
+    "filename": "he"
+  },
+  {
+    "topicid": 1,
+    "subid": 3,
+    "questid": 10,
+    "hiragana": "ほ",
+    "romaji": "ho",
+    "vietnamese": "ho",
+    "english": "ho",
+    "filename": "ho"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 1,
+    "hiragana": "ま",
+    "romaji": "ma",
+    "vietnamese": "ma",
+    "english": "ma",
+    "filename": "ma"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 2,
+    "hiragana": "み",
+    "romaji": "mi",
+    "vietnamese": "mi",
+    "english": "mi",
+    "filename": "mi"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 3,
+    "hiragana": "む",
+    "romaji": "mu",
+    "vietnamese": "mu",
+    "english": "mu",
+    "filename": "mu"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 4,
+    "hiragana": "め",
+    "romaji": "me",
+    "vietnamese": "me",
+    "english": "me",
+    "filename": "me"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 5,
+    "hiragana": "も",
+    "romaji": "mo",
+    "vietnamese": "mo",
+    "english": "mo",
+    "filename": "mo"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 6,
+    "hiragana": "や",
+    "romaji": "ya",
+    "vietnamese": "ya",
+    "english": "ya",
+    "filename": "ya"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 7,
+    "hiragana": "ゆ",
+    "romaji": "yu",
+    "vietnamese": "yu",
+    "english": "yu",
+    "filename": "yu"
+  },
+  {
+    "topicid": 1,
+    "subid": 4,
+    "questid": 8,
+    "hiragana": "よ",
+    "romaji": "yo",
+    "vietnamese": "yo",
+    "english": "yo",
+    "filename": "yo"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 1,
+    "hiragana": "ら",
+    "romaji": "ra",
+    "vietnamese": "ra",
+    "english": "ra",
+    "filename": "ra"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 2,
+    "hiragana": "り",
+    "romaji": "ri",
+    "vietnamese": "ri",
+    "english": "ri",
+    "filename": "ri"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 3,
+    "hiragana": "る",
+    "romaji": "ru",
+    "vietnamese": "ru",
+    "english": "ru",
+    "filename": "ru"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 4,
+    "hiragana": "れ",
+    "romaji": "re",
+    "vietnamese": "re",
+    "english": "re",
+    "filename": "re"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 5,
+    "hiragana": "ろ",
+    "romaji": "ro",
+    "vietnamese": "ro",
+    "english": "ro",
+    "filename": "ro"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 6,
+    "hiragana": "わ",
+    "romaji": "wa",
+    "vietnamese": "wa",
+    "english": "wa",
+    "filename": "wa"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 7,
+    "hiragana": "を",
+    "romaji": "wo",
+    "vietnamese": "wo",
+    "english": "wo",
+    "filename": "wo"
+  },
+  {
+    "topicid": 1,
+    "subid": 5,
+    "questid": 8,
+    "hiragana": "ん",
+    "romaji": "n",
+    "vietnamese": "n",
+    "english": "n",
+    "filename": "n"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 1,
+    "hiragana": "が",
+    "romaji": "ga",
+    "vietnamese": "ga",
+    "english": "ga",
+    "filename": "ga"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 2,
+    "hiragana": "ぎ",
+    "romaji": "gi",
+    "vietnamese": "gi",
+    "english": "gi",
+    "filename": "gi"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 3,
+    "hiragana": "ぐ",
+    "romaji": "gu",
+    "vietnamese": "gu",
+    "english": "gu",
+    "filename": "gu"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 4,
+    "hiragana": "げ",
+    "romaji": "ge",
+    "vietnamese": "ge",
+    "english": "ge",
+    "filename": "ge"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 5,
+    "hiragana": "ご",
+    "romaji": "go",
+    "vietnamese": "go",
+    "english": "go",
+    "filename": "go"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 6,
+    "hiragana": "ざ",
+    "romaji": "za",
+    "vietnamese": "za",
+    "english": "za",
+    "filename": "za"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 7,
+    "hiragana": "じ",
+    "romaji": "ji",
+    "vietnamese": "ji",
+    "english": "ji",
+    "filename": "ji"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 8,
+    "hiragana": "ず",
+    "romaji": "zu",
+    "vietnamese": "zu",
+    "english": "zu",
+    "filename": "zu"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 9,
+    "hiragana": "ぜ",
+    "romaji": "ze",
+    "vietnamese": "ze",
+    "english": "ze",
+    "filename": "ze"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 10,
+    "hiragana": "ぞ",
+    "romaji": "zo",
+    "vietnamese": "zo",
+    "english": "zo",
+    "filename": "zo"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 11,
+    "hiragana": "だ",
+    "romaji": "da",
+    "vietnamese": "da",
+    "english": "da",
+    "filename": "da"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 12,
+    "hiragana": "で",
+    "romaji": "de",
+    "vietnamese": "de",
+    "english": "de",
+    "filename": "de"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 13,
+    "hiragana": "ど",
+    "romaji": "do",
+    "vietnamese": "do",
+    "english": "do",
+    "filename": "do"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 14,
+    "hiragana": "ば",
+    "romaji": "ba",
+    "vietnamese": "ba",
+    "english": "ba",
+    "filename": "ba"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 15,
+    "hiragana": "び",
+    "romaji": "bi",
+    "vietnamese": "bi",
+    "english": "bi",
+    "filename": "bi"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 16,
+    "hiragana": "ぶ",
+    "romaji": "bu",
+    "vietnamese": "bu",
+    "english": "bu",
+    "filename": "bu"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 17,
+    "hiragana": "べ",
+    "romaji": "be",
+    "vietnamese": "be",
+    "english": "be",
+    "filename": "be"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 18,
+    "hiragana": "ぼ",
+    "romaji": "bo",
+    "vietnamese": "bo",
+    "english": "bo",
+    "filename": "bo"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 19,
+    "hiragana": "ぱ",
+    "romaji": "pa",
+    "vietnamese": "pa",
+    "english": "pa",
+    "filename": "pa"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 20,
+    "hiragana": "ぴ",
+    "romaji": "pi",
+    "vietnamese": "pi",
+    "english": "pi",
+    "filename": "pi"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 21,
+    "hiragana": "ぷ",
+    "romaji": "pu",
+    "vietnamese": "pu",
+    "english": "pu",
+    "filename": "pu"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 22,
+    "hiragana": "ぺ",
+    "romaji": "pe",
+    "vietnamese": "pe",
+    "english": "pe",
+    "filename": "pe"
+  },
+  {
+    "topicid": 2,
+    "subid": 1,
+    "questid": 23,
+    "hiragana": "ぽ",
+    "romaji": "po",
+    "vietnamese": "po",
+    "english": "po",
+    "filename": "po"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 1,
+    "hiragana": "きゃ",
+    "romaji": "kya",
+    "vietnamese": "kya",
+    "english": "kya",
+    "filename": "kya"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 2,
+    "hiragana": "きゅ",
+    "romaji": "kyu",
+    "vietnamese": "kyu",
+    "english": "kyu",
+    "filename": "kyu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 3,
+    "hiragana": "きょ",
+    "romaji": "kyo",
+    "vietnamese": "kyo",
+    "english": "kyo",
+    "filename": "kyo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 4,
+    "hiragana": "ぎゃ",
+    "romaji": "gya",
+    "vietnamese": "gya",
+    "english": "gya",
+    "filename": "gya"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 5,
+    "hiragana": "ぎゅ",
+    "romaji": "gyu",
+    "vietnamese": "gyu",
+    "english": "gyu",
+    "filename": "gyu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 6,
+    "hiragana": "ぎょ",
+    "romaji": "gyo",
+    "vietnamese": "gyo",
+    "english": "gyo",
+    "filename": "gyo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 7,
+    "hiragana": "しゃ",
+    "romaji": "sha",
+    "vietnamese": "sha",
+    "english": "sha",
+    "filename": "sha"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 8,
+    "hiragana": "しゅ",
+    "romaji": "shu",
+    "vietnamese": "shu",
+    "english": "shu",
+    "filename": "shu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 9,
+    "hiragana": "しょ",
+    "romaji": "sho",
+    "vietnamese": "sho",
+    "english": "sho",
+    "filename": "sho"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 10,
+    "hiragana": "じゃ",
+    "romaji": "ja",
+    "vietnamese": "ja",
+    "english": "ja",
+    "filename": "ja"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 11,
+    "hiragana": "じゅ",
+    "romaji": "ju",
+    "vietnamese": "ju",
+    "english": "ju",
+    "filename": "ju"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 12,
+    "hiragana": "じょ",
+    "romaji": "jo",
+    "vietnamese": "jo",
+    "english": "jo",
+    "filename": "jo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 13,
+    "hiragana": "ちゃ",
+    "romaji": "cha",
+    "vietnamese": "cha",
+    "english": "cha",
+    "filename": "cha"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 14,
+    "hiragana": "ちゅ",
+    "romaji": "chu",
+    "vietnamese": "chu",
+    "english": "chu",
+    "filename": "chu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 15,
+    "hiragana": "ちょ",
+    "romaji": "cho",
+    "vietnamese": "cho",
+    "english": "cho",
+    "filename": "cho"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 16,
+    "hiragana": "にゃ",
+    "romaji": "nya",
+    "vietnamese": "nya",
+    "english": "nya",
+    "filename": "nya"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 17,
+    "hiragana": "にゅ",
+    "romaji": "nyu",
+    "vietnamese": "nyu",
+    "english": "nyu",
+    "filename": "nyu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 18,
+    "hiragana": "にょ",
+    "romaji": "nyo",
+    "vietnamese": "nyo",
+    "english": "nyo",
+    "filename": "nyo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 19,
+    "hiragana": "ひゃ",
+    "romaji": "hya",
+    "vietnamese": "hya",
+    "english": "hya",
+    "filename": "hya"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 20,
+    "hiragana": "ひゅ",
+    "romaji": "hyu",
+    "vietnamese": "hyu",
+    "english": "hyu",
+    "filename": "hyu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 21,
+    "hiragana": "ひょ",
+    "romaji": "hyo",
+    "vietnamese": "hyo",
+    "english": "hyo",
+    "filename": "hyo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 22,
+    "hiragana": "びゃ",
+    "romaji": "bya",
+    "vietnamese": "bya",
+    "english": "bya",
+    "filename": "bya"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 23,
+    "hiragana": "びゅ",
+    "romaji": "byu",
+    "vietnamese": "byu",
+    "english": "byu",
+    "filename": "byu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 24,
+    "hiragana": "びょ",
+    "romaji": "byo",
+    "vietnamese": "byo",
+    "english": "byo",
+    "filename": "byo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 25,
+    "hiragana": "ぴゃ",
+    "romaji": "pya",
+    "vietnamese": "pya",
+    "english": "pya",
+    "filename": "pya"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 26,
+    "hiragana": "ぴゅ",
+    "romaji": "pyu",
+    "vietnamese": "pyu",
+    "english": "pyu",
+    "filename": "pyu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 27,
+    "hiragana": "ぴょ",
+    "romaji": "pyo",
+    "vietnamese": "pyo",
+    "english": "pyo",
+    "filename": "pyo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 28,
+    "hiragana": "みゃ",
+    "romaji": "mya",
+    "vietnamese": "mya",
+    "english": "mya",
+    "filename": "mya"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 29,
+    "hiragana": "みゅ",
+    "romaji": "myu",
+    "vietnamese": "myu",
+    "english": "myu",
+    "filename": "myu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 30,
+    "hiragana": "みょ",
+    "romaji": "myo",
+    "vietnamese": "myo",
+    "english": "myo",
+    "filename": "myo"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 31,
+    "hiragana": "りゃ",
+    "romaji": "rya",
+    "vietnamese": "rya",
+    "english": "rya",
+    "filename": "rya"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 32,
+    "hiragana": "りゅ",
+    "romaji": "ryu",
+    "vietnamese": "ryu",
+    "english": "ryu",
+    "filename": "ryu"
+  },
+  {
+    "topicid": 2,
+    "subid": 3,
+    "questid": 33,
+    "hiragana": "りょ",
+    "romaji": "ryo",
+    "vietnamese": "ryo",
+    "english": "ryo",
+    "filename": "ryo"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 1,
+    "hiragana": "ア",
+    "romaji": "a",
+    "vietnamese": "a",
+    "english": "a",
+    "filename": "a"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 2,
+    "hiragana": "イ",
+    "romaji": "i",
+    "vietnamese": "i",
+    "english": "i",
+    "filename": "i"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 3,
+    "hiragana": "ウ",
+    "romaji": "u",
+    "vietnamese": "u",
+    "english": "u",
+    "filename": "u"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 4,
+    "hiragana": "エ",
+    "romaji": "e",
+    "vietnamese": "e",
+    "english": "e",
+    "filename": "e"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 5,
+    "hiragana": "オ",
+    "romaji": "o",
+    "vietnamese": "o",
+    "english": "o",
+    "filename": "o"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 6,
+    "hiragana": "カ",
+    "romaji": "ka",
+    "vietnamese": "ka",
+    "english": "ka",
+    "filename": "ka"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 7,
+    "hiragana": "キ",
+    "romaji": "ki",
+    "vietnamese": "ki",
+    "english": "ki",
+    "filename": "ki"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 8,
+    "hiragana": "ク",
+    "romaji": "ku",
+    "vietnamese": "ku",
+    "english": "ku",
+    "filename": "ku"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 9,
+    "hiragana": "ケ",
+    "romaji": "ke",
+    "vietnamese": "ke",
+    "english": "ke",
+    "filename": "ke"
+  },
+  {
+    "topicid": 3,
+    "subid": 1,
+    "questid": 10,
+    "hiragana": "コ",
+    "romaji": "ko",
+    "vietnamese": "ko",
+    "english": "ko",
+    "filename": "ko"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 1,
+    "hiragana": "サ",
+    "romaji": "sa",
+    "vietnamese": "sa",
+    "english": "sa",
+    "filename": "sa"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 2,
+    "hiragana": "シ",
+    "romaji": "shi",
+    "vietnamese": "shi",
+    "english": "shi",
+    "filename": "shi"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 3,
+    "hiragana": "ス",
+    "romaji": "su",
+    "vietnamese": "su",
+    "english": "su",
+    "filename": "su"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 4,
+    "hiragana": "セ",
+    "romaji": "se",
+    "vietnamese": "se",
+    "english": "se",
+    "filename": "se"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 5,
+    "hiragana": "ソ",
+    "romaji": "so",
+    "vietnamese": "so",
+    "english": "so",
+    "filename": "so"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 6,
+    "hiragana": "ナ",
+    "romaji": "na",
+    "vietnamese": "na",
+    "english": "na",
+    "filename": "na"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 7,
+    "hiragana": "ニ",
+    "romaji": "ni",
+    "vietnamese": "ni",
+    "english": "ni",
+    "filename": "ni"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 8,
+    "hiragana": "ヌ",
+    "romaji": "nu",
+    "vietnamese": "nu",
+    "english": "nu",
+    "filename": "nu"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 9,
+    "hiragana": "ネ",
+    "romaji": "ne",
+    "vietnamese": "ne",
+    "english": "ne",
+    "filename": "ne"
+  },
+  {
+    "topicid": 3,
+    "subid": 2,
+    "questid": 10,
+    "hiragana": "ノ",
+    "romaji": "no",
+    "vietnamese": "no",
+    "english": "no",
+    "filename": "no"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 1,
+    "hiragana": "タ",
+    "romaji": "ta",
+    "vietnamese": "ta",
+    "english": "ta",
+    "filename": "ta"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 2,
+    "hiragana": "チ",
+    "romaji": "chi",
+    "vietnamese": "chi",
+    "english": "chi",
+    "filename": "chi"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 3,
+    "hiragana": "ツ",
+    "romaji": "tsu",
+    "vietnamese": "tsu",
+    "english": "tsu",
+    "filename": "tsu"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 4,
+    "hiragana": "テ",
+    "romaji": "te",
+    "vietnamese": "te",
+    "english": "te",
+    "filename": "te"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 5,
+    "hiragana": "ト",
+    "romaji": "to",
+    "vietnamese": "to",
+    "english": "to",
+    "filename": "to"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 6,
+    "hiragana": "ハ",
+    "romaji": "ha",
+    "vietnamese": "ha",
+    "english": "ha",
+    "filename": "ha"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 7,
+    "hiragana": "ヒ",
+    "romaji": "hi",
+    "vietnamese": "hi",
+    "english": "hi",
+    "filename": "hi"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 8,
+    "hiragana": "フ",
+    "romaji": "fu",
+    "vietnamese": "fu",
+    "english": "fu",
+    "filename": "fu"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 9,
+    "hiragana": "へ",
+    "romaji": "he",
+    "vietnamese": "he",
+    "english": "he",
+    "filename": "he"
+  },
+  {
+    "topicid": 3,
+    "subid": 3,
+    "questid": 10,
+    "hiragana": "ホ",
+    "romaji": "ho",
+    "vietnamese": "ho",
+    "english": "ho",
+    "filename": "ho"
+  },
+  {
+    "topicid": 3,
+    "subid": 4,
+    "questid": 1,
+    "hiragana": "マ",
+    "romaji": "ma",
+    "vietnamese": "ma",
+    "english": "ma",
+    "filename": "ma"
+  },
+  {
+    "topicid": 3,
+    "subid": 4,
+    "questid": 1,
+    "hiragana": "三",
+    "romaji": "mi",
+    "vietnamese": "mi",
+    "english": "mi",
+    "filename": "mi"
+  },
+  {
+    "topicid": 3,
+    "subid": 4,
+    "questid": 2,
+    "hiragana": "ム",
+    "romaji": "mu",
+    "vietnamese": "mu",
+    "english": "mu",
+    "filename": "mu"
+  },
+  {
+    "topicid": 3,
+    "subid": 4,
+    "questid": 3,
+    "hiragana": "メ",
+    "romaji": "me",
+    "vietnamese": "me",
+    "english": "me",
+    "filename": "me"
+  },
+  {
+    "topicid": 3,
+    "subid": 4,
+    "questid": 4,
+    "hiragana": "モ",
+    "romaji": "mo",
+    "vietnamese": "mo",
+    "english": "mo",
+    "filename": "mo"
+  },
+  {
+    "topicid": 3,
+    "subid": 4,
+    "questid": 5,
+    "hiragana": "ヤ",
+    "romaji": "ya",
+    "vietnamese": "ya",
+    "english": "ya",
+    "filename": "ya"
+  },
+  {
+    "topicid": 3,
+    "subid": 4,
+    "questid": 6,
+    "hiragana": "ユ",
+    "romaji": "yu",
+    "vietnamese": "yu",
+    "english": "yu",
+    "filename": "yu"
+  },
+  {
+    "topicid": 3,
+    "subid": 4,
+    "questid": 7,
+    "hiragana": "ヨ",
+    "romaji": "yo",
+    "vietnamese": "yo",
+    "english": "yo",
+    "filename": "yo"
+  },
+  {
+    "topicid": 3,
+    "subid": 5,
+    "questid": 1,
+    "hiragana": "ラ",
+    "romaji": "ra",
+    "vietnamese": "ra",
+    "english": "ra",
+    "filename": "ra"
+  },
+  {
+    "topicid": 3,
+    "subid": 5,
+    "questid": 2,
+    "hiragana": "リ",
+    "romaji": "ri",
+    "vietnamese": "ri",
+    "english": "ri",
+    "filename": "ri"
+  },
+  {
+    "topicid": 3,
+    "subid": 5,
+    "questid": 3,
+    "hiragana": "ル",
+    "romaji": "ru",
+    "vietnamese": "ru",
+    "english": "ru",
+    "filename": "ru"
+  },
+  {
+    "topicid": 3,
+    "subid": 5,
+    "questid": 4,
+    "hiragana": "レ",
+    "romaji": "re",
+    "vietnamese": "re",
+    "english": "re",
+    "filename": "re"
+  },
+  {
+    "topicid": 3,
+    "subid": 5,
+    "questid": 5,
+    "hiragana": "ロ",
+    "romaji": "ro",
+    "vietnamese": "ro",
+    "english": "ro",
+    "filename": "ro"
+  },
+  {
+    "topicid": 3,
+    "subid": 5,
+    "questid": 6,
+    "hiragana": "ワ",
+    "romaji": "wa",
+    "vietnamese": "wa",
+    "english": "wa",
+    "filename": "wa"
+  },
+  {
+    "topicid": 3,
+    "subid": 5,
+    "questid": 7,
+    "hiragana": "ン",
+    "romaji": "n",
+    "vietnamese": "n",
+    "english": "n",
+    "filename": "n"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 1,
+    "hiragana": "ガ",
+    "romaji": "ga",
+    "vietnamese": "ga",
+    "english": "ga",
+    "filename": "ga"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 2,
+    "hiragana": "ギ",
+    "romaji": "gi",
+    "vietnamese": "gi",
+    "english": "gi",
+    "filename": "gi"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 3,
+    "hiragana": "グ",
+    "romaji": "gu",
+    "vietnamese": "gu",
+    "english": "gu",
+    "filename": "gu"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 4,
+    "hiragana": "ゲ",
+    "romaji": "ge",
+    "vietnamese": "ge",
+    "english": "ge",
+    "filename": "ge"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 5,
+    "hiragana": "ゴ",
+    "romaji": "go",
+    "vietnamese": "go",
+    "english": "go",
+    "filename": "go"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 6,
+    "hiragana": "ザ",
+    "romaji": "za",
+    "vietnamese": "za",
+    "english": "za",
+    "filename": "za"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 7,
+    "hiragana": "ジ",
+    "romaji": "ji",
+    "vietnamese": "ji",
+    "english": "ji",
+    "filename": "ji"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 8,
+    "hiragana": "ズ",
+    "romaji": "zu",
+    "vietnamese": "zu",
+    "english": "zu",
+    "filename": "zu"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 9,
+    "hiragana": "ゼ",
+    "romaji": "ze",
+    "vietnamese": "ze",
+    "english": "ze",
+    "filename": "ze"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 10,
+    "hiragana": "ゾ",
+    "romaji": "zo",
+    "vietnamese": "zo",
+    "english": "zo",
+    "filename": "zo"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 11,
+    "hiragana": "ダ",
+    "romaji": "da",
+    "vietnamese": "da",
+    "english": "da",
+    "filename": "da"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 12,
+    "hiragana": "デ",
+    "romaji": "de",
+    "vietnamese": "de",
+    "english": "de",
+    "filename": "de"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 13,
+    "hiragana": "ド",
+    "romaji": "do",
+    "vietnamese": "do",
+    "english": "do",
+    "filename": "do"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 14,
+    "hiragana": "バ",
+    "romaji": "ba",
+    "vietnamese": "ba",
+    "english": "ba",
+    "filename": "ba"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 15,
+    "hiragana": "ビ",
+    "romaji": "bi",
+    "vietnamese": "bi",
+    "english": "bi",
+    "filename": "bi"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 16,
+    "hiragana": "ブ",
+    "romaji": "bu",
+    "vietnamese": "bu",
+    "english": "bu",
+    "filename": "bu"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 17,
+    "hiragana": "べ",
+    "romaji": "be",
+    "vietnamese": "be",
+    "english": "be",
+    "filename": "be"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 18,
+    "hiragana": "ボ",
+    "romaji": "bo",
+    "vietnamese": "bo",
+    "english": "bo",
+    "filename": "bo"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 19,
+    "hiragana": "パ",
+    "romaji": "pa",
+    "vietnamese": "pa",
+    "english": "pa",
+    "filename": "pa"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 20,
+    "hiragana": "ピ",
+    "romaji": "pi",
+    "vietnamese": "pi",
+    "english": "pi",
+    "filename": "pi"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 21,
+    "hiragana": "プ",
+    "romaji": "pu",
+    "vietnamese": "pu",
+    "english": "pu",
+    "filename": "pu"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 22,
+    "hiragana": "ぺ",
+    "romaji": "pe",
+    "vietnamese": "pe",
+    "english": "pe",
+    "filename": "pe"
+  },
+  {
+    "topicid": 4,
+    "subid": 1,
+    "questid": 23,
+    "hiragana": "ポ",
+    "romaji": "po",
+    "vietnamese": "po",
+    "english": "po",
+    "filename": "po"
+  }
+]
