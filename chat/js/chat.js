@@ -1,21 +1,3 @@
-/*
-
-Copyright (c) 2009 Anant Garg (anantgarg.com | inscripts.com)
-
-This script may be used for non-commercial purposes only. For any
-commercial purposes, please contact the author at 
-anant.garg@inscripts.com
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-
-*/
 
 var windowFocus = true;
 var username;
@@ -66,18 +48,45 @@ function chatWith(chatuser) {
 }
 
 function createChatBox(chatboxtitle, minimizeChatBox) {
+
     if ($("#chatbox_" + chatboxtitle).length > 0) {
         if ($("#chatbox_" + chatboxtitle).css('display') == 'none') {
             $("#chatbox_" + chatboxtitle).css('display', 'block');
             restructureChatBoxes();
         }
+
+        if ($('#chatbox_' + chatboxtitle + ' .chatboxcontent').css('display') == 'none') {
+
+        var minimizedChatBoxes = new Array();
+
+        if ($.cookie('chatbox_minimized')) {
+            minimizedChatBoxes = $.cookie('chatbox_minimized').split(/\|/);
+        }
+
+        var newCookie = '';
+
+        for (i = 0; i < minimizedChatBoxes.length; i++) {
+            if (minimizedChatBoxes[i] != chatboxtitle) {
+                newCookie += chatboxtitle + '|';
+            }
+        }
+
+        newCookie = newCookie.slice(0, -1)
+
+
+        $.cookie('chatbox_minimized', newCookie);
+        $('#chatbox_' + chatboxtitle + ' .chatboxcontent').css('display', 'block');
+        $('#chatbox_' + chatboxtitle + ' .chatboxinput').css('display', 'block');
+        $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
+    }
+
         $("#chatbox_" + chatboxtitle + " .chatboxtextarea").focus();
         return;
     }
 
     $(" <div />").attr("id", "chatbox_" + chatboxtitle)
         .addClass("chatbox")
-        .html('<div class="chatboxhead"><div class="chatboxtitle">' + chatboxtitle + '</div><div class="chatboxoptions"><a href="javascript:void(0)" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')">-</a> <a href="javascript:void(0)" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">X</a></div><br clear="all"/></div><div class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
+        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + chatboxtitle + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
         .appendTo($("body"));
 
     $("#chatbox_" + chatboxtitle).css('bottom', '0px');
@@ -136,7 +145,10 @@ function createChatBox(chatboxtitle, minimizeChatBox) {
         }
     });
 
-    $("#chatbox_" + chatboxtitle).show();
+  //   $("#chatbox_" + chatboxtitle).show();
+  //   $('#chatboxcontainer').slimscroll({
+  // height:  '200px'
+// });
 }
 
 

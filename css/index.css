@@ -940,7 +940,8 @@ a:hover {
 }
 #game-scope #quiz, #game-scope #answer {
     padding: 0 12px;
-    border: 1px solid green;
+    border: 2px solid #568ed4;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
     border-radius: 5px;
     background: #fff;
 }
@@ -1344,12 +1345,12 @@ ul.anchor li a .stepNumber {
     vertical-align: bottom;
 }
 #game-scope #quiz {
-    max-height: 550px;
+    max-height: 480px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 #game-scope #quiz {
-    max-height: 550px;
+    max-height: 480px;
 }
 #kanji #topicWizard {
     padding-top: 74px;
@@ -1407,6 +1408,21 @@ ul.anchor li a .stepNumber {
 #feedback {
  
 }
+
+
+/*==============================================
+=            Test            =
+==============================================*/
+.question ng-binding h3, .h3 {
+    font-size: 22px;
+    font-weight: bolder;
+}
+.ans-options {
+    padding-left: 24px;
+    font-size: 11pt;
+    margin-left: 12px;
+}
+
 /*==============================================
 =            CSS for mobile version            =
 ==============================================*/
