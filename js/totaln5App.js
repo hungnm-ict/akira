@@ -60,8 +60,8 @@ totaln5App.config(['$routeProvider',
             .when('/:lessonId/:partId/write', {
                 templateUrl: 'vocab/write.html',
                 controller: 'writeCtrl',
-                resolve:{
-                    writeData:function($q,$route,dataService){
+                resolve: {
+                    writeData: function($q, $route, dataService) {
                         var deferred = $q.defer();
                         deferred.resolve(dataService.getDataPromise("totaln5", $route.current.params.lessonId, $route.current.params.partId, 1));
                         return deferred.promise;
@@ -252,3 +252,15 @@ totaln5App.controller('rootController', function($scope) {
         document.getElementById(selId).play();
     }
 });
+
+totaln5App.factory('menuFactory', function($rootScope) {
+    var navgroup = 0;
+    var nav = 1;
+
+    var menu = {
+        "navgroup": navgroup,
+        "nav": nav
+    };
+
+    return menu;
+})

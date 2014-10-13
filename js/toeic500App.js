@@ -104,3 +104,16 @@ toeic500App.controller('rootController', function($scope) {
         document.getElementById(selId).play();
     }
 });
+
+
+toeic500App.factory('menuFactory', function($rootScope) {
+    var navgroup = 2;
+    var nav = 0;
+
+    var menu = {
+        "navgroup": navgroup,
+        "nav": nav
+    };
+
+    return menu;
+})

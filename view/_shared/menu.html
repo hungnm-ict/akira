@@ -1,5 +1,4 @@
 <!-- <div id="left-menu-wrapper"> -->
-{{navgroup}} - {{nav}} - {{test}}
 <div class="row">
     <div class="col-md-12">
         <div id="site-lang">
@@ -72,7 +71,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" data-i18n="menu.mobi">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            English
                         </a>
                     </h4>
                 </div>
@@ -80,9 +80,27 @@
                     <div class="panel-body">
                         <ul>
                             <li ng-class="{'nav-active':0==nav}" ng-click="menuClick(2,0)">
+                                <a href="../toeic500">Toeic 500</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFourth" data-i18n="menu.mobi">
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFourth" class="panel-collapse collapse" ng-class="{'in navgroup-active': 3 == navgroup }">
+                    <div class="panel-body">
+                        <ul>
+                            <li ng-class="{'nav-active':0==nav}" ng-click="menuClick(3,0)">
                                 <a href="../android" data-i18n="menu.android"></a>
                             </li>
-                            <li ng-class="{'nav-active':1==nav}" ng-click="menuClick(2,1)">
+                            <li ng-class="{'nav-active':1==nav}" ng-click="menuClick(3,1)">
                                 <a href="../ios" data-i18n="menu.ios"></a>
                             </li>
                         </ul>
@@ -92,22 +110,26 @@
         </div>
     </div>
 </div>
-<div id="social">
-    <div class="row center">
-        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 ">
-            <a href="https://www.facebook.com/WOW.Japanese" target="_blank" class="social-circle">
-                <i class="fa fa-facebook fb"></i>
-            </a>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-4">
-            <a href="https://www.youtube.com/user/WowJapanese" target="_blank" class="social-circle">
-                <i class="fa fa-youtube youtube"></i>
-            </a>
-        </div>
-    </div>
-    <div class="row center">
-        <div class="col-md-12">
-            <a id="feedback" target="_blank" href="https://docs.google.com/forms/d/1ta5eXg27hoySVbeAWM_epQGpg_Z3JZfkK-uCDgLKtVk/viewform" class="btn btn-default">Feedback</a>
+<div class="row">
+    <div class="col-md-12">
+        <div ><!-- id="social" -->
+            <div class="row center">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 ">
+                    <a href="https://www.facebook.com/WOW.Japanese" target="_blank" class="social-circle">
+                        <i class="fa fa-facebook fb"></i>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <a href="https://www.youtube.com/user/WowJapanese" target="_blank" class="social-circle">
+                        <i class="fa fa-youtube youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="col-md-12">
+                    <a id="feedback" target="_blank" href="https://docs.google.com/forms/d/1ta5eXg27hoySVbeAWM_epQGpg_Z3JZfkK-uCDgLKtVk/viewform" class="btn btn-default">Feedback</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

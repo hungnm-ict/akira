@@ -108,16 +108,6 @@ app.service('restService', function($http) {
 
 
 app.controller('root', function($scope, $routeParams, $route) {
-    //Default route to KanjiN5 menu
-    // $scope.navgroup = 0;
-    // $scope.nav = 1;
-
-    $scope.update = function(navgroup, nav) {
-        alert();
-        $scope.navgroup = navgroup;
-        $scope.nav = nav;
-    }
-
     $scope.rootPlay = function(data, course, step, id) {
         var selId = "choices-" + step + "-" + id;
         var audioSrc = document.getElementById(selId).getElementsByTagName('source');
@@ -127,6 +117,14 @@ app.controller('root', function($scope, $routeParams, $route) {
     }
 });
 
-app.service('selectedMenu', function($scope) {
+app.factory('menuFactory', function($rootScope) {
+    var navgroup = 0;
+    var nav = 1;
 
-});
+    var menu = {
+        "navgroup": navgroup,
+        "nav": nav
+    };
+
+    return menu;
+})

@@ -462,3 +462,16 @@ testApp.service('dataService', function($http, $log) {
         }
     }
 });
+
+
+testApp.factory('menuFactory', function($rootScope) {
+    var navgroup = 0;
+    var nav = 1;
+
+    var menu = {
+        "navgroup": navgroup,
+        "nav": nav
+    };
+
+    return menu;
+})

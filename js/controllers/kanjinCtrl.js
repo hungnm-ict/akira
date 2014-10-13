@@ -1,20 +1,17 @@
 var kanjinCtrls = angular.module('kanjinCtrls', []);
 
-kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, restService) {
-    $scope.$parent.test = $routeParams.degree;
+kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootScope, restService, menuFactory) {
     switch ($routeParams.degree) {
         case "n5":
-            $scope.$parent.update(0,1);
-            // navgroup = 0;
-            // $scope.$parent.nav = 1;
+            menuFactory.navgroup = 0;
+            menuFactory.nav = 1;
             break;
         case "n4":
-            $scope.$parent.update(1,1);
-
-            // $scope.$parent.navgroup = 1;
-            // $scope.$parent.nav = 1;
+            menuFactory.navgroup = 1;
+            menuFactory.nav = 1;
             break;
     }
+    $rootScope.$broadcast('handleBroadcast');
 
     $scope.course = "kanji" + $routeParams.degree;
     $scope.degree = $routeParams.degree;

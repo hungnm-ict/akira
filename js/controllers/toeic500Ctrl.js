@@ -10,7 +10,6 @@ var toeic500Ctrls = angular.module('toeic500Ctrls', []);
 toeic500Ctrls.controller('mainCtrl', function($scope, $http,dataService) {
     dataService.promise.then(function(deferred) {
         $scope.data = deferred.data;
-        console.log(data);
     });
 
     $scope.course = "toeic500";

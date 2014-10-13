@@ -26,16 +26,17 @@
 
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
+    <script type="text/javascript" src="../../js/iOSApp.js"></script>
 
     <script type="text/javascript" src="../../js/index.js"></script>
 
 </head>
 
 <body>
-    <div class="app conatiner-full-height container-fluid" id="dashboard">
+    <div class="app container-full-height container-fluid" id="dashboard">
         <div class="row row-full-height">
-            <div class="col-md-2 hidden-sm hidden-xs col-full-height">
-                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=2;nav=1">
+            <div class="col-md-2 hidden-sm hidden-xs col-full-height" style="padding-left:0px;">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=3;nav=1">
                 </div>
             </div>
             <div class="col-md-7 col-sm-7 col-xs-7 col-full-height">
@@ -74,8 +75,8 @@
 
 
     <script type="text/javascript">
-    var androidApp = angular.module("android", ['commonCtrls', 'akrSharedDirectives']);
-    angular.bootstrap(document, ['android']);
+    // var androidApp = angular.module("android", ['commonCtrls', 'akrSharedDirectives']);
+    angular.bootstrap(document, ['mobileRoot']);
     app.initialize();
     changelange();
     </script>

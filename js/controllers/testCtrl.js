@@ -1,6 +1,6 @@
 var appCtrls = angular.module('testCtrls', []);
 
-appCtrls.controller('mainCtrl', function($scope, $routeParams, $location) {
+appCtrls.controller('mainCtrl', function($scope, $routeParams, $location, menuFactory,$rootScope) {
     $scope.courseCollection = ["common.vocab", "common.grammar", "common.read", "common.listen-compre"];
     $scope.courseSelectedIndex = 0;
     $scope.timeCollection = ["10", "20", "30"];
@@ -9,18 +9,15 @@ appCtrls.controller('mainCtrl', function($scope, $routeParams, $location) {
     $scope.time = 10;
     switch ($routeParams.degree) {
         case "n4":
-            $scope.$parent.navgroup = 1;
-            $scope.$parent.nav = 2;
+            menuFactory.navgroup = 1;
+            menuFactory.nav = 2;
             break;
         case "n5":
-            $scope.$parent.navgroup = 0;
-            $scope.$parent.nav = 3;
-            break;
-        default:
-            $scope.$parent.navgroup = 0;
-            $scope.$parent.nav = 3;
+            menuFactory.navgroup = 0;
+            menuFactory.nav = 2;
             break;
     }
+    $rootScope.$broadcast('handleBroadcast');
 
     $scope.play = function() {
         $location.path('/' + $routeParams.degree + '/' + $scope.type + '/' + $scope.time);
