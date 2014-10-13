@@ -7,7 +7,19 @@ totaln5App.config(['$routeProvider',
                 templateUrl: function(urlAttr) {
                     return 'main.html';
                 },
-                controller: 'mainCtrl'
+                controller: 'mainCtrl',
+                resolve: {
+                    kanaStar: function($q, restService) {
+                        var deferred = $q.defer();
+                        deferred.resolve(restService.getRestPromise("kana"));
+                        return deferred.promise;
+                    },
+                    totalStar: function($q, restService) {
+                        var deferred = $q.defer();
+                        deferred.resolve(restService.getRestPromise("totaln5"));
+                        return deferred.promise;
+                    }
+                }
             })
             .when('/kana/:lessonId', {
                 controller: 'kanaCtrl',
@@ -45,6 +57,17 @@ totaln5App.config(['$routeProvider',
                 },
                 controller: 'subCtrl'
             })
+            .when('/:lessonId/:partId/write', {
+                templateUrl: 'vocab/write.html',
+                controller: 'writeCtrl',
+                resolve:{
+                    writeData:function($q,$route,dataService){
+                        var deferred = $q.defer();
+                        deferred.resolve(dataService.getDataPromise("totaln5", $route.current.params.lessonId, $route.current.params.partId, 1));
+                        return deferred.promise;
+                    }
+                }
+            })
             .when('/:lessonId/:partId/picture', {
                 templateUrl: 'vocab/picture.html',
                 controller: 'pictureCtrl'
@@ -60,10 +83,6 @@ totaln5App.config(['$routeProvider',
             .when('/:lessonId/:partId/connect', {
                 templateUrl: 'vocab/connect.html',
                 controller: 'connectCtrl'
-            })
-            .when('/:lessonId/:partId/write', {
-                templateUrl: 'vocab/write.html',
-                controller: 'writeCtrl'
             })
             .when('/:lessonId/:partId/listen1', {
                 templateUrl: 'grammar/listen.html',
@@ -151,8 +170,8 @@ totaln5App.service('dataService', function($http) {
                     case "1":
                     case "2":
                     case "3":
-                    return this.n5Vocab;
-                    break;
+                        return this.n5Vocab;
+                        break;
                     case "4":
                         switch (skill) {
                             case 1:

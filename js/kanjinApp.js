@@ -107,9 +107,16 @@ app.service('restService', function($http) {
 
 
 
-app.controller('root', function($scope, $routeParams) {
-    $scope.navgroup = 0;
-    $scope.nav = 1;
+app.controller('root', function($scope, $routeParams, $route) {
+    //Default route to KanjiN5 menu
+    // $scope.navgroup = 0;
+    // $scope.nav = 1;
+
+    $scope.update = function(navgroup, nav) {
+        alert();
+        $scope.navgroup = navgroup;
+        $scope.nav = nav;
+    }
 
     $scope.rootPlay = function(data, course, step, id) {
         var selId = "choices-" + step + "-" + id;
@@ -118,4 +125,8 @@ app.controller('root', function($scope, $routeParams) {
         document.getElementById(selId).load();
         document.getElementById(selId).play();
     }
+});
+
+app.service('selectedMenu', function($scope) {
+
 });
