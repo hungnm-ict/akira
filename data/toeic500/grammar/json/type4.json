@@ -1,0 +1,322 @@
+[
+   {
+      "id":1,
+      "filename":"1.1.1",
+      "english":"_am a girl.",
+      "correct":"I",
+      "wrong":"my",
+      "vietnamese":"T&ocirc;i l&agrave; một c&ocirc; g&aacute;i."
+   },
+   {
+      "id":1,
+      "filename":"1.1.2",
+      "english":"_is a husband.",
+      "correct":"he",
+      "wrong":"his",
+      "vietnamese":"Anh ấy l&agrave; một người chồng."
+   },
+   {
+      "id":1,
+      "filename":"1.1.3",
+      "english":"This man is_brother.",
+      "correct":"their",
+      "wrong":"they",
+      "vietnamese":"Người đ&agrave;n &ocirc;ng n&agrave;y l&agrave; anh trai của họ."
+   },
+   {
+      "id":1,
+      "filename":"1.1.4",
+      "english":"My brother and sister_young.",
+      "correct":"are",
+      "wrong":"is  ",
+      "vietnamese":"Anh trai v&agrave; chị g&aacute;i của t&ocirc;i trẻ."
+   },
+   {
+      "id":1,
+      "filename":"1.1.5",
+      "english":"_husband is a man.",
+      "correct":"my",
+      "wrong":"I ",
+      "vietnamese":"Chồng của t&ocirc;i l&agrave; một người đ&agrave;n &ocirc;ng."
+   },
+   {
+      "id":2,
+      "filename":"2.1.1",
+      "english":"He is_dentist.",
+      "correct":"a  ",
+      "wrong":"an",
+      "vietnamese":"Anh ấy l&agrave; một nha sỹ."
+   },
+   {
+      "id":2,
+      "filename":"2.1.2",
+      "english":"Her husband is a_.",
+      "correct":"manager",
+      "wrong":"managers.",
+      "vietnamese":"Chồng của c&ocirc; ấy l&agrave; một nh&agrave; quản l&yacute;."
+   },
+   {
+      "id":2,
+      "filename":"2.1.3",
+      "english":"His wife is_actress.",
+      "correct":"an",
+      "wrong":"a  ",
+      "vietnamese":"Vợ của anh ấy l&agrave; một diễn vi&ecirc;n nữ."
+   },
+   {
+      "id":2,
+      "filename":"2.1.4",
+      "english":"Her_are musicians.",
+      "correct":"friends",
+      "wrong":"friend",
+      "vietnamese":"C&aacute;c bạn của c&ocirc; ấy l&agrave; những nhạc sỹ."
+   },
+   {
+      "id":2,
+      "filename":"2.1.5",
+      "english":"The dancers_my aunt.",
+      "correct":"are",
+      "wrong":"is  ",
+      "vietnamese":"Những vũ c&ocirc;ng l&agrave; d&igrave; của t&ocirc;i."
+   },
+   {
+      "id":3,
+      "filename":"3.1.1",
+      "english":"I_your father.",
+      "correct":"am not",
+      "wrong":"is not",
+      "vietnamese":"T&ocirc;i kh&ocirc;ng phải l&agrave; bố của bạn."
+   },
+   {
+      "id":3,
+      "filename":"3.1.2",
+      "english":"I_young.",
+      "correct":"am ",
+      "wrong":"is",
+      "vietnamese":"T&ocirc;i trẻ."
+   },
+   {
+      "id":3,
+      "filename":"3.1.3",
+      "english":"He is_.",
+      "correct":"a boy",
+      "wrong":"a boys",
+      "vietnamese":"Anh ấy l&agrave; một cậu b&eacute;."
+   },
+   {
+      "id":3,
+      "filename":"3.1.4",
+      "english":"They are not_.",
+      "correct":"doctors",
+      "wrong":"doctor",
+      "vietnamese":"Họ kh&ocirc;ng phải l&agrave; những b&aacute;c sỹ."
+   },
+   {
+      "id":3,
+      "filename":"3.1.5",
+      "english":"_are at school.",
+      "correct":"his sisters",
+      "wrong":"his sister",
+      "vietnamese":"Những chị g&aacute;i của anh ấy ở trường."
+   },
+   {
+      "id":4,
+      "filename":"4.1.1",
+      "english":"I often_TV.",
+      "correct":"watch",
+      "wrong":"watchs",
+      "vietnamese":"T&ocirc;i thường xem tivi."
+   },
+   {
+      "id":4,
+      "filename":"4.1.2",
+      "english":"You_water.",
+      "correct":"drink",
+      "wrong":"drinks",
+      "vietnamese":"Bạn uống nước."
+   },
+   {
+      "id":4,
+      "filename":"4.1.3",
+      "english":"We_hate carefless girls.",
+      "correct":"do not",
+      "wrong":"does not",
+      "vietnamese":"Ch&uacute;ng t&ocirc;i kh&ocirc;ng gh&eacute;t những c&ocirc; g&aacute;i cẩu thả."
+   },
+   {
+      "id":4,
+      "filename":"4.1.4",
+      "english":"We_a big cake.",
+      "correct":"buy",
+      "wrong":"buys",
+      "vietnamese":"Ch&uacute;ng t&ocirc;i mua một chiếc b&aacute;nh lớn."
+   },
+   {
+      "id":4,
+      "filename":"4.1.5",
+      "english":"The actor and actress_movies.",
+      "correct":"like",
+      "wrong":"likes",
+      "vietnamese":"Diễn vi&ecirc;n nam v&agrave; diễn vi&ecirc;n nữa th&iacute;ch những bộ phim."
+   },
+   {
+      "id":5,
+      "filename":"5.1.1",
+      "english":"She_English.",
+      "correct":"speaks",
+      "wrong":"speak",
+      "vietnamese":"C&ocirc; ấy n&oacute;i tiếng Anh."
+   },
+   {
+      "id":5,
+      "filename":"5.1.2",
+      "english":"He_his hometown weekly.",
+      "correct":"visits",
+      "wrong":"visit",
+      "vietnamese":"Anh ấy thăm qu&ecirc; hương của anh ấy h&agrave;ng tuần."
+   },
+   {
+      "id":5,
+      "filename":"5.1.3",
+      "english":"Their father_watch movies in the evening.",
+      "correct":"does not",
+      "wrong":"do not",
+      "vietnamese":"Bố của họ kh&ocirc;ng xem phim v&agrave;o buổi tối."
+   },
+   {
+      "id":5,
+      "filename":"5.1.4",
+      "english":"Her brother_home early.",
+      "correct":"goes",
+      "wrong":"go",
+      "vietnamese":"Anh trai của c&ocirc; ấy đi về nh&agrave; sớm."
+   },
+   {
+      "id":5,
+      "filename":"5.1.5",
+      "english":"A friendly farmer_newspaper.",
+      "correct":"has a",
+      "wrong":"have a",
+      "vietnamese":"Một người n&ocirc;ng d&acirc;n th&acirc;n thiện c&oacute; một tờ b&aacute;o."
+   },
+   {
+      "id":6,
+      "filename":"6.1.1",
+      "english":"You can_slowly.",
+      "correct":"swim",
+      "wrong":"swims",
+      "vietnamese":"Bạn c&oacute; thể bơi chậm."
+   },
+   {
+      "id":6,
+      "filename":"6.1.2",
+      "english":"We should_English.",
+      "correct":"speak ",
+      "wrong":"speaks",
+      "vietnamese":"Ch&uacute;ng ta n&ecirc;n n&oacute;i tiếng Anh."
+   },
+   {
+      "id":6,
+      "filename":"6.1.3",
+      "english":"She can_.",
+      "correct":"dance",
+      "wrong":"dances",
+      "vietnamese":"C&ocirc; ấy c&oacute; thể m&uacute;a."
+   },
+   {
+      "id":6,
+      "filename":"6.1.4",
+      "english":"A manager should_fast.",
+      "correct":"not speak",
+      "wrong":"not speaks",
+      "vietnamese":"Một nh&agrave; quản l&yacute; kh&ocirc;ng n&ecirc;n n&oacute;i nhanh."
+   },
+   {
+      "id":6,
+      "filename":"6.1.5",
+      "english":"My brother can eat juice and vegetables_.",
+      "correct":"well",
+      "wrong":"good",
+      "vietnamese":"Anh trai của t&ocirc;i c&oacute; thể ăn hoa quả v&agrave; rau tốt."
+   },
+   {
+      "id":7,
+      "filename":"7.1.1",
+      "english":"This_my pen.",
+      "correct":"is",
+      "wrong":"are",
+      "vietnamese":"Đ&acirc;y l&agrave; c&aacute;i b&uacute;t của t&ocirc;i"
+   },
+   {
+      "id":7,
+      "filename":"7.1.2",
+      "english":"That is not_, that is a window.",
+      "correct":"a door",
+      "wrong":"an door",
+      "vietnamese":"Kia kh&ocirc;ng phải l&agrave; một c&aacute;i cửa ch&iacute;nh, kia l&agrave; một c&aacute;i cửa sổ."
+   },
+   {
+      "id":7,
+      "filename":"7.1.3",
+      "english":"These are not black_.",
+      "correct":"tables",
+      "wrong":"table",
+      "vietnamese":"Đ&acirc;y kh&ocirc;ng phải những c&aacute;i b&agrave;n m&agrave;u đen."
+   },
+   {
+      "id":7,
+      "filename":"7.1.4",
+      "english":"Those_not green doors.",
+      "correct":"are",
+      "wrong":"is",
+      "vietnamese":"Kia kh&ocirc;ng phải l&agrave; những c&aacute;i cửa m&agrave;u xanh."
+   },
+   {
+      "id":7,
+      "filename":"7.1.5",
+      "english":"_are his oranges.",
+      "correct":"those",
+      "wrong":"that",
+      "vietnamese":"Kia l&agrave; những quả cam của anh ấy."
+   },
+   {
+      "id":8,
+      "filename":"8.1.1",
+      "english":"There_not an apple, there is an orange.",
+      "correct":"is",
+      "wrong":"are",
+      "vietnamese":"Kh&ocirc;ng c&oacute; một quả t&aacute;o, c&oacute; một quả cam."
+   },
+   {
+      "id":8,
+      "filename":"8.1.2",
+      "english":"There are_.",
+      "correct":"cars",
+      "wrong":"car",
+      "vietnamese":"C&oacute; những chiếc xe &ocirc; t&ocirc;."
+   },
+   {
+      "id":8,
+      "filename":"8.1.3",
+      "english":"There is a manager_the company.",
+      "correct":"in",
+      "wrong":"on",
+      "vietnamese":"C&oacute; một nh&agrave; quản l&yacute; trong c&ocirc;ng ty."
+   },
+   {
+      "id":8,
+      "filename":"8.1.4",
+      "english":"There are_and nurses in the hospital.",
+      "correct":"doctors",
+      "wrong":"doctor",
+      "vietnamese":"C&oacute; những b&aacute;c sỹ v&agrave; những y t&aacute; trong bệnh viện."
+   },
+   {
+      "id":8,
+      "filename":"8.1.5",
+      "english":"There_lions.",
+      "correct":"are not",
+      "wrong":"is not",
+      "vietnamese":"Kh&ocirc;ng c&oacute; những con sư tử."
+   }
+]
