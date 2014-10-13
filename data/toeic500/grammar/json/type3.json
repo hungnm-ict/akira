@@ -1,0 +1,242 @@
+[
+   {
+      "id":1,
+      "filename":"1.1.1",
+      "english":"You are a woman.",
+      "vietnamese":"Bạn l&agrave; một người phụ nữ."
+   },
+   {
+      "id":1,
+      "filename":"1.1.2",
+      "english":"It is a child.",
+      "vietnamese":"N&oacute; l&agrave; một đứa trẻ."
+   },
+   {
+      "id":1,
+      "filename":"1.1.3",
+      "english":"They are our sons.",
+      "vietnamese":"Họ l&agrave; con trai của ch&uacute;ng t&ocirc;i."
+   },
+   {
+      "id":1,
+      "filename":"1.1.4",
+      "english":"My sister is its friend.",
+      "vietnamese":"Chị g&aacute;i của t&ocirc;i l&agrave; bạn của n&oacute;."
+   },
+   {
+      "id":1,
+      "filename":"1.1.5",
+      "english":"Your parents are old.",
+      "vietnamese":"Bố mẹ của bạn gi&agrave;."
+   },
+   {
+      "id":2,
+      "filename":"2.1.1",
+      "english":"I am a student.",
+      "vietnamese":"T&ocirc;i l&agrave; một học sinh."
+   },
+   {
+      "id":2,
+      "filename":"2.1.2",
+      "english":"My mother is an artist.",
+      "vietnamese":"Mẹ của t&ocirc;i l&agrave; một họa sỹ."
+   },
+   {
+      "id":2,
+      "filename":"2.1.3",
+      "english":"They are teachers.",
+      "vietnamese":"Họ l&agrave; những gi&aacute;o vi&ecirc;n."
+   },
+   {
+      "id":2,
+      "filename":"2.1.4",
+      "english":"My sisters are dancers.",
+      "vietnamese":"C&aacute;c chị g&aacute;i của t&ocirc;i l&agrave; vũ c&ocirc;ng."
+   },
+   {
+      "id":2,
+      "filename":"2.1.5",
+      "english":"Our daughters are writers.",
+      "vietnamese":"C&aacute;c ch&aacute;u g&aacute;i của ch&uacute;ng t&ocirc;i l&agrave; nh&agrave; văn."
+   },
+   {
+      "id":3,
+      "filename":"3.1.1",
+      "english":"The man is a doctor.",
+      "vietnamese":"Người đ&agrave;n &ocirc;ng l&agrave; một b&aacute;c sỹ."
+   },
+   {
+      "id":3,
+      "filename":"3.1.2",
+      "english":"I am a beautiful girl.",
+      "vietnamese":"T&ocirc;i l&agrave; một c&ocirc; g&aacute;i xinh đẹp."
+   },
+   {
+      "id":3,
+      "filename":"3.1.3",
+      "english":"I am at home.",
+      "vietnamese":"T&ocirc;i ở nh&agrave;."
+   },
+   {
+      "id":3,
+      "filename":"3.1.4",
+      "english":"We are not beauttiful.",
+      "vietnamese":"Ch&uacute;ng t&ocirc;i kh&ocirc;ng xinh đẹp."
+   },
+   {
+      "id":3,
+      "filename":"3.1.5",
+      "english":"We are good friends.",
+      "vietnamese":"Ch&uacute;ng t&ocirc;i l&agrave; những người bạn tốt."
+   },
+   {
+      "id":4,
+      "filename":"4.1.1",
+      "english":"You do not eat rice .",
+      "vietnamese":"Bạn kh&ocirc;ng ăn cơm."
+   },
+   {
+      "id":4,
+      "filename":"4.1.2",
+      "english":"You always drink water everyday.",
+      "vietnamese":"Bạn lu&ocirc;n uống nước h&agrave;ng ng&agrave;y."
+   },
+   {
+      "id":4,
+      "filename":"4.1.3",
+      "english":"They eat rice and drink water.",
+      "vietnamese":"Họ ăn cơm v&agrave; uống nước."
+   },
+   {
+      "id":4,
+      "filename":"4.1.4",
+      "english":"Her managers do not  have a picture.",
+      "vietnamese":"Những nh&agrave; quản l&yacute; của c&ocirc; ấy kh&ocirc;ng c&oacute; một bức tranh."
+   },
+   {
+      "id":4,
+      "filename":"4.1.5",
+      "english":"We like a movie.",
+      "vietnamese":"Ch&uacute;ng t&ocirc;i th&iacute;ch một bộ phim."
+   },
+   {
+      "id":5,
+      "filename":"5.1.1",
+      "english":"She goes to school.",
+      "vietnamese":"C&ocirc; ấy đi đến trường."
+   },
+   {
+      "id":5,
+      "filename":"5.1.2",
+      "english":"He sometimes goes to the cinema.",
+      "vietnamese":"Anh ấy thỉnh thoảng đi đến rạp chiếu phim."
+   },
+   {
+      "id":5,
+      "filename":"5.1.3",
+      "english":"It wants Chinese rice.",
+      "vietnamese":"N&oacute; muốn gạo Trung Quốc."
+   },
+   {
+      "id":5,
+      "filename":"5.1.4",
+      "english":"A doctor likes a careful nurse.",
+      "vietnamese":"Một b&aacute;c sỹ th&iacute;ch một y t&aacute; cẩn thận."
+   },
+   {
+      "id":5,
+      "filename":"5.1.5",
+      "english":"An actor does not play badminton in the morning.",
+      "vietnamese":"Một diễn vi&ecirc;n nam kh&ocirc;ng chơi cầu l&ocirc;ng v&agrave;o buổi s&aacute;ng."
+   },
+   {
+      "id":6,
+      "filename":"6.1.1",
+      "english":"I can play football well.",
+      "vietnamese":"T&ocirc;i c&oacute; thể chơi b&oacute;ng đ&aacute; tốt."
+   },
+   {
+      "id":6,
+      "filename":"6.1.2",
+      "english":"We should speak English fast.",
+      "vietnamese":"Ch&uacute;ng ta n&ecirc;n n&oacute;i tiếng Anh nhanh."
+   },
+   {
+      "id":6,
+      "filename":"6.1.3",
+      "english":"They should drink water.",
+      "vietnamese":"Họ n&ecirc;n uống nước."
+   },
+   {
+      "id":6,
+      "filename":"6.1.4",
+      "english":"My mother can not eat rice.",
+      "vietnamese":"Mẹ của t&ocirc;i kh&ocirc;ng thể ăn cơm."
+   },
+   {
+      "id":6,
+      "filename":"6.1.5",
+      "english":"They should learn well.",
+      "vietnamese":"Họ n&ecirc;n học tốt."
+   },
+   {
+      "id":7,
+      "filename":"7.1.1",
+      "english":"This pen is yellow.",
+      "vietnamese":"Chiếc b&uacute;t n&agrave;y m&agrave;u v&agrave;ng."
+   },
+   {
+      "id":7,
+      "filename":"7.1.2",
+      "english":"That table is big.",
+      "vietnamese":"C&aacute;i b&agrave;n kia to."
+   },
+   {
+      "id":7,
+      "filename":"7.1.3",
+      "english":"That is your table.",
+      "vietnamese":"Kia l&agrave; c&aacute;i b&agrave;n của họ."
+   },
+   {
+      "id":7,
+      "filename":"7.1.4",
+      "english":"That is a big table.",
+      "vietnamese":"Kia l&agrave; một c&aacute;i b&agrave;n to."
+   },
+   {
+      "id":7,
+      "filename":"7.1.5",
+      "english":"These are not oranges.",
+      "vietnamese":"Kia kh&ocirc;ng phải l&agrave; những quả cam."
+   },
+   {
+      "id":8,
+      "filename":"8.1.1",
+      "english":"There is a car on the road.",
+      "vietnamese":"C&oacute; một chiếc &ocirc; t&ocirc; tr&ecirc;n đường."
+   },
+   {
+      "id":8,
+      "filename":"8.1.2",
+      "english":"There are not cars, there are buses.",
+      "vietnamese":"Kh&ocirc;ng c&oacute; những chiếc &ocirc; t&ocirc;, c&oacute; những chiếc xe bu&yacute;t."
+   },
+   {
+      "id":8,
+      "filename":"8.1.3",
+      "english":"There are 3 pens under the table.",
+      "vietnamese":"C&oacute; ba c&aacute;i b&uacute;t ở dưới c&aacute;i b&agrave;n."
+   },
+   {
+      "id":8,
+      "filename":"8.1.4",
+      "english":"There isnt a tiger.",
+      "vietnamese":"Kh&ocirc;ng c&oacute; một con hổ."
+   },
+   {
+      "id":8,
+      "filename":"8.1.5",
+      "english":"There are 2 sisters and 1 brother.",
+      "vietnamese":"C&oacute; 2 chị g&aacute;i v&agrave; 1 anh trai."
+   }
+]

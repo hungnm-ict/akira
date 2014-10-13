@@ -237,6 +237,14 @@ function genAnswers2(data) {
     return uniqueGroups;
 }
 
+function genEnglishAnswers(data) {
+    var uniqueGroups = [];
+    $.each(data, function(idx, val) {
+        var obj = data[idx].english.trim().replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "|").split("|");
+        uniqueGroups[idx] = akiraShuffle(obj);
+    });
+    return uniqueGroups;
+}
 
 function saveScore(course, lesson, subtopic, game, star, exp) {
     $.ajax({
