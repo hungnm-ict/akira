@@ -1,4 +1,4 @@
-<div class="container" id="testn5">
+<div  id="test-container">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <h2 data-i18n="common.choose-type"></h2>
@@ -13,12 +13,12 @@
         </div>
     </div>
 
-
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <h2 data-i18n="common.choose-time"></h2>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-2" ng-repeat="item in timeCollection" ng-click="change(2,$index)">
@@ -27,6 +27,7 @@
             </span>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-md-3 col-xs-3 col-sm-3 right col-md-offset-8 col-sm-offset-8 col-xs-offset-8">
             <button data-i18n="common.start" class="akr-btn akr-btn-check" ng-click="play()"></button>

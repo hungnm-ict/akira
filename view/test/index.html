@@ -39,11 +39,11 @@
 <body ng-controller="root">
     <div class="app container-fluid container-full-height">
         <div class="row row-full-height">
-            <div class="col-md-3 hidden-sm hidden-xs col-full-height" style="padding-left:0px;">
-                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup={{navgroup}};nav={{nav}}">
+            <div class="col-md-2 hidden-sm hidden-xs col-full-height" style="padding-left:0px;">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl">
                 </div>
             </div>
-            <div class="col-md-9 col-full-height">
+            <div class="col-md-10 col-full-height">
                 <div id="content">
                     <div ng-view></div>
                 </div>

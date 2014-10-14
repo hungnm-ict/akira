@@ -1,6 +1,6 @@
 var appCtrls = angular.module('testCtrls', []);
 
-appCtrls.controller('mainCtrl', function($scope, $routeParams, $location, menuFactory,$rootScope) {
+appCtrls.controller('mainCtrl', function($scope, $routeParams, $location, menuFactory, $rootScope) {
     $scope.courseCollection = ["common.vocab", "common.grammar", "common.read", "common.listen-compre"];
     $scope.courseSelectedIndex = 0;
     $scope.timeCollection = ["10", "20", "30"];
@@ -36,7 +36,9 @@ appCtrls.controller('mainCtrl', function($scope, $routeParams, $location, menuFa
 
 
 appCtrls.controller('gameCtrl', function($scope, $routeParams, $http, dataService, data) {
-
+    //Lỗi dữ liệu resolved không đủ với dữ liệu load được
+    console.info("Dữ liệu đã được resolve và trả về trong controller" );
+    console.info(data);
     courseCollection = ["common.vocab", "common.grammar", "common.read", "common.listen-compre"];
     $scope.title = courseCollection[$routeParams.type];
 
@@ -58,4 +60,13 @@ appCtrls.controller('gameCtrl', function($scope, $routeParams, $http, dataServic
     $scope.type = $routeParams.type;
     $scope.time = $routeParams.min;
     $scope.dataset = dataService.genDataSet(data, $routeParams.type, $routeParams.min);
+
+    $scope.counter = function(data, part, quest) {
+        var count = quest + 1;
+        while (part > 0) {
+            count += data[part - 1].length;
+            part -= 1;
+        }
+        return count;
+    }
 });

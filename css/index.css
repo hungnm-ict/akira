@@ -606,6 +606,7 @@ ul.anchor {
     display: inline-block;
 }
 #profile {
+    background: #FFFFFF;
     min-height: 150px;
     padding: 12px;
     border: 2px solid #C0C0C0;
@@ -992,10 +993,10 @@ a:hover {
     border-radius: 20px;
     background: #c0c0c0;
 }
-#testn5.container {
+#test-container {
     padding: 48px;
     border-radius: 10px;
-    background: white;
+    background:#FFFFFF;
 }
 /*-----  End of CSS for TestN5  ------*/
 /*====================================

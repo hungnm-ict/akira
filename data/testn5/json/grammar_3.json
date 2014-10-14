@@ -5,7 +5,7 @@
     "answer1": "今日",
     "answer2": "来週",
     "answer3": "今月",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "来週"
 }, {
     "id": 2,
@@ -14,7 +14,7 @@
     "answer1": "ひろこさんを　ください",
     "answer2": "ひろこさんを　話しますか",
     "answer3": "ひろこさんと　話しませんか",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "ひろこさんを　おねがいします"
 }, {
     "id": 3,
@@ -23,7 +23,7 @@
     "answer1": "ではなくて",
     "answer2": "だったか",
     "answer3": "だという",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "ではなくて"
 }, {
     "id": 4,
@@ -32,7 +32,7 @@
     "answer1": "かわいくありません",
     "answer2": "かわいないです",
     "answer3": "かわいいではありません",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "かわいくありません"
 }, {
     "id": 5,
@@ -41,7 +41,7 @@
     "answer1": "の　あります",
     "answer2": "に　います",
     "answer3": "が　あります",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "が　います"
 }, {
     "id": 6,
@@ -50,7 +50,7 @@
     "answer1": "いたり",
     "answer2": "いますから",
     "answer3": "いますが",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "いますが"
 }, {
     "id": 7,
@@ -59,7 +59,7 @@
     "answer1": "きれいに",
     "answer2": "きれいで",
     "answer3": "きれい",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "きれいに"
 }, {
     "id": 8,
@@ -68,7 +68,7 @@
     "answer1": "いらない",
     "answer2": "いらなかったの",
     "answer3": "いらないの",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "いらない"
 }, {
     "id": 9,
@@ -77,7 +77,7 @@
     "answer1": "来て　います",
     "answer2": "いません",
     "answer3": "来て　いません",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "いません"
 }, {
     "id": 10,
@@ -86,7 +86,7 @@
     "answer1": "だんだん",
     "answer2": "ちょうど",
     "answer3": "それでは",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "それから"
 }, {
     "id": 11,
@@ -95,7 +95,7 @@
     "answer1": "それまで",
     "answer2": "それでは",
     "answer3": "それでも",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "それでは"
 }, {
     "id": 12,
@@ -104,7 +104,7 @@
     "answer1": "それも",
     "answer2": "それまで",
     "answer3": "それから",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "それから"
 }, {
     "id": 13,
@@ -113,7 +113,7 @@
     "answer1": "入れましょう",
     "answer2": "しましょう",
     "answer3": "なりましょう",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "しましょう"
 }, {
     "id": 14,
@@ -122,7 +122,7 @@
     "answer1": "なりました",
     "answer2": "やりました",
     "answer3": "とりました",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "なりました"
 }, {
     "id": 15,
@@ -131,7 +131,7 @@
     "answer1": "です／です",
     "answer2": "では　ありません／です",
     "answer3": "です／だ",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "です／です"
 }, {
     "id": 16,
@@ -140,7 +140,7 @@
     "answer1": "です／です",
     "answer2": "です／では　ありません",
     "answer3": "でした／です",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "です／では　ありません"
 }, {
     "id": 17,
@@ -149,7 +149,7 @@
     "answer1": "じゃない",
     "answer2": "でした",
     "answer3": "です",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "じゃない"
 }, {
     "id": 18,
@@ -158,7 +158,7 @@
     "answer1": "だった",
     "answer2": "だ",
     "answer3": "じゃなかった",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "だった"
 }, {
     "id": 19,
@@ -167,7 +167,7 @@
     "answer1": "だ／じゃない",
     "answer2": "では　ない／だ",
     "answer3": "じゃなかった／だ",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "じゃなかった／だ"
 }, {
     "id": 20,
@@ -176,7 +176,7 @@
     "answer1": "いでした",
     "answer2": "くなかった",
     "answer3": "いい水でした",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "かった"
 }, {
     "id": 21,
@@ -185,7 +185,7 @@
     "answer1": "うたって　くださいませんか",
     "answer2": "うたった　くださいませんか",
     "answer3": "うたい　くださいませんか",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "うたって　くださいませんか"
 }, {
     "id": 22,
@@ -194,7 +194,7 @@
     "answer1": "そうでしょう",
     "answer2": "それは　たいへんですね",
     "answer3": "そうですね",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "それは　たいへんですね"
 }, {
     "id": 23,
@@ -203,7 +203,7 @@
     "answer1": "けっこうですよ",
     "answer2": "どう　いたしまして",
     "answer3": "こちらこそ",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "けっこうですよ"
 }, {
     "id": 24,
@@ -212,7 +212,7 @@
     "answer1": "どう　いたしまして",
     "answer2": "わかりました",
     "answer3": "ちがいます",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "どう　いたしまして"
 }, {
     "id": 25,
@@ -221,7 +221,7 @@
     "answer1": "いただきます",
     "answer2": "そうです",
     "answer3": "どうぞ　よろしく",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "いただきます"
 }, {
     "id": 26,
@@ -230,7 +230,7 @@
     "answer1": "いただきます",
     "answer2": "どうぞ　よろしく",
     "answer3": "こちらこそ",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "ごちそうさま"
 }, {
     "id": 27,
@@ -239,7 +239,7 @@
     "answer1": "おかげさまで",
     "answer2": "どうぞ　よろしく",
     "answer3": "おねがいします",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "どうぞ　よろしく"
 }, {
     "id": 28,
@@ -248,7 +248,7 @@
     "answer1": "ごちそうさま",
     "answer2": "どう　いたしまして",
     "answer3": "けっこうです",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "どう　いたしまして"
 }, {
     "id": 29,
@@ -257,7 +257,7 @@
     "answer1": "すみません",
     "answer2": "しりません",
     "answer3": "ありません",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "すみません"
 }, {
     "id": 30,
@@ -266,7 +266,7 @@
     "answer1": "あります",
     "answer2": "たいです",
     "answer3": "なります",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "ください"
 }, {
     "id": 31,
@@ -275,6 +275,6 @@
     "answer1": "おきます",
     "answer2": "あります",
     "answer3": "みます",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "あります"
 }]

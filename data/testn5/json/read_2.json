@@ -5,7 +5,7 @@
     "answer1": "友だちと　DVDを　買いに　行きました。",
     "answer2": "姉と　えいがを　見に　行きました。",
     "answer3": "姉と　DVDを　買いに　行きました。",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "友だちと　DVDを　買いに　行きました。",
     "Filename": null
 }, {
@@ -15,7 +15,7 @@
     "answer1": "2",
     "answer2": "3",
     "answer3": "4",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "3",
     "Filename": null
 }, {
@@ -25,7 +25,7 @@
     "answer1": "南さんに　わたします。",
     "answer2": "中川先生に　かえします。",
     "answer3": "山口先生の　机の　上に　おきます。",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "山口先生の　机の　上に　おきます。",
     "Filename": null
 }, {
@@ -35,7 +35,7 @@
     "answer1": "あたたかくします。",
     "answer2": "あまり　つめたくしません。",
     "answer3": "少し、あたたかくします。",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "あまり　つめたくしません。",
     "Filename": null
 }, {
@@ -45,7 +45,7 @@
     "answer1": "今週の　水曜日",
     "answer2": "来週の　月曜日",
     "answer3": "今週の　月曜日",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "来週の　月曜日",
     "Filename": "3.2.5"
 }, {
@@ -55,7 +55,7 @@
     "answer1": "1700円",
     "answer2": "2200円",
     "answer3": "2500円",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "2200円",
     "Filename": null
 }, {
@@ -65,7 +65,7 @@
     "answer1": "4日　午後　6時",
     "answer2": "5日　午後　8時",
     "answer3": "5日　午後　6時",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "4日　午後　6時",
     "Filename": null
 }, {
@@ -75,7 +75,7 @@
     "answer1": "水曜の　午後",
     "answer2": "木曜の　午後",
     "answer3": "土曜の　午前",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "水曜の　午前",
     "Filename": null
 }, {
@@ -85,7 +85,7 @@
     "answer1": "ねつが　３８どより　ひくいが　はなが　出る　人",
     "answer2": "３８どより　高い　ねつが　ある　人　ぜんぶ",
     "answer3": "せきや　はなが　出る　人　ぜんぶ",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "３８どより　高い　ねつが　ある　人　ぜんぶ",
     "Filename": null
 }, {
@@ -95,7 +95,7 @@
     "answer1": "じゅぎょうを　休む",
     "answer2": "りょこうの　日を　きめる",
     "answer3": "あさごはんを　食べる",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "りょこうの　日を　きめる",
     "Filename": null
 }, {
@@ -105,7 +105,7 @@
     "answer1": "２．きれいな　海を　見たり、およいだり　して　います。",
     "answer2": "３．海の　ちかくを　あるいたり、本を　読んだり　して　います。",
     "answer3": "４．本を　読んだり、海に　入ったり　して　います。",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "３．海の　ちかくを　あるいたり、本を　読んだり　して　います。",
     "Filename": null
 }, {
@@ -115,7 +115,7 @@
     "answer1": "２．日本語を　べんきょうする　ためです。",
     "answer2": "３．フランス語を　べんきょうする　ためです。",
     "answer3": "４．フランスの　えいがを　べんきょうする　ためです。",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "２．日本語を　べんきょうする　ためです。",
     "Filename": null
 }, {
@@ -125,7 +125,7 @@
     "answer1": "ひるも　よるも　パンを　食べます。",
     "answer2": "あさと　ひるは　パンで、よるは　そばを　食べます",
     "answer3": "あさと　ひるは　パンで、よるは　しょくどうで　ごはんを　食べます。",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "あさと　ひるは　パンで、よるは　しょくどうで　ごはんを　食べます。",
     "Filename": null
 }, {
@@ -135,7 +135,7 @@
     "answer1": "木よう日の　午後",
     "answer2": "土よう日の　あさ",
     "answer3": "土よう日の　午後",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "土よう日の　午後",
     "Filename": null
 }, {
@@ -145,7 +145,7 @@
     "answer1": "月よう日と　木よう日と　土よう日の　よるです。",
     "answer2": "月よう日の　よると　木よう日の　ひると　土よう日の　ひるです。",
     "answer3": "月よう日の　ひると　木よう日の　よると　土よう日の　ひるです。",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "月よう日の　ひると　木よう日の　よると　土よう日の　ひるです。",
     "Filename": null
 }, {
@@ -155,7 +155,7 @@
     "answer1": "びょういんは　コンビニの　となりです。",
     "answer2": "びょういんは　コンビニから　5分くらいです。",
     "answer3": "こうえんから　びょういんまで　10分くらい　かかります。",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "びょういんは　コンビニから　5分くらいです。",
     "Filename": null
 }, {
@@ -165,7 +165,7 @@
     "answer1": "2　ウイさんに　ノートを　かえします。",
     "answer2": "日本語の　クラスに　いきます。",
     "answer3": "4　ウイさんと　ひるごはんを食べます。",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "2　ウイさんに　ノートを　かえします。",
     "Filename": null
 }, {
@@ -175,7 +175,7 @@
     "answer1": "父、母、いもうと、わたし",
     "answer2": "父、母、あに、わたし",
     "answer3": "父、母、いもうと",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "父、母、いもうと、わたし",
     "Filename": null
 }, {
@@ -185,7 +185,7 @@
     "answer1": "学校に　行きます。",
     "answer2": "８時半に駅に　来ます。",
     "answer3": "いえで　まちます。",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "学校に　行きます。",
     "Filename": null
 }, {
@@ -195,7 +195,7 @@
     "answer1": "あさごはんの　あとで　シャワーを　あびました。",
     "answer2": "しんぶんを　読んだ　あとで　はを　みがきました。",
     "answer3": "はを　みがいた　あとで　あさごはんを　たべました。",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "しんぶんを　読んだ　あとで　はを　みがきました。",
     "Filename": null
 }, {
@@ -205,7 +205,7 @@
     "answer1": "入り口の　中",
     "answer2": "ポストの　よこ",
     "answer3": "ポストの　中",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "ポストの　中",
     "Filename": null
 }]

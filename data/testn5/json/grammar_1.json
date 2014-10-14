@@ -5,7 +5,7 @@
     "answer1": "の",
     "answer2": "を",
     "answer3": "へ",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "の"
 }, {
     "id": 2,
@@ -14,7 +14,7 @@
     "answer1": "も",
     "answer2": "と",
     "answer3": "か",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "と"
 }, {
     "id": 3,
@@ -23,7 +23,7 @@
     "answer1": "は",
     "answer2": "を",
     "answer3": "に",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "は"
 }, {
     "id": 4,
@@ -32,7 +32,7 @@
     "answer1": "や",
     "answer2": "か",
     "answer3": "に",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "に"
 }, {
     "id": 5,
@@ -41,7 +41,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "は",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "で"
 }, {
     "id": 6,
@@ -50,7 +50,7 @@
     "answer1": "も",
     "answer2": "や",
     "answer3": "で",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "も"
 }, {
     "id": 7,
@@ -59,7 +59,7 @@
     "answer1": "は",
     "answer2": "の",
     "answer3": "か",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "の"
 }, {
     "id": 8,
@@ -68,7 +68,7 @@
     "answer1": "など",
     "answer2": "ごろ",
     "answer3": "も",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "ぐらい"
 }, {
     "id": 9,
@@ -77,7 +77,7 @@
     "answer1": "まで",
     "answer2": "より",
     "answer3": "のほうか",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "より"
 }, {
     "id": 10,
@@ -86,7 +86,7 @@
     "answer1": "のまえに",
     "answer2": "あとに",
     "answer3": "のあとに",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "まえに"
 }, {
     "id": 11,
@@ -95,7 +95,7 @@
     "answer1": "何も",
     "answer2": "何かへ",
     "answer3": "何かで",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "何かで"
 }, {
     "id": 12,
@@ -104,7 +104,7 @@
     "answer1": "で",
     "answer2": "に",
     "answer3": "を",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "に"
 }, {
     "id": 13,
@@ -113,7 +113,7 @@
     "answer1": "に",
     "answer2": "と",
     "answer3": "が",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "で"
 }, {
     "id": 14,
@@ -122,7 +122,7 @@
     "answer1": "を",
     "answer2": "も",
     "answer3": "など",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "も"
 }, {
     "id": 15,
@@ -131,7 +131,7 @@
     "answer1": "ね",
     "answer2": "が",
     "answer3": "の",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "ね"
 }, {
     "id": 16,
@@ -140,7 +140,7 @@
     "answer1": "どの",
     "answer2": "どんな",
     "answer3": "いくら",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "どこ"
 }, {
     "id": 17,
@@ -149,7 +149,7 @@
     "answer1": "に",
     "answer2": "まで",
     "answer3": "を",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "を"
 }, {
     "id": 18,
@@ -158,7 +158,7 @@
     "answer1": "よく",
     "answer2": "まだ",
     "answer3": "もう",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "もう"
 }, {
     "id": 19,
@@ -167,7 +167,7 @@
     "answer1": "しか",
     "answer2": "や",
     "answer3": "と",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 20,
@@ -176,7 +176,7 @@
     "answer1": "いくら",
     "answer2": "いつ",
     "answer3": "いくつ",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "いつ"
 }, {
     "id": 21,
@@ -185,7 +185,7 @@
     "answer1": "から",
     "answer2": "に",
     "answer3": "へ",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "から"
 }, {
     "id": 22,
@@ -194,7 +194,7 @@
     "answer1": "を",
     "answer2": "から",
     "answer3": "で",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 23,
@@ -203,7 +203,7 @@
     "answer1": "どれ",
     "answer2": "どこ",
     "answer3": "どちら",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "だれ"
 }, {
     "id": 24,
@@ -212,7 +212,7 @@
     "answer1": "その",
     "answer2": "あちら",
     "answer3": "あの",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "あちら"
 }, {
     "id": 25,
@@ -221,7 +221,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "は",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "で"
 }, {
     "id": 26,
@@ -230,7 +230,7 @@
     "answer1": "を",
     "answer2": "に",
     "answer3": "の",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "の"
 }, {
     "id": 27,
@@ -239,7 +239,7 @@
     "answer1": "に",
     "answer2": "で",
     "answer3": "が",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "に"
 }, {
     "id": 28,
@@ -248,7 +248,7 @@
     "answer1": "を",
     "answer2": "が",
     "answer3": "に",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "で"
 }, {
     "id": 29,
@@ -257,7 +257,7 @@
     "answer1": "を",
     "answer2": "と",
     "answer3": "で",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "と"
 }, {
     "id": 30,
@@ -266,7 +266,7 @@
     "answer1": "から",
     "answer2": "で",
     "answer3": "へ",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "で"
 }, {
     "id": 31,
@@ -275,7 +275,7 @@
     "answer1": "を",
     "answer2": "に",
     "answer3": "が",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "が"
 }, {
     "id": 32,
@@ -284,7 +284,7 @@
     "answer1": "に",
     "answer2": "を",
     "answer3": "が",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "を"
 }, {
     "id": 33,
@@ -293,7 +293,7 @@
     "answer1": "で",
     "answer2": "が",
     "answer3": "に",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "が"
 }, {
     "id": 34,
@@ -302,7 +302,7 @@
     "answer1": "で",
     "answer2": "を",
     "answer3": "は",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 35,
@@ -311,7 +311,7 @@
     "answer1": "で",
     "answer2": "に",
     "answer3": "が",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "で"
 }, {
     "id": 36,
@@ -320,7 +320,7 @@
     "answer1": "と",
     "answer2": "に",
     "answer3": "か",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "か"
 }, {
     "id": 37,
@@ -329,7 +329,7 @@
     "answer1": "に",
     "answer2": "が",
     "answer3": "で",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "に"
 }, {
     "id": 38,
@@ -338,7 +338,7 @@
     "answer1": "を",
     "answer2": "に",
     "answer3": "で",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "が"
 }, {
     "id": 39,
@@ -347,7 +347,7 @@
     "answer1": "に",
     "answer2": "と",
     "answer3": "で",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "で"
 }, {
     "id": 40,
@@ -356,7 +356,7 @@
     "answer1": "と",
     "answer2": "で",
     "answer3": "を",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "と"
 }, {
     "id": 41,
@@ -365,7 +365,7 @@
     "answer1": "が",
     "answer2": "は",
     "answer3": "で",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "を"
 }, {
     "id": 42,
@@ -374,7 +374,7 @@
     "answer1": "が",
     "answer2": "も",
     "answer3": "に",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "は"
 }, {
     "id": 43,
@@ -383,7 +383,7 @@
     "answer1": "か／か",
     "answer2": "よ／ね",
     "answer3": "ね／よ",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "ね／よ"
 }, {
     "id": 44,
@@ -392,7 +392,7 @@
     "answer1": "に",
     "answer2": "で",
     "answer3": "は",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "で"
 }, {
     "id": 45,
@@ -401,7 +401,7 @@
     "answer1": "が",
     "answer2": "と",
     "answer3": "で",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "で"
 }, {
     "id": 46,
@@ -410,7 +410,7 @@
     "answer1": "に",
     "answer2": "が",
     "answer3": "から",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "で"
 }, {
     "id": 47,
@@ -419,7 +419,7 @@
     "answer1": "に",
     "answer2": "へ",
     "answer3": "が",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "で"
 }, {
     "id": 48,
@@ -428,7 +428,7 @@
     "answer1": "は",
     "answer2": "を",
     "answer3": "が",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 49,
@@ -437,7 +437,7 @@
     "answer1": "が",
     "answer2": "に",
     "answer3": "と",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "に"
 }, {
     "id": 50,
@@ -446,7 +446,7 @@
     "answer1": "で",
     "answer2": "を",
     "answer3": "が",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 51,
@@ -455,7 +455,7 @@
     "answer1": "から",
     "answer2": "へ",
     "answer3": "を",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "を"
 }, {
     "id": 52,
@@ -464,7 +464,7 @@
     "answer1": "を",
     "answer2": "も",
     "answer3": "は",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "か"
 }, {
     "id": 53,
@@ -473,7 +473,7 @@
     "answer1": "からの",
     "answer2": "へ",
     "answer3": "までの",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "からの"
 }, {
     "id": 54,
@@ -482,7 +482,7 @@
     "answer1": "など",
     "answer2": "から",
     "answer3": "や",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "など"
 }, {
     "id": 55,
@@ -491,7 +491,7 @@
     "answer1": "からも",
     "answer2": "に",
     "answer3": "へも",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "へも"
 }, {
     "id": 56,
@@ -500,7 +500,7 @@
     "answer1": "は",
     "answer2": "に",
     "answer3": "と",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "は"
 }, {
     "id": 57,
@@ -509,7 +509,7 @@
     "answer1": "どんな",
     "answer2": "どの",
     "answer3": "どう",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "どの"
 }, {
     "id": 58,
@@ -518,7 +518,7 @@
     "answer1": "どなた",
     "answer2": "いかが",
     "answer3": "どうして",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "どなた"
 }, {
     "id": 59,
@@ -527,7 +527,7 @@
     "answer1": "に",
     "answer2": "を",
     "answer3": "へ",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "の"
 }, {
     "id": 60,
@@ -536,7 +536,7 @@
     "answer1": "5人の",
     "answer2": "5人が",
     "answer3": "5人と",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "5人"
 }, {
     "id": 61,
@@ -545,7 +545,7 @@
     "answer1": "ちょっと",
     "answer2": "だけ",
     "answer3": "ちょうど",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "もう"
 }, {
     "id": 62,
@@ -554,7 +554,7 @@
     "answer1": "した",
     "answer2": "して",
     "answer3": "する",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "した"
 }, {
     "id": 63,
@@ -563,7 +563,7 @@
     "answer1": "どうして",
     "answer2": "どうも",
     "answer3": "どなた",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "どうして"
 }, {
     "id": 64,
@@ -572,7 +572,7 @@
     "answer1": "いつも",
     "answer2": "ときどき",
     "answer3": "よく",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "ときどき"
 }, {
     "id": 65,
@@ -581,7 +581,7 @@
     "answer1": "もう",
     "answer2": "たいてい",
     "answer3": "ちょうど",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "ちょうど"
 }, {
     "id": 66,
@@ -590,7 +590,7 @@
     "answer1": "だんだん",
     "answer2": "どうも",
     "answer3": "あまり",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "よく"
 }, {
     "id": 67,
@@ -599,7 +599,7 @@
     "answer1": "ちょっと",
     "answer2": "よく",
     "answer3": "ちょうど",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "ちょうど"
 }, {
     "id": 68,
@@ -608,7 +608,7 @@
     "answer1": "よく",
     "answer2": "ときどき",
     "answer3": "いつも",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "あまり"
 }, {
     "id": 69,
@@ -617,7 +617,7 @@
     "answer1": "とき",
     "answer2": "でも",
     "answer3": "が",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "が"
 }, {
     "id": 70,
@@ -626,7 +626,7 @@
     "answer1": "もう",
     "answer2": "しか",
     "answer3": "ちょうど",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "しか"
 }, {
     "id": 71,
@@ -635,7 +635,7 @@
     "answer1": "たくさん",
     "answer2": "たいへん",
     "answer3": "とても",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "ときどき"
 }, {
     "id": 72,
@@ -644,7 +644,7 @@
     "answer1": "どんな",
     "answer2": "いかが",
     "answer3": "どれ",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "どんな"
 }, {
     "id": 73,
@@ -653,7 +653,7 @@
     "answer1": "まだ",
     "answer2": "もう",
     "answer3": "それから",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "また"
 }, {
     "id": 74,
@@ -662,7 +662,7 @@
     "answer1": "では",
     "answer2": "それでは",
     "answer3": "でも",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "でも"
 }, {
     "id": 75,
@@ -671,7 +671,7 @@
     "answer1": "たいへん",
     "answer2": "あまり",
     "answer3": "ちょうど",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "あまり"
 }, {
     "id": 76,
@@ -680,7 +680,7 @@
     "answer1": "も",
     "answer2": "ずつ",
     "answer3": "くらい",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "ずつ"
 }, {
     "id": 77,
@@ -689,7 +689,7 @@
     "answer1": "ごろ",
     "answer2": "ずつ",
     "answer3": "くらい",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "くらい"
 }, {
     "id": 78,
@@ -698,7 +698,7 @@
     "answer1": "ときどき",
     "answer2": "たいてい",
     "answer3": "もっと",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "だんだん"
 }, {
     "id": 79,
@@ -707,7 +707,7 @@
     "answer1": "ごろ",
     "answer2": "とき",
     "answer3": "まで",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "ごろ"
 }, {
     "id": 80,
@@ -716,7 +716,7 @@
     "answer1": "いつも",
     "answer2": "おおぜい",
     "answer3": "ちょっと",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "いつも"
 }, {
     "id": 81,
@@ -725,7 +725,7 @@
     "answer1": "あまり",
     "answer2": "ちょうど",
     "answer3": "たいへん",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "たいてい"
 }, {
     "id": 82,
@@ -734,7 +734,7 @@
     "answer1": "もっと",
     "answer2": "たいてい",
     "answer3": "もちろん",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "もちろん"
 }, {
     "id": 83,
@@ -743,7 +743,7 @@
     "answer1": "に",
     "answer2": "を",
     "answer3": "で",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "に"
 }, {
     "id": 84,
@@ -752,7 +752,7 @@
     "answer1": "しかし",
     "answer2": "なぜ",
     "answer3": "それが",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "しかし"
 }, {
     "id": 85,
@@ -761,7 +761,7 @@
     "answer1": "しか",
     "answer2": "くらい",
     "answer3": "など",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "だけ"
 }, {
     "id": 86,
@@ -770,7 +770,7 @@
     "answer1": "あまり",
     "answer2": "とても",
     "answer3": "よく",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "よく"
 }, {
     "id": 87,
@@ -779,7 +779,7 @@
     "answer1": "ときどき",
     "answer2": "ちょっと",
     "answer3": "もう",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "もう"
 }, {
     "id": 88,
@@ -788,7 +788,7 @@
     "answer1": "もう",
     "answer2": "ちょうど",
     "answer3": "いつも",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "もっと"
 }, {
     "id": 89,
@@ -797,7 +797,7 @@
     "answer1": "どんな",
     "answer2": "何",
     "answer3": "どうして",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "どう"
 }, {
     "id": 90,
@@ -806,7 +806,7 @@
     "answer1": "まだです",
     "answer2": "まえです",
     "answer3": "またです",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "まだです"
 }, {
     "id": 91,
@@ -815,7 +815,7 @@
     "answer1": "が",
     "answer2": "の",
     "answer3": "も",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "の"
 }, {
     "id": 92,
@@ -824,7 +824,7 @@
     "answer1": "に",
     "answer2": "が",
     "answer3": "の",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "で"
 }, {
     "id": 93,
@@ -833,7 +833,7 @@
     "answer1": "が",
     "answer2": "で",
     "answer3": "に",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "が"
 }, {
     "id": 94,
@@ -842,7 +842,7 @@
     "answer1": "は",
     "answer2": "も",
     "answer3": "が",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "も"
 }, {
     "id": 95,
@@ -851,7 +851,7 @@
     "answer1": "の",
     "answer2": "が",
     "answer3": "を",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "の"
 }, {
     "id": 96,
@@ -860,7 +860,7 @@
     "answer1": "で",
     "answer2": "を",
     "answer3": "は",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 97,
@@ -869,7 +869,7 @@
     "answer1": "に",
     "answer2": "が",
     "answer3": "で",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "が"
 }, {
     "id": 98,
@@ -878,7 +878,7 @@
     "answer1": "から",
     "answer2": "へも",
     "answer3": "とは",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "から"
 }, {
     "id": 99,
@@ -887,7 +887,7 @@
     "answer1": "で",
     "answer2": "を",
     "answer3": "へ",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 100,
@@ -896,7 +896,7 @@
     "answer1": "を",
     "answer2": "に",
     "answer3": "と",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "を"
 }, {
     "id": 101,
@@ -905,7 +905,7 @@
     "answer1": "が",
     "answer2": "を",
     "answer3": "も",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 102,
@@ -914,7 +914,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "と",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "は"
 }, {
     "id": 103,
@@ -923,7 +923,7 @@
     "answer1": "も",
     "answer2": "を",
     "answer3": "に",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "を"
 }, {
     "id": 104,
@@ -932,7 +932,7 @@
     "answer1": "へ",
     "answer2": "に",
     "answer3": "を",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "を"
 }, {
     "id": 105,
@@ -941,7 +941,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "に",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "に"
 }, {
     "id": 106,
@@ -950,7 +950,7 @@
     "answer1": "へ",
     "answer2": "で",
     "answer3": "で",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "へ"
 }, {
     "id": 107,
@@ -959,7 +959,7 @@
     "answer1": "だ",
     "answer2": "じゃない",
     "answer3": "だった",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "だ"
 }, {
     "id": 108,
@@ -968,7 +968,7 @@
     "answer1": "では　ありません",
     "answer2": "でした",
     "answer3": "では　ありませんでした",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "では　ありません"
 }, {
     "id": 109,
@@ -977,7 +977,7 @@
     "answer1": "い",
     "answer2": "いと",
     "answer3": "いに",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "く"
 }, {
     "id": 110,
@@ -986,7 +986,7 @@
     "answer1": "に",
     "answer2": "で",
     "answer3": "く",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "に"
 }, {
     "id": 111,
@@ -995,7 +995,7 @@
     "answer1": "な",
     "answer2": "で",
     "answer3": "く",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 112,
@@ -1004,7 +1004,7 @@
     "answer1": "よく",
     "answer2": "よい",
     "answer3": "いい",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "よく"
 }, {
     "id": 113,
@@ -1013,7 +1013,7 @@
     "answer1": "つくえの　上",
     "answer2": "つくえが　上",
     "answer3": "つくえに　上",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "上の　つくえ"
 }, {
     "id": 114,
@@ -1022,7 +1022,7 @@
     "answer1": "いの／の",
     "answer2": "くて／の",
     "answer3": "の／い",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "の／い"
 }, {
     "id": 115,
@@ -1031,7 +1031,7 @@
     "answer1": "の",
     "answer2": "に",
     "answer3": "は",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "の"
 }, {
     "id": 116,
@@ -1040,7 +1040,7 @@
     "answer1": "に／の",
     "answer2": "が／の",
     "answer3": "の／に",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "の／の"
 }, {
     "id": 117,
@@ -1049,7 +1049,7 @@
     "answer1": "が",
     "answer2": "と",
     "answer3": "で",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "で"
 }, {
     "id": 118,
@@ -1058,7 +1058,7 @@
     "answer1": "に",
     "answer2": "は",
     "answer3": "の",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "に"
 }, {
     "id": 119,
@@ -1067,7 +1067,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "に",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "が"
 }, {
     "id": 120,
@@ -1076,7 +1076,7 @@
     "answer1": "は",
     "answer2": "か",
     "answer3": "で",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "か"
 }, {
     "id": 121,
@@ -1085,7 +1085,7 @@
     "answer1": "を",
     "answer2": "と",
     "answer3": "は",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "で"
 }, {
     "id": 122,
@@ -1094,7 +1094,7 @@
     "answer1": "で",
     "answer2": "と",
     "answer3": "も",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "に"
 }, {
     "id": 123,
@@ -1103,7 +1103,7 @@
     "answer1": "で",
     "answer2": "と",
     "answer3": "か",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "と"
 }, {
     "id": 124,
@@ -1112,7 +1112,7 @@
     "answer1": "も",
     "answer2": "を",
     "answer3": "に",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "も"
 }, {
     "id": 125,
@@ -1121,6 +1121,6 @@
     "answer1": "したり",
     "answer2": "して",
     "answer3": "してから",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "したり"
 }]

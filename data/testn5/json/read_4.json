@@ -5,7 +5,7 @@
     "answer1": "６月１３日　（水）　と　１４日　（木）",
     "answer2": "６月１５日　　(金)　と　１６日　（土）",
     "answer3": "６月１７日　　(日)　と　１８日　（月）",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "６月１３日　（水）　と　１４日　（木）",
     "Filename": "3.4.1"
 }, {
@@ -15,7 +15,7 @@
     "answer1": "火曜日か　木曜日",
     "answer2": "水曜日か　木曜日",
     "answer3": "金曜日か　土曜日",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "水曜日か　木曜日",
     "Filename": ""
 }, {
@@ -25,7 +25,7 @@
     "answer1": "ぎんこうの　ATMで　9時　前に　出す",
     "answer2": "コンビニの　ATMで　午前中に　出す",
     "answer3": "コンビニの　ATMで　3時　すぎに　出す",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "コンビニの　ATMで　午前中に　出す",
     "Filename": ""
 }, {
@@ -35,7 +35,7 @@
     "answer1": "「ながぐつ」は　16日　「かさ」「われた　コップ」は　15日",
     "answer2": "「ながぐつ」「かさ」は　15日　「われた　コップ」は　21日",
     "answer3": "「ながぐつ」は　15日　「かさ」「われた　コップ」は　21日",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "「ながぐつ」は　16日　「かさ」「われた　コップ」は　15日",
     "Filename": ""
 }, {
@@ -45,7 +45,7 @@
     "answer1": "9時10分",
     "answer2": "9時15分",
     "answer3": "9時20分",
-    "correct-index": "answer2",
+    "correct": "answer2",
     "correct-value": "9時15分",
     "Filename": ""
 }, {
@@ -55,7 +55,7 @@
     "answer1": "B",
     "answer2": "C",
     "answer3": "D",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "A",
     "Filename": ""
 }, {
@@ -65,7 +65,7 @@
     "answer1": "土よう日の　ひる",
     "answer2": "土よう日の　よる",
     "answer3": "日よう日の　よる",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "土よう日の　ひる",
     "Filename": ""
 }, {
@@ -75,7 +75,7 @@
     "answer1": "となりの　ねこ",
     "answer2": "わたしたちの　なつやすみ",
     "answer3": "うみへ　いきたい",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "となりの　ねこ",
     "Filename": "3.4.8"
 }, {
@@ -85,7 +85,7 @@
     "answer1": "１２００円",
     "answer2": "１６００円",
     "answer3": "２０００円",
-    "correct-index": "answer1",
+    "correct": "answer1",
     "correct-value": "１２００円",
     "Filename": ""
 }, {
@@ -95,7 +95,7 @@
     "answer1": "イ",
     "answer2": "ウ",
     "answer3": "エ",
-    "correct-index": "answer3",
+    "correct": "answer3",
     "correct-value": "エ",
     "Filename": "3.4.10"
 }, {
@@ -105,7 +105,7 @@
     "answer1": "金よう日の　あさ　１０時まで",
     "answer2": "土よう日の　あさ　８時まで",
     "answer3": "土よう日の　あさ　１０時まで",
-    "correct-index": "answer0",
+    "correct": "answer0",
     "correct-value": "金よう日の　あさ　８時まで",
     "Filename": ""
 }]

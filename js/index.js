@@ -67,7 +67,7 @@ function changeLang(code) {
 function getUser() {
     if (sessionStorage.getItem("user") == null) {
         return {
-            "id": 0,
+            "id": 17,
             "loginname": "anonymous",
             "display": "Anonymous"
         };
@@ -609,8 +609,12 @@ function randTake(data, no) {
     var ret = [];
     for (var i = 0; i < no; i++) {
         var randIdx = Math.floor(Math.random() * data.length);
-        ret.push(data[randIdx]);
-        data.splice(randIdx);
+        var tmp = data[randIdx];
+        if (tmp != undefined) {
+            delete tmp["id"];
+            ret.push(tmp);
+            // data.splice(randIdx);
+        }
     }
     return ret;
 }

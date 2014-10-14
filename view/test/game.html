@@ -4,7 +4,7 @@
             <span>N5 TEST</span>-
             <span data-i18n="{{title}}"></span>
         </h2>
-        
+
         <div id="quiz">
             <ul>
                 <li ng-repeat="(key, value) in dataset">
@@ -18,7 +18,12 @@
             <div id="tabs-{{key +1 }}" ng-repeat="(key, value) in dataset">
                 <div class="quest-content" ng-repeat="(k, v) in value">
                     <div class="row">
-                        <div class="col-md-12" ng-bind="v.question"></div>
+                        <div class="col-md-12">
+                            <p>
+                                <span ng-bind="counter(dataset,key,k)"></span>
+                                <span ng-bind="v.question"></span>
+                            </p>
+                        </div>
                     </div>
                     <ol class="ans-options">
                         <li ng-bind="v.answer0"></li>

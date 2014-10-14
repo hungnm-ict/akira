@@ -1,6 +1,6 @@
 var totaln5Ctrls = angular.module('totaln5Ctrls', []);
 
-totaln5Ctrls.controller('mainCtrl', function($scope, $http,/* restService, */kanaStar, totalStar) {
+totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, /* restService, */ kanaStar, totalStar) {
 
     $scope.course = "totaln5";
     $scope.kana = "true";
@@ -15,22 +15,54 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http,/* restService, */kan
 
     // Get kana star information
     // restService.getRestPromise("kana").then(function(deferred) {
-        $scope.kanastar = getCourseStar(kanaStar.data, 'kana');
-        $scope.kanaprogress = getCourseProgress(kanaStar.data, 'kana', 5, 5);
+    $scope.kanastar = getCourseStar(kanaStar.data, 'kana');
+    $scope.kanaprogress = getCourseProgress(kanaStar.data, 'kana', 5, 5);
     // });
 
     // restService.getRestPromise("totaln5").then(function(deferred) {
-        var stars = getTotalStar(totalStar.data, 'totaln5');
-        $scope.vocabstar = stars.vocab;
-        $scope.grammarstar = stars.grammar;
+    var stars = getTotalStar(totalStar.data, 'totaln5');
+    $scope.vocabstar = stars.vocab;
+    $scope.grammarstar = stars.grammar;
 
-        var progress = getTotalProgress(totalStar.data, 'totaln5', 4, 5);
-        $scope.vocabprogress = progress.vocab;
-        $scope.grammarprogress = progress.grammar;
+    var progress = getTotalProgress(totalStar.data, 'totaln5', 4, 5);
+    $scope.vocabprogress = progress.vocab;
+    $scope.grammarprogress = progress.grammar;
     // });
 
     $scope.show = function(e) {
         $scope.kana = e;
+    }
+
+    $scope.check = function(lesson) {
+        //Get current key point for this courses
+        $http({
+            method: "GET",
+            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=totaln5&userid=" + getUser().id
+        }).success(function(data, status) {
+            console.log(data);
+            if (data > lesson) {
+                console.info("Ban du keypoint de hoc bai nay");
+                $window.location.href = "#/" + lesson;
+            } else {
+                console.info("Ban khong du keypoint de hoc bai nay");
+            }
+        });
+    }
+
+    $scope.pass = function(noOfLess) {
+        //Firstly check if user have enough day_remain or not
+        //Get current key point for this courses
+        $http({
+            method: "GET",
+            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
+        }).success(function(data, status) {
+            console.log(data);
+            if(data>0){
+                console.log("Ban con ngay su dung va co the choi phan nay");
+            }else{
+                console.log("Ban da het ngay su dung vui long mua the va nap them");
+            }
+        });
     }
 });
 
@@ -64,13 +96,13 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataSer
 =            Controller for totaln5 - Vocab game            =
 ===========================================================*/
 
-totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataService,writeData) {
-  /*  dataService.getDataPromise("totaln5", $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
-    });*/
+totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataService, writeData) {
+    /*  dataService.getDataPromise("totaln5", $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
+          $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
+      });*/
 
-        $scope.data = akiraShuffle(dataService.filter(writeData.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
-    
+    $scope.data = akiraShuffle(dataService.filter(writeData.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
+
 
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;

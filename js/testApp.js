@@ -31,11 +31,17 @@ testApp.config(['$routeProvider',
                     data: function($q, dataService, $route, $log) {
                         var deferred = $q.defer();
 
+                        //Filter list các promise object trả về từ dataService
                         var dataPromise = dataService.getDataPromise($route.current.params.degree, $route.current.params.type);
 
+                        //Chờ cho đến khi tất cả các promise đã được resolve
                         $q.all(dataPromise).then(function(response) {
+                            //Resolve object
                             deferred.resolve(response);
+                            console.log("From route resolved" );
+                            console.info(response);
                         });
+
                         return deferred.promise;
                     },
                 }
@@ -62,8 +68,6 @@ testApp.service('dataService', function($http, $log) {
     this.n4vocab1 = $http({
         method: "GET",
         url: "../../data/testn4/json/vocab_1.json"
-    }).success(function(data, status) {
-        return data;
     });
 
     this.n4vocab2 = $http({
@@ -249,11 +253,11 @@ testApp.service('dataService', function($http, $log) {
 
     /*-----  End of N5 data  ------*/
     this.getDataPromise = function(degree, type) {
-        var promiseSet = [];
         switch (degree) {
             case "n5":
                 switch (type) {
                     case "0":
+                        var promiseSet = [];
                         promiseSet.push(this.n5vocab1);
                         promiseSet.push(this.n5vocab2);
                         promiseSet.push(this.n5vocab3);
@@ -261,6 +265,7 @@ testApp.service('dataService', function($http, $log) {
                         return promiseSet;
                         break;
                     case "1":
+                        var promiseSet = [];
                         promiseSet.push(this.n5grammar1);
                         promiseSet.push(this.n5grammar2);
                         promiseSet.push(this.n5grammar3);
@@ -268,6 +273,7 @@ testApp.service('dataService', function($http, $log) {
                         return promiseSet;
                         break;
                     case "2":
+                        var promiseSet = [];
                         promiseSet.push(this.n5read1);
                         promiseSet.push(this.n5read2);
                         promiseSet.push(this.n5read3);
@@ -275,6 +281,7 @@ testApp.service('dataService', function($http, $log) {
                         return promiseSet;
                         break;
                     case "3":
+                        var promiseSet = [];
                         promiseSet.push(this.n5write1);
                         promiseSet.push(this.n5write2);
                         promiseSet.push(this.n5write3);
@@ -289,31 +296,35 @@ testApp.service('dataService', function($http, $log) {
             case "n4":
                 switch (type) {
                     case "0":
-                        promiseSet.push(this.n5vocab1);
-                        promiseSet.push(this.n5vocab2);
-                        promiseSet.push(this.n5vocab3);
-                        promiseSet.push(this.n5vocab4);
+                        var promiseSet = [];
+                        promiseSet.push(this.n4vocab1);
+                        promiseSet.push(this.n4vocab2);
+                        promiseSet.push(this.n4vocab3);
+                        promiseSet.push(this.n4vocab4);
                         return promiseSet;
                         break;
                     case "1":
-                        promiseSet.push(this.n5grammar1);
-                        promiseSet.push(this.n5grammar2);
-                        promiseSet.push(this.n5grammar3);
-                        // promiseSet.push(this.n5grammar4);
+                        var promiseSet = [];
+                        promiseSet.push(this.n4grammar1);
+                        promiseSet.push(this.n4grammar2);
+                        promiseSet.push(this.n4grammar3);
+                        // promiseSet.push(this.n4grammar4);
                         return promiseSet;
                         break;
                     case "2":
-                        promiseSet.push(this.n5read1);
-                        promiseSet.push(this.n5read2);
-                        promiseSet.push(this.n5read3);
-                        // promiseSet.push(this.n5read4);
+                        var promiseSet = [];
+                        promiseSet.push(this.n4read1);
+                        promiseSet.push(this.n4read2);
+                        promiseSet.push(this.n4read3);
+                        // promiseSet.push(this.n4read4);
                         return promiseSet;
                         break;
                     case "3":
-                        promiseSet.push(this.n5write1);
-                        promiseSet.push(this.n5write2);
-                        promiseSet.push(this.n5write3);
-                        promiseSet.push(this.n5write4);
+                        var promiseSet = [];
+                        promiseSet.push(this.n4write1);
+                        promiseSet.push(this.n4write2);
+                        promiseSet.push(this.n4write3);
+                        promiseSet.push(this.n4write4);
                         return promiseSet;
                         break;
                     default:

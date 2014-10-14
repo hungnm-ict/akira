@@ -6,7 +6,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.1"
     },
@@ -17,7 +17,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.2"
     },
@@ -28,7 +28,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.3"
     },
@@ -39,7 +39,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.4"
     },
@@ -50,7 +50,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.5"
     },
@@ -61,7 +61,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.6"
     },
@@ -72,7 +72,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.7"
     },
@@ -83,7 +83,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.8"
     },
@@ -94,7 +94,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.9"
     },
@@ -105,7 +105,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.10"
     },
@@ -116,7 +116,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.11"
     },
@@ -127,7 +127,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.12"
     },
@@ -138,7 +138,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.13"
     },
@@ -149,7 +149,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.14"
     },
@@ -160,7 +160,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.15"
     },
@@ -171,7 +171,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.16"
     },
@@ -182,7 +182,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.17"
     },
@@ -193,7 +193,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.18"
     },
@@ -204,7 +204,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.19"
     },
@@ -215,7 +215,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.20"
     },
@@ -226,7 +226,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.21"
     },
@@ -237,7 +237,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.22"
     },
@@ -248,7 +248,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.23"
     },
@@ -259,7 +259,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.24"
     },
@@ -270,7 +270,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.25"
     },
@@ -281,7 +281,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.26"
     },
@@ -292,7 +292,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.27"
     },
@@ -303,7 +303,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.28"
     },
@@ -314,7 +314,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.29"
     },
@@ -325,7 +325,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer2",
+        "correct": "answer2",
         "correct-value": 3,
         "filename": "4.3.30"
     },
@@ -336,7 +336,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.31"
     },
@@ -347,7 +347,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.32"
     },
@@ -358,7 +358,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer1",
+        "correct": "answer1",
         "correct-value": 2,
         "filename": "4.3.33"
     },
@@ -369,7 +369,7 @@
         "answer1": 2,
         "answer2": 3,
         "answer3": null,
-        "correct-index": "answer0",
+        "correct": "answer0",
         "correct-value": 1,
         "filename": "4.3.34"
     }

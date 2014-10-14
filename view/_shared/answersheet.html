@@ -21,19 +21,20 @@
     <div class="row">
         <div class="col-md-12">
             <div ng-repeat="(key, value) in dataset">
-                <div ng-repeat="(k,v) in value" class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-2" ng-bind="k+1"></div>
-                    <div class="col-md-2" ng-class="{'true':value.correct=='answer0'}" onclick="answerclicked(this)">
+                <div ng-repeat="(k,v) in value" class="row" ng-class="{'odd':$odd ==true}">
+                    <div class="col-md-2 center">
+                        <h4 ng-bind="counter(dataset,key,k)"></h4>
+                    </div>
+                    <div class="col-md-2" ng-class="{'true':v.correct=='answer0'}" onclick="answerclicked(this)">
                         <span class="test-circle"></span>
                     </div>
-                    <div class="col-md-2" ng-class="{'true':value.correct=='answer1'}" onclick="answerclicked(this)">
+                    <div class="col-md-2" ng-class="{'true':v.correct=='answer1'}" onclick="answerclicked(this)">
                         <span class="test-circle"></span>
                     </div>
-                    <div class="col-md-2" ng-class="{'true':value.correct=='answer2'}" onclick="answerclicked(this)">
+                    <div class="col-md-2" ng-class="{'true':v.correct=='answer2'}" onclick="answerclicked(this)">
                         <span class="test-circle"></span>
                     </div>
-                    <div class="col-md-2" ng-class="{'true':value.correct=='answer3'}" onclick="answerclicked(this)">
+                    <div class="col-md-2" ng-class="{'true':v.correct=='answer3'}" onclick="answerclicked(this)">
                         <span class="test-circle"></span>
                     </div>
                 </div>
