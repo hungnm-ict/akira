@@ -12,12 +12,6 @@ mobiCtrl.controller('subCtrl', function($scope, $http, $routeParams) {
     $scope.subtopic = 1;
 });
 
-/**
-
-    TODO:
-    - Gameover couse name
-**/
-
 mobiCtrl.controller('learnCtrl', function($scope, $http, $routeParams, mobiService) {
     mobiService.getPromise($routeParams.degree, $routeParams.course).then(function(deferred) {
         if (deferred.data != null) {

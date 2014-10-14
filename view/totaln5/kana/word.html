@@ -125,8 +125,9 @@
 </div>
 
 <script type="text/javascript">
-setTimeout(function() {
+// setTimeout(function() {
     $(document).keydown(function(e) {
+        console.log(angular.element("#wordWizard").scope());
         if (13 == e.keyCode) {
             angular.element("#wordWizard").scope().enterPress();
         } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
@@ -134,5 +135,5 @@ setTimeout(function() {
         }
         changeLang();
     });
-}, 500);
+// }, 500);
 </script>

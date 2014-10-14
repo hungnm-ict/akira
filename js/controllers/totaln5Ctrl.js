@@ -51,14 +51,13 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, /* restServ
 
     $scope.pass = function(noOfLess) {
         //Firstly check if user have enough day_remain or not
-        //Get current key point for this courses
         $http({
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
         }).success(function(data, status) {
-            console.log(data);
             if(data>0){
                 console.log("Ban con ngay su dung va co the choi phan nay");
+                // Go to lesson exam test
             }else{
                 console.log("Ban da het ngay su dung vui long mua the va nap them");
             }

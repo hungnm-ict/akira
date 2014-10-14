@@ -58,7 +58,17 @@
                     <audio controls id="sound-fail" class="hide">
                         <source src="../../audio/fail.mp3" type="audio/mp3">
                     </audio>
-                    <div ng-view></div>
+                    <div ng-switch on="isLoading">
+                        <div ng-switch-when="true" class="center">
+                            <img src="http://www.w3schools.com/jquery/demo_wait.gif" alt="">
+                        </div>
+                        <div ng-switch-when="false">
+                            <div ng-view></div>
+                        </div>
+                        <div ng-switch-default class="center">
+                            <img src="http://www.w3schools.com/jquery/demo_wait.gif" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 col-full-height">

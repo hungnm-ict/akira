@@ -243,7 +243,7 @@ totaln5App.service('restService', function($http) {
 });
 
 
-totaln5App.controller('rootController', function($scope) {
+totaln5App.controller('rootController', function($scope, $timeout) {
     $scope.rootPlay = function(data, course, step, id) {
         var selId = "choices-" + step + "-" + id;
         var audioSrc = document.getElementById(selId).getElementsByTagName('source');
@@ -251,6 +251,15 @@ totaln5App.controller('rootController', function($scope) {
         document.getElementById(selId).load();
         document.getElementById(selId).play();
     }
+
+
+    $scope.$on('$routeChangeStart', function(scope, next, curr) {
+        $scope.isLoading = "true";
+    });
+
+    $scope.$on('$routeChangeSuccess', function(scope, next, curr) {
+        $scope.isLoading = "false";
+    });
 });
 
 totaln5App.factory('menuFactory', function($rootScope) {
