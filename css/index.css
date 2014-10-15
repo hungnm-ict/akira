@@ -1329,6 +1329,7 @@ ul.anchor li a .stepNumber {
 }
 #leaderboard .row {
     line-height: 45px;
+    border-bottom: 2px solid #E0ECE8;
 }
 .kana#learnWizard .content .wrapper>.row, .kana#wordWizard .content .wrapper>.row, .kana#writeWizard .content .wrapper>.row, .vocab#writeWizard .content .wrapper>.row, .vocab#wordWizard .content .wrapper>.row {
     position: relative;
