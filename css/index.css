@@ -1445,3 +1445,14 @@ ul.anchor li a .stepNumber {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+#lock{
+    background: red !important;
+    color: #FFF !important;
+    -webkit-transform: rotate(90deg);
+       -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+         -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+    border-color: red !important;
+}

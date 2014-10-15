@@ -223,6 +223,32 @@ function genAnswers3(data, numberOfAns) {
     return uniqueGroups;
 }
 
+function genAnswers4(data, numberOfAns) {
+    var uniqueGroups = [];
+    $.each(data, function(idx, val) {
+        var obj = [];
+
+        var rand1;
+        obj.push(data[idx].data);
+
+        do {
+            rand1 = Math.floor((Math.random() * data.length));
+        } while (rand1 == idx);
+        obj.push(data[rand1].data);
+
+        if (numberOfAns == 3) {
+            var rand2;
+            do {
+                rand2 = Math.floor((Math.random() * data.length));
+            } while (rand2 == idx || rand2 == rand1);
+            obj.push(data[rand2].data);
+        }
+
+        uniqueGroups[idx] = akiraShuffle(obj);
+    });
+    return uniqueGroups;
+}
+
 
 /**
  * Generate answer for translate game in grammar
@@ -615,6 +641,36 @@ function randTake(data, no) {
             ret.push(tmp);
             // data.splice(randIdx);
         }
+    }
+    return ret;
+}
+
+/**
+ * generate data pool for test out 
+ * if big get data from start lesson to current lesson
+ * if small get in current lesstion
+ * @param  {[type]} data   [description]
+ * @param  {[type]} type   [description]
+ * @param  {[type]} lesson [description]
+ * @return {[type]}        [description]
+ */
+function mergeData(data, type, lesson,itemkey) {
+    var ret = [];
+    switch (type) {
+        case "big":
+            $.each(data, function(key,val) {
+                if (val[itemkey] <= lesson) {
+                    ret.push(val);
+                }
+            });
+            break;
+        case "basic":
+            $.each(data, function(key,val) {
+                if (val[itemkey] == lesson) {
+                    ret.push(val);
+                }
+            });
+            break;
     }
     return ret;
 }

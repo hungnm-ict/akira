@@ -32,37 +32,6 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, /* restServ
     $scope.show = function(e) {
         $scope.kana = e;
     }
-
-    $scope.check = function(lesson) {
-        //Get current key point for this courses
-        $http({
-            method: "GET",
-            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=totaln5&userid=" + getUser().id
-        }).success(function(data, status) {
-            console.log(data);
-            if (data > lesson) {
-                console.info("Ban du keypoint de hoc bai nay");
-                $window.location.href = "#/" + lesson;
-            } else {
-                console.info("Ban khong du keypoint de hoc bai nay");
-            }
-        });
-    }
-
-    $scope.pass = function(noOfLess) {
-        //Firstly check if user have enough day_remain or not
-        $http({
-            method: "GET",
-            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
-        }).success(function(data, status) {
-            if(data>0){
-                console.log("Ban con ngay su dung va co the choi phan nay");
-                // Go to lesson exam test
-            }else{
-                console.log("Ban da het ngay su dung vui long mua the va nap them");
-            }
-        });
-    }
 });
 
 totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, restService) {
@@ -953,7 +922,6 @@ totaln5Ctrls.controller('kanaPictureCtrl', function($scope, $routeParams, $http,
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#pictureWizard #step-" + step + " #user-input-wrapper .selected span").text().trim();
             var correct = $("#pictureWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-            console.log(correct + "-" + userSlt);
             if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
@@ -1072,8 +1040,6 @@ totaln5Ctrls.controller('kanaConnectCtrl', function($scope, $routeParams, $http,
 
     dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 4).then(function(deferred) {
         $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
-        console.log(deferred.data);
-
     });
 
     $scope.removeLife = function() {
@@ -1171,6 +1137,30 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
 /*-----  End of KANA  ------*/
 
 
-totaln5Ctrls.controller('testoutCtrl',  function(){
-   alert(); 
+totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService) {
+    try {
+        $scope.data = dataService.getTestoutData(testoutData, $routeParams.type, $routeParams.lessonId);
+        $scope.choices2 = genAnswers4($scope.data, 3);
+
+        $scope.gameObject = {
+            "life": 3,
+            "correct": 0
+        };
+        $scope.step = 0;
+        $scope.stage = 0;
+
+        $scope.playSound = function(id, isNormal) {
+            var audioSrc = document.getElementById(id).getElementsByTagName('source');
+            $("audio#" + id + " source").attr("src", "../../data/totaln5/vocab/audio/" + $scope.data[id].data.filename + ".mp3");
+            document.getElementById(id).load();
+            if (isNormal) {
+                document.getElementById(id).playbackRate = 1;
+            } else {
+                document.getElementById(id).playbackRate = 0.5;
+            }
+            document.getElementById(id).play();
+        };
+    } catch (err) {
+        console.error(err);
+    }
 });

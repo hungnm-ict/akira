@@ -7,7 +7,6 @@
     <ul>
         <li ng-repeat="(key, value) in [1,2,3,4]">
             <a href="#step-{{value}}" ng-click="partId=value">
-
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(value)">
                         <span ng-switch-when="true" ng-bind="value"></span>
@@ -16,6 +15,12 @@
                         <span ng-switch-default><i class="fa fa-lock"></i>
                         </span>
                     </span>
+                </label>
+            </a>
+        </li>
+        <li>
+            <a href="" id="lock" ng-click="pass('basic',lessonId)">
+                <label class='stepNumber'><i class='fa fa-key'></i>
                 </label>
             </a>
         </li>

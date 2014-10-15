@@ -61,13 +61,13 @@ akrSharedDirectives.directive('akirawizard', function() {
             });
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();
+            
             //Popover information
             $.each($('#' + attrs.id + " ul li").has("i.fa.fa-lock"), function(k, v) {
                 $(v).popover();
             });
 
         }, 200);
-
     }
 
     return {

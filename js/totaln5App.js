@@ -31,9 +31,18 @@ totaln5App.config(['$routeProvider',
                         return 'kana/katasub.html';
                 },
             })
-            .when('/testout', {
+            .when('/testout/:type/:lessonId', {
                 templateUrl: 'testout.html',
-                controller: 'testoutCtrl'
+                controller: 'testoutCtrl',
+                resolve: {
+                    testoutData: function($q, dataService) {
+                        var deferred = $q.defer();
+                        $q.all(dataService.getTestoutPromise()).then(function(response) {
+                            deferred.resolve(response);
+                        });
+                        return deferred.promise;
+                    }
+                }
             })
             .when('/kana/:lessonId/:partId/learn', {
                 templateUrl: 'kana/learn.html',
@@ -216,6 +225,167 @@ totaln5App.service('dataService', function($http) {
                 break;
         }
     }
+
+    this.getTestoutPromise = function() {
+        var promise = [this.n5Vocab, this.n5Grammar1, this.n5Grammar2, this.n5Grammar3, this.n5Grammar4, this.n5Grammar5];
+        return promise;
+    }
+
+
+    /**
+     * Return an array of 30 question item
+     * an question item include: {type:'vocabwrite[vocabpic|vocabword|vocablisten|grammarlisten|grammarchoice|grammartranslate|grammarread|grammarword], data: '...'}
+     * @param  {[type]} data     [description]
+     * @param  {[type]} type     [description]
+     * @param  {[type]} lessonId [description]
+     * @return {[type]}          [description]
+     */
+    this.getTestoutData = function(data, type, lessonId) {
+        var ret = [];
+        var vocabPool = mergeData(data[0].data, type, lessonId,"topic");
+        var grammar1Pool = mergeData(data[1].data, type, lessonId,"id");
+        var grammar2Pool = mergeData(data[2].data, type, lessonId,"id");
+        var grammar3Pool = mergeData(data[3].data, type, lessonId,"id");
+        var grammar4Pool = mergeData(data[4].data, type, lessonId,"id");
+        var grammar5Pool = mergeData(data[5].data, type, lessonId,"id");
+        var recipe = [{
+            "type": "vocablearn",
+            "number": 3,
+            "datapool": vocabPool
+        }, {
+            "type": "vocabpic",
+            "number": 3,
+            "datapool": vocabPool
+        }, {
+            "type": "vocabword",
+            "number": 4,
+            "datapool": vocabPool
+        }, {
+            "type": "vocablisten",
+            "number": 5,
+            "datapool": vocabPool
+        }, {
+            "type": "grammarlisten",
+            "number": 3,
+            "datapool": grammar1Pool
+        }, {
+            "type": "grammarchoice",
+            "number": 3,
+            "datapool": grammar2Pool
+        }, {
+            "type": "grammartranslate",
+            "number": 3,
+            "datapool": grammar3Pool
+        }, {
+            "type": "grammarread",
+            "number": 3,
+            "datapool": grammar4Pool
+        }, {
+            "type": "grammarword",
+            "number": 3,
+            "datapool": grammar5Pool
+        }];
+
+        //Recipe for 30 question randomize:
+        //Vocab: 3 vocab learn, 3 vocab pic, 4 vocab word, 5 vocab listen, 3 grammar listen, 3 grammar choice, 3 grammar translate, 3 grammar read, 3 grammarword
+        var randIdx;
+        angular.forEach(recipe, function(value, key) {
+            for (var i = 0; i < value.number; i++) {
+                randIdx = Math.floor(Math.random() * value.datapool.length);
+                ret.push({
+                    type: value.type,
+                    data: value.datapool[randIdx]
+                });
+            };
+            /* switch (value.type) {
+                 case "vocablearn":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * vocabPool.length);
+                         ret.push({
+                             type: value.type,
+                             data: vocabPool[randIdx]
+                         });
+                     };
+                     break;
+                 case "vocabpic":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * vocabPool.length);
+                         ret.push({
+                             type: value.type,
+                             data: vocabPool[randIdx]
+                         });
+                     };
+                     break;
+                 case "vocabword":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * vocabPool.length);
+                         ret.push({
+                             type: value.type,
+                             data: vocabPool[randIdx]
+                         });
+                     };
+                     break;
+                 case "vocablisten":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * vocabPool.length);
+                         ret.push({
+                             type: value.type,
+                             data: vocabPool[randIdx]
+                         });
+                     };
+                     break;
+                 case "grammarlisten":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * grammar1Pool.length);
+                         ret.push({
+                             type: value.type,
+                             data: grammar1Pool[randIdx]
+                         });
+                     };
+                     break;
+                 case "grammarchoice":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * grammar2Pool.length);
+                         ret.push({
+                             type: value.type,
+                             data: grammar2Pool[randIdx]
+                         });
+                     };
+                     break;
+                 case "grammartranslate":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * grammar3Pool.length);
+                         ret.push({
+                             type: value.type,
+                             data: grammar3Pool[randIdx]
+                         });
+                     };
+                     break;
+                 case "grammarread":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * grammar4Pool.length);
+                         ret.push({
+                             type: value.type,
+                             data: grammar4Pool[randIdx]
+                         });
+                     };
+                     break;
+                 case "grammarword":
+                     for (var i = 0; i < value.number; i++) {
+                         randIdx = Math.floor(Math.random() * grammar5Pool.length);
+                         ret.push({
+                             type: value.type,
+                             data: grammar5Pool[randIdx]
+                         });
+                     };
+                     break;
+             }*/
+        });
+
+        return ret;
+    }
+
+
 });
 
 totaln5App.service('restService', function($http) {
@@ -246,15 +416,48 @@ totaln5App.service('restService', function($http) {
 });
 
 
-totaln5App.controller('rootController', function($scope, $timeout) {
+totaln5App.controller('rootController', function($scope, $timeout, $http, $window) {
     $scope.rootPlay = function(data, course, step, id) {
         var selId = "choices-" + step + "-" + id;
         var audioSrc = document.getElementById(selId).getElementsByTagName('source');
         $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
         document.getElementById(selId).load();
         document.getElementById(selId).play();
-    }
+    };
 
+    $scope.check = function(lesson) {
+        //Get current key point for this courses
+        $http({
+            method: "GET",
+            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=totaln5&userid=" + getUser().id
+        }).success(function(data, status) {
+            console.log(data);
+            if (data > lesson) {
+                console.info("Ban du keypoint de hoc bai nay");
+                $window.location.href = "#/" + lesson;
+            } else {
+                alert("Ban khong du keypoint de hoc bai nay");
+            }
+        });
+    };
+
+    $scope.pass = function(type, lesson) {
+        alert();
+
+        //Firstly check if user have enough day_remain or not
+        $http({
+            method: "GET",
+            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
+        }).success(function(data, status) {
+            if (data > 0) {
+                console.log("Ban con ngay su dung va co the choi phan nay");
+                // Go to lesson exam test
+                $window.location.href = "#/testout/" + type + "/" + lesson;
+            } else {
+                console.log("Ban da het ngay su dung vui long mua the va nap them");
+            }
+        });
+    };
 
     $scope.$on('$routeChangeStart', function(scope, next, curr) {
         $scope.isLoading = "true";
