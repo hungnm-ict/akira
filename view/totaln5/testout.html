@@ -1,6 +1,5 @@
-<!-- {{data}} -->
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="testout" class="swMain vocab" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
+<div id="testoutWizard" class="swMain vocab akiHide" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
     <!-- Step navigation -->
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
@@ -18,219 +17,513 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div ng-switch on="val.type">
-            <div ng-switch-when="vocablearn">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
-                        <!-- Question wrapper -->
-                        <div id="question-wrapper" ng-click="playSound(key,true)">
-                            <audio controls id="{{key}}" style="display:none;">
-                                <source type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                            </audio>
-                            <i class="fa fa-volume-up fa-2x write-btn-play"></i>
-                            <img ng-src="../../data/totaln5/vocab/image/{{val.data.filename}}.png" class="img-responsive">
-                            <h4 class="center" style="text-transform:captalize">{{val.data.vie}}</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
-                        <!-- User answer wrapper -->
-                        <div id="user-input-wrapper">
-                            <div class="row none-padding">
-                                <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                    <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Correct answer wrapper -->
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            {{val.data.hiragana}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation wrapper-->
-                <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
-                    <div class="row mess-holder-{{key}}">
-                        <div class="col-md-8 col-sm-8 col-xs-8">
-                            <div class="row hide" id="mess-{{key}}">
-                                <div class="col-md-12 col-xs-12 col-sm-12">
-                                    <span class="correct-child">
-                                        <span class="test-circle"></span>
-                                    </span>
-                                    <span class="failed-child">
-                                        <i class="fa fa-times fa-4x"></i>
-                                    </span>
-                                    <span class="hint">{{val.data.hiragana}}</span>
-                                    <span class="hint">{{val.data.kanji}}</span>
-                                    <span class="hint">{{val.data.vietnamese}}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                            <div ng-switch on="stage">
-                                <div ng-switch-when="0">
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="2">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-default>
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ng-switch-when="vocabpic">
-                <!-- Question wrapper -->
-                <div id="question-wrapper">
+            <div class="wrapper">
+                <div ng-switch-when="vocablearn">
                     <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 center">
-                            <h2>{{val.data.hiragana}}</h2>
-                            <h3>{{val.data.kanji}}</h3>
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
+                            <!-- Question wrapper -->
+                            <div id="question-wrapper" ng-click="playSound(key,true,'vocab')">
+                                <audio controls id="{{key}}" style="display:none;">
+                                    <source type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                </audio>
+                                <i class="fa fa-volume-up fa-2x write-btn-play"></i>
+                                <img ng-src="../../data/totaln5/vocab/image/{{val.data.filename}}.png" class="img-responsive">
+                                <h4 class="center" style="text-transform:captalize" ng-bind="val.data.vietnamese"></h4>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
+                            <!-- User answer wrapper -->
+                            <div id="user-input-wrapper">
+                                <div class="row none-padding">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
+                                        <input class="form-control write-control selected" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Correct answer wrapper -->
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <span ng-bind="val.data.hiragana"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation wrapper-->
+                    <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
+                        <div class="row mess-holder-{{key}}">
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <div class="row hide" id="mess-{{key}}">
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                        <span class="hint" ng-bind="val.data.hiragana"></span>
+                                        <span class="hint" ng-bind="val.data.kanji"></span>
+                                        <span class="hint" ng-bind="val.data.vietnamese"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                <div ng-switch on="stage">
+                                    <div ng-switch-when="0">
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="1">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="2">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- User answer wrapper -->
-                <div id="user-input-wrapper">
-                    <!--      <div id="{{key}}" class="picture-wrapper row" ng-repeat="(key, val) in dataset">
-                    </div> -->
-                    <div id="{{key}}" class="picture-wrapper row">
-                        <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 49==keyCode}" ng-click="keyPress(49)">
-                            <audio controls id="choices-{{key}}-0" style="display:none;">
-                                <source type="audio/mpeg">
-                                    Your browser does not support the audio element.</source>
-                            </audio>
-                            <img ng-src="../../data/totaln5/vocab/image/{{choices2[key][0].filename}}.png" class="img-thumbnail" id="img-{{key}}-0">
-                            <h5 class="first">
-                                {{choices2[key][0].vietnamese}}
-                            </h5>
+                <div ng-switch-when="vocabpic">
+                    <!-- Question wrapper -->
+                    <div id="question-wrapper">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 center">
+                                <h2 ng-bind="val.data.hiragana"></h2>
+                                <h3 ng-bind="val.data.kanji"></h3>
+                            </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 50==keyCode}" ng-click="keyPress(50)">
-                            <audio controls id="choices-{{key}}-1" style="display:none;">
-                                <source type="audio/mpeg">
-                                    Your browser does not support the audio element.</source>
-                            </audio>
-                            <img ng-src="../../data/totaln5/vocab/image/{{choices2[key][1].filename}}.png" class="img-thumbnail" id="img-{{key}}-1">
-                            <h5 class="second">
-                                {{choices2[key][1].vietnamese}}
-                            </h5>
+                    </div>
+
+                    <!-- User answer wrapper -->
+                    <div id="user-input-wrapper">
+                        <div id="{{key}}" class="picture-wrapper row">
+                            <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 49==keyCode}" ng-click="keyPress($event,49)">
+                                <audio controls id="choices-{{key}}-0" style="display:none;">
+                                    <source type="audio/mpeg">
+                                        Your browser does not support the audio element.</source>
+                                </audio>
+                                <img ng-src="../../data/totaln5/vocab/image/{{choices2[key][0].filename}}.png" class="img-thumbnail" id="img-{{key}}-0">
+                                <h5 class="first" ng-class="{'selected': 49==keyCode}" ng-bind="choices2[key][0].vietnamese" id="input-{{key}}">
+                                </h5>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 50==keyCode}" ng-click="keyPress(50)">
+                                <audio controls id="choices-{{key}}-1" style="display:none;">
+                                    <source type="audio/mpeg">
+                                        Your browser does not support the audio element.</source>
+                                </audio>
+                                <img ng-src="../../data/totaln5/vocab/image/{{choices2[key][1].filename}}.png" class="img-thumbnail" id="img-{{key}}-1">
+                                <h5 class="second" ng-class="{'selected': 50==keyCode}" ng-bind="choices2[key][1].vietnamese" id="input-{{key}}">
+                                </h5>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 51==keyCode}" ng-click="keyPress(51)">
+                                <audio controls id="choices-{{key}}-2" style="display:none;">
+                                    <source type="audio/mpeg">
+                                        Your browser does not support the audio element.</source>
+                                </audio>
+                                <img ng-src="../../data/totaln5/vocab/image/{{choices2[key][2].filename}}.png" class="img-thumbnail" id="img-{{key}}-2">
+                                <h5 class="third" ng-class="{'selected': 51==keyCode}" ng-bind="choices2[key][2].vietnamese" id="input-{{key}}">
+                                </h5>
+                            </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 51==keyCode}" ng-click="keyPress(51)">
-                            <audio controls id="choices-{{key}}-2" style="display:none;">
-                                <source type="audio/mpeg">
-                                    Your browser does not support the audio element.</source>
-                            </audio>
-                            <img ng-src="../../data/totaln5/vocab/image/{{choices2[key][2].filename}}.png" class="img-thumbnail" id="img-{{key}}-2">
-                            <h5 class="third">
-                                {{choices2[key][2].vietnamese}}
-                            </h5>
+                    </div>
+
+                    <!-- Correct answer wrapper -->
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <input ng-bind="val.data.vietnamese"></input>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom navigation wrapper-->
+                    <div id="aki-answer-wrapper" ng-class="{'check' : 1== stage}">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <div class="row hide" id="mess-{{key}}">
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                        <span class="hint" ng-bind="val.data.hiragana"></span>
+                                        <span class="hint" ng-bind="val.data.kanji"></span>
+                                        <span class="hint" ng-bind="val.data.vietnamese"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                <div ng-switch on="stage">
+                                    <div ng-switch-when="0">
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="1">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="2">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Correct answer wrapper -->
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            {{val.data.vietnamese}}
+                <div ng-switch-when="vocabword">
+                    <div class="row" style="text-align:center;">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <!-- Question wrapper -->
+                            <div id="question-wrapper">
+                                <img src="../../data/totaln5/vocab/image/{{val.data.filename}}.png" class="img-thumbnail">
+                                <h3 ng-bind="val.data.vietnamese"></h3>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <!-- User answer wrapper -->
+                            <div id="user-input-wrapper">
+                                <div id="{{key}}">
+                                    <div class="row">
+                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                            <span class="first" ng-class="{'actived': 49==keyCode}"></span>
+                                        </div>
+                                        <div class="col-md-10 col-sm-10 col-xs-10">
+                                            <audio controls id="choices-{{key}}-0" style="display:none;">
+                                                <source type="audio/mpeg">
+                                                    Your browser does not support the audio element.</source>
+                                            </audio>
+                                            <span ng-click="keyPress(49)" class="form-control" ng-class="{'selected': 49==keyCode}" ng-bind="choices2[key][0].hiragana" id="input-{{key}}"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                            <span class="second" ng-class="{'actived': 50==keyCode}"></span>
+                                        </div>
+                                        <div class="col-md-10 col-sm-10 col-xs-10">
+                                            <audio controls id="choices-{{key}}-1" style="display:none;">
+                                                <source type="audio/mpeg">
+                                                    Your browser does not support the audio element.</source>
+                                            </audio>
+                                            <span ng-click="keyPress(50)" class="form-control" ng-class="{'selected': 50==keyCode}" ng-bind="choices2[key][1].hiragana" id="input-{{key}}"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                            <span class="third" ng-class="{'actived': 51==keyCode}"></span>
+                                        </div>
+                                        <div class="col-md-10 col-sm-10 col-xs-10">
+                                            <audio controls id="choices-{{key}}-2" style="display:none;">
+                                                <source type="audio/mpeg">
+                                                    Your browser does not support the audio element.</source>
+                                            </audio>
+                                            <span ng-click="keyPress(51)" class="form-control" ng-class="{'selected': 51==keyCode}" ng-bind="choices2[key][2].hiragana" id="input-{{key}}"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Correct answer wrapper -->
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class=" col-md-12 col-sm-12 col-xs-12">
+                                <span ng-bind="val.data.hiragana"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom navigation wrapper-->
+                    <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <div class="row hide" id="mess-{{key}}">
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                        <span class="hint">{{val.data.hiragana}}</span>
+                                        <span class="hint">{{val.data.kanji}}</span>
+                                        <span class="hint">{{val.data.vietnamese}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                <div ng-switch on="stage">
+                                    <div ng-switch-when="0">
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="1">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="2">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Custom navigation wrapper-->
-                <div id="aki-answer-wrapper" ng-class="{'check' : 1== stage}">
-                    <div class="row">
+                <div ng-switch-when="vocablisten">
+                    <!-- Question wrapper -->
+                    <div id="question-wrapper">
+                        <audio controls id="{{key}}" style="display:none;">
+                            <source type="audio/mpeg">
+                                Your browser does not support the audio element.
+                        </audio>
+                        <div class="row row-full-height">
+                            <div class="col-md-6 col-sm-6 col-xs-6 col-full-height" style="padding-right: 0px">
+                                <div ng-click="playSound(key,true,'vocab')" class="btn-play f-right">
+                                    <i class="fa fa-volume-up fa-4x"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 col-full-height-bottom" style="padding-left: 0px">
+                                <div ng-click="playSound(key,false,'vocab')" class="btn-play btn-slow f-left">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User answer wrapper -->
+                    <div id="user-input-wrapper">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control akira-input selected" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Correct answer wrapper -->
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <span ng-bind="val.data.hiragana"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation wrapper-->
+                    <div id="aki-answer-wrapper">
+                        <div class="row mess-holder-{{key}}">
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <div class="row hide" id="mess-{{key}}">
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                        <span class="hint" ng-bind="val.data.hiragana"></span>
+                                        <span class="hint" ng-bind="val.data.kanji"></span>
+                                        <span class="hint" ng-bind="val.data.vietnamese"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                <div ng-switch on="stage">
+                                    <div ng-switch-when="0">
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="1">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="2">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="grammarlisten">
+                    [Del:grammar listen]
+
+                    <div id="question-wrapper">
+                        <audio controls id="{{key}}" style="display:none;">
+                            <source type="audio/mpeg">
+                                Your browser does not support the audio element.
+                        </audio>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 center">
+                                <div ng-click="playSound(key,true,'grammar')" class="btn-play inline">
+                                    <i class="fa fa-volume-up fa-4x"></i>
+                                </div>
+                                <div ng-click="playSound(key,false)" class="btn-play btn-slow inline">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="user-input-wrapper">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control akira-input selected" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <span ng-bind="val.data.hiragana"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="aki-answer-wrapper">
+                        <div class="row hide" id="mess-{{key}}">
+                            <div class="col-md-4 col-xs-4 col-sm-4">
+                                <i class="fa fa-check fa-4x"></i>
+                                <i class="fa fa-times fa-4x"></i>
+                            </div>
+                            <div class="col-md-8 col-xs-8 col-sm-8">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        {{val.data.hiragana}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        {{val.data.kanji}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        {{val.data.vietnamese}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Answer wrapper-->
+                        <div id="aki-answer-wrapper">
+                            <div class="row mess-holder-{{key}}">
+                                <!-- Prepare message holder-->
+                                <div class="col-md-8 col-sm-8 col-xs-8">
+                                    <div class="row hide" id="mess-{{key}}">
+                                        <div class="col-md-12 col-xs-12 col-sm-12">
+                                            <span class="correct-child">
+                                                <span class="test-circle"></span>
+                                            </span>
+                                            <span class="failed-child">
+                                                <i class="fa fa-times fa-4x"></i>
+                                            </span>
+                                            <span class="hint">{{val.data.hiragana}}</span>
+                                            <span class="hint">{{val.data.romaji}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <div ng-switch on="stage">
+                                        <div ng-switch-when="0">
+                                            <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                            </button>
+                                        </div>
+                                        <div ng-switch-when="1">
+                                            <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                            </button>
+                                        </div>
+                                        <div ng-switch-when="2">
+                                            <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                            </button>
+                                        </div>
+                                        <div ng-switch-default>
+                                            <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="grammarchoice">
+                    [Del:grammar choice]
+
+                    <div class="row" style="text-align:center;">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div id="question-wrapper">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <audio controls id="{{key}}" style="display:none;">
+                                            <source type="audio/mpeg">
+                                                Your browser does not support the audio element.
+                                        </audio>
+                                        <div ng-click="playSound(key)" class="btn-play">
+                                            <i class="fa fa-volume-up fa-4x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-8 col-sm-8 col-xs-8">
-                            <div class="row hide" id="mess-{{key}}">
-                                <div class="col-md-12 col-xs-12 col-sm-12">
-                                    <span class="correct-child">
-                                        <span class="test-circle"></span>
-                                    </span>
-                                    <span class="failed-child">
-                                        <i class="fa fa-times fa-4x"></i>
-                                    </span>
-                                    <span class="hint">{{val.data.hiragana}}</span>
-                                    <span class="hint">{{val.data.kanji}}</span>
-                                    <span class="hint">{{val.data.vietnamese}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                            <div ng-switch on="stage">
-                                <div ng-switch-when="0">
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="2">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-default>
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div ng-switch-when="vocabword">
-                <div class="row" style="text-align:center;">
-                    <div class="col-md-6 col-sm-6 col-xs-6">
-                        <!-- Question wrapper -->
-                        <div id="question-wrapper">
-                            <img src="../../data/totaln5/vocab/image/{{val.data.filename}}.png" class="img-thumbnail">
-                            <h3>{{val.data.vie}}</h3>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                        <!-- User answer wrapper -->
-                        <div id="user-input-wrapper">
-                            <div id="{{key}}">
+                            <div id="user-input-wrapper">
                                 <div class="row">
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                         <span class="first" ng-class="{'actived': 49==keyCode}"></span>
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
-                                        <audio controls id="choices-{{key}}-0" style="display:none;">
-                                            <source type="audio/mpeg">
-                                                Your browser does not support the audio element.</source>
-                                        </audio>
-                                        <span ng-click="keyPress(49)" class="form-control" ng-class="{'selected': 49==keyCode}">{{choices2[key][0].hiragana}}</span>
+                                        {{choice2}}
+                                        <div class="form-control" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
+                                            {{choice2[key][0].answer}}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div class="col-md-2 col-sm-2 col-xs-2 ">
                                         <span class="second" ng-class="{'actived': 50==keyCode}"></span>
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
-                                        <audio controls id="choices-{{key}}-1" style="display:none;">
-                                            <source type="audio/mpeg">
-                                                Your browser does not support the audio element.</source>
-                                        </audio>
-                                        <span ng-click="keyPress(50)" class="form-control" ng-class="{'selected': 50==keyCode}">{{choices2[key][1].hiragana}}</span>
+                                        <div class="form-control" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
+                                            {{choice2[key][1].answer}}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -238,210 +531,23 @@
                                         <span class="third" ng-class="{'actived': 51==keyCode}"></span>
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
-                                        <audio controls id="choices-{{key}}-2" style="display:none;">
-                                            <source type="audio/mpeg">
-                                                Your browser does not support the audio element.</source>
-                                        </audio>
-                                        <span ng-click="keyPress(51)" class="form-control" ng-class="{'selected': 51==keyCode}">{{choices2[key][2].hiragana}}</span>
+                                        <div class="form-control" ng-click="keyPress(51)" ng-class="{'selected': 51==keyCode}">
+                                            {{choice2[key][2].answer}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Correct answer wrapper -->
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class=" col-md-12 col-sm-12 col-xs-12">
-                            {{val.data.hiragana}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Custom navigation wrapper-->
-                <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
-                    <div class="row">
-                        <div class="col-md-8 col-sm-8 col-xs-8">
-                            <div class="row hide" id="mess-{{key}}">
-                                <div class="col-md-12 col-xs-12 col-sm-12">
-                                    <span class="correct-child">
-                                        <span class="test-circle"></span>
-                                    </span>
-                                    <span class="failed-child">
-                                        <i class="fa fa-times fa-4x"></i>
-                                    </span>
-                                    <span class="hint">{{val.data.hiragana}}</span>
-                                    <span class="hint">{{val.data.kanji}}</span>
-                                    <span class="hint">{{val.data.vietnamese}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                            <div ng-switch on="stage">
-                                <div ng-switch-when="0">
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="2">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-default>
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div ng-switch-when="vocablisten">
-                <!-- Question wrapper -->
-                <div id="question-wrapper">
-                    <audio controls id="{{key}}" style="display:none;">
-                        <source type="audio/mpeg">
-                            Your browser does not support the audio element.
-                    </audio>
-                    <div class="row row-full-height">
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-full-height" style="padding-right: 0px">
-                            <div ng-click="playSound(key,true)" class="btn-play f-right">
-                                <i class="fa fa-volume-up fa-4x"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-full-height-bottom" style="padding-left: 0px">
-                            <div ng-click="playSound(key,false)" class="btn-play btn-slow f-left">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- User answer wrapper -->
-                <div id="user-input-wrapper">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <input class="form-control akira-input" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Correct answer wrapper -->
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            {{val.data.hiragana}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation wrapper-->
-                <div id="aki-answer-wrapper">
-                    <div class="row mess-holder-{{key}}">
-                        <div class="col-md-8 col-sm-8 col-xs-8">
-                            <div class="row hide" id="mess-{{key}}">
-                                <div class="col-md-12 col-xs-12 col-sm-12">
-                                    <span class="correct-child">
-                                        <span class="test-circle"></span>
-                                    </span>
-                                    <span class="failed-child">
-                                        <i class="fa fa-times fa-4x"></i>
-                                    </span>
-                                    <span class="hint">{{val.data.hiragana}}</span>
-                                    <span class="hint">{{val.data.kanji}}</span>
-                                    <span class="hint">{{val.data.vietnamese}}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                            <div ng-switch on="stage">
-                                <div ng-switch-when="0">
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="2">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-default>
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div ng-switch-when="grammarlisten">
-                <div id="question-wrapper">
-                    <audio controls id="{{key}}" style="display:none;">
-                        <source type="audio/mpeg">
-                            Your browser does not support the audio element.
-                    </audio>
-
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 center">
-                            <div ng-click="playSound(key,true)" class="btn-play inline">
-                                <i class="fa fa-volume-up fa-4x"></i>
-                            </div>
-                            <div ng-click="playSound(key,false)" class="btn-play btn-slow inline">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="user-input-wrapper">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <input class="form-control akira-input" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" />
-                        </div>
-                    </div>
-                </div>
-
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            {{val.data.hiragana}}
-                        </div>
-                    </div>
-                </div>
-
-                <div id="aki-answer-wrapper">
-                    <div class="row hide" id="mess-{{key}}">
-                        <div class="col-md-4 col-xs-4 col-sm-4">
-                            <i class="fa fa-check fa-4x"></i>
-                            <i class="fa fa-times fa-4x"></i>
-                        </div>
-                        <div class="col-md-8 col-xs-8 col-sm-8">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    {{val.data.hiragana}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    {{val.data.kanji}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    {{val.data.vietnamese}}
-                                </div>
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                {{val.data.answer}}
                             </div>
                         </div>
                     </div>
 
-                    <!-- Answer wrapper-->
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
                             <!-- Prepare message holder-->
@@ -454,13 +560,258 @@
                                         <span class="failed-child">
                                             <i class="fa fa-times fa-4x"></i>
                                         </span>
-                                        <span class="hint">{{val.data.hiragana}}</span>
-                                        <span class="hint">{{val.data.romaji}}</span>
+                                        <span class="hint">Q: {{val.data.quest}} A: {{val.data.answer}} {{val.data.vietnameseq}} {{val.data.vietnamesea}}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                <div ng-switch on="stage">
+                                    <div ng-switch-when="0">
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="1">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="2">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="grammartranslate">
+                    [Del:grammar translate]
+
+                    <div id="question-wrapper" class="center">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h3>{{val.data.vietnamese}}</h3>
+                            </div>
+                        </div>
+
+                        <div class="row" style="min-height: 120px;">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <span ng-repeat="(anskey,ansval) in answers[key]" id="opt-{{key}}-{{anskey}}" class="drag-ans" draggable="true" ondragstart="drag(event)" ng-bind="ansval">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="user-input-wrapper">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="drop-zone" id="input-{{key}}" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class="col-md-12 col-sm-12 col-xs-12 center">
+                                <span ng-bind="val.data.hiragana"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="aki-answer-wrapper">
+                        <div class="row mess-holder-{{key}}">
+                            <!-- Prepare message holder-->
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <div class="row hide" id="mess-{{key}}">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                        <span class="hint">
+                                            {{val.data.hiragana}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                <div ng-switch on="stage">
+                                    <div ng-switch-when="0">
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="1">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="2">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="grammarread">
+                    [Del:grammar read]
+
+                    <div id="question-wrapper ">
+                        <div class="row center">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h2>{{val.data.questhira}}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="user-input-wrapper">
+                        <div class="row">
+                            <div class="right col-md-1 col-sm-1 col-xs-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+                                <span class="first" ng-class="{'actived': 49==keyCode}"></span>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <div class="ans-opt" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
+                                    {{choices2[key][0].kanji}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="right col-md-1 col-sm-1 col-xs-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+                                <span class="second" ng-class="{'actived': 50==keyCode}"></span>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <div class="ans-opt" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
+                                    {{choices2[key][1].kanji}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class="col-md-12 col-sm-12 col-xs-12">{{val.data.answer1}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Answer wrapper-->
+                    <div id="aki-answer-wrapper">
+                        <div class="row mess-holder-{{key}}">
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <div class="row hide" id="mess-{{key}}">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                        <span>
+                                            A: {{val.data.answer1}} {{val.data.vietnamese}} {{val.data.english}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                                <div ng-switch on="stage">
+                                    <div ng-switch-when="0">
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="1">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-when="2">
+                                        <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
+                                        </button>
+                                    </div>
+                                    <div ng-switch-default>
+                                        <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-switch-when="grammarword">
+                    [Del:grammar word]
+
+                    <div id="question-wrapper ">
+                        <div class="row center">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <h2>{{val.data.questhira}}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="user-input-wrapper">
+                        <div class="row">
+                            <div class="right col-md-1 col-sm-1 col-xs-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+                                <span class="first" ng-class="{'actived': 49==keyCode}"></span>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <div class="ans-opt" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
+                                    {{choice2[key][0]}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="right col-md-1 col-sm-1 col-xs-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+                                <span class="second" ng-class="{'actived': 50==keyCode}"></span>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <div class="ans-opt" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
+                                    {{choice2[key][1]}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="correct-answer-wrapper">
+                        <div class="row hide">
+                            <div class="col-md-12 col-sm-12 col-xs-12">{{val.data.answer1}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Answer wrapper-->
+                    <div id="aki-answer-wrapper">
+                        <div class="row mess-holder-{{key}}">
+                            <div class="col-md-8 col-sm-8 col-xs-8">
+                                <div class="row hide" id="mess-{{key}}">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                        <span>
+                                            A: {{val.data.answer1}} {{val.data.vietnamese}} {{val.data.english}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                                 <div ng-switch on="stage">
                                     <div ng-switch-when="0">
                                         <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
@@ -484,360 +835,17 @@
                     </div>
                 </div>
             </div>
-
-            <div ng-switch-when="grammarchoice">
-                <div class="row" style="text-align:center;">
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                        <div id="question-wrapper">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <audio controls id="{{key}}" style="display:none;">
-                                        <source type="audio/mpeg">
-                                            Your browser does not support the audio element.
-                                    </audio>
-                                    <div ng-click="playSound(key)" class="btn-play">
-                                        <i class="fa fa-volume-up fa-4x"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div id="user-input-wrapper">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <span class="first" ng-class="{'actived': 49==keyCode}"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <div class="form-control" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
-                                        {{choice2[key][0].answer}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2 ">
-                                    <span class="second" ng-class="{'actived': 50==keyCode}"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <div class="form-control" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
-                                        {{choice2[key][1].answer}}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2 col-xs-2">
-                                    <span class="third" ng-class="{'actived': 51==keyCode}"></span>
-                                </div>
-                                <div class="col-md-10 col-sm-10 col-xs-10">
-                                    <div class="form-control" ng-click="keyPress(51)" ng-class="{'selected': 51==keyCode}">
-                                        {{choice2[key][2].answer}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            {{val.data.answer}}
-                        </div>
-                    </div>
-                </div>
-
-                <div id="aki-answer-wrapper">
-                    <div class="row mess-holder-{{key}}">
-                        <!-- Prepare message holder-->
-                        <div class="col-md-8 col-sm-8 col-xs-8">
-                            <div class="row hide" id="mess-{{key}}">
-                                <div class="col-md-12 col-xs-12 col-sm-12">
-                                    <span class="correct-child">
-                                        <span class="test-circle"></span>
-                                    </span>
-                                    <span class="failed-child">
-                                        <i class="fa fa-times fa-4x"></i>
-                                    </span>
-                                    <span class="hint">Q: {{val.data.quest}} A: {{val.data.answer}} {{val.data.vietnameseq}} {{val.data.vietnamesea}}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                            <div ng-switch on="stage">
-                                <div ng-switch-when="0">
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="2">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-default>
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div ng-switch-when="grammartranslate">
-                <div id="question-wrapper" class="center">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h3>{{val.data.vietnamese}}</h3>
-                        </div>
-                    </div>
-
-                    <div class="row" style="min-height: 120px;">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <span ng-repeat="(anskey,ansval) in answers[key]" id="opt-{{key}}-{{anskey}}" class="drag-ans" draggable="true" ondragstart="drag(event)" ng-bind="ansval">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="user-input-wrapper">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="drop-zone" id="input-{{key}}" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class="col-md-12 col-sm-12 col-xs-12 center">
-                            <span ng-bind="val.data.hiragana"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="aki-answer-wrapper">
-                    <div class="row mess-holder-{{key}}">
-                        <!-- Prepare message holder-->
-                        <div class="col-md-8 col-sm-8 col-xs-8">
-                            <div class="row hide" id="mess-{{key}}">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <span class="correct-child">
-                                        <span class="test-circle"></span>
-                                    </span>
-                                    <span class="failed-child">
-                                        <i class="fa fa-times fa-4x"></i>
-                                    </span>
-                                    <span class="hint">
-                                        {{val.data.hiragana}}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                            <div ng-switch on="stage">
-                                <div ng-switch-when="0">
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="2">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-default>
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div ng-switch-when="grammarread">
-                <div id="question-wrapper ">
-                    <div class="row center">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h2>{{val.data.questhira}}</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="user-input-wrapper">
-                    <div class="row">
-                        <div class="right col-md-1 col-sm-1 col-xs-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
-                            <span class="first" ng-class="{'actived': 49==keyCode}"></span>
-                        </div>
-                        <div class="col-md-5 col-sm-5 col-xs-5">
-                            <div class="ans-opt" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
-                                {{choices2[key][0].kanji}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="right col-md-1 col-sm-1 col-xs-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
-                            <span class="second" ng-class="{'actived': 50==keyCode}"></span>
-                        </div>
-                        <div class="col-md-5 col-sm-5 col-xs-5">
-                            <div class="ans-opt" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
-                                {{choices2[key][1].kanji}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class="col-md-12 col-sm-12 col-xs-12">{{val.data.answer1}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Answer wrapper-->
-                <div id="aki-answer-wrapper">
-                    <div class="row mess-holder-{{key}}">
-                        <div class="col-md-8 col-sm-8 col-xs-8">
-                            <div class="row hide" id="mess-{{key}}">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <span class="correct-child">
-                                        <span class="test-circle"></span>
-                                    </span>
-                                    <span class="failed-child">
-                                        <i class="fa fa-times fa-4x"></i>
-                                    </span>
-                                    <span>
-                                        A: {{val.data.answer1}} {{val.data.vietnamese}} {{val.data.english}}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                            <div ng-switch on="stage">
-                                <div ng-switch-when="0">
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="2">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-default>
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div ng-switch-when="grammarword">
-                <div id="question-wrapper ">
-                    <div class="row center">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h2>{{val.data.questhira}}</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="user-input-wrapper">
-                    <div class="row">
-                        <div class="right col-md-1 col-sm-1 col-xs-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
-                            <span class="first" ng-class="{'actived': 49==keyCode}"></span>
-                        </div>
-                        <div class="col-md-5 col-sm-5 col-xs-5">
-                            <div class="ans-opt" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
-                                {{choice2[key][0]}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="right col-md-1 col-sm-1 col-xs-1 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
-                            <span class="second" ng-class="{'actived': 50==keyCode}"></span>
-                        </div>
-                        <div class="col-md-5 col-sm-5 col-xs-5">
-                            <div class="ans-opt" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
-                                {{choice2[key][1]}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="correct-answer-wrapper">
-                    <div class="row hide">
-                        <div class="col-md-12 col-sm-12 col-xs-12">{{val.data.answer1}}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Answer wrapper-->
-                <div id="aki-answer-wrapper">
-                    <div class="row mess-holder-{{key}}">
-                        <div class="col-md-8 col-sm-8 col-xs-8">
-                            <div class="row hide" id="mess-{{key}}">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <span class="correct-child">
-                                        <span class="test-circle"></span>
-                                    </span>
-                                    <span class="failed-child">
-                                        <i class="fa fa-times fa-4x"></i>
-                                    </span>
-                                    <span>
-                                        A: {{val.data.answer1}} {{val.data.vietnamese}} {{val.data.english}}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
-                            <div ng-switch on="stage">
-                                <div ng-switch-when="0">
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="1">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.check" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-when="2">
-                                    <button type="button" class="akr-btn akr-btn-check" data-i18n="common.next" ng-click="enterPress()">
-                                    </button>
-                                </div>
-                                <div ng-switch-default>
-                                    <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-        <!-- </div> -->
     </div>
 </div>
 
 <script type="text/javascript">
 $(document).keydown(function(e) {
     if (13 == e.keyCode) {
-        angular.element("#writeWizard").scope().enterPress();
+        angular.element("#testoutWizard").scope().enterPress();
+    } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
+        angular.element("#testoutWizard").scope().keyPress(e, e.keyCode);
     }
     changeLang();
 });
-kanjiDict();
 </script>

@@ -1,56 +1,60 @@
 {
-	"menu":{
-		"japanese-n5" : "Japanese N5",
-		"toeic-500"	  : "TOEIC 500",
-		"kana"		  : "Kana",
-		"total-n5"    : "Total N5",
-		"kanji-n5"    : "Kanji N5",
-		"test-n5"     : "Kiểm tra N5",
-		"japanese-n4" : "Japanese N4",
-		"total-n4"    : "Total N4",
-		"kanji-n4"    : "Kanji N4",
-		"test-n4"     : "Kiểm tra N4",
-		"mobi"		  : "Mobi apps",
-		"support"	  : "Trợ giúp",
-		"ios"		  : "iOS",
-		"android"     : "Android"
-	},
-	"common":{
-		"lesson"	  : "Bài",
-		"dayleft"	  : "Ngày sử dụng",
-		"login"		  : "Đăng nhập",
-		"part"		  : "Phần",
-		"lesson"      : "Bài",
-		"vocab"       : "Từ vựng",
-		"grammar"     : "Ngữ pháp",
-		"learn"       : "Học",
-		"picture"     : "Chọn ảnh",
-		"word"		  : "Chọn từ",
-		"listen"      : "Nghe",
-		"connect"     : "Nối từ",
-		"write"       : "Điền từ",
-		"choice"      : "Lựa chọn",
-		"translate"   : "Dịch",
-		"read"        : "Đọc hiểu",
-		"choose-type" : "Chọn nội dung luyện thi",
-		"choose-time" : "Chọn thời gian luyện thi",
-		"listen-compre" : "Nghe hiểu",
-		"mins"			: "Phút",
-		"start"			: "Bắt đầu",
-		"check"			: "Kiểm tra",
-		"next"			: "Tiếp tục",
-		"prev"			: "Quay lại",
-		"save"			: "Lưu điểm",
-		"dayleft"		: "Ngày sử dụng",
-		"submit"		: "Nộp bài",
-		"answersheet"   : "Bài làm"
-	},
-	"leaderboard":{
-		"leaderboard" : "Bảng xếp hạng",
-		"week"		  : "Theo tuần",
-		"all"		  : "Tất cả"
-	},
-	"message":{
-		"anonymous"	: "Đăng nhập để lưu được điểm"
-	}
+    "menu": {
+        "japanese-n5": "Japanese N5",
+        "toeic-500": "TOEIC 500",
+        "kana": "Kana",
+        "total-n5": "Total N5",
+        "kanji-n5": "Kanji N5",
+        "test-n5": "Kiểm tra N5",
+        "japanese-n4": "Japanese N4",
+        "total-n4": "Total N4",
+        "kanji-n4": "Kanji N4",
+        "test-n4": "Kiểm tra N4",
+        "mobi": "Mobi apps",
+        "support": "Trợ giúp",
+        "ios": "iOS",
+        "android": "Android"
+    },
+    "common": {
+        "lesson": "Bài",
+        "dayleft": "Ngày sử dụng",
+        "login": "Đăng nhập",
+        "part": "Phần",
+        "lesson": "Bài",
+        "vocab": "Từ vựng",
+        "grammar": "Ngữ pháp",
+        "learn": "Học",
+        "picture": "Chọn ảnh",
+        "word": "Chọn từ",
+        "listen": "Nghe",
+        "connect": "Nối từ",
+        "write": "Điền từ",
+        "choice": "Lựa chọn",
+        "translate": "Dịch",
+        "read": "Đọc hiểu",
+        "choose-type": "Chọn nội dung luyện thi",
+        "choose-time": "Chọn thời gian luyện thi",
+        "listen-compre": "Nghe hiểu",
+        "mins": "Phút",
+        "start": "Bắt đầu",
+        "check": "Kiểm tra",
+        "next": "Tiếp tục",
+        "prev": "Quay lại",
+        "save": "Lưu điểm",
+        "dayleft": "Ngày sử dụng",
+        "submit": "Nộp bài",
+        "answersheet": "Bài làm"
+    },
+    "leaderboard": {
+        "leaderboard": "Bảng xếp hạng",
+        "week": "Theo tuần",
+        "all": "Tất cả"
+    },
+    "message": {
+        "info": {
+            "anonymous": "Đăng nhập để lưu được điểm",
+            "buy": "Bạn cần mua thẻ để sử dụng tính năng này",
+            "keypoint": "Bạn chưa đủ keypoint để học bài này"
+        }
+    }
 }

@@ -66,8 +66,8 @@ akrSharedDirectives.directive('akirawizard', function() {
             $.each($('#' + attrs.id + " ul li").has("i.fa.fa-lock"), function(k, v) {
                 $(v).popover();
             });
-
-        }, 200);
+            $('#' + attrs.id).show();
+        }, 500);
     }
 
     return {

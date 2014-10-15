@@ -1456,3 +1456,10 @@ ul.anchor li a .stepNumber {
             transform: rotate(90deg);
     border-color: red !important;
 }
+#testoutWizard .wrapper>div{
+    padding-left: 0px !important;
+}
+
+.akiHide{
+    display: none;
+}

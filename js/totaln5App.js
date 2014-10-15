@@ -297,91 +297,9 @@ totaln5App.service('dataService', function($http) {
                     data: value.datapool[randIdx]
                 });
             };
-            /* switch (value.type) {
-                 case "vocablearn":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * vocabPool.length);
-                         ret.push({
-                             type: value.type,
-                             data: vocabPool[randIdx]
-                         });
-                     };
-                     break;
-                 case "vocabpic":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * vocabPool.length);
-                         ret.push({
-                             type: value.type,
-                             data: vocabPool[randIdx]
-                         });
-                     };
-                     break;
-                 case "vocabword":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * vocabPool.length);
-                         ret.push({
-                             type: value.type,
-                             data: vocabPool[randIdx]
-                         });
-                     };
-                     break;
-                 case "vocablisten":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * vocabPool.length);
-                         ret.push({
-                             type: value.type,
-                             data: vocabPool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammarlisten":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar1Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar1Pool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammarchoice":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar2Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar2Pool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammartranslate":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar3Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar3Pool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammarread":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar4Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar4Pool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammarword":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar5Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar5Pool[randIdx]
-                         });
-                     };
-                     break;
-             }*/
         });
 
+        // return akiraShuffle2(ret);
         return ret;
     }
 
@@ -431,30 +349,26 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=totaln5&userid=" + getUser().id
         }).success(function(data, status) {
-            console.log(data);
-            if (data > lesson) {
+            if (akrParseInt(data) > lesson) {
                 console.info("Ban du keypoint de hoc bai nay");
                 $window.location.href = "#/" + lesson;
             } else {
-                alert("Ban khong du keypoint de hoc bai nay");
+                alert(i18n.t("message.info.keypoint"));
             }
         });
     };
 
     $scope.pass = function(type, lesson) {
-        alert();
-
         //Firstly check if user have enough day_remain or not
         $http({
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
         }).success(function(data, status) {
-            if (data > 0) {
+            if (akrParseInt(data) > 0) {
                 console.log("Ban con ngay su dung va co the choi phan nay");
-                // Go to lesson exam test
                 $window.location.href = "#/testout/" + type + "/" + lesson;
             } else {
-                console.log("Ban da het ngay su dung vui long mua the va nap them");
+                alert(i18n.t("message.info.buy"));
             }
         });
     };

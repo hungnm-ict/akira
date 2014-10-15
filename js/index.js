@@ -156,6 +156,25 @@ function akiraShuffle(array) {
     return array.splice(0, 9);
 }
 
+function akiraShuffle2(array) {
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
 
 /**
  * Need to shuffle the generated answer again
@@ -262,6 +281,24 @@ function genAnswers2(data) {
     });
     return uniqueGroups;
 }
+
+function genAnswers5(data) {
+    try {
+        var uniqueGroups = [];
+        $.each(data, function(idx, val) {
+            if (data[idx].data.hasOwnProperty("hiragana")) {
+                var obj;
+                obj = data[idx].data["hiragana"].replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "|").split("|");
+                uniqueGroups[idx] = akiraShuffle(obj);
+            }
+        });
+        return uniqueGroups;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
 
 function genEnglishAnswers(data) {
     var uniqueGroups = [];
@@ -646,7 +683,7 @@ function randTake(data, no) {
 }
 
 /**
- * generate data pool for test out 
+ * generate data pool for test out
  * if big get data from start lesson to current lesson
  * if small get in current lesstion
  * @param  {[type]} data   [description]
@@ -654,18 +691,18 @@ function randTake(data, no) {
  * @param  {[type]} lesson [description]
  * @return {[type]}        [description]
  */
-function mergeData(data, type, lesson,itemkey) {
+function mergeData(data, type, lesson, itemkey) {
     var ret = [];
     switch (type) {
         case "big":
-            $.each(data, function(key,val) {
+            $.each(data, function(key, val) {
                 if (val[itemkey] <= lesson) {
                     ret.push(val);
                 }
             });
             break;
         case "basic":
-            $.each(data, function(key,val) {
+            $.each(data, function(key, val) {
                 if (val[itemkey] == lesson) {
                     ret.push(val);
                 }
@@ -673,6 +710,17 @@ function mergeData(data, type, lesson,itemkey) {
             break;
     }
     return ret;
+}
+
+function akrParseInt(str) {
+    try {
+        var ret = str.replace(/["']/g, "");
+
+        return parseInt(ret);
+    } catch (err) {
+        console.error(err);
+        return 0;
+    }
 }
 
 /*-----  End of Validation method  ------*/

@@ -1141,6 +1141,7 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
     try {
         $scope.data = dataService.getTestoutData(testoutData, $routeParams.type, $routeParams.lessonId);
         $scope.choices2 = genAnswers4($scope.data, 3);
+        $scope.answers = genAnswers5($scope.data);
 
         $scope.gameObject = {
             "life": 3,
@@ -1149,9 +1150,13 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
         $scope.step = 0;
         $scope.stage = 0;
 
-        $scope.playSound = function(id, isNormal) {
+        $scope.playSound = function(id, isNormal, type) {
+            if (type === undefined) {
+                type = "vocab";
+            }
+
             var audioSrc = document.getElementById(id).getElementsByTagName('source');
-            $("audio#" + id + " source").attr("src", "../../data/totaln5/vocab/audio/" + $scope.data[id].data.filename + ".mp3");
+            $("audio#" + id + " source").attr("src", "../../data/totaln5/" + type + "/audio/" + $scope.data[id].data.filename + ".mp3");
             document.getElementById(id).load();
             if (isNormal) {
                 document.getElementById(id).playbackRate = 1;
@@ -1160,6 +1165,70 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
             }
             document.getElementById(id).play();
         };
+
+        $scope.removeLife = function() {
+            $scope.gameObject.life -= 1;
+            if ($scope.gameObject.life == 0) {
+                // gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+            }
+        };
+
+        $scope.enterPress = function() {
+
+            var step = $("#testoutWizard").smartWizard('currentStep') - 1;
+            if (1 == $scope.stage) {
+                //Nguoi dung dap an -> an enter -> kiem tra dung / sai
+                var userSlt = $("#testoutWizard #step-" + step + " #user-input-wrapper .selected#input-" + step).val().trim();
+                $("#testoutWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+                var correct = $("#testoutWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+                if (compare(correct, userSlt)) {
+                    playCorrect();
+                    $("#testoutWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
+                    $scope.gameObject.correct++;
+                } else {
+                    playFail();
+                    $("#testoutWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
+                    $scope.removeLife();
+                }
+
+                $scope.stage = 2;
+            } else if (2 == $scope.stage) {
+                //Nguoi dung dang o buoc continue va nhan enter
+                if (angular.equals($scope.step, $scope.data.length - 1)) {
+                    // gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+                }
+                $scope.keyCode = 0;
+                $scope.stage = 0;
+                $scope.step++;
+                $("#testoutWizard").smartWizard('goForward');
+            }
+            $scope.$apply();
+            changeLang();
+        }
+
+        $scope.keyPress = function(e, keyCode) {
+            switch (keyCode) {
+                case 49:
+                    $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 0);
+                    break;
+                case 50:
+                    $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 1);
+                    break;
+                case 51:
+                    $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 2);
+                    break;
+                default:
+                    break;
+            }
+            if ($scope.stage != 2) {
+                if ([49, 50, 51].indexOf($scope.keyCode) == -1) {
+                    $scope.stage = 1;
+                }
+                $scope.keyCode = keyCode;
+            }
+            $scope.$apply();
+            changeLang();
+        }
     } catch (err) {
         console.error(err);
     }
