@@ -31,6 +31,10 @@ totaln5App.config(['$routeProvider',
                         return 'kana/katasub.html';
                 },
             })
+            .when('/testout', {
+                templateUrl: 'testout.html',
+                controller: 'testoutCtrl'
+            })
             .when('/kana/:lessonId/:partId/learn', {
                 templateUrl: 'kana/learn.html',
                 controller: 'kanaLearnCtrl'
@@ -109,7 +113,6 @@ totaln5App.config(['$routeProvider',
             });
     }
 ]);
-
 
 totaln5App.service('dataService', function($http) {
 

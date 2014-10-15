@@ -1169,3 +1169,8 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
     };
 });
 /*-----  End of KANA  ------*/
+
+
+totaln5Ctrls.controller('testoutCtrl',  function(){
+   alert(); 
+});
