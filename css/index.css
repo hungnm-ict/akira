@@ -61,16 +61,49 @@ body {
     float: left;
 }
 .avatar.avatar-32.wp-user-avatar, .ava-circle {
-    line-height: 40px;
+    line-height: 56px;
     display: inline-block !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: 56px !important;
+    height: 56px !important;
     cursor: pointer !important;
     text-align: center;
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     border-radius: 50% !important;
-    background: #8cc63f;
+    background: #C0C0C0;
+}
+.outerLeaderContainer{
+    display: table;
+    height: 52px;
+}
+.innerLeaderContainer{
+    display: table-cell;
+    vertical-align: middle;
+}
+.innerLeaderName{
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #3F4140;
+    font-size: 14px;
+}
+.innerLeaderScore{
+    font-family: 'Noto Sans', sans-serif;
+    color: #7E7E7E;
+    font-size: 13px;
+    font-weight: bold;
+}
+.leaderTitle{
+    font-weight: bold;
+    padding-top: 10px;
+}
+.newFont{
+    font-family: 'Noto Sans', sans-serif;
+}
+.avatar.avatar-32.wp-user-avatar{
+    width: 50px !important;
+    height: 50px !important;
+    margin-bottom: 3px !important;
 }
 #akr-life-wrapper .progress-bar {
     background: #DD4B39 !important;
@@ -86,6 +119,7 @@ body {
     background: #dd4b39 !important;
 }
 .container-full-height {
+    background: #D0D3D2;
     display: table;
     width: 100%;
     height: 100%;
@@ -747,8 +781,8 @@ a:hover {
     background: #fff !important;
 }
 .content .row {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 .content .wrapper > div {
     padding: 0 48px;
@@ -1333,8 +1367,12 @@ ul.anchor li a .stepNumber {
     margin-bottom: 6px;
 }
 #leaderboard .row {
-    line-height: 45px;
-    border-bottom: 2px solid #E0ECE8;
+    /*line-height: 45px;*/
+    border-bottom: 1px solid #CCCCCC;
+}
+.leaderContainer :hover {
+    background: #CCD8E7;
+    cursor: pointer;
 }
 .kana#learnWizard .content .wrapper>.row, .kana#wordWizard .content .wrapper>.row, .kana#writeWizard .content .wrapper>.row, .vocab#writeWizard .content .wrapper>.row, .vocab#wordWizard .content .wrapper>.row {
     position: relative;

@@ -22,7 +22,7 @@
         size : '10px',
 
         // scrollbar color, accepts any hex/color value
-        color: '#8CC63F',
+        color: '#558ed5',
 
         // scrollbar position - left/right
         position : 'right',
