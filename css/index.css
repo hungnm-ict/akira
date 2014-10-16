@@ -1464,3 +1464,8 @@ ul.anchor li a .stepNumber {
 .akiHide{
     display: none;
 }
+
+#testoutWizard .img-thumbnail{
+    height: 140px !important;
+    width: 140px !important;
+}

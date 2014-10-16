@@ -217,29 +217,35 @@ function genAnswers(data, ansKey, numberOfAns) {
  * @return {[type]}             [description]
  */
 function genAnswers3(data, numberOfAns) {
-    var uniqueGroups = [];
-    $.each(data, function(idx, val) {
-        var obj = [];
+    try {
 
-        var rand1;
-        obj.push(data[idx]);
+        var uniqueGroups = [];
+        $.each(data, function(idx, val) {
+            var obj = [];
 
-        do {
-            rand1 = Math.floor((Math.random() * data.length));
-        } while (rand1 == idx);
-        obj.push(data[rand1]);
+            var rand1;
+            obj.push(data[idx]);
 
-        if (numberOfAns == 3) {
-            var rand2;
             do {
-                rand2 = Math.floor((Math.random() * data.length));
-            } while (rand2 == idx || rand2 == rand1);
-            obj.push(data[rand2]);
-        }
+                rand1 = Math.floor((Math.random() * data.length));
+            } while (rand1 == idx);
+            obj.push(data[rand1]);
 
-        uniqueGroups[idx] = akiraShuffle(obj);
-    });
-    return uniqueGroups;
+            if (numberOfAns == 3) {
+                var rand2;
+                do {
+                    rand2 = Math.floor((Math.random() * data.length));
+                } while (rand2 == idx || rand2 == rand1);
+                obj.push(data[rand2]);
+            }
+
+            uniqueGroups[idx] = akiraShuffle(obj);
+        });
+        return uniqueGroups;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
 }
 
 function genAnswers4(data, numberOfAns) {

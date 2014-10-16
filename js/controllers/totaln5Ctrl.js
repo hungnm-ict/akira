@@ -1140,7 +1140,10 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
 totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService) {
     try {
         $scope.data = dataService.getTestoutData(testoutData, $routeParams.type, $routeParams.lessonId);
-        $scope.choices2 = genAnswers4($scope.data, 3);
+        //Create choice for vocab[picture|word] game
+        $scope.choices2 = genAnswers3(testoutData, 3);
+
+        //Create answer for grammar[]
         $scope.answers = genAnswers5($scope.data);
 
         $scope.gameObject = {
