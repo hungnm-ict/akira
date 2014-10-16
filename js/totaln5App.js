@@ -242,12 +242,12 @@ totaln5App.service('dataService', function($http) {
      */
     this.getTestoutData = function(data, type, lessonId) {
         var ret = [];
-        var vocabPool = mergeData(data[0].data, type, lessonId,"topic");
-        var grammar1Pool = mergeData(data[1].data, type, lessonId,"id");
-        var grammar2Pool = mergeData(data[2].data, type, lessonId,"id");
-        var grammar3Pool = mergeData(data[3].data, type, lessonId,"id");
-        var grammar4Pool = mergeData(data[4].data, type, lessonId,"id");
-        var grammar5Pool = mergeData(data[5].data, type, lessonId,"id");
+        var vocabPool = mergeData(data[0].data, type, lessonId, "topic");
+        var grammar1Pool = mergeData(data[1].data, type, lessonId, "id");
+        var grammar2Pool = mergeData(data[2].data, type, lessonId, "id");
+        var grammar3Pool = mergeData(data[3].data, type, lessonId, "id");
+        var grammar4Pool = mergeData(data[4].data, type, lessonId, "id");
+        var grammar5Pool = mergeData(data[5].data, type, lessonId, "id");
         var recipe = [{
             "type": "vocablearn",
             "number": 3,
@@ -334,15 +334,33 @@ totaln5App.service('restService', function($http) {
 });
 
 
-totaln5App.controller('rootController', function($scope, $timeout, $http, $window) {
+totaln5App.controller('rootController', function($scope, $timeout, $http, $window,$sce) {
     $scope.rootPlay = function(data, course, step, id) {
-        var selId = "choices-" + step + "-" + id;
-        var audioSrc = document.getElementById(selId).getElementsByTagName('source');
-        $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
-        document.getElementById(selId).load();
-        document.getElementById(selId).play();
+        try {
+            var selId = "choices-" + step + "-" + id;
+            var audioSrc = document.getElementById(selId).getElementsByTagName('source');
+            $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
+            document.getElementById(selId).load();
+            document.getElementById(selId).play();
+        } catch (err) {
+            console.error(err);
+        }
     };
 
+    $scope.testoutPlay = function(data, course, step, id) {
+        try {
+
+            var selId = "choices-" + step + "-" + id;
+            var audioSrc = document.getElementById(selId).getElementsByTagName('source');
+            $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
+            document.getElementById(selId).load();
+            document.getElementById(selId).play();
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    
     $scope.check = function(lesson) {
         //Get current key point for this courses
         $http({

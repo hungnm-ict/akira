@@ -124,7 +124,7 @@ body {
     cursor: pointer;
     width: 160px;
     height: 160px;
-    margin-left:  auto;
+    margin-left: auto;
     margin-right: auto;
     padding: 12px;
     border-radius: 50%;
@@ -997,7 +997,7 @@ a:hover {
 #test-container {
     padding: 48px;
     border-radius: 10px;
-    background:#FFFFFF;
+    background: #FFFFFF;
 }
 /*-----  End of CSS for TestN5  ------*/
 /*====================================
@@ -1437,35 +1437,56 @@ ul.anchor li a .stepNumber {
 .answer-sheet>.row {
     background: #FFFFFF;
 }
-#submit{
+#submit {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-
 .answer-sheet>.row:last-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
-#lock{
+#lock {
     background: red !important;
     color: #FFF !important;
     -webkit-transform: rotate(90deg);
-       -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-         -o-transform: rotate(90deg);
-            transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
     border-color: red !important;
 }
-#testoutWizard .wrapper>div{
+#testoutWizard .wrapper>div {
     padding-left: 0px !important;
 }
-
-.akiHide{
+.akiHide {
     display: none;
 }
-
-#testoutWizard .img-thumbnail{
+#testoutWizard .img-thumbnail {
     height: 140px !important;
     width: 140px !important;
+}
+.key {
+    webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #1caff6;
+    min-width: 25px;
+    height: 25px;
+    padding: 0 5px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 11px;
+    border-bottom: 2px solid #0f8bc7;
+    display: inline-block;
+    text-align: center;
+    margin-right: 5px;
+    font-weight: 700;
+}
+#left-sidebar table {
+    font-size: initial !important;
+    text-transform: none;
+}
+
+.annotate{
+    margin:6px 0px;
 }

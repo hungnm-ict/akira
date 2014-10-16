@@ -305,6 +305,45 @@ function genAnswers5(data) {
     }
 }
 
+/*Testout*/
+
+/**
+ * Generate testout multi choice quesion for vocab pic and vocab word
+ * @param  {[type]} data     [description]
+ * @param  {[type]} dataPool [description]
+ * @param  {[type]} noQuest  [description]
+ * @param  {[type]} noAns    [description]
+ * @return {[type]}          [description]
+ *
+ */
+function genVocabMultichoice(data, dataPool, noAns) {
+    try {
+        var uniqueGroups = [];
+        $.each(data, function(idx, val) {
+            var obj = [];
+            //Firstly add the correct answer
+            obj.push(val.data);
+
+            //Secondly add no-1 number of uncorrect answer
+            var count = 0;
+            do {
+                var rand = Math.floor((Math.random() * dataPool.length));
+                if (obj.indexOf(dataPool[rand]) == -1) {
+                    obj.push(dataPool[rand]);
+                    count++;
+                }
+            } while (count < noAns - 1);
+
+            uniqueGroups[idx] = akiraShuffle(obj);
+        });
+
+        return uniqueGroups;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
 
 function genEnglishAnswers(data) {
     var uniqueGroups = [];
@@ -726,6 +765,33 @@ function akrParseInt(str) {
     } catch (err) {
         console.error(err);
         return 0;
+    }
+}
+
+/**
+ * Because we use many type of DOM type to get user input
+ * It could be a div, input or something else
+ * So the way to get string value which user inputted is
+ * differrence so we have use this to determine type of DOM
+ * @param  {[type]} id [description]
+ * @return {[type]}    [description]
+ */
+function akrGetUserInput(id) {
+    try {
+        var nodeName = $(id)[0].nodeName;
+        switch (nodeName) {
+            case "INPUT":
+                return $(id).val().trim();
+                break;
+            case "DIV":
+            case "SPAN":
+            case "H5":
+                return $(id).text().trim();
+                break;
+        }
+    } catch (err) {
+        console.log(err);
+        return "";
     }
 }
 

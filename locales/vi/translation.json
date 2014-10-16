@@ -55,6 +55,12 @@
             "anonymous": "Đăng nhập để lưu được điểm",
             "buy": "Bạn cần mua thẻ để sử dụng tính năng này",
             "keypoint": "Bạn chưa đủ keypoint để học bài này"
+        },
+        "help": {
+            "enter": "Submit answer",
+            "choice": "Select multiple choice answers",
+            "play": "Replay audio",
+            "playSlow": "Replay audio slower"
         }
     }
 }
