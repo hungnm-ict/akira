@@ -136,7 +136,7 @@
                                 <img ng-src="../../data/totaln5/vocab/image/{{vocabMultiChoice[key][0].filename}}.png" class="img-thumbnail" id="img-{{key}}-0" ng-class="{'selected': 49==keyCode}" ng-click="keyPress($event,49)">
                                 <div class="annotate">
                                     <span class="first" ng-class="{'actived': 49==keyCode}"></span>
-                                    <span ng-bind="vocabMultiChoice[key][0].vietnamese" id="input-{{key}}">
+                                    <span ng-bind="vocabMultiChoice[key][0].vietnamese" id="input-{{key}}" ng-class="{'selected': 49==keyCode}">
                                     </span>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                                 <img ng-src="../../data/totaln5/vocab/image/{{vocabMultiChoice[key][1].filename}}.png" class="img-thumbnail" id="img-{{key}}-1" ng-class="{'selected': 50==keyCode}" ng-click="keyPress(50)">
                                 <div class="annotate">
                                     <span class="second" ng-class="{'actived': 50==keyCode}"></span>
-                                    <span ng-bind="vocabMultiChoice[key][1].vietnamese" id="input-{{key}}">
+                                    <span ng-bind="vocabMultiChoice[key][1].vietnamese" id="input-{{key}}" ng-class="{'selected': 50==keyCode}">
                                     </span>
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
                                 <img ng-src="../../data/totaln5/vocab/image/{{vocabMultiChoice[key][2].filename}}.png" class="img-thumbnail" id="img-{{key}}-2" ng-class="{'selected': 51==keyCode}" ng-click="keyPress(51)">
                                 <div class="annotate">
                                     <span class="third" ng-class="{'actived': 51==keyCode}"></span>
-                                    <span ng-bind="vocabMultiChoice[key][2].vietnamese" id="input-{{key}}">
+                                    <span ng-bind="vocabMultiChoice[key][2].vietnamese" id="input-{{key}}" ng-class="{'selected': 51==keyCode}">
                                     </span>
                                 </div>
                             </div>
@@ -755,7 +755,7 @@
                                 <span class="first" ng-class="{'actived': 49==keyCode}"></span>
                             </div>
                             <div class="col-md-5 col-sm-5 col-xs-5">
-                                <div class="ans-opt" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
+                                <div class="ans-opt" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}" id="input-{{key}}">
                                     <span ng-bind="val.data.answer1"></span>
                                 </div>
                             </div>
@@ -765,7 +765,7 @@
                                 <span class="second" ng-class="{'actived': 50==keyCode}"></span>
                             </div>
                             <div class="col-md-5 col-sm-5 col-xs-5">
-                                <div class="ans-opt" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
+                                <div class="ans-opt" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}" id="input-{{key}}">
                                     <span ng-bind="val.data.answer2"></span>
                                 </div>
                             </div>

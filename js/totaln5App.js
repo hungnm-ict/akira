@@ -25,10 +25,10 @@ totaln5App.config(['$routeProvider',
                 controller: 'kanaCtrl',
                 templateUrl: function(urlattr) {
                     if (urlattr.lessonId == 1 || urlattr.lessonId == 2)
-                        return 'kana/hirasub.html';
+                        return '../kana/hirasub.html';
 
                     if (urlattr.lessonId == 3 || urlattr.lessonId == 4)
-                        return 'kana/katasub.html';
+                        return '../kana/katasub.html';
                 },
             })
             .when('/testout/:type/:lessonId', {
@@ -45,23 +45,23 @@ totaln5App.config(['$routeProvider',
                 }
             })
             .when('/kana/:lessonId/:partId/learn', {
-                templateUrl: 'kana/learn.html',
+                templateUrl: '../kana/learn.html',
                 controller: 'kanaLearnCtrl'
             })
             .when('/kana/:lessonId/:partId/picture', {
-                templateUrl: 'kana/picture.html',
+                templateUrl: '../kana/picture.html',
                 controller: 'kanaPictureCtrl'
             })
             .when('/kana/:lessonId/:partId/word', {
-                templateUrl: 'kana/word.html',
+                templateUrl: '../kana/word.html',
                 controller: 'kanaWordCtrl'
             })
             .when('/kana/:lessonId/:partId/connect', {
-                templateUrl: 'kana/connect.html',
+                templateUrl: '../kana/connect.html',
                 controller: 'kanaConnectCtrl'
             })
             .when('/kana/:lessonId/:partId/write', {
-                templateUrl: 'kana/write.html',
+                templateUrl: '../kana/write.html',
                 controller: 'kanaWriteCtrl'
             })
             .when('/:lessonId', {

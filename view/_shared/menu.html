@@ -32,14 +32,17 @@
                 <div id="collapseOne" class="panel-collapse collapse" ng-class="{'in navgroup-active': 0 == navgroup }">
                     <div class="panel-body">
                         <ul>
-                            <li ng-class="{'nav-active':0==nav}" ng-click="menuClick(0,0)">
+                           <li ng-class="{'nav-active':0==nav}" ng-click="menuClick(0,0)">
+                                <a href="../kana" data-i18n="menu.kana"></a>
+                            </li>
+                            <li ng-class="{'nav-active':0==nav}" ng-click="menuClick(0,1)">
                                 <a href="../totaln5" data-i18n="menu.total-n5"></a>
                             </li>
-                            <li ng-class="{'nav-active':1==nav}" ng-click="menuClick(0,1)">
+                            <li ng-class="{'nav-active':1==nav}" ng-click="menuClick(0,2)">
                                 <a href="../kanji/#/n5" data-i18n="menu.kanji-n5"></a>
                             </li>
                             <li ng-class="{'nav-active':2==nav}" onclick="return false;">
-                                <!-- ng-click="menuClick(0,2)" -->
+                                <!-- ng-click="menuClick(0,3)" -->
                                 <a href="../test/#/n5" data-i18n="menu.test-n5"></a>
                             </li>
                         </ul>

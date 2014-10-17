@@ -7,7 +7,7 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <title>Total N4</title>
+    <title>Total N5</title>
 
     <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
@@ -22,20 +22,23 @@
     <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
+    <script type="text/javascript" src="../../spec/lib/keyboard/keyboard.js"></script>
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
+    <script type="text/javascript" src="../../js/index.js"></script>
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
-    <script type="text/javascript" src="../../js/directives/totaln4Directive.js"></script>
-    <script type="text/javascript" src="../../js/controllers/totaln4Ctrl.js"></script>
-    <script type="text/javascript" src="../../js/totaln4App.js"></script>
+    <script type="text/javascript" src="../../js/directives/totaln5Directive.js"></script>
+    <script type="text/javascript" src="../../js/controllers/totaln5Ctrl.js"></script>
+    <script type="text/javascript" src="../../js/totaln5App.js"></script>
 
-    <script type="text/javascript" src="../../js/index.js"></script>
+    <!-- chat -->
 
     <link type="text/css" rel="stylesheet" media="all" href="../../chat/css/chat.css" />
     <link type="text/css" rel="stylesheet" media="all" href="../../chat/css/screen.css" />
-    <!-- <script type="text/javascript" src="../../chat/js/jquery.js"></script> -->
     <script type="text/javascript" src="../../chat/js/chat.js"></script>
+
+    <!-- end chat -->
 
     <style type="text/css" media="screen">
     </style>
@@ -45,11 +48,10 @@
     <div class="app container-full-height container-fluid" id="dashboard">
         <div class="row row-full-height">
             <div class="col-md-2 col-full-height hidden-sm hidden-xs" style="padding-left: 0px;">
-                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=1;nav=0">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=0">
                 </div>
             </div>
             <div class="col-md-7 col-full-height">
-
                 <div id="content" ng-controller="rootController">
                     <audio controls id="sound-true" class="hide">
                         <source src="../../audio/true.mp3" type="audio/mp3">
@@ -73,20 +75,19 @@
             <div class="col-md-3 col-full-height">
 
                 <div id="right-sidebar">
-                    <!-- Custom Akira profile directive -->
                     <akrprofile></akrprofile>
-
-                    <!-- Custom Akira leaderboard directive -->
                     <akrleaderboard></akrleaderboard>
+
                 </div>
             </div>
         </div>
     </div>
 
     <script type="text/javascript">
-    angular.bootstrap(document, ['totaln4App']);
+    angular.bootstrap(document, ['totaln5App']);
     app.initialize();
     </script>
+
     <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">

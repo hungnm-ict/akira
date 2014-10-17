@@ -1,13 +1,13 @@
 <div id="topicWizard" class="swMain akiHide" akirawizard enablestep="true">
-    <ul>
-       <!--  <li>
+    <ul class="hide">
+        <li>
             <a href="#step-1" ng-click="show(true)">
                 <label class="stepNumber">
                     <span data-i18n="menu.kana"></span>
                 </label>
             </a>
-        </li> -->
-        <li>
+        </li>
+       <!--  <li>
             <a href="#step-2" ng-click="show(false)">
                 <label class="stepNumber">
                     <span data-i18n="common.part"></span>
@@ -40,32 +40,33 @@
                 </label>
 
             </a>
-        </li>
+        </li> -->
     </ul>
 
 <!--     <span ng-switch on="kana">
-    <span ng-switch-when="true">
-        <span id="star">
-            <span class="number">
-                {{kanastar}}
-                <i class="fa fa-star kana"></i>
+        <span ng-switch-when="true"> -->
+            <span id="star">
+                <span class="number">
+                    <span ng-bind="kanastar"></span>
+                    <i class="fa fa-star kana"></i>
+                </span>
+            </span>
+        <!-- </span> -->
+       <!--  <span ng-switch-when="false">
+            <span id="star">
+                <span class="number">
+                    {{vocabstar}}
+                    <i class="fa fa-star vocab"></i>
+                </span>
+                <span class="number">
+                    {{grammarstar}}
+                    <i class="fa fa-star  grammar"></i>
+                </span>
             </span>
         </span>
-    </span>
-    <span ng-switch-when="false"> -->
-        <span id="star">
-            <span class="number">
-                <span ng-bind="vocabstar"></span>
-                  <i class="fa fa-star vocab"></i>
-            </span>
-            <span class="number">
-                <span ng-bind="grammarstar"></span>
-                <i class="fa fa-star  grammar"></i>
-            </span>
-        </span>
-    <!-- </span> -->
+    </span> -->
 
-<!--     <div id="step-1">
+    <div id="step-1">
         <div class="wrapper">
             <div class="row">
                 <div class="col-md-3 col-md-offset-3  lesson-wrapper">
@@ -121,9 +122,9 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <div id="step-{{step}}" ng-repeat="step in [2,3,4,5]">
+   <!--  <div id="step-{{step}}" ng-repeat="step in [2,3,4,5]">
         <div class="wrapper">
             <div class="row">
                 <div class="col-md-2 col-md-offset-3">
@@ -242,5 +243,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

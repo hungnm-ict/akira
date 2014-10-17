@@ -170,6 +170,14 @@ totaln4App.controller('rootController', function($scope) {
         document.getElementById(selId).load();
         document.getElementById(selId).play();
     }
+    
+    $scope.$on('$routeChangeStart', function(scope, next, curr) {
+        $scope.isLoading = "true";
+    });
+
+    $scope.$on('$routeChangeSuccess', function(scope, next, curr) {
+        $scope.isLoading = "false";
+    });
 });
 
 

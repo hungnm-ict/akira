@@ -1490,3 +1490,9 @@ ul.anchor li a .stepNumber {
 .annotate{
     margin:6px 0px;
 }
+.annotate .selected{
+    border: none !important;
+}
+#leaderboard tabs > nav > tab{
+width: 130px !important;
+}

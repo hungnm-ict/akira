@@ -1,4 +1,4 @@
-<div id="subtopicWizard" class="swMain" akirawizard enablestep="true">
+<div id="subtopicWizard" class="swMain akiHide" akirawizard enablestep="true">
     <span class="header">
         <h2 data-i18n="common.lesson"></h2>
         <h2>{{lessonId}}</h2>
@@ -19,6 +19,12 @@
                 </label>
             </a>
         </li>
+        <li>
+            <a href="" id="lock" ng-click="pass('basic',lessonId)">
+                <label class='stepNumber'><i class='fa fa-key'></i>
+                </label>
+            </a>
+        </li>
     </ul>
 
     <span id="star">
@@ -31,7 +37,7 @@
             <i class="fa fa-star  grammar"></i>
         </span>
     </span>
-    
+
     <div id="step-{{value}}" ng-repeat="value in [1,2,3,4]">
         <div ng-switch on="$last">
             <div ng-switch-when="false">
