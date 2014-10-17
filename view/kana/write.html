@@ -21,7 +21,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
                     <!-- Question wrapper -->
                     <div id="question-wrapper" ng-click="playSound(key,true)">
-                       <!--  <audio controls id="{{key}}" style="display:none;">
+                        <!--  <audio controls id="{{key}}" style="display:none;">
                            <source type="audio/mpeg">
                                Your browser does not support the audio element.
                        </audio>
@@ -99,12 +99,20 @@
 </div>
 
 <script type="text/javascript">
-// setTimeout(function() {
-    $(document).keydown(function(e) {
-        if (13 == e.keyCode) {
-            angular.element("#writeWizard").scope().enterPress();
-        }
-        changeLang();
-    });
-// }, 500);
+var scope = angular.element(".swMain").scope();
+KeyboardJS.on('enter', function() {
+    scope.enterPress();
+}, changeLang());
+
+KeyboardJS.on('ctrl + space', function() {
+    scope.playSound(scope.step, true, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('ctrl + shift + space', function() {
+    scope.playSound(scope.step, false, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('1,2,3', function(e) {
+    scope.keyPress(e, e.keyCode);
+}, changeLang());
 </script>

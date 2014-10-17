@@ -18,11 +18,17 @@
                 </label>
             </a>
         </li>
+        <li>
+            <a href="" id="lock" ng-click="pass(degree,'basic',lessonId)">
+                <label class='stepNumber'><i class='fa fa-key'></i>
+                </label>
+            </a>
+        </li>
     </ul>
 
     <span id="star">
         <span class="number">
-            {{kanjistar}}
+            <span ng-bind="kanjistar"></span>
             <i class="fa fa-star kanji"></i>
         </span>
     </span>

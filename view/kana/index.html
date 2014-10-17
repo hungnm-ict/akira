@@ -29,8 +29,8 @@
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
     <script type="text/javascript" src="../../js/directives/totaln5Directive.js"></script>
-    <script type="text/javascript" src="../../js/controllers/totaln5Ctrl.js"></script>
-    <script type="text/javascript" src="../../js/totaln5App.js"></script>
+    <script type="text/javascript" src="../../js/controllers/kanaCtrl.js"></script>
+    <script type="text/javascript" src="../../js/kanaApp.js"></script>
 
     <!-- chat -->
 
@@ -48,7 +48,7 @@
     <div class="app container-full-height container-fluid" id="dashboard">
         <div class="row row-full-height">
             <div class="col-md-2 col-full-height hidden-sm hidden-xs" style="padding-left: 0px;">
-                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=0">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl">
                 </div>
             </div>
             <div class="col-md-7 col-full-height">

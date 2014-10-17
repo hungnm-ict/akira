@@ -45,114 +45,114 @@
 </div>
 
 <script type="text/javascript">
-window.fbAsyncInit = function() {
-    FB.init({
-        appId: "705036879589855",
-        status: true, // check login status
-        cookie: true, // enable cookies to allow the server to access the session
-        xfbml: true // parse XFBML
-    });
-};
+// window.fbAsyncInit = function() {
+//     FB.init({
+//         appId: "705036879589855",
+//         status: true, // check login status
+//         cookie: true, // enable cookies to allow the server to access the session
+//         xfbml: true // parse XFBML
+//     });
+// };
 
-(function(d) {
-    var js, id = 'facebook-jssdk',
-        ref = d.getElementsByTagName('script')[0];
-    if (d.getElementById(id)) {
-        return;
-    }
-    js = d.createElement('script');
-    js.id = id;
-    js.async = true;
-    js.src = "//connect.facebook.net/en_US/all.js";
-    ref.parentNode.insertBefore(js, ref);
-}(document));
+// (function(d) {
+//     var js, id = 'facebook-jssdk',
+//         ref = d.getElementsByTagName('script')[0];
+//     if (d.getElementById(id)) {
+//         return;
+//     }
+//     js = d.createElement('script');
+//     js.id = id;
+//     js.async = true;
+//     js.src = "//connect.facebook.net/en_US/all.js";
+//     ref.parentNode.insertBefore(js, ref);
+// }(document));
 
-function onFbLoginClick() {
-    FB.login(function(response) {
-        if (response.authResponse) {
-            FB.api('/me', function(response) {
-                ajaxFbLogin(response);
-            });
-        } else {
-            //user hit cancel button
-            console.log('User cancelled login or did not fully authorize.');
-        }
-    }, {
-        scope: 'email'
-    });
-}
+// function onFbLoginClick() {
+//     FB.login(function(response) {
+//         if (response.authResponse) {
+//             FB.api('/me', function(response) {
+//                 ajaxFbLogin(response);
+//             });
+//         } else {
+//             //user hit cancel button
+//             console.log('User cancelled login or did not fully authorize.');
+//         }
+//     }, {
+//         scope: 'email'
+//     });
+// }
 
-function ajaxFbLogin(response) {
-    $.ajax({
-        type: 'POST',
-        url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
-        data: {
-            type: "fb",
-            id: response.id,
-            userName: response.username,
-            userEmail: response.email,
-        }
-    }).done(function(success) {
-        sessionStorage.setItem("authorized", "true");
-        sessionStorage.setItem("user", JSON.stringify(success));
-        window.location.href = "view/totaln5";
-    }).fail(function(error) {
-        sessionStorage.setItem("authorized", "false");
-    });
-}
+// function ajaxFbLogin(response) {
+//     $.ajax({
+//         type: 'POST',
+//         url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
+//         data: {
+//             type: "fb",
+//             id: response.id,
+//             userName: response.username,
+//             userEmail: response.email,
+//         }
+//     }).done(function(success) {
+//         sessionStorage.setItem("authorized", "true");
+//         sessionStorage.setItem("user", JSON.stringify(success));
+//         window.location.href = "view/totaln5";
+//     }).fail(function(error) {
+//         sessionStorage.setItem("authorized", "false");
+//     });
+// }
 
-(function() {
-    var po = document.createElement('script');
-    po.type = 'text/javascript';
-    po.async = true;
-    po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(po, s);
-})();
+// (function() {
+//     var po = document.createElement('script');
+//     po.type = 'text/javascript';
+//     po.async = true;
+//     po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+//     var s = document.getElementsByTagName('script')[0];
+//     s.parentNode.insertBefore(po, s);
+// })();
 
 
 
-function onGPLoginClick() {
-    var additionalParams = {
-        'callback': onGooglePlusLoginSuccess,
-        'cookiepolicy': 'single_host_origin',
-        'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read',
-        'clientid': '451560498175-gj7419dvh1t85n3pn38lgvsmot8smr4t.apps.googleusercontent.com'
-    };
-    gapi.auth.signIn(additionalParams);
-}
+// function onGPLoginClick() {
+//     var additionalParams = {
+//         'callback': onGooglePlusLoginSuccess,
+//         'cookiepolicy': 'single_host_origin',
+//         'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read',
+//         'clientid': '451560498175-gj7419dvh1t85n3pn38lgvsmot8smr4t.apps.googleusercontent.com'
+//     };
+//     gapi.auth.signIn(additionalParams);
+// }
 
-function onGooglePlusLoginSuccess(authResult) {
-    if (authResult['code']) {
-        gapi.client.load('plus', 'v1', function() {
-            var request = gapi.client.plus.people.get({
-                'userId': 'me'
-            });
-            request.execute(function(response) {
-                ajaxGoogleLogin(response);
-            });
-        });
-    } else if (authResult['error']) {
-        console.log('There was an error: ' + authResult['error']);
-    }
-}
+// function onGooglePlusLoginSuccess(authResult) {
+//     if (authResult['code']) {
+//         gapi.client.load('plus', 'v1', function() {
+//             var request = gapi.client.plus.people.get({
+//                 'userId': 'me'
+//             });
+//             request.execute(function(response) {
+//                 ajaxGoogleLogin(response);
+//             });
+//         });
+//     } else if (authResult['error']) {
+//         console.log('There was an error: ' + authResult['error']);
+//     }
+// }
 
-function ajaxGoogleLogin(response) {
-    $.ajax({
-        type: 'POST',
-        url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
-        data: {
-            type: "gp",
-            id: response.id,
-            userName: response.emails[0]['value'],
-            userEmail: response.emails[0]['value']
-        }
-    }).done(function(success) {
-        sessionStorage.setItem("authorized", "true");
-        sessionStorage.setItem("user", JSON.stringify(success));
-        window.location.href = "view/totaln5";
-    }).fail(function(error) {
-        sessionStorage.setItem("authorized", "false");
-    });
-}
+// function ajaxGoogleLogin(response) {
+//     $.ajax({
+//         type: 'POST',
+//         url: 'http://akira.edu.vn/wp-content/plugins/akira-api/akira_login.php',
+//         data: {
+//             type: "gp",
+//             id: response.id,
+//             userName: response.emails[0]['value'],
+//             userEmail: response.emails[0]['value']
+//         }
+//     }).done(function(success) {
+//         sessionStorage.setItem("authorized", "true");
+//         sessionStorage.setItem("user", JSON.stringify(success));
+//         window.location.href = "view/kana";
+//     }).fail(function(error) {
+//         sessionStorage.setItem("authorized", "false");
+//     });
+// }
 </script>

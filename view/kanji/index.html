@@ -22,6 +22,7 @@
     <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
+    <script type="text/javascript" src="../../spec/lib/keyboard/keyboard.js"></script>
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
@@ -50,7 +51,17 @@
                     <audio controls id="sound-fail" class="hide">
                         <source src="../../audio/fail.mp3" type="audio/mp3">
                     </audio>
-                    <div ng-view></div>
+                    <div ng-switch on="isLoading">
+                        <div ng-switch-when="true" class="center">
+                            <img src="http://www.w3schools.com/jquery/demo_wait.gif" alt="">
+                        </div>
+                        <div ng-switch-when="false">
+                            <div ng-view></div>
+                        </div>
+                        <div ng-switch-default class="center">
+                            <img src="http://www.w3schools.com/jquery/demo_wait.gif" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 col-full-height">

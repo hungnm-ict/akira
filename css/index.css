@@ -718,7 +718,7 @@ a:hover {
     min-width: 100%;
     height: inherit !important;
 }
-#writeWizard .write-control, #learnWizard .write-control, #pictureWizard .write-control, #wordWizard .write-control {
+#testoutWizard .write-control, #writeWizard .write-control, #learnWizard .write-control, #pictureWizard .write-control, #wordWizard .write-control {
     font-weight: bold;
     height: 215px;
     text-align: center;
@@ -727,11 +727,11 @@ a:hover {
     border: 0;
 }
 #writeWizard .write-control.img-responsive, #learnWizard .write-control.img-responsive, #pictureWizard .write-control.img-responsive, #wordWizard .write-control.img-responsive {
-    font-size: 10rem;
+    font-size: 6rem;
     font-weight: bold;
     color: black;
 }
-#writeWizard .write-control.img-responsive {
+#testoutWizard .write-control.img-responsive, #writeWizard .write-control.img-responsive {
     font-size: 3rem !important;
 }
 #writeWizard .write-control[type='text'], #learnWizard .write-control[type='text'] {
@@ -1300,6 +1300,10 @@ ul.anchor li a .stepNumber {
 .progress.kanji .progress-bar {
     background-image: linear-gradient(to bottom, red 0, red 100%);
 }
+#subtopicWizard.swMain ul.anchor li a.selected:hover {
+    color: initial !important;
+}
+
 #subtopicWizard.swMain ul.anchor li a:hover {
     color: #FFF !important;
     /*border: 3px solid #344c8c;*/
@@ -1322,7 +1326,7 @@ ul.anchor li a .stepNumber {
     cursor: pointer;
 }
 .vocab#writeWizard div#question-wrapper img.img-responsive {
-    height: 200px !important;
+    height: 180px !important;
 }
 #topicWizard .lesson-wrapper .img-responsive {
     border: 1px solid #C0C0C0;
@@ -1486,13 +1490,22 @@ ul.anchor li a .stepNumber {
     font-size: initial !important;
     text-transform: none;
 }
-
-.annotate{
-    margin:6px 0px;
+.annotate {
+    margin: 6px 0px;
 }
-.annotate .selected{
+.annotate .selected {
     border: none !important;
 }
-#leaderboard tabs > nav > tab{
-width: 130px !important;
+#leaderboard tabs > nav > tab {
+    width: 130px !important;
+}
+
+.rect-panel{
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+
+}
+#btn-redeem:hover{
+    cursor: pointer;
 }

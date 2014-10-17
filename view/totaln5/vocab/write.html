@@ -26,9 +26,9 @@
                                 Your browser does not support the audio element.
                         </audio>
                         <i class="fa fa-volume-up fa-2x write-btn-play"></i>
-                        <img ng-src="../../data/totaln5/vocab/image/{{val.filename}}.png" class="img-responsive">
-                        <h4 class="center" style="text-transform:captalize">{{val.vie}}</h4>
+                        <img ng-src="../../data/totaln5/vocab/image/{{val.filename}}.png" class="img-responsive" />
                     </div>
+                    <h4 class="center" ng-bind="val.vietnamese"></h4>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
                     <!-- User answer wrapper -->
@@ -46,7 +46,7 @@
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        {{val.hiragana}}
+                        <span ng-bind="val.hiragana"></span>
                     </div>
                 </div>
             </div>
@@ -57,15 +57,34 @@
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <div class="row hide" id="mess-{{key}}">
                             <div class="col-md-12 col-xs-12 col-sm-12">
-                                <span class="correct-child">
-                                    <span class="test-circle"></span>
-                                </span>
-                                <span class="failed-child">
-                                    <i class="fa fa-times fa-4x"></i>
-                                </span>
-                                <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vietnamese}}</span>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="center">
+                                                <span class="correct-child">
+                                                    <span class="test-circle"></span>
+                                                </span>
+                                                <span class="failed-child">
+                                                    <i class="fa fa-times fa-4x"></i>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span ng-bind="val.hiragana" class="hint"></span>
+                                                </div>
+                                                <div>
+                                                    <span ng-bind="val.kanji" class="hint"></span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <span ng-bind="val.vietnamese" class="hint"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
                             </div>
                         </div>
                     </div>
@@ -98,11 +117,9 @@
 </div>
 
 <script type="text/javascript">
-$(document).keydown(function(e) {
-    if (13 == e.keyCode) {
-        angular.element("#writeWizard").scope().enterPress();
-    }
-    changeLang();
-});
+var scope = angular.element("#writeWizard").scope();
+KeyboardJS.on('enter', function() {
+    scope.enterPress();
+}, changeLang());
 kanjiDict();
 </script>

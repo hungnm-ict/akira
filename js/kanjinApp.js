@@ -14,6 +14,19 @@ app.config(['$routeProvider',
                     }
                 }
             })
+            .when('/:degree/testout/:type/:lessonId', {
+                templateUrl: 'testout.html',
+                controller: 'testoutCtrl',
+                resolve: {
+                    testoutData: function($q, dataService, $route) {
+                        var deferred = $q.defer();
+                        $q.all(dataService.getTestoutPromise($route.current.params.degree)).then(function(response) {
+                            deferred.resolve(response);
+                        });
+                        return deferred.promise;
+                    }
+                }
+            })
             .when('/:degree/:lessonId', {
                 controller: 'subCtrl',
                 templateUrl: 'subtopic.html',
@@ -75,6 +88,62 @@ app.service('dataService', function($http) {
                 break;
         }
     };
+
+    this.getTestoutPromise = function(degree) {
+        var promise = [];
+        switch (degree) {
+            case "n5":
+                promise.push(this.n5Kanji)
+                break;
+            case "n4":
+                promise.pus(this.n5Kanji);
+                break;
+        }
+        return promise;
+    }
+
+
+    /**
+     * Return an array of 30 question item
+     * an question item include: {type:'vocabwrite[vocabpic|vocabword|vocablisten|grammarlisten|grammarchoice|grammartranslate|grammarread|grammarword], data: '...'}
+     * @param  {[type]} data     [description]
+     * @param  {[type]} type     [description]
+     * @param  {[type]} lessonId [description]
+     * @return {[type]}          [description]
+     */
+    this.getTestoutData = function(data, type, lessonId) {
+        var ret = [];
+        var vocabPool = mergeData(data[0].data, type, lessonId, "topic");
+        var recipe = [{
+            "type": "kanjilearn",
+            "number": 10,
+            "datapool": vocabPool
+        }, {
+            "type": "kanjipic",
+            "number": 10,
+            "datapool": vocabPool
+        }, {
+            "type": "kanjiword",
+            "number": 10,
+            "datapool": vocabPool
+        }];
+
+        //Recipe for 30 question randomize:
+        //Vocab: 3 vocab learn, 3 vocab pic, 4 vocab word, 5 vocab listen, 3 grammar listen, 3 grammar choice, 3 grammar translate, 3 grammar read, 3 grammarword
+        var randIdx;
+        angular.forEach(recipe, function(value, key) {
+            for (var i = 0; i < value.number; i++) {
+                randIdx = Math.floor(Math.random() * value.datapool.length);
+                ret.push({
+                    type: value.type,
+                    data: value.datapool[randIdx]
+                });
+            };
+        });
+
+        // return akiraShuffle2(ret);
+        return ret;
+    }
 });
 
 app.service('restService', function($http) {
@@ -107,7 +176,7 @@ app.service('restService', function($http) {
 
 
 
-app.controller('root', function($scope, $routeParams, $route) {
+app.controller('root', function($scope, $routeParams, $route, $http, $window) {
     $scope.rootPlay = function(data, course, step, id) {
         var selId = "choices-" + step + "-" + id;
         var audioSrc = document.getElementById(selId).getElementsByTagName('source');
@@ -115,6 +184,44 @@ app.controller('root', function($scope, $routeParams, $route) {
         document.getElementById(selId).load();
         document.getElementById(selId).play();
     }
+
+    $scope.check = function(degree, lesson) {
+        //Get current key point for this courses
+        $http({
+            method: "GET",
+            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=kanji" + degree + "&userid=" + getUser().id
+        }).success(function(data, status) {
+            if (akrParseInt(data) > lesson) {
+                console.info("Ban du keypoint de hoc bai nay");
+                $window.location.href = "#/" + degree + "/" + lesson;
+            } else {
+                alert(i18n.t("message.info.keypoint"));
+            }
+        });
+    };
+
+    $scope.pass = function(degree, type, lesson) {
+        //Firstly check if user have enough day_remain or not
+        $http({
+            method: "GET",
+            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
+        }).success(function(data, status) {
+            if (akrParseInt(data) > 0) {
+                console.log("Ban con ngay su dung va co the choi phan nay");
+                $window.location.href = "#/" + degree + "/testout/" + type + "/" + lesson;
+            } else {
+                alert(i18n.t("message.info.buy"));
+            }
+        });
+    };
+
+    $scope.$on('$routeChangeStart', function(scope, next, curr) {
+        $scope.isLoading = "true";
+    });
+
+    $scope.$on('$routeChangeSuccess', function(scope, next, curr) {
+        $scope.isLoading = "false";
+    });
 });
 
 app.factory('menuFactory', function($rootScope) {

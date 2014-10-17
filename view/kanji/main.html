@@ -1,38 +1,74 @@
 <div id="topicWizard" class="swMain akiHide" akirawizard enablestep="true">
-    <ul class="hide">
-        <li>
-            <a href="#step-1">
+    <ul ng-class="{'hide': page.length == 1}">
+        <li ng-repeat="(key, value) in page">
+            <a href="#step-{{key}}">
                 <label class="stepNumber">
                     <span data-i18n="common.part"></span>
-                    <span>&nbsp;1</span>
+                    <span>&nbsp;{{value + 1}}</span>
                 </label>
             </a>
         </li>
     </ul>
     <span id="star">
         <span class="number">
-            {{kanjistar}}
+            <span ng-bind="kanjistar"></span>
             <i class="fa fa-star kanji"></i>
         </span>
     </span>
-    <div id="step-1">
+    <div id="step-{{key}}" ng-repeat="(key, value) in page">
         <div class="wrapper">
-            <!-- Sample ngrepeat -->
-            <div class="row" ng-repeat="val in [0,1]">
-                <div class="col-md-3 col-sm-3 col-xs-3 lesson-wrapper" ng-repeat="value in [1,2,3,4]">
-                    <label>
-                        <span data-i18n="common.lesson"></span>
-                        <span>&nbsp;{{4* val + value}}</span>
-                    </label>
-                    <a ng-href="#/{{degree}}/{{4* val + value}}" class="thumb">
-                        <img ng-src="../../img/kanji{{degree}}/topic/{{4* val + value}}.png" alt="{{4* val + value}}" class="img-responsive">
-                    </a>
-                    <div class="progress kanji">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{kanjiprogress[4* val + value]}}%;">
+            <table class="table center">
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2" ng-repeat="(k, v) in [0,1,2]">
+                                <label>
+                                    <span data-i18n="common.lesson"></span>
+                                    <span>&nbsp;{{3* value + v + 1}}</span>
+                                </label>
+                                <a ng-click="check(degree,3* value + v + 1)" class="thumb">
+                                    <img ng-src="../../img/kanji{{degree}}/topic/{{3* value + v + 1}}.png" alt="{{3* value + v + 1}}" class="img-responsive">
+                                </a>
+                                <div class="progress kanji">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{kanjiprogress[3* value + v + 1]}}%;">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2">
+                                <label>
+                                    <span>Pass</span>
+                                    <span>&nbsp;{{value*3+3}} &nbsp;</span>
+                                    <span style="text-transform:lowercase" data-i18n="common.lesson"></span>
+                                </label>
+                                <a class="thumb" style="color:red; " ng-click="pass(degree,'big',3* value + v + 1)">
+                                    <i class="fa fa-key fa-5x" style="transform:rotate(90deg);"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-2" ng-repeat="(k, v) in [3,4,5]">
+                                <label>
+                                    <span data-i18n="common.lesson"></span>
+                                    <span>&nbsp;{{3* value + v + 1}}</span>
+                                </label>
+                                <a ng-click="check(degree,3* value + v + 1)" class="thumb">
+                                    <img ng-src="../../img/kanji{{degree}}/topic/{{3* value + v + 1}}.png" alt="{{3* value + v + 1}}" class="img-responsive">
+                                </a>
+                                <div class="progress kanji">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{kanjiprogress[3* value + v + 1]}}%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

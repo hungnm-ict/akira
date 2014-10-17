@@ -77,7 +77,7 @@ totaln4Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
-            $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+            $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step+"[type='text']").attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
                 playCorrect();
@@ -745,3 +745,116 @@ totaln4Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http,
 });
 
 /*-----  End of Controller for totaln4 - Grammar game  ------*/
+
+totaln4Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService) {
+    try {
+        $scope.data = dataService.getTestoutData(testoutData, $routeParams.type, $routeParams.lessonId);
+
+        //Create data object for vocab[picture|word] game(Multichoice game)
+        $scope.vocabMultiChoice = genVocabMultichoice($scope.data, mergeData(testoutData[0].data, $routeParams.type, $routeParams.lessonId, "topic"), 3);
+
+        //Create data object for grammar choice game
+        $scope.grammarMultiChoice = genVocabMultichoice($scope.data, mergeData(testoutData[2].data, $routeParams.type, $routeParams.lessonId, "id"), 3);
+
+
+        //Create answer for grammar[]
+        $scope.answers = genAnswers5($scope.data);
+
+        $scope.gameObject = {
+            "life": 3,
+            "correct": 0
+        };
+        $scope.step = 0;
+        $scope.stage = 0;
+
+        $scope.playSound = function(id, isNormal, type) {
+            try {
+                if (type === undefined) {
+                    type = "vocab";
+                }
+
+                var audioSrc = document.getElementById(id).getElementsByTagName('source');
+                $("audio#" + id + " source").attr("src", "../../data/totaln4/" + type + "/audio/" + $scope.data[id].data.filename + ".mp3");
+                document.getElementById(id).load();
+                if (isNormal) {
+                    document.getElementById(id).playbackRate = 1;
+                } else {
+                    document.getElementById(id).playbackRate = 0.5;
+                }
+                document.getElementById(id).play();
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        $scope.removeLife = function() {
+            $scope.gameObject.life -= 1;
+            if ($scope.gameObject.life == 0) {
+                // gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+            }
+        };
+
+        $scope.enterPress = function() {
+            try {
+
+                var step = $("#testoutWizard").smartWizard('currentStep') - 1;
+                if (1 == $scope.stage) {
+                    //Nguoi dung dap an -> an enter -> kiem tra dung / sai
+                    var userSlt = akrGetUserInput("#testoutWizard #step-" + step + " #user-input-wrapper .selected#input-" + step);
+                    $("#testoutWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+                    var correct = $("#testoutWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+                    if (compare(correct, userSlt)) {
+                        playCorrect();
+                        $("#testoutWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
+                        $scope.gameObject.correct++;
+                    } else {
+                        playFail();
+                        $("#testoutWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
+                        $scope.removeLife();
+                    }
+
+                    $scope.stage = 2;
+                } else if (2 == $scope.stage) {
+                    //Nguoi dung dang o buoc continue va nhan enter
+                    if (angular.equals($scope.step, $scope.data.length - 1)) {
+                        // gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+                    }
+                    $scope.keyCode = 0;
+                    $scope.stage = 0;
+                    $scope.step++;
+                    $("#testoutWizard").smartWizard('goForward');
+                }
+                $scope.$apply();
+                changeLang();
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        $scope.keyPress = function(e, keyCode) {
+            switch (keyCode) {
+                case 49:
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, "totaln4/vocab", $scope.step, 0);
+                    break;
+                case 50:
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, "totaln4/vocab", $scope.step, 1);
+                    break;
+                case 51:
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, "totaln4/vocab", $scope.step, 2);
+                    break;
+                default:
+                    break;
+            }
+            if ($scope.stage != 2) {
+                if ([49, 50, 51].indexOf($scope.keyCode) == -1) {
+                    $scope.stage = 1;
+                }
+                $scope.keyCode = keyCode;
+            }
+            $scope.$apply();
+            changeLang();
+        }
+    } catch (err) {
+        console.error(err);
+    }
+});

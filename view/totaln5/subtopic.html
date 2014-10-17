@@ -1,12 +1,12 @@
-<div id="subtopicWizard" class="swMain akiHide" akirawizard enablestep="true">
+<div id="subtopicWizard" class="swMain akiHide" akirawizard enablestep="true" step="{{partId}}">
     <span class="header">
         <h2 data-i18n="common.lesson"></h2>
-        <h2>{{lessonId}}</h2>
+        <h2 ng-bind="lessonId"></h2>
     </span>
 
     <ul>
         <li ng-repeat="(key, value) in [1,2,3,4]">
-            <a href="#step-{{value}}" ng-click="partId=value">
+            <a href="#step-{{value}}" ng-click="subtopicChanged(value)">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(value)">
                         <span ng-switch-when="true" ng-bind="value"></span>

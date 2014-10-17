@@ -24,12 +24,17 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, /* restServ
     $scope.vocabprogress = progress.vocab;
     $scope.grammarprogress = progress.grammar;
 
-    $scope.show = function(e) {
-        $scope.kana = e;
+    $scope.partId = window.sessionStorage.getItem("mainSelected") == null ? 0 : window.sessionStorage.getItem("mainSelected");
+    $scope.subtopicChanged = function(id) {
+        window.sessionStorage.clear();
+        $scope.partId = id;
+        window.sessionStorage.setItem("mainSelected", id - 1);
     }
+
 });
 
 totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, restService) {
+
     restService.getRestPromise("totaln5").then(function(deferred) {
         var stars = getTotalLessonStar(deferred.data, 'totaln5', $routeParams.lessonId);
         $scope.vocabstar = stars.vocab;
@@ -39,6 +44,7 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataSer
         $scope.enabled = getUnlockedSub($scope.starData, 'totaln5', $routeParams.lessonId);
     });
 
+    $scope.partId = window.sessionStorage.getItem("subSelected") == null ? 0 : window.sessionStorage.getItem("subSelected");
     $scope.course = "totaln5";
     $scope.lessonId = $routeParams.lessonId;
     $scope.vocabstar = 0;
@@ -52,6 +58,11 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataSer
 
     $scope.isEnabled = function(stepNumber) {
         return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
+    }
+
+    $scope.subtopicChanged = function(id) {
+        $scope.partId = id;
+        window.sessionStorage.setItem("subSelected", id - 1);
     }
 });
 
@@ -1187,7 +1198,7 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
                 if (1 == $scope.stage) {
                     //Nguoi dung dap an -> an enter -> kiem tra dung / sai
                     var userSlt = akrGetUserInput("#testoutWizard #step-" + step + " #user-input-wrapper .selected#input-" + step);
-                    $("#testoutWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+                    $("#testoutWizard #step-" + step + " #user-input-wrapper #input-" + step+"[type='text']").attr("disabled", "disabled");
                     var correct = $("#testoutWizard #step-" + step + " #correct-answer-wrapper").text().trim();
                     if (compare(correct, userSlt)) {
                         playCorrect();

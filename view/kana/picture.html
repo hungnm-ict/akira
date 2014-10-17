@@ -119,14 +119,20 @@
 </div>
 
 <script type="text/javascript">
-// setTimeout(function() {
-    $(document).keydown(function(e) {
-        if (13 == e.keyCode) {
-            angular.element("#pictureWizard").scope().enterPress();
-        } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
-            angular.element("#pictureWizard").scope().keyPress(e.keyCode);
-        }
-        changeLang();
-    });
-// }, 500);
+var scope = angular.element("#pictureWizard").scope();
+KeyboardJS.on('enter', function() {
+    scope.enterPress();
+}, changeLang());
+
+KeyboardJS.on('ctrl + space', function() {
+    scope.playSound(scope.step, true, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('ctrl + shift + space', function() {
+    scope.playSound(scope.step, false, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('1,2,3', function(e) {
+    scope.keyPress(e, e.keyCode);
+}, changeLang());
 </script>

@@ -1,60 +1,43 @@
-var kanjinCtrls = angular.module('kanjinCtrls', []);
+var totaln5Ctrls = angular.module('totaln5Ctrls', []);
 
-kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootScope, restService, menuFactory) {
-    switch ($routeParams.degree) {
-        case "n5":
-            menuFactory.navgroup = 0;
-            menuFactory.nav = 2;
-            $scope.page = [0];
-            break;
-        case "n4":
-            menuFactory.navgroup = 1;
-            menuFactory.nav = 1;
-            $scope.page = [0, 1];
-            break;
-    }
-    $rootScope.$broadcast('handleBroadcast');
-
-    $scope.course = "kanji" + $routeParams.degree;
-    $scope.degree = $routeParams.degree;
-    $scope.kanjistar = 0;
-    $scope.kanjiprogress = [];
-
-    restService.getRestPromise($scope.course).then(function(deferred) {
-        $scope.kanjistar = getCourseStar(deferred.data, $scope.course);
-        $scope.kanjiprogress = getCourseProgress(deferred.data, $scope.course, 3, 4);
-    });
-
-
+totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, kanaStar) {
+    $scope.course = "kana";
+    $scope.kanastar = getCourseStar(kanaStar.data, 'kana');
+    $scope.kanaprogress = getCourseProgress(kanaStar.data, 'kana', 5, 5);
+    
+    window.sessionStorage.clear();
 });
 
-kanjinCtrls.controller('subCtrl', function($scope, $routeParams, $http, restService) {
-    $scope.course = "kanji" + $routeParams.degree;
-    $scope.degree = $routeParams.degree;
-    $scope.lessonId = $routeParams.lessonId;
-    $scope.kanjistar = 0;
-    $scope.starData;
-    $scope.enabled;
-
-    restService.getRestPromise($scope.course).then(function(deferred) {
-        $scope.kanjistar = getLessonStar(deferred.data, $scope.course, $routeParams.lessonId);
+totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, restService) {
+    restService.getRestPromise("kana").then(function(deferred) {
+        $scope.progress = deferred.data;
         $scope.starData = deferred.data;
-        $scope.enabled = getUnlockedSub($scope.starData, $scope.course, $routeParams.lessonId);
+        $scope.kanaStar = getLessonStar(deferred.data, 'kana', $routeParams.lessonId);
+        $scope.enabled = getUnlockedSub(deferred.data, 'kana', $routeParams.lessonId);
     });
+
+    $scope.partId = window.sessionStorage.getItem("subSelected") == null ? 0 : window.sessionStorage.getItem("subSelected");
+    $scope.course = "kana";
+    $scope.lessonId = $routeParams.lessonId;
 
     $scope.isEnabled = function(stepNumber) {
         return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
     }
 
+    $scope.subtopicChanged = function(id) {
+        $scope.partId = id;
+        window.sessionStorage.setItem("subSelected", id - 1);
+    }
 });
 
-kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataService) {
-    $scope.course = "kanji" + $routeParams.degree;
+/*============================
+=            KANA            =
+============================*/
 
-    dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
+totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, dataService) {
+    dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
     });
-
 
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
@@ -64,10 +47,11 @@ kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataSe
     };
     $scope.step = 0;
 
+
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+            gameOver('kana', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -79,7 +63,6 @@ kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataSe
             $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var userSlt = $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
             var correct = $("#learnWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-
             if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#learnWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
@@ -94,7 +77,7 @@ kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataSe
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+                gameOver('kana', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -120,7 +103,7 @@ kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataSe
 
     $scope.playSound = function(id, isNormal) {
         var audioSrc = document.getElementById(id).getElementsByTagName('source');
-        $("audio#" + id + " source").attr("src", "../../data/" + $scope.course + "/audio/" + $scope.data[id].filename + ".mp3");
+        $("audio#" + id + " source").attr("src", "../../data/kana/audio/" + $scope.data[id].filename + ".mp3");
         document.getElementById(id).load();
         if (isNormal) {
             document.getElementById(id).playbackRate = 1;
@@ -131,8 +114,8 @@ kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataSe
     };
 });
 
-kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, dataService) {
-    $scope.course = "kanji" + $routeParams.degree;
+totaln5Ctrls.controller('kanaPictureCtrl', function($scope, $routeParams, $http, dataService) {
+    $scope.course = "kana";
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
 
@@ -148,28 +131,28 @@ kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, data
     $scope.keyCode = 0;
     $scope.stage = 0;
 
-    dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 2).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
+    dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 2).then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
         $scope.choices2 = genAnswers3($scope.data, 3);
     });
 
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
+            gameOver('kana', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
-    $scope.keyPress = function(keyCode) {
+    $scope.keyPress = function(e,keyCode) {
         switch (keyCode) {
             case 49:
-                $scope.$parent.rootPlay($scope.choices2, $scope.course, $scope.step, 0);
+                $scope.$parent.rootPlay($scope.choices2, "kana", $scope.step, 0);
                 break;
             case 50:
-                $scope.$parent.rootPlay($scope.choices2, $scope.course, $scope.step, 1);
+                $scope.$parent.rootPlay($scope.choices2, "kana", $scope.step, 1);
                 break;
             case 51:
-                $scope.$parent.rootPlay($scope.choices2, $scope.course, $scope.step, 2);
+                $scope.$parent.rootPlay($scope.choices2, "kana", $scope.step, 2);
                 break;
             default:
                 break;
@@ -190,7 +173,6 @@ kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, data
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#pictureWizard #step-" + step + " #user-input-wrapper .selected span").text().trim();
             var correct = $("#pictureWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-            console.log(correct + "-" + userSlt);
             if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#pictureWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
@@ -204,7 +186,7 @@ kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, data
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
+                gameOver('kana', $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -217,9 +199,7 @@ kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, data
     }
 });
 
-kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService) {
-    $scope.course = "kanji" + $routeParams.degree;
-    $scope.degree = $routeParams.degree;
+totaln5Ctrls.controller('kanaWordCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.choices = [];
@@ -230,28 +210,29 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
         "life": 3,
         "correct": 0
     };
-    dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 3).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
+    dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 3).then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
         $scope.choices2 = genAnswers3($scope.data, 3);
+
     });
 
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
+            gameOver('kana', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
-    $scope.keyPress = function(keyCode) {
+    $scope.keyPress = function(e,keyCode) {
         switch (keyCode) {
             case 49:
-                $scope.$parent.rootPlay($scope.choices2, $scope.course, $scope.step, 0);
+                $scope.$parent.rootPlay($scope.choices2, "kana", $scope.step, 0);
                 break;
             case 50:
-                $scope.$parent.rootPlay($scope.choices2, $scope.course, $scope.step, 1);
+                $scope.$parent.rootPlay($scope.choices2, "kana", $scope.step, 1);
                 break;
             case 51:
-                $scope.$parent.rootPlay($scope.choices2, $scope.course, $scope.step, 2);
+                $scope.$parent.rootPlay($scope.choices2, "kana", $scope.step, 2);
                 break;
             default:
                 break;
@@ -286,7 +267,7 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
+                gameOver('kana', $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -299,8 +280,7 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
     }
 });
 
-kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService) {
-    $scope.course = "kanji" + $routeParams.degree;
+totaln5Ctrls.controller('kanaConnectCtrl', function($scope, $routeParams, $http, dataService) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {
@@ -309,14 +289,14 @@ kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, data
     };
     $scope.step = 0;
 
-    dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 4).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
+    dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 4).then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
     });
 
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if (angular.equals($scope.gameObject.life, 0)) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+            gameOver('kana', $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -324,12 +304,91 @@ kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, data
         $scope.step++;
         $scope.gameObject.correct++;
         if (angular.equals($scope.step, 5)) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+            gameOver('kana', $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, $scope.data.length);
         }
     }
 });
 
-kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService) {
+totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, dataService) {
+    dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 5).then(function(deferred) {
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
+    });
+
+    $scope.lessonId = $routeParams.lessonId;
+    $scope.partId = $routeParams.partId;
+    $scope.gameObject = {
+        "life": 3,
+        "correct": 0
+    };
+    $scope.step = 0;
+
+    $scope.removeLife = function() {
+        $scope.gameObject.life--;
+        if ($scope.gameObject.life == 0) {
+            gameOver('kana', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct);
+        }
+    };
+
+    $scope.enterPress = function() {
+
+        var step = $("#writeWizard").smartWizard('currentStep') - 1;
+        if (1 == $scope.stage) {
+            //Nguoi dung dap an -> an enter -> kiem tra dung / sai
+            var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            //$("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+            var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+            if (compare(correct, userSlt)) {
+                playCorrect();
+                $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
+                $scope.gameObject.correct++;
+            } else {
+                playFail();
+                $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("failed");
+                $scope.removeLife();
+            }
+
+            $scope.stage = 2;
+        } else if (2 == $scope.stage) {
+            //Nguoi dung dang o buoc continue va nhan enter
+            if (angular.equals($scope.step, $scope.data.length - 1)) {
+                gameOver('kana', $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+            }
+            $scope.keyCode = 0;
+            $scope.stage = 0;
+            $scope.step++;
+            $("#writeWizard").smartWizard('goForward');
+        }
+        $scope.$apply();
+        changeLang();
+    }
+
+    $scope.keyPress = function(e, keyCode) {
+        if (13 != keyCode) {
+            if ("" == $("#input-" + e).val()) {
+                $scope.stage = 0;
+            } else {
+                $scope.stage = 1;
+            }
+            changeLang();
+        }
+    }
+
+    $scope.playSound = function(id, isNormal) {
+        var audioSrc = document.getElementById(id).getElementsByTagName('source');
+        $("audio#" + id + " source").attr("src", "../../data/kana/audio/" + $scope.data[id].filename + ".mp3");
+        document.getElementById(id).load();
+        if (isNormal) {
+            document.getElementById(id).playbackRate = 1;
+        } else {
+            document.getElementById(id).playbackRate = 0.5;
+        }
+        document.getElementById(id).play();
+    };
+});
+/*-----  End of KANA  ------*/
+
+
+totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService) {
     try {
         $scope.data = dataService.getTestoutData(testoutData, $routeParams.type, $routeParams.lessonId);
 
@@ -337,7 +396,7 @@ kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData
         $scope.vocabMultiChoice = genVocabMultichoice($scope.data, mergeData(testoutData[0].data, $routeParams.type, $routeParams.lessonId, "topic"), 3);
 
         //Create data object for grammar choice game
-        // $scope.grammarMultiChoice = genVocabMultichoice($scope.data, mergeData(testoutData[2].data, $routeParams.type, $routeParams.lessonId, "id"), 3);
+        $scope.grammarMultiChoice = genVocabMultichoice($scope.data, mergeData(testoutData[2].data, $routeParams.type, $routeParams.lessonId, "id"), 3);
 
 
         //Create answer for grammar[]
@@ -384,7 +443,7 @@ kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData
                 if (1 == $scope.stage) {
                     //Nguoi dung dap an -> an enter -> kiem tra dung / sai
                     var userSlt = akrGetUserInput("#testoutWizard #step-" + step + " #user-input-wrapper .selected#input-" + step);
-                    $("#testoutWizard #step-" + step + " #user-input-wrapper #input-" + step + "[type='text']").attr("disabled", "disabled");
+                    $("#testoutWizard #step-" + step + " #user-input-wrapper #input-" + step+"[type='text']").attr("disabled", "disabled");
                     var correct = $("#testoutWizard #step-" + step + " #correct-answer-wrapper").text().trim();
                     if (compare(correct, userSlt)) {
                         playCorrect();
@@ -416,14 +475,14 @@ kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData
 
         $scope.keyPress = function(e, keyCode) {
             switch (keyCode) {
-                case 49:alert($scope.course);
-                    $scope.$parent.rootPlay($scope.vocabMultiChoice, $scope.course, $scope.step, 0);
+                case 49:
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, "totaln5/vocab", $scope.step, 0);
                     break;
                 case 50:
-                    $scope.$parent.rootPlay($scope.vocabMultiChoice,  $scope.course, $scope.step, 1);
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, "totaln5/vocab", $scope.step, 1);
                     break;
                 case 51:
-                    $scope.$parent.rootPlay($scope.vocabMultiChoice,  $scope.course, $scope.step, 2);
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, "totaln5/vocab", $scope.step, 2);
                     break;
                 default:
                     break;
