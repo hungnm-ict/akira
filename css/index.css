@@ -818,6 +818,11 @@ a:hover {
     padding-top: 10px;
     background: #ccc;
 }
+
+#aki-answer-wrapper td{
+    border-top: none;
+}
+
 .pictureWizard .actionBar, .wordWizard .actionBar {
     display: none !important;
 }
@@ -1508,4 +1513,7 @@ ul.anchor li a .stepNumber {
 }
 #btn-redeem:hover{
     cursor: pointer;
+}
+.content td{
+    border-top: none !important;
 }

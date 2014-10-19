@@ -54,7 +54,9 @@
         "info": {
             "anonymous": "Đăng nhập để lưu được điểm",
             "buy": "Bạn cần mua thẻ để sử dụng tính năng này",
-            "keypoint": "Bạn chưa đủ keypoint để học bài này"
+            "keypoint": "Bạn chưa đủ keypoint để học bài này",
+            "end":"Bài học kết thúc",
+            "score" : "Bạn nhận được"
         },
         "help": {
             "enter": "Submit answer",

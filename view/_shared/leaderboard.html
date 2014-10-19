@@ -1,3 +1,7 @@
+<script type="text/javascript" src="../../js/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="../../js/tabs.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/tabs.css" />
+
 <div class="row" id="leaderboard">
     <div class="col-md-12 col-sm-12 col-sm-12">
         <div id="leaderboardWizard" class="swMain">
@@ -29,23 +33,23 @@
                                         </span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3">
-                                        {{val.score}}
+                                        <span ng-bind="val.score"></span>
                                     </div>
                                 </div>
                             </div>
                         </tab>
                         <tab>
-                        <h1 class="heading" data-i18n="leaderboard.all">Tất cả</h1>
+                            <h1 class="heading" data-i18n="leaderboard.all">Tất cả</h1>
                             <div id="lvl-tabs-2">
                                 <div class="row" ng-repeat="val in rank['level']['all']">
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                         <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
                                     </div>
                                     <div class="col-md-5 col-sm-5 col-xs-5">
-                                        {{val.display}}
+                                        <span ng-bind="val.display"></span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3">
-                                        {{val.score}}
+                                        <span ng-bind="val.score"></span>
                                     </div>
                                 </div>
                             </div>
@@ -55,39 +59,39 @@
             </div>
             <div id="step-2">
                 <div id="mentor-tabs">
-                    
+
                     <tabs>
                         <tab>
                             <h1 class="heading" data-i18n="leaderboard.week">Tuần</h1>
                             <div id="mentor-tabs-1">
-                        <div class="row" ng-repeat="val in rank['mentor']['week']">
-                            <div class="col-md-2 col-sm-2 col-xs-2">
-                                <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
+                                <div class="row" ng-repeat="val in rank['mentor']['week']">
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-5 col-xs-5">
+                                        <span ng-bind="val.name"></span>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span ng-bind="val.score"></span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-5 col-sm-5 col-xs-5">
-                                {{val.name}}
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                {{val.score}}
-                            </div>
-                        </div>
-                    </div>
                         </tab>
                         <tab>
-                        <h1 class="heading" data-i18n="leaderboard.all">Tất cả</h1>
-                        <div id="mentor-tabs-2">
-                        <div class="row" ng-repeat="val in rank['mentor']['all']">
-                            <div class="col-md-2 col-sm-2 col-xs-2">
-                                <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
+                            <h1 class="heading" data-i18n="leaderboard.all">Tất cả</h1>
+                            <div id="mentor-tabs-2">
+                                <div class="row" ng-repeat="val in rank['mentor']['all']">
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-5 col-xs-5">
+                                        <span ng-bind="val.name"></span>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <span ng-bind="val.score"></span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-5 col-sm-5 col-xs-5">
-                                {{val.name}}
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                {{val.score}}
-                            </div>
-                        </div>
-                    </div>
                         </tab>
                     </tabs>
                 </div>
@@ -96,28 +100,23 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="../../js/jquery.slimScroll.js"></script>
-<script type="text/javascript" src="../../js/tabs.js"></script>
-<link rel="stylesheet" type="text/css" href="../../css/tabs.css" />
+
 <script type="text/javascript">
-// function callChat(name){
-//     alert(name);
-// }
 $('#leaderboardWizard').smartWizard({
     enableAllSteps: true, // Enable/Disable all steps on first load
     keyNavigation: false
 });
 $('#lvl-tabs-1').slimscroll({
-  height:  '300px'
+    height: '300px'
 });
 $('#lvl-tabs-2').slimscroll({
-  height:  '300px'
+    height: '300px'
 });
 $('#mentor-tabs-1').slimscroll({
-  height:  '300px'
+    height: '300px'
 });
 $('#mentor-tabs-2').slimscroll({
-  height:  '300px'
+    height: '300px'
 });
 $('tabs').tabs();
 $('#leaderboardWizard .actionBar').hide();

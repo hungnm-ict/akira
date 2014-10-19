@@ -12,7 +12,7 @@
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife ret="../../view/totaln5" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
@@ -30,6 +30,7 @@
                     </div>
                     <h4 class="center" ng-bind="val.vietnamese"></h4>
                 </div>
+
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
                     <!-- User answer wrapper -->
                     <div id="user-input-wrapper">
@@ -111,12 +112,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 
 <script type="text/javascript">
+changeLang();
 var scope = angular.element("#writeWizard").scope();
 KeyboardJS.on('enter', function() {
     scope.enterPress();

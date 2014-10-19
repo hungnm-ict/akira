@@ -40,23 +40,19 @@ totaln5App.config(['$routeProvider',
                 }
             })
             .when('/:lessonId/:partId/learn', {
-                templateUrl: '../kana/learn.html',
+                templateUrl: 'learn.html',
                 controller: 'kanaLearnCtrl'
             })
             .when('/:lessonId/:partId/picture', {
-                templateUrl: '../kana/picture.html',
+                templateUrl: 'picture.html',
                 controller: 'kanaPictureCtrl'
             })
             .when('/:lessonId/:partId/word', {
-                templateUrl: '../kana/word.html',
+                templateUrl: 'word.html',
                 controller: 'kanaWordCtrl'
             })
-            .when('/:lessonId/:partId/connect', {
-                templateUrl: '../kana/connect.html',
-                controller: 'kanaConnectCtrl'
-            })
             .when('/:lessonId/:partId/write', {
-                templateUrl: '../kana/write.html',
+                templateUrl: 'write.html',
                 controller: 'kanaWriteCtrl'
             })
             .otherwise({

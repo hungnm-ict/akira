@@ -1,20 +1,14 @@
 var totaln5Ctrls = angular.module('totaln5Ctrls', []);
 
-totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, /* restService, */ kanaStar, totalStar) {
+totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, totalStar) {
 
     $scope.course = "totaln5";
-    $scope.kana = "true";
 
     //Total star initialize
-    $scope.kanastar;
-    $scope.kanaprogress;
     $scope.vocabstar = 0;
     $scope.vocabprogress = [];
     $scope.grammarstar = 0;
     $scope.grammarprogress = [];
-
-    $scope.kanastar = getCourseStar(kanaStar.data, 'kana');
-    $scope.kanaprogress = getCourseProgress(kanaStar.data, 'kana', 5, 5);
 
     var stars = getTotalStar(totalStar.data, 'totaln5');
     $scope.vocabstar = stars.vocab;
@@ -71,12 +65,8 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataSer
 ===========================================================*/
 
 totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataService, writeData) {
-    /*  dataService.getDataPromise("totaln5", $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
-          $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
-      });*/
 
     $scope.data = akiraShuffle(dataService.filter(writeData.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
-
 
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
@@ -1198,7 +1188,7 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
                 if (1 == $scope.stage) {
                     //Nguoi dung dap an -> an enter -> kiem tra dung / sai
                     var userSlt = akrGetUserInput("#testoutWizard #step-" + step + " #user-input-wrapper .selected#input-" + step);
-                    $("#testoutWizard #step-" + step + " #user-input-wrapper #input-" + step+"[type='text']").attr("disabled", "disabled");
+                    $("#testoutWizard #step-" + step + " #user-input-wrapper #input-" + step + "[type='text']").attr("disabled", "disabled");
                     var correct = $("#testoutWizard #step-" + step + " #correct-answer-wrapper").text().trim();
                     if (compare(correct, userSlt)) {
                         playCorrect();
