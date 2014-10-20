@@ -18,7 +18,7 @@
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
                     <!-- Question wrapper -->
                     <div id="question-wrapper" ng-click="playSound(key,true)">
                         <audio controls id="{{key}}" style="display:none;">
@@ -31,12 +31,12 @@
                     <h4 class="center" ng-bind="val.vietnamese"></h4>
                 </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 ">
                     <!-- User answer wrapper -->
                     <div id="user-input-wrapper">
                         <div class="row none-padding">
                             <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                <input class="form-control write-control" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
+                                <input class="rect-input write-control" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
             <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
                 <div class="row mess-holder-{{key}}">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row hide" id="mess-{{key}}">
+                        <div class="row hide top-none" id="mess-{{key}}">
                             <div class="col-md-12 col-xs-12 col-sm-12">
                                 <table class="table">
                                     <tbody>

@@ -11,7 +11,7 @@
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife ret="../../view/totaln5" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
@@ -39,7 +39,7 @@
                                         <source type="audio/mpeg">
                                             Your browser does not support the audio element.</source>
                                     </audio>
-                                    <span ng-click="keyPress(49)" class="form-control" ng-class="{'selected': 49==keyCode}">{{choices2[key][0].vietnamese}}</span>
+                                    <span ng-click="keyPress($event,49)" class="form-control" ng-class="{'selected': 49==keyCode}" ng-bind="choices2[key][0].vietnamese"></span>
                                 </div>
                             </div>
                             <div class="row">
@@ -51,7 +51,7 @@
                                         <source type="audio/mpeg">
                                             Your browser does not support the audio element.</source>
                                     </audio>
-                                    <span ng-click="keyPress(50)" class="form-control" ng-class="{'selected': 50==keyCode}">{{choices2[key][1].vietnamese}}</span>
+                                    <span ng-click="keyPress($event,50)" class="form-control" ng-class="{'selected': 50==keyCode}" ng-bind="choices2[key][1].vietnamese"></span>
                                 </div>
                             </div>
                             <div class="row">
@@ -63,7 +63,7 @@
                                         <source type="audio/mpeg">
                                             Your browser does not support the audio element.</source>
                                     </audio>
-                                    <span ng-click="keyPress(51)" class="form-control" ng-class="{'selected': 51==keyCode}">{{choices2[key][2].vietnamese}}</span>
+                                    <span ng-click="keyPress($event,51)" class="form-control" ng-class="{'selected': 51==keyCode}" ng-bind="choices2[key][2].vietnamese"></span>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class=" col-md-12 col-sm-12 col-xs-12">
-                        {{val.vietnamese}}
+                    <span ng-bind="val.vietnamese"></span>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
             <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row hide" id="mess-{{key}}">
+                        <div class="row top-none hide" id="mess-{{key}}">
                             <div class="col-md-12 col-xs-12 col-sm-12">
                                 <span class="correct-child">
                                     <span class="test-circle"></span>
@@ -92,9 +92,8 @@
                                 <span class="failed-child">
                                     <i class="fa fa-times fa-4x"></i>
                                 </span>
-                                <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vie}}</span>
+                                <span class="hint" ng-bind="val.hiragana"></span>
+                                <span class="hint" ng-bind="val.vietnamese"></span>
                             </div>
                         </div>
                     </div>

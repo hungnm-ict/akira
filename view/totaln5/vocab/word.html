@@ -11,7 +11,7 @@
     </ul>
 
     <!-- Life wrapper -->
-   <akrlife  progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
@@ -20,8 +20,8 @@
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <!-- Question wrapper -->
                     <div id="question-wrapper">
-                        <img src="../../data/totaln5/vocab/image/{{val.filename}}.png" class="img-thumbnail">
-                        <h3>{{val.vie}}</h3>
+                        <img src="../../data/totaln5/vocab/image/{{val.filename}}.png" class="img-thumbnail selected">
+                        <h3 ng-bind="val.vietnamese"></h3>
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                                         <source type="audio/mpeg">
                                             Your browser does not support the audio element.</source>
                                     </audio>
-                                    <span ng-click="keyPress(49)" class="form-control" ng-class="{'selected': 49==keyCode}">{{choices2[key][0].hiragana}}</span>
+                                    <span ng-click="keyPress($event,49)" class="form-control" ng-class="{'selected': 49==keyCode}">{{choices2[key][0].hiragana}}</span>
                                 </div>
                             </div>
                             <div class="row">
@@ -50,7 +50,7 @@
                                         <source type="audio/mpeg">
                                             Your browser does not support the audio element.</source>
                                     </audio>
-                                    <span ng-click="keyPress(50)" class="form-control" ng-class="{'selected': 50==keyCode}">{{choices2[key][1].hiragana}}</span>
+                                    <span ng-click="keyPress($event,50)" class="form-control" ng-class="{'selected': 50==keyCode}">{{choices2[key][1].hiragana}}</span>
                                 </div>
                             </div>
                             <div class="row">
@@ -62,7 +62,7 @@
                                         <source type="audio/mpeg">
                                             Your browser does not support the audio element.</source>
                                     </audio>
-                                    <span ng-click="keyPress(51)" class="form-control" ng-class="{'selected': 51==keyCode}">{{choices2[key][2].hiragana}}</span>
+                                    <span ng-click="keyPress($event,51)" class="form-control" ng-class="{'selected': 51==keyCode}">{{choices2[key][2].hiragana}}</span>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class=" col-md-12 col-sm-12 col-xs-12">
-                        {{val.hiragana}}
+                        <span ng-bind="val.hiragana"></span>
                     </div>
                 </div>
             </div>
@@ -83,17 +83,34 @@
             <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row hide" id="mess-{{key}}">
+                        <div class="row hide top-none" id="mess-{{key}}">
                             <div class="col-md-12 col-xs-12 col-sm-12">
-                                <span class="correct-child">
-                                    <span class="test-circle"></span>
-                                </span>
-                                <span class="failed-child">
-                                    <i class="fa fa-times fa-4x"></i>
-                                </span>
-                                <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vie}}</span>
+                                <table class="table top-none">
+                                    <tr>
+                                        <td>
+                                            <span class="correct-child">
+                                                <span class="test-circle"></span>
+                                            </span>
+                                            <span class="failed-child">
+                                                <i class="fa fa-times fa-4x"></i>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="hint" ng-bind="val.hiragana"></span>
+                                            </div>
+                                            <div>
+                                                <span class="hint" ng-bind="val.kanji"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="hint" ng-bind="val.vietnamese"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
                             </div>
                         </div>
                     </div>
@@ -124,12 +141,15 @@
 </div>
 
 <script type="text/javascript">
-$(document).keydown(function(e) {
-    if (13 == e.keyCode) {
-        angular.element("#wordWizard").scope().enterPress();
-    } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
-        angular.element("#wordWizard").scope().keyPress(e.keyCode);
-    }
+var scope = angular.element("#wordWizard").scope();
+KeyboardJS.on('enter', function() {
+    scope.enterPress();
+}, function() {
+    scope.$apply();
     changeLang();
 });
+
+KeyboardJS.on('1,2,3', function(e) {
+    scope.keyPress(e, e.keyCode);
+}, changeLang());
 </script>

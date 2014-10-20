@@ -5,14 +5,16 @@
         <li ng-repeat="(key, value) in data">
             <a ng-href="#step-{{key}}" click="partId={{key}}">
                 <label class="stepNumber">
-                    <span>&nbsp;{{key}}</span>
+                    <span>&nbsp;
+                        <span ng-bind="key"></span>
+                    </span>
                 </label>
             </a>
         </li>
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife ret="../../view/totaln5" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
@@ -27,7 +29,7 @@
                         </audio>
                         <i class="fa fa-volume-up fa-2x write-btn-play"></i>
                         <span class="write-control img-responsive">
-                            {{val.hiragana}}
+                            <span ng-bind="val.hiragana"></span>
                         </span>
                     </div>
                 </div>
@@ -48,26 +50,43 @@
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        {{val.vietnamese}}
+                        <span ng-bind="val.vietnamese"></span>
                     </div>
                 </div>
             </div>
 
             <!-- Navigation wrapper-->
             <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
-                <div class="row mess-holder-{{key}}">
+                <div class="row mess-holder-{{key}} top-none">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row hide" id="mess-{{key}}">
-                            <div class="col-md-12 col-xs-12 col-sm-12">
-                                <span class="correct-child">
-                                    <span class="test-circle"></span>
-                                </span>
-                                <span class="failed-child">
-                                    <i class="fa fa-times fa-4x"></i>
-                                </span>
-                                <span class="hint">{{val.hiragana}} {{val.kanji}} {{val.vietnamese}}</span>
-                            </div>
-                        </div>
+                        <table class="table top-none  hide">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="row" id="mess-{{key}}">
+                                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                                <span class="correct-child">
+                                                    <span class="test-circle"></span>
+                                                </span>
+                                                <span class="failed-child">
+                                                    <i class="fa fa-times fa-4x"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="top-none">
+                                        <div>
+                                            <span ng-bind="val.hiragana" class="hint"></span>
+                                        </div>
+                                    </td>
+                                    <td class="top-none">
+                                        <div>
+                                            <span class="hint" ng-bind="val.vietnamese"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">

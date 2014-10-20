@@ -12,7 +12,7 @@
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife  progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
@@ -58,17 +58,37 @@
             <div id="aki-answer-wrapper">
                 <div class="row mess-holder-{{key}}">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row hide" id="mess-{{key}}">
+                        <div class="row hide top-none" id="mess-{{key}}">
                             <div class="col-md-12 col-xs-12 col-sm-12">
-                                <span class="correct-child">
-                                    <span class="test-circle"></span>
-                                </span>
-                                <span class="failed-child">
-                                    <i class="fa fa-times fa-4x"></i>
-                                </span>
-                                <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.kanji}}</span>
-                                <span class="hint">{{val.vie}}</span>
+                                <table class="table top-none">
+                                    <tr>
+                                        <td>
+
+                                            <span class="correct-child">
+                                                <span class="test-circle"></span>
+                                            </span>
+                                            <span class="failed-child">
+                                                <i class="fa fa-times fa-4x"></i>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="hint">{{val.hiragana}}</span>
+
+                                            </div>
+                                            <div>
+                                                <span class="hint">{{val.kanji}}</span>
+
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="hint">{{val.vietnamese}}</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
                             </div>
                         </div>
                     </div>
@@ -100,10 +120,20 @@
 </div>
 
 <script type="text/javascript">
-$(document).keydown(function(e) {
-    if (13 == e.keyCode) {
-        angular.element("#listenWizard").scope().enterPress();
-    }
-    changeLang();
-});
+var scope = angular.element("#listenWizard").scope();
+KeyboardJS.on('enter', function() {
+    scope.enterPress();
+}, changeLang());
+
+KeyboardJS.on('ctrl + space', function() {
+    scope.playSound(scope.step, true, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('ctrl + shift + space', function() {
+    scope.playSound(scope.step, false, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('1,2,3', function(e) {
+    scope.keyPress(e, e.keyCode);
+}, changeLang());
 </script>

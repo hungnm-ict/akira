@@ -169,7 +169,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, dat
         }
     };
 
-    $scope.keyPress = function(keyCode) {
+    $scope.keyPress = function(e, keyCode) {
         switch (keyCode) {
             case 49:
                 $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 0);
@@ -251,7 +251,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
         }
     };
 
-    $scope.keyPress = function(keyCode) {
+    $scope.keyPress = function(e, keyCode) {
         switch (keyCode) {
             case 49:
                 $scope.$parent.rootPlay($scope.choices2, "totaln5/vocab", $scope.step, 0);
@@ -1135,6 +1135,8 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
 
 totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService) {
     try {
+        console.log($routeParams);
+
         $scope.data = dataService.getTestoutData(testoutData, $routeParams.type, $routeParams.lessonId);
 
         //Create data object for vocab[picture|word] game(Multichoice game)
@@ -1177,13 +1179,12 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
         $scope.removeLife = function() {
             $scope.gameObject.life -= 1;
             if ($scope.gameObject.life == 0) {
-                // gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+                testoutOver(false, "totaln5", $routeParams.lessonId, $routeParams.type);
             }
         };
 
         $scope.enterPress = function() {
             try {
-
                 var step = $("#testoutWizard").smartWizard('currentStep') - 1;
                 if (1 == $scope.stage) {
                     //Nguoi dung dap an -> an enter -> kiem tra dung / sai
@@ -1204,7 +1205,7 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
                 } else if (2 == $scope.stage) {
                     //Nguoi dung dang o buoc continue va nhan enter
                     if (angular.equals($scope.step, $scope.data.length - 1)) {
-                        // gameOver('totaln5', $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+                        testoutOver(true, "totaln5", $routeParams.lessonId, $routeParams.type);
                     }
                     $scope.keyCode = 0;
                     $scope.stage = 0;

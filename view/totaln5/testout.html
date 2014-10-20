@@ -12,7 +12,7 @@
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife ret="../../view/totaln5" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife  progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
@@ -20,7 +20,7 @@
             <div class="wrapper">
                 <div ng-switch-when="vocablearn">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
                             <!-- Question wrapper -->
                             <div id="question-wrapper" ng-click="playSound(key,true,'vocab')">
                                 <audio controls id="{{key}}" style="display:none;">
@@ -32,12 +32,13 @@
                                 <h4 class="center" style="text-transform:captalize" ng-bind="val.data.vietnamese"></h4> 
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                             <!-- User answer wrapper -->
                             <div id="user-input-wrapper">
                                 <div class="row none-padding">
                                     <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                        <input class="form-control write-control selected" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
+                                        <!-- <input class="form-control write-control " id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" /> -->
+                                        <input class="rect-input write-control selected" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
                                     </div>
                                 </div>
                             </div>
@@ -57,9 +58,9 @@
                     <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
                         <div class="row mess-holder-{{key}}">
                             <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -180,9 +181,9 @@
                     <div id="aki-answer-wrapper" ng-class="{'check' : 1== stage}">
                         <div class="row">
                             <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -299,9 +300,9 @@
                     <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
                         <div class="row">
                             <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -391,9 +392,9 @@
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
                             <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -481,9 +482,9 @@
                         <div class="row mess-holder-{{key}}">
                             <!-- Prepare message holder-->
                             <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -534,7 +535,7 @@
                     <div class="row" style="text-align:center;">
                         <div class="col-md-4 col-sm-4 col-xs-4">
                             <div id="question-wrapper">
-                                <div class="row">
+                                <div class="row " >
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <audio controls id="{{key}}" style="display:none;">
                                             <source type="audio/mpeg">
@@ -593,9 +594,9 @@
                         <div class="row mess-holder-{{key}}">
                             <!-- Prepare message holder-->
                             <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -691,9 +692,9 @@
                         <div class="row mess-holder-{{key}}">
                             <!-- Prepare message holder-->
                             <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -784,9 +785,9 @@
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
                             <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -868,9 +869,9 @@
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
                             <div class="col-md-8 col-xs-8 col-sm-8">
-                                <div class="row hide" id="mess-{{key}}">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <table class="table">
+                                        <table class="table top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="row-span-2">

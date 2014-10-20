@@ -62,11 +62,7 @@ akrSharedDirectives.directive('akirawizard', function() {
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();
             
-            //Popover information
-            $.each($('#' + attrs.id + " ul li i.fa.fa-lock"), function(k, v) {
-                $(v).popover();
-            });
-            
+            $(".fa-lock").tooltip();
             $('#' + attrs.id).show();
         }, 500);
     }

@@ -43,7 +43,8 @@
         "save": "Lưu điểm",
         "dayleft": "Ngày sử dụng",
         "submit": "Nộp bài",
-        "answersheet": "Bài làm"
+        "answersheet": "Bài làm",
+        "ok": "Ok"
     },
     "leaderboard": {
         "leaderboard": "Bảng xếp hạng",
@@ -55,8 +56,10 @@
             "anonymous": "Đăng nhập để lưu được điểm",
             "buy": "Bạn cần mua thẻ để sử dụng tính năng này",
             "keypoint": "Bạn chưa đủ keypoint để học bài này",
-            "end":"Bài học kết thúc",
-            "score" : "Bạn nhận được"
+            "end": "Bài học kết thúc",
+            "score": "Bạn nhận được",
+            "testfailed": "Bạn không vượt qua bài test",
+            "testsucess": "Bạn đã vượt qua bài test"
         },
         "help": {
             "enter": "Submit answer",

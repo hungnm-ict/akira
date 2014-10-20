@@ -8,13 +8,13 @@ totaln5App.config(['$routeProvider',
                     return 'main.html';
                 },
                 controller: 'mainCtrl',
-                // resolve: {
-                //     totalStar: function($q, restService) {
-                //         var deferred = $q.defer();
-                //         deferred.resolve(restService.getRestPromise("totaln5"));
-                //         return deferred.promise;
-                //     }
-                // }
+                resolve: {
+                    totalStar: function($q, restService) {
+                        var deferred = $q.defer();
+                        deferred.resolve(restService.getRestPromise("totaln5"));
+                        return deferred.promise;
+                    }
+                }
             })
             .when('/kana/:lessonId', {
                 controller: 'kanaCtrl',
@@ -38,26 +38,6 @@ totaln5App.config(['$routeProvider',
                         return deferred.promise;
                     }
                 }
-            })
-            .when('/kana/:lessonId/:partId/learn', {
-                templateUrl: '../kana/learn.html',
-                controller: 'kanaLearnCtrl'
-            })
-            .when('/kana/:lessonId/:partId/picture', {
-                templateUrl: '../kana/picture.html',
-                controller: 'kanaPictureCtrl'
-            })
-            .when('/kana/:lessonId/:partId/word', {
-                templateUrl: '../kana/word.html',
-                controller: 'kanaWordCtrl'
-            })
-            .when('/kana/:lessonId/:partId/connect', {
-                templateUrl: '../kana/connect.html',
-                controller: 'kanaConnectCtrl'
-            })
-            .when('/kana/:lessonId/:partId/write', {
-                templateUrl: '../kana/write.html',
-                controller: 'kanaWriteCtrl'
             })
             .when('/:lessonId', {
                 templateUrl: function(urlAttr) {
@@ -119,17 +99,6 @@ totaln5App.config(['$routeProvider',
 ]);
 
 totaln5App.service('dataService', function($http) {
-
-    this.kana1 = $http({
-        method: "GET",
-        url: "../../data/kana/json/kana_1.json"
-    });
-
-    this.kana2 = $http({
-        method: "GET",
-        url: "../../data/kana/json/kana_2.json"
-    });
-
     this.n5Vocab = $http({
         method: "GET",
         url: "../../data/totaln5/vocab/json/n5vocab.json"
@@ -200,18 +169,6 @@ totaln5App.service('dataService', function($http) {
                                 return null;
                                 break;
                         }
-                        break;
-                }
-                break;
-            case "kana":
-                switch (lessonId) {
-                    case "1":
-                    case "3":
-                        return this.kana1;
-                        break;
-                    case "2":
-                    case "4":
-                        return this.kana2;
                         break;
                 }
                 break;
@@ -317,18 +274,18 @@ totaln5App.service('restService', function($http) {
     }
 });
 
-totaln5App.controller('rootController', function($scope, $timeout, $http, $window,$sce) {
-    
+totaln5App.controller('rootController', function($scope, $timeout, $http, $window, $sce) {
+
     /**
      * Play sound for common game
      * @param  {[type]} data   : Data array for game
      * @param  {[type]} course : Path on the data folder
      * @param  {[type]} step   : Current step on jQuery Smart Wizard
-     * @param  {[type]} id     : 
+     * @param  {[type]} id     :
      * @param  {[type]} speed  : Audio speed: 1/0.5
      * @return {[type]}        [description]
      */
-    $scope.rootPlay = function(data, course, step, id,speed) {
+    $scope.rootPlay = function(data, course, step, id, speed) {
         try {
             var selId = "choices-" + step + "-" + id;
             var audioSrc = document.getElementById(selId).getElementsByTagName('source');
@@ -352,14 +309,15 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
             console.error(err);
         }
     };
-    
+
     $scope.check = function(lesson) {
         //Get current key point for this courses
         $http({
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=totaln5&userid=" + getUser().id
         }).success(function(data, status) {
-            if (akrParseInt(data) > lesson) {
+            console.log(lesson - 1);
+            if (akrParseInt(data) >= (lesson - 1)) {
                 console.info("Ban du keypoint de hoc bai nay");
                 $window.location.href = "#/" + lesson;
             } else {

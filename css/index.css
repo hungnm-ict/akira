@@ -31,6 +31,8 @@ body {
 .app {
     background: url(../../img/background.png) no-repeat right bottom;
     background-size: 40%;
+    width: 1366px;
+    margin:0px auto;
 }
 .wrapper {
     position: absolute;
@@ -770,7 +772,7 @@ a:hover {
     margin: 24px 0;
     text-align: center;
 }
-#writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizard, #grammarListenWizard, #grammarChoiceWizard, #grammarReadWizard, #grammarTranslateWizard, #grammarWordWizard {
+#testoutWizard,#writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizard, #grammarListenWizard, #grammarChoiceWizard, #grammarReadWizard, #grammarTranslateWizard, #grammarWordWizard {
     border: 2px solid #344c8c;
     border-radius: 5px;
     background: #fff;
@@ -818,11 +820,9 @@ a:hover {
     padding-top: 10px;
     background: #ccc;
 }
-
-#aki-answer-wrapper td{
+#aki-answer-wrapper td {
     border-top: none;
 }
-
 .pictureWizard .actionBar, .wordWizard .actionBar {
     display: none !important;
 }
@@ -1191,7 +1191,7 @@ ul.anchor li a .stepNumber {
 .write-btn-play {
     position: absolute;
     top: 12px;
-    right: 12px;
+    right: 35px;
     display: inline-block;
     width: 2em;
     height: 2em;
@@ -1308,7 +1308,6 @@ ul.anchor li a .stepNumber {
 #subtopicWizard.swMain ul.anchor li a.selected:hover {
     color: initial !important;
 }
-
 #subtopicWizard.swMain ul.anchor li a:hover {
     color: #FFF !important;
     /*border: 3px solid #344c8c;*/
@@ -1330,7 +1329,7 @@ ul.anchor li a .stepNumber {
 .vocab#writeWizard div#question-wrapper {
     cursor: pointer;
 }
-.vocab#writeWizard div#question-wrapper img.img-responsive {
+.vocab#writeWizard div#question-wrapper img.img-responsive,#tesoutWizard div#question-wrapper img.img-responsive {
     height: 180px !important;
 }
 #topicWizard .lesson-wrapper .img-responsive {
@@ -1457,11 +1456,6 @@ ul.anchor li a .stepNumber {
 #lock {
     background: red !important;
     color: #FFF !important;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
     border-color: red !important;
 }
 #testoutWizard .wrapper>div {
@@ -1504,16 +1498,46 @@ ul.anchor li a .stepNumber {
 #leaderboard tabs > nav > tab {
     width: 130px !important;
 }
-
-.rect-panel{
+.rect-panel {
     border-radius: 5px;
     height: 200px;
     width: 200px;
-
 }
-#btn-redeem:hover{
+#btn-redeem:hover {
     cursor: pointer;
 }
-.content td{
+.content td {
     border-top: none !important;
+}
+.top-none {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+}
+#testout-lesson{
+    background: red;
+    border-radius: 50%;
+    border-color: red;
+}
+
+.stepContainer .img-responsive{
+    cursor: pointer;
+    border: 2px solid #1659B0;
+    border-radius: 5px;
+}
+.stepContainer .img-responsive:hover{
+    opacity: 0.5;
+}
+
+.rect-input{
+    width: 180px !important;
+    height: 180px !important;
+}
+
+.rect-input:focus{
+    /*border-radius: 10px ;*/
+    outline-color: #1659B0 !important;
+}
+
+.img-thumbnail{
+    cursor: pointer;
 }

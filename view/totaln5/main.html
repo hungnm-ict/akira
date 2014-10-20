@@ -58,7 +58,7 @@
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{(step*2-4)*3+1}}</span>
                                 </label>
-                                <a class="thumb" ng-click="check(degree(step*2-4)*3+1)">
+                                <a class="thumb" ng-click="check((step*2-4)*3+1)">
                                     <img ng-src="../../img/totaln5/topic/{{(step*2-4)*3+1}}.png" alt="{{(step*2-4)*3+1}}" class="img-responsive">
                                 </a>
                                 <div class="progress vocab">
@@ -167,7 +167,7 @@
                                     <span>&nbsp;{{(step*2-4)*3+6}} &nbsp;</span><span style="text-transform:lowercase" data-i18n="common.lesson"></span>
                                 </label>
                                 <a class="thumb" style="color:red; " ng-click="pass('big',(step*2-4)*3+6)">
-                                    <i class="fa fa-key fa-5x" style="transform:rotate(90deg);"></i>
+                                    <img ng-src="../../img/w-key.png" class="img-responsive"  id="testout-lesson">
                                 </a>
                             </div>
                         </div>

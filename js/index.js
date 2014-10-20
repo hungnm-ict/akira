@@ -85,7 +85,9 @@ function getUser() {
  * @return {[type]}        [description]
  */
 function compare(oldStr, newStr) {
-    return (oldStr.trim().replace(/ /g, "") === newStr.trim().replace(/ /g, ""));
+     var oldProcess = oldStr.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
+     var newProcess = newStr.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
+    return (oldProcess.trim().replace(/ /g, "") === newProcess.trim().replace(/ /g, ""));
 }
 
 /**
@@ -121,7 +123,7 @@ function gameOver(course, lesson, subtopic, game, correctAns, noOfQuestion) {
     $(".game-over-modal-sm .game-star").html(star);
     $(".game-over-modal-sm .game-score").html(xp);
     $(".game-over-modal-sm").modal({
-        keyboard: false
+        keyboard: true
     });
 
     $('.game-over-modal-sm').on('hide.bs.modal', function(e) {
@@ -370,6 +372,8 @@ function saveScore(course, lesson, subtopic, game, star, exp) {
         }
     }).done(function(data) {
         console.info("Score saved");
+    }).fail(function(xhr, status, err) {
+        cnosole.error(err);
     });
 }
 
@@ -795,7 +799,47 @@ function akrGetUserInput(id) {
     }
 }
 
-/*-----  End of Validation method  ------*/
+
+/**
+ * Notification for test
+ * @param  {[type]} status   [description]
+ * @param  {[type]} type     [description]
+ * @param  {[type]} lessonid [description]
+ * @return {[type]}          [description]
+ */
+function testoutOver(status, course, lessonid, type) {
+        try {
+            if (status) {
+                $(".testout-over-modal-sm .message").html(i18n.t("message.info.testsucess"));
+                $.ajax({
+                    type: 'POST',
+                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_keypoint.php",
+                    crossDomain: true,
+                    data: {
+                        userid: getUser().id,
+                        course: course,
+                        lessonid: lessonid,
+                        type: type,
+                    }
+                }).done(function(data) {
+                    console.info( data);
+                }).fail(function(xhr, status, err) {
+                    console.error(err);
+                });
+            } else {
+                $(".testout-over-modal-sm .message").html(i18n.t("message.info.testfailed"));
+            }
+            $(".testout-over-modal-sm").modal({
+                keyboard: true
+            });
+            $('.testout-over-modal-sm').on('hide.bs.modal', function(e) {
+                window.history.back();
+            });
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    /*-----  End of Validation method  ------*/
 
 (function($) {
     /**
