@@ -20,7 +20,7 @@
             <div class="wrapper">
                 <div ng-switch-when="vocablearn">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
                             <!-- Question wrapper -->
                             <div id="question-wrapper" ng-click="playSound(key,true,'vocab')">
                                 <audio controls id="{{key}}" style="display:none;">
@@ -37,7 +37,7 @@
                             <div id="user-input-wrapper">
                                 <div class="row none-padding">
                                     <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                        <input class="form-control write-control selected" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
+                                        <input class="rect-input write-control selected" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
                                     </div>
                                 </div>
                             </div>

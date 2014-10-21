@@ -96,7 +96,7 @@ app.service('dataService', function($http) {
                 promise.push(this.n5Kanji)
                 break;
             case "n4":
-                promise.pus(this.n5Kanji);
+                promise.push(this.n5Kanji);
                 break;
         }
         return promise;
@@ -191,8 +191,7 @@ app.controller('root', function($scope, $routeParams, $route, $http, $window) {
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=kanji" + degree + "&userid=" + getUser().id
         }).success(function(data, status) {
-            if (akrParseInt(data) > lesson) {
-                console.info("Ban du keypoint de hoc bai nay");
+            if (akrParseInt(data) >= (lesson - 1)) {
                 $window.location.href = "#/" + degree + "/" + lesson;
             } else {
                 alert(i18n.t("message.info.keypoint"));
@@ -207,7 +206,6 @@ app.controller('root', function($scope, $routeParams, $route, $http, $window) {
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
         }).success(function(data, status) {
             if (akrParseInt(data) > 0) {
-                console.log("Ban con ngay su dung va co the choi phan nay");
                 $window.location.href = "#/" + degree + "/testout/" + type + "/" + lesson;
             } else {
                 alert(i18n.t("message.info.buy"));

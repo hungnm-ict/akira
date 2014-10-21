@@ -36,7 +36,7 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataSer
 
 totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, dataService) {
     dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
     });
 
     $scope.lessonId = $routeParams.lessonId;
@@ -132,7 +132,7 @@ totaln5Ctrls.controller('kanaPictureCtrl', function($scope, $routeParams, $http,
     $scope.stage = 0;
 
     dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 2).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
         $scope.choices2 = genAnswers3($scope.data, 3);
     });
 
@@ -211,7 +211,7 @@ totaln5Ctrls.controller('kanaWordCtrl', function($scope, $routeParams, $http, da
         "correct": 0
     };
     dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 3).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
         $scope.choices2 = genAnswers3($scope.data, 3);
 
     });
@@ -290,7 +290,7 @@ totaln5Ctrls.controller('kanaConnectCtrl', function($scope, $routeParams, $http,
     $scope.step = 0;
 
     dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 4).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
     });
 
     $scope.removeLife = function() {
@@ -311,7 +311,7 @@ totaln5Ctrls.controller('kanaConnectCtrl', function($scope, $routeParams, $http,
 
 totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, dataService) {
     dataService.getDataPromise("kana", $routeParams.lessonId, $routeParams.partId, 5).then(function(deferred) {
-        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topicid", $routeParams.lessonId, "subid", $routeParams.partId));
+        $scope.data = akiraShuffle(dataService.filter(deferred.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
     });
 
     $scope.lessonId = $routeParams.lessonId;

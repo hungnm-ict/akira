@@ -10,9 +10,9 @@
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(val)">
                         <span ng-switch-when="true" ng-bind="val"></span>
-                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        <span ng-switch-when="false"><i class="fa fa-lock" data-toggle="tooltip" data-placement="bottom" title="{{value*10 - 10}} stars to unlock"></i>
                         </span>
-                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        <span ng-switch-default><i class="fa fa-lock" data-toggle="tooltip" data-placement="bottom" title="{{value*10 - 10}} stars to unlock"></i>
                         </span>
                     </span>
                 </label>
@@ -20,7 +20,8 @@
         </li>
         <li>
             <a href="" id="lock" ng-click="pass(degree,'basic',lessonId)">
-                <label class='stepNumber'><i class='fa fa-key'></i>
+                <label class='stepNumber'>
+                 <img ng-src="../../img/w-key.png" class="img-responsive">
                 </label>
             </a>
         </li>

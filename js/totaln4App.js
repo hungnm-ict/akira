@@ -258,8 +258,7 @@ totaln4App.controller('rootController', function($scope, $http, $window) {
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=totaln4&userid=" + getUser().id
         }).success(function(data, status) {
-            if (akrParseInt(data) > lesson) {
-                console.info("Ban du keypoint de hoc bai nay");
+            if (akrParseInt(data) >= (lesson-1)) {
                 $window.location.href = "#/" + lesson;
             } else {
                 alert(i18n.t("message.info.keypoint"));

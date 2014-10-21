@@ -28,7 +28,7 @@ kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootSc
 
 });
 
-kanjinCtrls.controller('subCtrl', function($scope, $routeParams, $http, restService) {
+kanjinCtrls.controller('subCtrl', function($scope, $routeParams, $http, restService,$sce) {
     $scope.course = "kanji" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;

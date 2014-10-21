@@ -18,6 +18,13 @@ totaln4Ctrls.controller('mainCtrl', function($scope, $http,restService) {
         $scope.vocabprogress = progress.vocab;
         $scope.grammarprogress = progress.grammar;
     });
+
+    $scope.partId = window.sessionStorage.getItem("mainSelected") == null ? 0 : window.sessionStorage.getItem("mainSelected");
+    $scope.subtopicChanged = function(id) {
+        window.sessionStorage.clear();
+        $scope.partId = id;
+        window.sessionStorage.setItem("mainSelected", id - 1);
+    }
 });
 
 totaln4Ctrls.controller('subCtrl', function($scope, $routeParams, $http,restService) {
@@ -44,6 +51,10 @@ totaln4Ctrls.controller('subCtrl', function($scope, $routeParams, $http,restServ
 
     $scope.isEnabled = function(stepNumber) {
         return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
+    }
+     $scope.subtopicChanged = function(id) {
+        $scope.partId = id;
+        window.sessionStorage.setItem("subSelected", id - 1);
     }
 });
 
