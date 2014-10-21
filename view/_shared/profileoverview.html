@@ -1,47 +1,66 @@
 <div class="row" id="profile">
     <!-- Show this when user is logged in -->
     <div class="col-md-12 col-sm-12 col-sm-12" ng-hide='user==="Anonymous"'>
-        <div class="col-md-3 col-sm-3 col-xs-3">
-            <span class="ava-circle">
-                {{renderHtml(user.ava)}}
-            </span>
-        </div>
-        <div class="col-md-9 col-sm-9 col-xs-9">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 username">
-                    <!-- <span>{{user.loginname}}</span> -->
-                    <a href="../../view/profile">
-                        <span ng-bind="user.displayname">
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <span data-i18n="common.dayleft"></span>:
-                    <span ng-bind="user.dayremain"></span>
-                    <i class="fa fa-plus-circle fa-2x f-right" data-toggle="modal" data-target="#myModal" id="btn-redeem"></i>
-                </div>
-                <!-- <div class="col-md-6 col-sm-6 col-xs-6" style="text-align:right;"> -->
-                <!-- </div> -->
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="progress level">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        <table class="table top-none">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span class="ava-circle">
+                                    {{renderHtml(user.ava)}}
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="progress mentor">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+                    </td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 username">
+                                <a href="../../view/profile">
+                                    <span ng-bind="user.displayname">
+                                    </span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <span data-i18n="common.dayleft"></span>:
+                                <span ng-bind="user.dayremain"></span>
+                                <i class="fa fa-plus-circle fa-2x f-right" data-toggle="modal" data-target="#myModal" id="btn-redeem"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="row">
+                            <div class="col-md-2">
+                                E.lvl
+                            </div>
+                            <div class="col-md-10">
+                                <div class="progress level center">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{userProgress}}%;">
+                                    <span ng-bind="userLevel"></span>( <span ng-bind="userProgress"></span> %)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                M.lvl
+                            </div>
+                            <div class="col-md-10">
+                                <div class="progress mentor">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: {{mentorProgress}}%;">
+                                    <span ng-bind="mentorLevel"></span>( <span ng-bind="mentorProgress"></span> %)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="col-md-12 col-sm-12 col-sm-12" ng-show='user==="Anonymous"'>
         <h4 data-i18n="message.anonymous"></h4>

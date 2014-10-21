@@ -65,7 +65,7 @@ function changeLang(code) {
  * @return {[type]} [description]
  */
 function getUser() {
-    if (sessionStorage.getItem("user") == null) {
+    if (localStorage.getItem("user") == null) {
         return {
             "id": 17,
             "loginname": "anonymous",
@@ -73,7 +73,7 @@ function getUser() {
         };
         // return 0;
     } else {
-        return JSON.parse(sessionStorage.user);
+        return JSON.parse(localStorage.user);
     }
 }
 
@@ -85,8 +85,8 @@ function getUser() {
  * @return {[type]}        [description]
  */
 function compare(oldStr, newStr) {
-     var oldProcess = oldStr.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
-     var newProcess = newStr.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
+    var oldProcess = oldStr.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
+    var newProcess = newStr.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
     return (oldProcess.trim().replace(/ /g, "") === newProcess.trim().replace(/ /g, ""));
 }
 
@@ -808,38 +808,105 @@ function akrGetUserInput(id) {
  * @return {[type]}          [description]
  */
 function testoutOver(status, course, lessonid, type) {
-        try {
-            if (status) {
-                $(".testout-over-modal-sm .message").html(i18n.t("message.info.testsucess"));
-                $.ajax({
-                    type: 'POST',
-                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_keypoint.php",
-                    crossDomain: true,
-                    data: {
-                        userid: getUser().id,
-                        course: course,
-                        lessonid: lessonid,
-                        type: type,
-                    }
-                }).done(function(data) {
-                    console.info( data);
-                }).fail(function(xhr, status, err) {
-                    console.error(err);
-                });
-            } else {
-                $(".testout-over-modal-sm .message").html(i18n.t("message.info.testfailed"));
-            }
-            $(".testout-over-modal-sm").modal({
-                keyboard: true
+    try {
+        if (status) {
+            $(".testout-over-modal-sm .message").html(i18n.t("message.info.testsucess"));
+            $.ajax({
+                type: 'POST',
+                url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_keypoint.php",
+                crossDomain: true,
+                data: {
+                    userid: getUser().id,
+                    course: course,
+                    lessonid: lessonid,
+                    type: type,
+                }
+            }).done(function(data) {
+                console.info(data);
+            }).fail(function(xhr, status, err) {
+                console.error(err);
             });
-            $('.testout-over-modal-sm').on('hide.bs.modal', function(e) {
-                window.history.back();
-            });
-        } catch (err) {
-            console.error(err);
+        } else {
+            $(".testout-over-modal-sm .message").html(i18n.t("message.info.testfailed"));
         }
+        $(".testout-over-modal-sm").modal({
+            keyboard: true
+        });
+        $('.testout-over-modal-sm').on('hide.bs.modal', function(e) {
+            window.history.back();
+        });
+    } catch (err) {
+        console.error(err);
     }
-    /*-----  End of Validation method  ------*/
+}
+
+/**
+ * Get the exp return current progress
+ * @param  {[type]} exp [description]
+ * @return {[type]}     [description]
+ */
+function levelProgress(exp) {
+    var level = 1;
+    var currLevelExp = 1000;
+    var total = exp;
+    while (total >= currLevelExp) {
+        level++;
+        total -= currLevelExp;
+        currLevelExp *= 1.1;
+    }
+    return Math.floor((total / currLevelExp) * 100);
+}
+
+/**
+ * Get the exp return current level
+ * @param  {[type]} $exp [description]
+ * @return {[type]}      [description]
+ */
+function calculateLevel(exp){
+    var level=1;
+    var currLevelExp = 1000;
+    var total=exp;
+    while(total >=currLevelExp){
+        level++;
+        total -= currLevelExp;
+        currLevelExp *= 1.1;
+    }
+    return level;
+}
+
+/*function calculateLevel_1($exp){
+    $level=1;
+    $currLevelExp = 1000;
+    $total=$exp;
+    while($total >=$currLevelExp){
+        $level++;
+        $total -= $currLevelExp;
+        $currLevelExp *= 1.1;
+    }
+    return $level;
+}
+
+function calculateCurrLvlExp($lvl){
+    $currLevelExp = 1000;
+    for($i=1; $i<$lvl; $i++){
+        $currLevelExp *= 1.1;
+    }
+    return $currLevelExp;
+}
+
+function isMentorLevelUp($newExp){
+    $currLvl = calculateLevel_1(wp_get_current_user()->exp); 
+    $newLvl = calculateLevel_1($newExp);
+    $mentor_id = wp_get_current_user()->mentor_id;
+    for($i = $currLvl; $i < $newLvl; $i ++){
+        echo $i;
+        $plusExp =calculateCurrLvlExp($i)*0.2;
+        $currMentorExp = get_user_meta($mentor_id,'mentor_exp','true');
+        update_user_meta($mentor_id,'mentor_exp', $currMentorExp + $plusExp);
+    }
+}*/
+
+/*-----  End of Validation method  ------*/
 
 (function($) {
     /**

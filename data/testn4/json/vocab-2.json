@@ -1,0 +1,1722 @@
+[
+  {
+    "id": 1,
+    "question": "コーヒー　を　のみました",
+    "answer0": "飯みました",
+    "answer1": "飲みました",
+    "answer2": "餃みました",
+    "answer3": "飾みました",
+    "correct-index": "answer1",
+    "correct-value": "飲みました"
+  },
+  {
+    "id": 2,
+    "question": "あたらしい　くるまを　かいました。 ",
+    "answer0": "卓",
+    "answer1": "早",
+    "answer2": "車",
+    "answer3": "軍",
+    "correct-index": "answer2",
+    "correct-value": "車"
+  },
+  {
+    "id": 3,
+    "question": "この　ぼうしは　１０００えんです。 ",
+    "answer0": "１０００内",
+    "answer1": "１０００用",
+    "answer2": "１０００冊",
+    "answer3": "１０００円",
+    "correct-index": "answer3",
+    "correct-value": "１０００円"
+  },
+  {
+    "id": 4,
+    "question": "しゅくだいが　はんぶん　おわりました。 ",
+    "answer0": "羊扮",
+    "answer1": "半扮",
+    "answer2": "羊分",
+    "answer3": "半分",
+    "correct-index": "answer3",
+    "correct-value": "半分"
+  },
+  {
+    "id": 5,
+    "question": "わたしの　うちに　きませんか。",
+    "answer0": "来ませんか",
+    "answer1": "釆ませんか",
+    "answer2": "木ませんか",
+    "answer3": "末ませんか",
+    "correct-index": "answer0",
+    "correct-value": "来ませんか"
+  },
+  {
+    "id": 6,
+    "question": "きのう　たなかさんと　あいました。",
+    "answer0": "見いました",
+    "answer1": "書いました",
+    "answer2": "会いました",
+    "answer3": "話いました",
+    "correct-index": "answer2",
+    "correct-value": "会いました"
+  },
+  {
+    "id": 7,
+    "question": "いもうとと　おなじ　ふくを　かいました。",
+    "answer0": "同じ",
+    "answer1": "回じ",
+    "answer2": "冋じ",
+    "answer3": "可じ",
+    "correct-index": "answer0",
+    "correct-value": "同じ"
+  },
+  {
+    "id": 8,
+    "question": "いすに　すわらないで、たって　ください",
+    "answer0": "足って",
+    "answer1": "土って",
+    "answer2": "互って",
+    "answer3": "立って",
+    "correct-index": "answer3",
+    "correct-value": "立って"
+  },
+  {
+    "id": 9,
+    "question": "この　くには　あめが　すくない。",
+    "answer0": "少ない",
+    "answer1": "大ない",
+    "answer2": "火ない",
+    "answer3": "小ない",
+    "correct-index": "answer0",
+    "correct-value": "少ない"
+  },
+  {
+    "id": 10,
+    "question": "うみで、さかなを　とりました。",
+    "answer0": "角",
+    "answer1": "勇",
+    "answer2": "焦",
+    "answer3": "魚",
+    "correct-index": "answer3",
+    "correct-value": "魚"
+  },
+  {
+    "id": 11,
+    "question": "みなさん、あたまを　あげて　ください。",
+    "answer0": "土げて",
+    "answer1": "上げて",
+    "answer2": "下げて",
+    "answer3": "七げて",
+    "correct-index": "answer1",
+    "correct-value": "上げて"
+  },
+  {
+    "id": 12,
+    "question": "のどが　かわきました。おちゃを　のみませんか。",
+    "answer0": "食み",
+    "answer1": "飯み",
+    "answer2": "餌み",
+    "answer3": "飲み",
+    "correct-index": "answer3",
+    "correct-value": "飲み"
+  },
+  {
+    "id": 13,
+    "question": "せんせいの　はなしを　よく　ききましょう。",
+    "answer0": "話",
+    "answer1": "読",
+    "answer2": "語",
+    "answer3": "詰",
+    "correct-index": "answer0",
+    "correct-value": "話"
+  },
+  {
+    "id": 14,
+    "question": "ごぜんちゅう、だいがくに　いきます。",
+    "answer0": "午前",
+    "answer1": "牛前",
+    "answer2": "午後",
+    "answer3": "牛後",
+    "correct-index": "answer0",
+    "correct-value": "午前"
+  },
+  {
+    "id": 15,
+    "question": "せんげつ、きょうとに　いきました。",
+    "answer0": "先白",
+    "answer1": "先目",
+    "answer2": "先月",
+    "answer3": "先日",
+    "correct-index": "answer2",
+    "correct-value": "先月"
+  },
+  {
+    "id": 16,
+    "question": "おんなの　ひとが　あるいて　います。",
+    "answer0": "父",
+    "answer1": "男",
+    "answer2": "母",
+    "answer3": "女",
+    "correct-index": "answer3",
+    "correct-value": "女"
+  },
+  {
+    "id": 17,
+    "question": "この　ほんを　がくせいに　あげましょう。",
+    "answer0": "学主",
+    "answer1": "学生",
+    "answer2": "字生",
+    "answer3": "学羊",
+    "correct-index": "answer1",
+    "correct-value": "学生"
+  },
+  {
+    "id": 18,
+    "question": "しごとは　はんぶん　おわりました。",
+    "answer0": "夫分",
+    "answer1": "半分",
+    "answer2": "天分",
+    "answer3": "牛分",
+    "correct-index": "answer1",
+    "correct-value": "半分"
+  },
+  {
+    "id": 19,
+    "question": "かぜで、きのう、れんしゅうを　やすみました。",
+    "answer0": "休み",
+    "answer1": "体み",
+    "answer2": "安み",
+    "answer3": "仕み",
+    "correct-index": "answer0",
+    "correct-value": "休み"
+  },
+  {
+    "id": 20,
+    "question": "この　えいがは　ながいです。",
+    "answer0": "長い",
+    "answer1": "中い",
+    "answer2": "大い",
+    "answer3": "太い",
+    "correct-index": "answer0",
+    "correct-value": "長い"
+  },
+  {
+    "id": 21,
+    "question": "ことしの　なつは　あつかったです。",
+    "answer0": "来年",
+    "answer1": "八年",
+    "answer2": "令年",
+    "answer3": "今年",
+    "correct-index": "answer3",
+    "correct-value": "今年"
+  },
+  {
+    "id": 22,
+    "question": "あたらしい　じしょを　かいました。",
+    "answer0": "貝いました",
+    "answer1": "買いました",
+    "answer2": "員いました",
+    "answer3": "見いました",
+    "correct-index": "answer1",
+    "correct-value": "買いました"
+  },
+  {
+    "id": 23,
+    "question": "えきまえで　ともだちに　あいました。",
+    "answer0": "駅前",
+    "answer1": "駅上",
+    "answer2": "駅外",
+    "answer3": "駅名",
+    "correct-index": "answer0",
+    "correct-value": "駅前"
+  },
+  {
+    "id": 24,
+    "question": "よく　はれて　そらが　あおいです。",
+    "answer0": "宁",
+    "answer1": "穴",
+    "answer2": "空",
+    "answer3": "突",
+    "correct-index": "answer2",
+    "correct-value": "空"
+  },
+  {
+    "id": 25,
+    "question": "こうばんで　みちを　ききましょう。",
+    "answer0": "運",
+    "answer1": "週",
+    "answer2": "通",
+    "answer3": "道",
+    "correct-index": "answer3",
+    "correct-value": "道"
+  },
+  {
+    "id": 26,
+    "question": "かぞくに　てがみを　かきました。",
+    "answer0": "干",
+    "answer1": "毛",
+    "answer2": "手",
+    "answer3": "テ",
+    "correct-index": "answer2",
+    "correct-value": "手"
+  },
+  {
+    "id": 27,
+    "question": "しろい　ギターを　買いました。",
+    "answer0": "自い",
+    "answer1": "白い",
+    "answer2": "古い",
+    "answer3": "口い",
+    "correct-index": "answer1",
+    "correct-value": "白い"
+  },
+  {
+    "id": 28,
+    "question": "きのうは　いい　てんきでした。",
+    "answer0": "天気",
+    "answer1": "大気",
+    "answer2": "夫気",
+    "answer3": "電気",
+    "correct-index": "answer0",
+    "correct-value": "天気"
+  },
+  {
+    "id": 29,
+    "question": "四月　ふつかは　わたしの　たんじょうびです。",
+    "answer0": "二日",
+    "answer1": "二目",
+    "answer2": "二十目",
+    "answer3": "二十日",
+    "correct-index": "answer0",
+    "correct-value": "二日"
+  },
+  {
+    "id": 30,
+    "question": "ははは　おんがくが　すきです。",
+    "answer0": "海",
+    "answer1": "毎",
+    "answer2": "母",
+    "answer3": "父",
+    "correct-index": "answer2",
+    "correct-value": "母"
+  },
+  {
+    "id": 31,
+    "question": "あの　人は　えいごの　せんせいです。",
+    "answer0": "先生",
+    "answer1": "生先",
+    "answer2": "先性",
+    "answer3": "千生",
+    "correct-index": "answer0",
+    "correct-value": "先生"
+  },
+  {
+    "id": 32,
+    "question": "きっさてんで　新聞を　よみました。",
+    "answer0": "読みました",
+    "answer1": "飲みました",
+    "answer2": "語みました",
+    "answer3": "話みました",
+    "correct-index": "answer0",
+    "correct-value": "読みました"
+  },
+  {
+    "id": 33,
+    "question": "なつやすみに　山に　のぼりました。",
+    "answer0": "体み",
+    "answer1": "木み",
+    "answer2": "休み",
+    "answer3": "本み",
+    "correct-index": "answer2",
+    "correct-value": "休み"
+  },
+  {
+    "id": 34,
+    "question": "こうえんへ　さんぽに　いきませんか。",
+    "answer0": "行きませんか",
+    "answer1": "言きませんか",
+    "answer2": "何きませんか",
+    "answer3": "生きませんか",
+    "correct-index": "answer0",
+    "correct-value": "行きませんか"
+  },
+  {
+    "id": 35,
+    "question": "あの　あかい　でんしゃに　のって　ください。",
+    "answer0": "電気",
+    "answer1": "電車",
+    "answer2": "雷車",
+    "answer3": "電東",
+    "correct-index": "answer1",
+    "correct-value": "電車"
+  },
+  {
+    "id": 36,
+    "question": "いもうとは　CDを　きいて　います。",
+    "answer0": "読いて",
+    "answer1": "見て",
+    "answer2": "聞いて",
+    "answer3": "耳いて",
+    "correct-index": "answer2",
+    "correct-value": "聞いて"
+  },
+  {
+    "id": 37,
+    "question": "父は　がいこくに　います。",
+    "answer0": "夕国",
+    "answer1": "外国",
+    "answer2": "夕囲",
+    "answer3": "外囲",
+    "correct-index": "answer1",
+    "correct-value": "外国"
+  },
+  {
+    "id": 38,
+    "question": "ともだちは　山が　すきです。",
+    "answer0": "友だち",
+    "answer1": "冬だち",
+    "answer2": "方だち",
+    "answer3": "互だち",
+    "correct-index": "answer0",
+    "correct-value": "友だち"
+  },
+  {
+    "id": 39,
+    "question": "ひを　けして　ください。",
+    "answer0": "日",
+    "answer1": "大",
+    "answer2": "小",
+    "answer3": "火",
+    "correct-index": "answer3",
+    "correct-value": "火"
+  },
+  {
+    "id": 40,
+    "question": "あなたの　おとうさんは　せいが　高いですね。",
+    "answer0": "お夫さん",
+    "answer1": "お交さん",
+    "answer2": "お父さん",
+    "answer3": "お母さん",
+    "correct-index": "answer2",
+    "correct-value": "お父さん"
+  },
+  {
+    "id": 41,
+    "question": "ドイツごは　わかりません。",
+    "answer0": "ドイツ語",
+    "answer1": "ドイツ話",
+    "answer2": "ドイツ後",
+    "answer3": "ドイツ言",
+    "correct-index": "answer0",
+    "correct-value": "ドイツ語"
+  },
+  {
+    "id": 42,
+    "question": "こうえんの　うしろに　えいごの　学校が　あります。",
+    "answer0": "後ろ",
+    "answer1": "行ろ",
+    "answer2": "午ろ",
+    "answer3": "前ろ",
+    "correct-index": "answer0",
+    "correct-value": "後ろ"
+  },
+  {
+    "id": 43,
+    "question": "ふじさんは　いちばん　たかい　山です。",
+    "answer0": "大い",
+    "answer1": "安い",
+    "answer2": "高い",
+    "answer3": "長い",
+    "correct-index": "answer2",
+    "correct-value": "高い"
+  },
+  {
+    "id": 44,
+    "question": "きょうも　あめが　ふって　います。",
+    "answer0": "雨",
+    "answer1": "雪",
+    "answer2": "風",
+    "answer3": "雲",
+    "correct-index": "answer0",
+    "correct-value": "雨"
+  },
+  {
+    "id": 45,
+    "question": "にちようびは　いつも　ひまです。",
+    "answer0": "目よう日",
+    "answer1": "日よう日",
+    "answer2": "田よう日",
+    "answer3": "日よう目",
+    "correct-index": "answer1",
+    "correct-value": "日よう日"
+  },
+  {
+    "id": 46,
+    "question": "この　川は　ながいです。",
+    "answer0": "長い",
+    "answer1": "安い",
+    "answer2": "多い",
+    "answer3": "高い",
+    "correct-index": "answer0",
+    "correct-value": "長い"
+  },
+  {
+    "id": 47,
+    "question": "この　くつは　にまんはっせんえんです。",
+    "answer0": "二方八千",
+    "answer1": "二万八千",
+    "answer2": "二万入千",
+    "answer3": "二方人千",
+    "correct-index": "answer1",
+    "correct-value": "二万八千"
+  },
+  {
+    "id": 48,
+    "question": "まいにち　いそがしいです。",
+    "answer0": "侮日",
+    "answer1": "海日",
+    "answer2": "母日",
+    "answer3": "毎日",
+    "correct-index": "answer3",
+    "correct-value": "毎日"
+  },
+  {
+    "id": 49,
+    "question": "パンやの　ひだりがわは　くつやです。",
+    "answer0": "右",
+    "answer1": "左",
+    "answer2": "若",
+    "answer3": "古",
+    "correct-index": "answer1",
+    "correct-value": "左"
+  },
+  {
+    "id": 50,
+    "question": "そらは　はれて　います。",
+    "answer0": "天",
+    "answer1": "雨",
+    "answer2": "空",
+    "answer3": "山",
+    "correct-index": "answer2",
+    "correct-value": "空"
+  },
+  {
+    "id": 51,
+    "question": "あたらしい　シャツを　きました。",
+    "answer0": "苦しい",
+    "answer1": "新しい",
+    "answer2": "多しい",
+    "answer3": "白しい",
+    "correct-index": "answer1",
+    "correct-value": "新しい"
+  },
+  {
+    "id": 52,
+    "question": "川の　みずが　きれいに　なりました。",
+    "answer0": "水",
+    "answer1": "木",
+    "answer2": "氷",
+    "answer3": "少",
+    "correct-index": "answer0",
+    "correct-value": "水"
+  },
+  {
+    "id": 53,
+    "question": "その　レストランは　えきの　前に　あります。",
+    "answer0": "道",
+    "answer1": "馬",
+    "answer2": "店",
+    "answer3": "駅",
+    "correct-index": "answer3",
+    "correct-value": "駅"
+  },
+  {
+    "id": 54,
+    "question": "れいぞうこに　ビールが　はいって　います。",
+    "answer0": "人って",
+    "answer1": "入って",
+    "answer2": "八って",
+    "answer3": "水って",
+    "correct-index": "answer1",
+    "correct-value": "入って"
+  },
+  {
+    "id": 55,
+    "question": "ワイシャツは　なんまい　もって　いますか。",
+    "answer0": "向毎",
+    "answer1": "何毎",
+    "answer2": "何枚",
+    "answer3": "向枚",
+    "correct-index": "answer2",
+    "correct-value": "何枚"
+  },
+  {
+    "id": 56,
+    "question": "あなたの　うたが　ききたいです。",
+    "answer0": "聞きたい",
+    "answer1": "耳たい",
+    "answer2": "問きたい",
+    "answer3": "門きたい",
+    "correct-index": "answer0",
+    "correct-value": "聞きたい"
+  },
+  {
+    "id": 57,
+    "question": "きたの　国では　もう　ゆきが　ふって　います。",
+    "answer0": "化",
+    "answer1": "花",
+    "answer2": "比",
+    "answer3": "北",
+    "correct-index": "answer3",
+    "correct-value": "北"
+  },
+  {
+    "id": 58,
+    "question": "ことし　りゅうがく　したいです。",
+    "answer0": "今年",
+    "answer1": "今生",
+    "answer2": "五年",
+    "answer3": "五生",
+    "correct-index": "answer0",
+    "correct-value": "今年"
+  },
+  {
+    "id": 59,
+    "question": "まだ　つきは　出ていません。",
+    "answer0": "日",
+    "answer1": "見",
+    "answer2": "月",
+    "answer3": "目",
+    "correct-index": "answer2",
+    "correct-value": "月"
+  },
+  {
+    "id": 60,
+    "question": "あしたから　みっかかん　休みです。",
+    "answer0": "三日聞",
+    "answer1": "三日間",
+    "answer2": "三目間",
+    "answer3": "三目聞",
+    "correct-index": "answer1",
+    "correct-value": "三日間"
+  },
+  {
+    "id": 61,
+    "question": "きのうは　じゅうじかん　ねました。",
+    "answer0": "時間",
+    "answer1": "時聞",
+    "answer2": "寺間",
+    "answer3": "寺聞",
+    "correct-index": "answer0",
+    "correct-value": "時間"
+  },
+  {
+    "id": 62,
+    "question": "クラスに　おとこの　学生は　いません。",
+    "answer0": "男",
+    "answer1": "里",
+    "answer2": "夫",
+    "answer3": "女",
+    "correct-index": "answer0",
+    "correct-value": "男"
+  },
+  {
+    "id": 63,
+    "question": "さあ　ゆっくり　お茶を　のみましょう。",
+    "answer0": "食みましょう",
+    "answer1": "欠みましょう",
+    "answer2": "読みましょう",
+    "answer3": "飲みましょう",
+    "correct-index": "answer3",
+    "correct-value": "飲みましょう"
+  },
+  {
+    "id": 64,
+    "question": "どの　はなが　すきですか。",
+    "answer0": "北",
+    "answer1": "花",
+    "answer2": "草",
+    "answer3": "化",
+    "correct-index": "answer1",
+    "correct-value": "花"
+  },
+  {
+    "id": 65,
+    "question": "わたしの　うちは　東京の　にしに　あります。",
+    "answer0": "西",
+    "answer1": "価",
+    "answer2": "酒",
+    "answer3": "四",
+    "correct-index": "answer0",
+    "correct-value": "西"
+  },
+  {
+    "id": 66,
+    "question": "はなこは　三さいの　おんなの　こです。",
+    "answer0": "女の　子",
+    "answer1": "女の　了",
+    "answer2": "男の　子",
+    "answer3": "男の　了",
+    "correct-index": "answer0",
+    "correct-value": "女の　子"
+  },
+  {
+    "id": 67,
+    "question": "まいばん　ラジオを　ききます",
+    "answer0": "語きます",
+    "answer1": "話きます",
+    "answer2": "言きます",
+    "answer3": "聞きます",
+    "correct-index": "answer3",
+    "correct-value": "聞きます"
+  },
+  {
+    "id": 68,
+    "question": "そこに　くるまを　とめないで　ください。",
+    "answer0": "上めないで",
+    "answer1": "止めないで",
+    "answer2": "正めないで",
+    "answer3": "下ないで",
+    "correct-index": "answer1",
+    "correct-value": "止めないで"
+  },
+  {
+    "id": 69,
+    "question": "かいぎは　なんじ　までですか。",
+    "answer0": "何時",
+    "answer1": "何寺",
+    "answer2": "何町",
+    "answer3": "何事",
+    "correct-index": "answer0",
+    "correct-value": "何時"
+  },
+  {
+    "id": 70,
+    "question": "きょう　しごとは　やすみです。",
+    "answer0": "体も",
+    "answer1": "休み",
+    "answer2": "朴み",
+    "answer3": "安み",
+    "correct-index": "answer1",
+    "correct-value": "休み"
+  },
+  {
+    "id": 71,
+    "question": "きのうは　ともだちの   たんじょうびでした。",
+    "answer0": "友だち",
+    "answer1": "左だち",
+    "answer2": "石だち",
+    "answer3": "右だち",
+    "correct-index": "answer0",
+    "correct-value": "友だち"
+  },
+  {
+    "id": 72,
+    "question": "わたしの　ちちは　とても　せが　たかい。",
+    "answer0": "父",
+    "answer1": "母",
+    "answer2": "兄",
+    "answer3": "姉",
+    "correct-index": "answer0",
+    "correct-value": "父"
+  },
+  {
+    "id": 73,
+    "question": "まいにち　いぬと　さんぼします。",
+    "answer0": "苺日",
+    "answer1": "田日",
+    "answer2": "町日",
+    "answer3": "毎日",
+    "correct-index": "answer3",
+    "correct-value": "毎日"
+  },
+  {
+    "id": 74,
+    "question": "これは　せんえんです",
+    "answer0": "万円",
+    "answer1": "千円",
+    "answer2": "百円",
+    "answer3": "一円",
+    "correct-index": "answer1",
+    "correct-value": "千円"
+  },
+  {
+    "id": 75,
+    "question": "かわで　さかなを　とりました。",
+    "answer0": "海",
+    "answer1": "肉",
+    "answer2": "魚",
+    "answer3": "毎",
+    "correct-index": "answer2",
+    "correct-value": "魚"
+  },
+  {
+    "id": 76,
+    "question": "らいしゅう　くにへ　かえります。",
+    "answer0": "口",
+    "answer1": "四",
+    "answer2": "国",
+    "answer3": "西",
+    "correct-index": "answer2",
+    "correct-value": "国"
+  },
+  {
+    "id": 77,
+    "question": "おひるに　パンを　たべました。",
+    "answer0": "食べました",
+    "answer1": "倉べました",
+    "answer2": "良べました",
+    "answer3": "飲べました",
+    "correct-index": "answer0",
+    "correct-value": "食べました"
+  },
+  {
+    "id": 78,
+    "question": "デバートで　シャツを　かいました。",
+    "answer0": "音いました",
+    "answer1": "員いました",
+    "answer2": "買いました",
+    "answer3": "貝いました",
+    "correct-index": "answer2",
+    "correct-value": "買いました"
+  },
+  {
+    "id": 79,
+    "question": "いい　てんきですね。",
+    "answer0": "空気",
+    "answer1": "大気",
+    "answer2": "元気",
+    "answer3": "天気",
+    "correct-index": "answer3",
+    "correct-value": "天気"
+  },
+  {
+    "id": 80,
+    "question": "この　みちが　くるまが　おおい。",
+    "answer0": "少い",
+    "answer1": "小い",
+    "answer2": "大い",
+    "answer3": "多い",
+    "correct-index": "answer3",
+    "correct-value": "多い"
+  },
+  {
+    "id": 81,
+    "question": "６じ　はんに　おきました。",
+    "answer0": "半",
+    "answer1": "木",
+    "answer2": "十",
+    "answer3": "来",
+    "correct-index": "answer0",
+    "correct-value": "半"
+  },
+  {
+    "id": 82,
+    "question": "えきまで　あるいて　なんぶんぐらいですか。",
+    "answer0": "文",
+    "answer1": "何",
+    "answer2": "分",
+    "answer3": "時",
+    "correct-index": "answer2",
+    "correct-value": "分"
+  },
+  {
+    "id": 83,
+    "question": "てを　あらいましょう。",
+    "answer0": "足",
+    "answer1": "手",
+    "answer2": "長",
+    "answer3": "日",
+    "correct-index": "answer1",
+    "correct-value": "手"
+  },
+  {
+    "id": 84,
+    "question": "きょうは　そらが　とても　きれいです。",
+    "answer0": "京",
+    "answer1": "室",
+    "answer2": "字",
+    "answer3": "空",
+    "correct-index": "answer3",
+    "correct-value": "空"
+  },
+  {
+    "id": 85,
+    "question": "この　じは　なんと　よみますか。",
+    "answer0": "話みますか",
+    "answer1": "語みますか",
+    "answer2": "読みますか",
+    "answer3": "言みますか",
+    "correct-index": "answer2",
+    "correct-value": "読みますか"
+  },
+  {
+    "id": 86,
+    "question": "ことしの　なつは　やまへ　いきます。",
+    "answer0": "ヨ",
+    "answer1": "出",
+    "answer2": "川",
+    "answer3": "山",
+    "correct-index": "answer3",
+    "correct-value": "山"
+  },
+  {
+    "id": 87,
+    "question": "ほっかいどうは　にほんの　きたに　あります",
+    "answer0": "南",
+    "answer1": "西",
+    "answer2": "北",
+    "answer3": "東",
+    "correct-index": "answer2",
+    "correct-value": "北"
+  },
+  {
+    "id": 88,
+    "question": "この　テーブルは　ごまんえんでした。",
+    "answer0": "五方円",
+    "answer1": "五万円",
+    "answer2": "五万内",
+    "answer3": "五方内",
+    "correct-index": "answer1",
+    "correct-value": "五万円"
+  },
+  {
+    "id": 89,
+    "question": "となりの　いえの　ねこは　あしが　くろいです。",
+    "answer0": "足",
+    "answer1": "目",
+    "answer2": "手",
+    "answer3": "耳",
+    "correct-index": "answer0",
+    "correct-value": "足"
+  },
+  {
+    "id": 90,
+    "question": "えいがかんで　おもしろい　えいがを　みました。",
+    "answer0": "見ました",
+    "answer1": "具ました",
+    "answer2": "目ました",
+    "answer3": "貝ました",
+    "correct-index": "answer0",
+    "correct-value": "見ました"
+  },
+  {
+    "id": 91,
+    "question": "わたしの　すんでいる　まちは　みせが　すくないです。",
+    "answer0": "居",
+    "answer1": "庁",
+    "answer2": "店",
+    "answer3": "x痁",
+    "correct-index": "answer2",
+    "correct-value": "店"
+  },
+  {
+    "id": 92,
+    "question": "さとうさんは　いろいろな　みちを　しっています。",
+    "answer0": "道",
+    "answer1": "道",
+    "answer2": "通",
+    "answer3": "進",
+    "correct-index": "answer0",
+    "correct-value": "道"
+  },
+  {
+    "id": 93,
+    "question": "あのきの　したで　やすみましょう",
+    "answer0": "上",
+    "answer1": "中",
+    "answer2": "下",
+    "answer3": "土",
+    "correct-index": "answer2",
+    "correct-value": "下"
+  },
+  {
+    "id": 94,
+    "question": "バスの　窓から　ふじさんが　はんぶん　みえました。",
+    "answer0": "ふじ三",
+    "answer1": "ふじ止",
+    "answer2": "ふじ山",
+    "answer3": "ふじ土",
+    "correct-index": "answer2",
+    "correct-value": "ふじ山"
+  },
+  {
+    "id": 95,
+    "question": "バスの　窓から　ふじさんが　はんぶん　みえました。",
+    "answer0": "羊攵",
+    "answer1": "羊分",
+    "answer2": "半攵",
+    "answer3": "半分",
+    "correct-index": "answer3",
+    "correct-value": "半分"
+  },
+  {
+    "id": 96,
+    "question": "パーティーは　しがつようか、かようびです。",
+    "answer0": "四月四日",
+    "answer1": "四月八日",
+    "answer2": "七月四日",
+    "answer3": "七月八日",
+    "correct-index": "answer1",
+    "correct-value": "四月八日"
+  },
+  {
+    "id": 97,
+    "question": "パーティーは　しがつようか、かようびです。",
+    "answer0": "日曜日",
+    "answer1": "月曜日",
+    "answer2": "火曜日",
+    "answer3": "川曜日",
+    "correct-index": "answer2",
+    "correct-value": "火曜日"
+  },
+  {
+    "id": 98,
+    "question": "このりんごは　みっつで　よんひゃくえんです。",
+    "answer0": "四つ",
+    "answer1": "六つ",
+    "answer2": "三つ",
+    "answer3": "八つ",
+    "correct-index": "answer2",
+    "correct-value": "三つ"
+  },
+  {
+    "id": 99,
+    "question": "このりんごは　みっつで　よんひゃくえんです。",
+    "answer0": "四百円",
+    "answer1": "四千円",
+    "answer2": "四万円",
+    "answer3": "四牛円",
+    "correct-index": "answer0",
+    "correct-value": "四百円"
+  },
+  {
+    "id": 100,
+    "question": "このかわは　みずが　つめたいですから、およぐことが　できません。",
+    "answer0": "水",
+    "answer1": "川",
+    "answer2": "土",
+    "answer3": "山",
+    "correct-index": "answer1",
+    "correct-value": "川"
+  },
+  {
+    "id": 101,
+    "question": "このかわは　みずが　つめたいですから、およぐことが　できません)",
+    "answer0": "米",
+    "answer1": "氷",
+    "answer2": "本",
+    "answer3": "水",
+    "correct-index": "answer3",
+    "correct-value": "水"
+  },
+  {
+    "id": 102,
+    "question": "いもうとは　にせんねんに　うまれました。わたしより　やっつ　下です。",
+    "answer0": "二チ年",
+    "answer1": "二先年",
+    "answer2": "二千年",
+    "answer3": "二千矣",
+    "correct-index": "answer2",
+    "correct-value": "二千年"
+  },
+  {
+    "id": 103,
+    "question": "いもうとは　にせんねんに　うまれました。わたしより　やっつ　下です。",
+    "answer0": "八つ",
+    "answer1": "四つ",
+    "answer2": "六つ",
+    "answer3": "七つ",
+    "correct-index": "answer0",
+    "correct-value": "八つ"
+  },
+  {
+    "id": 104,
+    "question": "大きいのは　いちまんえん、ちいさいのは　せんえんです。",
+    "answer0": "千万円",
+    "answer1": "百万円",
+    "answer2": "一万円",
+    "answer3": "五万円",
+    "correct-index": "answer2",
+    "correct-value": "一万円"
+  },
+  {
+    "id": 105,
+    "question": "大きいのは　いちまんえん、ちいさいのは　せんえんです。",
+    "answer0": "チ円",
+    "answer1": "千円",
+    "answer2": "一千円",
+    "answer3": "一百円",
+    "correct-index": "answer1",
+    "correct-value": "千円"
+  },
+  {
+    "id": 106,
+    "question": "スーパーの　みぎに　ほんやが　あります。",
+    "answer0": "右",
+    "answer1": "左",
+    "answer2": "友",
+    "answer3": "名",
+    "correct-index": "answer0",
+    "correct-value": "右"
+  },
+  {
+    "id": 107,
+    "question": "スーパーの　みぎに　ほんやが　あります。",
+    "answer0": "木や",
+    "answer1": "禾や",
+    "answer2": "本や",
+    "answer3": "未や",
+    "correct-index": "answer2",
+    "correct-value": "本や"
+  },
+  {
+    "id": 108,
+    "question": "いちばん　うしろに　ちちが　たっています。",
+    "answer0": "役ろ",
+    "answer1": "前ろ",
+    "answer2": "後ろ",
+    "answer3": "俊ろ",
+    "correct-index": "answer2",
+    "correct-value": "後ろ"
+  },
+  {
+    "id": 109,
+    "question": "いちばん　うろしに　ちちが　たっています",
+    "answer0": "母",
+    "answer1": "攵",
+    "answer2": "尣",
+    "answer3": "父",
+    "correct-index": "answer3",
+    "correct-value": "父"
+  },
+  {
+    "id": 110,
+    "question": "リーさんは　あの　あしが　ながい　ひとです。",
+    "answer0": "口",
+    "answer1": "走",
+    "answer2": "足",
+    "answer3": "赤",
+    "correct-index": "answer2",
+    "correct-value": "足"
+  },
+  {
+    "id": 111,
+    "question": "リーさんは　あの　あしが　ながい　ひとです。",
+    "answer0": "イ",
+    "answer1": "入",
+    "answer2": "八",
+    "answer3": "人",
+    "correct-index": "answer3",
+    "correct-value": "人"
+  },
+  {
+    "id": 112,
+    "question": "まいつき　ともだちに　手がみを　かきます。",
+    "answer0": "毎月",
+    "answer1": "父月",
+    "answer2": "毎日",
+    "answer3": "莓日",
+    "correct-index": "answer0",
+    "correct-value": "毎月"
+  },
+  {
+    "id": 113,
+    "question": "まいつき　ともだちに　手がみを　かきます。",
+    "answer0": "反だち",
+    "answer1": "友だち",
+    "answer2": "皮だち",
+    "answer3": "有だち",
+    "correct-index": "answer1",
+    "correct-value": "友だち"
+  },
+  {
+    "id": 114,
+    "question": "おとうとは　ゆきが　ふった　ひに　うまれました。",
+    "answer0": "火",
+    "answer1": "目",
+    "answer2": "日",
+    "answer3": "見",
+    "correct-index": "answer2",
+    "correct-value": "日"
+  },
+  {
+    "id": 115,
+    "question": "おとうとは　ゆきが　ふった　ひに　うまれました。",
+    "answer0": "生まれました",
+    "answer1": "主まれました",
+    "answer2": "先まれました",
+    "answer3": "午まれました",
+    "correct-index": "answer0",
+    "correct-value": "生まれました"
+  },
+  {
+    "id": 116,
+    "question": "あしたの　パーティーに　おとこの　ひとは　なんにん　きますか。",
+    "answer0": "女",
+    "answer1": "子",
+    "answer2": "男",
+    "answer3": "父",
+    "correct-index": "answer2",
+    "correct-value": "男"
+  },
+  {
+    "id": 117,
+    "question": "あしたの　パーティーに　おとこの　ひとは　なんにん　きますか。",
+    "answer0": "可人",
+    "answer1": "付人",
+    "answer2": "何八",
+    "answer3": "何人",
+    "correct-index": "answer3",
+    "correct-value": "何人"
+  },
+  {
+    "id": 118,
+    "question": "がくせいは　ちからが　ありますから、いすを　もっていて　もらいましょう。",
+    "answer0": "学主",
+    "answer1": "学王",
+    "answer2": "学生",
+    "answer3": "学先",
+    "correct-index": "answer2",
+    "correct-value": "学生"
+  },
+  {
+    "id": 119,
+    "question": "がくせいは　ちからが　ありますから、いすを　もっていて　もらいましょう。",
+    "answer0": "刀",
+    "answer1": "刃",
+    "answer2": "匁",
+    "answer3": "力",
+    "correct-index": "answer3",
+    "correct-value": "力"
+  },
+  {
+    "id": 120,
+    "question": "まちの　ひがしに　あたらしい　学校が　できた。",
+    "answer0": "西",
+    "answer1": "束",
+    "answer2": "東",
+    "answer3": "某",
+    "correct-index": "answer2",
+    "correct-value": "東"
+  },
+  {
+    "id": 121,
+    "question": "まちの　ひがしに　あたらしい　学校が　できた。",
+    "answer0": "部しい",
+    "answer1": "親しい",
+    "answer2": "新しい",
+    "answer3": "薪しい",
+    "correct-index": "answer2",
+    "correct-value": "新しい"
+  },
+  {
+    "id": 122,
+    "question": "きょうは　ごごから　あめに　なります。",
+    "answer0": "午前",
+    "answer1": "矢前",
+    "answer2": "牛後",
+    "answer3": "午後",
+    "correct-index": "answer3",
+    "correct-value": "午後"
+  },
+  {
+    "id": 123,
+    "question": "きょうは　ごごから　あめに　なります。",
+    "answer0": "雨",
+    "answer1": "天",
+    "answer2": "車",
+    "answer3": "兩",
+    "correct-index": "answer0",
+    "correct-value": "雨"
+  },
+  {
+    "id": 124,
+    "question": "みちを　わたるとき、くるまに　きを　つけましょう。",
+    "answer0": "牟",
+    "answer1": "車",
+    "answer2": "東",
+    "answer3": "庫",
+    "correct-index": "answer1",
+    "correct-value": "車"
+  },
+  {
+    "id": 125,
+    "question": "みちを　わたるとき、くるまに　きを　つけましょう)",
+    "answer0": "気",
+    "answer1": "气",
+    "answer2": "氣",
+    "answer3": "汽",
+    "correct-index": "answer0",
+    "correct-value": "気"
+  },
+  {
+    "id": 126,
+    "question": "えきの　まえに　ふるい　びょういんが　あります。",
+    "answer0": "前",
+    "answer1": "蔀",
+    "answer2": "則",
+    "answer3": "後",
+    "correct-index": "answer0",
+    "correct-value": "前"
+  },
+  {
+    "id": 127,
+    "question": "えきの　まえに　ふるい　びょういんが　あります。",
+    "answer0": "占い",
+    "answer1": "吉い",
+    "answer2": "台い",
+    "answer3": "古い",
+    "correct-index": "answer3",
+    "correct-value": "古い"
+  },
+  {
+    "id": 128,
+    "question": "あの　うまは　おおきい　ですね。",
+    "answer0": "魚",
+    "answer1": "焦",
+    "answer2": "牛",
+    "answer3": "馬",
+    "correct-index": "answer3",
+    "correct-value": "馬"
+  },
+  {
+    "id": 129,
+    "question": "あの　うまは　おおきい　ですね。",
+    "answer0": "犬きい",
+    "answer1": "大きい",
+    "answer2": "太きい",
+    "answer3": "才きい",
+    "correct-index": "answer1",
+    "correct-value": "大きい"
+  },
+  {
+    "id": 130,
+    "question": "あの　レストランは　のみものが　たかかったです。",
+    "answer0": "飲み物",
+    "answer1": "餡みもの",
+    "answer2": "餂みもの",
+    "answer3": "食みもの",
+    "correct-index": "answer0",
+    "correct-value": "飲み物"
+  },
+  {
+    "id": 131,
+    "question": "あの　レストランは　のみものが　たかかったです。",
+    "answer0": "音かった",
+    "answer1": "安かった",
+    "answer2": "高かった",
+    "answer3": "髙かった",
+    "correct-index": "answer2",
+    "correct-value": "高かった"
+  },
+  {
+    "id": 132,
+    "question": "あさ　はやく　友だちが　きました。",
+    "answer0": "皁く",
+    "answer1": "旱く",
+    "answer2": "早く",
+    "answer3": "阜く",
+    "correct-index": "answer2",
+    "correct-value": "早く"
+  },
+  {
+    "id": 133,
+    "question": "あさ　はやく　友だちが　きました",
+    "answer0": "来ました",
+    "answer1": "平ました",
+    "answer2": "采ました",
+    "answer3": "束ました",
+    "correct-index": "answer0",
+    "correct-value": "来ました"
+  },
+  {
+    "id": 134,
+    "question": "きょうは　そらが　あおいですね。",
+    "answer0": "今日",
+    "answer1": "昨日",
+    "answer2": "合日",
+    "answer3": "今年",
+    "correct-index": "answer0",
+    "correct-value": "今日"
+  },
+  {
+    "id": 135,
+    "question": "きょうは　そらが　あおいですね。",
+    "answer0": "突",
+    "answer1": "字",
+    "answer2": "空",
+    "answer3": "容",
+    "correct-index": "answer2",
+    "correct-value": "空"
+  },
+  {
+    "id": 136,
+    "question": "ちちの　かいしゃは　あの　しろい　ビルです。",
+    "answer0": "今杜",
+    "answer1": "会社",
+    "answer2": "合社",
+    "answer3": "会杜",
+    "correct-index": "answer1",
+    "correct-value": "会社"
+  },
+  {
+    "id": 137,
+    "question": "ちちの　かいしゃは　あの　しろい　ビルです。",
+    "answer0": "日い",
+    "answer1": "古い",
+    "answer2": "白い",
+    "answer3": "新い",
+    "correct-index": "answer2",
+    "correct-value": "白い"
+  },
+  {
+    "id": 138,
+    "question": "日本より　わたしの　くにの　ほうが　みちが　ひろいです。",
+    "answer0": "匤",
+    "answer1": "周",
+    "answer2": "國",
+    "answer3": "国",
+    "correct-index": "answer3",
+    "correct-value": "国"
+  },
+  {
+    "id": 139,
+    "question": "日本より　わたしの　くにの　ほうが　みちが　ひろいです。",
+    "answer0": "週",
+    "answer1": "地",
+    "answer2": "道",
+    "answer3": "通",
+    "correct-index": "answer2",
+    "correct-value": "道"
+  },
+  {
+    "id": 140,
+    "question": "その　はなは　なんの　はな　ですか。",
+    "answer0": "化",
+    "answer1": "花",
+    "answer2": "空",
+    "answer3": "草",
+    "correct-index": "answer1",
+    "correct-value": "花"
+  },
+  {
+    "id": 141,
+    "question": "その　はなは　なんの　はな　ですか",
+    "answer0": "同",
+    "answer1": "何",
+    "answer2": "向",
+    "answer3": "伺",
+    "correct-index": "answer1",
+    "correct-value": "何"
+  },
+  {
+    "id": 142,
+    "question": "よこはままで　でんしゃの　きっぷを　かいました。",
+    "answer0": "雪車",
+    "answer1": "雪話",
+    "answer2": "電車",
+    "answer3": "電話",
+    "correct-index": "answer2",
+    "correct-value": "電車"
+  },
+  {
+    "id": 143,
+    "question": "よこはままで　でんしゃの　きっぷを　かいました。",
+    "answer0": "会いました",
+    "answer1": "買いました",
+    "answer2": "貝ました",
+    "answer3": "頁ました",
+    "correct-index": "answer1",
+    "correct-value": "買いました"
+  },
+  {
+    "id": 144,
+    "question": "きのう　よんだ本について　友だちと　はなしました。",
+    "answer0": "説んだ",
+    "answer1": "読んだ",
+    "answer2": "誖んだ",
+    "answer3": "話んだ",
+    "correct-index": "answer1",
+    "correct-value": "読んだ"
+  },
+  {
+    "id": 145,
+    "question": "きのう　よんだ本について　友だちと　はなしました。",
+    "answer0": "謡しました",
+    "answer1": "読しました",
+    "answer2": "苫しました",
+    "answer3": "話しました",
+    "correct-index": "answer3",
+    "correct-value": "話しました"
+  },
+  {
+    "id": 146,
+    "question": "えきの　なかの　みせで　くすりを　かいました。",
+    "answer0": "駚",
+    "answer1": "験",
+    "answer2": "駅",
+    "answer3": "訳",
+    "correct-index": "answer2",
+    "correct-value": "駅"
+  },
+  {
+    "id": 147,
+    "question": "えきの　なかの　みせで　くすりを　かいました。",
+    "answer0": "占",
+    "answer1": "店",
+    "answer2": "度",
+    "answer3": "度",
+    "correct-index": "answer1",
+    "correct-value": "店"
+  },
+  {
+    "id": 148,
+    "question": "わたしの　かいしゃから　スカイツリーが　みえます。",
+    "answer0": "今杜",
+    "answer1": "会社",
+    "answer2": "合社",
+    "answer3": "会祉",
+    "correct-index": "answer1",
+    "correct-value": "会社"
+  },
+  {
+    "id": 149,
+    "question": "わたしの　かいしゃから　スカイツリーが　みえます",
+    "answer0": "兄えます",
+    "answer1": "貝えます",
+    "answer2": "見えます",
+    "answer3": "自えます",
+    "correct-index": "answer2",
+    "correct-value": "見えます"
+  },
+  {
+    "id": 150,
+    "question": "えきの　にしに　おおきい　ショッピングセンターが　できました。",
+    "answer0": "東",
+    "answer1": "束",
+    "answer2": "西",
+    "answer3": "酒",
+    "correct-index": "answer2",
+    "correct-value": "西"
+  },
+  {
+    "id": 151,
+    "question": "えきの　にしに　おおきい　ショッピングセンターが　できました。",
+    "answer0": "犬きい",
+    "answer1": "太きい",
+    "answer2": "夭きい",
+    "answer3": "大きい",
+    "correct-index": "answer3",
+    "correct-value": "大きい"
+  },
+  {
+    "id": 152,
+    "question": "毎週　すいようび　ごみを　だします。",
+    "answer0": "木よう日",
+    "answer1": "水よう日",
+    "answer2": "氷よう日",
+    "answer3": "永よう日",
+    "correct-index": "answer1",
+    "correct-value": "水よう日"
+  },
+  {
+    "id": 153,
+    "question": "毎週　すいようび　ごみを　だします。",
+    "answer0": "止します",
+    "answer1": "世します",
+    "answer2": "出します",
+    "answer3": "歩します",
+    "correct-index": "answer2",
+    "correct-value": "出します"
+  },
+  {
+    "id": 154,
+    "question": "きょうは　ごごから　てんきが　わるくなります。",
+    "answer0": "午役",
+    "answer1": "牛役",
+    "answer2": "午後",
+    "answer3": "牛後",
+    "correct-index": "answer2",
+    "correct-value": "午後"
+  },
+  {
+    "id": 155,
+    "question": "きょうは　ごごから　てんきが　わるくなります。",
+    "answer0": "天气",
+    "answer1": "夫気",
+    "answer2": "天気",
+    "answer3": "夫气",
+    "correct-index": "answer2",
+    "correct-value": "天気"
+  },
+  {
+    "id": 156,
+    "question": "らいねん　がいこくへ　あそびに　いきます。",
+    "answer0": "未午",
+    "answer1": "未年",
+    "answer2": "来年",
+    "answer3": "学芉",
+    "correct-index": "answer2",
+    "correct-value": "来年"
+  },
+  {
+    "id": 157,
+    "question": "らいねん　がいこくへ　あそびに　いきます",
+    "answer0": "海外",
+    "answer1": "外國",
+    "answer2": "外国",
+    "answer3": "占国",
+    "correct-index": "answer2",
+    "correct-value": "外国"
+  },
+  {
+    "id": 158,
+    "question": "がっこうに　ふるい　門があります。",
+    "answer0": "字交",
+    "answer1": "字校",
+    "answer2": "学枚",
+    "answer3": "学校",
+    "correct-index": "answer3",
+    "correct-value": "学校"
+  },
+  {
+    "id": 159,
+    "question": "がっこうに　ふるい　門があります。",
+    "answer0": "古い",
+    "answer1": "吉い",
+    "answer2": "占い",
+    "answer3": "杏い",
+    "correct-index": "answer0",
+    "correct-value": "古い"
+  },
+  {
+    "id": 160,
+    "question": "かいしゃへ　くるまで　行く人は　すくないです。",
+    "answer0": "車",
+    "answer1": "東",
+    "answer2": "牟",
+    "answer3": "事",
+    "correct-index": "answer0",
+    "correct-value": "車"
+  },
+  {
+    "id": 161,
+    "question": "かいしゃへ　くるまで　行く人は　すくないです。",
+    "answer0": "沙ない",
+    "answer1": "小ない",
+    "answer2": "少ない",
+    "answer3": "水ない",
+    "correct-index": "answer2",
+    "correct-value": "少ない"
+  },
+  {
+    "id": 162,
+    "question": "はさみは　はこの　なかに　いれてください。",
+    "answer0": "甲",
+    "answer1": "中",
+    "answer2": "内",
+    "answer3": "申",
+    "correct-index": "answer1",
+    "correct-value": "中"
+  },
+  {
+    "id": 163,
+    "question": "はさみは　はこの　なかに　いれてください。",
+    "answer0": "言れて",
+    "answer1": "行れて",
+    "answer2": "人れて",
+    "answer3": "入れて",
+    "correct-index": "answer3",
+    "correct-value": "入れて"
+  },
+  {
+    "id": 164,
+    "question": "しょうがくせいが　かいだんの　まえで　あそんでいます。",
+    "answer0": "上学生",
+    "answer1": "少学生",
+    "answer2": "小学生",
+    "answer3": "中学生",
+    "correct-index": "answer2",
+    "correct-value": "小学生"
+  },
+  {
+    "id": 165,
+    "question": "しょうがくせいが　かいだんの　まえで　あそんでいます)",
+    "answer0": "前",
+    "answer1": "則",
+    "answer2": "後",
+    "answer3": "萌",
+    "correct-index": "answer0",
+    "correct-value": "前"
+  },
+  {
+    "id": 166,
+    "question": "ちょっと　この　みせで　やすみませんか。",
+    "answer0": "店",
+    "answer1": "占",
+    "answer2": "点",
+    "answer3": "佔",
+    "correct-index": "answer0",
+    "correct-value": "店"
+  },
+  {
+    "id": 167,
+    "question": "ちょっと　この　みせで　やすみませんか。",
+    "answer0": "体みませんか",
+    "answer1": "本みませんか",
+    "answer2": "牀みませんか",
+    "answer3": "休みませんか",
+    "correct-index": "answer3",
+    "correct-value": "休みませんか"
+  },
+  {
+    "id": 168,
+    "question": "ともだちと　いっしょに　先生に　てがみを　かきました。",
+    "answer0": "友",
+    "answer1": "右",
+    "answer2": "反",
+    "answer3": "皮",
+    "correct-index": "answer0",
+    "correct-value": "友"
+  },
+  {
+    "id": 169,
+    "question": "ともだちと　いっしょに　先生に　てがみを　かきました。",
+    "answer0": "聞きました",
+    "answer1": "画きました",
+    "answer2": "書きました",
+    "answer3": "晝きました",
+    "correct-index": "answer2",
+    "correct-value": "書きました"
+  },
+  {
+    "id": 170,
+    "question": "ゆうめいな　かいしゃの　しゃちょうが　テレビで　はなしていました。",
+    "answer0": "校長",
+    "answer1": "課長",
+    "answer2": "社長",
+    "answer3": "杜長",
+    "correct-index": "answer2",
+    "correct-value": "社長"
+  },
+  {
+    "id": 171,
+    "question": "ゆうめいな　かいしゃの　しゃちょうが　テレビで　はなしていました。",
+    "answer0": "話して",
+    "answer1": "言して",
+    "answer2": "読して",
+    "answer3": "語して",
+    "correct-index": "answer0",
+    "correct-value": "話して"
+  },
+  {
+    "id": 172,
+    "question": "あたらしいくつを　はいていったら　あしが　いたくなりました。",
+    "answer0": "親しい",
+    "answer1": "新しい",
+    "answer2": "折しい",
+    "answer3": "訴しい",
+    "correct-index": "answer1",
+    "correct-value": "新しい"
+  }
+]

@@ -1,12 +1,12 @@
 <div class="row" id="game-scope">
-    <div class="col-md-9 col-sm-9 col-xs-9">
-        <h2>
+    <div class="col-md-8 col-sm-8 col-xs-8">
+        <h3 id="testtitle">
             <span>N5 TEST</span>-
             <span data-i18n="{{title}}"></span>
-        </h2>
+        </h3>
 
         <div id="quiz">
-            <ul>
+            <ul class="f-right">
                 <li ng-repeat="(key, value) in dataset">
                     <a href="#tabs-{{key + 1}}">
                         <span data-i18n="common.part"></span>
@@ -19,10 +19,12 @@
                 <div class="quest-content" ng-repeat="(k, v) in value">
                     <div class="row">
                         <div class="col-md-12">
-                            <p>
+                            <b>
+                            <h3>
                                 <span ng-bind="counter(dataset,key,k)"></span>
-                                <span ng-bind="v.question"></span>
-                            </p>
+                                <span ng-bind="v.question" ></span>
+                            </h3>
+                            </b>
                         </div>
                     </div>
                     <ol class="ans-options">
@@ -35,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs 3">
+    <div class="col-md-4 col-sm-4 col-xs-4">
         <div id="answer" class="wrapper">
             <akranswersheet></akranswersheet>
         </div>

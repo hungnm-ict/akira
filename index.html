@@ -96,11 +96,14 @@
                 userEmail: response.email,
             }
         }).done(function(success) {
-            sessionStorage.setItem("authorized", "true");
-            sessionStorage.setItem("user", JSON.stringify(success));
+            console.log(success);
+            localStorage.setItem("authorized", "true");
+            localStorage.setItem("user", JSON.stringify(success));
+            alert();
             window.location.href = "view/kana";
         }).fail(function(error) {
-            sessionStorage.setItem("authorized", "false");
+            alert("Err");
+            localStorage.setItem("authorized", "false");
         });
     }
 
@@ -149,11 +152,11 @@
                 userEmail: response.emails[0]['value']
             }
         }).done(function(success) {
-            sessionStorage.setItem("authorized", "true");
-            sessionStorage.setItem("user", JSON.stringify(success));
+            localStorage.setItem("authorized", "true");
+            localStorage.setItem("user", JSON.stringify(success));
             window.location.href = "view/totaln5";
         }).fail(function(error) {
-            sessionStorage.setItem("authorized", "false");
+            localStorage.setItem("authorized", "false");
         });
     }
 

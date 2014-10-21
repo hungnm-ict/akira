@@ -38,8 +38,6 @@ testApp.config(['$routeProvider',
                         $q.all(dataPromise).then(function(response) {
                             //Resolve object
                             deferred.resolve(response);
-                            console.log("From route resolved" );
-                            console.info(response);
                         });
 
                         return deferred.promise;
@@ -477,7 +475,7 @@ testApp.service('dataService', function($http, $log) {
 
 testApp.factory('menuFactory', function($rootScope) {
     var navgroup = 0;
-    var nav = 1;
+    var nav = 3;
 
     var menu = {
         "navgroup": navgroup,

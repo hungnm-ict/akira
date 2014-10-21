@@ -32,7 +32,7 @@ body {
     background: url(../../img/background.png) no-repeat right bottom;
     background-size: 40%;
     width: 1366px;
-    margin:0px auto;
+    margin: 0px auto;
 }
 .wrapper {
     position: absolute;
@@ -268,7 +268,7 @@ body {
     background: url('../img/flags/en.png') no-repeat center;
 }
 #left-sidebar {
-    font-size: 20px;
+    font-size: 16px;
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -772,7 +772,7 @@ a:hover {
     margin: 24px 0;
     text-align: center;
 }
-#testoutWizard,#writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizard, #grammarListenWizard, #grammarChoiceWizard, #grammarReadWizard, #grammarTranslateWizard, #grammarWordWizard {
+#testoutWizard, #writeWizard, #listenWizard, #connectWizard, #pictureWizard, #wordWizard, #learnWizard, #grammarListenWizard, #grammarChoiceWizard, #grammarReadWizard, #grammarTranslateWizard, #grammarWordWizard {
     border: 2px solid #344c8c;
     border-radius: 5px;
     background: #fff;
@@ -946,6 +946,7 @@ a:hover {
 }
 #game-scope {
     padding: 0 48px;
+    min-height: 550px;
 }
 #game-scope #quiz, #game-scope #answer {
     /*padding: 0 12px;*/
@@ -964,8 +965,8 @@ a:hover {
 }
 .test-circle {
     display: inline-block !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: 30px !important;
+    height: 30px !important;
     cursor: pointer !important;
     border: 2px solid #344c8c;
     -webkit-border-radius: 50% !important;
@@ -979,12 +980,12 @@ a:hover {
 #finish {
     font-weight: bold;
     width: 100%;
-    height: 40px;
+    /*height: 40px;*/
     margin-top: 24px;
     padding: 6px 12px;
     text-transform: uppercase;
     color: #fff;
-    border-radius: 20px;
+    border-radius: 25px;
     background: #92d050;
 }
 #timecount {
@@ -992,12 +993,12 @@ a:hover {
 }
 #timeleft {
     font-size: 20px;
+    color: #082B54;
     font-weight: bold;
     display: inline-block;
     float: right;
     padding: 6px 24px;
     border-radius: 20px;
-    background: #c0c0c0;
 }
 #test-container {
     padding: 48px;
@@ -1329,7 +1330,7 @@ ul.anchor li a .stepNumber {
 .vocab#writeWizard div#question-wrapper {
     cursor: pointer;
 }
-.vocab#writeWizard div#question-wrapper img.img-responsive,#tesoutWizard div#question-wrapper img.img-responsive {
+.vocab#writeWizard div#question-wrapper img.img-responsive, #tesoutWizard div#question-wrapper img.img-responsive {
     height: 180px !important;
 }
 #topicWizard .lesson-wrapper .img-responsive {
@@ -1337,8 +1338,9 @@ ul.anchor li a .stepNumber {
     border-radius: 10px;
     margin-bottom: 6px;
 }
-#topicWizard .progress.vocab {
+#topicWizard .progress.vocab, #topicWizard .progress.kanji, #topicWizard .progress.kana {
     margin-bottom: 6px;
+    margin-top: 6px;
 }
 #leaderboard .row {
     line-height: 45px;
@@ -1513,31 +1515,79 @@ ul.anchor li a .stepNumber {
     padding-top: 0px !important;
     margin-top: 0px !important;
 }
-#testout-lesson{
+#testout-lesson {
     background: red;
     border-radius: 50%;
     border-color: red;
 }
-
-.stepContainer .img-responsive{
+.stepContainer .img-responsive {
     cursor: pointer;
     border: 2px solid #1659B0;
     border-radius: 5px;
 }
-.stepContainer .img-responsive:hover{
+.stepContainer .img-responsive:hover {
     opacity: 0.5;
 }
-
-.rect-input{
+.rect-input {
     width: 180px !important;
     height: 180px !important;
 }
-
-.rect-input:focus{
+.rect-input:focus {
     /*border-radius: 10px ;*/
+    
     outline-color: #1659B0 !important;
 }
-
-.img-thumbnail{
+.img-thumbnail {
     cursor: pointer;
+}
+#profilePage {
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 2px solid #CCC;
+    padding-top: 24px;
+    min-height: 500px;
+}
+.progress.level, .progress.mentor {
+    height: 18px !important;
+    border-radius: 9px;
+}
+.odd {
+    background: #DCE6F2;
+}
+.bordered {
+    border: 1px solid #5A89C2;
+}
+.quest-content {
+    border-bottom: 5px dotted #DCE6F2;
+}
+.quest-content:last-child {
+    border-bottom: none;
+}
+#quiz>ul {
+    border: none;
+    background: transparent;
+}
+#quiz>ul li {
+    background: #C5DBF1;
+    border-bottom: none;
+    margin: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#quiz>ul li a:focus {
+    outline: none;
+}
+#quiz>ul li.ui-tabs-active {
+    background: #FFFFFF;
+}
+#quiz>ul span {
+    font-weight: bolder;
+}
+#testtitle {
+    position: relative;
+    top: 40px;
+    display: inline;
+    z-index: 20;
+    left: 30px;
+    color: #1C3D63;
 }

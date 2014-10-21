@@ -2,8 +2,13 @@ var akrSharedDirectives = angular.module("akrSharedDirectives", []);
 
 akrSharedDirectives.directive('akrprofile', function() {
     function link(scope, element, attrs) {
-        if (sessionStorage.hasOwnProperty("user")) {
-            scope.user = JSON.parse(sessionStorage.getItem("user"));
+        if (localStorage.hasOwnProperty("user")) {
+            var user = JSON.parse(localStorage.getItem("user"));
+            scope.user = user;
+            scope.userLevel = calculateLevel(akrParseInt(user.exp));
+            scope.userProgress = levelProgress(akrParseInt(user.exp));
+            scope.mentorLevel = calculateLevel(akrParseInt(user.mentor_exp));
+            scope.mentorProgress = levelProgress(akrParseInt(user.mentor_exp));
         } else {
             scope.user = "Anonymous";
         }
@@ -61,7 +66,7 @@ akrSharedDirectives.directive('akirawizard', function() {
             });
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();
-            
+
             $(".fa-lock").tooltip();
             $('#' + attrs.id).show();
         }, 500);
