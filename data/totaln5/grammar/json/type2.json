@@ -1,1261 +1,1252 @@
-[{
-    "id": null,
-    "quest": "content",
-    "": "filename",
-    "answer": "content",
-    "": "filename",
-    "vietnameseq": "",
-    "vietnamesea": "",
-    "englishq": "",
-    "englisha": ""
-}, {
+[
+  {
     "id": 1,
     "quest": "あなたは　やまださんですか",
-    "": "1.2.1_q",
+    "filename": "1.2.1_q",
     "answer": "はい、わたしは　やまだです",
-    "": "1.2.1_a",
     "vietnameseq": "Anh có phải là Yamada?",
     "vietnamesea": "Vâng, tôi là Yamada.",
     "englishq": "Are you Yamada?",
     "englisha": "Yes, I am Yamada."
-}, {
+  },
+  {
     "id": 1,
     "quest": "やまださんは　がくせいですか",
-    "": "1.2.2_q",
+    "filename": "1.2.2_q",
     "answer": "いいえ、がくせいじゃ　ありません",
-    "": "1.2.2_a",
     "vietnameseq": "Anh Yamada có phải sinh viên không?",
     "vietnamesea": "Không, anh ấy không phải sinh viên.",
     "englishq": "Is mr. Miller a student?",
     "englisha": "No, he is not a student."
-}, {
+  },
+  {
     "id": 1,
     "quest": "ぐぷたさんは　インドじんですか",
-    "": "1.2.3_q",
+    "filename": "1.2.3_q",
     "answer": "はい、インドじんです",
-    "": "1.2.3_a",
     "vietnameseq": "Anh Gupta có phải người Ấn Độ không?",
     "vietnamesea": "Vâng, anh ấy là người Ấn Độ.",
     "englishq": "Is mr. Gupta an Indian?",
     "englisha": "Yes, he is an Indian."
-}, {
+  },
+  {
     "id": 1,
     "quest": "あの　かたは　どなたですか",
-    "": "1.2.4_q",
+    "filename": "1.2.4_q",
     "answer": "たくみさんです　さくらだいがくの　せんせいです",
-    "": "1.2.4_a",
     "vietnameseq": "Người kia là ai vậy?",
     "vietnamesea": "Đó là anh Takumi. Anh ấy là giáo viên trường đại học Sakura.",
     "englishq": "Who is that person?",
     "englisha": "He's mr. Takumi. He is a teacher at Sakura University."
-}, {
+  },
+  {
     "id": 1,
     "quest": "あやちゃんは　なんさいですか",
-    "": "1.2.5_q",
+    "filename": "1.2.5_q",
     "answer": "９さいです",
-    "": "1.2.5_a",
     "vietnameseq": "Em Aya mấy tuổi? ",
     "vietnamesea": "Em ấy 9 tuổi.",
     "englishq": "How old is Aya?",
     "englisha": "She's 9 years old."
-}, {
+  },
+  {
     "id": 2,
     "quest": "これは　ボールペンですか",
-    "": "2.2.1_q",
+    "filename": "2.2.1_q",
     "answer": "はい、そうです",
-    "": "2.2.1_a",
     "vietnameseq": "Đây có phải cái bút bi không?",
     "vietnamesea": "Vâng, đúng rồi.",
     "englishq": "Is this a ballpen?",
     "englisha": "Yes, it is."
-}, {
+  },
+  {
     "id": 2,
     "quest": "それは　なんですか",
-    "": "2.2.2_q",
+    "filename": "2.2.2_q",
     "answer": "めいしです",
-    "": "2.2.2_a",
     "vietnameseq": "Đó là cái gì?",
     "vietnamesea": "Là danh thiếp.",
     "englishq": "What is that?",
     "englisha": "It's a business card."
-}, {
+  },
+  {
     "id": 2,
     "quest": "これは　「９」ですか、「７」ですか",
-    "": "2.2.3_q",
+    "filename": "2.2.3_q",
     "answer": "「９」です",
-    "": "2.2.3_a",
     "vietnameseq": "Đây là ",
     "vietnamesea": "Là ",
     "englishq": "Is this ",
     "englisha": "It's "
-}, {
+  },
+  {
     "id": 2,
     "quest": "あれは　だれの　かばんですか",
-    "": "2.2.4_q",
+    "filename": "2.2.4_q",
     "answer": "さとうさんの　かばんです",
-    "": "2.2.4_a",
     "vietnameseq": "Kia là cặp sách của ai?",
     "vietnamesea": "Là cặp sách của anh Sato.",
     "englishq": "Whose bag is that?",
     "englisha": "It's mr. Sato's bag."
-}, {
+  },
+  {
     "id": 2,
     "quest": "これは　やまださんのですか",
-    "": "2.2.5_q",
+    "filename": "2.2.5_q",
     "answer": "いいえ、わたしのじゃ　ありません",
-    "": "2.2.5_a",
     "vietnameseq": "Cái này là của anh Yamada ạ?",
     "vietnamesea": "Không, không phải là của tôi.",
     "englishq": "Does this belong to Yamada?",
     "englisha": "No, it's not mine."
-}, {
+  },
+  {
     "id": 3,
     "quest": "ここは　しんおおさかですか",
-    "": "3.2.1_q",
+    "filename": "3.2.1_q",
     "answer": "はい、そうです",
-    "": "3.2.1_a",
     "vietnameseq": "Đây có phải ga Shin-Osaka không?",
     "vietnamesea": "Vâng, đúng rồi.",
     "englishq": "Is this Shin-Osaka station?",
     "englisha": "Yes, it is."
-}, {
+  },
+  {
     "id": 3,
     "quest": "やまださんは　どこですか",
-    "": "3.2.2_q",
+    "filename": "3.2.2_q",
     "answer": "かいぎしつです",
-    "": "3.2.2_a",
     "vietnameseq": "Anh Yamada ở đâu vậy?",
     "vietnamesea": "Anh ấy ở phòng họp.",
     "englishq": "Where is mr. Yamada?",
     "englisha": "He is in the meeting room."
-}, {
+  },
+  {
     "id": 3,
     "quest": "じむしょは　どちらですか",
-    "": "3.2.3_q",
+    "filename": "3.2.3_q",
     "answer": "あちらです",
-    "": "3.2.3_a",
     "vietnameseq": "Văn phòng ở chỗ nào vậy?",
     "vietnamesea": "Ở đằng kia ạ.",
     "englishq": "Where is the office?",
     "englisha": "It's over there."
-}, {
+  },
+  {
     "id": 3,
     "quest": "それは　どこの　くつですか",
-    "": "3.2.4_q",
+    "filename": "3.2.4_q",
     "answer": "イタリアの　くつです",
-    "": "3.2.4_a",
     "vietnameseq": "Đó là giày của nước nào?",
     "vietnamesea": "Là giày của Ý.",
     "englishq": "Where are these shoes from?",
     "englisha": "They're from Italy."
-}, {
+  },
+  {
     "id": 3,
     "quest": "この　とけいは　いくらですか",
-    "": "3.2.5_q",
+    "filename": "3.2.5_q",
     "answer": "18,600えんです",
-    "": "3.2.5_a",
     "vietnameseq": "Chiếc đồng hồ này giá bao nhiêu?",
     "vietnamesea": "18600 yên.",
     "englishq": "How much is this clock?",
     "englisha": "It's 18600 yen."
-}, {
+  },
+  {
     "id": 4,
     "quest": "いま　なんじですか",
-    "": "4.2.1_q",
+    "filename": "4.2.1_q",
     "answer": "２じ１０ぷん　です",
-    "": "4.2.1_a",
     "vietnameseq": "Bây giờ là mấy giờ?",
     "vietnamesea": "2 giờ 10 phút.",
     "englishq": "What time is it?",
     "englisha": "It's 10 past 2."
-}, {
+  },
+  {
     "id": 4,
     "quest": "やすみは　なんようびですか",
-    "": "4.2.2_q",
+    "filename": "4.2.2_q",
     "answer": "どようびと　にちようびです",
-    "": "4.2.2_a",
     "vietnameseq": "Ngày nghỉ là hôm nào?",
     "vietnamesea": "Thứ bảy và chủ nhật.",
     "englishq": "Which are the days-off?",
     "englisha": "Saturday and Sunday."
-}, {
+  },
+  {
     "id": 4,
     "quest": "ぎんこうは　なんじから　なんじまでですか",
-    "": "4.2.3_q",
+    "filename": "4.2.3_q",
     "answer": "９じから　３じまでです",
-    "": "4.2.3_a",
     "vietnameseq": "Ngân hàng mở cửa từ mấy giờ đến mấy giờ?",
     "vietnamesea": "Từ 9 giờ đến 3 giờ.",
     "englishq": "From what time to what time does the bank open?",
     "englisha": "From 9 o'clock to 3 o'clock."
-}, {
+  },
+  {
     "id": 4,
     "quest": "まいばん　なんじに　ねますか",
-    "": "4.2.4_q",
+    "filename": "4.2.4_q",
     "answer": "１１じに　ねます",
-    "": "4.2.4_a",
     "vietnameseq": "Mỗi tối bạn đi ngủ lúc mấy giờ?",
     "vietnamesea": "Tôi ngủ lúc 11 giờ.",
     "englishq": "What time do you go to sleep every night?",
     "englisha": "I go to sleep at 11 o'clock."
-}, {
+  },
+  {
     "id": 4,
     "quest": "きのう　べんきょうしましたか",
-    "": "4.2.5_q",
+    "filename": "4.2.5_q",
     "answer": "いいえ、べんきょうしませんでした",
-    "": "4.2.5_a",
     "vietnameseq": "Hôm qua bạn có học không?",
     "vietnamesea": "Không, tôi không học.",
     "englishq": "Did you study yesterday?",
     "englisha": "No, I didn't study."
-}, {
+  },
+  {
     "id": 5,
     "quest": "あした　どこへ　いきますか",
-    "": "5.2.1_q",
+    "filename": "5.2.1_q",
     "answer": "ならへ　いきます",
-    "": "5.2.1_a",
     "vietnameseq": "Ngày mai bạn sẽ đi đâu?",
     "vietnamesea": "Tôi sẽ đi Nara.",
     "englishq": "Where are you going tomorrow?",
     "englisha": "I'm going to Nara."
-}, {
+  },
+  {
     "id": 5,
     "quest": "にちようび　どこへ　いきましたか",
-    "": "5.2.2_q",
+    "filename": "5.2.2_q",
     "answer": "どこも　いきませんでした",
-    "": "5.2.2_a",
     "vietnameseq": "Chủ nhật bạn đã đi đâu?",
     "vietnamesea": "Tôi không đi đâu cả.",
     "englishq": "Where did you go on Sunday?",
     "englisha": "I didn't go anywhere."
-}, {
+  },
+  {
     "id": 5,
     "quest": "なんで　とうきょうへ　いきますか",
-    "": "5.2.3_q",
+    "filename": "5.2.3_q",
     "answer": "しんかんせんで いきます",
-    "": "5.2.3_a",
     "vietnameseq": "Bạn đi Tokyo bằng gì?",
     "vietnamesea": "Tôi đi bằng tàu Shinkansen.",
     "englishq": "How do you go to Tokyo?",
     "englisha": "I go by Shinkansen."
-}, {
+  },
+  {
     "id": 5,
     "quest": "だれと　とうきょうへ　いきますか",
-    "": "5.2.4_q",
+    "filename": "5.2.4_q",
     "answer": "やまださんと　いきます",
-    "": "5.2.4_a",
     "vietnameseq": "Bạn đi Tokyo cùng ai?",
     "vietnamesea": "Tôi đi cùng anh Yamada.",
     "englishq": "With whom do you go to Tokyo?",
     "englisha": "I go with mr. Yamada."
-}, {
+  },
+  {
     "id": 5,
     "quest": "いつ　にほんへ　きました",
-    "": "5.2.5_q",
+    "filename": "5.2.5_q",
     "answer": "３がつ２５にちに　きました",
-    "": "5.2.5_a",
     "vietnameseq": "Bạn đến Nhật bao giờ?",
     "vietnamesea": "Tôi đã đến Nhật vào ngày 25 tháng 3.",
     "englishq": "When did you come to Japan?",
     "englisha": "I came to Japan on March 25th"
-}, {
+  },
+  {
     "id": 6,
     "quest": "あさけを　のみますか",
-    "": "6.2.1_q",
+    "filename": "6.2.1_q",
     "answer": "いいえ、のみません",
-    "": "6.2.1_a",
     "vietnameseq": "Bạn có uống rượu không?",
     "vietnamesea": "Không, tôi không uống.",
     "englishq": "Do you drink alcohol?",
     "englisha": "No, I don't."
-}, {
+  },
+  {
     "id": 6,
     "quest": "どようび　なにを　しましたか",
-    "": "6.2.2_q",
+    "filename": "6.2.2_q",
     "answer": "にほんごを　べんきょうしましたそれから　ともだちと　えいがを　みました",
-    "": "6.2.2_a",
     "vietnameseq": "Bạn đã làm gì vào ngày thứ bảy?",
     "vietnamesea": "Tôi học tiếng Nhật. Sau đó tôi đi xem phim với bạn.",
     "englishq": "What did you do on Saturday?",
     "englisha": "I studied Japanese, then I saw a movie with my friends."
-}, {
+  },
+  {
     "id": 6,
     "quest": "どこで　その　かばんを　かいましたか",
-    "": "6.2.3_q",
+    "filename": "6.2.3_q",
     "answer": "メキシコで　かいました",
-    "": "6.2.3_a",
     "vietnameseq": "Bạn đã mua cái cặp đó ở đâu vậy?",
     "vietnamesea": "Tôi mua nó ở Mexico.",
     "englishq": "Where did you buy that bag?",
     "englisha": "I bought it in Mexico."
-}, {
+  },
+  {
     "id": 6,
     "quest": "あした　テニスを　しませんか",
-    "": "6.2.4_q",
+    "filename": "6.2.4_q",
     "answer": "ええ、いいですね",
-    "": "6.2.4_a",
     "vietnameseq": "Sáng mai bạn có chơi tennis cùng tôi không?",
     "vietnamesea": "Ừ, được đấy nhỉ.",
     "englishq": "Shall we play tennis tomorrow?",
     "englisha": "Yeah, that sounds good."
-}, {
+  },
+  {
     "id": 6,
     "quest": "あした　１０じに　えきで　あいましょう",
-    "": "6.2.5_q",
+    "filename": "6.2.5_q",
     "answer": "わかりました",
-    "": "6.2.5_a",
     "vietnameseq": "Ngày mai chúng ta gặp nhau ở ga lúc 10h nhé.",
     "vietnamesea": "Tôi biết rồi.",
     "englishq": "Let's meet at the station at 10 tomorrow.",
     "englisha": "I got it."
-}, {
+  },
+  {
     "id": 7,
     "quest": "テレビで　にほんごを　べんきょうしましたか",
-    "": "7.2.1_q",
+    "filename": "7.2.1_q",
     "answer": "いいえ、ラジオで　べんきょうしました",
-    "": "7.2.1_a",
     "vietnameseq": "bạn học tiếng nhật qua ti vi à?",
     "vietnamesea": "không, tôi học qua đài",
     "englishq": "do you learn japanese from television?",
     "englisha": "no, I learn from radio."
-}, {
+  },
+  {
     "id": 7,
     "quest": "にほんごで　レポートを　かきますか",
-    "": "7.2.2_q",
+    "filename": "7.2.2_q",
     "answer": "いいえ、えいごで　かきます",
-    "": "7.2.2_a",
     "vietnameseq": "bạn viết báo cáo bằng tiếng nhật à?",
     "vietnamesea": "không, tôi viết bằng tiếng anh",
     "englishq": "do you write report in japanese?",
     "englisha": "no, I write in english"
-}, {
+  },
+  {
     "id": 7,
     "quest": "それは　なんですか",
-    "": "7.2.3_q",
+    "filename": "7.2.3_q",
     "answer": "てちょうです山田さんに　もらいました",
-    "": "7.2.3_a",
     "vietnameseq": "đây là gì vậy?",
     "vietnamesea": "máy tính xách tay. Yamada nhận được đấy.",
     "englishq": "what's that?",
     "englisha": "laptop. Yamada received it."
-}, {
+  },
+  {
     "id": 7,
     "quest": "もう　しんかんせんの　きっぷを　かいましたか",
-    "": "7.2.4_q",
+    "filename": "7.2.4_q",
     "answer": "はい、もう　かいました",
-    "": "7.2.4_a",
     "vietnameseq": "bạn đã mua vé cho tàu tốc hành chưa?",
     "vietnamesea": "mình mua rồi",
     "englishq": "have you bought ticket for express train?",
     "englisha": "yes, I have"
-}, {
+  },
+  {
     "id": 7,
     "quest": "もう　ひるごはんを　たべましたか",
-    "": "7.2.5_q",
+    "filename": "7.2.5_q",
     "answer": "いいえ、まだですこれから　たべます",
-    "": "7.2.5_a",
     "vietnameseq": "bạn đã ăn trưa chưa?",
     "vietnamesea": "chưa, giờ mình mới đi ăn.",
     "englishq": "have you ate for lunch?",
     "englisha": "no, I haven't. I will go now"
-}, {
+  },
+  {
     "id": 8,
     "quest": "おおさかは　にぎやかですか",
-    "": "8.2.1_q",
+    "filename": "8.2.1_q",
     "answer": "はい、にぎやかです",
-    "": "8.2.1_a",
     "vietnameseq": "osaka rất náo nhiệt phải không",
     "vietnamesea": "đúng vậy, rất náo nhiệt",
     "englishq": "osaka is noisy, isn't it?",
     "englisha": "yest, it is"
-}, {
+  },
+  {
     "id": 8,
     "quest": "ペキンは　いま　さむいですか",
-    "": "8.2.2_q",
+    "filename": "8.2.2_q",
     "answer": "はい、とても　さむいです",
-    "": "8.2.2_a",
     "vietnameseq": "bắc kinh bây giờ đanh lạnh nhỉ",
     "vietnamesea": "đúng vậy, lạnh lắm",
     "englishq": "now beijing is cold, isn't it?",
     "englisha": "yes, it is"
-}, {
+  },
+  {
     "id": 8,
     "quest": "その　じしょは　いいですか",
-    "": "8.2.3_q",
+    "filename": "8.2.3_q",
     "answer": "いいえ、あまり　よくないです",
-    "": "8.2.3_a",
     "vietnameseq": "cuốn từ điển này hay nhỉ>",
     "vietnamesea": "không, chẳng hay chút nào",
     "englishq": "is this dictionary good?",
     "englisha": "no, it's not"
-}, {
+  },
+  {
     "id": 8,
     "quest": "とうきょうの　ちかてつは　どうですか",
-    "": "8.2.4_q",
+    "filename": "8.2.4_q",
     "answer": "きれいですそして　べんりです",
-    "": "8.2.4_a",
     "vietnameseq": "tàu điện ngầm ở tokyo như thế nào?",
     "vietnamesea": "đẹp lắm. Và cũng tiện nữa",
     "englishq": "how is subway in tokyo?",
     "englisha": "it's beautiful and convenient"
-}, {
+  },
+  {
     "id": 8,
     "quest": "ミラーさんの　かさは　どれですか",
-    "": "8.2.5_q",
+    "filename": "8.2.5_q",
     "answer": "あの　あおい　かさです",
-    "": "8.2.5_a",
     "vietnameseq": "cái ô của mira là cái nào thế?",
     "vietnamesea": "cái màu xanh kia kìa",
     "englishq": "what's mira's umbrella?",
     "englisha": "this blue one."
-}, {
+  },
+  {
     "id": 9,
     "quest": "おさけが　すきですか",
-    "": "9.2.1_q",
+    "filename": "9.2.1_q",
     "answer": "いいえ、すきじゃ　ありません",
-    "": "9.2.1_a",
     "vietnameseq": "bạn thích rượu sake không?",
     "vietnamesea": "không, tôi không thích",
     "englishq": "do you like sake?",
     "englisha": "no, I don't"
-}, {
+  },
+  {
     "id": 9,
     "quest": "どんな　スポーツが　すきですか",
-    "": "9.2.2_q",
+    "filename": "9.2.2_q",
     "answer": "サッカーが　すきです",
-    "": "9.2.2_a",
     "vietnameseq": "bạn thích loại thể thao nào?",
     "vietnamesea": "tôi thích bóng đá",
     "englishq": "what sport do you like",
     "englisha": "I like football"
-}, {
+  },
+  {
     "id": 9,
     "quest": "あきこさんは　えが　じょうずですか",
-    "": "9.2.3_q",
+    "filename": "9.2.3_q",
     "answer": "はい、とても　じょうずです",
-    "": "9.2.3_a",
     "vietnameseq": "Akiko giỏi vẽ tranh phải không?",
     "vietnamesea": "đúng vậy",
     "englishq": "does Akiko draw well?",
     "englisha": "yes, she does"
-}, {
+  },
+  {
     "id": 9,
     "quest": "こまかい　おかねが　ありますか",
-    "": "9.2.4_q",
+    "filename": "9.2.4_q",
     "answer": "いいえ、ありません",
-    "": "9.2.4_a",
     "vietnameseq": "cậu có tiền lẻ không?",
     "vietnamesea": "không, tớ không có",
     "englishq": "do you have change?",
     "englisha": "no, I don't"
-}, {
+  },
+  {
     "id": 9,
     "quest": "どうして　きのう　はやく　かえりましたか",
-    "": "9.2.5_q",
+    "filename": "9.2.5_q",
     "answer": "ようじが　ありましたから",
-    "": "9.2.5_a",
     "vietnameseq": "tại sao hôm qua về sớm thế?",
     "vietnamesea": "vì tôi có việc bận",
     "englishq": "why did you leave soon yesterday? ",
     "englisha": "because I was busy"
-}, {
+  },
+  {
     "id": 10,
     "quest": "この　ちかくに　でんわが　ありますか",
-    "": "10.2.1_q",
+    "filename": "10.2.1_q",
     "answer": "はい、あそこに　あります",
-    "": "10.2.1_a",
     "vietnameseq": "có cái bốt điện thoại nào gần đây không? ",
     "vietnamesea": "có, ở đằng kia",
     "englishq": "is there any phone near here?",
     "englisha": "yes, overthere"
-}, {
+  },
+  {
     "id": 10,
     "quest": "にわに　だれが　いますか",
-    "": "10.2.2_q",
+    "filename": "10.2.2_q",
     "answer": "だれも　いませんねこが　います",
-    "": "10.2.2_a",
     "vietnameseq": "trong vườn có ai không?",
     "vietnamesea": "không có ai đâu. Có con mèo thôi",
     "englishq": "is there anybody in the garden?",
     "englisha": "no, there's only a cat"
-}, {
+  },
+  {
     "id": 10,
     "quest": "はこの　なかに　なにが　ありますか",
-    "": "10.2.3_q",
+    "filename": "10.2.3_q",
     "answer": "ふるい　てがみが　あります",
-    "": "10.2.3_a",
     "vietnameseq": "trong hộp có gì không?",
     "vietnamesea": "có lá thư cũ",
     "englishq": "is there anything in the box?",
     "englisha": "there is some old letters"
-}, {
+  },
+  {
     "id": 10,
     "quest": "やまださんは　どこに　いますか",
-    "": "10.2.4_q",
+    "filename": "10.2.4_q",
     "answer": "かいぎしつに　います",
-    "": "10.2.4_a",
     "vietnameseq": "Yamada ở đâu rồi?",
     "vietnamesea": "trong phòng học đấy",
     "englishq": "where's Yamada?",
     "englisha": "he's in the class"
-}, {
+  },
+  {
     "id": 10,
     "quest": "ゆうびんきょくは　どこに　ありますか",
-    "": "10.2.5_q",
+    "filename": "10.2.5_q",
     "answer": "えきの　ちかくですぎんこうの　まえに　あります",
-    "": "10.2.5_a",
     "vietnameseq": "bưu điện ở đâu vậy?",
     "vietnamesea": "gần nhà ga, trước ngân hàng",
     "englishq": "where's post office",
     "englisha": "near the station, in front of the bank"
-}, {
+  },
+  {
     "id": 11,
     "quest": "りんごを　いくつ　かいましたか",
-    "": "11.2.1_q",
+    "filename": "11.2.1_q",
     "answer": "４つ　かいました",
-    "": "11.2.1_a",
     "vietnameseq": "bạn mua bao nhiêu quả quýt vậy? ",
     "vietnamesea": "tớ mua 4 quả",
     "englishq": "how many oranges do you buy?",
     "englisha": "I buy 4"
-}, {
+  },
+  {
     "id": 11,
     "quest": "８０えんの　きってを　５まいと　はがきを　２まい　ください",
-    "": "11.2.2_q",
+    "filename": "11.2.2_q",
     "answer": "はい、ぜんぶで　５００えんです",
-    "": "11.2.2_a",
     "vietnameseq": "cho tôi mua 5 tem 80 yên và 2 phong bì",
     "vietnamesea": "vâng, tất cả là 500 yên",
     "englishq": "5 stamps 80 yen and 2 envelopes please",
     "englisha": "yes, total of 500 yen "
-}, {
+  },
+  {
     "id": 11,
     "quest": "ふじだいがくに　がいこくじんの　せんせいが　いますか",
-    "": "11.2.3_q",
+    "filename": "11.2.3_q",
     "answer": "はい、３にん　います",
-    "": "11.2.3_a",
     "vietnameseq": "đại học fuji có giáo viên nước ngoài không? ",
     "vietnamesea": "có, 3 người",
     "englishq": "are there any foreign teacher in fuji university?",
     "englisha": "yes, there're 3 people"
-}, {
+  },
+  {
     "id": 11,
     "quest": "かぞくは　なんにんですか",
-    "": "11.2.4_q",
+    "filename": "11.2.4_q",
     "answer": "５にんですりょうしんと　あねと　あにが　います",
-    "": "11.2.4_a",
     "vietnameseq": "nhà bạn có mấy người?",
     "vietnamesea": "5 người. Bố mẹ, chị, anh trai và tôi",
     "englishq": "how many people are there in your family?",
     "englisha": "five people. My parent, my sister, my brother and me."
-}, {
+  },
+  {
     "id": 11,
     "quest": "１しゅうかんに　なんかい　テニスを　しますか",
-    "": "11.2.5_q",
+    "filename": "11.2.5_q",
     "answer": "２かいぐらい　します",
-    "": "11.2.5_a",
     "vietnameseq": "1 tuần cậu chơi tennis mấy lần?",
     "vietnamesea": "khoảng 2 lần",
     "englishq": "how often do you play tennis?",
     "englisha": "about twice"
-}, {
+  },
+  {
     "id": 12,
     "quest": "きょうとは　しずかでしたか",
-    "": "12.2.1_q",
+    "filename": "12.2.1_q",
     "answer": "いいえ、しずかじゃ　ありませんでした",
-    "": "12.2.1_a",
     "vietnameseq": "kyoto yên tĩnh phải không?",
     "vietnamesea": "không, không yên tĩnh",
     "englishq": "is kyoto quiet?",
     "englisha": "no, it's not"
-}, {
+  },
+  {
     "id": 12,
     "quest": "りょこうは　たのしかった　ですか",
-    "": "12.2.2_q",
+    "filename": "12.2.2_q",
     "answer": "はい、とても　たのしかったです",
-    "": "12.2.2_a",
     "vietnameseq": "du lịch rất thú vị phải không?",
     "vietnamesea": "đúng vậy, rất thú vị",
     "englishq": "is traveling  interesting?",
     "englisha": "yes, it is"
-}, {
+  },
+  {
     "id": 12,
     "quest": "てんきは　よかったですか",
-    "": "12.2.3_q",
+    "filename": "12.2.3_q",
     "answer": "いいえ、あまり　よくなかったです",
-    "": "12.2.3_a",
     "vietnameseq": "đèn điện tốt nhỉ?",
     "vietnamesea": "không, chẳng tốt đâu",
     "englishq": "are lights good?",
     "englisha": "no, they're not"
-}, {
+  },
+  {
     "id": 12,
     "quest": "くうこうまで　バスと　でんしゃと　どちらが　はやいですか",
-    "": "12.2.4_q",
+    "filename": "12.2.4_q",
     "answer": "でんしゃの　ほうが　はやいです",
-    "": "12.2.4_a",
     "vietnameseq": "đến sân bay thì xe buýt hay xe điện nhanh ?",
     "vietnamesea": "xe điện nhanh hơn",
     "englishq": "to go to airport, bus and electric vehicles, which is better?",
     "englisha": "electric vehicles are better"
-}, {
+  },
+  {
     "id": 12,
     "quest": "うみと　やまと　どちらが　すきですか",
-    "": "12.2.5_q",
+    "filename": "12.2.5_q",
     "answer": "どちらも　すきです",
-    "": "12.2.5_a",
     "vietnameseq": "bạn thích biển hay núi?",
     "vietnamesea": "không thích cái nào hết",
     "englishq": "do you like sea or mountain?",
     "englisha": "neither"
-}, {
+  },
+  {
     "id": 13,
     "quest": "いま　なにが　いちばん　ほしいですか",
-    "": "13.2.1_q",
+    "filename": "13.2.1_q",
     "answer": "うちが　ほしいです",
-    "": "13.2.1_a",
     "vietnameseq": "bây giờ bạn muốn gì nhất",
     "vietnamesea": "tôi muốn có nhà",
     "englishq": "what do you need most?",
     "englisha": "I need a house"
-}, {
+  },
+  {
     "id": 13,
     "quest": "なつやすみに　どこへ　いきたいですか",
-    "": "13.2.2_q",
+    "filename": "13.2.2_q",
     "answer": "おきなわへ　いきたいです",
-    "": "13.2.2_a",
     "vietnameseq": "nghỉ hè tới bạn muốn đi đâu",
     "vietnamesea": "tôi muốn đi okinawa",
     "englishq": "where will you go next summer?",
     "englisha": "I want to go to okinawa"
-}, {
+  },
+  {
     "id": 13,
     "quest": "きょうは　つかれましたから、なにも　したくないです",
-    "": "13.2.3_q",
+    "filename": "13.2.3_q",
     "answer": "そうですねきょうの　かいぎは　たいへんでしたね　",
-    "": "13.2.3_a",
     "vietnameseq": "vì nay mệt nên tôi chẳng muốn làm gì",
     "vietnamesea": "ừ nhỉ, buổi họp hôm nay mệt thật đấy.",
     "englishq": "because I'm tired, I don't want to do anything",
     "englisha": "yes, this meeting is tiring, isn't it?"
-}, {
+  },
+  {
     "id": 13,
     "quest": "この　しゅうまつは　なにを　しますか",
-    "": "12.3.4_q",
+    "filename": "12.3.4_q",
     "answer": "こどもと　こうべへ　ふねを　みに　いきます",
-    "": "12.3.4_a",
     "vietnameseq": "cuối tuần này bạn làm gì",
     "vietnamesea": "tôi cùng các con tới kobe coi đua thuyền",
     "englishq": "what will you do this weekend?",
     "englisha": "I go with my children to kobe to see the boats"
-}, {
+  },
+  {
     "id": 13,
     "quest": "にほんへ　なんの　べんきょうに　きましたか",
-    "": "13.2.5_q",
+    "filename": "13.2.5_q",
     "answer": "けいざいの　べんきょうに　きました",
-    "": "13.2.5_a",
     "vietnameseq": "bạn tới nhật học gì?",
     "vietnamesea": "tôi tới học kinh tế",
     "englishq": "what will you learn in japan?",
     "englisha": "I will learn economics"
-}, {
+  },
+  {
     "id": 14,
     "quest": "ボールペンで　なまえを　かいて　ください",
-    "": "14.2.1_q",
+    "filename": "14.2.1_q",
     "answer": "はい、わかりました",
-    "": "14.2.1_a",
     "vietnameseq": "Anh/chị hãy viết tên bằng bút bi.",
     "vietnamesea": "Vâng, tôi biết rồi.",
     "englishq": "Please write down your name by ball-point pen.",
     "englisha": "Yes, i know."
-}, {
+  },
+  {
     "id": 14,
     "quest": "すみませんが、この　かんじの　よみかたを　おしえて　ください",
-    "": "14.2.2_q",
+    "filename": "14.2.2_q",
     "answer": "じゅうしょ　ですよ",
-    "": "14.2.2_a",
     "vietnameseq": "Xin lỗi, hãy chỉ cho tôi cách đọc chữ Hán này.",
     "vietnamesea": "Đọc là ",
     "englishq": "Excuse me, please show me how to read this Chinese word.",
     "englisha": "It's read "
-}, {
+  },
+  {
     "id": 14,
     "quest": "あつい　ですねまどを　あけましょうか",
-    "": "14.2.3_q",
+    "filename": "14.2.3_q",
     "answer": "すみませんおねがいします",
-    "": "14.2.3_a",
     "vietnameseq": "Nóng quá nhỉ. Tôi mở cửa sổ nhé.",
     "vietnamesea": "Vâng. Nhờ anh.",
     "englishq": "It's hot, isn't it? Can i open the window?",
     "englisha": "Ok, thanks."
-}, {
+  },
+  {
     "id": 14,
     "quest": "さとうさんは　どこですか",
-    "": "14.2.4_q",
+    "filename": "14.2.4_q",
     "answer": "いま　かいぎしつで　まつもとさんと　はなした　います",
-    "": "14.2.4_a",
     "vietnameseq": "Chị Sato ở đâu?",
     "vietnamesea": "Bây giờ chị ấy đang nói chuyện với ông Matsumoto ở phòng họp.",
     "englishq": "where is Ms Sato?",
     "englisha": "She is talking with Mr.Matsumoto in the meeting room."
-}, {
+  },
+  {
     "id": 14,
     "quest": "あめが　ふって　いますが",
-    "": "14.2.5_q",
+    "filename": "14.2.5_q",
     "answer": "いいえ、ふって　いません",
-    "": "14.2.5_a",
     "vietnameseq": "Trời có (đang) mưa không?",
     "vietnamesea": "Không, không mưa.",
     "englishq": "Is it raining?",
     "englisha": "No. It isn't."
-}, {
+  },
+  {
     "id": 15,
     "quest": "この　じしょを　かりても　いいですか",
-    "": "15.2.1_q",
+    "filename": "15.2.1_q",
     "answer": "すみません、　ちょっと...いま　つかって　います",
-    "": "15.2.1_a",
     "vietnameseq": "Tôi mượn quyển từ điển này có được không?",
     "vietnamesea": "Xin lỗi, không được rồi... Bây giờ tôi đang dùng.",
     "englishq": "Can I borrow this dictionary?",
     "englisha": "Sorry, it's impossible. I'm using it now."
-}, {
+  },
+  {
     "id": 15,
     "quest": "ここで　あそんで　いけません",
-    "": "15.2.2_q",
+    "filename": "15.2.2_q",
     "answer": "はい",
-    "": "15.2.2_a",
     "vietnameseq": "Không được chơi ở đây.",
     "vietnamesea": "Vâng.",
     "englishq": "Don't play here",
     "englisha": "Yes."
-}, {
+  },
+  {
     "id": 15,
     "quest": "しやくしょの　でんわばんごう　すんで　いますか",
-    "": "15.2.3_q",
+    "filename": "15.2.3_q",
     "answer": "いいえしりません",
-    "": "15.2.3_a",
     "vietnameseq": "Anh/chị có biết số điện thoại của tòa nhà thị chính không?",
     "vietnamesea": "Không. Tôi không biết.",
     "englishq": "Do you know the municipal administration's telephone number?",
     "englisha": "No, i don't know."
-}, {
+  },
+  {
     "id": 15,
     "quest": "きよしさんは　けっこんして　いますか",
-    "": "15.2.4_q",
+    "filename": "15.2.4_q",
     "answer": "いいえ、どくしんです",
-    "": "15.2.4_a",
     "vietnameseq": "Anh Kiyoshi lập gia đình rồi à?",
     "vietnamesea": "Chưa. Anh ấy còn độc thân.",
     "englishq": "Mr.Kiyoshihas got marriage, hasn't he?",
     "englisha": "Not yet. He has been single."
-}, {
+  },
+  {
     "id": 15,
     "quest": "おしごとは　なんですか",
-    "": "15.2.5_q",
+    "filename": "15.2.5_q",
     "answer": "きょうしですこうこうで　おしえて　います",
-    "": "15.2.5_a",
     "vietnameseq": "Anh/chị làm nghề gì?",
     "vietnamesea": "Tôi làm giáo viên. Tôi dạy ở trường cấp 3.",
     "englishq": "What do you do?",
     "englisha": "I'm a teacher. I teach in High School."
-}, {
+  },
+  {
     "id": 16,
     "quest": "きょう　なにを　しましたか",
-    "": "16.2.1_q",
+    "filename": "16.2.1_q",
     "answer": "としょかんへ　いって、それから　ともだちに　あいました",
-    "": "16.2.1_a",
     "vietnameseq": "Hôm qua anh/chị làm gì?",
     "vietnamesea": "Tôi đi thư viện mượn sách, sau đó đi gặp bạn.",
     "englishq": "What did you do yesterday?",
     "englisha": "I went to library to borrow books and then went to meet my friend."
-}, {
+  },
+  {
     "id": 16,
     "quest": "だいがくまで　どうやって　いきますか　",
-    "": "16.2.2_q",
+    "filename": "16.2.2_q",
     "answer": "きょうとえきから　１６番のバスに　のって、だいがくまえで　おります",
-    "": "16.2.2_a",
     "vietnameseq": "Anh/chị đến trường (đại học) bằng cách nào",
     "vietnamesea": "Tôi lên xe bus số 16 từ ga Kyoto, rồi xuống ở điểm đỗ Daigaku-mae.",
     "englishq": "How do you go to school?",
     "englisha": "I get in the bus numbered 16 from Kyoto station, then get off the bus in Daigaku - mae station."
-}, {
+  },
+  {
     "id": 16,
     "quest": "いまから　おおさかじょうを　けんがくしますか",
-    "": "16.2.3_q",
+    "filename": "16.2.3_q",
     "answer": "いいえひるごはんを　たべてから、けんがくします",
-    "": "16.2.3_a",
     "vietnameseq": "Anh/chị tính đi tham quan lâu đài Osaka luôn bây giờ à?",
     "vietnamesea": "Không. Chúng tôi sẽ đi sau khi dùng bữa trưa.",
     "englishq": "You're plannning to visit Osaka Castle right now, are you?",
     "englisha": "No.we'll go after having a lunch."
-}, {
+  },
+  {
     "id": 16,
     "quest": "たろうちゃんの　じてんしゃは　どれですか",
-    "": "16.2.4_q",
+    "filename": "16.2.4_q",
     "answer": "あの　あおくて、あたらしい　じてんしゃです",
-    "": "16.2.4_a",
     "vietnameseq": "Xe đạp của Taro là chiếc nào?",
     "vietnamesea": "Là chiếc (xe đạp) mới, màu xanh kia.",
     "englishq": "which is Taro's bycicle?",
     "englisha": "it's the new blue one"
-}, {
+  },
+  {
     "id": 16,
     "quest": "ならは　どなまちですか",
-    "": "16.2.5_q",
+    "filename": "16.2.5_q",
     "answer": "しずかで、きれいな　まちです",
-    "": "16.2.5_a",
     "vietnameseq": "Nara là thành phố như thế nào?",
     "vietnamesea": "Là thành phố yên tĩnh và đẹp.",
     "englishq": "How city is Nara?",
     "englisha": "it's the quite and beautiful."
-}, {
+  },
+  {
     "id": 17,
     "quest": "そこに　くるまを　とめないで　ください",
-    "": "17.2.1_q",
+    "filename": "17.2.1_q",
     "answer": "すみません",
-    "": "17.2.1_a",
     "vietnameseq": "Xin đừng đỗ xe ô tô ở đó.",
     "vietnamesea": "Xin lỗi.",
     "englishq": "please don't park the car there.",
     "englisha": "Sorry."
-}, {
+  },
+  {
     "id": 17,
     "quest": "もう　１２じですよ　ひとりで　だいじょうぶですか",
-    "": "17.2.2_q",
+    "filename": "17.2.2_q",
     "answer": "ええ、　しんぱいしないで　ください　ﾀｸｼｰで　かえりますから",
-    "": "17.2.2_a",
     "vietnameseq": "Đã 12h rồi đấy. Chị về một mình có ổn không đấy?",
     "vietnamesea": "Vâng, anh đừng lo. Tôi sẽ đi về bằng taxi.",
     "englishq": "It's 12 o'clock. Are you ok if coming back home alone?",
     "englisha": "Yes, don't worry. I'll come back by taxi."
-}, {
+  },
+  {
     "id": 17,
     "quest": "こんばん　のみに　いきませんか",
-    "": "17.2.3_q",
+    "filename": "17.2.3_q",
     "answer": "すみません　あしたから　ﾎﾝｺﾝへ　しゅっちょうしなければ　なりません",
-    "": "17.2.3_a",
     "vietnameseq": "Tối nay chúng ta đi uống rượu đi?",
     "vietnamesea": "Xin lỗi. Từ ngày mai tôi phải đi công tác Hồng Kông rồi nên tôi sẽ về nhà sớm.",
     "englishq": "would you like to go to drink with me tonight?",
     "englisha": "Sorry, i have tobe on bussiness in Hong Kong from tomorrow"
-}, {
+  },
+  {
     "id": 17,
     "quest": "こどもも　おかねを　はらわなければ　なりませんか",
-    "": "17.2.4_q",
+    "filename": "17.2.4_q",
     "answer": "いいえ、　はらわなくても　いいです",
-    "": "17.2.4_a",
     "vietnameseq": "Trẻ con cũng phải trả tiền ạ.",
     "vietnamesea": "Không, không phải trả.",
     "englishq": "Do children have to pay money?",
     "englisha": "No, they don't have to pay"
-}, {
+  },
+  {
     "id": 17,
     "quest": "レポートは　いつも　ださなければ　なりませんか　",
-    "": "17.2.5_q",
+    "filename": "17.2.5_q",
     "answer": "きにょうびまでに　だした　ください",
-    "": "17.2.5_a",
     "vietnameseq": "Bài báo cáo phải nộp trước khi nào ạ.",
     "vietnamesea": "Anh hãy nộp trước thứ sáu.",
     "englishq": "when do I have to hand in the report?",
     "englisha": "Please hand in it before Friday."
-}, {
+  },
+  {
     "id": 18,
     "quest": "スキーが　できますか",
-    "": "18.2.1_q",
+    "filename": "18.2.1_q",
     "answer": "はいできますでも　あまり　じょうずじゃ　ありません",
-    "": "18.2.1_a",
     "vietnameseq": "Anh/chị biết trượt tuyết không?",
     "vietnamesea": "Có, tôi có biết. Nhưng không giỏi lắm.",
     "englishq": "Are you able to ski?",
     "englisha": "Yes, i'm able but i'm not so good."
-}, {
+  },
+  {
     "id": 18,
     "quest": "はるさんは　パソコンを　つかう　ことが　できますか",
-    "": "18.2.2_q",
+    "filename": "18.2.2_q",
     "answer": "いいえできません",
-    "": "18.2.2_a",
     "vietnameseq": "Chị Haru có thể sử dụng máy vi tính được không?",
     "vietnamesea": "Không, tôi không.",
     "englishq": "Haru, are you able to use computer?",
     "englisha": "No, I don't."
-}, {
+  },
+  {
     "id": 18,
     "quest": "しゅみは　なんですか",
-    "": "18.2.3_q",
+    "filename": "18.2.3_q",
     "answer": "ふるい　とけいを　あつめる　ことです",
-    "": "18.2.3_a",
     "vietnameseq": "Sở thích của anh/chị là gì?",
     "vietnamesea": "Là sưu tầm đồng hồ cũ.",
     "englishq": "What's your hobby?",
     "englisha": "Collecting old watches."
-}, {
+  },
+  {
     "id": 18,
     "quest": "カードで　はらう　ことが　できますか",
-    "": "18.2.4_q",
+    "filename": "18.2.4_q",
     "answer": "すみませんがげんきんで　おねがいきます",
-    "": "18.2.4_a",
     "vietnameseq": "Tôi có thể trả tiền bằng thẻ được không?",
     "vietnamesea": "Xin lỗi. Xin anh/chị hãy trả bằng tiền mặt.",
     "englishq": "Excuse me, can I pay by cheque?",
     "englisha": "Sorry, can you pay in cash?"
-}, {
+  },
+  {
     "id": 18,
     "quest": "しょくじの　まえに、この　くすりを　のんで　ください",
-    "": "18.2.5_q",
+    "filename": "18.2.5_q",
     "answer": "あい、わかりました",
-    "": "18.2.5_a",
     "vietnameseq": "Anh/chị hãy uống thuốc này trước bữa ăn.",
     "vietnamesea": "Vâng, tôi hiểu rồi.",
     "englishq": "Taking medicine before the meal.",
     "englisha": "yes, i see"
-}, {
+  },
+  {
     "id": 19,
     "quest": "ほっかいどうへ　いった　ことが　ありますか",
-    "": "19.2.1_q",
+    "filename": "19.2.1_q",
     "answer": "はい、いちど　あります2ねんまえに　ともだちと　いきました",
-    "": "19.2.1_a",
     "vietnameseq": "Anh/chị đã từng đi Hokkaido bao giờ chưa?",
     "vietnamesea": "Rồi, tôi đã đi một lần. Tôi đã đi cùng với bạn cách đây 2 năm.",
     "englishq": "Have you gone to Hokkaido before?",
     "englisha": "I have gone to Hokkaido with my friend once for 2 years."
-}, {
+  },
+  {
     "id": 19,
     "quest": "にほんで　なんにを　したいですか",
-    "": "19.2.2_q",
+    "filename": "19.2.2_q",
     "answer": "りょこうを　したり、おちゃを　ならったり　したいです",
-    "": "19.2.2_a",
     "vietnameseq": "Anh/chị muốn làm gì ở Nhật?",
     "vietnamesea": "Tôi muốn đi du lịch, học trà đạo v.v",
     "englishq": "What do you want to do in Japan?",
     "englisha": "I want to go travel, learn Tea ceremony."
-}, {
+  },
+  {
     "id": 19,
     "quest": "からだの　ちょうしは　どうですか",
-    "": "19.2.3_q",
+    "filename": "19.2.3_q",
     "answer": "おかげさまで　よくなりました",
-    "": "19.2.3_a",
     "vietnameseq": "Anh/chị thấy trong người thế nào?",
     "vietnamesea": "Cảm ơn, tôi đã khỏe rồi.",
     "englishq": "How do you feel?",
     "englisha": "Thanks, I’m fine."
-}, {
+  },
+  {
     "id": 19,
     "quest": "にほんごが　じょうずに　なりましたね",
-    "": "19.2.4_q",
+    "filename": "19.2.4_q",
     "answer": "ありがとう　ございますでも、まだまだです",
-    "": "19.2.4_a",
     "vietnameseq": "Tiếng Nhật của anh/chị khá lên nhỉ.",
     "vietnamesea": "Xin cảm ơn. Nhưng còn phải cố gắng nhiều.",
     "englishq": "Your Japanese got better.",
     "englisha": "Thank you. But I have to still try my best."
-}, {
+  },
+  {
     "id": 19,
     "quest": "あやちゃんは　なんに　なりたいですか",
-    "": "19.2.5_q",
+    "filename": "19.2.5_q",
     "answer": "いしゃに　なりたいです",
-    "": "19.2.5_a",
     "vietnameseq": "Em Aya muốn làm nghề gì?",
     "vietnamesea": "Em muốn trở thành bác sĩ.",
     "englishq": "Aya, what do you want to become?",
     "englisha": "I want to become a doctor."
-}, {
+  },
+  {
     "id": 20,
     "quest": "アイスクリーム「を」たべる？",
-    "": "20.2.1_q",
+    "filename": "20.2.1_q",
     "answer": "うん、食べる",
-    "": "20.2.1_a",
     "vietnameseq": "Anh/chị có ăn kem không?",
     "vietnamesea": "Có, tôi có ăn.",
     "englishq": "Would you like to have some ice-scream?",
     "englisha": "Yes, Thank you."
-}, {
+  },
+  {
     "id": 20,
     "quest": "そこに　はさみ「が」ある？",
-    "": "20.2.2_q",
+    "filename": "20.2.2_q",
     "answer": "ううん、はい",
-    "": "20.2.2_a",
     "vietnameseq": "Ở đó có kéo không.",
     "vietnamesea": "Không, không có.",
     "englishq": "Is there a scissors?",
     "englisha": "No, there isn't."
-}, {
+  },
+  {
     "id": 20,
     "quest": "きのう　木村さんに　あって？",
-    "": "20.2.3_q",
+    "filename": "20.2.3_q",
     "answer": "ううん、あわなかった",
-    "": "20.2.3_a",
     "vietnameseq": "Hôm qua anh/chị có gặp chị Kimura không?",
     "vietnamesea": "Không, tôi không gặp.",
     "englishq": "Did you meet Kimura yesterday?",
     "englisha": "No, I didn't meet."
-}, {
+  },
+  {
     "id": 20,
     "quest": "あした　みんなで　きょうと「へ」　いかない？",
-    "": "20.2.4_q",
+    "filename": "20.2.4_q",
     "answer": "ううん、いいね",
-    "": "20.2.4_a",
     "vietnameseq": "Ngày mai nhóm chúng mình đi Kyoto không?",
     "vietnamesea": "Ừ, được đấy.",
     "englishq": "Why don't we go to Kyoto tomorrow?",
     "englisha": "Yes, That's ok."
-}, {
+  },
+  {
     "id": 20,
     "quest": "その　カレーライス「は」おいしい？",
-    "": "20.2.5_q",
+    "filename": "20.2.5_q",
     "answer": "うん、からいけど、おいしい",
-    "": "20.2.5_a",
     "vietnameseq": "Món cari đó có ngon không?",
     "vietnamesea": "Có, tuy hơi cay nhưng ngon.",
     "englishq": "Is the Cari tasty?",
     "englisha": "Yes. A little peppery but tasty."
-}, {
+  },
+  {
     "id": 21,
     "quest": "しごと とかぞくと どちらが たいせつですか",
-    "": "21.2.1_q",
+    "filename": "21.2.1_q",
     "answer": "どちらも　たいせつだと　おもいます",
-    "": "21.2.1_a",
     "vietnameseq": "Công việc và gia đình, cái nào quan trọng hơn?",
     "vietnamesea": "Tôi nghĩ cái nào cũng quan trọng cả.",
     "englishq": "Career and family, which do you think is more important?",
     "englisha": "I think both are important."
-}, {
+  },
+  {
     "id": 21,
     "quest": "にほんに　 ついて どう おもいますか",
-    "": "21.2.2_q",
+    "filename": "21.2.2_q",
     "answer": "ぶっかが　たかいと　おもいます",
-    "": "21.2.2_a",
     "vietnameseq": "Bạn nghĩ thế nào về Nhật Bản?",
     "vietnamesea": "Tôi nghĩ rằng giá cả đắt đỏ.",
     "englishq": "What do you think about Japan?",
     "englisha": "I think the costs are high."
-}, {
+  },
+  {
     "id": 21,
     "quest": "しょくじの　まえに、おいのりを　しますか",
-    "": "21.2.3_q",
+    "filename": "21.2.3_q",
     "answer": "いいえ、しませんが、‘いただきます’と　いいます",
-    "": "21.2.3_a",
     "vietnameseq": "Các bạn có cầu nguyện trước bữa ăn không?",
     "vietnamesea": "Không, chúng tôi không cầu nguyện, nhưng chúng tôi nói ",
     "englishq": "Do you pray before a meal?",
     "englisha": "No, we don't, but we say "
-}, {
+  },
+  {
     "id": 21,
     "quest": "かいぎで　 なんにか　いけんを　いいましたか",
-    "": "21.2.4_q",
+    "filename": "21.2.4_q",
     "answer": "はい、むだな　コピーが　おおいと　いいました",
-    "": "21.2.4_a",
     "vietnameseq": "Trong cuộc họp bạn có phát biểu ý kiến gì không?",
     "vietnamesea": "Có, tôi có nói là có nhiều phần copy lãng phí.",
     "englishq": "Did you say anything at the meeting?",
     "englisha": "Yes, I said there were a lot of wasteful photocopoied documents."
-}, {
+  },
+  {
     "id": 21,
     "quest": "７月に　京都で　お祭りが　あるでしょう？",
-    "": "21.2.5_q",
+    "filename": "21.2.5_q",
     "answer": "ええ、あります",
-    "": "21.2.5_a",
     "vietnameseq": "Tháng 7 ở Kyoto chắc có lễ hội, phải không?",
     "vietnamesea": "Vâng, có ạ.",
     "englishq": "There is a festival in Kyoto in July, right?",
     "englisha": "That's right, there is."
-}, {
+  },
+  {
     "id": 22,
     "quest": "これは　万里の長城で　撮った　写真です",
-    "": "22.2.1_q",
+    "filename": "22.2.1_q",
     "answer": "そうですかすごいですね",
-    "": "22.2.1_a",
     "vietnameseq": "Đây là bức ảnh tôi chụp ở Vạn Lý Trường Thành",
     "vietnamesea": "Thế à,hay quá nhỉ.",
     "englishq": "This is the picture that I took in Great Wall.",
     "englisha": "It's so great."
-}, {
+  },
+  {
     "id": 22,
     "quest": "あきこさんが　かいた　絵は　どれですか",
-    "": "22.2.2_q",
+    "filename": "22.2.2_q",
     "answer": "あれですあの　海の　絵です",
-    "": "22.2.2_a",
     "vietnameseq": "Bức tranh mà chị Akiko vẽ là bức nào?",
     "vietnamesea": "Bức kia,bức tranh biển kia.",
     "englishq": "Which picture did Akiko paint?",
     "englisha": "That one, the picture of beach."
-}, {
+  },
+  {
     "id": 22,
     "quest": "あの　着物を　着て　いる人は　だれですか",
-    "": "22.2.3_q",
+    "filename": "22.2.3_q",
     "answer": "木村さんです",
-    "": "22.2.3_a",
     "vietnameseq": "Người đang mặc áo kimono kia là ai?",
     "vietnamesea": "Là chị Kimura.",
     "englishq": "The person wearing kimono is who?",
     "englisha": "Ms. Kimura"
-}, {
+  },
+  {
     "id": 22,
     "quest": "山田三、奥さんに　初めて　会った　所は　どこですか、",
-    "": "22.2.4_q",
+    "filename": "22.2.4_q",
     "answer": "大阪　城です",
-    "": "22.2.4_a",
     "vietnameseq": "Anh Yamada,chỗ lần đầu tiên anh gặp vợ anh là chỗ nào?",
     "vietnamesea": "Là lâu đài Osaka.",
     "englishq": "Yamada, where did you meet your wife the first time?",
     "englisha": "Osaka castle."
-}, {
+  },
+  {
     "id": 22,
     "quest": "木村さんと　行った　コンサートは　どうでしたか",
-    "": "22.2.5_q",
+    "filename": "22.2.5_q",
     "answer": "とても　よかったです",
-    "": "22.2.5_a",
     "vietnameseq": "Buổi hòa nhạc mà bạn đi cùng với chị Kimura thế nào?",
     "vietnamesea": "Rất thú vị.",
     "englishq": "How was the concert that you went with Kimura?",
     "englisha": "It was very interesting."
-}, {
+  },
+  {
     "id": 23,
     "quest": "よく　テレビを　みますか",
-    "": "23.2.1_q",
+    "filename": "23.2.1_q",
     "answer": "そこですね野球の　試合が　ある　とき、見ます",
-    "": "23.2.1_a",
     "vietnameseq": "A/c có hay xem tivi không?",
     "vietnamesea": "À...khi có trận đấu bóng chày thì tôi xem.",
     "englishq": "Do you often watch TV?",
     "englisha": "Whenever there is a baseball match."
-}, {
+  },
+  {
     "id": 23,
     "quest": "冷蔵庫に　何も　ないとき、どうしますか",
-    "": "23.2.2_q",
+    "filename": "23.2.2_q",
     "answer": "近くの　レツトランへ　食べに　行きます",
-    "": "23.2.2_a",
     "vietnameseq": "Khi trong tủ lạnh không có gì thì anh/chị làm gì?",
     "vietnamesea": "Tôi đi ăn cái gì đó ở nhà hàng gần nhà.",
     "englishq": "When there is nothing in fridge, what would you do?",
     "englisha": "I would eat something in the near restaurant."
-}, {
+  },
+  {
     "id": 23,
     "quest": "会議室を　出る　とき、エアコンを　消しましたか",
-    "": "23.2.3_q",
+    "filename": "23.2.3_q",
     "answer": "はい、消しました",
-    "": "23.2.3_a",
     "vietnameseq": "Khi rời phòng họp anh/chị đã tắt máy điều hòa chưa?",
     "vietnamesea": "Xin lỗi,tôi quên mất.",
     "englishq": "Had you turned off the air condition when you left the meeting room?",
     "englisha": "I'm sorry. I did forget."
-}, {
+  },
+  {
     "id": 23,
     "quest": "サントスさんは　どこで　服や　靴を　買いますか",
-    "": "23.2.4_q",
+    "filename": "23.2.4_q",
     "answer": "国へ　帰った　とき、買います日本のは　小さいですから",
-    "": "23.2.4_a",
     "vietnameseq": "Anh Santo mua quần áo,giầy dép ở đâu?",
     "vietnamesea": "Tôi mua khi về nước,vì đồ ở Nhật nhỏ so với tôi.",
     "englishq": "When do you buy your clothes and shoes?",
     "englisha": "When coming back my country, because Japanese ones are small."
-}, {
+  },
+  {
     "id": 23,
     "quest": "それは　何ですか",
-    "": "23.2.5_q",
+    "filename": "23.2.5_q",
     "answer": "「元気茶」です体の　調子が　悪いとき、飲みます",
-    "": "23.2.5_a",
     "vietnameseq": "Đó là cái gì?",
     "vietnamesea": "Là ''trà Genki'',khi thấy người không được khỏe thì uống.",
     "englishq": "What is that?",
     "englisha": "That's Genki tea to drink when you feel not good."
-}, {
+  },
+  {
     "id": 24,
     "quest": "たろうくんは　おばあちゃんが　すきですか",
-    "": "24.2.1_q",
+    "filename": "24.2.1_q",
     "answer": "はい、すきですおばあちゃんは　いつも　おかしを　くれます",
-    "": "24.2.1_a",
     "vietnameseq": "Em Taro có yêu bà không?",
     "vietnamesea": "Có, em yêu bà ạ. Bà thường cho em ăn bánh kẹo.",
     "englishq": "Taro, do you love your grandmother?",
     "englisha": "Yes, I do. She always gives me sweets."
-}, {
+  },
+  {
     "id": 24,
     "quest": "おいしい　ワインですね",
-    "": "24.2.2_q",
+    "filename": "24.2.2_q",
     "answer": "ええ、さとうさんが　くれましたフランスの　ワインです",
-    "": "24.2.2_a",
     "vietnameseq": "Rượu vang này ngon nhỉ.",
     "vietnamesea": "Vâng, anh Sato tặng tôi đấy ạ. Rượu vang của Pháp đấy.",
     "englishq": "This wine is good, isn’t it!",
     "englisha": "Yes, Mr.Sato gave it to me. It's French wine."
-}, {
+  },
+  {
     "id": 24,
     "quest": "たろうは　ははのひに　おかあさんに　なにを　して　あげますか",
-    "": "24.2.3_q",
+    "filename": "24.2.3_q",
     "answer": "ピアノを　ひいて　あげます",
-    "": "24.2.3_a",
     "vietnameseq": "Em Taro đã làm gì cho mẹ nhân ngày của Mẹ?",
     "vietnamesea": "Em đã chơi đàn dương cầm cho mẹ nghe.",
     "englishq": "Taro, what did you do for your mother on Mother's Day?",
     "englisha": "I played the piano for her."
-}, {
+  },
+  {
     "id": 24,
     "quest": "やまださん、きのうの　パーティーの　りょうりは　ぜんぶ　じぶんで　つくりましたか",
-    "": "24.2.4_q",
+    "filename": "24.2.4_q",
     "answer": "いいえ、はたけさんに　てつって　もらいました",
-    "": "24.2.4_a",
     "vietnameseq": "Anh Yamada, món ăn trong  bữa tiệc hôm qua là do anh làm đấy hả?",
     "vietnamesea": "Không, anh Hatake đã giúp tôi đấy.",
     "englishq": "Mr.Yamada, did you make all the food at the party yesterday by yourself?",
     "englisha": "No, Mr.Hataka helped me."
-}, {
+  },
+  {
     "id": 24,
     "quest": "でんしゃで　いきましたか、",
-    "": "24.2.5_q",
+    "filename": "24.2.5_q",
     "answer": "いいえ、やまださんが　くるまで　おくって　くれました",
-    "": "24.2.5_a",
     "vietnameseq": "Bạn đã đi bằng tàu điện à?",
     "vietnamesea": "Không, anh Yamada đã chở tôi đi.",
     "englishq": "Did you go by train?",
     "englisha": "No, Mr.Yamada escorted me."
-}, {
+  },
+  {
     "id": 25,
     "quest": "もし　いちおくえん　あったら、なに　をしたいですか",
-    "": "25.2.1_q",
+    "filename": "25.2.1_q",
     "answer": "コンピュータソフトのかいしゃをつくりたいです",
-    "": "25.2.1_a",
     "vietnameseq": "Nếu có 100 triệu yên thì bạn sẽ làm gì?",
     "vietnamesea": "Tôi sẽ mở một công ti phần mềm máy vi tính.",
     "englishq": "If you had a hundred thousand dollars, what would you do?",
     "englisha": "I will open a computer software company."
-}, {
+  },
+  {
     "id": 25,
     "quest": "やくそくの　じかんに　ともだちが　こなかったら、どうしますか",
-    "": "25.2.2_q",
+    "filename": "25.2.2_q",
     "answer": "すぐかえります",
-    "": "25.2.2_a",
     "vietnameseq": "Nếu đến giờ hẹn mà bạn không đến thì anh/chị sẽ làm gì?",
     "vietnamesea": "Tôi sẽ về ngay.",
     "englishq": "If a friend doesn't come on time, what will you do?",
     "englisha": "I will go home immediately."
-}, {
+  },
+  {
     "id": 25,
     "quest": "あのあたらしい　くつやは　いいくつが　たくさん　ありますよ",
-    "": "25.2.3_q",
+    "filename": "25.2.3_q",
     "answer": "そうですかやすかったら　かいいたいです",
-    "": "25.2.3_a",
     "vietnameseq": "Ở cửa hàng giầy mới kia có nhiều giầy tốt đấy.",
     "vietnamesea": "Thế à, nếu rẻ thì tôi sẽ mua.",
     "englishq": "There are many nice shoes at that new shoe store.",
     "englisha": "Really? If they're cheap, I want to buy them."
-}, {
+  },
+  {
     "id": 25,
     "quest": "あしたまでに　レポートを　ださなければ　なりませんか",
-    "": "25.2.4_q",
+    "filename": "25.2.4_q",
     "answer": "いいえ、むりだったら、きんようびに　だしてください",
-    "": "25.2.4_a",
     "vietnameseq": "Tôi phải nộp bài báo cáo trước ngày mai có phải không?",
     "vietnamesea": "Không. Nếu không kịp thì anh/chị cứ nộp vào thứ sáu.",
     "englishq": "Do I have to hand in my report by tomorrow?",
     "englisha": "No. If it's impossible, you can hand it in on Friday."
-}, {
+  },
+  {
     "id": 25,
     "quest": "もう　こどもの　なまえを　かんがえましたか",
-    "": "25.2.5_q",
+    "filename": "25.2.5_q",
     "answer": "ええ、おとこの子だったら、「ひかる」ですおんなのこだったら、「あや」です",
-    "": "25.2.5_a",
     "vietnameseq": "Anh/chị đã nghĩ ra tên cho con chưa?",
     "vietnamesea": "Rồi ạ. Nếu con trai thì là ''Hikaru'', nếu con gái thì là ''Aya''.",
     "englishq": "Have you thought of a name for your child?",
     "englisha": "Yes, if it's a boy, it'll be "
-}]
+  }
+]

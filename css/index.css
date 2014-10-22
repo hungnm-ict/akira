@@ -1586,7 +1586,7 @@ ul.anchor li a .stepNumber {
     height: 18px !important;
     border-radius: 9px;
 }
-.odd {
+.odd>div{
     background: #DCE6F2;
 }
 .bordered {
