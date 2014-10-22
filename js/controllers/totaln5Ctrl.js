@@ -30,10 +30,34 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, totalStar, 
     $scope.grammarprogress = progress.grammar;
 
     $scope.partId = window.sessionStorage.getItem("mainSelected") == null ? 0 : window.sessionStorage.getItem("mainSelected");
+
     $scope.subtopicChanged = function(id) {
         window.sessionStorage.clear();
         $scope.partId = id;
         window.sessionStorage.setItem("mainSelected", id - 1);
+    }
+
+
+    $scope.isLocked = function(lesson) {
+        try {
+            switch ($routeParams.degree) {
+                case "n5":
+                    if (lesson - 1 <= getUser().totaln5)
+                        return ""
+                    else return "lessonlocked";
+                    break;
+                case "n4":
+                    if (lesson - 1 <= getUser().totaln4)
+                        return ""
+                    else return "lessonlocked";
+                    break;
+                default:
+                    return "lessonlocked";
+            }
+        } catch (err) {
+            console.error(err);
+            return "lessonlocked";
+        }
     }
 
 });

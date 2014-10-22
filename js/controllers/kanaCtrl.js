@@ -1,20 +1,19 @@
-var totaln5Ctrls = angular.module('totaln5Ctrls', []);
+var totaln5Ctrls = angular.module('kanaCtrls', []);
 
 totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, kanaStar) {
     $scope.course = "kana";
     $scope.kanastar = getCourseStar(kanaStar.data, 'kana');
     $scope.kanaprogress = getCourseProgress(kanaStar.data, 'kana', 5, 5);
-    
     window.sessionStorage.clear();
 });
 
-totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, restService) {
-    restService.getRestPromise("kana").then(function(deferred) {
-        $scope.progress = deferred.data;
-        $scope.starData = deferred.data;
-        $scope.kanaStar = getLessonStar(deferred.data, 'kana', $routeParams.lessonId);
-        $scope.enabled = getUnlockedSub(deferred.data, 'kana', $routeParams.lessonId);
-    });
+totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, restService,kanaStar) {
+    // restService.getRestPromise("kana").then(function(deferred) {
+        $scope.progress = kanaStar.data;
+        $scope.starData = kanaStar.data;
+        $scope.kanaStar = getLessonStar(kanaStar.data, 'kana', $routeParams.lessonId);
+        $scope.enabled = getUnlockedSub(kanaStar.data, 'kana', $routeParams.lessonId);
+    // });
 
     $scope.partId = window.sessionStorage.getItem("subSelected") == null ? 0 : window.sessionStorage.getItem("subSelected");
     $scope.course = "kana";
@@ -335,7 +334,7 @@ totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, d
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
-            //$("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
+            $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             if (compare(correct, userSlt)) {
                 playCorrect();

@@ -375,14 +375,13 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
         }
     };
 
-    $scope.check = function(lesson) {
+    $scope.check = function(e,lesson) {
         //Get current key point for this courses
         $http({
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=total" + $routeParams.degree + "&userid=" + getUser().id
         }).success(function(data, status) {
             if (akrParseInt(data) >= (lesson - 1)) {
-                console.info("Ban du keypoint de hoc bai nay");
                 $window.location.href = "#/" + $routeParams.degree + "/" + lesson;
             } else {
                 alert(i18n.t("message.info.keypoint"));

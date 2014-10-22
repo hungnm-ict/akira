@@ -53,12 +53,12 @@
                 <tr>
                     <td>
                         <div class="row">
-                            <div class="col-md-2 col-md-offset-3">
+                            <div class="col-md-2 col-md-offset-3" ng-class="isLocked((step*2-4)*3+1)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{(step*2-4)*3+1}}</span>
                                 </label>
-                                <a class="thumb" ng-click="check((step*2-4)*3+1)">
+                                <a class="thumb" ng-click="check(this,(step*2-4)*3+1)">
                                     <img ng-src="../../img/{{course}}/topic/{{(step*2-4)*3+1}}.png" alt="{{(step*2-4)*3+1}}" class="img-responsive">
                                 </a>
                                 <div class="progress vocab">
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2" ng-class="isLocked((step*2-4)*3+2)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{(step*2-4)*3+2}}</span>
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2" ng-class="isLocked((step*2-4)*3+3)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{(step*2-4)*3+3}}</span>
@@ -110,7 +110,8 @@
                 <tr>
                     <td>
                         <div class="row">
-                            <div class="col-md-2 col-md-offset-2">
+                            <div class="col-md-1" ng-show="24 == ((step*2-4)*3+6)"></div>
+                            <div class="col-md-2 col-md-offset-2" ng-class="isLocked((step*2-4)*3+4)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{(step*2-4)*3+4}}</span>
@@ -127,7 +128,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2" ng-class="isLocked((step*2-4)*3+5)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{(step*2-4)*3+5}}</span>
@@ -144,7 +145,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2" ng-class="isLocked((step*2-4)*3+6)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{(step*2-4)*3+6}}</span>
@@ -161,13 +162,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2" ng-hide="24 == ((step*2-4)*3+6)">
                                 <label>
                                     <span>Pass</span>
-                                    <span>&nbsp;{{(step*2-4)*3+6}} &nbsp;</span><span style="text-transform:lowercase" data-i18n="common.lesson"></span>
+                                    <span>&nbsp;{{(step*2-4)*3+6}} &nbsp;</span>
+                                    <span style="text-transform:lowercase" data-i18n="common.lesson"></span>
                                 </label>
                                 <a class="thumb" style="color:red; " ng-click="pass('big',(step*2-4)*3+6)">
-                                    <img ng-src="../../img/w-key.png" class="img-responsive"  id="testout-lesson">
+                                    <img ng-src="../../img/w-key.png" class="img-responsive" id="testout-lesson">
                                 </a>
                             </div>
                         </div>

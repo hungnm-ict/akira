@@ -39,7 +39,7 @@
                     <div id="user-input-wrapper">
                         <div class="row none-padding">
                             <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                <input class="form-control write-control" type="text" id="input-{{key}}" placeholder="TYPING VIETNAMESE" ng-keyup="keyPress(key,$event.keyCode)" />
+                                <input class="form-control write-control" type="text" id="input-{{key}}" placeholder="TYPING ROMAJI" ng-keyup="keyPress(key,$event.keyCode)" />
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <span ng-bind="val.vietnamese"></span>
+                        <span ng-bind="val.romaji"></span>
                     </div>
                 </div>
             </div>
@@ -76,12 +76,7 @@
                                     </td>
                                     <td class="top-none">
                                         <div>
-                                            <span ng-bind="val.hiragana" class="hint"></span>
-                                        </div>
-                                    </td>
-                                    <td class="top-none">
-                                        <div>
-                                            <span class="hint" ng-bind="val.vietnamese"></span>
+                                            <span ng-bind="val.romaji" class="hint"></span>
                                         </div>
                                     </td>
                                 </tr>

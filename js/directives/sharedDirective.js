@@ -106,3 +106,18 @@ akrSharedDirectives.directive('akrlife', function() {
         }
     };
 });
+
+
+akrSharedDirectives.directive('akrdomshuffle', function() {
+    function link(scope, element, attrs) {
+        setTimeout(function() {
+            $(".hira-wrapper span").shuffle();
+            $(".vi-wrapper span").shuffle();
+        }, 1);
+    }
+
+    return {
+        restrict: 'AC',
+        link: link
+    };
+})

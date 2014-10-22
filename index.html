@@ -99,10 +99,8 @@
             console.log(success);
             localStorage.setItem("authorized", "true");
             localStorage.setItem("user", JSON.stringify(success));
-            alert();
             window.location.href = "view/kana";
         }).fail(function(error) {
-            alert("Err");
             localStorage.setItem("authorized", "false");
         });
     }

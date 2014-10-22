@@ -30,7 +30,7 @@
                     <div id="user-input-wrapper">
                         <div class="row none-padding">
                             <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                <input class="form-control write-control" type="text" id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" />
+                                <input class="form-control write-control" type="text" id="input-{{key}}" placeholder="TYPING ROMAJI" ng-keyup="keyPress(key,$event.keyCode)" />
                             </div>
                         </div>
                     </div>
@@ -50,18 +50,34 @@
             <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
                 <div class="row mess-holder-{{key}}">
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row top-none hide" id="mess-{{key}}">
-                            <div class="col-md-12 col-xs-12 col-sm-12">
-                                <span class="correct-child">
-                                    <span class="test-circle"></span>
-                                </span>
-                                <span class="failed-child">
-                                    <i class="fa fa-times fa-4x"></i>
-                                </span>
-                                <span class="hint" ng-bind="val.romaji"></span>
-                                <span class="hint" ng-bind="val.vietnamese"></span>
-                            </div>
-                        </div>
+                    <table class="table top-none  hide">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="row" id="mess-{{key}}">
+                                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                                <span class="correct-child">
+                                                    <span class="test-circle"></span>
+                                                </span>
+                                                <span class="failed-child">
+                                                    <i class="fa fa-times fa-4x"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="top-none">
+                                        <div>
+                                            <span ng-bind="val.romaji" class="hint"></span>
+                                        </div>
+                                    </td>
+                                    <td class="top-none">
+                                        <div>
+                                            <span class="hint" ng-bind="val.vietnamese"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="col-md-3 col-sm-3 col-xs-3  col-md-offset-1 col-sm-offset-1 col-xs-offset-1 ">

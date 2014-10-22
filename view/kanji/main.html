@@ -1,4 +1,4 @@
-<div id="topicWizard" class="swMain akiHide" akirawizard enablestep="true">
+<div id="topicWizard" class="swMain akiHide" akirawizard enablestep="true" ng-class="{'top-none':degree=='n4'}">
     <ul ng-class="{'hide': page.length == 1}">
         <li ng-repeat="(key, value) in page">
             <a href="#step-{{key}}">
@@ -49,7 +49,7 @@
                                     <span style="text-transform:lowercase" data-i18n="common.lesson"></span>
                                 </label>
                                 <a class="thumb" style="color:red; " ng-click="pass(degree,'big',3* value + v + 1)">
-                                    <img ng-src="../../img/w-key.png" class="img-responsive"  id="testout-lesson">
+                                    <img ng-src="../../img/w-key.png" class="img-responsive" id="testout-lesson">
                                 </a>
                             </div>
                             <div class="col-md-2" ng-repeat="(k, v) in [3,4,5]">

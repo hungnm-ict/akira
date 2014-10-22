@@ -55,7 +55,7 @@
         "info": {
             "anonymous": "Đăng nhập để lưu được điểm",
             "buy": "Bạn cần mua thẻ để sử dụng tính năng này",
-            "keypoint": "Bạn chưa đủ keypoint để học bài này",
+            "keypoint": "Bạn chưa đủ số sao để học bài này",
             "end": "Bài học kết thúc",
             "score": "Bạn nhận được",
             "testfailed": "Bạn không vượt qua bài test",
@@ -65,7 +65,8 @@
             "enter": "Submit answer",
             "choice": "Select multiple choice answers",
             "play": "Replay audio",
-            "playSlow": "Replay audio slower"
+            "playSlow": "Replay audio slower",
+            "back": "Quay lại"
         }
     }
 }

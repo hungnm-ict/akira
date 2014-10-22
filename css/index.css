@@ -189,8 +189,8 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
-    margin-bottom: 12px;
+    /*width: 100%;*/
+    /*margin-bottom: 12px;*/
 }
 #social .fb {
     color: #45619d;
@@ -247,7 +247,7 @@ body {
 #site-lang {
     /*background: #344c8c;*/
     
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
 }
 #site-lang span {
@@ -303,7 +303,7 @@ body {
     background: #1659b0;
 }
 #left-sidebar li a {
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block;
     width: 100%;
     padding-left: 24px;
@@ -587,7 +587,13 @@ ul.anchor {
     color: #568ED4;
 }
 #subtopicWizard ul.anchor>li:last-child:after {
-    content: '' !important;
+    content: '';
+}
+#subtopicWizard ul.anchor>li:nth-last-child(2):after {
+    content: '';
+}
+#subtopicWizard.kanasub ul.anchor>li:nth-last-child(2):after {
+    content: '-';
 }
 #subtopicWizard ul.anchor li a.selected, #leaderboardWizard ul.anchor li a.selected {
     color: #344c8c;
@@ -665,6 +671,9 @@ ul.anchor {
 }
 a:hover {
     text-decoration: none;
+}
+a:focus {
+    outline: none;
 }
 .actionBar {
     display: none !important;
@@ -822,6 +831,10 @@ a:hover {
 }
 #aki-answer-wrapper td {
     border-top: none;
+}
+#aki-answer-wrapper .test-circle {
+    width: 40px !important;
+    height: 40px !important;
 }
 .pictureWizard .actionBar, .wordWizard .actionBar {
     display: none !important;
@@ -981,6 +994,7 @@ a:hover {
     font-weight: bold;
     width: 100%;
     /*height: 40px;*/
+    
     margin-top: 24px;
     padding: 6px 12px;
     text-transform: uppercase;
@@ -1368,10 +1382,10 @@ ul.anchor li a .stepNumber {
 #game-scope #quiz {
     max-height: 480px;
 }
-#kanji #topicWizard {
+#kanji #topicWizard, #kana #topicWizard {
     padding-top: 74px;
 }
-#listenWizard .akira-input {
+.kanjiPage {} #listenWizard .akira-input {
     border-radius: 15px !important;
 }
 #grammarChoiceWizard .wrapper {
@@ -1590,4 +1604,10 @@ ul.anchor li a .stepNumber {
     z-index: 20;
     left: 30px;
     color: #1C3D63;
+}
+.lessonlocked:before {
+    content: url("../img/lessonlock.png");
+    position: absolute;
+    top: 25px;
+    right: 20px;
 }

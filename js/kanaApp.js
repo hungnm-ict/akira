@@ -1,4 +1,4 @@
-var totaln5App = angular.module('totaln5App', ['ngRoute', 'totaln5Ctrls', 'totaln5Directives', 'commonCtrls', 'akrSharedDirectives']);
+var totaln5App = angular.module('totaln5App', ['ngRoute', 'kanaCtrls', 'commonCtrls', 'akrSharedDirectives']);
 
 totaln5App.config(['$routeProvider',
     function($routeProvider) {
@@ -25,6 +25,13 @@ totaln5App.config(['$routeProvider',
                     if (urlattr.lessonId == 3 || urlattr.lessonId == 4)
                         return '../kana/katasub.html';
                 },
+                resolve: {
+                    kanaStar: function($q, restService) {
+                        var deferred = $q.defer();
+                        deferred.resolve(restService.getRestPromise("kana"));
+                        return deferred.promise;
+                    }
+                }
             })
             .when('/:lessonId/:partId/learn', {
                 templateUrl: 'learn.html',
