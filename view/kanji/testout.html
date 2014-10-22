@@ -17,12 +17,12 @@
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div ng-switch on="val.type">
-            <div class="wrapper">
-                <div ng-switch-when="kanjilearn">
+            <div ng-switch-when="kanjilearn">
+                <div class="wrapper kanjilearn">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 selected">
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
                             <!-- Question wrapper -->
-                            <div id="question-wrapper" ng-click="playSound(key,true,'vocab')" class="rect-panel">
+                            <div id="question-wrapper" ng-click="playSound(key,true,'vocab')">
                                 <audio controls id="{{key}}" style="display:none;">
                                     <source type="audio/mpeg">
                                         Your browser does not support the audio element.
@@ -32,12 +32,12 @@
                                 <h4 class="center" style="text-transform:captalize" ng-bind="val.data.vietnamese"></h4>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 selected">
+                        <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
                             <!-- User answer wrapper -->
                             <div id="user-input-wrapper">
                                 <div class="row none-padding">
                                     <div class="col-md-12 col-sm-12 col-xs-12 none-padding">
-                                        <input class="form-control write-control selected " id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
+                                        <input class="rect-input write-control selected " id="input-{{key}}" placeholder="TYPING HERE" ng-keyup="keyPress(key,$event.keyCode)" type="text" />
                                     </div>
                                 </div>
                             </div>
@@ -56,10 +56,10 @@
                     <!-- Navigation wrapper-->
                     <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
                         <div class="row mess-holder-{{key}}">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table center top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -118,8 +118,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div ng-switch-when="kanjipic">
+            <div ng-switch-when="kanjipic">
+                <div class="wrapper">
                     <!-- Question wrapper -->
                     <div id="question-wrapper">
                         <div class="row">
@@ -138,7 +140,6 @@
                                     <source type="audio/mpeg">
                                         Your browser does not support the audio element.</source>
                                 </audio>
-                                {{course}}
                                 <img ng-src="../../data/{{course}}/image/{{vocabMultiChoice[key][0].filename}}.png" class="img-thumbnail" id="img-{{key}}-0" ng-class="{'selected': 49==keyCode}" ng-click="keyPress($event,49)">
                                 <div class="annotate">
                                     <span class="first" ng-class="{'actived': 49==keyCode}"></span>
@@ -151,7 +152,7 @@
                                     <source type="audio/mpeg">
                                         Your browser does not support the audio element.</source>
                                 </audio>
-                                <img ng-src="../../data/{{course}}/image/{{vocabMultiChoice[key][1].filename}}.png" class="img-thumbnail" id="img-{{key}}-1" ng-class="{'selected': 50==keyCode}" ng-click="keyPress(50)">
+                                <img ng-src="../../data/{{course}}/image/{{vocabMultiChoice[key][1].filename}}.png" class="img-thumbnail" id="img-{{key}}-1" ng-class="{'selected': 50==keyCode}" ng-click="keyPress($event,50)">
                                 <div class="annotate">
                                     <span class="second" ng-class="{'actived': 50==keyCode}"></span>
                                     <span ng-bind="vocabMultiChoice[key][1].vietnamese" id="input-{{key}}" ng-class="{'selected': 50==keyCode}">
@@ -163,7 +164,7 @@
                                     <source type="audio/mpeg">
                                         Your browser does not support the audio element.</source>
                                 </audio>
-                                <img ng-src="../../data/{{course}}/image/{{vocabMultiChoice[key][2].filename}}.png" class="img-thumbnail" id="img-{{key}}-2" ng-class="{'selected': 51==keyCode}" ng-click="keyPress(51)">
+                                <img ng-src="../../data/{{course}}/image/{{vocabMultiChoice[key][2].filename}}.png" class="img-thumbnail" id="img-{{key}}-2" ng-class="{'selected': 51==keyCode}" ng-click="keyPress($event,51)">
                                 <div class="annotate">
                                     <span class="third" ng-class="{'actived': 51==keyCode}"></span>
                                     <span ng-bind="vocabMultiChoice[key][2].vietnamese" id="input-{{key}}" ng-class="{'selected': 51==keyCode}">
@@ -185,10 +186,10 @@
                     <!-- Custom navigation wrapper-->
                     <div id="aki-answer-wrapper" ng-class="{'check' : 1== stage}">
                         <div class="row">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table center top-none">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">
@@ -209,7 +210,6 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
@@ -236,8 +236,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div ng-switch-when="kanjiword">
+            <div ng-switch-when="kanjiword">
+                <div class="wrapper kanjiword">
                     <div class="row" style="text-align:center;">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <!-- Question wrapper -->
@@ -260,7 +262,7 @@
                                                 <source type="audio/mpeg">
                                                     Your browser does not support the audio element.</source>
                                             </audio>
-                                            <span ng-click="keyPress(49)" class="form-control" ng-class="{'selected': 49==keyCode}" ng-bind="vocabMultiChoice[key][0].hiragana" id="input-{{key}}"></span>
+                                            <span ng-click="keyPress($event,49)" class="form-control" ng-class="{'selected': 49==keyCode}" ng-bind="vocabMultiChoice[key][0].hiragana" id="input-{{key}}"></span>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -272,7 +274,7 @@
                                                 <source type="audio/mpeg">
                                                     Your browser does not support the audio element.</source>
                                             </audio>
-                                            <span ng-click="keyPress(50)" class="form-control" ng-class="{'selected': 50==keyCode}" ng-bind="vocabMultiChoice[key][1].hiragana" id="input-{{key}}"></span>
+                                            <span ng-click="keyPress($event,50)" class="form-control" ng-class="{'selected': 50==keyCode}" ng-bind="vocabMultiChoice[key][1].hiragana" id="input-{{key}}"></span>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -284,7 +286,7 @@
                                                 <source type="audio/mpeg">
                                                     Your browser does not support the audio element.</source>
                                             </audio>
-                                            <span ng-click="keyPress(51)" class="form-control" ng-class="{'selected': 51==keyCode}" ng-bind="vocabMultiChoice[key][2].hiragana" id="input-{{key}}"></span>
+                                            <span ng-click="keyPress($event,51)" class="form-control" ng-class="{'selected': 51==keyCode}" ng-bind="vocabMultiChoice[key][2].hiragana" id="input-{{key}}"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -304,10 +306,10 @@
                     <!-- Custom navigation wrapper-->
                     <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
                         <div class="row">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
-                                <div class="row hide" id="mess-{{key}}">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
+                                <div class="row top-none hide" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <table class="table">
+                                        <table class="table center top-none hide">
                                             <tbody>
                                                 <tr>
                                                     <td class="center">

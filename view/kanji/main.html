@@ -1,7 +1,7 @@
-<div id="topicWizard" class="swMain akiHide" akirawizard enablestep="true" ng-class="{'top-none':degree=='n4'}">
+<div id="topicWizard" class="swMain akiHide" akirawizard enablestep="true" ng-class="{'top-none':degree=='n4'}"  step="{{partId}}">
     <ul ng-class="{'hide': page.length == 1}">
         <li ng-repeat="(key, value) in page">
-            <a href="#step-{{key}}">
+            <a href="#step-{{key}}" ng-click="subtopicChanged(value + 1)">
                 <label class="stepNumber">
                     <span data-i18n="common.part"></span>
                     <span>&nbsp;{{value + 1}}</span>
@@ -22,7 +22,7 @@
                     <td>
                         <div class="row">
                             <div class="col-md-3"></div>
-                            <div class="col-md-2" ng-repeat="(k, v) in [0,1,2]">
+                            <div class="col-md-2" ng-repeat="(k, v) in [0,1,2]"  ng-class="isLocked(3* value + v + 1)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{3* value + v + 1}}</span>
@@ -52,7 +52,7 @@
                                     <img ng-src="../../img/w-key.png" class="img-responsive" id="testout-lesson">
                                 </a>
                             </div>
-                            <div class="col-md-2" ng-repeat="(k, v) in [3,4,5]">
+                            <div class="col-md-2" ng-repeat="(k, v) in [3,4,5]" ng-class="isLocked(3* value + v + 1)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{3* value + v + 1}}</span>

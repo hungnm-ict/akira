@@ -743,7 +743,7 @@ a:focus {
     cursor: pointer;
     border: 0;
 }
-#testoutWizard .write-control{
+#testoutWizard .write-control {
     line-height: initial;
 }
 #writeWizard .write-control.img-responsive, #learnWizard .write-control.img-responsive, #pictureWizard .write-control.img-responsive, #wordWizard .write-control.img-responsive {
@@ -1356,7 +1356,7 @@ ul.anchor li a .stepNumber {
 .vocab#writeWizard div#question-wrapper img.img-responsive, #testoutWizard img.img-responsive {
     height: 180px !important;
 }
-#testoutWizard .fa-volume-up{
+#testoutWizard .fa-volume-up {
     right: 60px;
 }
 #topicWizard .lesson-wrapper .img-responsive {
@@ -1637,4 +1637,7 @@ ul.anchor li a .stepNumber {
 }
 .kanji-dict {
     cursor: pointer;
+}
+#testoutWizard .wrapper.kanjiword, #testoutWizard .wrapper.kanjilearn {
+    padding-top: 70px;
 }

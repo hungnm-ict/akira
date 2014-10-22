@@ -141,8 +141,8 @@ app.service('dataService', function($http) {
             };
         });
 
-        // return akiraShuffle2(ret);
-        return ret;
+        return akiraShuffle2(ret);
+        // return ret;
     }
 });
 
