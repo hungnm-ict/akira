@@ -18,7 +18,7 @@
             <div id="question-wrapper" class="center">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h3>{{val.vietnamese}}</h3>
+                        <h3 ng-bind="val.vietnamese"></h3>
                     </div>
                 </div>
 
@@ -50,19 +50,28 @@
                 <div class="row mess-holder-{{key}}">
                     <!-- Prepare message holder-->
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row hide" id="mess-{{key}}">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <span class="correct-child">
-                                    <span class="test-circle"></span>
-                                </span>
-                                <span class="failed-child">
-                                    <i class="fa fa-times fa-4x"></i>
-                                </span>
-                                <span class="hint">
-                                    {{val.hiragana}}
-                                </span>
-                            </div>
-                        </div>
+                         <table class="table center hide top-none">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                    </td>
+                                    <td class="left">
+                                        <div>
+                                            <span class="hint" ng-bind-html="renderHtml(val.kanji)"></span>
+                                        </div>
+                                        <div>
+                                            <span class="hint" ng-bind-html="renderHtml(val.vietnamese)"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
@@ -111,10 +120,27 @@ function drop(ev) {
         ev.target.appendChild(document.getElementById(data));
     }
 }
-$(document).keydown(function(e) {
-    if (13 == e.keyCode) {
-        angular.element("#grammarTranslateWizard").scope().enterPress();
-    }
-    changeLang();
-});
+// $(document).keydown(function(e) {
+//     if (13 == e.keyCode) {
+//         angular.element("#grammarTranslateWizard").scope().enterPress();
+//     }
+//     changeLang();
+// });
+
+var scope = angular.element("#grammarTranslateWizard").scope();
+KeyboardJS.on('enter', function() {
+    scope.enterPress();
+}, changeLang());
+
+KeyboardJS.on('ctrl + space', function() {
+    scope.playSound(scope.step, true, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('ctrl + shift + space', function() {
+    scope.playSound(scope.step, false, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('1,2,3', function(e) {
+    scope.keyPress(e, e.keyCode);
+}, changeLang());
 </script>

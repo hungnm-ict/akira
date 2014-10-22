@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -663,10 +664,15 @@ function getLessonStar(data, course, lesson) {
 }
 
 function kanjiDict() {
+    var placementDef = 'top';
+    if ($("h2 .kanji-dict").length > 0) {
+        placementDef = 'bottom';
+    };
+
     $(".kanji-dict").hover(function(e) {
         $(e.target).popover({
             content: translate($(e.target).text()),
-            placement: 'bottom',
+            placement: placementDef,
             trigger: 'hover'
         });
 
@@ -674,8 +680,33 @@ function kanjiDict() {
     });
 }
 
-function translate(kanji) {
-    return kanji;
+function translate(text) {
+    var obj = getObjects(dict, "kanji", text);
+    if (obj != null && obj.hasOwnProperty("hiragana"))
+        return obj.hiragana;
+    else {
+        return "Thiếu dữ liệu từ điển";
+    }
+}
+
+function getObjects(obj, key, val) {
+    for (var i in obj) {
+        if (obj[i][key] == val) {
+            return obj[i];
+        }
+    }
+}
+
+function getDict() {
+    $.ajax({
+        url: "../../data/dict.json",
+        async: false,
+        success: function(data) {
+            console.log(data);
+            dict = data;
+            // return data;
+        }
+    });
 }
 
 /**
@@ -862,11 +893,11 @@ function levelProgress(exp) {
  * @param  {[type]} $exp [description]
  * @return {[type]}      [description]
  */
-function calculateLevel(exp){
-    var level=1;
+function calculateLevel(exp) {
+    var level = 1;
     var currLevelExp = 1000;
-    var total=exp;
-    while(total >=currLevelExp){
+    var total = exp;
+    while (total >= currLevelExp) {
         level++;
         total -= currLevelExp;
         currLevelExp *= 1.1;
@@ -933,3 +964,17 @@ function isMentorLevelUp($newExp){
         return $(shuffled);
     };
 })(jQuery);
+
+var dict = (function() {
+    var json = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': "../../data/dict.json",
+        'dataType': "json",
+        'success': function(data) {
+            json = data;
+        }
+    });
+    return json;
+})();

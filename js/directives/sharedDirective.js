@@ -55,20 +55,35 @@ akrSharedDirectives.directive('akrleaderboard', function($http) {
 akrSharedDirectives.directive('akirawizard', function() {
     function link(scope, element, attrs) {
         setTimeout(function() {
-            //Jquery Smart Wizard
+            // Decide the effect of jquerysmard wizard based on the current screen
+            var effect = "slide";
+            if (attrs.id == "subtopicWizard") {
+                effect = "slideleft";
+            }
+
             $('#' + attrs.id).smartWizard({
                 enableAllSteps: "true" === attrs.enablestep,
                 keyNavigation: false,
                 onLeaveStep: akrLeaveStep,
                 selected: attrs.step,
                 onShowStep: akrShowStep,
-                transitionEffect: 'slide'
+                transitionEffect: effect
             });
+
+            //Hide action bar
             $('#' + attrs.id + ' .actionBar').hide();
             changeLang();
 
+            // Initialize tooltip
             $(".fa-lock").tooltip();
             $('#' + attrs.id).show();
+
+            //Initialize Kanji Dict
+            kanjiDict();
+            // $(".kanji-dict").tooltip({
+            //     title: 'TOOLTIP CONTENT',
+            //     trigger: 'hover'
+            // });
         }, 500);
     }
 

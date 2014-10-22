@@ -462,7 +462,7 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
 =            Controller for totaln5 - Grammar game            =
 =============================================================*/
 
-totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $http, dataService) {
+totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $http, dataService, $sce) {
     $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
@@ -541,6 +541,10 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
         }
         changeLang();
     }
+
+    $scope.renderHtml = function(text) {
+        return $sce.trustAsHtml(text);
+    }
 });
 
 totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $http, dataService) {
@@ -618,12 +622,13 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
     }
 });
 
-totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $http, dataService) {
-    $scope.course = "total" + $routeParams;
+totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $http, dataService, $sce) {
+    $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.stage = 0;
+    $scope.step = 0;
     $scope.gameObject = {
         "life": 3,
         "correct": 0
@@ -648,7 +653,8 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
             var userSlt = $("#grammarTranslateWizard #step-" + step + " #user-input-wrapper #input-" + step).text().trim();
             var correct = $("#grammarTranslateWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             correct = correct.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
-
+            console.log(userSlt);
+            console.log(correct);
             if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#grammarTranslateWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
@@ -673,9 +679,13 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
         $scope.$apply();
         changeLang();
     }
+
+    $scope.renderHtml = function(text) {
+        return $sce.trustAsHtml(text);
+    }
 });
 
-totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http, dataService) {
+totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http, dataService, $sce) {
     $scope.degree = $routeParams.degree;
     $scope.course = "total" + $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -741,13 +751,19 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http,
         $scope.$apply();
         changeLang();
     }
+
+    $scope.renderHtml = function(text) {
+        return $sce.trustAsHtml(text);
+    }
 });
 
-totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http, dataService) {
+totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http, dataService, $sce) {
     $scope.degree = $routeParams.degree;
     $scope.course = "total" + $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
+    $scope.step = 0;
+    $scope.stage = 0;
     $scope.gameObject = {
         "life": 3,
         "correct": 0
@@ -759,7 +775,7 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http,
         }
     };
 
-    dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 4).then(function(deferred) {
+    dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 5).then(function(deferred) {
         $scope.data = akiraShuffle(filter(deferred.data, 'id', $routeParams.lessonId));
     });
 
@@ -807,33 +823,15 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http,
         }
         changeLang();
     }
+
+    $scope.renderHtml = function(text) {
+        return $sce.trustAsHtml(text);
+    }
 });
 
 /*-----  End of Controller for totaln5 - Grammar game  ------*/
 
-
-/*============================
-=            KANA            =
-============================*/
-
-totaln5Ctrls.controller('kanaCtrl', function($scope, $routeParams, $http, restService) {
-    $scope.course = "kana";
-    $scope.lessonId = $routeParams.lessonId;
-
-    restService.getRestPromise("kana").then(function(deferred) {
-        $scope.progress = deferred.data;
-        $scope.starData = deferred.data;
-        $scope.kanaStar = getLessonStar(deferred.data, 'kana', $routeParams.lessonId);
-        $scope.enabled = getUnlockedSub(deferred.data, 'kana', $routeParams.lessonId);
-    });
-
-    $scope.isEnabled = function(stepNumber) {
-        return jQuery.inArray(stepNumber, $scope.enabled) !== -1;
-    }
-});
-
-
-totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService) {
+totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, $window, testoutData, dataService) {
     try {
         $scope.course = "total" + $routeParams.degree;
         $scope.degree = $routeParams.degre;
@@ -858,9 +856,11 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
 
         $scope.playSound = function(id, isNormal, type) {
             try {
-                if (type === undefined) {
+                if ($("#step-" + $scope.step + " .wrapper").hasClass("vocabType")) {
                     type = "vocab";
-                }
+                } else {
+                    type = "grammar";
+                };
 
                 var audioSrc = document.getElementById(id).getElementsByTagName('source');
                 $("audio#" + id + " source").attr("src", "../../data/" + $scope.course + "/" + type + "/audio/" + $scope.data[id].data.filename + ".mp3");
@@ -872,7 +872,7 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
                 }
                 document.getElementById(id).play();
             } catch (err) {
-                console.error(err);
+                // console.error(err);
             }
         };
 
@@ -920,15 +920,22 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, testoutDat
         }
 
         $scope.keyPress = function(e, keyCode) {
+            var type = "";
+            if ($("#step-" + $scope.step + " .wrapper").hasClass("vocabType")) {
+                type = "vocab";
+            } else {
+                type = "grammar";
+            };
+
             switch (keyCode) {
                 case 49:
-                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, $scope.course + "/vocab", $scope.step, 0);
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, $scope.course + "/" + type, $scope.step, 0);
                     break;
                 case 50:
-                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, $scope.course + "/vocab", $scope.step, 1);
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, $scope.course + "/" + type, $scope.step, 1);
                     break;
                 case 51:
-                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, $scope.course + "/vocab", $scope.step, 2);
+                    $scope.$parent.testoutPlay($scope.vocabMultiChoice, $scope.course + "/" + type, $scope.step, 2);
                     break;
                 default:
                     break;

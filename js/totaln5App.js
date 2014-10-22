@@ -308,8 +308,8 @@ totaln5App.service('dataService', function($http) {
             };
         });
 
-        // return akiraShuffle2(ret);
-        return ret;
+        return akiraShuffle2(ret);
+        // return ret;
     }
 });
 
@@ -375,12 +375,18 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
         }
     };
 
-    $scope.check = function(e,lesson) {
+    $scope.check = function(lesson) {
         //Get current key point for this courses
         $http({
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=total" + $routeParams.degree + "&userid=" + getUser().id
         }).success(function(data, status) {
+
+            if (getUser().hasOwnProperty("dayremain") && getUser().dayremain <= 0) {
+                return false;
+            }
+            console.log(akrParseInt(data));
+            console.log(lesson - 1);
             if (akrParseInt(data) >= (lesson - 1)) {
                 $window.location.href = "#/" + $routeParams.degree + "/" + lesson;
             } else {
@@ -403,8 +409,7 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
             }
         });
     };
-
-
+       
     $scope.$on('$routeChangeStart', function(scope, next, curr) {
         $scope.isLoading = "true";
     });

@@ -12,13 +12,13 @@
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife  progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div ng-switch on="val.type">
-            <div class="wrapper">
-                <div ng-switch-when="vocablearn">
+            <div ng-switch-when="vocablearn">
+                <div class="wrapper vocabType">
                     <div class="row">
                         <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
                             <!-- Question wrapper -->
@@ -28,8 +28,8 @@
                                         Your browser does not support the audio element.
                                 </audio>
                                 <i class="fa fa-volume-up fa-2x write-btn-play"></i>
-                                <img ng-src="../../data/totaln5/vocab/image/{{val.data.filename}}.png" class="img-responsive"/>
-                                <h4 class="center" style="text-transform:captalize" ng-bind="val.data.vietnamese"></h4> 
+                                <img ng-src="../../data/totaln5/vocab/image/{{val.data.filename}}.png" class="img-responsive" />
+                                <h4 class="center" style="text-transform:captalize" ng-bind="val.data.vietnamese"></h4>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
@@ -57,7 +57,7 @@
                     <!-- Navigation wrapper-->
                     <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
                         <div class="row mess-holder-{{key}}">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
                                         <table class="table top-none">
@@ -114,8 +114,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div ng-switch-when="vocabpic">
+            <div ng-switch-when="vocabpic">
+                <div class="wrapper vocabType">
                     <!-- Question wrapper -->
                     <div id="question-wrapper">
                         <div class="row">
@@ -166,6 +168,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- Correct answer wrapper -->
@@ -180,7 +183,7 @@
                     <!-- Custom navigation wrapper-->
                     <div id="aki-answer-wrapper" ng-class="{'check' : 1== stage}">
                         <div class="row">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
                                         <table class="table top-none">
@@ -231,13 +234,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div ng-switch-when="vocabword">
+            <div ng-switch-when="vocabword">
+                <div class="wrapper vocabType">
                     <div class="row" style="text-align:center;">
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <!-- Question wrapper -->
                             <div id="question-wrapper">
-                                <img src="../../data/totaln5/vocab/image/{{val.data.filename}}.png" class="img-thumbnail">
+                                <img src="../../data/totaln5/vocab/image/{{val.data.filename}}.png" class="img-thumbnail selected">
                                 <h3 ng-bind="val.data.vietnamese"></h3>
                             </div>
                         </div>
@@ -299,7 +304,7 @@
                     <!-- Custom navigation wrapper-->
                     <div id="aki-answer-wrapper" ng-class="{'check' : 1 == stage}">
                         <div class="row">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
                                         <table class="table top-none">
@@ -349,8 +354,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div ng-switch-when="vocablisten">
+            <div ng-switch-when="vocablisten">
+                <div class="wrapper vocabType">
                     <!-- Question wrapper -->
                     <div id="question-wrapper">
                         <audio controls id="{{key}}" style="display:none;">
@@ -374,7 +381,7 @@
                     <div id="user-input-wrapper">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <input class="form-control akira-input selected" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" />
+                                <input class="form-control akira-input selected" id="input-{{key}}" placeholder="TYPING HIRAGANA" ng-keyup="keyPress(key,$event.keyCode)" type='text'/>
                             </div>
                         </div>
                     </div>
@@ -391,7 +398,7 @@
                     <!-- Navigation wrapper-->
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
                                         <table class="table top-none">
@@ -442,8 +449,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div ng-switch-when="grammarlisten">
+            <div ng-switch-when="grammarlisten">
+                <div class="wrapper grammarType">
                     <div id="question-wrapper">
                         <audio controls id="{{key}}" style="display:none;">
                             <source type="audio/mpeg">
@@ -481,7 +490,7 @@
                         <!-- Answer wrapper-->
                         <div class="row mess-holder-{{key}}">
                             <!-- Prepare message holder-->
-                            <div class="col-md-8 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
                                         <table class="table top-none">
@@ -496,8 +505,8 @@
                                                         </span>
                                                     </td>
                                                     <td>
-                                                        <div class="hint" ng-bind="val.data.hiragana"></div>
-                                                        <div class="hint" ng-bind="val.data.romaji"></div>
+                                                        <div class="hint" ng-bind="val.data.kanji_b"></div>
+                                                        <div class="hint" ng-bind="val.data.vietnamese"></div>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -528,14 +537,15 @@
                             </div>
                         </div>
                     </div>
-                    <!-- </div> -->
                 </div>
+            </div>
 
-                <div ng-switch-when="grammarchoice">
+            <div ng-switch-when="grammarchoice">
+                <div class="wrapper grammarType">
                     <div class="row" style="text-align:center;">
                         <div class="col-md-4 col-sm-4 col-xs-4">
                             <div id="question-wrapper">
-                                <div class="row " >
+                                <div class="row ">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <audio controls id="{{key}}" style="display:none;">
                                             <source type="audio/mpeg">
@@ -556,7 +566,7 @@
                                         <span class="first" ng-class="{'actived': 49==keyCode}"></span>
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
-                                        <div class="form-control" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}" id="input-{{key}}" ng-bind="grammarMultiChoice[key][0].answer">
+                                        <div class="form-control" ng-click="keyPress($event,49)" ng-class="{'selected': 49==keyCode}" id="input-{{key}}" ng-bind="grammarMultiChoice[key][0].answer">
                                         </div>
                                     </div>
                                 </div>
@@ -565,7 +575,7 @@
                                         <span class="second" ng-class="{'actived': 50==keyCode}"></span>
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
-                                        <div class="form-control" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}" id="input-{{key}}" ng-bind="grammarMultiChoice[key][1].answer">
+                                        <div class="form-control" ng-click="keyPress($event,50)" ng-class="{'selected': 50==keyCode}" id="input-{{key}}" ng-bind="grammarMultiChoice[key][1].answer">
                                         </div>
                                     </div>
                                 </div>
@@ -574,7 +584,7 @@
                                         <span class="third" ng-class="{'actived': 51==keyCode}"></span>
                                     </div>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
-                                        <div class="form-control" ng-click="keyPress(51)" ng-class="{'selected': 51==keyCode}" ng-bind="grammarMultiChoice[key][2].answer" id="input-{{key}}">
+                                        <div class="form-control" ng-click="keyPress($event,51)" ng-class="{'selected': 51==keyCode}" ng-bind="grammarMultiChoice[key][2].answer" id="input-{{key}}">
                                         </div>
                                     </div>
                                 </div>
@@ -593,7 +603,7 @@
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
                             <!-- Prepare message holder-->
-                            <div class="col-md-8 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-xs-12 col-sm-12">
                                         <table class="table top-none">
@@ -655,8 +665,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div ng-switch-when="grammartranslate">
+            <div ng-switch-when="grammartranslate">
+                <div class="wrapper grammarType">
                     <div id="question-wrapper" class="center">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -691,7 +703,7 @@
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
                             <!-- Prepare message holder-->
-                            <div class="col-md-8 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <table class="table top-none">
@@ -739,9 +751,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!--TODO Shuffle two answer DOM-->
-                <div ng-switch-when="grammarread">
+            <div ng-switch-when="grammarread">
+                <div class="wrapper grammarType">
                     <div id="question-wrapper ">
                         <div class="row center">
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -784,7 +797,7 @@
                     <!-- Answer wrapper-->
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
-                            <div class="col-md-8 col-sm-8 col-xs-8">
+                            <div class="col-md-9 col-sm-9 col-xs-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <table class="table top-none">
@@ -840,8 +853,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div ng-switch-when="grammarword">
+            <div ng-switch-when="grammarword">
+                <div class="wrapper grammarType">
                     <div id="question-wrapper" class="center">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -868,7 +883,7 @@
 
                     <div id="aki-answer-wrapper">
                         <div class="row mess-holder-{{key}}">
-                            <div class="col-md-8 col-xs-8 col-sm-8">
+                            <div class="col-md-9 col-xs-9 col-sm-9">
                                 <div class="row hide top-none" id="mess-{{key}}">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <table class="table top-none">
@@ -883,10 +898,6 @@
                                                         </span>
                                                     </td>
                                                     <td>
-                                                        <div>
-                                                            <span>Q:</span>
-                                                            <span ng-bind="val.data.questhira"></span>
-                                                        </div>
                                                         <div>
                                                             <span>A:</span>
                                                             <span ng-bind="val.data.answer"></span>

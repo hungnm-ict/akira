@@ -621,6 +621,12 @@ ul.anchor {
     border: 2px solid #C0C0C0;
     border-radius: 5px;
 }
+#profile table {
+    margin-bottom: 0px;
+}
+#profile table td {
+    border-top: none;
+}
 #profile .fa-plus-circle {
     color: #8CC63F;
 }
@@ -736,6 +742,9 @@ a:focus {
     line-height: 215px;
     cursor: pointer;
     border: 0;
+}
+#testoutWizard .write-control{
+    line-height: initial;
 }
 #writeWizard .write-control.img-responsive, #learnWizard .write-control.img-responsive, #pictureWizard .write-control.img-responsive, #wordWizard .write-control.img-responsive {
     font-size: 3rem;
@@ -1217,7 +1226,7 @@ ul.anchor li a .stepNumber {
     border-radius: 50%;
 }
 #writeWizard .selected, #writeWizard .write-control {
-    border-radius: 20px;
+    border-radius: 10px;
 }
 #writeWizard .img-responsive {
     max-width: 175px;
@@ -1344,8 +1353,11 @@ ul.anchor li a .stepNumber {
 .vocab#writeWizard div#question-wrapper {
     cursor: pointer;
 }
-.vocab#writeWizard div#question-wrapper img.img-responsive, #tesoutWizard div#question-wrapper img.img-responsive {
+.vocab#writeWizard div#question-wrapper img.img-responsive, #testoutWizard img.img-responsive {
     height: 180px !important;
+}
+#testoutWizard .fa-volume-up{
+    right: 60px;
 }
 #topicWizard .lesson-wrapper .img-responsive {
     border: 1px solid #C0C0C0;
@@ -1474,8 +1486,14 @@ ul.anchor li a .stepNumber {
     color: #FFF !important;
     border-color: red !important;
 }
+#lock label {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
 #testoutWizard .wrapper>div {
-    padding-left: 0px !important;
+    /*padding-left: 0px !important;*/
 }
 .akiHide {
     display: none;
@@ -1545,11 +1563,14 @@ ul.anchor li a .stepNumber {
 .rect-input {
     width: 180px !important;
     height: 180px !important;
+    border: 2px solid gray !important;
 }
 .rect-input:focus {
     /*border-radius: 10px ;*/
+    /*outline-color: #1659B0 !important;*/
     
-    outline-color: #1659B0 !important;
+    outline: none !important;
+    border-color: #1659B0 !important;
 }
 .img-thumbnail {
     cursor: pointer;
@@ -1610,4 +1631,10 @@ ul.anchor li a .stepNumber {
     position: absolute;
     top: 25px;
     right: 20px;
+}
+.popover {
+    z-index: 100000 !important;
+}
+.kanji-dict {
+    cursor: pointer;
 }

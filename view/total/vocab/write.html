@@ -26,7 +26,7 @@
                                 Your browser does not support the audio element.
                         </audio>
                         <i class="fa fa-volume-up fa-2x write-btn-play"></i>
-                        <img ng-src="../../data/totaln5/vocab/image/{{val.filename}}.png" class="img-responsive" />
+                        <img ng-src="../../data/{{course}}/vocab/image/{{val.filename}}.png" class="img-responsive" />
                     </div>
                     <h4 class="center" ng-bind="val.vietnamese"></h4>
                 </div>
@@ -117,10 +117,11 @@
 </div>
 
 <script type="text/javascript">
-changeLang();
 var scope = angular.element("#writeWizard").scope();
 KeyboardJS.on('enter', function() {
     scope.enterPress();
 }, changeLang());
-kanjiDict();
+KeyboardJS.on('ctrl + space', function() {
+    scope.playSound(scope.step, true, 'vocab');
+}, changeLang());
 </script>

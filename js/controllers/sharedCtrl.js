@@ -15,3 +15,10 @@ commonApp.controller('menuCtrl', function($scope, menuFactory, $rootScope) {
         $rootScope.$broadcast('handleBroadcast');
     };
 });
+
+
+// commonApp.service('ultiService', function ($http,$scope) {
+//     $scope.trans = function(e){
+//         return "transevice";
+//     }
+// });

@@ -19,7 +19,7 @@ function chooseAnswer(event, target) {
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife ret="../../view/totaln5" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
@@ -47,7 +47,7 @@ function chooseAnswer(event, target) {
                             <div class="col-md-2 col-sm-2 col-xs-2">
                                 <span class="first" ng-class="{'actived': 49==keyCode}"></span>
                             </div>
-                            <div class="col-md-10 col-sm-10 col-xs-10">
+                            <div class="col-md-10 col-sm-10 col-xs-10 left">
                                 <div class="form-control" ng-click="keyPress(49)" ng-class="{'selected': 49==keyCode}">
                                     {{answers[key][0]}}
                                 </div>
@@ -57,7 +57,7 @@ function chooseAnswer(event, target) {
                             <div class="col-md-2 col-sm-2 col-xs-2 ">
                                 <span class="second" ng-class="{'actived': 50==keyCode}"></span>
                             </div>
-                            <div class="col-md-10 col-sm-10 col-xs-10">
+                            <div class="col-md-10 col-sm-10 col-xs-10 left">
                                 <div class="form-control" ng-click="keyPress(50)" ng-class="{'selected': 50==keyCode}">
                                     {{answers[key][1]}}
                                 </div>
@@ -67,7 +67,7 @@ function chooseAnswer(event, target) {
                             <div class="col-md-2 col-sm-2 col-xs-2">
                                 <span class="third" ng-class="{'actived': 51==keyCode}"></span>
                             </div>
-                            <div class="col-md-10 col-sm-10 col-xs-10">
+                            <div class="col-md-10 col-sm-10 col-xs-10 left">
                                 <div class="form-control" ng-click="keyPress(51)" ng-class="{'selected': 51==keyCode}">
                                     {{answers[key][2]}}
                                 </div>
@@ -88,22 +88,38 @@ function chooseAnswer(event, target) {
             <div id="aki-answer-wrapper">
                 <div class="row mess-holder-{{key}}">
                     <!-- Prepare message holder-->
-                    <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row hide" id="mess-{{key}}">
-                            <div class="col-md-12 col-xs-12 col-sm-12">
-                                <span class="correct-child">
-                                    <span class="test-circle"></span>
-                                </span>
-                                <span class="failed-child">
-                                    <i class="fa fa-times fa-4x"></i>
-                                </span>
-                                <span class="hint">Q: {{val.quest}} A: {{val.answer}} {{val.vietnameseq}} {{val.vietnamesea}}
-                                </span>
-                            </div>
-                        </div>
+                    <div class="col-md-9 ">
+                        <table class="table top-none hide">
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">
+                                        <span class="correct-child">
+                                            <span class="test-circle"></span>
+                                        </span>
+                                        <span class="failed-child">
+                                            <i class="fa fa-times fa-4x"></i>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="left">
+                                            Q:
+                                            <span class="hint" ng-bind="val.quest"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left">
+                                        <div>
+                                            A:
+                                            <span class="hint" ng-bind="val.answer"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
-                    <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                    <div class="col-md-3 col-sm-3 col-xs-3 ">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
                                 <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
@@ -129,12 +145,25 @@ function chooseAnswer(event, target) {
     </div>
 </div>
 <script type="text/javascript">
-$(document).keydown(function(e) {
-    if (13 == e.keyCode) {
-        angular.element("#grammarChoiceWizard").scope().enterPress();
-    } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
-        angular.element("#grammarChoiceWizard").scope().keyPress(e.keyCode);
-    }
-    changeLang();
-});
+// $(document).keydown(function(e) {
+//     if (13 == e.keyCode) {
+//         angular.element("#grammarChoiceWizard").scope().enterPress();
+//     } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
+//         angular.element("#grammarChoiceWizard").scope().keyPress(e.keyCode);
+//     }
+//     changeLang();
+// });
+
+var scope = angular.element("#grammarChoiceWizard").scope();
+KeyboardJS.on('enter', function() {
+    scope.enterPress();
+}, changeLang());
+
+KeyboardJS.on('ctrl + space', function() {
+    scope.playSound(scope.step, true, 'vocab');
+}, changeLang());
+
+KeyboardJS.on('1,2,3', function(e) {
+    scope.keyPress(e.keyCode);
+}, changeLang());
 </script>
