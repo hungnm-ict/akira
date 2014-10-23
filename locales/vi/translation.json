@@ -13,7 +13,8 @@
         "mobi": "Mobi apps",
         "support": "Trợ giúp",
         "ios": "iOS",
-        "android": "Android"
+        "android": "Android",
+        "keyboard" :"Phím tắt"
     },
     "common": {
         "lesson": "Bài",

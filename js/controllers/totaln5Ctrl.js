@@ -127,7 +127,8 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
             var userSlt = $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
             $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-            if (compare(correct, userSlt)) {
+            // console.log($scope.data[$scope.step]);
+            if (compare($scope.data[$scope.step].hiragana, userSlt) || compare($scope.data[$scope.step].romaji, userSlt)) {
                 playCorrect();
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;

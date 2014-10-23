@@ -124,16 +124,17 @@ body {
 }
 #logo {
     cursor: pointer;
-    width: 160px;
-    height: 160px;
+    width: 100px;
+    height: 100px;
     margin-left: auto;
     margin-right: auto;
     padding: 12px;
     border-radius: 50%;
     background: #fff;
+    margin: 0px 30px;
 }
 #logo img {
-    margin-top: 30px;
+    margin-top: 15px;
 }
 #sidebar {
     text-align: center;
@@ -199,10 +200,10 @@ body {
     color: #d44837;
 }
 .social-circle {
-    line-height: 55px;
+    line-height: 45px;
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     text-align: center;
     border-radius: 50%;
     background: white;
@@ -247,13 +248,13 @@ body {
 #site-lang {
     /*background: #344c8c;*/
     
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
 }
 #site-lang span {
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     text-align: center;
     border-radius: 50%;
 }
@@ -321,7 +322,9 @@ body {
 #content {
     display: inline-block;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-right: 65px;
+    padding-left: 65px;
 }
 #right-sidebar {
     display: inline-block;
@@ -470,7 +473,7 @@ body {
     display: none;
 }
 .stepContainer {
-    min-height: 450px !important;
+    min-height: 430px !important;
     /*height: 500px !important;*/
 }
 /*No life remaining*/
@@ -617,9 +620,13 @@ ul.anchor {
 #profile {
     background: #FFFFFF;
     min-height: 150px;
-    padding: 12px;
+    /*padding: 12px;*/
+    
     border: 2px solid #C0C0C0;
-    border-radius: 5px;
+    border-radius: 20px;
+}
+#profile .username {
+    padding-top: 5px;
 }
 #profile table {
     margin-bottom: 0px;
@@ -627,8 +634,14 @@ ul.anchor {
 #profile table td {
     border-top: none;
 }
+#profile table tr td:last-child {
+    padding-top: 0px;
+}
 #profile .fa-plus-circle {
     color: #8CC63F;
+}
+#profile .progress {
+    margin-bottom: 10px;
 }
 .progress.level .progress-bar {
     background-image: linear-gradient(to bottom, #568ed4 0, #568ed4 100%);
@@ -734,6 +747,8 @@ a:focus {
     width: auto !important;
     min-width: 100%;
     height: inherit !important;
+    border-bottom-right-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
 }
 #testoutWizard .write-control, #writeWizard .write-control, #learnWizard .write-control, #pictureWizard .write-control, #wordWizard .write-control {
     font-weight: bold;
@@ -777,8 +792,8 @@ a:focus {
     padding-right: 12px;
     border: 1px solid #ccc;
     border-bottom: 0;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     background: #fff;
 }
 #life-wrapper {
@@ -1051,20 +1066,23 @@ ul.anchor li a .stepNumber {
     font-size: 18px;
     display: inline-block;
     width: 100%;
-    padding-top: 10px;
+    padding: 0px;
+    margin-top: 5px;
 }
 #topicWizard ul.anchor li a {
     width: 130px;
     height: auto;
     color: #558ed5;
     border-color: #FFFFFF;
-    border-radius: 20px;
+    border-radius: 15px;
     background: #fff;
     box-shadow: none;
+    padding: 0px;
 }
 #topicWizard ul.anchor li a.selected {
     color: #fff;
     background: #558ed5;
+    border: 1px solid #558ed5 !important;
 }
 .btn-slow {
     width: 60px;
@@ -1447,7 +1465,24 @@ ul.anchor li a .stepNumber {
 .chatbox {
     z-index: 100;
 }
-#feedback {}
+#feedback {
+    background: #fff;
+    color: #3c3c3c;
+    cursor: pointer;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4px;
+    padding-bottom: 7px;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+#feedback:hover {
+    color: #fff;
+    border-color: #1caff6;
+    background: #1caff6;
+}
 /*==============================================
 =            Test            =
 ==============================================*/
@@ -1586,7 +1621,7 @@ ul.anchor li a .stepNumber {
     height: 18px !important;
     border-radius: 9px;
 }
-.odd>div{
+.odd>div {
     background: #DCE6F2;
 }
 .bordered {
@@ -1632,12 +1667,32 @@ ul.anchor li a .stepNumber {
     top: 25px;
     right: 20px;
 }
-.popover {
-    z-index: 100000 !important;
+.lessonlocked a {
+    display: block;
+}
+.lessonlocked img:before {
+    -moz-box-shadow: inset 0px 0px 0 5000px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: inset 0px 0px 0 5000px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 0px 0 5000px rgba(0, 0, 0, 0.5);
+}
+.lessonlocked img:hover {
+    opacity: 1 !important;
 }
 .kanji-dict {
     cursor: pointer;
 }
 #testoutWizard .wrapper.kanjiword, #testoutWizard .wrapper.kanjilearn {
     padding-top: 70px;
+}
+.level-progress:before {
+    content: "(";
+}
+.level-progress:after {
+    content: " %)";
+}
+#topicWizard #star {
+    border: none !important;
+}
+#topicWizard .content {
+    border: none !important;
 }
