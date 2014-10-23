@@ -123,11 +123,13 @@ function gameOver(course, lesson, subtopic, game, correctAns, noOfQuestion) {
     saveScore(course, lesson, subtopic, game, star, xp);
     $(".game-over-modal-sm .game-star").html(star);
     $(".game-over-modal-sm .game-score").html(xp);
+    $(".game-over-modal-sm .star-wrapper").addClass("star-" + star);
     $(".game-over-modal-sm").modal({
         keyboard: true
     });
 
     $('.game-over-modal-sm').on('hide.bs.modal', function(e) {
+        window.location.reload();
         window.history.back();
     });
 }
@@ -978,3 +980,35 @@ var dict = (function() {
     });
     return json;
 })();
+
+
+(function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+})();
+
+window.fbAsyncInit = function() {
+    FB.init({
+        appId: "721532401232192",
+        status: true, // check login status
+        cookie: true, // enable cookies to allow the server to access the session
+        xfbml: true // parse XFBML
+    });
+};
+
+(function(d) {
+    var js, id = 'facebook-jssdk',
+        ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) {
+        return;
+    }
+    js = d.createElement('script');
+    js.id = id;
+    js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    ref.parentNode.insertBefore(js, ref);
+}(document));

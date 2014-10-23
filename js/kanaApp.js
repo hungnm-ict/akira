@@ -106,7 +106,8 @@ totaln5App.service('restService', function($http) {
 
     this.kanaStar = $http({
         method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kana&userid=" + getUser().id
+        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kana&userid=" + getUser().id,
+        cache : false
     });
 
     this.getRestPromise = function(course) {

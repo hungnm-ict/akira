@@ -7,13 +7,12 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, kanaStar) {
     window.sessionStorage.clear();
 });
 
-totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, restService,kanaStar) {
-    // restService.getRestPromise("kana").then(function(deferred) {
-        $scope.progress = kanaStar.data;
-        $scope.starData = kanaStar.data;
-        $scope.kanaStar = getLessonStar(kanaStar.data, 'kana', $routeParams.lessonId);
-        $scope.enabled = getUnlockedSub(kanaStar.data, 'kana', $routeParams.lessonId);
-    // });
+totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, restService,kanaStar,$templateCache){
+    $templateCache.removeAll();
+    $scope.progress = kanaStar.data;
+    $scope.starData = kanaStar.data;
+    $scope.kanaStar = getLessonStar(kanaStar.data, 'kana', $routeParams.lessonId);
+    $scope.enabled = getUnlockedSub(kanaStar.data, 'kana', $routeParams.lessonId);
 
     $scope.partId = window.sessionStorage.getItem("subSelected") == null ? 0 : window.sessionStorage.getItem("subSelected");
     $scope.course = "kana";
@@ -61,8 +60,13 @@ totaln5Ctrls.controller('kanaLearnCtrl', function($scope, $routeParams, $http, d
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var userSlt = $("#learnWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            
             var correct = $("#learnWizard #step-" + step + " #correct-answer-wrapper").text().trim();
-            if (compare(correct, userSlt)) {
+            //Allow user to entry hiragana/romaji
+            var hira = $scope.data[$scope.step].hiragana;
+            var romaji = $scope.data[$scope.step].romaji;
+            console.log(userSlt + "-"+ hira + "|" + romaji);
+            if (compare(hira, userSlt)||compare(romaji, userSlt)) {
                 playCorrect();
                 $("#learnWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;

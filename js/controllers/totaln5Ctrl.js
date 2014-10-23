@@ -128,7 +128,9 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
             $("#writeWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#writeWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             // console.log($scope.data[$scope.step]);
-            if (compare($scope.data[$scope.step].hiragana, userSlt) || compare($scope.data[$scope.step].romaji, userSlt)) {
+            var hira = $scope.data[$scope.step].hiragana;
+            var romaji = $scope.data[$scope.step].romaji;
+            if (compare(hira, userSlt) || compare(romaji, userSlt)) {
                 playCorrect();
                 $("#writeWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
@@ -388,9 +390,14 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
             var userSlt = $("#listenWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            $("#listenWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#listenWizard #step-" + step + " #correct-answer-wrapper").text().trim();
+            console.log($scope.data[$scope.step]);
+            var hira = $scope.data[$scope.step].hiragana;
+            var romaji = $scope.data[$scope.step].romaji;
+            if (compare(hira, userSlt) || compare(romaji, userSlt)) {
 
-            if (compare(correct, userSlt)) {
+            // if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#listenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
@@ -507,6 +514,10 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
             $("#grammarListenWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#grammarListenWizard #step-" + step + " #correct-answer-wrapper").text().trim();
 
+            // console.log($scope.data[$scope.step]);
+            // var hira = $scope.data[$scope.step].hiragana;
+            // var romaji = $scope.data[$scope.step].romaji;
+            // if (compare(hira, userSlt) || compare(romaji, userSlt)) {
             if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#grammarListenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");

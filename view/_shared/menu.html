@@ -32,7 +32,7 @@
                 <div id="collapseOne" class="panel-collapse collapse" ng-class="{'in navgroup-active': 0 == navgroup }">
                     <div class="panel-body">
                         <ul>
-                           <li ng-class="{'nav-active':0==nav}" ng-click="menuClick(0,0)">
+                            <li ng-class="{'nav-active':0==nav}" ng-click="menuClick(0,0)">
                                 <a href="../kana" data-i18n="menu.kana"></a>
                             </li>
                             <li ng-class="{'nav-active':1==nav}" ng-click="menuClick(0,1)">
@@ -42,7 +42,6 @@
                                 <a href="../kanji/#/n5" data-i18n="menu.kanji-n5"></a>
                             </li>
                             <li ng-class="{'nav-active':3==nav}" ng-click="menuClick(0,3)">
-                             <!-- " -->
                                 <a href="../test/#/n5" data-i18n="menu.test-n5"></a>
                             </li>
                         </ul>
@@ -66,7 +65,7 @@
                                 <a href="../kanji/#/n4" data-i18n="menu.kanji-n4"></a>
                             </li>
                             <li ng-class="{'nav-active':2==nav}" ng-click="menuClick(1,2)">
-                            <!--  -->
+                                <!--  -->
                                 <a href="../test/#/n4" data-i18n="menu.test-n4"></a>
                             </li>
                         </ul>
@@ -157,6 +156,8 @@
     </div>
 </div>
 
+
+
 <!-- Keyboard shortcut modal -->
 <div class="modal fade" id="keyboardShorcutModal">
     <div class="modal-dialog">
@@ -208,7 +209,7 @@
                                 <span data-i18n="message.help.playSlow"></span>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>
                                 <div class="key">Backspace</div>
                             </td>
@@ -225,3 +226,93 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+<!-- Common modal for end game -->
+<div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" onkeydown="$(this).modal('hide')">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row center">
+                    <div class="col-md-12">
+                        <div class="star-wrapper">
+                            <i class="fa fa-star fa-2x"></i>
+                            <i class="fa fa-star fa-3x"></i>
+                            <i class="fa fa-star fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-8">Bạn nhận được</div>
+                    <div class="col-md-4 col-sm-4 col-xs 4">
+                        <span class="game-score"></span>&nbsp;XP
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="akr-back" data-dismiss="modal">
+                    <i class="fa fa-share fa-3x"></i>
+                </button>
+                <button type="button" class="btn btn-primary" id="akr-share">
+                    <i class="fa fa-share-alt fa-3x" onclick="facebookShare()"></i>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Common modal for test out -->
+<div class="modal fade testout-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" onkeydown="$(this).modal('hide')">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Finished</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <span class="message"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    <span data-i18n="common.ok" data-dismiss="modal"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+function facebookShare() {
+    var score = $(".game-over-modal-sm .game-score").text();
+    var title = i18n.t('message.info.sharetitle') + score + "XP";
+    var description = i18n.t('message.info.sharedesc');
+
+    console.log(title);
+    console.log(description);
+    // FB.ui({
+    //     method: 'share',
+    //     href: 'http://learn.akira.edu.vn/',
+    //     title: title,
+    //     description: description
+    // }, function(response) {})
+
+    FB.ui({
+        method: 'share_open_graph',
+        action_type: 'og.likes',
+        action_properties: JSON.stringify({
+            object: 'http://learn.akira.edu.vn/'
+        })
+    }, function(response) {
+        console.log(response);
+        $(".game-over-modal-sm").modal('hide');
+    });
+
+};
+</script>

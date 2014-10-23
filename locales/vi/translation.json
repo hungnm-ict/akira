@@ -60,7 +60,9 @@
             "end": "Bài học kết thúc",
             "score": "Bạn nhận được",
             "testfailed": "Bạn không vượt qua bài test",
-            "testsucess": "Bạn đã vượt qua bài test"
+            "testsucess": "Bạn đã vượt qua bài test",
+            "sharetitle":"Tôi vừa nhận được ",
+            "sharedesc":"Tham gia ngay tại http://learn.akira.edu.vn/"
         },
         "help": {
             "enter": "Submit answer",

@@ -657,10 +657,10 @@ ul.anchor {
 .hira-wrapper span, .vi-wrapper span {
     font-size: 20px;
     font-weight: bold;
-    line-height: 60px;
+    line-height: 50px;
     display: block;
-    width: 250px;
-    height: 60px;
+    width: 220px;
+    height: 50px;
     margin: 6px auto;
     text-align: center;
     color: white;
@@ -675,10 +675,10 @@ ul.anchor {
     text-transform: uppercase;
 }
 .akira-circle {
-    line-height: 120px;
+    line-height: 90px;
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin: 0 auto;
     padding: 6px;
     cursor: pointer;
@@ -687,6 +687,9 @@ ul.anchor {
     -moz-border-radius: 50%;
     border-radius: 50%;
     background: #f2f2f2;
+}
+.akira-circle img {
+    width: 80px;
 }
 a:hover {
     text-decoration: none;
@@ -1466,6 +1469,9 @@ ul.anchor li a .stepNumber {
     z-index: 100;
 }
 #feedback {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-top: 5px;
     background: #fff;
     color: #3c3c3c;
     cursor: pointer;
@@ -1473,7 +1479,7 @@ ul.anchor li a .stepNumber {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 4px;
-    padding-bottom: 7px;
+    padding-bottom: 0px;
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -1695,4 +1701,46 @@ ul.anchor li a .stepNumber {
 }
 #topicWizard .content {
     border: none !important;
+}
+#learnWizard, #pictureWizard, #wordWizard, #listernWizard, #writeWizard, #connectWizard, #grammarListenWizard, #grammarTranslateWizard, #grammarChoiceWizard, #grammarReadWizard, #grammarWordWizard {
+    margin-top: 45px;
+}
+.leaderboarduname {
+    cursor: pointer;
+}
+.game-over-modal-sm #akr-back {
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.game-over-modal-sm #akr-share, .game-over-modal-sm #akr-back {
+    border-radius: 50%;
+    position: absolute;
+    background: #FFF;
+    width: 60px;
+    height: 60px;
+    border-color: #FFFFFF;
+    color: #1659B0;
+    bottom: -25%;
+}
+.game-over-modal-sm #akr-share {
+    left: 50%;
+}
+.game-over-modal-sm #akr-back {
+    left: 20%;
+}
+.game-over-modal-sm .star {
+    color: #C0C0C0;
+}
+.game-over-modal-sm .star-wrapper.star-1 .fa-star:first-child {
+    color: yellow;
+}
+
+.game-over-modal-sm .star-wrapper.star-2 .fa-star:nth-child(1),.game-over-modal-sm .star.star-2 .fa-star:nth-child(2),{
+    color: yellow;
+} 
+
+.game-over-modal-sm .star-wrapper.star-3 {
+    color: yellow;
 }
