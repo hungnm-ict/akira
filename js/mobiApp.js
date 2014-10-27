@@ -1,4 +1,4 @@
-var mobi = angular.module('mobiRoot', ['ngRoute', 'ionic', 'mobiCtrl', 'commonCtrls', 'akrSharedDirectives']);
+var mobi = angular.module('mobiRoot', ['ngRoute', 'ionic', 'mobiCtrl','akrSharedDirectives','commonCtrls','akrDataService','akrRestService']);
 
 mobi.config(['$routeProvider',
     function($routeProvider) {
@@ -169,9 +169,5 @@ mobi.controller('rootCtrl', function($scope, $ionicSideMenuDelegate, $routeParam
 
     $scope.toggleRight = function() {
         $ionicSideMenuDelegate.toggleRight();
-    };
-
-    $scope.rootPlay = function(degree, course, lesson, sub, skill, audioTagId, playSpeed) {
-
     };
 });

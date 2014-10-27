@@ -68,7 +68,7 @@ function changeLang(code) {
 function getUser() {
     if (localStorage.getItem("user") == null) {
         return {
-            "id": 17,
+            "id": 0,
             "loginname": "anonymous",
             "display": "Anonymous"
         };

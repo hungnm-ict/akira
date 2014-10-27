@@ -435,38 +435,9 @@ body {
 #board-type {
     text-align: center;
 }
-/* MOBI APPS */
 
-.mobi-app {
-    background-color: transparent !important;
-}
-.mobi-app > ul {
-    margin-bottom: 24px;
-}
-.mobi-app > ul > li img {
-    width: 100px;
-    height: 100px;
-}
-.mobi-app > ul > li {
-    display: inline-block;
-    width: 30%;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: transparent !important;
-}
-.mobi-app > ul > li a {
-    border: none !important;
-}
-.mobi-app > ul > li, .mobi-app > ul > li a, .mobi-app > ul > li img {
-    outline: none;
-}
-.mobi-app > ul > li.ui-tabs-active.ui-state-active {
-    border-bottom: 2px solid #00abe3;
-}
-.mobi-app > div img {
-    width: 150px;
-    height: 150px;
-}
+
+
 .arrow-down {
     position: relative;
     top: -24px;
@@ -1781,7 +1752,7 @@ ul.anchor li a .stepNumber {
 .game-over-modal-sm .star-wrapper.star-1 .fa-star:first-child {
     color: yellow;
 }
-.game-over-modal-sm .star-wrapper.star-2 .fa-star:nth-child(1), .game-over-modal-sm .star.star-2 .fa-star:nth-child(2), {
+.game-over-modal-sm .star-wrapper.star-2 .fa-star:nth-child(1), .game-over-modal-sm .star-wrapper.star-2 .fa-star:nth-child(3){
     color: yellow;
 }
 .game-over-modal-sm .star-wrapper.star-3 {
@@ -1882,4 +1853,45 @@ ul.anchor li a .stepNumber {
 }
 #kana .rect-input{
     line-height: 165px !important;
+}
+
+/* MOBI APPS */
+.mobi-app {
+    background-color: transparent !important;
+}
+.mobi-app > ul {
+    margin-bottom: 24px;
+}
+.mobi-app > ul > li img {
+    width: 100px;
+    height: 100px;
+}
+.mobi-app > ul > li {
+    display: inline-block;
+    width: 30%;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: transparent !important;
+}
+.mobi-app > ul > li a {
+    border: none !important;
+}
+.mobi-app > ul > li, .mobi-app > ul > li a, .mobi-app > ul > li img {
+    outline: none;
+}
+.mobi-app > ul > li.ui-tabs-active.ui-state-active {
+    border-bottom: 2px solid #00abe3;
+}
+.mobi-app > div img {
+    width: 150px;
+    height: 150px;
+}
+.fill-height{
+    height: 100%;
+    padding: 0px;
+    margin:0px;
+    vertical-align: middle;
+}
+.scroll,.slider{
+    height: 100% !important;
 }
