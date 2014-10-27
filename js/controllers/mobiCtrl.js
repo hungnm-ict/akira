@@ -13,13 +13,13 @@ mobiCtrl.controller('subCtrl', function($scope, $http, $routeParams) {
 });
 
 mobiCtrl.controller('learnCtrl', function($scope, $http, $routeParams, mobiService) {
-    mobiService.getPromise($routeParams.degree, $routeParams.course).then(function(deferred) {
-        if (deferred.data != null) {
-            $scope.data = mobiService.filterData(deferred.data, $routeParams.lessonId, $routeParams.subid);
-        } else {
-            console.log("Null data returned!!!!");
-        }
-    });
+    // mobiService.getPromise($routeParams.degree, $routeParams.course).then(function(deferred) {
+    //     if (deferred.data != null) {
+    //         $scope.data = mobiService.filterData(deferred.data, $routeParams.lessonId, $routeParams.subid);
+    //     } else {
+    //         console.log("Null data returned!!!!");
+    //     }
+    // });
 
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;

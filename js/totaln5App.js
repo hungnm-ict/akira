@@ -314,23 +314,19 @@ totaln5App.service('dataService', function($http) {
 });
 
 totaln5App.service('restService', function($http) {
-    this.n5Star = $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln5&userid=" + getUser().id
-    });
-
-    this.n4Star = $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln4&userid=" + getUser().id
-    });
-
     this.getRestPromise = function(course) {
         switch (course) {
             case "n5":
-                return this.n5Star;
+                return $http({
+                    method: "GET",
+                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln5&userid=" + getUser().id
+                });
                 break;
             case "n4":
-                return this.n4Star;
+                return n4Star = $http({
+                    method: "GET",
+                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln4&userid=" + getUser().id
+                });
                 break;
             default:
                 return null;
@@ -354,7 +350,9 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
         try {
             var selId = "choices-" + step + "-" + id;
             var audioSrc = document.getElementById(selId).getElementsByTagName('source');
+            // var audioSrc = document.getElementById("audioPlayer").getElementsByTagName('source');
             $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
+
             document.getElementById(selId).load();
             document.getElementById(id).playbackRate = speed;
             document.getElementById(selId).play();
@@ -381,12 +379,8 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=total" + $routeParams.degree + "&userid=" + getUser().id
         }).success(function(data, status) {
-
-            if (getUser().hasOwnProperty("dayremain") && getUser().dayremain <= 0) {
-                return false;
-            }
-            console.log(akrParseInt(data));
-            console.log(lesson - 1);
+            // console.log(akrParseInt(data));
+            // console.log(lesson - 1);
             if (akrParseInt(data) >= (lesson - 1)) {
                 $window.location.href = "#/" + $routeParams.degree + "/" + lesson;
             } else {
@@ -402,14 +396,14 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
         }).success(function(data, status) {
             if (akrParseInt(data) > 0) {
-                console.log("Ban con ngay su dung va co the choi phan nay");
+                // console.log("Ban con ngay su dung va co the choi phan nay");
                 $window.location.href = "#/" + $routeParams.degree + "/testout/" + type + "/" + lesson;
             } else {
                 alert(i18n.t("message.info.buy"));
             }
         });
     };
-       
+
     $scope.$on('$routeChangeStart', function(scope, next, curr) {
         $scope.isLoading = "true";
     });

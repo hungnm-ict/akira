@@ -1,6 +1,6 @@
-var totaln5App = angular.module('totaln5App', ['ngRoute', 'kanaCtrls', 'commonCtrls', 'akrSharedDirectives']);
+var app = angular.module('totaln5App', ['ngRoute', 'kanaCtrls', 'commonCtrls', 'akrSharedDirectives']);
 
-totaln5App.config(['$routeProvider',
+app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -59,7 +59,7 @@ totaln5App.config(['$routeProvider',
     }
 ]);
 
-totaln5App.service('dataService', function($http) {
+app.service('dataService', function($http) {
 
     this.kana1 = $http({
         method: "GET",
@@ -102,29 +102,24 @@ totaln5App.service('dataService', function($http) {
     }
 });
 
-totaln5App.service('restService', function($http) {
-
-    this.kanaStar = $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kana&userid=" + getUser().id,
-        cache : false
-    });
-
+app.service('restService', function($http, $q) {
     this.getRestPromise = function(course) {
         switch (course) {
             case "kana":
-                return this.kanaStar;
+                return $http({
+                    method: "GET",
+                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kana&userid=" + getUser().id
+                });
                 break;
             default:
                 return null;
                 break;
         }
     }
-
 });
 
 
-totaln5App.controller('rootController', function($scope, $timeout, $http, $window, $sce) {
+app.controller('rootController', function($scope, $timeout, $http, $window, $sce, $location) {
     $scope.rootPlay = function(data, course, step, id) {
         try {
             var selId = "choices-" + step + "-" + id;
@@ -138,6 +133,7 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
     };
 
     $scope.$on('$routeChangeStart', function(scope, next, curr) {
+        // Check user auth here and other conditional
         $scope.isLoading = "true";
     });
 
@@ -146,7 +142,7 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
     });
 });
 
-totaln5App.factory('menuFactory', function($rootScope) {
+app.factory('menuFactory', function($rootScope) {
     var navgroup = 0;
     var nav = 0;
 
@@ -156,4 +152,4 @@ totaln5App.factory('menuFactory', function($rootScope) {
     };
 
     return menu;
-})
+});

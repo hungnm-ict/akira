@@ -420,31 +420,37 @@ function akiraStepValidation(id) {
  * @param  {[type]} context [description]
  * @return {[type]}         [description]
  */
-function leaveAStepCallback(obj, context) {
-    var classStr = "success";
-    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val())
+// function leaveAStepCallback(obj, context) {
+//     var classStr = "success";
+//     var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val())
 
-    if (!ret) {
-        $("#sublife").trigger("click");
-        classStr = "failed";
-    }
-    $(".swMain .actionBar .msgBox").removeClass("failed");
-    $(".swMain .actionBar .msgBox").removeClass("success");
-    $(".swMain .actionBar .msgBox").addClass(classStr);
-    $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
+//     if (!ret) {
+//         $("#sublife").trigger("click");
+//         classStr = "failed";
+//     }
+//     $(".swMain .actionBar .msgBox").removeClass("failed");
+//     $(".swMain .actionBar .msgBox").removeClass("success");
+//     $(".swMain .actionBar .msgBox").addClass(classStr);
+//     $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
 
-    return ret;
-};
+//     return ret;
+// };
 
-function grammarChoiceLeaveStep(obj, context) {
-    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val());
-    if (!ret) {
-        $("#sublife").trigger("click");
-        $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
-    }
+/**
+ * @deprecated
+ * @param  {[type]} obj     [description]
+ * @param  {[type]} context [description]
+ * @return {[type]}         [description]
+ */
+// function grammarChoiceLeaveStep(obj, context) {
+//     var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val());
+//     if (!ret) {
+//         $("#sublife").trigger("click");
+//         $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
+//     }
 
-    return ret;
-}
+//     return ret;
+// }
 
 /**
  * Global leave step validation method
@@ -452,48 +458,48 @@ function grammarChoiceLeaveStep(obj, context) {
  * @param  {[type]} context [description]
  * @return {[type]}         [description]
  */
-function akrLeaveStep(obj, context) {
-    if (14 == getUser().id || 17 == getUser().id) {
-        return true;
-    };
+// function akrLeaveStep(obj, context) {
+//     if (14 == getUser().id || 17 == getUser().id) {
+//         return true;
+//     };
 
-    var ngScope = angular.element("#" + obj.context.id).scope();
+//     var ngScope = angular.element("#" + obj.context.id).scope();
 
-    if (ngScope.lessonId === undefined) {
-        // console.log("Bạn đang ở màn hình chọn lesson.");
-    } else if (ngScope.lessonId !== undefined && ngScope.partId !== undefined && "subtopicWizard" === obj.context.id) {
-        // console.log("Bạn đang ở khóa học: " + ngScope.course + ", bài học: " + ngScope.lessonId + ", subtopic : " + context.fromStep + ", và đang chuyển sang subtopic: " + context.toStep);
-        // console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
-        var stars = getCurrentStar(ngScope.starData, ngScope.course, ngScope.lessonId, context.toStep);
-        // console.log("Số sao bạn có là: " + stars);
-        if (context.toStep === 4 && ("totaln5" == ngScope.course || "totaln4" == ngScope.course)) {
-            // console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
-            return false;
-        }
-        if (stars < (context.toStep - 1) * 10) {
-            // console.info("Bạn chưa đạt đủ số sao yêu cầu. Bạn còn thiếu: " + (context.toStep * 10 - stars));
-            return false;
-        }
-    } else {
-        // console.log("Bước này không xác định hoặc là chưa xác định được");
-    }
-    return true;
-}
+//     if (ngScope.lessonId === undefined) {
+//         // console.log("Bạn đang ở màn hình chọn lesson.");
+//     } else if (ngScope.lessonId !== undefined && ngScope.partId !== undefined && "subtopicWizard" === obj.context.id) {
+//         // console.log("Bạn đang ở khóa học: " + ngScope.course + ", bài học: " + ngScope.lessonId + ", subtopic : " + context.fromStep + ", và đang chuyển sang subtopic: " + context.toStep);
+//         // console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
+//         var stars = getCurrentStar(ngScope.starData, ngScope.course, ngScope.lessonId, context.toStep);
+//         // console.log("Số sao bạn có là: " + stars);
+//         if (context.toStep === 4 && ("totaln5" == ngScope.course || "totaln4" == ngScope.course)) {
+//             // console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
+//             return false;
+//         }
+//         if (stars < (context.toStep - 1) * 10) {
+//             // console.info("Bạn chưa đạt đủ số sao yêu cầu. Bạn còn thiếu: " + (context.toStep * 10 - stars));
+//             return false;
+//         }
+//     } else {
+//         // console.log("Bước này không xác định hoặc là chưa xác định được");
+//     }
+//     return true;
+// }
 
-function akrShowStep(obj, context) {
-    var ngScope = angular.element("#" + obj.context.id).scope();
-    //Check if this is autoplay audio
-    if ($("#" + obj.context.id).attr("akrautoplayaudio") == "true") {
-        ngScope.playSound(context.toStep - 1, true);
-    }
+// function akrShowStep(obj, context) {
+//     var ngScope = angular.element("#" + obj.context.id).scope();
+//     //Check if this is autoplay audio
+//     if ($("#" + obj.context.id).attr("akrautoplayaudio") == "true") {
+//         ngScope.playSound(context.toStep - 1, true);
+//     }
 
-    //Check if this is autofocus input
-    if ($("#" + obj.context.id).attr("akrfocus") == "true") {
-        setTimeout(function() {
-            $("#input-" + (context.toStep - 1)).focus();
-        }, 1);
-    }
-}
+//     //Check if this is autofocus input
+//     if ($("#" + obj.context.id).attr("akrfocus") == "true") {
+//         setTimeout(function() {
+//             $("#input-" + (context.toStep - 1)).focus();
+//         }, 1);
+//     }
+// }
 
 function getCurrentStar(data, courseName, lessonId, partId) {
     var totalStar = 0;
@@ -699,17 +705,17 @@ function getObjects(obj, key, val) {
     }
 }
 
-function getDict() {
-    $.ajax({
-        url: "../../data/dict.json",
-        async: false,
-        success: function(data) {
-            console.log(data);
-            dict = data;
-            // return data;
-        }
-    });
-}
+// function getDict() {
+//     $.ajax({
+//         url: "../../data/dict.json",
+//         async: false,
+//         success: function(data) {
+//             console.log(data);
+//             dict = data;
+//             // return data;
+//         }
+//     });
+// }
 
 /**
  * Tính toán xem trong bài học(lesson) này của khóa học(course) đã mở được đến topic nào rồi
@@ -835,43 +841,44 @@ function akrGetUserInput(id) {
 
 /**
  * Notification for test
+ * @deprecated
  * @param  {[type]} status   [description]
  * @param  {[type]} type     [description]
  * @param  {[type]} lessonid [description]
  * @return {[type]}          [description]
  */
-function testoutOver(status, course, lessonid, type) {
-    try {
-        if (status) {
-            $(".testout-over-modal-sm .message").html(i18n.t("message.info.testsucess"));
-            $.ajax({
-                type: 'POST',
-                url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_keypoint.php",
-                crossDomain: true,
-                data: {
-                    userid: getUser().id,
-                    course: course,
-                    lessonid: lessonid,
-                    type: type,
-                }
-            }).done(function(data) {
-                console.info(data);
-            }).fail(function(xhr, status, err) {
-                console.error(err);
-            });
-        } else {
-            $(".testout-over-modal-sm .message").html(i18n.t("message.info.testfailed"));
-        }
-        $(".testout-over-modal-sm").modal({
-            keyboard: true
-        });
-        $('.testout-over-modal-sm').on('hide.bs.modal', function(e) {
-            window.history.back();
-        });
-    } catch (err) {
-        console.error(err);
-    }
-}
+// function testoutOver(status, course, lessonid, type) {
+    // try {
+    //     if (status) {
+    //         $(".testout-over-modal-sm .message").html(i18n.t("message.info.testsucess"));
+    //         $.ajax({
+    //             type: 'POST',
+    //             url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_keypoint.php",
+    //             crossDomain: true,
+    //             data: {
+    //                 userid: getUser().id,
+    //                 course: course,
+    //                 lessonid: lessonid,
+    //                 type: type,
+    //             }
+    //         }).done(function(data) {
+    //             console.info(data);
+    //         }).fail(function(xhr, status, err) {
+    //             console.error(err);
+    //         });
+    //     } else {
+    //         $(".testout-over-modal-sm .message").html(i18n.t("message.info.testfailed"));
+    //     }
+    //     $(".testout-over-modal-sm").modal({
+    //         keyboard: true
+    //     });
+    //     $('.testout-over-modal-sm').on('hide.bs.modal', function(e) {
+    //         window.history.back();
+    //     });
+    // } catch (err) {
+    //     console.error(err);
+    // }
+// }
 
 /**
  * Get the exp return current progress
@@ -994,6 +1001,7 @@ var dict = (function() {
 window.fbAsyncInit = function() {
     FB.init({
         appId: "721532401232192",
+        // appId: "288129501345090",
         status: true, // check login status
         cookie: true, // enable cookies to allow the server to access the session
         xfbml: true // parse XFBML

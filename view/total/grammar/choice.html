@@ -145,15 +145,6 @@ function chooseAnswer(event, target) {
     </div>
 </div>
 <script type="text/javascript">
-// $(document).keydown(function(e) {
-//     if (13 == e.keyCode) {
-//         angular.element("#grammarChoiceWizard").scope().enterPress();
-//     } else if ([49, 50, 51].indexOf(e.keyCode) != -1) {
-//         angular.element("#grammarChoiceWizard").scope().keyPress(e.keyCode);
-//     }
-//     changeLang();
-// });
-
 var scope = angular.element("#grammarChoiceWizard").scope();
 KeyboardJS.on('enter', function() {
     scope.enterPress();

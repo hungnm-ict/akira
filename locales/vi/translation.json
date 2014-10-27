@@ -14,7 +14,7 @@
         "support": "Trợ giúp",
         "ios": "iOS",
         "android": "Android",
-        "keyboard" :"Phím tắt"
+        "keyboard": "Phím tắt"
     },
     "common": {
         "lesson": "Bài",
@@ -61,15 +61,20 @@
             "score": "Bạn nhận được",
             "testfailed": "Bạn không vượt qua bài test",
             "testsucess": "Bạn đã vượt qua bài test",
-            "sharetitle":"Tôi vừa nhận được ",
-            "sharedesc":"Tham gia ngay tại http://learn.akira.edu.vn/"
+            "sharetitle": "Tôi vừa nhận được ",
+            "sharedesc": "Tham gia ngay tại http://learn.akira.edu.vn/"
         },
         "help": {
-            "enter": "Submit answer",
-            "choice": "Select multiple choice answers",
-            "play": "Replay audio",
-            "playSlow": "Replay audio slower",
+            "enter": "Kiểm tra",
+            "choice": "Chọn đáp án ",
+            "play": "Chơi lại âm thanh",
+            "playSlow": "Chơi lại âm thanh chậm",
             "back": "Quay lại"
         }
+    },
+    "profile": {
+        "logout": "Đăng xuất",
+        "redeem": "Nhập code",
+        "help": "Trợ giúp"
     }
 }

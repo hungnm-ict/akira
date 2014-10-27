@@ -1,4 +1,4 @@
-var totaln5Ctrls = angular.module('totaln5Ctrls', []);
+var totaln5Ctrls = angular.module('totaln5Ctrls', ['akrUtilService']);
 
 totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, totalStar, $routeParams, menuFactory, $rootScope) {
 
@@ -100,7 +100,7 @@ totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataSer
 =            Controller for totaln5 - Vocab game            =
 ===========================================================*/
 
-totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataService, writeData) {
+totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataService, writeData, utilService, gameService) {
     $scope.course = "total" + $routeParams.degree;
     $scope.data = akiraShuffle(dataService.filter(writeData.data, "topic", $routeParams.lessonId, "sub", $routeParams.partId));
 
@@ -115,7 +115,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
     $scope.removeLife = function() {
         $scope.gameObject.life -= 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -144,7 +144,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -179,7 +179,7 @@ totaln5Ctrls.controller('writeCtrl', function($scope, $routeParams, $http, dataS
     };
 });
 
-totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, dataService) {
+totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -205,7 +205,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, dat
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -254,7 +254,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, dat
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -267,7 +267,7 @@ totaln5Ctrls.controller('pictureCtrl', function($scope, $routeParams, $http, dat
     }
 });
 
-totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService) {
+totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -289,7 +289,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -337,7 +337,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -350,7 +350,7 @@ totaln5Ctrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSe
     }
 });
 
-totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, dataService) {
+totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -381,7 +381,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -397,7 +397,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
             var romaji = $scope.data[$scope.step].romaji;
             if (compare(hira, userSlt) || compare(romaji, userSlt)) {
 
-            // if (compare(correct, userSlt)) {
+                // if (compare(correct, userSlt)) {
                 playCorrect();
                 $("#listenWizard #step-" + step + " #aki-answer-wrapper").removeClass().addClass("success");
                 $scope.gameObject.correct++;
@@ -411,7 +411,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -434,7 +434,7 @@ totaln5Ctrls.controller('listenCtrl', function($scope, $routeParams, $http, data
     }
 });
 
-totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService) {
+totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -452,7 +452,7 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if (angular.equals($scope.gameObject.life, 0)) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, 5);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, 5);
         }
     };
 
@@ -460,7 +460,7 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
         $scope.step++;
         $scope.gameObject.correct++;
         if (angular.equals($scope.step, 5)) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, 5);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, 5);
         }
     }
 });
@@ -470,7 +470,7 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
 =            Controller for totaln5 - Grammar game            =
 =============================================================*/
 
-totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $http, dataService, $sce) {
+totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $http, dataService, $sce, utilService, gameService) {
     $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
@@ -502,7 +502,7 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
         }
     }
 
@@ -532,7 +532,7 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -559,7 +559,7 @@ totaln5Ctrls.controller('grammarListenCtrl', function($scope, $routeParams, $htt
     }
 });
 
-totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $http, dataService) {
+totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 2).then(function(deferred) {
@@ -587,7 +587,7 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -611,7 +611,7 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -634,7 +634,7 @@ totaln5Ctrls.controller('grammarChoiceCtrl', function($scope, $routeParams, $htt
     }
 });
 
-totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $http, dataService, $sce) {
+totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $http, dataService, $sce, utilService, gameService) {
     $scope.course = "total" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -649,7 +649,7 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -681,7 +681,7 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -697,7 +697,7 @@ totaln5Ctrls.controller('grammarTranslateCtrl', function($scope, $routeParams, $
     }
 });
 
-totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http, dataService, $sce) {
+totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http, dataService, $sce, utilService, gameService) {
     $scope.degree = $routeParams.degree;
     $scope.course = "total" + $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -712,7 +712,7 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http,
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct);
         }
     };
 
@@ -742,7 +742,7 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http,
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -755,13 +755,13 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http,
 
     $scope.keyPress = function(keyCode) {
         if ($scope.stage != 2) {
-            if ([49, 50, 51].indexOf($scope.keyCode) == -1) {
+            // if ([49, 50].indexOf($scope.keyCode) == -1) {
                 $scope.stage = 1;
-            }
-            $scope.keyCode = keyCode;
+                $scope.keyCode = keyCode;
+                $scope.$apply();
+                changeLang();
+            // }
         }
-        $scope.$apply();
-        changeLang();
     }
 
     $scope.renderHtml = function(text) {
@@ -769,7 +769,7 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http,
     }
 });
 
-totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http, dataService, $sce) {
+totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http, dataService, $sce, utilService, gameService) {
     $scope.degree = $routeParams.degree;
     $scope.course = "total" + $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -783,7 +783,7 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http,
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -812,7 +812,7 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http,
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -843,7 +843,7 @@ totaln5Ctrls.controller('grammarWordCtrl', function($scope, $routeParams, $http,
 
 /*-----  End of Controller for totaln5 - Grammar game  ------*/
 
-totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, $window, testoutData, dataService) {
+totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, $window, testoutData, dataService, utilService, gameService) {
     try {
         $scope.course = "total" + $routeParams.degree;
         $scope.degree = $routeParams.degre;
@@ -891,7 +891,7 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, $window, t
         $scope.removeLife = function() {
             $scope.gameObject.life -= 1;
             if ($scope.gameObject.life == 0) {
-                testoutOver(false, $scope.course, $routeParams.lessonId, $routeParams.type);
+                gameService.testoutOver(false, $scope.course, $routeParams.lessonId, $routeParams.type);
             }
         };
 
@@ -917,7 +917,7 @@ totaln5Ctrls.controller('testoutCtrl', function($scope, $routeParams, $window, t
                 } else if (2 == $scope.stage) {
                     //Nguoi dung dang o buoc continue va nhan enter
                     if (angular.equals($scope.step, $scope.data.length - 1)) {
-                        testoutOver(true, $scope.course, $routeParams.lessonId, $routeParams.type);
+                        gameService.testoutOver(true, $scope.course, $routeParams.lessonId, $routeParams.type);
                     }
                     $scope.keyCode = 0;
                     $scope.stage = 0;

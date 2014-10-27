@@ -20,6 +20,8 @@
     <script type="text/javascript" src="../../spec/lib/jquery-ui.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="../../spec/lib/angular-cookies/angular-cookies.min.js"></script>
+
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
     <script type="text/javascript" src="../../spec/lib/keyboard/keyboard.js"></script>
@@ -28,6 +30,7 @@
     <script type="text/javascript" src="../../js/index.js"></script>
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
+    <script type="text/javascript" src="../../js/services/utilService.js"></script>
     <script type="text/javascript" src="../../js/controllers/kanaCtrl.js"></script>
     <script type="text/javascript" src="../../js/kanaApp.js"></script>
 
@@ -60,7 +63,7 @@
                     </audio>
                     <div ng-switch on="isLoading">
                         <div ng-switch-when="true" class="center">
-                            <img src="http://www.w3schools.com/jquery/demo_wait.gif" alt="">
+                            <img src="../../img/loading.gif" alt="">
                         </div>
                         <div ng-switch-when="false">
                             <div ng-view></div>

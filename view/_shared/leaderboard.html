@@ -24,12 +24,12 @@
                         <tab>
                             <h1 class="heading" data-i18n="leaderboard.week">Tuần</h1>
                             <div id="lvl-tabs-1">
-                                <div class="row" ng-repeat="val in rank['level']['week']">
+                                <div class="row" ng-repeat="val in rank['level']['week']" ng-click="callChat(val.uid)">
                                     <div class="col-md-2 col-sm-2 col-xs-2">
-                                        <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
+                                        <div ng-bind-html="renderHtml(val.ava)" class="ava-circle" ></div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <span ng-bind="val.display" ng-click="callChat(val.uid)" class="leaderboarduname">
+                                        <span ng-bind="val.display" class="leaderboarduname">
                                         </span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 center">
@@ -41,12 +41,12 @@
                         <tab>
                             <h1 class="heading" data-i18n="leaderboard.all">Tất cả</h1>
                             <div id="lvl-tabs-2">
-                                <div class="row" ng-repeat="val in rank['level']['all']">
+                                <div class="row" ng-repeat="val in rank['level']['all']"  ng-click="callChat(val.uid)">
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                         <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <span ng-bind="val.display" ng-click="callChat(val.uid)" class="leaderboarduname">
+                                        <span ng-bind="val.display"  class="leaderboarduname">
                                         </span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 center">
@@ -65,12 +65,12 @@
                         <tab>
                             <h1 class="heading" data-i18n="leaderboard.week">Tuần</h1>
                             <div id="mentor-tabs-1">
-                                <div class="row" ng-repeat="val in rank['mentor']['week']">
+                                <div class="row" ng-repeat="val in rank['mentor']['week']" ng-click="callChat(val.uid)">
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                         <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <span ng-bind="val.display" ng-click="callChat(val.uid)" class="leaderboarduname">
+                                        <span ng-bind="val.display" class="leaderboarduname">
                                         </span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 center">
@@ -82,12 +82,12 @@
                         <tab>
                             <h1 class="heading" data-i18n="leaderboard.all">Tất cả</h1>
                             <div id="mentor-tabs-2">
-                                <div class="row" ng-repeat="val in rank['mentor']['all']">
+                                <div class="row" ng-repeat="val in rank['mentor']['all']" ng-click="callChat(val.uid)" >
                                     <div class="col-md-2 col-sm-2 col-xs-2">
                                         <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <span ng-bind="val.display" ng-click="callChat(val.uid)" class="leaderboarduname">
+                                        <span ng-bind="val.display" class="leaderboarduname">
                                         </span>
                                     </div>
                                     <div class="col-md-3 col-sm-3 col-xs-3 center">

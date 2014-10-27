@@ -267,5 +267,4 @@ data.service('dataService', function($http) {
         method: "GET",
         url: "../../data/testn5/json/write_4.json"
     });
-
 });

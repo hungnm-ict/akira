@@ -23,13 +23,17 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 center">
                         <h2 ng-bind="val.hiragana"></h2>
-                        <h3 ng-bind="val.kanji"></h3>
+                        <h4 ng-bind="val.kanji"></h4>
                     </div>
                 </div>
             </div>
 
             <!-- User answer wrapper -->
             <div id="user-input-wrapper">
+           <!--     <audio controls id="audioPlayer" style="display:none;">
+                    <source type="audio/mpeg">
+                        Your browser does not support the audio element.</source>
+                </audio> -->
                 <div id="{{key}}" class="picture-wrapper row">
                     <div class="col-md-4 col-sm-4 col-xs-4" ng-class="{'selected': 49==keyCode}" ng-click="keyPress($event,49)">
                         <audio controls id="choices-{{key}}-0" style="display:none;">

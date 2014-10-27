@@ -26,6 +26,7 @@
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
     <script type="text/javascript" src="../../js/index.js"></script>
+    <script type="text/javascript" src="../../js/services/utilService.js"></script>
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
     <script type="text/javascript" src="../../js/directives/totaln5Directive.js"></script>
@@ -44,12 +45,12 @@
 
 <body>
     <div class="app container-full-height container-fluid" id="dashboard">
-        <div class="row row-full-height">
+        <div class="row row-full-height" >
             <div class="col-md-1 col-full-height hidden-sm hidden-xs" style="padding-left: 0px;">
                 <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=0;nav=1">
                 </div>
             </div>
-            <div class="col-md-8 col-full-height">
+            <div class="col-md-8 col-full-height" id="total">
                 <div id="content" ng-controller="rootController">
                     <audio controls id="sound-true" class="hide">
                         <source src="../../audio/true.mp3" type="audio/mp3">

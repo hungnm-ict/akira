@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="grammarTranslateWizard" class="swMain akiHide" akirawizard>
+<div id="grammarTranslateWizard" class="swMain akiHide" akirawizard clear="true">
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
             <a ng-href="#step-{{key}}" click="partId={{key}}">
@@ -11,7 +11,7 @@
     </ul>
 
     <!-- Life wrapper -->
-   <akrlife ret="../../view/totaln5" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife ret="../../view/totaln5" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
         <div class="wrapper">
@@ -23,8 +23,9 @@
                 </div>
 
                 <div class="row" style="min-height: 120px;">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <span ng-repeat="(anskey,ansval) in answers[key]" id="opt-{{key}}-{{anskey}}" class="drag-ans" draggable="true" ondragstart="drag(event)" ng-bind="ansval">
+                    <div class="col-md-12 col-sm-12 col-xs-12 init-zone">
+                        <!-- draggable="true" ondragstart="drag(event)" -->
+                        <span ng-repeat="(anskey,ansval) in answers[key]" id="opt-{{key}}-{{anskey}}" class="drag-ans" ng-bind="ansval" onclick="move(this)">
                         </span>
                     </div>
                 </div>
@@ -33,7 +34,8 @@
             <div id="user-input-wrapper">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="drop-zone" id="input-{{key}}" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <!-- ondrop="drop(event)" ondragover="allowDrop(event)" -->
+                        <div class="drop-zone" id="input-{{key}}"></div>
                     </div>
                 </div>
             </div>
@@ -50,7 +52,7 @@
                 <div class="row mess-holder-{{key}}">
                     <!-- Prepare message holder-->
                     <div class="col-md-8 col-sm-8 col-xs-8">
-                         <table class="table center hide top-none">
+                        <table class="table center hide top-none">
                             <tbody>
                                 <tr>
                                     <td>
@@ -103,11 +105,11 @@
 <script type="text/javascript">
 function allowDrop(ev) {
     ev.preventDefault();
-}
+};
 
 function drag(ev) {
     ev.dataTransfer.setData("text/html", ev.target.id);
-}
+};
 
 function drop(ev) {
     angular.element("#grammarTranslateWizard").scope().stage = 1;
@@ -119,13 +121,24 @@ function drop(ev) {
     if (ev.toElement.className == "drop-zone") {
         ev.target.appendChild(document.getElementById(data));
     }
+};
+
+
+function move(e) {
+    gScope = angular.element("#grammarTranslateWizard").scope();
+    if ($(e).parents('.drop-zone').length > 0) {
+        $(e).appendTo(".init-zone");
+        if($('.drop-zone .drag-ans').length){
+            gScope.stage = 0;
+        }
+    } else {
+        // alert("outside drop");
+        $(e).appendTo(".drop-zone");
+        gScope.stage = 1;
+    }
+    gScope.$apply();
+    changeLang();
 }
-// $(document).keydown(function(e) {
-//     if (13 == e.keyCode) {
-//         angular.element("#grammarTranslateWizard").scope().enterPress();
-//     }
-//     changeLang();
-// });
 
 var scope = angular.element("#grammarTranslateWizard").scope();
 KeyboardJS.on('enter', function() {

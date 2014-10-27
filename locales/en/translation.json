@@ -1,46 +1,79 @@
 {
-	"menu":{
-		"japanese-n5" : "Japanese N5",
-		"toeic-500"   : "TOEIC 500",
-		"kana"		  : "Kana",
-		"total-n5"       : "Total N5",
-		"kanji-n5"    : "Kanji N5",
-		"test-n5"     : "Test N5",
-		"japanese-n4" : "Japanese N4",
-		"total-n4"       : "Total N4",
-		"kanji-n4"    : "Kanji N4",
-		"test-n4"     : "Test N4",
-		"mobi"		  : "Mobi apps",
-		"support"	  : "Support",
-		"ios"		  : "iOS",
-		"android"     : "Android"
-	},
-	"common":{
-		"lesson"	  : "Lesson",
-		"dayleft"	  : "Dayleft",
-		"login"		  : "Login",
-		"part"		  : "Part",
-		"lesson"      : "Lesson",
-		"vocab"       : "Vocabulary",
-		"grammar"     : "Grammar",
-		"learn"       : "Learn",
-		"picture"     : "Picture",
-		"word"		  : "Word",
-		"listen"      : "Listen",
-		"connect"     : "Connect",
-		"write"       : "Write",
-		"choice"      : "Choice",
-		"translate"   : "Translate",
-		"read"        : "Read",
-		"choose-type" : "Choose your exam preparation content",
-		"choose-time" : "Choose your exam preparation time",
-		"listen-compre" : "Listen Comprehension",
-		"mins"			: "Minutes",
-		"start"			: "Start"
-	},
-	"leaderboard":{
-		"leaderboard" : "Leaderboard",
-		"week"		  : "This week",
-		"all"		  : "All time"
-	}
+    "menu": {
+        "japanese-n5": "Japanese N5",
+        "toeic-500": "TOEIC 500",
+        "kana": "Kana",
+        "total-n5": "Total N5",
+        "kanji-n5": "Kanji N5",
+        "test-n5": "Test N5",
+        "japanese-n4": "Japanese N4",
+        "total-n4": "Total N4",
+        "kanji-n4": "Kanji N4",
+        "test-n4": "Test N4",
+        "mobi": "Mobi apps",
+        "support": "Help",
+        "ios": "iOS",
+        "android": "Android",
+        "keyboard": "Keyboard"
+    },
+    "common": {
+        "lesson": "Lesson",
+        "dayleft": "Dayleft",
+        "login": "Login",
+        "part": "part",
+        "vocab": "Vocab",
+        "grammar": "Grammar",
+        "learn": "Learn",
+        "picture": "Picture",
+        "word": "Word",
+        "listen": "Listen",
+        "connect": "Connect",
+        "write": "Write",
+        "choice": "Choice",
+        "translate": "Translate",
+        "read": "Read",
+        "choose-type": "Choose type of exam",
+        "choose-time": "Choose examination time",
+        "listen-compre": "Listen",
+        "mins": "min",
+        "start": "Start",
+        "check": "Check",
+        "next": "Next",
+        "prev": "Back",
+        "save": "Save",
+        "dayleft": "Dayleft",
+        "submit": "Submit",
+        "answersheet": "Answer",
+        "ok": "Ok"
+    },
+    "leaderboard": {
+        "leaderboard": "Leaderboard",
+        "week": "Week",
+        "all": "All"
+    },
+    "message": {
+        "info": {
+            "anonymous": "Login to save score",
+            "buy": "You need buy giftcard to play this part",
+            "keypoint": "You not enough star to play this game",
+            "end": "Lesson ended",
+            "score": "You received",
+            "testfailed": "Test failed",
+            "testsucess": "Congrat! you pass the test",
+            "sharetitle": "I just received",
+            "sharedesc": "Join with me at http://learn.akira.edu.vn/"
+        },
+        "help": {
+            "enter": "Submit answer",
+            "choice": "Select multiple choice answers",
+            "play": "Replay audio",
+            "playSlow": "Replay audio slower",
+            "back": "Back"
+        }
+    },
+    "profile": {
+        "logout": "Logout",
+        "redeem": "Redeem",
+        "help": "Help"
+    }
 }

@@ -147,24 +147,19 @@ app.service('dataService', function($http) {
 });
 
 app.service('restService', function($http) {
-    this.n4Star = $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kanjin4&userid=" + getUser().id
-    });
-
-    this.n5Star = $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kanjin5&userid=" + getUser().id
-    });
-
-
     this.getRestPromise = function(course) {
         switch (course) {
             case "kanjin4":
-                return this.n4Star;
+                return $http({
+                    method: "GET",
+                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kanjin4&userid=" + getUser().id
+                });
                 break;
             case "kanjin5":
-                return this.n5Star;
+                return $http({
+                    method: "GET",
+                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kanjin5&userid=" + getUser().id
+                });
                 break
             default:
                 return null;

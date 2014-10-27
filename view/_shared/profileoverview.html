@@ -7,9 +7,7 @@
                     <td>
                         <div class="row">
                             <div class="col-md-12">
-                                <span class="ava-circle">
-                                    {{renderHtml(user.ava)}}
-                                </span>
+                                <div ng-bind-html="renderHtml(user.ava)" class="ava-circle"></div>
                             </div>
                         </div>
                     </td>
@@ -20,13 +18,30 @@
                                     <span ng-bind="user.displayname">
                                     </span>
                                 </a>
+                                <div class="dropdown" id="profileDropdown">
+                                    <a data-toggle="dropdown" href="#">
+                                        <i class="fa fa-chevron-down f-right dropdown" />
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <li class="menuItem">
+                                            <span data-i18n="profile.redeem" data-toggle="modal" data-target="#redeemModal"></span>
+                                        </li>
+                                        <li class="menuDivider"></li>
+                                        <li class="menuItem">
+                                            <span data-i18n="profile.help"></span>
+                                        </li>
+                                        <li class="menuItem">
+                                            <span data-i18n="profile.logout" ng-click="logout()"></span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <span data-i18n="common.dayleft"></span>:
                                 <span ng-bind="user.dayremain"></span>
-                                <i class="fa fa-plus-circle fa-2x f-right" data-toggle="modal" data-target="#myModal" id="btn-redeem"></i>
+                                <!-- <i class="fa fa-plus-circle fa-2x f-right" data-toggle="modal" data-target="#redeemModal" id="btn-redeem"></i> -->
                             </div>
                         </div>
                     </td>
@@ -40,7 +55,8 @@
                             <div class="col-md-10">
                                 <div class="progress level center">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{userProgress}}%;">
-                                    <span ng-bind="userLevel"></span> <span ng-bind="userProgress" class="level-progress"></span>
+                                        <span ng-bind="userLevel"></span>
+                                        <span ng-bind="userProgress" class="level-progress"></span>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +68,8 @@
                             <div class="col-md-10">
                                 <div class="progress mentor">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: {{mentorProgress}}%;">
-                                    <span ng-bind="mentorLevel"></span> <span ng-bind="mentorProgress" class="level-progress"></span>
+                                        <span ng-bind="mentorLevel"></span>
+                                        <span ng-bind="mentorProgress" class="level-progress"></span>
                                     </div>
                                 </div>
                             </div>
@@ -67,8 +84,9 @@
     </div>
 </div>
 
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
+<!-- Redeem code modal -->
+<div class="modal fade" id="redeemModal">
+    <div class="modal-dialog  modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">
@@ -81,7 +99,7 @@
                 <input type="text" id="code" class="form-control">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Reedem</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="redeem()">Reedem</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -89,3 +107,7 @@
     <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+<script type="text/javascript">
+changeLang();
+</script>

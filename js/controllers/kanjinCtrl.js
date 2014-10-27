@@ -1,4 +1,4 @@
-var kanjinCtrls = angular.module('kanjinCtrls', []);
+var kanjinCtrls = angular.module('kanjinCtrls', ['akrUtilService']);
 
 kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootScope, restService, menuFactory) {
     switch ($routeParams.degree) {
@@ -82,7 +82,7 @@ kanjinCtrls.controller('subCtrl', function($scope, $routeParams, $http, restServ
 
 });
 
-kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataService) {
+kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "kanji" + $routeParams.degree;
 
     dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 1).then(function(deferred) {
@@ -101,7 +101,7 @@ kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataSe
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -128,7 +128,7 @@ kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataSe
         } else if (2 == $scope.stage) {
             //Nguoi dung dang o buoc continue va nhan enter
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 1, $scope.gameObject.correct, $scope.data.length);
             }
             $scope.keyCode = 0;
             $scope.stage = 0;
@@ -165,7 +165,7 @@ kanjinCtrls.controller('learnCtrl', function($scope, $routeParams, $http, dataSe
     };
 });
 
-kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, dataService) {
+kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "kanji" + $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
@@ -190,7 +190,7 @@ kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, data
     $scope.removeLife = function() {
         $scope.gameObject.life = $scope.gameObject.life - 1;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -238,7 +238,7 @@ kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, data
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 2, $scope.gameObject.correct, $scope.data.length);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -251,7 +251,7 @@ kanjinCtrls.controller('pictureCtrl', function($scope, $routeParams, $http, data
     }
 });
 
-kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService) {
+kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "kanji" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -261,7 +261,7 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
     $scope.keyCode = 0;
     $scope.stage = 0;
     $scope.gameObject = {
-        "life": 999,
+        "life": 3,
         "correct": 0
     };
     dataService.getDataPromise($scope.course, $routeParams.lessonId, $routeParams.partId, 3).then(function(deferred) {
@@ -272,7 +272,7 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if ($scope.gameObject.life == 0) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -304,7 +304,7 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
         var step = $("#wordWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
-            var userSlt = $("#wordWizard #step-" + step + " #user-input-wrapper #input-" + step).val().trim();
+            var userSlt = $("#wordWizard #step-" + step + " #user-input-wrapper #input-" + step).text().trim();
             $("#wordWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#wordWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             console.log(userSlt);
@@ -322,7 +322,7 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
             $scope.stage = 2;
         } else if (2 == $scope.stage) {
             if (angular.equals($scope.step, $scope.data.length - 1)) {
-                gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
+                gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 3, $scope.gameObject.correct, $scope.data.length);
             }
             //Nguoi dung dang o buoc continue va nhan enter
             $scope.keyCode = 0;
@@ -335,7 +335,7 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
     }
 });
 
-kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService) {
+kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, dataService, utilService, gameService) {
     $scope.course = "kanji" + $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
@@ -352,7 +352,7 @@ kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, data
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if (angular.equals($scope.gameObject.life, 0)) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -360,12 +360,12 @@ kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, data
         $scope.step++;
         $scope.gameObject.correct++;
         if (angular.equals($scope.step, 5)) {
-            gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
         }
     }
 });
 
-kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService) {
+kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService, utilService, gameService) {
     try {
         $scope.course = "kanji" + $routeParams.degree;
         $scope.degree = $routeParams.degre;
@@ -408,7 +408,7 @@ kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData
         $scope.removeLife = function() {
             $scope.gameObject.life -= 1;
             if ($scope.gameObject.life == 0) {
-                testoutOver(false, $scope.course, $routeParams.lessonId, $routeParams.type);
+                gameService.testoutOver(false, $scope.course, $routeParams.lessonId, $routeParams.type);
             }
         };
 
@@ -435,7 +435,7 @@ kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData
                 } else if (2 == $scope.stage) {
                     //Nguoi dung dang o buoc continue va nhan enter
                     if (angular.equals($scope.step, $scope.data.length - 1)) {
-                        testoutOver(true, $scope.course, $routeParams.lessonId, $routeParams.type);
+                        gameService.testoutOver(true, $scope.course, $routeParams.lessonId, $routeParams.type);
                     }
                     $scope.keyCode = 0;
                     $scope.stage = 0;

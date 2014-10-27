@@ -1,43 +1,38 @@
 <button ng-click="removeLife()" id="sublife" style="display:none;"></button>
 <button ng-click="check()" id="check" style="display:none;"></button>
-<div id="connectWizard" class="kana">
+<div id="connectWizard" class="kana swMain">
     <!-- Life wrapper -->
     <akrlife progress="{{step/5*100}}" life="{{gameObject.life}}"></akrlife>
 
     <div class="stepContainer">
-        <div class="wrapper">
-            <div class="row">
-                <div class="col-md-4 col-md-offset-2">
-                    <div class="row akrdomshuffle " ng-repeat="value in data | limitTo:5">
-                        <div class="col-md-12 hira-wrapper f-right">
-                            <span id="hira-{{value.id}}" class="couple-{{value.id}}" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" ng-bind="value.hiragana">
-                            </span>
+        <div class="content">
+            <div class="wrapper">
+                <div class="question-wrapper">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-2">
+                            <div class="row akrdomshuffle " ng-repeat="value in data | limitTo:5">
+                                <div class="col-md-12 hira-wrapper f-right">
+                                    <span id="hira-{{value.id}}" class="couple-{{value.id}}" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)" ng-bind="value.hiragana">
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="row akrdomshuffle" ng-repeat="value in data | limitTo:5">
-                        <div class="col-md-12 vi-wrapper">
-                            <span id="vie-{{value.id}}" class="couple-{{value.id}}" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ng-bind="value.romaji">
-                            </span>
+                        <div class="col-md-4">
+                            <div class="row akrdomshuffle" ng-repeat="value in data | limitTo:5">
+                                <div class="col-md-12 vi-wrapper">
+                                    <span id="vie-{{value.id}}" class="couple-{{value.id}}" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)" ng-bind="value.romaji">
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div id="aki-answer-wrapper"></div>
             </div>
         </div>
-        <div id="aki-answer-wrapper"></div>
     </div>
 </div>
-<style type="text/css" media="screen">
-/*span.q,
-span.a {
-    width: 200px;
-    height: 20px;
-    border: 1px solid;
-    margin: 6px;
-}*/
-</style>
 <script>
 function allowDrop(ev) {
     ev.preventDefault();
