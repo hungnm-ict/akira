@@ -363,6 +363,32 @@ kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, data
             gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
         }
     }
+
+        $scope.$on("itemSelected", function(scope,current,next) {
+        if($scope.selected == null || current.type == $scope.selected.type ){
+            $scope.selected= current;
+        }else{
+            if(current.class == $scope.selected.class){
+                //Remove UI
+                $("#"+current.id).detach();
+                $("#"+$scope.selected.id).detach();
+                $scope.selected=null;
+
+                //Play notification and update score
+                playCorrect()
+                $scope.step++;
+                $scope.gameObject.correct++;
+                if (angular.equals($scope.step, 5)) {
+                    gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+                }
+            }else{
+                playFail();
+                $scope.removeLife();
+                $(".selected").removeClass("selected");
+                $("#"+$scope.selected.id).addClass("selected");
+            }
+        }
+    });
 });
 
 kanjinCtrls.controller('testoutCtrl', function($scope, $routeParams, testoutData, dataService, utilService, gameService) {

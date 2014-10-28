@@ -38,13 +38,13 @@
 <body ng-controller="root">
     <div class="app container-full-height container-fluid" id="dashboard">
         <div class="row row-full-height">
-            <div class="col-md-1 hidden-sm hidden-xs col-full-height" style="padding-left:0px;">
+            <div class="col-md-1 col-sm-1 col-xs-1 col-full-height" style="padding-left:0px;">
 
             <!-- onload="navgroup=0;nav=1" -->
                 <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" >
                 </div>
             </div>
-            <div class="col-md-8 col-full-height" id="kanji">
+            <div class="col-md-8 col-sm-8 col-xs-8 col-full-height" id="kanji">
                 <div id="content">
                     <audio controls id="sound-true" class="hide">
                         <source src="../../audio/true.mp3" type="audio/mp3">

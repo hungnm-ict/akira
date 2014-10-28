@@ -463,6 +463,32 @@ totaln5Ctrls.controller('connectCtrl', function($scope, $routeParams, $http, dat
             gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, 5);
         }
     }
+
+    $scope.$on("itemSelected", function(scope, current, next) {
+        if ($scope.selected == null || current.type == $scope.selected.type) {
+            $scope.selected = current;
+        } else {
+            if (current.class == $scope.selected.class) {
+                //Remove UI
+                $("#" + current.id).detach();
+                $("#" + $scope.selected.id).detach();
+                $scope.selected = null;
+
+                //Play notification and update score
+                playCorrect()
+                $scope.step++;
+                $scope.gameObject.correct++;
+                if (angular.equals($scope.step, 5)) {
+                    gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, 5);
+                }
+            } else {
+                playFail();
+                $scope.removeLife();
+                $(".selected").removeClass("selected");
+                $("#" + $scope.selected.id).addClass("selected");
+            }
+        }
+    });
 });
 /*-----  End of Controller for totaln5 - Vocab game  ------*/
 
@@ -756,10 +782,10 @@ totaln5Ctrls.controller('grammarReadCtrl', function($scope, $routeParams, $http,
     $scope.keyPress = function(keyCode) {
         if ($scope.stage != 2) {
             // if ([49, 50].indexOf($scope.keyCode) == -1) {
-                $scope.stage = 1;
-                $scope.keyCode = keyCode;
-                $scope.$apply();
-                changeLang();
+            $scope.stage = 1;
+            $scope.keyCode = keyCode;
+            $scope.$apply();
+            changeLang();
             // }
         }
     }

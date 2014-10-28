@@ -313,6 +313,32 @@ totaln5Ctrls.controller('kanaConnectCtrl', function($scope, $routeParams, $http,
             gameService.gameOver('kana', $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, 5);
         }
     }
+
+    $scope.$on("itemSelected", function(scope,current,next) {
+        if($scope.selected == null || current.type == $scope.selected.type ){
+            $scope.selected= current;
+        }else{
+            if(current.class == $scope.selected.class){
+                //Remove UI
+                $("#"+current.id).detach();
+                $("#"+$scope.selected.id).detach();
+                $scope.selected=null;
+
+                //Play notification and update score
+                playCorrect()
+                $scope.step++;
+                $scope.gameObject.correct++;
+                if (angular.equals($scope.step, 5)) {
+                    gameService.gameOver('kana', $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, 5);
+                }
+            }else{
+                playFail();
+                $scope.removeLife();
+                $(".selected").removeClass("selected");
+                $("#"+$scope.selected.id).addClass("selected");
+            }
+        }
+    });
 });
 
 totaln5Ctrls.controller('kanaWriteCtrl', function($scope, $routeParams, $http, dataService,utilService,gameService) {

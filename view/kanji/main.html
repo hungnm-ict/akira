@@ -21,8 +21,8 @@
                 <tr>
                     <td>
                         <div class="row">
-                            <div class="col-md-3"></div>
-                            <div class="col-md-2" ng-repeat="(k, v) in [0,1,2]"  ng-class="isLocked(3* value + v + 1)">
+                            <div class="col-md-3 col-sm-3 col-xs-3"></div>
+                            <div class="col-md-2 col-sm-2 col-xs-2" ng-repeat="(k, v) in [0,1,2]"  ng-class="isLocked(3* value + v + 1)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{3* value + v + 1}}</span>
@@ -41,8 +41,8 @@
                 <tr>
                     <td>
                         <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
                                 <label>
                                     <span>Pass</span>
                                     <span>&nbsp;{{value*3+3}} &nbsp;</span>
@@ -52,7 +52,7 @@
                                     <img ng-src="../../img/w-key.png" class="img-responsive" id="testout-lesson">
                                 </a>
                             </div>
-                            <div class="col-md-2" ng-repeat="(k, v) in [3,4,5]" ng-class="isLocked(3* value + v + 1)">
+                            <div class="col-md-2 col-sm-2 col-xs-2" ng-repeat="(k, v) in [3,4,5]" ng-class="isLocked(3* value + v + 1)">
                                 <label>
                                     <span data-i18n="common.lesson"></span>
                                     <span>&nbsp;{{3* value + v + 1}}</span>

@@ -167,7 +167,6 @@ aDirect.directive('akrdomshuffle', function() {
     };
 })
 
-
 aDirect.directive('akrhint', function() {
     function link(scope, element, attrs) {
         scope.ret = attrs.ret;
@@ -193,6 +192,30 @@ aDirect.directive('akrhint', function() {
         link: link,
         templateUrl: function(urlAttr) {
             return (_isNotMobile) ? '../../view/_shared/hint.html' : '../../view/_shared/mobi_hint.html';
+        }
+    };
+});
+
+aDirect.directive('akrconnect', function() {
+    function link(scope, element, attrs) {
+    };
+
+    return {
+        restrict: 'E',
+        link: link,
+        templateUrl: '../../view/_shared/connectitem.html',
+        scope:{
+            itemtitle:'@title',
+            itemid :'@id',
+            itemclass:'@class',
+            itemtype: '@type'
+        },
+        controller:function($scope,$rootScope){   
+            $scope.onselect = function(e){
+                $(".selected").removeClass("selected");
+                $("#"+e.itemid).addClass("selected");
+                $rootScope.$broadcast('itemSelected',{"id":e.itemid,"class":e.itemclass,"type":e.itemtype});
+            }
         }
     };
 });

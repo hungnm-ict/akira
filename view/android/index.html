@@ -23,27 +23,27 @@
     <script type="text/javascript" src="../../spec/lib/angular.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
 
+    <script type="text/javascript" src="../../js/services/utilService.js"></script>
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
     <script type="text/javascript" src="../../js/androidApp.js"></script>
-    
+
     <script type="text/javascript" src="../../js/index.js"></script>
 
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 </head>
 
 <body>
-    <div class="app container-full-height container-fluid" id="dashboard">
+    <div class="app container-full-height container-fluid mobiPage" id="dashboard">
         <div class="row row-full-height">
-            <div class="col-md-1 col-full-height hidden-sm hidden-xs" style="padding-left:0px;">
+            <div class="col-md-1 col-sm-1 col-xs-1 col-full-height" style="padding-left:0px;">
                 <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl">
                 </div>
             </div>
             <div class="col-md-8 col-sm-8 col-xs-8 col-full-height">
-
                 <div id="content">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="col-md-4 col-sm-4 col-xs-4 ">
                             <a href="http://bit.ly/JapaneseN5">
                                 <img src="../../img/apps/japanese-n5-android.png" alt="Japanese for android" class="img-responsive" />
                             </a>

@@ -26,12 +26,13 @@ body {
     bottom: 0;
     width: 100%;
     background-color: whitesmoke !important;
+    overflow: auto !important;
     /*background-size: 35%;*/
 }
 .app {
     background: url(../../img/background.png) no-repeat right bottom;
     background-size: 35%;
-    width: 1366px;
+    min-width: 1346px;
     margin: 0px auto;
 }
 .app>.row {
@@ -67,6 +68,12 @@ body {
 .f-left {
     float: left;
 }
+.mobiPage #content{
+    width: 700px;
+    height: 540px;
+    background: #FFF;
+    border-radius: 20px;
+vertical-align: middle;}
 .avatar.avatar-32.wp-user-avatar, .ava-circle {
     line-height: 40px;
     display: inline-block !important;
@@ -435,9 +442,6 @@ body {
 #board-type {
     text-align: center;
 }
-
-
-
 .arrow-down {
     position: relative;
     top: -24px;
@@ -639,6 +643,7 @@ ul.anchor {
     line-height: 50px;
     display: block;
     /*width: 220px;*/
+    
     height: 50px;
     margin: 6px auto;
     text-align: center;
@@ -943,7 +948,7 @@ a:focus {
 #connectWizard .wrapper {
     position: inherit;
 }
-#connectWizard .wrapper .row{
+#connectWizard .wrapper .row {
     padding: 0;
 }
 /*-----  End of CSS for Vocab -> Connect game  ------*/
@@ -1105,7 +1110,7 @@ ul.anchor li a .stepNumber {
     border-radius: 15px;
     background: white;
 }
-#leaderboard nav{
+#leaderboard nav {
     margin-right: 6px;
 }
 #leaderboard h4 {
@@ -1408,17 +1413,15 @@ ul.anchor li a .stepNumber {
 #game-scope #quiz {
     max-height: 480px;
 }
- #kana #topicWizard,#kanji #topicWizard.kanjin4 {
+#kana #topicWizard, #kanji #topicWizard.kanjin4 {
     padding-top: 50px;
 }
-#kanji #topicWizard{
+#kanji #topicWizard {
     padding-top: 100px;
 }
-#kanji #subtopicWizard{
+#kanji #subtopicWizard {
     padding-top: 20px;
-
 }
-
 .kanjiPage {} #listenWizard .akira-input {
     border-radius: 15px !important;
 }
@@ -1534,7 +1537,7 @@ ul.anchor li a .stepNumber {
     padding: 0px;
     margin: 0px;
 }
-#testoutWizard{
+#testoutWizard {
     border-radius: 20px;
 }
 #testoutWizard .wrapper>div {
@@ -1630,12 +1633,17 @@ ul.anchor li a .stepNumber {
     border-radius: 10px;
     background: #FFFFFF;
     border: 2px solid #CCC;
-    padding-top: 24px;
-    min-height: 500px;
+    /*padding-top: 24px;*/
+    /*min-height: 500px;*/
 }
 .progress.level, .progress.mentor {
     height: 18px !important;
     border-radius: 9px;
+}
+.progress.level span, .progress.mentor span{
+    color:gray;
+    position: absolute;
+    left: 45%;
 }
 .odd>div {
     background: #DCE6F2;
@@ -1752,7 +1760,7 @@ ul.anchor li a .stepNumber {
 .game-over-modal-sm .star-wrapper.star-1 .fa-star:first-child {
     color: yellow;
 }
-.game-over-modal-sm .star-wrapper.star-2 .fa-star:nth-child(1), .game-over-modal-sm .star-wrapper.star-2 .fa-star:nth-child(3){
+.game-over-modal-sm .star-wrapper.star-2 .fa-star:nth-child(1), .game-over-modal-sm .star-wrapper.star-2 .fa-star:nth-child(3) {
     color: yellow;
 }
 .game-over-modal-sm .star-wrapper.star-3 {
@@ -1789,6 +1797,7 @@ ul.anchor li a .stepNumber {
 /*#kanji #content {
     padding-top: 55px;
 }*/
+
 #topicWizard .col-md-2 {
     padding-left: 5px;
     padding-right: 5px;
@@ -1807,6 +1816,9 @@ ul.anchor li a .stepNumber {
 #profileDropdown {
     font-size: 14px;
     font-weight: normal;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
 }
 #profileDropdown ul {
     width: 200px;
@@ -1847,15 +1859,35 @@ ul.anchor li a .stepNumber {
     border-top-right-radius: 10px !important;
     border-top-left-radius: 10px !important;
 }
-
-#user-input-wrapper{
+#user-input-wrapper {
     cursor: pointer;
 }
-#kana .rect-input{
+#kana .rect-input {
     line-height: 165px !important;
 }
+/* RELAYOUT */
 
+.left-column {
+    width: 159px;
+    background: #568ED4;
+    display: inline-block;
+}
+.main-column {
+    width: 850px;
+    /*background: yellow;*/
+    /*height: 40px;*/
+    
+    display: inline-block;
+}
+.right-column {
+    width: 330px;
+    /*background: blue;*/
+    
+    display: inline-block;
+    /*height: 40px;*/
+}
 /* MOBI APPS */
+
 .mobi-app {
     background-color: transparent !important;
 }
@@ -1886,12 +1918,12 @@ ul.anchor li a .stepNumber {
     width: 150px;
     height: 150px;
 }
-.fill-height{
+.fill-height {
     height: 100%;
     padding: 0px;
-    margin:0px;
+    margin: 0px;
     vertical-align: middle;
 }
-.scroll,.slider{
+.scroll, .slider {
     height: 100% !important;
 }

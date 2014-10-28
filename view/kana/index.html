@@ -49,11 +49,11 @@
 <body>
     <div class="app container-full-height container-fluid" id="dashboard">
         <div class="row row-full-height">
-            <div class="col-md-1 col-full-height hidden-sm hidden-xs" style="padding-left: 0px;">
+            <div class="col-md-1 col-sm-1 col-xs-1 col-full-height " style="padding-left: 0px;">
                 <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl">
                 </div>
             </div>
-            <div class="col-md-8 col-full-height" id="kana">
+            <div class="col-md-8 col-sm-8 col-xs-8 col-full-height" id="kana">
                 <div id="content" ng-controller="rootController">
                     <audio controls id="sound-true" class="hide">
                         <source src="../../audio/true.mp3" type="audio/mp3">
@@ -74,12 +74,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-full-height">
-
+            <div class="col-md-3 col-sm-3 col-xs-3 col-full-height">
                 <div id="right-sidebar">
                     <akrprofile></akrprofile>
                     <akrleaderboard></akrleaderboard>
-
                 </div>
             </div>
         </div>
@@ -89,39 +87,6 @@
     angular.bootstrap(document, ['totaln5App']);
     app.initialize();
     </script>
-
-   <!--  <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"  onkeydown="$(this).modal('hide')">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Game finished</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-8 col-sm-8 col-xs-8">Bạn nhận được</div>
-                        <div class="col-md-4 col-sm-4 col-xs 4">
-                            <span class="game-score"></span>&nbsp;XP
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 col-sm-8 col-xs-8">Bạn nhận được</div>
-                        <div class="col-md-4 col-sm-4 col-xs 4">
-                            <span class="game-star"></span>&nbsp;sao
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btn-close">
-                        <span data-i18n="common.save" data-dismiss="modal"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </body>
 
 </html>
