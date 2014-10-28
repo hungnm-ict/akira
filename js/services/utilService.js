@@ -50,9 +50,6 @@ serv.service('utilService', function($http, $rootScope) {
                 }, 1);
             }
 
-            if ($("#" + obj.context.id).attr("clear") == "true") {
-                $('.drop-zone').html('');
-            }
 
         } catch (err) {
             console.error(err);
@@ -67,6 +64,12 @@ serv.service('utilService', function($http, $rootScope) {
      */
     this.leaveStep = function(obj, context) {
         try {
+            if ($("#" + obj.context.id).attr("clear") == "true") {
+                $('.drop-zone').html('');
+                $('.init-zone').html('');
+            }
+
+
             //If user is power user we automatically transfer it
             if (pU.indexOf(getUser().id)) {
                 return true;

@@ -304,7 +304,7 @@ kanjinCtrls.controller('wordCtrl', function($scope, $routeParams, $http, dataSer
         var step = $("#wordWizard").smartWizard('currentStep') - 1;
         if (1 == $scope.stage) {
             //Nguoi dung dap an -> an enter -> kiem tra dung / sai
-            var userSlt = $("#wordWizard #step-" + step + " #user-input-wrapper #input-" + step).text().trim();
+            var userSlt = $("#wordWizard #step-" + step + " #user-input-wrapper .selected").text().trim();
             $("#wordWizard #step-" + step + " #user-input-wrapper #input-" + step).attr("disabled", "disabled");
             var correct = $("#wordWizard #step-" + step + " #correct-answer-wrapper").text().trim();
             console.log(userSlt);
@@ -352,7 +352,7 @@ kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, data
     $scope.removeLife = function() {
         $scope.gameObject.life--;
         if (angular.equals($scope.gameObject.life, 0)) {
-            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, $scope.data.length);
         }
     };
 
@@ -360,7 +360,7 @@ kanjinCtrls.controller('connectCtrl', function($scope, $routeParams, $http, data
         $scope.step++;
         $scope.gameObject.correct++;
         if (angular.equals($scope.step, 5)) {
-            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 5, $scope.gameObject.correct, $scope.data.length);
+            gameService.gameOver($scope.course, $routeParams.lessonId, $routeParams.partId, 4, $scope.gameObject.correct, $scope.data.length);
         }
     }
 

@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/smart_wizard.css" />
     <link rel="stylesheet" type="text/css" href="../../css/index.css" />
 
     <script type="text/javascript" src="../../spec/lib/jquery-2.1.1.min.js"></script>
@@ -36,13 +37,13 @@
 </head>
 
 <body>
-    <div class="app container-full-height container-fluid" id="dashboard">
+    <div class="app container-full-height container-fluid profilePage" id="dashboard">
         <div class="row row-full-height">
             <div class="col-md-1 col-sm-1 col-xs-1 col-full-height" style="padding-left: 0px;">
                 <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl">
                 </div>
             </div>
-            <div class="col-md-8 col-sm-8 col-xs-8 col-full-height" id="profilePage">
+            <div class="col-md-8 col-sm-8 col-xs-8 col-full-height">
                 <div id="content">
                     <div ng-view></div>
                 </div>

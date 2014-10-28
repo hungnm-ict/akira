@@ -42,8 +42,8 @@ function restructureChatBoxes() {
     }
 }
 
-function chatWith(chatuser) {
- 
+function chatWith(chatuser,id) {
+	
     createChatBox(chatuser);
     $("#chatbox_" + chatuser + " .chatboxtextarea").focus();
 }

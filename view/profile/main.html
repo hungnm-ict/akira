@@ -7,15 +7,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <label id="akira-day-remain">
                     <span data-i18n="common.dayleft"></span>:
                 </label>
                 <br/>
             </div>
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-4">
                 <span ng-bind="data.dayremain"></span>
-                <i class="fa fa-plus-circle fa-2x f-right" data-toggle="modal" data-target="#myModal" id="btn-redeem"></i>
+                <i class="fa fa-plus-circle fa-2x f-right" data-toggle="modal" data-target="#redeemModal" id="btn-redeem"></i>
             </div>
         </div>
         <div class="row">
@@ -68,7 +68,7 @@
                         </label>
                     </td>
                     <td>
-                        <button class="btn btn-default f-right" data-toggle="modal" data-target="#classModal">
+                        <button class="btn btn-default f-right" data-toggle="modal" disabled="disabled">
                             Cập nhập
                         </button>
                     </td>
@@ -80,7 +80,7 @@
                         </label>
                     </td>
                     <td>
-                        <button class="btn btn-default f-right" data-toggle="modal" data-target="#mentorModal">
+                        <button class="btn btn-default f-right" data-toggle="modal" disabled="disabled">
                             Cập nhập
                         </button>
                     </td>

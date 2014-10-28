@@ -78,9 +78,10 @@ aDirect.directive('akrleaderboard', function($http) {
                 return $sce.trustAsHtml(e);
             }
 
-            $scope.callChat = function(uname) {
-                if (uname != getUser().id)
-                    chatWith(uname);
+            $scope.callChat = function(uname,uid) {
+                if (uid != getUser().id){
+                	chatWith(uname,uid);
+                }
             }
         },
         templateUrl: '../../view/_shared/leaderboard.html'
@@ -158,7 +159,7 @@ aDirect.directive('akrdomshuffle', function() {
         setTimeout(function() {
             $(".hira-wrapper span").shuffle();
             $(".vi-wrapper span").shuffle();
-        }, 1);
+        }, 10);
     }
 
     return {

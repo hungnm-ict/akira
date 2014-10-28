@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="testoutWizard" class="swMain vocab akiHide" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
+<div id="testoutWizard" class="swMain vocab akiHide" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true" clear="true">
     <!-- Step navigation -->
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
@@ -678,7 +678,9 @@
 
                         <div class="row" style="min-height: 120px;">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <span ng-repeat="(anskey,ansval) in answers[key]" id="opt-{{key}}-{{anskey}}" class="drag-ans" draggable="true" ondragstart="drag(event)" ng-bind="ansval">
+                                <!-- <span ng-repeat="(anskey,ansval) in answers[key]" id="opt-{{key}}-{{anskey}}" class="drag-ans" draggable="true" ondragstart="drag(event)" ng-bind="ansval">
+                                </span> -->
+                                <span ng-repeat="(anskey,ansval) in answers[key]" id="opt-{{key}}-{{anskey}}" class="drag-ans" ng-bind="ansval" onclick="move(this)">
                                 </span>
                             </div>
                         </div>
@@ -687,7 +689,9 @@
                     <div id="user-input-wrapper">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="drop-zone selected" id="input-{{key}}" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                <div class="drop-zone" id="input-{{key}}"></div>
+
+                                <!-- <div class="drop-zone selected" id="input-{{key}}" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
                             </div>
                         </div>
                     </div>
@@ -959,23 +963,38 @@ KeyboardJS.on('1,2,3', function(e) {
     scope.keyPress(e, e.keyCode);
 }, changeLang());
 
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+// function allowDrop(ev) {
+//     ev.preventDefault();
+// }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text/html", ev.target.id);
-}
+// function drag(ev) {
+//     ev.dataTransfer.setData("text/html", ev.target.id);
+// }
 
-function drop(ev) {
-    angular.element("#testoutWizard").scope().stage = 1;
-    angular.element("#testoutWizard").scope().$apply();
-    changeLang();
+// function drop(ev) {
+//     angular.element("#testoutWizard").scope().stage = 1;
+//     angular.element("#testoutWizard").scope().$apply();
+//     changeLang();
 
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text/html");
-    if (ev.toElement.className == "drop-zone selected") {
-        ev.target.appendChild(document.getElementById(data));
+//     ev.preventDefault();
+//     var data = ev.dataTransfer.getData("text/html");
+//     if (ev.toElement.className == "drop-zone selected") {
+//         ev.target.appendChild(document.getElementById(data));
+//     }
+// }
+function move(e) {
+    gScope = angular.element("#testoutWizard").scope();
+    if ($(e).parents('.drop-zone').length > 0) {
+        $(e).appendTo(".init-zone");
+        if($('.drop-zone .drag-ans').length){
+            gScope.stage = 0;
+        }
+    } else {
+        // alert("outside drop");
+        $(e).appendTo(".drop-zone");
+        gScope.stage = 1;
     }
+    gScope.$apply();
+    changeLang();
 }
 </script>

@@ -1001,7 +1001,7 @@ var dict = (function() {
 window.fbAsyncInit = function() {
     FB.init({
         appId: "721532401232192",
-        // appId: "288129501345090",
+        //appId: "288129501345090",
         status: true, // check login status
         cookie: true, // enable cookies to allow the server to access the session
         xfbml: true // parse XFBML

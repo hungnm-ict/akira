@@ -11,7 +11,7 @@
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife ret="../../view/kanji" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
@@ -74,7 +74,7 @@
             <div id="correct-answer-wrapper">
                 <div class="row hide">
                     <div class=" col-md-12 col-sm-12 col-xs-12">
-                        {{val.kanji}}
+                    <span ng-bind="val.kanji"></span>
                     </div>
                 </div>
             </div>

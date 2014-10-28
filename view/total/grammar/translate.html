@@ -103,25 +103,25 @@
 </div>
 
 <script type="text/javascript">
-function allowDrop(ev) {
-    ev.preventDefault();
-};
+// function allowDrop(ev) {
+//     ev.preventDefault();
+// };
 
-function drag(ev) {
-    ev.dataTransfer.setData("text/html", ev.target.id);
-};
+// function drag(ev) {
+//     ev.dataTransfer.setData("text/html", ev.target.id);
+// };
 
-function drop(ev) {
-    angular.element("#grammarTranslateWizard").scope().stage = 1;
-    angular.element("#grammarTranslateWizard").scope().$apply();
-    changeLang();
+// function drop(ev) {
+//     angular.element("#grammarTranslateWizard").scope().stage = 1;
+//     angular.element("#grammarTranslateWizard").scope().$apply();
+//     changeLang();
 
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text/html");
-    if (ev.toElement.className == "drop-zone") {
-        ev.target.appendChild(document.getElementById(data));
-    }
-};
+//     ev.preventDefault();
+//     var data = ev.dataTransfer.getData("text/html");
+//     if (ev.toElement.className == "drop-zone") {
+//         ev.target.appendChild(document.getElementById(data));
+//     }
+// };
 
 
 function move(e) {
