@@ -220,3 +220,35 @@ aDirect.directive('akrconnect', function() {
         }
     };
 });
+
+aDirect.directive('mobiansitem', function() {
+    function link(scope, element, attrs) {
+    };
+
+    return {
+        restrict: 'E',
+        link: link,
+        templateUrl: '../../view/_shared/mobiitem.html',
+        scope:{
+            itemtitle:'@title',
+            itemid :'@id',
+            itemclass:'@class',
+            itemtype: '@type',
+            itemimage: '@image',
+            itemaudio :'@audio'
+        },
+        controller:function($scope,$rootScope){   
+            $scope.onselect = function(e){
+                var selId = "audioPlayer";
+                var audioSrc = document.getElementById(selId).getElementsByTagName('source');
+                $("audio source").attr("src", "../../data/" + e.itemaudio + ".mp3");
+                document.getElementById(selId).load();
+                document.getElementById(selId).play();
+
+                $(".selected").removeClass("selected");
+                $("#"+e.itemid).addClass("selected");
+                $rootScope.$broadcast('itemSelected',{"id":e.itemid,"class":e.itemclass,"type":e.itemtype});
+            }
+        }
+    };   
+});

@@ -43,7 +43,7 @@ function restructureChatBoxes() {
 }
 
 function chatWith(chatuser,id) {
-	
+	chatuser = escape(chatuser);
     createChatBox(chatuser);
     $("#chatbox_" + chatuser + " .chatboxtextarea").focus();
 }
