@@ -5,7 +5,7 @@
 var serv = angular.module('akrUtilService', []);
 
 serv.service('utilService', function($http, $rootScope) {
-    var pU = [14, 17];
+    var pU = [14, 17,1390];
 
     /**
      * Update user related information from server

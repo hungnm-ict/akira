@@ -24,27 +24,26 @@ $(document).ready(function() {
     });
 });
 
-//TODO: We have three usecase to resolve this problem
-//1. Me start a new chat session with user: Click to user name -> show chatbox title with my chatter name, chat box content sender is my name
-//2. Other start a new chat session with me: Other user send me a message -> chatbox title show my friend name, chatbox content send is my friend name
-//3. I think best approach is prepare a APIs(Wordpress) to retrieve display name from user id.
-function idToUsername(id) {
+function getUsername(id) {
     var BASE_URL = 'http://akira.edu.vn/wp-content/plugins/akira-api/id_to_uname.php';
-    // var API = 'id_to_uname.php';
     $.ajax({
         url: BASE_URL,
         data: {
             uid: id
-        }
+        },
+        async: false
     }).done(function(data) {
-        return data;
+        console.log(data);
+        setTimeout(function(){
+            return data;
+        },200);
     }).fail(function(err) {
-        return "Empty";
+        console.log(err);
+        setTimeout(function(){
+            return err;
+        },200);
+        return err;
     });
-}
-
-function storeIdToName(uname, uid) {
-    sessionStorage.setItem(uid, uname);
 }
 
 function restructureChatBoxes() {
@@ -65,7 +64,6 @@ function restructureChatBoxes() {
 }
 
 function chatWith(chatuser, id) {
-    storeIdToName(chatuser, id);
     chatuser = id;
     createChatBox(chatuser);
     $("#chatbox_" + chatuser + " .chatboxtextarea").focus();
@@ -108,9 +106,10 @@ function createChatBox(chatboxtitle, minimizeChatBox) {
         return;
     }
 
+    //TODO: I clicked to a user name
     $(" <div />").attr("id", "chatbox_" + chatboxtitle)
         .addClass("chatbox")
-        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + idToUsername(chatboxtitle) + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
+        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + getUsername(chatboxtitle) + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
         .appendTo($("body"));
 
     $("#chatbox_" + chatboxtitle).css('bottom', '0px');
@@ -245,7 +244,8 @@ function chatHeartbeat() {
                     } else {
                         newMessages[chatboxtitle] = true;
                         newMessagesWin[chatboxtitle] = true;
-                        $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + idToUsername(item.f) + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
+                        //TODO: User B send message to me so i need to parse User B id to get his/her name
+                        $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.f + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
                     }
 
                     $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
@@ -336,9 +336,9 @@ function checkChatBoxInputKey(event, chatboxtextarea, chatboxtitle) {
                 message: message,
                 username: username
             }, function(data) {
-                //TODO: Here is me send a text message 
+                //TODO: I send use a message to  User B so i have to normalize my user id to my display name to append on the chatbox
                 message = message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
-                $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + idToUsername(username) + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + message + '</span></div>');
+                $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + username + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + message + '</span></div>');
                 $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
             });
         }

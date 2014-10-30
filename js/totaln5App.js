@@ -374,6 +374,7 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
     };
 
     $scope.check = function(lesson) {
+        var pU = [14, 17,1390];
         //Get current key point for this courses
         $http({
             method: "GET",

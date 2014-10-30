@@ -73,7 +73,7 @@ aDirect.directive('akrleaderboard', function($http) {
     return {
         restrict: 'E',
         link: link,
-        controller: function($scope, $sce) {
+        controller: function($q,$scope, $sce) {
             $scope.renderHtml = function(e) {
                 return $sce.trustAsHtml(e);
             }

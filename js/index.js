@@ -1020,3 +1020,12 @@ window.fbAsyncInit = function() {
     js.src = "//connect.facebook.net/en_US/all.js";
     ref.parentNode.insertBefore(js, ref);
 }(document));
+
+
+function storedUserId(id){
+    var obj = [];
+    if(obj.indexOf(id)== -1){
+        obj.push(id);
+    }
+    console.log(obj);
+}
