@@ -1,4 +1,3 @@
-
 var windowFocus = true;
 var username;
 var chatHeartbeatCount = 0;
@@ -25,6 +24,29 @@ $(document).ready(function() {
     });
 });
 
+//TODO: We have three usecase to resolve this problem
+//1. Me start a new chat session with user: Click to user name -> show chatbox title with my chatter name, chat box content sender is my name
+//2. Other start a new chat session with me: Other user send me a message -> chatbox title show my friend name, chatbox content send is my friend name
+//3. I think best approach is prepare a APIs(Wordpress) to retrieve display name from user id.
+function idToUsername(id) {
+    var BASE_URL = 'http://akira.edu.vn/wp-content/plugins/akira-api/id_to_uname.php';
+    // var API = 'id_to_uname.php';
+    $.ajax({
+        url: BASE_URL,
+        data: {
+            uid: id
+        }
+    }).done(function(data) {
+        return data;
+    }).fail(function(err) {
+        return "Empty";
+    });
+}
+
+function storeIdToName(uname, uid) {
+    sessionStorage.setItem(uid, uname);
+}
+
 function restructureChatBoxes() {
     align = 0;
     for (x in chatBoxes) {
@@ -42,8 +64,9 @@ function restructureChatBoxes() {
     }
 }
 
-function chatWith(chatuser,id) {
-	chatuser = escape(chatuser);
+function chatWith(chatuser, id) {
+    storeIdToName(chatuser, id);
+    chatuser = id;
     createChatBox(chatuser);
     $("#chatbox_" + chatuser + " .chatboxtextarea").focus();
 }
@@ -58,28 +81,28 @@ function createChatBox(chatboxtitle, minimizeChatBox) {
 
         if ($('#chatbox_' + chatboxtitle + ' .chatboxcontent').css('display') == 'none') {
 
-        var minimizedChatBoxes = new Array();
+            var minimizedChatBoxes = new Array();
 
-        if ($.cookie('chatbox_minimized')) {
-            minimizedChatBoxes = $.cookie('chatbox_minimized').split(/\|/);
-        }
-
-        var newCookie = '';
-
-        for (i = 0; i < minimizedChatBoxes.length; i++) {
-            if (minimizedChatBoxes[i] != chatboxtitle) {
-                newCookie += chatboxtitle + '|';
+            if ($.cookie('chatbox_minimized')) {
+                minimizedChatBoxes = $.cookie('chatbox_minimized').split(/\|/);
             }
+
+            var newCookie = '';
+
+            for (i = 0; i < minimizedChatBoxes.length; i++) {
+                if (minimizedChatBoxes[i] != chatboxtitle) {
+                    newCookie += chatboxtitle + '|';
+                }
+            }
+
+            newCookie = newCookie.slice(0, -1)
+
+
+            $.cookie('chatbox_minimized', newCookie);
+            $('#chatbox_' + chatboxtitle + ' .chatboxcontent').css('display', 'block');
+            $('#chatbox_' + chatboxtitle + ' .chatboxinput').css('display', 'block');
+            $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
         }
-
-        newCookie = newCookie.slice(0, -1)
-
-
-        $.cookie('chatbox_minimized', newCookie);
-        $('#chatbox_' + chatboxtitle + ' .chatboxcontent').css('display', 'block');
-        $('#chatbox_' + chatboxtitle + ' .chatboxinput').css('display', 'block');
-        $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
-    }
 
         $("#chatbox_" + chatboxtitle + " .chatboxtextarea").focus();
         return;
@@ -87,7 +110,7 @@ function createChatBox(chatboxtitle, minimizeChatBox) {
 
     $(" <div />").attr("id", "chatbox_" + chatboxtitle)
         .addClass("chatbox")
-        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + chatboxtitle + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
+        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + idToUsername(chatboxtitle) + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
         .appendTo($("body"));
 
     $("#chatbox_" + chatboxtitle).css('bottom', '0px');
@@ -146,10 +169,10 @@ function createChatBox(chatboxtitle, minimizeChatBox) {
         }
     });
 
-  //   $("#chatbox_" + chatboxtitle).show();
-  //   $('#chatboxcontainer').slimscroll({
-  // height:  '200px'
-// });
+    $("#chatbox_" + chatboxtitle).show();
+    // $('#chatboxcontainer').slimscroll({
+    // height:  '200px'
+    // });
 }
 
 
@@ -222,7 +245,7 @@ function chatHeartbeat() {
                     } else {
                         newMessages[chatboxtitle] = true;
                         newMessagesWin[chatboxtitle] = true;
-                        $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.f + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
+                        $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + idToUsername(item.f) + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
                     }
 
                     $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
@@ -313,8 +336,9 @@ function checkChatBoxInputKey(event, chatboxtextarea, chatboxtitle) {
                 message: message,
                 username: username
             }, function(data) {
+                //TODO: Here is me send a text message 
                 message = message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
-                $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + username + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + message + '</span></div>');
+                $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + idToUsername(username) + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + message + '</span></div>');
                 $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
             });
         }

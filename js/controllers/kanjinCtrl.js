@@ -1,6 +1,7 @@
 var kanjinCtrls = angular.module('kanjinCtrls', ['akrUtilService']);
 
 kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootScope, restService, menuFactory) {
+
     switch ($routeParams.degree) {
         case "n5":
             menuFactory.navgroup = 0;
@@ -16,6 +17,7 @@ kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootSc
     $rootScope.$broadcast('handleBroadcast');
 
     $scope.course = "kanji" + $routeParams.degree;
+    $document.title = $scope.course;
     $scope.degree = $routeParams.degree;
     $scope.kanjistar = 0;
     $scope.kanjiprogress = [];

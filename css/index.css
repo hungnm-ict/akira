@@ -1589,7 +1589,7 @@ ul.anchor li a .stepNumber {
     border: none !important;
 }
 #leaderboard tabs > nav > tab {
-    width: 123px !important;
+    width: 50% !important;
 }
 .rect-panel {
     border-radius: 5px;

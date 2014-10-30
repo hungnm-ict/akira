@@ -1,7 +1,7 @@
 var totaln5Ctrls = angular.module('totaln5Ctrls', ['akrUtilService']);
 
-totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, totalStar, $routeParams, menuFactory, $rootScope) {
-
+totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, totalStar, $routeParams, menuFactory, $rootScope, $document) {
+    $document.title = $scope.course;
     $scope.course = "total" + $routeParams.degree;
     switch ($routeParams.degree) {
         case "n5":
