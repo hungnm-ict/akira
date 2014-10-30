@@ -1,4 +1,3 @@
-
 var windowFocus = true;
 var username;
 var chatHeartbeatCount = 0;
@@ -25,6 +24,28 @@ $(document).ready(function() {
     });
 });
 
+function getUsername(id) {
+    var BASE_URL = 'http://akira.edu.vn/wp-content/plugins/akira-api/id_to_uname.php';
+    $.ajax({
+        url: BASE_URL,
+        data: {
+            uid: id
+        },
+        async: false
+    }).done(function(data) {
+        console.log(data);
+        setTimeout(function(){
+            return data;
+        },200);
+    }).fail(function(err) {
+        console.log(err);
+        setTimeout(function(){
+            return err;
+        },200);
+        return err;
+    });
+}
+
 function restructureChatBoxes() {
     align = 0;
     for (x in chatBoxes) {
@@ -42,7 +63,8 @@ function restructureChatBoxes() {
     }
 }
 
-function chatWith(chatuser) {
+function chatWith(chatuser, id) {
+    chatuser = id;
     createChatBox(chatuser);
     $("#chatbox_" + chatuser + " .chatboxtextarea").focus();
 }
@@ -57,36 +79,37 @@ function createChatBox(chatboxtitle, minimizeChatBox) {
 
         if ($('#chatbox_' + chatboxtitle + ' .chatboxcontent').css('display') == 'none') {
 
-        var minimizedChatBoxes = new Array();
+            var minimizedChatBoxes = new Array();
 
-        if ($.cookie('chatbox_minimized')) {
-            minimizedChatBoxes = $.cookie('chatbox_minimized').split(/\|/);
-        }
-
-        var newCookie = '';
-
-        for (i = 0; i < minimizedChatBoxes.length; i++) {
-            if (minimizedChatBoxes[i] != chatboxtitle) {
-                newCookie += chatboxtitle + '|';
+            if ($.cookie('chatbox_minimized')) {
+                minimizedChatBoxes = $.cookie('chatbox_minimized').split(/\|/);
             }
+
+            var newCookie = '';
+
+            for (i = 0; i < minimizedChatBoxes.length; i++) {
+                if (minimizedChatBoxes[i] != chatboxtitle) {
+                    newCookie += chatboxtitle + '|';
+                }
+            }
+
+            newCookie = newCookie.slice(0, -1)
+
+
+            $.cookie('chatbox_minimized', newCookie);
+            $('#chatbox_' + chatboxtitle + ' .chatboxcontent').css('display', 'block');
+            $('#chatbox_' + chatboxtitle + ' .chatboxinput').css('display', 'block');
+            $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
         }
-
-        newCookie = newCookie.slice(0, -1)
-
-
-        $.cookie('chatbox_minimized', newCookie);
-        $('#chatbox_' + chatboxtitle + ' .chatboxcontent').css('display', 'block');
-        $('#chatbox_' + chatboxtitle + ' .chatboxinput').css('display', 'block');
-        $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
-    }
 
         $("#chatbox_" + chatboxtitle + " .chatboxtextarea").focus();
         return;
     }
 
+    //TODO: I clicked to a user name
     $(" <div />").attr("id", "chatbox_" + chatboxtitle)
         .addClass("chatbox")
-        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + chatboxtitle + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
+        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + getUsername(chatboxtitle) + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
         .appendTo($("body"));
 
     $("#chatbox_" + chatboxtitle).css('bottom', '0px');
@@ -145,10 +168,10 @@ function createChatBox(chatboxtitle, minimizeChatBox) {
         }
     });
 
-  //   $("#chatbox_" + chatboxtitle).show();
-  //   $('#chatboxcontainer').slimscroll({
-  // height:  '200px'
-// });
+    $("#chatbox_" + chatboxtitle).show();
+    // $('#chatboxcontainer').slimscroll({
+    // height:  '200px'
+    // });
 }
 
 
@@ -221,6 +244,7 @@ function chatHeartbeat() {
                     } else {
                         newMessages[chatboxtitle] = true;
                         newMessagesWin[chatboxtitle] = true;
+                        //TODO: User B send message to me so i need to parse User B id to get his/her name
                         $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.f + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
                     }
 
@@ -312,6 +336,7 @@ function checkChatBoxInputKey(event, chatboxtextarea, chatboxtitle) {
                 message: message,
                 username: username
             }, function(data) {
+                //TODO: I send use a message to  User B so i have to normalize my user id to my display name to append on the chatbox
                 message = message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
                 $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + username + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + message + '</span></div>');
                 $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);

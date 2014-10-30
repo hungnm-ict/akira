@@ -1,4 +1,4 @@
-var mobi = angular.module('mobiRoot', ['ngRoute', 'ionic', 'mobiCtrl', 'commonCtrls', 'akrSharedDirectives']);
+var mobi = angular.module('mobiRoot', ['ngRoute', 'ionic', 'mobiCtrl', 'akrSharedDirectives', 'commonCtrls', 'akrDataService', 'akrRestService']);
 
 mobi.config(['$routeProvider',
     function($routeProvider) {
@@ -18,7 +18,11 @@ mobi.config(['$routeProvider',
                             break;
                     }
                 },
-                controller: 'mainCtrl'
+                controller: 'mainCtrl',
+                resolve: {
+
+                }
+
             })
             .when('/:degree/:course/:lessonId', {
                 templateUrl: function(urlAttr) {
@@ -40,11 +44,21 @@ mobi.config(['$routeProvider',
                             break;
                     }
                 },
-                controller: 'subCtrl'
+                controller: 'subCtrl',
+                resolve: function($q, restService) {
+
+                }
             })
             .when('/:degree/:course/:lessonId/:subid/learn', {
                 templateUrl: 'learn.html',
-                controller: 'learnCtrl'
+                controller: 'gameCtrl',
+                resolve: function($q, dataService, $route, $routeParams) {
+                    var deffered = $q.defer();
+                    console.log($route);
+                    console.log($routeParams);
+                    defferred.resolve(dataService.getPromise(degree, course, lessonId, subId, 'learn'))
+                    return deffered.promise();
+                }
             })
             .when('/:degree/:course/:lessonId/:subid/picture', {
                 templateUrl: 'picture.html',
@@ -169,9 +183,5 @@ mobi.controller('rootCtrl', function($scope, $ionicSideMenuDelegate, $routeParam
 
     $scope.toggleRight = function() {
         $ionicSideMenuDelegate.toggleRight();
-    };
-
-    $scope.rootPlay = function(degree, course, lesson, sub, skill, audioTagId, playSpeed) {
-
     };
 });

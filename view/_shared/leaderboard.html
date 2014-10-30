@@ -1,3 +1,7 @@
+<script type="text/javascript" src="../../js/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="../../js/tabs.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/tabs.css" />
+
 <div class="row" id="leaderboard">
     <div class="col-md-12 col-sm-12 col-sm-12">
         <div id="leaderboardWizard" class="swMain">
@@ -13,40 +17,40 @@
                     </a>
                 </li>
             </ul>
-            <h4 data-i18n="leaderboard.leaderboard" class="left newFont leaderTitle"></h4>
+            <h4 data-i18n="leaderboard.leaderboard" class="left"></h4>
             <div id="step-1">
                 <div id="level-tabs">
                     <tabs>
                         <tab>
-                            <h1 class="heading newFont" data-i18n="leaderboard.week">Tuần</h1>
+                            <h1 class="heading" data-i18n="leaderboard.week">Tuần</h1>
                             <div id="lvl-tabs-1">
-                                <div class="leaderContainer">
-                                    <div class="row" ng-repeat="val in rank['level']['week']"  ng-click="callChat(val.uid)">
-                                        <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
-                                        </div>
-                                        <div class="col-md-9 col-sm-9 col-xs-9 outerLeaderContainer">
-                                            <div class="innerLeaderContainer">
-                                                <div class="innerLeaderName" ng-bind="val.display"/>
-                                                <div class="innerLeaderScore" ng-bind="val.score"/>
-                                            </div>
-                                        </div>
+                                <div class="row" ng-repeat="val in rank['level']['week']" ng-click="callChat(val.display,val.uid)">
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <div ng-bind-html="renderHtml(val.ava)" class="ava-circle" ></div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <span ng-bind="val.display" class="leaderboarduname">
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 center">
+                                        <span ng-bind="val.score"></span>
                                     </div>
                                 </div>
                             </div>
                         </tab>
                         <tab>
-                        <h1 class="heading newFont" data-i18n="leaderboard.all">Tất cả</h1>
+                            <h1 class="heading" data-i18n="leaderboard.all">Tất cả</h1>
                             <div id="lvl-tabs-2">
-                                <div class="row" ng-repeat="val in rank['level']['all']">
-                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                <div class="row" ng-repeat="val in rank['level']['all']"  ng-click="callChat(val.display,val.uid)">
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
                                         <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
                                     </div>
-                                    <div class="col-md-9 col-sm-9 col-xs-9 outerLeaderContainer">
-                                        <div class="innerLeaderContainer">
-                                            <div class="innerLeaderName" ng-bind="val.display"/>
-                                            <div class="innerLeaderScore" ng-bind="val.score"/>
-                                        </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <span ng-bind="val.display"  class="leaderboarduname">
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 center">
+                                        <span ng-bind="val.score"></span>
                                     </div>
                                 </div>
                             </div>
@@ -56,41 +60,41 @@
             </div>
             <div id="step-2">
                 <div id="mentor-tabs">
+
                     <tabs>
                         <tab>
-                            <h1 class="heading newFont" data-i18n="leaderboard.week">Tuần</h1>
+                            <h1 class="heading" data-i18n="leaderboard.week">Tuần</h1>
                             <div id="mentor-tabs-1">
-                                <div class="row" ng-repeat="val in rank['mentor']['week']">
-                                    <div class="col-md-3 col-sm-3 col-xs-3">
-                                        <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"/>
+                                <div class="row" ng-repeat="val in rank['mentor']['week']" ng-click="callChat(val.display,val.uid)">
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
                                     </div>
-                                    <div class="col-md-9 col-sm-9 col-xs-9 outerLeaderContainer">
-                                        <div class="innerLeaderContainer">
-                                            <div class="innerLeaderName" ng-bind="val.name"/>
-                                            <div class="innerLeaderScore" ng-bind="val.score"/>
-                                        </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <span ng-bind="val.display" class="leaderboarduname">
+                                        </span>
                                     </div>
-                        </div>
-                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 center">
+                                        <span ng-bind="val.score"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </tab>
                         <tab>
-                        <h1 class="heading newFont" data-i18n="leaderboard.all">Tất cả</h1>
-                        <div id="mentor-tabs-2">
-                        <div class="row" ng-repeat="val in rank['mentor']['all']">
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
-                            </div>
-                                    <div class="col-md-9 col-sm-9 col-xs-9">
-                                        <div>
-                                            {{val.name}}
-                                        </div>
-                                        <br/>
-                                        <div>
-                                            {{val.score}}
-                                        </div>
+                            <h1 class="heading" data-i18n="leaderboard.all">Tất cả</h1>
+                            <div id="mentor-tabs-2">
+                                <div class="row" ng-repeat="val in rank['mentor']['all']" ng-click="callChat(val.display,val.uid)" >
+                                    <div class="col-md-2 col-sm-2 col-xs-2">
+                                        <div ng-bind-html="renderHtml(val.ava)" class="ava-circle"></div>
                                     </div>
-                        </div>
-                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <span ng-bind="val.display" class="leaderboarduname">
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3 center">
+                                        <span ng-bind="val.score"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </tab>
                     </tabs>
                 </div>
@@ -99,38 +103,24 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="../../js/jquery.slimScroll.js"></script><link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="../../js/tabs.js"></script>
-<link rel="stylesheet" type="text/css" href="../../css/tabs.css" />
+
 <script type="text/javascript">
-// function callChat(name){
-//     alert(name);
-// }
 $('#leaderboardWizard').smartWizard({
     enableAllSteps: true, // Enable/Disable all steps on first load
     keyNavigation: false
 });
-
-// Add scrollbar style
 $('#lvl-tabs-1').slimscroll({
-  height:  '300px'
+    height: '300px'
 });
 $('#lvl-tabs-2').slimscroll({
-  height:  '300px'
+    height: '300px'
 });
 $('#mentor-tabs-1').slimscroll({
-  height:  '300px'
+    height: '300px'
 });
 $('#mentor-tabs-2').slimscroll({
-  height:  '300px'
+    height: '300px'
 });
-
-// Add tabs
 $('tabs').tabs();
-
-// dynamic style
-$( ".heading" ).css( "width", $('#level-tabs').width()/2 );
-$( "tabs > tab" ).css( "padding", "5px 0px" );
-
 $('#leaderboardWizard .actionBar').hide();
 </script>

@@ -12,15 +12,18 @@ mobiCtrl.controller('subCtrl', function($scope, $http, $routeParams) {
     $scope.subtopic = 1;
 });
 
-mobiCtrl.controller('learnCtrl', function($scope, $http, $routeParams, mobiService) {
-    mobiService.getPromise($routeParams.degree, $routeParams.course).then(function(deferred) {
-        if (deferred.data != null) {
-            $scope.data = mobiService.filterData(deferred.data, $routeParams.lessonId, $routeParams.subid);
-        } else {
-            console.log("Null data returned!!!!");
-        }
-    });
+mobiCtrl.controller('gameCtrl',function($scope,$http,$routeParams,utilService){
+    $scope.course = $routeParams.course + $routeParams.degree;
+    $scope.lessonId = $routeParams.lessonId;
+    $scope.partId = $routeParams.partId;
+    $scope.gameObject = {
+        "life": 3,
+        "correct": 0,
+        "step" : 0,
+    };
+});
 
+mobiCtrl.controller('learnCtrl', function($scope, $http, $routeParams) {
     $scope.lessonId = $routeParams.lessonId;
     $scope.partId = $routeParams.partId;
     $scope.gameObject = {

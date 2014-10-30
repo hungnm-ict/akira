@@ -1,72 +1,31 @@
 <button ng-click="removeLife()" id="sublife" style="display:none;"></button>
 <button ng-click="check()" id="check" style="display:none;"></button>
-<div id="connectWizard">
+<div id="connectWizard" class="swMain">
     <!-- Life wrapper -->
-    <akrlife ret="../../view/kanji" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/5}}" life="{{gameObject.life}}"></akrlife>
 
     <div class="stepContainer">
-        <div class="wrapper row">
-            <div class="col-md-4 col-md-offset-2">
-                <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:5">
-                    <div class="col-md-12 hira-wrapper">
-                        <span id="hira-{{value.id}}" class="couple-{{value.id}}" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            {{value.kanji}}
-                        </span>
+        <div class="content">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+                        <div class="row akrdomshuffle" ng-repeat="value in data | limitTo:5">
+                            <div class="col-md-12 hira-wrapper">
+                                <akrconnect data-id="hira-{{value.id}}" data-title="{{value.kanji}}"  data-class="couple-{{value.id}}" data-type="right"></akrconnect>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="row ngRepeatShuffle" ng-repeat="value in data | limitTo:5">
-                    <div class="col-md-12 vi-wrapper">
-                        <span id="vie-{{value.id}}" class="couple-{{value.id}}" ondrop="drop(event)" ondragover="allowDrop(event)" draggable="true" ondragstart="drag(event)">
-                            {{value.hiragana}}
-                        </span>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="row akrdomshuffle" ng-repeat="value in data | limitTo:5">
+                            <div class="col-md-12 vi-wrapper">
+                                <akrconnect data-id="vie-{{value.id}}" data-title="{{value.hiragana}}"  data-class="couple-{{value.id}}" data-type="left"></akrconnect>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div id="aki-answer-wrapper"></div>
             </div>
         </div>
-        <div id="aki-answer-wrapper"></div>
     </div>
 </div>
-<style type="text/css" media="screen">
-span.q,
-span.a {
-    width: 120px;
-    height: 15px;
-    border: 1px solid;
-    margin: 6px;
-}
-</style>
-<script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text/html", ev.target.id);
-}
-
-function drop(ev) {
-
-    if (($('#' + ev.dataTransfer.getData("text/html")).attr('class') === $(ev.target).attr('class')) && ($('#' + ev.dataTransfer.getData("text/html")).attr('id') != $(ev.target).attr('id')))
-    {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text/html");
-        ev.target.style.visibility = "hidden";
-        document.getElementById(data).style.visibility = "hidden";
-        $("#check").trigger("click");
-        playCorrect();
-    }
-    else if ($('#' + ev.dataTransfer.getData("text/html")).attr('id')[0] === $(ev.target).attr('id')[0] || $('#' + ev.dataTransfer.getData("text/html")).attr('id') == "undefined")
-    {
-        ;//do nothing
-    }
-    else
-    {
-        playFail();
-        $("#sublife").trigger("click");
-    }
-}
-changeLang();
-</script>

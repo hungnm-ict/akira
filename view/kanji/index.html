@@ -22,8 +22,10 @@
     <script type="text/javascript" src="../../spec/lib/angular-route.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../spec/lib/jquery.smartWizard.js"></script>
+    <script type="text/javascript" src="../../spec/lib/keyboard/keyboard.js"></script>
     <script src="../../spec/lib/i18next/i18next-1.7.4.js"></script>
 
+    <script type="text/javascript" src="../../js/services/utilService.js"></script>
     <script type="text/javascript" src="../../js/controllers/sharedCtrl.js"></script>
     <script type="text/javascript" src="../../js/directives/sharedDirective.js"></script>
     <script type="text/javascript" src="../../js/controllers/kanjinCtrl.js"></script>
@@ -36,13 +38,13 @@
 <body ng-controller="root">
     <div class="app container-full-height container-fluid" id="dashboard">
         <div class="row row-full-height">
-            <div class="col-md-2 hidden-sm hidden-xs col-full-height" style="padding-left:0px;">
+            <div class="col-md-1 col-sm-1 col-xs-1 col-full-height" style="padding-left:0px;">
 
             <!-- onload="navgroup=0;nav=1" -->
                 <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" >
                 </div>
             </div>
-            <div class="col-md-7 col-full-height" id="kanji">
+            <div class="col-md-8 col-sm-8 col-xs-8 col-full-height" id="kanji">
                 <div id="content">
                     <audio controls id="sound-true" class="hide">
                         <source src="../../audio/true.mp3" type="audio/mp3">
@@ -50,7 +52,17 @@
                     <audio controls id="sound-fail" class="hide">
                         <source src="../../audio/fail.mp3" type="audio/mp3">
                     </audio>
-                    <div ng-view></div>
+                    <div ng-switch on="isLoading">
+                        <div ng-switch-when="true" class="center">
+                            <img src="http://www.w3schools.com/jquery/demo_wait.gif" alt="">
+                        </div>
+                        <div ng-switch-when="false">
+                            <div ng-view></div>
+                        </div>
+                        <div ng-switch-default class="center">
+                            <img src="http://www.w3schools.com/jquery/demo_wait.gif" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 col-full-height">
@@ -69,7 +81,7 @@
     angular.bootstrap(document, ['kanjinApp']);
     app.initialize();
     </script>
-    <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"  onkeydown="$(this).modal('hide')">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
@@ -100,7 +112,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>

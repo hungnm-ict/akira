@@ -1,20 +1,27 @@
-<div id="subtopicWizard" class="swMain" akirawizard enablestep="true">
+<div id="subtopicWizard" class="swMain akiHide" akirawizard enablestep="true" step="{{partId}}">
     <span class="header">
         <h2 data-i18n="common.lesson"></h2>
-        <h2>{{lessonId}}</h2>
+        <h2 ng-bind="lessonId"></h2>
     </span>
 
     <ul>
         <li ng-repeat="val in [1,2,3]">
-            <a href="#step-{{val}}" ng-click="partId={{val}}">
+            <a href="#step-{{val}}" ng-click="subtopicChanged(val)">
                 <label class="stepNumber">
                     <span ng-switch on="isEnabled(val)">
                         <span ng-switch-when="true" ng-bind="val"></span>
-                        <span ng-switch-when="false"><i class="fa fa-lock"></i>
+                        <span ng-switch-when="false"><i class="fa fa-lock" data-toggle="tooltip" data-placement="bottom" title="{{val*10 - 10}} stars to unlock"></i>
                         </span>
-                        <span ng-switch-default><i class="fa fa-lock"></i>
+                        <span ng-switch-default><i class="fa fa-lock" data-toggle="tooltip" data-placement="bottom" title="{{val*10 - 10}} stars to unlock"></i>
                         </span>
                     </span>
+                </label>
+            </a>
+        </li>
+        <li>
+            <a href="" id="lock" ng-click="pass(degree,'basic',lessonId)">
+                <label class='stepNumber'>
+                 <img ng-src="../../img/w-key.png" class="img-responsive">
                 </label>
             </a>
         </li>
@@ -22,14 +29,14 @@
 
     <span id="star">
         <span class="number">
-            {{kanjistar}}
+            <span ng-bind="kanjistar"></span>
             <i class="fa fa-star kanji"></i>
         </span>
     </span>
 
     <div id="step-{{value}}" ng-repeat="value in [1,2,3]">
         <div class="row">
-            <div class="col-md-4  col-md-offset-2">
+            <div class="col-md-4 col-sm-4 col-xs-4  col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
                 <a ng-href="#/{{degree}}/{{lessonId}}/{{value}}/learn" class="thumb">
                     <span data-i18n="common.learn"></span>
                     <span class="akira-circle">
@@ -42,7 +49,7 @@
                     <i class="fa fa-star fa-3x"></i>
                 </span>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <a ng-href="#/{{degree}}/{{lessonId}}/{{value}}/picture" class="thumb">
                     <span data-i18n="common.picture"></span>
                     <span class="akira-circle">
@@ -57,7 +64,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4  col-md-offset-2">
+            <div class="col-md-4 col-sm-4 col-xs-4  col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
                 <a ng-href="#/{{degree}}/{{lessonId}}/{{value}}/word" class="thumb">
                     <span data-i18n="common.word"></span>
                     <span class="akira-circle">
@@ -71,7 +78,7 @@
                 </span>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <a ng-href="#/{{degree}}/{{lessonId}}/{{value}}/connect" class="thumb">
                     <span data-i18n="common.connect"></span>
                     <span class="akira-circle">

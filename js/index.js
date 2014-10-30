@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -65,15 +66,15 @@ function changeLang(code) {
  * @return {[type]} [description]
  */
 function getUser() {
-    if (sessionStorage.getItem("user") == null) {
+    if (localStorage.getItem("user") == null) {
         return {
-            "id": 17,
+            "id": 0,
             "loginname": "anonymous",
             "display": "Anonymous"
         };
         // return 0;
     } else {
-        return JSON.parse(sessionStorage.user);
+        return JSON.parse(localStorage.user);
     }
 }
 
@@ -85,7 +86,9 @@ function getUser() {
  * @return {[type]}        [description]
  */
 function compare(oldStr, newStr) {
-    return (oldStr.trim().replace(/ /g, "") === newStr.trim().replace(/ /g, ""));
+    var oldProcess = oldStr.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
+    var newProcess = newStr.replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "");
+    return (oldProcess.trim().replace(/ /g, "") === newProcess.trim().replace(/ /g, ""));
 }
 
 /**
@@ -120,11 +123,13 @@ function gameOver(course, lesson, subtopic, game, correctAns, noOfQuestion) {
     saveScore(course, lesson, subtopic, game, star, xp);
     $(".game-over-modal-sm .game-star").html(star);
     $(".game-over-modal-sm .game-score").html(xp);
+    $(".game-over-modal-sm .star-wrapper").addClass("star-" + star);
     $(".game-over-modal-sm").modal({
-        keyboard: false
+        keyboard: true
     });
 
     $('.game-over-modal-sm').on('hide.bs.modal', function(e) {
+        window.location.reload();
         window.history.back();
     });
 }
@@ -156,6 +161,25 @@ function akiraShuffle(array) {
     return array.splice(0, 9);
 }
 
+function akiraShuffle2(array) {
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
 
 /**
  * Need to shuffle the generated answer again
@@ -198,29 +222,35 @@ function genAnswers(data, ansKey, numberOfAns) {
  * @return {[type]}             [description]
  */
 function genAnswers3(data, numberOfAns) {
-    var uniqueGroups = [];
-    $.each(data, function(idx, val) {
-        var obj = [];
+    try {
 
-        var rand1;
-        obj.push(data[idx]);
+        var uniqueGroups = [];
+        $.each(data, function(idx, val) {
+            var obj = [];
 
-        do {
-            rand1 = Math.floor((Math.random() * data.length));
-        } while (rand1 == idx);
-        obj.push(data[rand1]);
+            var rand1;
+            obj.push(data[idx]);
 
-        if (numberOfAns == 3) {
-            var rand2;
             do {
-                rand2 = Math.floor((Math.random() * data.length));
-            } while (rand2 == idx || rand2 == rand1);
-            obj.push(data[rand2]);
-        }
+                rand1 = Math.floor((Math.random() * data.length));
+            } while (rand1 == idx);
+            obj.push(data[rand1]);
 
-        uniqueGroups[idx] = akiraShuffle(obj);
-    });
-    return uniqueGroups;
+            if (numberOfAns == 3) {
+                var rand2;
+                do {
+                    rand2 = Math.floor((Math.random() * data.length));
+                } while (rand2 == idx || rand2 == rand1);
+                obj.push(data[rand2]);
+            }
+
+            uniqueGroups[idx] = akiraShuffle(obj);
+        });
+        return uniqueGroups;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
 }
 
 function genAnswers4(data, numberOfAns) {
@@ -263,6 +293,63 @@ function genAnswers2(data) {
     return uniqueGroups;
 }
 
+function genAnswers5(data) {
+    try {
+        var uniqueGroups = [];
+        $.each(data, function(idx, val) {
+            if (data[idx].data.hasOwnProperty("hiragana")) {
+                var obj;
+                obj = data[idx].data["hiragana"].replace(/ /g, String.fromCharCode(12288)).replace(new RegExp(String.fromCharCode(12288) + "{1,}", 'g'), "|").split("|");
+                uniqueGroups[idx] = akiraShuffle(obj);
+            }
+        });
+        return uniqueGroups;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
+/*Testout*/
+
+/**
+ * Generate testout multi choice quesion for vocab pic and vocab word
+ * @param  {[type]} data     [description]
+ * @param  {[type]} dataPool [description]
+ * @param  {[type]} noQuest  [description]
+ * @param  {[type]} noAns    [description]
+ * @return {[type]}          [description]
+ *
+ */
+function genVocabMultichoice(data, dataPool, noAns) {
+    try {
+        var uniqueGroups = [];
+        $.each(data, function(idx, val) {
+            var obj = [];
+            //Firstly add the correct answer
+            obj.push(val.data);
+
+            //Secondly add no-1 number of uncorrect answer
+            var count = 0;
+            do {
+                var rand = Math.floor((Math.random() * dataPool.length));
+                if (obj.indexOf(dataPool[rand]) == -1) {
+                    obj.push(dataPool[rand]);
+                    count++;
+                }
+            } while (count < noAns - 1);
+
+            uniqueGroups[idx] = akiraShuffle(obj);
+        });
+
+        return uniqueGroups;
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
+}
+
+
 function genEnglishAnswers(data) {
     var uniqueGroups = [];
     $.each(data, function(idx, val) {
@@ -288,6 +375,8 @@ function saveScore(course, lesson, subtopic, game, star, exp) {
         }
     }).done(function(data) {
         console.info("Score saved");
+    }).fail(function(xhr, status, err) {
+        cnosole.error(err);
     });
 }
 
@@ -331,31 +420,37 @@ function akiraStepValidation(id) {
  * @param  {[type]} context [description]
  * @return {[type]}         [description]
  */
-function leaveAStepCallback(obj, context) {
-    var classStr = "success";
-    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val())
+// function leaveAStepCallback(obj, context) {
+//     var classStr = "success";
+//     var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val())
 
-    if (!ret) {
-        $("#sublife").trigger("click");
-        classStr = "failed";
-    }
-    $(".swMain .actionBar .msgBox").removeClass("failed");
-    $(".swMain .actionBar .msgBox").removeClass("success");
-    $(".swMain .actionBar .msgBox").addClass(classStr);
-    $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
+//     if (!ret) {
+//         $("#sublife").trigger("click");
+//         classStr = "failed";
+//     }
+//     $(".swMain .actionBar .msgBox").removeClass("failed");
+//     $(".swMain .actionBar .msgBox").removeClass("success");
+//     $(".swMain .actionBar .msgBox").addClass(classStr);
+//     $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
 
-    return ret;
-};
+//     return ret;
+// };
 
-function grammarChoiceLeaveStep(obj, context) {
-    var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val());
-    if (!ret) {
-        $("#sublife").trigger("click");
-        $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
-    }
+/**
+ * @deprecated
+ * @param  {[type]} obj     [description]
+ * @param  {[type]} context [description]
+ * @return {[type]}         [description]
+ */
+// function grammarChoiceLeaveStep(obj, context) {
+//     var ret = compare($("#ans-" + (context.fromStep - 1)).val(), $("#input-" + (context.fromStep - 1)).val());
+//     if (!ret) {
+//         $("#sublife").trigger("click");
+//         $(".swMain").smartWizard('showMessage', $("#mess-" + (context.fromStep - 1)).html());
+//     }
 
-    return ret;
-}
+//     return ret;
+// }
 
 /**
  * Global leave step validation method
@@ -363,48 +458,48 @@ function grammarChoiceLeaveStep(obj, context) {
  * @param  {[type]} context [description]
  * @return {[type]}         [description]
  */
-function akrLeaveStep(obj, context) {
-    if (14 == getUser().id || 17 == getUser().id) {
-        return true;
-    };
+// function akrLeaveStep(obj, context) {
+//     if (14 == getUser().id || 17 == getUser().id) {
+//         return true;
+//     };
 
-    var ngScope = angular.element("#" + obj.context.id).scope();
+//     var ngScope = angular.element("#" + obj.context.id).scope();
 
-    if (ngScope.lessonId === undefined) {
-        // console.log("Bạn đang ở màn hình chọn lesson.");
-    } else if (ngScope.lessonId !== undefined && ngScope.partId !== undefined && "subtopicWizard" === obj.context.id) {
-        // console.log("Bạn đang ở khóa học: " + ngScope.course + ", bài học: " + ngScope.lessonId + ", subtopic : " + context.fromStep + ", và đang chuyển sang subtopic: " + context.toStep);
-        // console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
-        var stars = getCurrentStar(ngScope.starData, ngScope.course, ngScope.lessonId, context.toStep);
-        // console.log("Số sao bạn có là: " + stars);
-        if (context.toStep === 4 && ("totaln5" == ngScope.course || "totaln4" == ngScope.course)) {
-            // console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
-            return false;
-        }
-        if (stars < (context.toStep - 1) * 10) {
-            // console.info("Bạn chưa đạt đủ số sao yêu cầu. Bạn còn thiếu: " + (context.toStep * 10 - stars));
-            return false;
-        }
-    } else {
-        // console.log("Bước này không xác định hoặc là chưa xác định được");
-    }
-    return true;
-}
+//     if (ngScope.lessonId === undefined) {
+//         // console.log("Bạn đang ở màn hình chọn lesson.");
+//     } else if (ngScope.lessonId !== undefined && ngScope.partId !== undefined && "subtopicWizard" === obj.context.id) {
+//         // console.log("Bạn đang ở khóa học: " + ngScope.course + ", bài học: " + ngScope.lessonId + ", subtopic : " + context.fromStep + ", và đang chuyển sang subtopic: " + context.toStep);
+//         // console.log("Bạn cần tối thiểu: " + context.toStep * 10 + " sao ở các suctopic trước.");
+//         var stars = getCurrentStar(ngScope.starData, ngScope.course, ngScope.lessonId, context.toStep);
+//         // console.log("Số sao bạn có là: " + stars);
+//         if (context.toStep === 4 && ("totaln5" == ngScope.course || "totaln4" == ngScope.course)) {
+//             // console.error("Bạn cần là thành viên VIP mới có thể sử dụng tính năng này");
+//             return false;
+//         }
+//         if (stars < (context.toStep - 1) * 10) {
+//             // console.info("Bạn chưa đạt đủ số sao yêu cầu. Bạn còn thiếu: " + (context.toStep * 10 - stars));
+//             return false;
+//         }
+//     } else {
+//         // console.log("Bước này không xác định hoặc là chưa xác định được");
+//     }
+//     return true;
+// }
 
-function akrShowStep(obj, context) {
-    var ngScope = angular.element("#" + obj.context.id).scope();
-    //Check if this is autoplay audio
-    if ($("#" + obj.context.id).attr("akrautoplayaudio") == "true") {
-        ngScope.playSound(context.toStep - 1, true);
-    }
+// function akrShowStep(obj, context) {
+//     var ngScope = angular.element("#" + obj.context.id).scope();
+//     //Check if this is autoplay audio
+//     if ($("#" + obj.context.id).attr("akrautoplayaudio") == "true") {
+//         ngScope.playSound(context.toStep - 1, true);
+//     }
 
-    //Check if this is autofocus input
-    if ($("#" + obj.context.id).attr("akrfocus") == "true") {
-        setTimeout(function() {
-            $("#input-" + (context.toStep - 1)).focus();
-        }, 1);
-    }
-}
+//     //Check if this is autofocus input
+//     if ($("#" + obj.context.id).attr("akrfocus") == "true") {
+//         setTimeout(function() {
+//             $("#input-" + (context.toStep - 1)).focus();
+//         }, 1);
+//     }
+// }
 
 function getCurrentStar(data, courseName, lessonId, partId) {
     var totalStar = 0;
@@ -577,10 +672,15 @@ function getLessonStar(data, course, lesson) {
 }
 
 function kanjiDict() {
+    var placementDef = 'top';
+    if ($("h2 .kanji-dict").length > 0) {
+        placementDef = 'bottom';
+    };
+
     $(".kanji-dict").hover(function(e) {
         $(e.target).popover({
             content: translate($(e.target).text()),
-            placement: 'bottom',
+            placement: placementDef,
             trigger: 'hover'
         });
 
@@ -588,9 +688,34 @@ function kanjiDict() {
     });
 }
 
-function translate(kanji) {
-    return kanji;
+function translate(text) {
+    var obj = getObjects(dict, "kanji", text);
+    if (obj != null && obj.hasOwnProperty("hiragana"))
+        return obj.hiragana;
+    else {
+        return "Thiếu dữ liệu từ điển";
+    }
 }
+
+function getObjects(obj, key, val) {
+    for (var i in obj) {
+        if (obj[i][key] == val) {
+            return obj[i];
+        }
+    }
+}
+
+// function getDict() {
+//     $.ajax({
+//         url: "../../data/dict.json",
+//         async: false,
+//         success: function(data) {
+//             console.log(data);
+//             dict = data;
+//             // return data;
+//         }
+//     });
+// }
 
 /**
  * Tính toán xem trong bài học(lesson) này của khóa học(course) đã mở được đến topic nào rồi
@@ -646,7 +771,7 @@ function randTake(data, no) {
 }
 
 /**
- * generate data pool for test out 
+ * generate data pool for test out
  * if big get data from start lesson to current lesson
  * if small get in current lesstion
  * @param  {[type]} data   [description]
@@ -654,18 +779,18 @@ function randTake(data, no) {
  * @param  {[type]} lesson [description]
  * @return {[type]}        [description]
  */
-function mergeData(data, type, lesson,itemkey) {
+function mergeData(data, type, lesson, itemkey) {
     var ret = [];
     switch (type) {
         case "big":
-            $.each(data, function(key,val) {
+            $.each(data, function(key, val) {
                 if (val[itemkey] <= lesson) {
                     ret.push(val);
                 }
             });
             break;
         case "basic":
-            $.each(data, function(key,val) {
+            $.each(data, function(key, val) {
                 if (val[itemkey] == lesson) {
                     ret.push(val);
                 }
@@ -674,6 +799,152 @@ function mergeData(data, type, lesson,itemkey) {
     }
     return ret;
 }
+
+function akrParseInt(str) {
+    try {
+        var ret = str.replace(/["']/g, "");
+
+        return parseInt(ret);
+    } catch (err) {
+        console.error(err);
+        return 0;
+    }
+}
+
+/**
+ * Because we use many type of DOM type to get user input
+ * It could be a div, input or something else
+ * So the way to get string value which user inputted is
+ * differrence so we have use this to determine type of DOM
+ * @param  {[type]} id [description]
+ * @return {[type]}    [description]
+ */
+function akrGetUserInput(id) {
+    try {
+        var nodeName = $(id)[0].nodeName;
+        switch (nodeName) {
+            case "INPUT":
+                return $(id).val().trim();
+                break;
+            case "DIV":
+            case "SPAN":
+            case "H5":
+                return $(id).text().trim();
+                break;
+        }
+    } catch (err) {
+        console.log(err);
+        return "";
+    }
+}
+
+
+/**
+ * Notification for test
+ * @deprecated
+ * @param  {[type]} status   [description]
+ * @param  {[type]} type     [description]
+ * @param  {[type]} lessonid [description]
+ * @return {[type]}          [description]
+ */
+// function testoutOver(status, course, lessonid, type) {
+    // try {
+    //     if (status) {
+    //         $(".testout-over-modal-sm .message").html(i18n.t("message.info.testsucess"));
+    //         $.ajax({
+    //             type: 'POST',
+    //             url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_keypoint.php",
+    //             crossDomain: true,
+    //             data: {
+    //                 userid: getUser().id,
+    //                 course: course,
+    //                 lessonid: lessonid,
+    //                 type: type,
+    //             }
+    //         }).done(function(data) {
+    //             console.info(data);
+    //         }).fail(function(xhr, status, err) {
+    //             console.error(err);
+    //         });
+    //     } else {
+    //         $(".testout-over-modal-sm .message").html(i18n.t("message.info.testfailed"));
+    //     }
+    //     $(".testout-over-modal-sm").modal({
+    //         keyboard: true
+    //     });
+    //     $('.testout-over-modal-sm').on('hide.bs.modal', function(e) {
+    //         window.history.back();
+    //     });
+    // } catch (err) {
+    //     console.error(err);
+    // }
+// }
+
+/**
+ * Get the exp return current progress
+ * @param  {[type]} exp [description]
+ * @return {[type]}     [description]
+ */
+function levelProgress(exp) {
+    var level = 1;
+    var currLevelExp = 1000;
+    var total = exp;
+    while (total >= currLevelExp) {
+        level++;
+        total -= currLevelExp;
+        currLevelExp *= 1.1;
+    }
+    return Math.floor((total / currLevelExp) * 100);
+}
+
+/**
+ * Get the exp return current level
+ * @param  {[type]} $exp [description]
+ * @return {[type]}      [description]
+ */
+function calculateLevel(exp) {
+    var level = 1;
+    var currLevelExp = 1000;
+    var total = exp;
+    while (total >= currLevelExp) {
+        level++;
+        total -= currLevelExp;
+        currLevelExp *= 1.1;
+    }
+    return level;
+}
+
+/*function calculateLevel_1($exp){
+    $level=1;
+    $currLevelExp = 1000;
+    $total=$exp;
+    while($total >=$currLevelExp){
+        $level++;
+        $total -= $currLevelExp;
+        $currLevelExp *= 1.1;
+    }
+    return $level;
+}
+
+function calculateCurrLvlExp($lvl){
+    $currLevelExp = 1000;
+    for($i=1; $i<$lvl; $i++){
+        $currLevelExp *= 1.1;
+    }
+    return $currLevelExp;
+}
+
+function isMentorLevelUp($newExp){
+    $currLvl = calculateLevel_1(wp_get_current_user()->exp); 
+    $newLvl = calculateLevel_1($newExp);
+    $mentor_id = wp_get_current_user()->mentor_id;
+    for($i = $currLvl; $i < $newLvl; $i ++){
+        echo $i;
+        $plusExp =calculateCurrLvlExp($i)*0.2;
+        $currMentorExp = get_user_meta($mentor_id,'mentor_exp','true');
+        update_user_meta($mentor_id,'mentor_exp', $currMentorExp + $plusExp);
+    }
+}*/
 
 /*-----  End of Validation method  ------*/
 
@@ -702,3 +973,59 @@ function mergeData(data, type, lesson,itemkey) {
         return $(shuffled);
     };
 })(jQuery);
+
+var dict = (function() {
+    var json = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': "../../data/dict.json",
+        'dataType': "json",
+        'success': function(data) {
+            json = data;
+        }
+    });
+    return json;
+})();
+
+
+(function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+})();
+
+window.fbAsyncInit = function() {
+    FB.init({
+        // appId: "721532401232192",
+        appId: "288129501345090",
+        status: true, // check login status
+        cookie: true, // enable cookies to allow the server to access the session
+        xfbml: true // parse XFBML
+    });
+};
+
+(function(d) {
+    var js, id = 'facebook-jssdk',
+        ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) {
+        return;
+    }
+    js = d.createElement('script');
+    js.id = id;
+    js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    ref.parentNode.insertBefore(js, ref);
+}(document));
+
+
+function storedUserId(id){
+    var obj = [];
+    if(obj.indexOf(id)== -1){
+        obj.push(id);
+    }
+    console.log(obj);
+}

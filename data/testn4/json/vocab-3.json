@@ -1,0 +1,181 @@
+[{
+    "id": 1,
+    "question": "けさ　しゃわーを　あびました。 ",
+    "answer0": "シャワー",
+    "answer1": "シャウー",
+    "answer2": "ツャワー",
+    "answer3": "ツャウー",
+    "correct-index": "answer0",
+    "correct-value": "シャワー"
+}, {
+    "id": 2,
+    "question": "ねくたいを　かいに　いきました。",
+    "answer0": "衤ケタイ",
+    "answer1": "不クタイ",
+    "answer2": "ネクタイ",
+    "answer3": "ネタクイ",
+    "correct-index": "answer2",
+    "correct-value": "ネクタイ"
+}, {
+    "id": 3,
+    "question": "この　どあは　あけないで　ください。",
+    "answer0": "ドワ",
+    "answer1": "ドマ",
+    "answer2": "ドア",
+    "answer3": "ドム",
+    "correct-index": "answer2",
+    "correct-value": "ドア"
+}, {
+    "id": 4,
+    "question": " あかい　ぼーるぺんは　ありますか",
+    "answer0": "モールペン",
+    "answer1": "ボールペン",
+    "answer2": "ポーハペン",
+    "answer3": "ボールペン",
+    "correct-index": "answer1",
+    "correct-value": "ボールペン"
+}, {
+    "id": 5,
+    "question": "にちようび、しゃつを　せんたくしました。",
+    "answer0": "シャツ",
+    "answer1": "ツャシ",
+    "answer2": "シャッ",
+    "answer3": "ンャツ",
+    "correct-index": "answer0",
+    "correct-value": "シャツ"
+}, {
+    "id": 6,
+    "question": " きのう、はんかちを　なくしました",
+    "answer0": "ルンカナ",
+    "answer1": "ハンカテ",
+    "answer2": "ハンカチ",
+    "answer3": "ルンカチ",
+    "correct-index": "answer2",
+    "correct-value": "ハンカチ"
+}, {
+    "id": 7,
+    "question": "あの　れすとらんの　りょうりは　おいしいです。",
+    "answer0": "レヌトラン",
+    "answer1": "ラストテン",
+    "answer2": "ルヌトラン",
+    "answer3": "レストラン",
+    "correct-index": "answer3",
+    "correct-value": "レストラン"
+}, {
+    "id": 8,
+    "question": " へやに　ぴあのが　あります",
+    "answer0": "ビマノ",
+    "answer1": "ピアメ",
+    "answer2": "ピアノ",
+    "answer3": "ピマノ",
+    "correct-index": "answer2",
+    "correct-value": "ピアノ"
+}, {
+    "id": 9,
+    "question": "あの　ほてるは　ゆうめいです。",
+    "answer0": "ホラル",
+    "answer1": "ホテル",
+    "answer2": "ホラハ",
+    "answer3": "ホテハ",
+    "correct-index": "answer1",
+    "correct-value": "ホテル"
+}, {
+    "id": 10,
+    "question": " テレビの　にゅーすを　見ましたか",
+    "answer0": "ニュース",
+    "answer1": "ミュース",
+    "answer2": "ニューヌ",
+    "answer3": "ミューヌ",
+    "correct-index": "answer0",
+    "correct-value": "ニュース"
+}, {
+    "id": 11,
+    "question": " その　ぼーるぺんを　かして　ください",
+    "answer0": "ボールペソ",
+    "answer1": "ボーリペン",
+    "answer2": "ボールペン",
+    "answer3": "ボーレペン",
+    "correct-index": "answer2",
+    "correct-value": "ボールペン"
+}, {
+    "id": 12,
+    "question": " わいしゃつは　あまり　きません",
+    "answer0": "ワイツャシ",
+    "answer1": "ラいシャツ",
+    "answer2": "ヲイシャツ",
+    "answer3": "ワイシャツ",
+    "correct-index": "answer3",
+    "correct-value": "ワイシャツ"
+}, {
+    "id": 13,
+    "question": " たくしーには　のりません。バスで　行きます",
+    "answer0": "タクシー",
+    "answer1": "クタシー",
+    "answer2": "タクツー",
+    "answer3": "クタツー",
+    "correct-index": "answer0",
+    "correct-value": "タクシー"
+}, {
+    "id": 14,
+    "question": " あの　れすとらんに　入りましょう",
+    "answer0": "ルストラン",
+    "answer1": "ルストラソ",
+    "answer2": "レストラン",
+    "answer3": "レストラソ",
+    "correct-index": "answer2",
+    "correct-value": "レストラン"
+}, {
+    "id": 15,
+    "question": "えきまで　たくしーで　いきましょう。",
+    "answer0": "クタソツー",
+    "answer1": "クタシー",
+    "answer2": "タクシー",
+    "answer3": "タクツー",
+    "correct-index": "answer2",
+    "correct-value": "タクシー"
+}, {
+    "id": 16,
+    "question": "てーぶるの　うえを　みてください。",
+    "answer0": "テーブル",
+    "answer1": "チーブル",
+    "answer2": "ナーブル",
+    "answer3": "ラーブル",
+    "correct-index": "answer0",
+    "correct-value": "テーブル"
+}, {
+    "id": 17,
+    "question": "まっちを　とって　ください。",
+    "answer0": "マッチ",
+    "answer1": "マッテ",
+    "answer2": "アッチ",
+    "answer3": "アッテ",
+    "correct-index": "answer0",
+    "correct-value": "マッチ"
+}, {
+    "id": 18,
+    "question": "     といれは　どちらですか)",
+    "answer0": "イレト",
+    "answer1": "トレイ",
+    "answer2": "トイレ",
+    "answer3": "タイレ",
+    "correct-index": "answer2",
+    "correct-value": "トイレ"
+}, {
+    "id": 19,
+    "question": "へやに　しゃわーは　ありますか。",
+    "answer0": "ツェワー",
+    "answer1": "シャウー",
+    "answer2": "ツャワー",
+    "answer3": "シャワー",
+    "correct-index": "answer3",
+    "correct-value": "シャワー"
+}, {
+    "id": 20,
+    "question": "こんど、　いっしょに　れすとらんに　行きましょう。",
+    "answer0": "ルストラン",
+    "answer1": "ルストラン",
+    "answer2": "レストラソ",
+    "answer3": "レストラン",
+    "correct-index": "answer3",
+    "correct-value": "レストラン"
+}]

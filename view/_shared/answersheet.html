@@ -1,40 +1,45 @@
 <div class="answer-sheet">
     <span id="inittime" class="hide">{{time}}</span>
-    <div class="row" id="submit">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <button id="finish" data-i18n="common.submit" onclick="finish()" class="akr-btn btn"></button>
-        </div>
-    </div>
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-6">
-            <h2 data-i18n="common.answersheet"></h2>
-        </div>
-        <div class="col-md-4">
-            <div id="timecount">
-                <span id="timeleft" class="btn akr-btn">{{time}}</span>
-            </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <button id="finish" data-i18n="common.submit" onclick="finish()" class="akr-btn btn"></button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h4 data-i18n="common.answersheet"></h4>
+                        </td>
+                        <td>
+                            <span id="timeleft">{{time}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-12">
             <div ng-repeat="(key, value) in dataset">
-                <div ng-repeat="(k,v) in value" class="row" ng-class="{'odd':$odd ==true}">
-                    <div class="col-md-2 center">
+                <div ng-repeat="(k,v) in value" class="row row-full-height" ng-class="isOdd(dataset,key,k)">
+                    <div class="col-md-2 center bordered col-full-height">
                         <h4 ng-bind="counter(dataset,key,k)"></h4>
                     </div>
-                    <div class="col-md-2" ng-class="{'true':v.correct=='answer0'}" onclick="answerclicked(this)">
+                    <div class="col-md-2 bordered col-full-height" ng-class="{'true':v.correct=='answer0'}" onclick="answerclicked(this)">
                         <span class="test-circle"></span>
                     </div>
-                    <div class="col-md-2" ng-class="{'true':v.correct=='answer1'}" onclick="answerclicked(this)">
+                    <div class="col-md-2 bordered col-full-height" ng-class="{'true':v.correct=='answer1'}" onclick="answerclicked(this)">
                         <span class="test-circle"></span>
                     </div>
-                    <div class="col-md-2" ng-class="{'true':v.correct=='answer2'}" onclick="answerclicked(this)">
+                    <div class="col-md-2 bordered col-full-height" ng-class="{'true':v.correct=='answer2'}" onclick="answerclicked(this)">
                         <span class="test-circle"></span>
                     </div>
-                    <div class="col-md-2" ng-class="{'true':v.correct=='answer3'}" onclick="answerclicked(this)">
+                    <div class="col-md-2 bordered col-full-height" ng-class="{'true':v.correct=='answer3'}" onclick="answerclicked(this)">
                         <span class="test-circle"></span>
                     </div>
                 </div>
@@ -42,6 +47,33 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade test-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" onkeydown="$(this).modal('hide')">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Finished</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <span class="message"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    <span data-i18n="common.ok" data-dismiss="modal"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
 function answerclicked(e) {
     $(e).parent().find(".choosed").removeClass("choosed");
@@ -51,7 +83,12 @@ function answerclicked(e) {
 function finish() {
     var correctA = $(".answer-sheet .true.choosed").length;
     var totalQ = $(".answer-sheet tr").length;
-    alert("Congrat you have correct " + correctA + "/" + totalQ + " questions");
+    $(".test-over-modal-sm .message").html("Congrat you have correct " + correctA + "/" + totalQ + " questions");
+
+    $('.test-over-modal-sm').on('hide.bs.modal', function(e) {
+        window.history.back();
+    });
+    $(".test-over-modal-sm").modal();
 }
 
 
@@ -62,6 +99,7 @@ $("#timeleft").text(initMin + " : 00");
 var timer = setInterval(function() {
     count--;
     if (count == -1) {
+
         clearInterval(timer);
         //do stuffs
         return;

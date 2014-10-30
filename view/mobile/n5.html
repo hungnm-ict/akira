@@ -5,94 +5,94 @@
 </div>
 <ion-tabs class="tabs-positive tabs-top">
     <ion-tab title="Kana">
-        <ion-content class="center">
-            <div class="row">
-                <div class="col">
-                    <a href="#/{{degree}}/kana/1">
-                Hiragana 1
-                </a>
-                </div>
-                <div class="col">
-                    <a href="#/{{degree}}/kana/2">                
-                    Hiragana 2
-                </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <a href="#/{{degree}}/kana/3">
-                        Katakana 1
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#/{{degree}}/kana/4">
-                        Katakan 2
-                    </a>
-                </div>
-            </div>
+        <ion-content class="center fill-height">
+            <table class="table fill-height">
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#/{{degree}}/kana/1">
+                                <img src="../../img/kana/topic/hira.png" alt="hiragana 1" class="img-responsive">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#/{{degree}}/kana/2">
+                                <img src="../../img/kana/topic/hira2.png" alt="hiragana 2" class="img-responsive">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#/{{degree}}/kana/3">
+                                <img src="../../img/kana/topic/kana.png" alt="katakana 1" class="img-responsive">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#/{{degree}}/kana/4">
+                                <img src="../../img/kana/topic/kana2.png" alt="katakana 2" class="img-responsive">
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </ion-content>
     </ion-tab>
 
     <ion-tab title="Total">
-        <ion-content class="center">
-            <div class="row">
-                <div class="col">
-                    <a href="#/{{degree}}/total/1">
-                        1
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#/{{degree}}/total/2">
-                    2
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <a href="#/{{degree}}/total/3">
-                        3
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#/{{degree}}/total/4">
-                        4
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#/{{degree}}/total/5">
-                        5
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <a href="#/{{degree}}/total/6">
-                        6
-                    </a>
-                </div>
-                <div class="col">Lock</div>
-            </div>
-            <!--    <ion-slide-box auto-play="true" pager-click="">
-                <ion-slide>
-                    <div class="box blue">
+        <ion-content class="center fill-height">
+            <ion-slide-box auto-play="true" pager-click="">
+                <ion-slide ng-repeat="(key, value) in [1,2,3]">
+                    <div class="box {{value}} fill-height">
+                        <table class="table fill-height">
+                            <tr>
+                                <td>
+                                    <a href="#/{{degree}}/total/{{key*3+value}}">
+                                        <img src="../../img/total/topic/{{key*3+value}}.png" alt="total {{key*3+value}}" class="img-responsive">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#/{{degree}}/total/{{key*3+value}}">
+                                        <img src="../../img/total/topic/{{key*3+value}}.png" alt="total {{key*3+value}}" class="img-responsive">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#/{{degree}}/total/{{key*3+value}}">
+                                        <img src="../../img/total/topic/{{key*3+value}}.png" alt="total {{key*3+value}}" class="img-responsive">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#/{{degree}}/total/{{key*3+value}}">
+                                        <img src="../../img/total/topic/{{key*3+value}}.png" alt="total {{key*3+value}}" class="img-responsive">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#/{{degree}}/total/{{key*3+value}}">
+                                        <img src="../../img/total/topic/{{key*3+value}}.png" alt="total {{key*3+value}}" class="img-responsive">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#/{{degree}}/total/{{key*3+value}}">
+                                        <img src="../../img/total/topic/{{key*3+value}}.png" alt="total {{key*3+value}}" class="img-responsive">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#/{{degree}}/total/{{key*3+value}}">
+                                        <img src="../../img/total/topic/{{key*3+value}}.png" alt="total {{key*3+value}}" class="img-responsive">
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </ion-slide>
-                <ion-slide>
-                    <div class="box yellow">
-                        <h1>YELLOW</h1>
-                    </div>
-                </ion-slide>
-                <ion-slide>
-                    <div class="box pink">
-                        <h1>PINK</h1>
-                    </div>
-                </ion-slide>
-            </ion-slide-box> -->
+            </ion-slide-box>
         </ion-content>
     </ion-tab>
 
     <ion-tab title="Kanji">
-        <ion-content class="center">
+        <ion-content class="center fill-height">
             <div class="row">
                 <div class="col">
                     <a href="#/{{degree}}/kanji/1">1</a>

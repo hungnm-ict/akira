@@ -24,7 +24,6 @@ define ('DBUSER','root');
 define ('DBPASS','');
 define ('DBNAME','akira');
 
-
 session_start();
 
 global $dbh;
@@ -44,6 +43,10 @@ if (!isset($_SESSION['openChatBoxes'])) {
 	$_SESSION['openChatBoxes'] = array();	
 }
 
+if (!isset($_SESSION['onlines'])) {
+	$_SESSION['onlines'] = array();	
+}
+
 function chatHeartbeat() {
 
 	$sql = "select * from wp_chat where (wp_chat.to = '".mysql_real_escape_string($_GET['username'])."' AND recd = 0) order by id ASC";
@@ -53,7 +56,6 @@ function chatHeartbeat() {
 	$chatBoxes = array();
 
 	while ($chat = mysql_fetch_array($query)) {
-	// while (null) {
 		if (!isset($_SESSION['openChatBoxes'][$chat['from']]) && isset($_SESSION['chatHistory'][$chat['from']])) {
 			$items = $_SESSION['chatHistory'][$chat['from']];
 		}
@@ -128,6 +130,9 @@ header('Content-type: application/json');
 {
 		"items": [
 			<?php echo $items;?>
+        ],
+        "online":[
+        	<?php echo json_encode($_SESSION['onlines']);?> 
         ]
 }
 
@@ -147,6 +152,13 @@ function chatBoxSession($chatbox) {
 }
 
 function startChatSession() {
+	if(!in_array($_GET['username'], $_SESSION["onlines"])){
+		$_SESSION["onlines"][] = $_GET['username'];	
+	}
+	if(!in_array($_GET['username'], $online)){
+		$online[]= $_GET['username'];
+	}
+
 	$items = '';
 	if (!empty($_SESSION['openChatBoxes'])) {
 		foreach ($_SESSION['openChatBoxes'] as $chatbox => $void) {
@@ -165,6 +177,9 @@ header('Content-type: application/json');
 		"username": "<?php echo $_GET['username'];?>",
 		"items": [
 			<?php echo $items;?>
+        ],
+        "online":[
+        	<?php echo json_encode($online);?> 
         ]
 }
 

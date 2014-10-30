@@ -1,5 +1,5 @@
 <button style="display:none;" ng-click="removeLife()" id="sublife">Sub life</button>
-<div id="learnWizard" class="swMain" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
+<div id="learnWizard" class="swMain akiHide" akirawizard enablestep="false" akrautoplayaudio="true" akrfocus="true">
     <!-- Step navigation -->
     <ul>
         <li ng-repeat="(key, value) in data">
@@ -12,7 +12,7 @@
     </ul>
 
     <!-- Life wrapper -->
-    <akrlife ret="../../view/kanji" progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
+    <akrlife progress="{{step/data.length*100}}" life="{{gameObject.life}}"></akrlife>
 
     <!-- Step content -->
     <div ng-repeat="(key,val) in data" id="step-{{key}}">
@@ -55,22 +55,31 @@
             <!-- Navigation wrapper-->
             <div id="aki-answer-wrapper" ng-class="{'check': 1 == stage}">
                 <div class="row mess-holder-{{key}}">
-                    <div class="col-md-8 col-sm-8 col-xs-8">
-                        <div class="row hide" id="mess-{{key}}">
-                            <div class="col-md-12 col-xs-12 col-sm-12">
-                                <span class="correct-child">
-                                    <span class="test-circle"></span>
-                                </span>
-                                <span class="failed-child">
-                                    <i class="fa fa-times fa-4x"></i>
-                                </span>
-                                <span class="hint">{{val.hiragana}}</span>
-                                <span class="hint">{{val.vietnamese}}</span>
-                            </div>
-                        </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <table class="table top-none hide">
+                            <tr>
+                                <td>
+                                    <span class="correct-child">
+                                        <span class="test-circle"></span>
+                                    </span>
+                                    <span class="failed-child">
+                                        <i class="fa fa-times fa-4x"></i>
+                                    </span>
+                                </td>
+                                <td>
+                                    <div>
+                                        <span class="hint">{{val.hiragana}}</span>
+
+                                    </div>
+                                    <div>
+                                        <span class="hint">{{val.vietnamese}}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
 
-                    <div class="col-md-3 col-sm-3 col-xs-3 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
                         <div ng-switch on="stage">
                             <div ng-switch-when="0">
                                 <button type="button" class="akr-btn akr-btn-init" data-i18n="common.check">
@@ -98,11 +107,20 @@
 </div>
 
 <script type="text/javascript">
-$(document).keydown(function(e) {
-    if (13 == e.keyCode) {
-        angular.element("#learnWizard").scope().enterPress();
-    }
+// $(document).keydown(function(e) {
+//     if (13 == e.keyCode) {
+//         angular.element("#learnWizard").scope().enterPress();
+//     }
+//     changeLang();
+// });
+// kanjiDict();
+
+var scope = angular.element("#learnWizard").scope();
+KeyboardJS.on('enter', function() {
+    scope.enterPress();
+}, function() {
+    scope.$apply();
     changeLang();
 });
-kanjiDict();
+
 </script>

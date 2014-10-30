@@ -38,11 +38,11 @@
 <body>
     <div class="app container-full-height container-fluid" id="dashboard">
         <div class="row row-full-height">
-            <div class="col-md-2 col-full-height hidden-sm hidden-xs" style="padding-left: 0px;">
-                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl" onload="navgroup=2;nav=0">
+            <div class="col-md-1 col-full-height hidden-sm hidden-xs" style="padding-left: 0px;">
+                <div id="left-sidebar" ng-include src="'../../view/_shared/menu.html'" ng-controller="menuCtrl">
                 </div>
             </div>
-            <div class="col-md-7 col-full-height">
+            <div class="col-md-8 col-full-height">
                 <div id="content" ng-controller="rootController">
                     <audio controls id="sound-true" class="hide">
                         <source src="../../audio/true.mp3" type="audio/mp3">
@@ -71,7 +71,7 @@
     app.initialize();
     </script>
 
-    <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade game-over-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
@@ -102,7 +102,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>

@@ -3,138 +3,90 @@ var totaln5App = angular.module('totaln5App', ['ngRoute', 'totaln5Ctrls', 'total
 totaln5App.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider
-            .when('/', {
-                templateUrl: function(urlAttr) {
-                    return 'main.html';
-                },
+            .when('/:degree', {
+                templateUrl: 'main.html',
                 controller: 'mainCtrl',
                 resolve: {
-                    kanaStar: function($q, restService) {
+                    totalStar: function($q, restService, $routeParams, $route) {
                         var deferred = $q.defer();
-                        deferred.resolve(restService.getRestPromise("kana"));
-                        return deferred.promise;
-                    },
-                    totalStar: function($q, restService) {
-                        var deferred = $q.defer();
-                        deferred.resolve(restService.getRestPromise("totaln5"));
+                        deferred.resolve(restService.getRestPromise($route.current.params.degree));
                         return deferred.promise;
                     }
                 }
             })
-            .when('/kana/:lessonId', {
-                controller: 'kanaCtrl',
-                templateUrl: function(urlattr) {
-                    if (urlattr.lessonId == 1 || urlattr.lessonId == 2)
-                        return 'kana/hirasub.html';
-
-                    if (urlattr.lessonId == 3 || urlattr.lessonId == 4)
-                        return 'kana/katasub.html';
-                },
-            })
-            .when('/testout/:type/:lessonId', {
+            .when('/:degree/testout/:type/:lessonId', {
                 templateUrl: 'testout.html',
                 controller: 'testoutCtrl',
                 resolve: {
-                    testoutData: function($q, dataService) {
+                    testoutData: function($q, dataService, $route) {
                         var deferred = $q.defer();
-                        $q.all(dataService.getTestoutPromise()).then(function(response) {
+                        $q.all(dataService.getTestoutPromise($route.current.params.degree)).then(function(response) {
                             deferred.resolve(response);
                         });
                         return deferred.promise;
                     }
                 }
             })
-            .when('/kana/:lessonId/:partId/learn', {
-                templateUrl: 'kana/learn.html',
-                controller: 'kanaLearnCtrl'
-            })
-            .when('/kana/:lessonId/:partId/picture', {
-                templateUrl: 'kana/picture.html',
-                controller: 'kanaPictureCtrl'
-            })
-            .when('/kana/:lessonId/:partId/word', {
-                templateUrl: 'kana/word.html',
-                controller: 'kanaWordCtrl'
-            })
-            .when('/kana/:lessonId/:partId/connect', {
-                templateUrl: 'kana/connect.html',
-                controller: 'kanaConnectCtrl'
-            })
-            .when('/kana/:lessonId/:partId/write', {
-                templateUrl: 'kana/write.html',
-                controller: 'kanaWriteCtrl'
-            })
-            .when('/:lessonId', {
+            .when('/:degree/:lessonId', {
                 templateUrl: function(urlAttr) {
                     return 'subtopic.html';
                 },
                 controller: 'subCtrl'
             })
-            .when('/:lessonId/:partId/write', {
+            .when('/:degree/:lessonId/:partId/write', {
                 templateUrl: 'vocab/write.html',
                 controller: 'writeCtrl',
                 resolve: {
                     writeData: function($q, $route, dataService) {
                         var deferred = $q.defer();
-                        deferred.resolve(dataService.getDataPromise("totaln5", $route.current.params.lessonId, $route.current.params.partId, 1));
+                        deferred.resolve(dataService.getDataPromise("total" + $route.current.params.degree, $route.current.params.lessonId, $route.current.params.partId, 1));
                         return deferred.promise;
                     }
                 }
             })
-            .when('/:lessonId/:partId/picture', {
+            .when('/:degree/:lessonId/:partId/picture', {
                 templateUrl: 'vocab/picture.html',
                 controller: 'pictureCtrl'
             })
-            .when('/:lessonId/:partId/word', {
+            .when('/:degree/:lessonId/:partId/word', {
                 templateUrl: 'vocab/word.html',
                 controller: 'wordCtrl'
             })
-            .when('/:lessonId/:partId/listen', {
+            .when('/:degree/:lessonId/:partId/listen', {
                 templateUrl: 'vocab/listen.html',
                 controller: 'listenCtrl'
             })
-            .when('/:lessonId/:partId/connect', {
+            .when('/:degree/:lessonId/:partId/connect', {
                 templateUrl: 'vocab/connect.html',
                 controller: 'connectCtrl'
             })
-            .when('/:lessonId/:partId/listen1', {
+            .when('/:degree/:lessonId/:partId/listen1', {
                 templateUrl: 'grammar/listen.html',
                 controller: 'grammarListenCtrl'
             })
-            .when('/:lessonId/:partId/choice', {
+            .when('/:degree/:lessonId/:partId/choice', {
                 templateUrl: 'grammar/choice.html',
                 controller: 'grammarChoiceCtrl'
             })
-            .when('/:lessonId/:partId/translate', {
+            .when('/:degree/:lessonId/:partId/translate', {
                 templateUrl: 'grammar/translate.html',
                 controller: 'grammarTranslateCtrl'
             })
-            .when('/:lessonId/:partId/read', {
+            .when('/:degree/:lessonId/:partId/read', {
                 templateUrl: 'grammar/read.html',
                 controller: 'grammarReadCtrl'
             })
-            .when('/:lessonId/:partId/word1', {
+            .when('/:degree/:lessonId/:partId/word1', {
                 templateUrl: 'grammar/word.html',
                 controller: 'grammarWordCtrl'
             })
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/n5'
             });
     }
 ]);
 
 totaln5App.service('dataService', function($http) {
-
-    this.kana1 = $http({
-        method: "GET",
-        url: "../../data/kana/json/kana_1.json"
-    });
-
-    this.kana2 = $http({
-        method: "GET",
-        url: "../../data/kana/json/kana_2.json"
-    });
-
     this.n5Vocab = $http({
         method: "GET",
         url: "../../data/totaln5/vocab/json/n5vocab.json"
@@ -163,6 +115,36 @@ totaln5App.service('dataService', function($http) {
     this.n5Grammar5 = $http({
         method: "GET",
         url: "../../data/totaln5/grammar/json/type5.json"
+    });
+
+    this.n4Vocab = $http({
+        method: "GET",
+        url: "../../data/totaln4/vocab/json/n4vocab.json"
+    });
+
+    this.n4Grammar1 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type1.json"
+    });
+
+    this.n4Grammar2 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type2.json"
+    });
+
+    this.n4Grammar3 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type3.json"
+    });
+
+    this.n4Grammar4 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type4.json"
+    });
+
+    this.n4Grammar5 = $http({
+        method: "GET",
+        url: "../../data/totaln4/grammar/json/type5.json"
     });
 
     this.filter = function(data, key1, lessonId, key2, partId) {
@@ -208,15 +190,34 @@ totaln5App.service('dataService', function($http) {
                         break;
                 }
                 break;
-            case "kana":
-                switch (lessonId) {
+            case "totaln4":
+                switch (subId) {
                     case "1":
-                    case "3":
-                        return this.kana1;
-                        break;
                     case "2":
+                    case "3":
+                        return this.n4Vocab;
+                        break;
                     case "4":
-                        return this.kana2;
+                        switch (skill) {
+                            case 1:
+                                return this.n4Grammar1;
+                                break;
+                            case 2:
+                                return this.n4Grammar2;
+                                break;
+                            case 3:
+                                return this.n4Grammar3;
+                                break;
+                            case 4:
+                                return this.n4Grammar4;
+                                break;
+                            case 5:
+                                return this.n4Grammar5;
+                                break;
+                            default:
+                                return null;
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -226,9 +227,17 @@ totaln5App.service('dataService', function($http) {
         }
     }
 
-    this.getTestoutPromise = function() {
-        var promise = [this.n5Vocab, this.n5Grammar1, this.n5Grammar2, this.n5Grammar3, this.n5Grammar4, this.n5Grammar5];
-        return promise;
+    this.getTestoutPromise = function(degree) {
+        switch (degree) {
+            case "n5":
+                return [this.n5Vocab, this.n5Grammar1, this.n5Grammar2, this.n5Grammar3, this.n5Grammar4, this.n5Grammar5];
+                break;
+            case "n4":
+                return [this.n4Vocab, this.n4Grammar1, this.n4Grammar2, this.n4Grammar3, this.n4Grammar4, this.n4Grammar5];
+                break;
+            default:
+                return null;
+        }
     }
 
 
@@ -242,12 +251,12 @@ totaln5App.service('dataService', function($http) {
      */
     this.getTestoutData = function(data, type, lessonId) {
         var ret = [];
-        var vocabPool = mergeData(data[0].data, type, lessonId,"topic");
-        var grammar1Pool = mergeData(data[1].data, type, lessonId,"id");
-        var grammar2Pool = mergeData(data[2].data, type, lessonId,"id");
-        var grammar3Pool = mergeData(data[3].data, type, lessonId,"id");
-        var grammar4Pool = mergeData(data[4].data, type, lessonId,"id");
-        var grammar5Pool = mergeData(data[5].data, type, lessonId,"id");
+        var vocabPool = mergeData(data[0].data, type, lessonId, "topic");
+        var grammar1Pool = mergeData(data[1].data, type, lessonId, "id");
+        var grammar2Pool = mergeData(data[2].data, type, lessonId, "id");
+        var grammar3Pool = mergeData(data[3].data, type, lessonId, "id");
+        var grammar4Pool = mergeData(data[4].data, type, lessonId, "id");
+        var grammar5Pool = mergeData(data[5].data, type, lessonId, "id");
         var recipe = [{
             "type": "vocablearn",
             "number": 3,
@@ -297,164 +306,101 @@ totaln5App.service('dataService', function($http) {
                     data: value.datapool[randIdx]
                 });
             };
-            /* switch (value.type) {
-                 case "vocablearn":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * vocabPool.length);
-                         ret.push({
-                             type: value.type,
-                             data: vocabPool[randIdx]
-                         });
-                     };
-                     break;
-                 case "vocabpic":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * vocabPool.length);
-                         ret.push({
-                             type: value.type,
-                             data: vocabPool[randIdx]
-                         });
-                     };
-                     break;
-                 case "vocabword":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * vocabPool.length);
-                         ret.push({
-                             type: value.type,
-                             data: vocabPool[randIdx]
-                         });
-                     };
-                     break;
-                 case "vocablisten":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * vocabPool.length);
-                         ret.push({
-                             type: value.type,
-                             data: vocabPool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammarlisten":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar1Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar1Pool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammarchoice":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar2Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar2Pool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammartranslate":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar3Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar3Pool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammarread":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar4Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar4Pool[randIdx]
-                         });
-                     };
-                     break;
-                 case "grammarword":
-                     for (var i = 0; i < value.number; i++) {
-                         randIdx = Math.floor(Math.random() * grammar5Pool.length);
-                         ret.push({
-                             type: value.type,
-                             data: grammar5Pool[randIdx]
-                         });
-                     };
-                     break;
-             }*/
         });
 
-        return ret;
+        return akiraShuffle2(ret);
+        // return ret;
     }
-
-
 });
 
 totaln5App.service('restService', function($http) {
-    this.n5Star = $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln5&userid=" + getUser().id
-    });
-
-    this.kanaStar = $http({
-        method: "GET",
-        url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=kana&userid=" + getUser().id
-    });
-
     this.getRestPromise = function(course) {
         switch (course) {
-            case "totaln5":
-                return this.n5Star;
+            case "n5":
+                return $http({
+                    method: "GET",
+                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln5&userid=" + getUser().id
+                });
                 break;
-            case "kana":
-                return this.kanaStar;
+            case "n4":
+                return n4Star = $http({
+                    method: "GET",
+                    url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_star.php?course=totaln4&userid=" + getUser().id
+                });
                 break;
             default:
                 return null;
                 break;
         }
     }
-
 });
 
+totaln5App.controller('rootController', function($scope, $timeout, $http, $window, $sce, $routeParams) {
 
-totaln5App.controller('rootController', function($scope, $timeout, $http, $window) {
-    $scope.rootPlay = function(data, course, step, id) {
-        var selId = "choices-" + step + "-" + id;
-        var audioSrc = document.getElementById(selId).getElementsByTagName('source');
-        $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
-        document.getElementById(selId).load();
-        document.getElementById(selId).play();
+    /**
+     * Play sound for common game
+     * @param  {[type]} data   : Data array for game
+     * @param  {[type]} course : Path on the data folder
+     * @param  {[type]} step   : Current step on jQuery Smart Wizard
+     * @param  {[type]} id     :
+     * @param  {[type]} speed  : Audio speed: 1/0.5
+     * @return {[type]}        [description]
+     */
+    $scope.rootPlay = function(data, course, step, id, speed) {
+        try {
+            var selId = "choices-" + step + "-" + id;
+            var audioSrc = document.getElementById(selId).getElementsByTagName('source');
+            // var audioSrc = document.getElementById("audioPlayer").getElementsByTagName('source');
+            $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
+
+            document.getElementById(selId).load();
+            document.getElementById(id).playbackRate = speed;
+            document.getElementById(selId).play();
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    $scope.testoutPlay = function(data, course, step, id) {
+        try {
+            var selId = "choices-" + step + "-" + id;
+            var audioSrc = document.getElementById(selId).getElementsByTagName('source');
+            $("audio#" + selId + " source").attr("src", "../../data/" + course + "/audio/" + data[step][id].filename + ".mp3");
+            document.getElementById(selId).load();
+            document.getElementById(selId).play();
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     $scope.check = function(lesson) {
+        var pU = [14, 17,1390];
         //Get current key point for this courses
         $http({
             method: "GET",
-            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=totaln5&userid=" + getUser().id
+            url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=total" + $routeParams.degree + "&userid=" + getUser().id
         }).success(function(data, status) {
-            console.log(data);
-            if (data > lesson) {
-                console.info("Ban du keypoint de hoc bai nay");
-                $window.location.href = "#/" + lesson;
+            // console.log(akrParseInt(data));
+            // console.log(lesson - 1);
+            if (akrParseInt(data) >= (lesson - 1)) {
+                $window.location.href = "#/" + $routeParams.degree + "/" + lesson;
             } else {
-                alert("Ban khong du keypoint de hoc bai nay");
+                alert(i18n.t("message.info.keypoint"));
             }
         });
     };
 
     $scope.pass = function(type, lesson) {
-        alert();
-
         //Firstly check if user have enough day_remain or not
         $http({
             method: "GET",
             url: "http://akira.edu.vn/wp-content/plugins/akira-api/akira_user_info.php?key=day_remain&userid=" + getUser().id
         }).success(function(data, status) {
-            if (data > 0) {
-                console.log("Ban con ngay su dung va co the choi phan nay");
-                // Go to lesson exam test
-                $window.location.href = "#/testout/" + type + "/" + lesson;
+            if (akrParseInt(data) > 0) {
+                // console.log("Ban con ngay su dung va co the choi phan nay");
+                $window.location.href = "#/" + $routeParams.degree + "/testout/" + type + "/" + lesson;
             } else {
-                console.log("Ban da het ngay su dung vui long mua the va nap them");
+                alert(i18n.t("message.info.buy"));
             }
         });
     };

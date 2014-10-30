@@ -14,7 +14,7 @@ appCtrls.controller('mainCtrl', function($scope, $routeParams, $location, menuFa
             break;
         case "n5":
             menuFactory.navgroup = 0;
-            menuFactory.nav = 2;
+            menuFactory.nav = 3;
             break;
     }
     $rootScope.$broadcast('handleBroadcast');
@@ -36,9 +36,6 @@ appCtrls.controller('mainCtrl', function($scope, $routeParams, $location, menuFa
 
 
 appCtrls.controller('gameCtrl', function($scope, $routeParams, $http, dataService, data) {
-    //Lỗi dữ liệu resolved không đủ với dữ liệu load được
-    console.info("Dữ liệu đã được resolve và trả về trong controller" );
-    console.info(data);
     courseCollection = ["common.vocab", "common.grammar", "common.read", "common.listen-compre"];
     $scope.title = courseCollection[$routeParams.type];
 
@@ -68,5 +65,18 @@ appCtrls.controller('gameCtrl', function($scope, $routeParams, $http, dataServic
             part -= 1;
         }
         return count;
+    }
+
+    $scope.isOdd = function(data, part, quest) {
+        var count = quest + 1;
+        while (part > 0) {
+            count += data[part - 1].length;
+            part -= 1;
+        }
+        if (count % 2 == 0) {
+            return "odd";
+        } else {
+            return "even";
+        }
     }
 });

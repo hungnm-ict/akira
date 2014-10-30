@@ -5,7 +5,7 @@
     "answer1": "の",
     "answer2": "を",
     "answer3": "へ",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "の"
 }, {
     "id": 2,
@@ -14,7 +14,7 @@
     "answer1": "も",
     "answer2": "と",
     "answer3": "か",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "と"
 }, {
     "id": 3,
@@ -23,7 +23,7 @@
     "answer1": "は",
     "answer2": "を",
     "answer3": "に",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "は"
 }, {
     "id": 4,
@@ -32,7 +32,7 @@
     "answer1": "や",
     "answer2": "か",
     "answer3": "に",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "に"
 }, {
     "id": 5,
@@ -41,7 +41,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "は",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "で"
 }, {
     "id": 6,
@@ -50,7 +50,7 @@
     "answer1": "も",
     "answer2": "や",
     "answer3": "で",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "も"
 }, {
     "id": 7,
@@ -59,7 +59,7 @@
     "answer1": "は",
     "answer2": "の",
     "answer3": "か",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "の"
 }, {
     "id": 8,
@@ -68,7 +68,7 @@
     "answer1": "など",
     "answer2": "ごろ",
     "answer3": "も",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "ぐらい"
 }, {
     "id": 9,
@@ -77,7 +77,7 @@
     "answer1": "まで",
     "answer2": "より",
     "answer3": "のほうか",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "より"
 }, {
     "id": 10,
@@ -86,7 +86,7 @@
     "answer1": "のまえに",
     "answer2": "あとに",
     "answer3": "のあとに",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "まえに"
 }, {
     "id": 11,
@@ -95,7 +95,7 @@
     "answer1": "何も",
     "answer2": "何かへ",
     "answer3": "何かで",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "何かで"
 }, {
     "id": 12,
@@ -104,7 +104,7 @@
     "answer1": "で",
     "answer2": "に",
     "answer3": "を",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "に"
 }, {
     "id": 13,
@@ -113,7 +113,7 @@
     "answer1": "に",
     "answer2": "と",
     "answer3": "が",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "で"
 }, {
     "id": 14,
@@ -122,7 +122,7 @@
     "answer1": "を",
     "answer2": "も",
     "answer3": "など",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "も"
 }, {
     "id": 15,
@@ -131,7 +131,7 @@
     "answer1": "ね",
     "answer2": "が",
     "answer3": "の",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "ね"
 }, {
     "id": 16,
@@ -140,7 +140,7 @@
     "answer1": "どの",
     "answer2": "どんな",
     "answer3": "いくら",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "どこ"
 }, {
     "id": 17,
@@ -149,7 +149,7 @@
     "answer1": "に",
     "answer2": "まで",
     "answer3": "を",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "を"
 }, {
     "id": 18,
@@ -158,7 +158,7 @@
     "answer1": "よく",
     "answer2": "まだ",
     "answer3": "もう",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "もう"
 }, {
     "id": 19,
@@ -167,7 +167,7 @@
     "answer1": "しか",
     "answer2": "や",
     "answer3": "と",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 20,
@@ -176,7 +176,7 @@
     "answer1": "いくら",
     "answer2": "いつ",
     "answer3": "いくつ",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "いつ"
 }, {
     "id": 21,
@@ -185,7 +185,7 @@
     "answer1": "から",
     "answer2": "に",
     "answer3": "へ",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "から"
 }, {
     "id": 22,
@@ -194,7 +194,7 @@
     "answer1": "を",
     "answer2": "から",
     "answer3": "で",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 23,
@@ -203,7 +203,7 @@
     "answer1": "どれ",
     "answer2": "どこ",
     "answer3": "どちら",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "だれ"
 }, {
     "id": 24,
@@ -212,7 +212,7 @@
     "answer1": "その",
     "answer2": "あちら",
     "answer3": "あの",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "あちら"
 }, {
     "id": 25,
@@ -221,7 +221,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "は",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "で"
 }, {
     "id": 26,
@@ -230,7 +230,7 @@
     "answer1": "を",
     "answer2": "に",
     "answer3": "の",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "の"
 }, {
     "id": 27,
@@ -239,7 +239,7 @@
     "answer1": "に",
     "answer2": "で",
     "answer3": "が",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "に"
 }, {
     "id": 28,
@@ -248,7 +248,7 @@
     "answer1": "を",
     "answer2": "が",
     "answer3": "に",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "で"
 }, {
     "id": 29,
@@ -257,7 +257,7 @@
     "answer1": "を",
     "answer2": "と",
     "answer3": "で",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "と"
 }, {
     "id": 30,
@@ -266,7 +266,7 @@
     "answer1": "から",
     "answer2": "で",
     "answer3": "へ",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "で"
 }, {
     "id": 31,
@@ -275,7 +275,7 @@
     "answer1": "を",
     "answer2": "に",
     "answer3": "が",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "が"
 }, {
     "id": 32,
@@ -284,7 +284,7 @@
     "answer1": "に",
     "answer2": "を",
     "answer3": "が",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "を"
 }, {
     "id": 33,
@@ -293,7 +293,7 @@
     "answer1": "で",
     "answer2": "が",
     "answer3": "に",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "が"
 }, {
     "id": 34,
@@ -302,7 +302,7 @@
     "answer1": "で",
     "answer2": "を",
     "answer3": "は",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 35,
@@ -311,7 +311,7 @@
     "answer1": "で",
     "answer2": "に",
     "answer3": "が",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "で"
 }, {
     "id": 36,
@@ -320,7 +320,7 @@
     "answer1": "と",
     "answer2": "に",
     "answer3": "か",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "か"
 }, {
     "id": 37,
@@ -329,7 +329,7 @@
     "answer1": "に",
     "answer2": "が",
     "answer3": "で",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "に"
 }, {
     "id": 38,
@@ -338,7 +338,7 @@
     "answer1": "を",
     "answer2": "に",
     "answer3": "で",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "が"
 }, {
     "id": 39,
@@ -347,7 +347,7 @@
     "answer1": "に",
     "answer2": "と",
     "answer3": "で",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "で"
 }, {
     "id": 40,
@@ -356,7 +356,7 @@
     "answer1": "と",
     "answer2": "で",
     "answer3": "を",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "と"
 }, {
     "id": 41,
@@ -365,16 +365,16 @@
     "answer1": "が",
     "answer2": "は",
     "answer3": "で",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "を"
 }, {
     "id": 42,
-    "question": "A「コートを　もって　いますか。」 B「ええ、もって　います。」   A「じゃ、せびろも　もって　いますか。」  B「いいえ、せびろ＿＿＿もって　いません。",
+    "question": "A「コートを　もって　いますか。」 B「ええ、もって　います。」     A「じゃ、せびろも　もって　いますか。」    B「いいえ、せびろ＿＿＿もって　いません。",
     "answer0": "は",
     "answer1": "が",
     "answer2": "も",
     "answer3": "に",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "は"
 }, {
     "id": 43,
@@ -383,7 +383,7 @@
     "answer1": "か／か",
     "answer2": "よ／ね",
     "answer3": "ね／よ",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "ね／よ"
 }, {
     "id": 44,
@@ -392,7 +392,7 @@
     "answer1": "に",
     "answer2": "で",
     "answer3": "は",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "で"
 }, {
     "id": 45,
@@ -401,7 +401,7 @@
     "answer1": "が",
     "answer2": "と",
     "answer3": "で",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "で"
 }, {
     "id": 46,
@@ -410,7 +410,7 @@
     "answer1": "に",
     "answer2": "が",
     "answer3": "から",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "で"
 }, {
     "id": 47,
@@ -419,7 +419,7 @@
     "answer1": "に",
     "answer2": "へ",
     "answer3": "が",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "で"
 }, {
     "id": 48,
@@ -428,7 +428,7 @@
     "answer1": "は",
     "answer2": "を",
     "answer3": "が",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 49,
@@ -437,7 +437,7 @@
     "answer1": "が",
     "answer2": "に",
     "answer3": "と",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "に"
 }, {
     "id": 50,
@@ -446,7 +446,7 @@
     "answer1": "で",
     "answer2": "を",
     "answer3": "が",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 51,
@@ -455,7 +455,7 @@
     "answer1": "から",
     "answer2": "へ",
     "answer3": "を",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "を"
 }, {
     "id": 52,
@@ -464,7 +464,7 @@
     "answer1": "を",
     "answer2": "も",
     "answer3": "は",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "か"
 }, {
     "id": 53,
@@ -473,7 +473,7 @@
     "answer1": "からの",
     "answer2": "へ",
     "answer3": "までの",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "からの"
 }, {
     "id": 54,
@@ -482,7 +482,7 @@
     "answer1": "など",
     "answer2": "から",
     "answer3": "や",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "など"
 }, {
     "id": 55,
@@ -491,7 +491,7 @@
     "answer1": "からも",
     "answer2": "に",
     "answer3": "へも",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "へも"
 }, {
     "id": 56,
@@ -500,7 +500,7 @@
     "answer1": "は",
     "answer2": "に",
     "answer3": "と",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "は"
 }, {
     "id": 57,
@@ -509,7 +509,7 @@
     "answer1": "どんな",
     "answer2": "どの",
     "answer3": "どう",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "どの"
 }, {
     "id": 58,
@@ -518,7 +518,7 @@
     "answer1": "どなた",
     "answer2": "いかが",
     "answer3": "どうして",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "どなた"
 }, {
     "id": 59,
@@ -527,7 +527,7 @@
     "answer1": "に",
     "answer2": "を",
     "answer3": "へ",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "の"
 }, {
     "id": 60,
@@ -536,7 +536,7 @@
     "answer1": "5人の",
     "answer2": "5人が",
     "answer3": "5人と",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "5人"
 }, {
     "id": 61,
@@ -545,7 +545,7 @@
     "answer1": "ちょっと",
     "answer2": "だけ",
     "answer3": "ちょうど",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "もう"
 }, {
     "id": 62,
@@ -554,7 +554,7 @@
     "answer1": "した",
     "answer2": "して",
     "answer3": "する",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "した"
 }, {
     "id": 63,
@@ -563,7 +563,7 @@
     "answer1": "どうして",
     "answer2": "どうも",
     "answer3": "どなた",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "どうして"
 }, {
     "id": 64,
@@ -572,16 +572,16 @@
     "answer1": "いつも",
     "answer2": "ときどき",
     "answer3": "よく",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "ときどき"
 }, {
     "id": 65,
-    "question": "A「こちらの　くつは　いかがですか。」 B「ちょっと　小さいです。」   A「じゃ、こちらは？」   B「あ、これは　＿＿＿　いいです",
+    "question": "A「こちらの　くつは　いかがですか。」 B「ちょっと　小さいです。」   A「じゃ、こちらは？」     B「あ、これは　＿＿＿　いいです",
     "answer0": "また",
     "answer1": "もう",
     "answer2": "たいてい",
     "answer3": "ちょうど",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "ちょうど"
 }, {
     "id": 66,
@@ -590,7 +590,7 @@
     "answer1": "だんだん",
     "answer2": "どうも",
     "answer3": "あまり",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "よく"
 }, {
     "id": 67,
@@ -599,7 +599,7 @@
     "answer1": "ちょっと",
     "answer2": "よく",
     "answer3": "ちょうど",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "ちょうど"
 }, {
     "id": 68,
@@ -608,7 +608,7 @@
     "answer1": "よく",
     "answer2": "ときどき",
     "answer3": "いつも",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "あまり"
 }, {
     "id": 69,
@@ -617,7 +617,7 @@
     "answer1": "とき",
     "answer2": "でも",
     "answer3": "が",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "が"
 }, {
     "id": 70,
@@ -626,7 +626,7 @@
     "answer1": "もう",
     "answer2": "しか",
     "answer3": "ちょうど",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "しか"
 }, {
     "id": 71,
@@ -635,7 +635,7 @@
     "answer1": "たくさん",
     "answer2": "たいへん",
     "answer3": "とても",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "ときどき"
 }, {
     "id": 72,
@@ -644,7 +644,7 @@
     "answer1": "どんな",
     "answer2": "いかが",
     "answer3": "どれ",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "どんな"
 }, {
     "id": 73,
@@ -653,7 +653,7 @@
     "answer1": "まだ",
     "answer2": "もう",
     "answer3": "それから",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "また"
 }, {
     "id": 74,
@@ -662,7 +662,7 @@
     "answer1": "では",
     "answer2": "それでは",
     "answer3": "でも",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "でも"
 }, {
     "id": 75,
@@ -671,7 +671,7 @@
     "answer1": "たいへん",
     "answer2": "あまり",
     "answer3": "ちょうど",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "あまり"
 }, {
     "id": 76,
@@ -680,7 +680,7 @@
     "answer1": "も",
     "answer2": "ずつ",
     "answer3": "くらい",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "ずつ"
 }, {
     "id": 77,
@@ -689,7 +689,7 @@
     "answer1": "ごろ",
     "answer2": "ずつ",
     "answer3": "くらい",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "くらい"
 }, {
     "id": 78,
@@ -698,7 +698,7 @@
     "answer1": "ときどき",
     "answer2": "たいてい",
     "answer3": "もっと",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "だんだん"
 }, {
     "id": 79,
@@ -707,7 +707,7 @@
     "answer1": "ごろ",
     "answer2": "とき",
     "answer3": "まで",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "ごろ"
 }, {
     "id": 80,
@@ -716,7 +716,7 @@
     "answer1": "いつも",
     "answer2": "おおぜい",
     "answer3": "ちょっと",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "いつも"
 }, {
     "id": 81,
@@ -725,7 +725,7 @@
     "answer1": "あまり",
     "answer2": "ちょうど",
     "answer3": "たいへん",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "たいてい"
 }, {
     "id": 82,
@@ -734,7 +734,7 @@
     "answer1": "もっと",
     "answer2": "たいてい",
     "answer3": "もちろん",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "もちろん"
 }, {
     "id": 83,
@@ -743,7 +743,7 @@
     "answer1": "に",
     "answer2": "を",
     "answer3": "で",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "に"
 }, {
     "id": 84,
@@ -752,7 +752,7 @@
     "answer1": "しかし",
     "answer2": "なぜ",
     "answer3": "それが",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "しかし"
 }, {
     "id": 85,
@@ -761,7 +761,7 @@
     "answer1": "しか",
     "answer2": "くらい",
     "answer3": "など",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "だけ"
 }, {
     "id": 86,
@@ -770,7 +770,7 @@
     "answer1": "あまり",
     "answer2": "とても",
     "answer3": "よく",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "よく"
 }, {
     "id": 87,
@@ -779,7 +779,7 @@
     "answer1": "ときどき",
     "answer2": "ちょっと",
     "answer3": "もう",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "もう"
 }, {
     "id": 88,
@@ -788,7 +788,7 @@
     "answer1": "もう",
     "answer2": "ちょうど",
     "answer3": "いつも",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "もっと"
 }, {
     "id": 89,
@@ -797,7 +797,7 @@
     "answer1": "どんな",
     "answer2": "何",
     "answer3": "どうして",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "どう"
 }, {
     "id": 90,
@@ -806,7 +806,7 @@
     "answer1": "まだです",
     "answer2": "まえです",
     "answer3": "またです",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "まだです"
 }, {
     "id": 91,
@@ -815,7 +815,7 @@
     "answer1": "が",
     "answer2": "の",
     "answer3": "も",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "の"
 }, {
     "id": 92,
@@ -824,7 +824,7 @@
     "answer1": "に",
     "answer2": "が",
     "answer3": "の",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "で"
 }, {
     "id": 93,
@@ -833,7 +833,7 @@
     "answer1": "が",
     "answer2": "で",
     "answer3": "に",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "が"
 }, {
     "id": 94,
@@ -842,7 +842,7 @@
     "answer1": "は",
     "answer2": "も",
     "answer3": "が",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "も"
 }, {
     "id": 95,
@@ -851,7 +851,7 @@
     "answer1": "の",
     "answer2": "が",
     "answer3": "を",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "の"
 }, {
     "id": 96,
@@ -860,7 +860,7 @@
     "answer1": "で",
     "answer2": "を",
     "answer3": "は",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 97,
@@ -869,7 +869,7 @@
     "answer1": "に",
     "answer2": "が",
     "answer3": "で",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "が"
 }, {
     "id": 98,
@@ -878,7 +878,7 @@
     "answer1": "から",
     "answer2": "へも",
     "answer3": "とは",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "から"
 }, {
     "id": 99,
@@ -887,7 +887,7 @@
     "answer1": "で",
     "answer2": "を",
     "answer3": "へ",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 100,
@@ -896,7 +896,7 @@
     "answer1": "を",
     "answer2": "に",
     "answer3": "と",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "を"
 }, {
     "id": 101,
@@ -905,7 +905,7 @@
     "answer1": "が",
     "answer2": "を",
     "answer3": "も",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 102,
@@ -914,7 +914,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "と",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "は"
 }, {
     "id": 103,
@@ -923,7 +923,7 @@
     "answer1": "も",
     "answer2": "を",
     "answer3": "に",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "を"
 }, {
     "id": 104,
@@ -932,7 +932,7 @@
     "answer1": "へ",
     "answer2": "に",
     "answer3": "を",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "を"
 }, {
     "id": 105,
@@ -941,7 +941,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "に",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "に"
 }, {
     "id": 106,
@@ -950,7 +950,7 @@
     "answer1": "へ",
     "answer2": "で",
     "answer3": "で",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "へ"
 }, {
     "id": 107,
@@ -959,7 +959,7 @@
     "answer1": "だ",
     "answer2": "じゃない",
     "answer3": "だった",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "だ"
 }, {
     "id": 108,
@@ -968,7 +968,7 @@
     "answer1": "では　ありません",
     "answer2": "でした",
     "answer3": "では　ありませんでした",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "では　ありません"
 }, {
     "id": 109,
@@ -977,7 +977,7 @@
     "answer1": "い",
     "answer2": "いと",
     "answer3": "いに",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "く"
 }, {
     "id": 110,
@@ -986,7 +986,7 @@
     "answer1": "に",
     "answer2": "で",
     "answer3": "く",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "に"
 }, {
     "id": 111,
@@ -995,7 +995,7 @@
     "answer1": "な",
     "answer2": "で",
     "answer3": "く",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 112,
@@ -1004,7 +1004,7 @@
     "answer1": "よく",
     "answer2": "よい",
     "answer3": "いい",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "よく"
 }, {
     "id": 113,
@@ -1013,7 +1013,7 @@
     "answer1": "つくえの　上",
     "answer2": "つくえが　上",
     "answer3": "つくえに　上",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "上の　つくえ"
 }, {
     "id": 114,
@@ -1022,7 +1022,7 @@
     "answer1": "いの／の",
     "answer2": "くて／の",
     "answer3": "の／い",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "の／い"
 }, {
     "id": 115,
@@ -1031,7 +1031,7 @@
     "answer1": "の",
     "answer2": "に",
     "answer3": "は",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "の"
 }, {
     "id": 116,
@@ -1040,7 +1040,7 @@
     "answer1": "に／の",
     "answer2": "が／の",
     "answer3": "の／に",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "の／の"
 }, {
     "id": 117,
@@ -1049,7 +1049,7 @@
     "answer1": "が",
     "answer2": "と",
     "answer3": "で",
-    "correct": "answer3",
+    "correct-index": "answer3",
     "correct-value": "で"
 }, {
     "id": 118,
@@ -1058,7 +1058,7 @@
     "answer1": "に",
     "answer2": "は",
     "answer3": "の",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "に"
 }, {
     "id": 119,
@@ -1067,7 +1067,7 @@
     "answer1": "を",
     "answer2": "で",
     "answer3": "に",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "が"
 }, {
     "id": 120,
@@ -1076,7 +1076,7 @@
     "answer1": "は",
     "answer2": "か",
     "answer3": "で",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "か"
 }, {
     "id": 121,
@@ -1085,7 +1085,7 @@
     "answer1": "を",
     "answer2": "と",
     "answer3": "は",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "で"
 }, {
     "id": 122,
@@ -1094,7 +1094,7 @@
     "answer1": "で",
     "answer2": "と",
     "answer3": "も",
-    "correct": "answer0",
+    "correct-index": "answer0",
     "correct-value": "に"
 }, {
     "id": 123,
@@ -1103,7 +1103,7 @@
     "answer1": "で",
     "answer2": "と",
     "answer3": "か",
-    "correct": "answer2",
+    "correct-index": "answer2",
     "correct-value": "と"
 }, {
     "id": 124,
@@ -1112,7 +1112,7 @@
     "answer1": "も",
     "answer2": "を",
     "answer3": "に",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "も"
 }, {
     "id": 125,
@@ -1121,6 +1121,1311 @@
     "answer1": "したり",
     "answer2": "して",
     "answer3": "してから",
-    "correct": "answer1",
+    "correct-index": "answer1",
     "correct-value": "したり"
+}, {
+    "id": 126,
+    "question": "田中さんは　うた（　　）じょうずです。",
+    "answer0": "を",
+    "answer1": "が",
+    "answer2": "と",
+    "answer3": "の",
+    "correct-index": "answer1",
+    "correct-value": "が"
+}, {
+    "id": 127,
+    "question": "    男の　子は　5さい（　　　　）、女の　子は　3さいです",
+    "answer0": "が",
+    "answer1": "と",
+    "answer2": "で",
+    "answer3": "に",
+    "correct-index": "answer2",
+    "correct-value": "で"
+}, {
+    "id": 128,
+    "question": "この　こうえんは　ひろ（　　　　）、しずかです。",
+    "answer0": "いで",
+    "answer1": "いと",
+    "answer2": "くて",
+    "answer3": "い",
+    "correct-index": "answer2",
+    "correct-value": "くて"
+}, {
+    "id": 129,
+    "question": "この　たてものは　たいしかん（　　　　）、あの　たてものは　びょういんです。",
+    "answer0": "が",
+    "answer1": "へ",
+    "answer2": "に",
+    "answer3": "で",
+    "correct-index": "answer3",
+    "correct-value": "で"
+}, {
+    "id": 130,
+    "question": "パーティーは　にぎやか（　　　　）、たのしかった。",
+    "answer0": "で",
+    "answer1": "くて",
+    "answer2": "に",
+    "answer3": "の",
+    "correct-index": "answer0",
+    "correct-value": "で"
+}, {
+    "id": 131,
+    "question": "この　いけは　大き（　　　　）、きれいです。",
+    "answer0": "くて",
+    "answer1": "い",
+    "answer2": "いと",
+    "answer3": "いや",
+    "correct-index": "answer0",
+    "correct-value": "くて"
+}, {
+    "id": 132,
+    "question": "母は　うたが　上手（　　　　）、父は　えが　上手です。",
+    "answer0": "に",
+    "answer1": "と",
+    "answer2": "が",
+    "answer3": "で",
+    "correct-index": "answer3",
+    "correct-value": "で"
+}, {
+    "id": 133,
+    "question": "スミスさんは（　　　　）アメリカ人でしょう。おにいさんと　えいごで　話して　いましたから。",
+    "answer0": "いつも",
+    "answer1": "なぜ",
+    "answer2": "もっと",
+    "answer3": "たぶん",
+    "correct-index": "answer3",
+    "correct-value": "たぶん"
+}, {
+    "id": 134,
+    "question": "えいがかん（　　　）どこに　ありますか。",
+    "answer0": "を",
+    "answer1": "は",
+    "answer2": "の",
+    "answer3": "に",
+    "correct-index": "answer1",
+    "correct-value": "は"
+}, {
+    "id": 135,
+    "question": "クラスで（　　　）が　あなたと　おなじ　たんじょうびです。",
+    "answer0": "どこ",
+    "answer1": "いつ",
+    "answer2": "なに",
+    "answer3": "だれ",
+    "correct-index": "answer3",
+    "correct-value": "だれ"
+}, {
+    "id": 136,
+    "question": "父は　せが　ひくいですが、あに（　　　）高いです。",
+    "answer0": "と",
+    "answer1": "に",
+    "answer2": "は",
+    "answer3": "も",
+    "correct-index": "answer2",
+    "correct-value": "は"
+}, {
+    "id": 137,
+    "question": "子どもの　とき　よく　うみ（　　　）いもうとと　およぎました。",
+    "answer0": "へ",
+    "answer1": "に",
+    "answer2": "が",
+    "answer3": "で",
+    "correct-index": "answer3",
+    "correct-value": "で"
+}, {
+    "id": 138,
+    "question": "これは　ぶたにくで、それ（　　　）ぶたにくです。",
+    "answer0": "は",
+    "answer1": "が",
+    "answer2": "も",
+    "answer3": "と",
+    "correct-index": "answer2",
+    "correct-value": "も"
+}, {
+    "id": 139,
+    "question": "いもうとは、スプーン（　　　）ごはんを　食べている。",
+    "answer0": "で",
+    "answer1": "と",
+    "answer2": "を",
+    "answer3": "に",
+    "correct-index": "answer0",
+    "correct-value": "で"
+}, {
+    "id": 140,
+    "question": "「ラフレシア」（　　　）いう　花を　しっていますか。",
+    "answer0": "を",
+    "answer1": "が",
+    "answer2": "と",
+    "answer3": "に",
+    "correct-index": "answer3",
+    "correct-value": "に"
+}, {
+    "id": 141,
+    "question": "まいあさ　７時（　　　）おきます。",
+    "answer0": "では",
+    "answer1": "まで",
+    "answer2": "ごろ",
+    "answer3": "ぐらい",
+    "correct-index": "answer2",
+    "correct-value": "ごろ"
+}, {
+    "id": 142,
+    "question": "うちから　会社まで　電車で（　　　）ですか。",
+    "answer0": "どのぐらい",
+    "answer1": "どちら",
+    "answer2": "どんな",
+    "answer3": "いくつ",
+    "correct-index": "answer0",
+    "correct-value": "どのぐらい"
+}, {
+    "id": 143,
+    "question": "あまり　おなかが　すいて　いませんでしたから、　スープ（　　　）のみませんでした。",
+    "answer0": "だけ",
+    "answer1": "しか",
+    "answer2": "も",
+    "answer3": "と",
+    "correct-index": "answer1",
+    "correct-value": "しか"
+}, {
+    "id": 144,
+    "question": "こどもが　びょうき（　　　　）学校を　休みました。",
+    "answer0": "に",
+    "answer1": "で",
+    "answer2": "が",
+    "answer3": "は",
+    "correct-index": "answer1",
+    "correct-value": "で"
+}, {
+    "id": 145,
+    "question": "A　「東京でも　雪が　ふりますか。」 B　「ええ、　ふりますよ。　でも、きょねんは　あまり　（　　）。",
+    "answer0": "ふりませんでした",
+    "answer1": "ふりません",
+    "answer2": "ふりました",
+    "answer3": "ふります",
+    "correct-index": "answer0",
+    "correct-value": "ふりませんでした"
+}, {
+    "id": 146,
+    "question": "（川で） 　　A　「見て　ください。　小さな　魚が　たくさん　（　　）　よ。」     　　B　「ほんとうですね。　３０ぴきくらい　いますね。)",
+    "answer0": "およぎます",
+    "answer1": "およぎません",
+    "answer2": "およぎました",
+    "answer3": "およいで　います",
+    "correct-index": "answer3",
+    "correct-value": "およいで　います"
+}, {
+    "id": 147,
+    "question": "中川　「山田さんの　その　カメラは　いいですね。　どこで　かいましたか。」 山田　「いえ、　これは　兄に　（　　）。",
+    "answer0": "あげました",
+    "answer1": "もらいました",
+    "answer2": "うりました",
+    "answer3": "かいました",
+    "correct-index": "answer1",
+    "correct-value": "もらいました"
+}, {
+    "id": 148,
+    "question": "（　　　）、もう　あるけません。",
+    "answer0": "つかれて",
+    "answer1": "つかれないで",
+    "answer2": "つかれながら",
+    "answer3": "つかれてから",
+    "correct-index": "answer0",
+    "correct-value": "つかれて"
+}, {
+    "id": 149,
+    "question": "きのうは　はれて、とても　（　　　）です。 ",
+    "answer0": "あたたかいかった",
+    "answer1": "あたたかく",
+    "answer2": "あたたかい",
+    "answer3": "あたたかかった",
+    "correct-index": "answer3",
+    "correct-value": "あたたかかった"
+}, {
+    "id": 150,
+    "question": "日よう日は　いえで、おんがくを　聞いたり、プールで　（　　　）　します。",
+    "answer0": "およんだり",
+    "answer1": "およいたり",
+    "answer2": "およいだり",
+    "answer3": "およったり",
+    "correct-index": "answer2",
+    "correct-value": "およいだり"
+}, {
+    "id": 151,
+    "question": "今日の　テストは（　　　）。",
+    "answer0": "やさしくなかったです",
+    "answer1": "やさしくないでした",
+    "answer2": "やさしくありました",
+    "answer3": "やさしいでした",
+    "correct-index": "answer0",
+    "correct-value": "やさしくなかったです"
+}, {
+    "id": 152,
+    "question": "とけいを　（　　　）　から　時間が　わかりません。 ",
+    "answer0": "もつ",
+    "answer1": "もたなくて",
+    "answer2": "もつではない",
+    "answer3": "もっていない",
+    "correct-index": "answer3",
+    "correct-value": "もっていない"
+}, {
+    "id": 153,
+    "question": "この　えいがは　（　　　）　から　見るのを　やめましょう。",
+    "answer0": "おもしろくなくて",
+    "answer1": "おもしろいじゃない",
+    "answer2": "おもしろくない",
+    "answer3": "おもしろくじゃない",
+    "correct-index": "answer2",
+    "correct-value": "おもしろくない"
+}, {
+    "id": 154,
+    "question": "まだ　しゅくだいを　（　　　）　から、はやく　いえに　かえります。",
+    "answer0": "して　いない",
+    "answer1": "しました",
+    "answer2": "しないで",
+    "answer3": "しないではない",
+    "correct-index": "answer0",
+    "correct-value": "して　いない"
+}, {
+    "id": 155,
+    "question": "毎あさ、ごはんを　（　　　）　あと、シャワーを　あびます。 ",
+    "answer0": "食べる",
+    "answer1": "食べて",
+    "answer2": "食べた",
+    "answer3": "食べました",
+    "correct-index": "answer2",
+    "correct-value": "食べた"
+}, {
+    "id": 156,
+    "question": "とても　さむいから　たぶん　あしたは　ゆきが（　　　）。",
+    "answer0": "ふるでしょう",
+    "answer1": "ふりました",
+    "answer2": "ふりません",
+    "answer3": "ふっています",
+    "correct-index": "answer0",
+    "correct-value": "ふるでしょう"
+}, {
+    "id": 157,
+    "question": "みなさん、先週、　わたしが　言った　ことを（　　　）か。 ",
+    "answer0": "おぼえないです",
+    "answer1": "おぼえて",
+    "answer2": "おぼえています",
+    "answer3": "おぼえる",
+    "correct-index": "answer2",
+    "correct-value": "おぼえています"
+}, {
+    "id": 158,
+    "question": "午後は　とても　（　　　）　から　出かけました。",
+    "answer0": "ひまで",
+    "answer1": "ひまではない",
+    "answer2": "ひまなの",
+    "answer3": "ひまだった",
+    "correct-index": "answer3",
+    "correct-value": "ひまだった"
+}, {
+    "id": 159,
+    "question": "テレビを　（　　　）、ごはんを　食べないで　ください。",
+    "answer0": "見たとき",
+    "answer1": "見ている",
+    "answer2": "見たり",
+    "answer3": "見ながら",
+    "correct-index": "answer3",
+    "correct-value": "見ながら"
+}, {
+    "id": 160,
+    "question": "はやく　けっこん　（　　　）たいですか、いい　人が　いません。 ",
+    "answer0": "し",
+    "answer1": "して",
+    "answer2": "する",
+    "answer3": "した",
+    "correct-index": "answer0",
+    "correct-value": "し"
+}, {
+    "id": 161,
+    "question": "きのうは　うちに　（　　）何(なに)を　しましたか。",
+    "answer0": "かえる",
+    "answer1": "かえるから",
+    "answer2": "かえって",
+    "answer3": "かえったり",
+    "correct-index": "answer2",
+    "correct-value": "かえって"
+}, {
+    "id": 162,
+    "question": "きのうの　テストは　あまり＿＿＿。",
+    "answer0": "むずかしかったです",
+    "answer1": "むずかしいでした",
+    "answer2": "むずかしくなかったです",
+    "answer3": "むずかしいです",
+    "correct-index": "answer2",
+    "correct-value": "むずかしくなかったです"
+}, {
+    "id": 163,
+    "question": "＿＿＿ところに　すみたいです。",
+    "answer0": "しずかな",
+    "answer1": "しずかで",
+    "answer2": "しずか",
+    "answer3": "しずかの",
+    "correct-index": "answer0",
+    "correct-value": "しずかな"
+}, {
+    "id": 164,
+    "question": "きょ年の　ふゆは　＿＿＿。",
+    "answer0": "あたたかいでした",
+    "answer1": "あたたかい　ふゆです",
+    "answer2": "あたたかかったです",
+    "answer3": "あたたかい",
+    "correct-index": "answer2",
+    "correct-value": "あたたかかったです"
+}, {
+    "id": 165,
+    "question": "東京には＿＿＿こうえんが　あまり　ありません。",
+    "answer0": "大きいの",
+    "answer1": "大きいな",
+    "answer2": "大きく",
+    "answer3": "大きい",
+    "correct-index": "answer3",
+    "correct-value": "大きい"
+}, {
+    "id": 166,
+    "question": "今日は　たんじょうびですから、＿＿＿うちに　帰りたいです。",
+    "answer0": "はやいに",
+    "answer1": "はやくて",
+    "answer2": "はやいで",
+    "answer3": "はやく",
+    "correct-index": "answer3",
+    "correct-value": "はやく"
+}, {
+    "id": 167,
+    "question": "ゆうべは　＿＿＿　ねました。",
+    "answer0": "おそい",
+    "answer1": "おそいに",
+    "answer2": "おそかった",
+    "answer3": "おそく",
+    "correct-index": "answer3",
+    "correct-value": "おそく"
+}, {
+    "id": 168,
+    "question": "きのう　せいの　＿＿＿　人が　ここへ　来ましたよ。",
+    "answer0": "高いの",
+    "answer1": "高かった",
+    "answer2": "高い",
+    "answer3": "高くて",
+    "correct-index": "answer2",
+    "correct-value": "高い"
+}, {
+    "id": 169,
+    "question": "わたしは、友だちが　＿＿＿えを見ました。",
+    "answer0": "かいた",
+    "answer1": "かいて",
+    "answer2": "かくの",
+    "answer3": "かいたの",
+    "correct-index": "answer0",
+    "correct-value": "かいた"
+}, {
+    "id": 170,
+    "question": "わたしの　いえは　＿＿＿、あかるい。",
+    "answer0": "新しいで",
+    "answer1": "新しくて",
+    "answer2": "新しいくて",
+    "answer3": "新しいと",
+    "correct-index": "answer1",
+    "correct-value": "新しくて"
+}, {
+    "id": 171,
+    "question": "学校の　としょかんは　＿＿＿、しょくどうは　にぎやかだった。",
+    "answer0": "しずかに",
+    "answer1": "しずかと",
+    "answer2": "しずかな",
+    "answer3": "しずかで",
+    "correct-index": "answer3",
+    "correct-value": "しずかで"
+}, {
+    "id": 172,
+    "question": "デパートへ＿＿＿買いものを　してから、えいがを　見ましょう。",
+    "answer0": "行くと",
+    "answer1": "行って",
+    "answer2": "行きますと",
+    "answer3": "行った",
+    "correct-index": "answer1",
+    "correct-value": "行って"
+}, {
+    "id": 173,
+    "question": "学校まで　＿＿＿　行きます。",
+    "answer0": "あるいて",
+    "answer1": "あるき",
+    "answer2": "あるく",
+    "answer3": "あるいた",
+    "correct-index": "answer0",
+    "correct-value": "あるいて"
+}, {
+    "id": 174,
+    "question": " あそこに　＿＿＿　休みましょう",
+    "answer0": "すわった",
+    "answer1": "すわる",
+    "answer2": "すわって",
+    "answer3": "すわると",
+    "correct-index": "answer2",
+    "correct-value": "すわって"
+}, {
+    "id": 175,
+    "question": "かぜが　つよいから、ドアが　＿＿＿。",
+    "answer0": "しめて　います",
+    "answer1": "しめます",
+    "answer2": "しまります",
+    "answer3": "しめてあります",
+    "correct-index": "answer3",
+    "correct-value": "しめてあります"
+}, {
+    "id": 176,
+    "question": "あの　めがねを　＿＿＿　人は　だれですか。",
+    "answer0": "かけました",
+    "answer1": "かけて　いる",
+    "answer2": "かけるの",
+    "answer3": "かけて　ある",
+    "correct-index": "answer1",
+    "correct-value": "かけて　いる"
+}, {
+    "id": 177,
+    "question": "ぎんこうへ　お金を　＿＿＿　に　行きました。",
+    "answer0": "出して",
+    "answer1": "出す",
+    "answer2": "出し",
+    "answer3": "出した",
+    "correct-index": "answer2",
+    "correct-value": "出し"
+}, {
+    "id": 178,
+    "question": "きのう　友だちが　わたしの　うちへ　＿＿＿　来ました。",
+    "answer0": "あそぶ",
+    "answer1": "あそび",
+    "answer2": "あそんで",
+    "answer3": "あそびに",
+    "correct-index": "answer3",
+    "correct-value": "あそびに"
+}, {
+    "id": 179,
+    "question": "あの　学生を　しって　いますか。いいえ、＿＿＿。",
+    "answer0": "しって　いません",
+    "answer1": "しりません",
+    "answer2": "しって　います",
+    "answer3": "しって　いない",
+    "correct-index": "answer1",
+    "correct-value": "しりません"
+}, {
+    "id": 180,
+    "question": "わたしは　ごはんを　＿＿＿とき、はしを　つかいません。",
+    "answer0": "食べるの",
+    "answer1": "食べて",
+    "answer2": "食べる",
+    "answer3": "食べます",
+    "correct-index": "answer2",
+    "correct-value": "食べる"
+}, {
+    "id": 181,
+    "question": "京都へ　＿＿＿　とき、京都の　古い　たてものの　しゃしんを　たくさん　とりました。",
+    "answer0": "行く",
+    "answer1": "行って",
+    "answer2": "行った",
+    "answer3": "行き",
+    "correct-index": "answer2",
+    "correct-value": "行った"
+}, {
+    "id": 182,
+    "question": "「なつやすみに　何を　しましたか。」 「やまへ　行ったり、うみで　＿＿＿　しました。",
+    "answer0": "およぎ",
+    "answer1": "およいだり",
+    "answer2": "およいで",
+    "answer3": "およぐ",
+    "correct-index": "answer1",
+    "correct-value": "およいだり"
+}, {
+    "id": 183,
+    "question": "「休みに　何を　しますか。」 「まだ　わかりません。どこかへ　＿＿＿たいです。",
+    "answer0": "りょこうし",
+    "answer1": "りょこうして",
+    "answer2": "りょこうする",
+    "answer3": "りょこうします",
+    "correct-index": "answer0",
+    "correct-value": "りょこうし"
+}, {
+    "id": 184,
+    "question": " おなかが　（　　　）食べられません",
+    "answer0": "いたい",
+    "answer1": "いたかった",
+    "answer2": "いたくて",
+    "answer3": "いたくない",
+    "correct-index": "answer0",
+    "correct-value": "いたい"
+}, {
+    "id": 185,
+    "question": "どこで　きっぷを　（　　　）いますか。",
+    "answer0": "うって",
+    "answer1": "うりて",
+    "answer2": "うったり",
+    "answer3": "うった",
+    "correct-index": "answer0",
+    "correct-value": "うって"
+}, {
+    "id": 186,
+    "question": "ドアを（　　　）ください。",
+    "answer0": "しめる",
+    "answer1": "しめます",
+    "answer2": "しめて",
+    "answer3": "しめた",
+    "correct-index": "answer2",
+    "correct-value": "しめて"
+}, {
+    "id": 187,
+    "question": "あねは　えいがを（　　　）行きました。",
+    "answer0": "見る",
+    "answer1": "見た",
+    "answer2": "見に",
+    "answer3": "見ない",
+    "correct-index": "answer2",
+    "correct-value": "見に"
+}, {
+    "id": 188,
+    "question": "今日は　まだ　何も　（　　　）。",
+    "answer0": "食べました",
+    "answer1": "食べないでした",
+    "answer2": "食べて　いました",
+    "answer3": "食べて　いません",
+    "correct-index": "answer3",
+    "correct-value": "食べて　いません"
+}, {
+    "id": 189,
+    "question": "きのうは　だれにも（　　　）。",
+    "answer0": "会います",
+    "answer1": "会いました",
+    "answer2": "会いません",
+    "answer3": "会いませんでした",
+    "correct-index": "answer3",
+    "correct-value": "会いませんでした"
+}, {
+    "id": 190,
+    "question": "友だちに（　　　）本を　読みました。",
+    "answer0": "かりる",
+    "answer1": "かりた",
+    "answer2": "かりました",
+    "answer3": "かって",
+    "correct-index": "answer1",
+    "correct-value": "かりた"
+}, {
+    "id": 191,
+    "question": "ラジオを（　　　）べんきょうします。",
+    "answer0": "きく",
+    "answer1": "きいた",
+    "answer2": "ききながら",
+    "answer3": "きかない",
+    "correct-index": "answer2",
+    "correct-value": "ききながら"
+}, {
+    "id": 192,
+    "question": "えいがを（　　　）あとで　本やへ　行きます。",
+    "answer0": "見る",
+    "answer1": "見ます",
+    "answer2": "見た",
+    "answer3": "見て",
+    "correct-index": "answer2",
+    "correct-value": "見た"
+}, {
+    "id": 193,
+    "question": "みなさん、（　　　）して　ください。",
+    "answer0": "しずか",
+    "answer1": "しずかな",
+    "answer2": "しずかだ",
+    "answer3": "しずかに",
+    "correct-index": "answer3",
+    "correct-value": "しずかに"
+}, {
+    "id": 194,
+    "question": "スミスさんの　へやは　あまり　（　　　）です。",
+    "answer0": "ひろい",
+    "answer1": "ひろいじゃない",
+    "answer2": "ひろくない",
+    "answer3": "ひろかった",
+    "correct-index": "answer2",
+    "correct-value": "ひろくない"
+}, {
+    "id": 195,
+    "question": "ふゆに　なって（　　　）なりました。",
+    "answer0": "さむいの",
+    "answer1": "さむくて",
+    "answer2": "さむいに",
+    "answer3": "さむく",
+    "correct-index": "answer3",
+    "correct-value": "さむく"
+}, {
+    "id": 196,
+    "question": "きのうは（　　　）。",
+    "answer0": "あつくでした",
+    "answer1": "あつかったです",
+    "answer2": "あついです",
+    "answer3": "あついかったです",
+    "correct-index": "answer1",
+    "correct-value": "あつかったです"
+}, {
+    "id": 197,
+    "question": "ここで　たばこを（　　　）ください。",
+    "answer0": "すわない",
+    "answer1": "すいません",
+    "answer2": "すわないで",
+    "answer3": "すいないで",
+    "correct-index": "answer2",
+    "correct-value": "すわないで"
+}, {
+    "id": 198,
+    "question": "ごはんを（　　　）まえに　手を　あらいましょう。",
+    "answer0": "食べ",
+    "answer1": "食べる",
+    "answer2": "食べた",
+    "answer3": "食べない",
+    "correct-index": "answer1",
+    "correct-value": "食べる"
+}, {
+    "id": 199,
+    "question": "あれは　びょういんへ（　　　）バスですか。",
+    "answer0": "行こう",
+    "answer1": "行き",
+    "answer2": "行く",
+    "answer3": "行って",
+    "correct-index": "answer2",
+    "correct-value": "行く"
+}, {
+    "id": 200,
+    "question": "    としょかんに（　　　）本を　かります",
+    "answer0": "行く",
+    "answer1": "行った",
+    "answer2": "行って",
+    "answer3": "行ったり",
+    "correct-index": "answer2",
+    "correct-value": "行って"
+}, {
+    "id": 201,
+    "question": "きのう　友だちに　会いました。友だちは　げんき（　　　　）。",
+    "answer0": "だ",
+    "answer1": "です",
+    "answer2": "でした",
+    "answer3": "では　ありません",
+    "correct-index": "answer2",
+    "correct-value": "でした"
+}, {
+    "id": 202,
+    "question": "ひろ子さんは　子どもの　とき、いつも　かぜを　ひいて　いました。じょうぶ（　　　　）。",
+    "answer0": "でした",
+    "answer1": "では　ありませんでした",
+    "answer2": "では　ありません",
+    "answer3": "です",
+    "correct-index": "answer1",
+    "correct-value": "では　ありませんでした"
+}, {
+    "id": 203,
+    "question": "A「ひろ子さんの　お母さん、わかいの？」 B「ううん、（　　　　）。",
+    "answer0": "わかいです",
+    "answer1": "わかかったです",
+    "answer2": "わかいじゃない",
+    "answer3": "わかくない",
+    "correct-index": "answer3",
+    "correct-value": "わかくない"
+}, {
+    "id": 204,
+    "question": "A「テスト（　　　　）？」 B「いいえ、（　　　　）。",
+    "answer0": "いかった／いくなかった",
+    "answer1": "よかった／よかった",
+    "answer2": "よかった／よくなかった",
+    "answer3": "よくなかった／よくなかった",
+    "correct-index": "answer2",
+    "correct-value": "よかった／よくなかった"
+}, {
+    "id": 205,
+    "question": "あれは（　　　　）山ですね。",
+    "answer0": "きれいの",
+    "answer1": "きれいな",
+    "answer2": "きれいで",
+    "answer3": "きれい",
+    "correct-index": "answer1",
+    "correct-value": "きれいな"
+}, {
+    "id": 206,
+    "question": "中国語の　本を（　　　　）みせを　しりませんか。",
+    "answer0": "うります",
+    "answer1": "うっています",
+    "answer2": "うっている",
+    "answer3": "うるの",
+    "correct-index": "answer2",
+    "correct-value": "うっている"
+}, {
+    "id": 207,
+    "question": "きのう（　　　　）えいがは　おもしろかったですよ。",
+    "answer0": "見て",
+    "answer1": "見た",
+    "answer2": "見った",
+    "answer3": "見たの",
+    "correct-index": "answer1",
+    "correct-value": "見た"
+}, {
+    "id": 208,
+    "question": "（　　　　）えい語のざっしを　買いました。",
+    "answer0": "むずかしいな",
+    "answer1": "むずかしいの",
+    "answer2": "むずかしい",
+    "answer3": "むずかしくて",
+    "correct-index": "answer2",
+    "correct-value": "むずかしい"
+}, {
+    "id": 209,
+    "question": "あの　目が（　　　　）かたは　どなたですか。",
+    "answer0": "きれい",
+    "answer1": "きれいな",
+    "answer2": "きれいの",
+    "answer3": "きれいだ",
+    "correct-index": "answer1",
+    "correct-value": "きれいな"
+}, {
+    "id": 210,
+    "question": "この　本は　おもしろいですか。ちょっと（　　　　）ください。",
+    "answer0": "かすて",
+    "answer1": "かして",
+    "answer2": "かりて",
+    "answer3": "かって",
+    "correct-index": "answer1",
+    "correct-value": "かして"
+}, {
+    "id": 211,
+    "question": "ふうとうに　きってを（　　　　）、ポストに　入れました。",
+    "answer0": "はて",
+    "answer1": "はって",
+    "answer2": "はりて",
+    "answer3": "はる",
+    "correct-index": "answer1",
+    "correct-value": "はって"
+}, {
+    "id": 212,
+    "question": "こうえんへ（　　　　）、本を　読みましょう。",
+    "answer0": "行きて",
+    "answer1": "行くて",
+    "answer2": "行って",
+    "answer3": "行く",
+    "correct-index": "answer2",
+    "correct-value": "行って"
+}, {
+    "id": 213,
+    "question": "あの　はしを（　　　　）、右に　まがって　ください。ポストが　ありますよ。",
+    "answer0": "わたって",
+    "answer1": "わたるて",
+    "answer2": "わたりて",
+    "answer3": "わたんで",
+    "correct-index": "answer0",
+    "correct-value": "わたって"
+}, {
+    "id": 214,
+    "question": "としょかんへ　本を（　　）行きます。",
+    "answer0": "かりて",
+    "answer1": "かりに",
+    "answer2": "かりた",
+    "answer3": "かりる",
+    "correct-index": "answer1",
+    "correct-value": "かりに"
+}, {
+    "id": 215,
+    "question": "あれは　びょういんへ（　　）バスです。",
+    "answer0": "行く",
+    "answer1": "行きます",
+    "answer2": "行って",
+    "answer3": "行った",
+    "correct-index": "answer0",
+    "correct-value": "行く"
+}, {
+    "id": 216,
+    "question": "そうじを　して、へやが（　　）なりました。",
+    "answer0": "きれい",
+    "answer1": "きれいと",
+    "answer2": "きれいで",
+    "answer3": "きれいに",
+    "correct-index": "answer3",
+    "correct-value": "きれいに"
+}, {
+    "id": 217,
+    "question": "ラジオを（　　）べんきょうします。",
+    "answer0": "聞きます",
+    "answer1": "聞きながら",
+    "answer2": "聞きに",
+    "answer3": "聞くと",
+    "correct-index": "answer1",
+    "correct-value": "聞きながら"
+}, {
+    "id": 218,
+    "question": "時間が　すこししか（　　）。",
+    "answer0": "あります",
+    "answer1": "ありません",
+    "answer2": "ある",
+    "answer3": "あるじゃない",
+    "correct-index": "answer1",
+    "correct-value": "ありません"
+}, {
+    "id": 219,
+    "question": "まどが（　　）います。",
+    "answer0": "あけて",
+    "answer1": "あける",
+    "answer2": "あいて",
+    "answer3": "あく",
+    "correct-index": "answer2",
+    "correct-value": "あいて"
+}, {
+    "id": 220,
+    "question": "「おかしを　もう　少し　いかがですか。」 「もう（　　　　）。ごちそうさま。",
+    "answer0": "けっこうです",
+    "answer1": "食べましょう",
+    "answer2": "食べました",
+    "answer3": "いただきます",
+    "correct-index": "answer0",
+    "correct-value": "けっこうです"
+}, {
+    "id": 221,
+    "question": "「夏休みに　何を　しますか。」 「まだ　わかりません。どこかへ（　　　　）たいです。」)",
+    "answer0": "りょこうし",
+    "answer1": "りょこうして",
+    "answer2": "りょこうする",
+    "answer3": "りょこうします",
+    "correct-index": "answer0",
+    "correct-value": "りょこうし"
+}, {
+    "id": 222,
+    "question": "リンさんは　「魚が　すきです。」と　言いましたから、たぶん　さしみを　食べる（　　　　）。",
+    "answer0": "です",
+    "answer1": "でしょう",
+    "answer2": "ます",
+    "answer3": "ましょう",
+    "correct-index": "answer1",
+    "correct-value": "でしょう"
+}, {
+    "id": 223,
+    "question": "A「あついですね。あの　店で　アイスクリームを　食べませんか。」 B「いいですね。（　　　　）。",
+    "answer0": "食べましょう",
+    "answer1": "いただきます",
+    "answer2": "ごちそうさま",
+    "answer3": "ください",
+    "correct-index": "answer0",
+    "correct-value": "食べましょう"
+}, {
+    "id": 224,
+    "question": "あの　店は（　　　）安いです。",
+    "answer0": "おいしい",
+    "answer1": "おいしくない",
+    "answer2": "おいしくて",
+    "answer3": "おいしかった",
+    "correct-index": "answer2",
+    "correct-value": "おいしくて"
+}, {
+    "id": 225,
+    "question": "わたしの　生まれた　まちは（　　　）しずかな　いい　ところです。",
+    "answer0": "きれい",
+    "answer1": "きれいで",
+    "answer2": "きれいな",
+    "answer3": "きれいと",
+    "correct-index": "answer1",
+    "correct-value": "きれいで"
+}, {
+    "id": 226,
+    "question": "へやの　テーブルの　上に　きれいな　花（　　　）。",
+    "answer0": "が　あります",
+    "answer1": "が　います",
+    "answer2": "に　あります",
+    "answer3": "に　います",
+    "correct-index": "answer0",
+    "correct-value": "が　あります"
+}, {
+    "id": 227,
+    "question": "けさ　わたしは　あさごはんを（　　　）しごとに　行きました。",
+    "answer0": "食べた",
+    "answer1": "食べないで",
+    "answer2": "食べませんで",
+    "answer3": "食べなかった",
+    "correct-index": "answer1",
+    "correct-value": "食べないで"
+}, {
+    "id": 228,
+    "question": "おかしを（　　　）ながら　しゅくだいを　しました。",
+    "answer0": "食べた",
+    "answer1": "食べる",
+    "answer2": "食べて",
+    "answer3": "食べ",
+    "correct-index": "answer3",
+    "correct-value": "食べ"
+}, {
+    "id": 229,
+    "question": "毎日　学校に（　　　）前に　いぬの　さんぽを　します。",
+    "answer0": "行く",
+    "answer1": "行きます",
+    "answer2": "行った",
+    "answer3": "行って",
+    "correct-index": "answer0",
+    "correct-value": "行く"
+}, {
+    "id": 230,
+    "question": "わたしは　まいばん　子どもが（　　　）あとで　テレビを　見ます。",
+    "answer0": "ねる",
+    "answer1": "ねた",
+    "answer2": "ねて",
+    "answer3": "ねます",
+    "correct-index": "answer3",
+    "correct-value": "ねます"
+}, {
+    "id": 231,
+    "question": " これは　先週　あねが　デパートで（　　　）かばんです)",
+    "answer0": "買う",
+    "answer1": "買って",
+    "answer2": "買った",
+    "answer3": "買いました",
+    "correct-index": "answer2",
+    "correct-value": "買った"
+}, {
+    "id": 232,
+    "question": "わたしは　よく　としょかん（　　　）しんぶんを　読みに　行きます。",
+    "answer0": "で",
+    "answer1": "へ",
+    "answer2": "から",
+    "answer3": "は",
+    "correct-index": "answer1",
+    "correct-value": "へ"
+}, {
+    "id": 233,
+    "question": "ばんごはんの　時間を　もっと（　　　）しませんか。",
+    "answer0": "はやい",
+    "answer1": "はやくて",
+    "answer2": "はやかった",
+    "answer3": "はやく",
+    "correct-index": "answer3",
+    "correct-value": "はやく"
+}, {
+    "id": 234,
+    "question": "へやが（　　　）なりました。",
+    "answer0": "あかるいに",
+    "answer1": "あかるい",
+    "answer2": "あかるくた",
+    "answer3": "あかるく",
+    "correct-index": "answer3",
+    "correct-value": "あかるく"
+}, {
+    "id": 235,
+    "question": "話が　ありますから、　まだ（　　　）ください。",
+    "answer0": "かえりまして",
+    "answer1": "かえって",
+    "answer2": "かえらないで",
+    "answer3": "かえりませんで",
+    "correct-index": "answer2",
+    "correct-value": "かえらないで"
+}, {
+    "id": 236,
+    "question": "もう　すこし（　　　）かいてください。",
+    "answer0": "大きい",
+    "answer1": "大きな",
+    "answer2": "大きくに",
+    "answer3": "大きく",
+    "correct-index": "answer3",
+    "correct-value": "大きく"
+}, {
+    "id": 237,
+    "question": "あの　お店は　あまり（　　　　）よ。",
+    "answer0": "おいしい",
+    "answer1": "おいしかった",
+    "answer2": "おいしくない",
+    "answer3": "おいしじゃない",
+    "correct-index": "answer2",
+    "correct-value": "おいしくない"
+}, {
+    "id": 238,
+    "question": "きょうしつが（　　　　）なりました。",
+    "answer0": "しずかな",
+    "answer1": "しずかで",
+    "answer2": "しずかだった",
+    "answer3": "しずかに",
+    "correct-index": "answer3",
+    "correct-value": "しずかに"
+}, {
+    "id": 239,
+    "question": "あの　足が　長くて（　　　　）女の人は　どなたですか。",
+    "answer0": "きれいな",
+    "answer1": "きれいで",
+    "answer2": "きれい",
+    "answer3": "きれいだった",
+    "correct-index": "answer0",
+    "correct-value": "きれいな"
+}, {
+    "id": 240,
+    "question": "A　「さようなら。」 B　「さようなら。　また　（　　）。",
+    "answer0": "おととい",
+    "answer1": "今日",
+    "answer2": "来週",
+    "answer3": "今月",
+    "correct-index": "answer2",
+    "correct-value": "来週"
+}, {
+    "id": 241,
+    "question": "（電話で） 　本田　「はい、　本田です。」   　北山　「あ、　北山花子です。　すみません。　（　　）。」   　本田　「はい、　ちょっと　まって　くださいね。」 ",
+    "answer0": "ひろこさんを　おねがいします",
+    "answer1": "ひろこさんを　ください",
+    "answer2": "ひろこさんを　話しますか",
+    "answer3": "ひろこさんと　話しませんか",
+    "correct-index": "answer0",
+    "correct-value": "ひろこさんを　おねがいします"
+}, {
+    "id": 242,
+    "question": "父が　すきな　おさけは、これ（　　　）、あれです。",
+    "answer0": "でも",
+    "answer1": "ではなくて",
+    "answer2": "だったか",
+    "answer3": "だという",
+    "correct-index": "answer1",
+    "correct-value": "ではなくて"
+}, {
+    "id": 243,
+    "question": "この　スカートは、あまり　（　　　）ね。 ",
+    "answer0": "かわいいです",
+    "answer1": "かわいくありません",
+    "answer2": "かわいないです",
+    "answer3": "かわいいではありません",
+    "correct-index": "answer1",
+    "correct-value": "かわいくありません"
+}, {
+    "id": 244,
+    "question": "いすの　下に　ねこ（　　　）。",
+    "answer0": "が　います",
+    "answer1": "の　あります",
+    "answer2": "に　います",
+    "answer3": "が　あります",
+    "correct-index": "answer0",
+    "correct-value": "が　います"
+}, {
+    "id": 245,
+    "question": "兄は　めがねを　かけて（　　　）、弟は　かけていません。",
+    "answer0": "いながら",
+    "answer1": "いたり",
+    "answer2": "いますから",
+    "answer3": "いますが",
+    "correct-index": "answer3",
+    "correct-value": "いますが"
+}, {
+    "id": 246,
+    "question": "そうじを　したから、へやが　とても　（　　　）なりました。 ",
+    "answer0": "きれいく",
+    "answer1": "きれいに",
+    "answer2": "きれいで",
+    "answer3": "きれい",
+    "correct-index": "answer1",
+    "correct-value": "きれいに"
+}, {
+    "id": 247,
+    "question": "＿＿＿ものは　買わないで　ください。",
+    "answer0": "いらなくて",
+    "answer1": "いらない",
+    "answer2": "いらなかったの",
+    "answer3": "いらないの",
+    "correct-index": "answer1",
+    "correct-value": "いらない"
+}, {
+    "id": 248,
+    "question": "おとうとは　きょねんから　アメリカへ　行って　います。日本に　＿＿＿。",
+    "answer0": "かえりました",
+    "answer1": "来て　います",
+    "answer2": "いません",
+    "answer3": "来て　いません",
+    "correct-index": "answer2",
+    "correct-value": "いません"
+}, {
+    "id": 249,
+    "question": "はじめに　日本語を　べんきょうします。＿＿＿日本の　会社で　はたらきたいです。",
+    "answer0": "それから",
+    "answer1": "だんだん",
+    "answer2": "ちょうど",
+    "answer3": "それでは",
+    "correct-index": "answer0",
+    "correct-value": "それから"
+}, {
+    "id": 250,
+    "question": "「今日の　じゅぎょうは　ここまでです。」 「＿＿＿みなさん　また　あした。さようなら。",
+    "answer0": "それから",
+    "answer1": "それまで",
+    "answer2": "それでは",
+    "answer3": "それでも",
+    "correct-index": "answer2",
+    "correct-value": "それでは"
+}, {
+    "id": 251,
+    "question": "サンドイッチを　おねがいします。あ、＿＿＿　コーヒーも　おねがいします。",
+    "answer0": "それでは",
+    "answer1": "それも",
+    "answer2": "それまで",
+    "answer3": "それから",
+    "correct-index": "answer3",
+    "correct-value": "それから"
+}, {
+    "id": 252,
+    "question": "「この　ジュースは　つめたくないですね。」 「そうですね。れいぞうこで　つめたく　＿＿＿。)",
+    "answer0": "いましょう",
+    "answer1": "入れましょう",
+    "answer2": "しましょう",
+    "answer3": "なりましょう",
+    "correct-index": "answer2",
+    "correct-value": "しましょう"
+}, {
+    "id": 253,
+    "question": "カーテンを　あけました。へやが　あかるく　＿＿＿。",
+    "answer0": "しました",
+    "answer1": "なりました",
+    "answer2": "やりました",
+    "answer3": "とりました",
+    "correct-index": "answer1",
+    "correct-value": "なりました"
+}, {
+    "id": 254,
+    "question": "A「パクさんは　りゅうがくせい（　　　　）か。」 B「はい、わたしは　りゅうがくせい（　　　　）。",
+    "answer0": "です／では　ありません",
+    "answer1": "です／です",
+    "answer2": "では　ありません／です",
+    "answer3": "です／だ",
+    "correct-index": "answer1",
+    "correct-value": "です／です"
+}, {
+    "id": 255,
+    "question": "A「田中さんは　いしゃ（　　　　）か。」 B「いいえ、いしゃ（　　　　）。",
+    "answer0": "では　ありませんか／では　ありません",
+    "answer1": "です／です",
+    "answer2": "です／では　ありません",
+    "answer3": "でした／です",
+    "correct-index": "answer2",
+    "correct-value": "です／では　ありません"
+}, {
+    "id": 256,
+    "question": "A「あの　としょかんは　しずか？」 B「ううん、しずか（　　　　）よ。",
+    "answer0": "だった",
+    "answer1": "じゃない",
+    "answer2": "でした",
+    "answer3": "です",
+    "correct-index": "answer1",
+    "correct-value": "じゃない"
+}, {
+    "id": 257,
+    "question": "きのう　としょかんへ　行った。としょかんは　とても　しずか（　　　　）。",
+    "answer0": "です",
+    "answer1": "だった",
+    "answer2": "だ",
+    "answer3": "じゃなかった",
+    "correct-index": "answer1",
+    "correct-value": "だった"
+}, {
+    "id": 258,
+    "question": "20年前、コンピューターは　大きくて、あまり　べんり（　　　　）が、今の　コンピューターは　小さくて　べんり（　　　　）。",
+    "answer0": "だった／だ",
+    "answer1": "だ／じゃない",
+    "answer2": "では　ない／だ",
+    "answer3": "じゃなかった／だ",
+    "correct-index": "answer3",
+    "correct-value": "じゃなかった／だ"
+}, {
+    "id": 259,
+    "question": "A「うみへ　行きましたか。うみは　どうでしたか。」 B「まだ、水が　つめた（　　　　）よ。",
+    "answer0": "かった",
+    "answer1": "いでした",
+    "answer2": "くなかった",
+    "answer3": "いい水でした",
+    "correct-index": "answer0",
+    "correct-value": "かった"
+}, {
+    "id": 260,
+    "question": "「ゆきさん、うたを（　　　　）。」 「はい。じゃ、うたいます。",
+    "answer0": "うたいて　くださいませんか",
+    "answer1": "うたって　くださいませんか",
+    "answer2": "うたった　くださいませんか",
+    "answer3": "うたい　くださいませんか",
+    "correct-index": "answer1",
+    "correct-value": "うたって　くださいませんか"
+}, {
+    "id": 261,
+    "question": "「毎日　9時ごろまで　会社で　はたらいて　います。」 「（　　　　）。)",
+    "answer0": "それは　よくできました",
+    "answer1": "そうでしょう",
+    "answer2": "それは　たいへんですね",
+    "answer3": "そうですね",
+    "correct-index": "answer2",
+    "correct-value": "それは　たいへんですね"
+}, {
+    "id": 262,
+    "question": "「かんじが　わかりませんから、ひらがなで　書きます。いいですか。」 「はい。（　　　　）。",
+    "answer0": "すみません",
+    "answer1": "けっこうですよ",
+    "answer2": "どう　いたしまして",
+    "answer3": "こちらこそ",
+    "correct-index": "answer1",
+    "correct-value": "けっこうですよ"
+}, {
+    "id": 263,
+    "question": "「おそくなって、ごめんなさい。」 「いいえ、（　　　　）。",
+    "answer0": "けっこうです",
+    "answer1": "どう　いたしまして",
+    "answer2": "わかりました",
+    "answer3": "ちがいます",
+    "correct-index": "answer1",
+    "correct-value": "どう　いたしまして"
+}, {
+    "id": 264,
+    "question": "「どうぞ　たくさん　食べて　ください。」 「はい、（　　　　）。",
+    "answer0": "けっこうです",
+    "answer1": "いただきます",
+    "answer2": "そうです",
+    "answer3": "どうぞ　よろしく",
+    "correct-index": "answer1",
+    "correct-value": "いただきます"
+}, {
+    "id": 265,
+    "question": "ああ、おいしかった。（　　　　）。",
+    "answer0": "ごちそうさま",
+    "answer1": "いただきます",
+    "answer2": "どうぞ　よろしく",
+    "answer3": "こちらこそ",
+    "correct-index": "answer0",
+    "correct-value": "ごちそうさま"
+}, {
+    "id": 266,
+    "question": "「はじめまして。わたしは　日本大学の　北山です。」 「はじめまして。（　　　　）。)",
+    "answer0": "どうも　ありがとう",
+    "answer1": "おかげさまで",
+    "answer2": "どうぞ　よろしく",
+    "answer3": "おねがいします",
+    "correct-index": "answer2",
+    "correct-value": "どうぞ　よろしく"
+}, {
+    "id": 267,
+    "question": "「きのうは　きれいな　花を　どうも　ありがとう　ございました。」 「（　　　　）。",
+    "answer0": "どうぞ　よろしく",
+    "answer1": "ごちそうさま",
+    "answer2": "どう　いたしまして",
+    "answer3": "けっこうです",
+    "correct-index": "answer2",
+    "correct-value": "どう　いたしまして"
+}, {
+    "id": 268,
+    "question": " 「（　　　　）。ゆうびんきょくは　どこに　ありますか。」   「あそこです",
+    "answer0": "わかりません",
+    "answer1": "すみません",
+    "answer2": "しりません",
+    "answer3": "ありません",
+    "correct-index": "answer1",
+    "correct-value": "すみません"
+}, {
+    "id": 269,
+    "question": "すみません。50円の　切手を　2まい（　　　　）。",
+    "answer0": "ください",
+    "answer1": "あります",
+    "answer2": "たいです",
+    "answer3": "なります",
+    "correct-index": "answer0",
+    "correct-value": "ください"
+}, {
+    "id": 270,
+    "question": "つくえの　上に　でがみが　おいて（　　　）。",
+    "answer0": "います",
+    "answer1": "おきます",
+    "answer2": "あります",
+    "answer3": "みます",
+    "correct-index": "answer2",
+    "correct-value": "あります"
 }]

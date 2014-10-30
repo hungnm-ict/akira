@@ -1,280 +1,946 @@
 [{
     "id": 1,
-    "question": "A　「さようなら。」 B　「さようなら。　また　（　　）。",
-    "answer0": "おととい",
-    "answer1": "今日",
-    "answer2": "来週",
-    "answer3": "今月",
-    "correct": "answer2",
-    "correct-value": "来週"
+    "question": " 日本で　べんきょうして　いる　学生が　「すきな　店」　の　ぶんしょうを　書いて、　クラスの　みんなの　前で　読みました。     （１）                ケンさんの　ぶんしょう      　　わたしは　すしが　すきです。　日本には　たくさん　すし屋が　ありますね。　わたしの　国には　すし屋が　ありませんから、　今　とてもうれしいです。　日本に　(  1  )、　いろいろな　店で　食べました。学校の　前の　店は、安くて　おいしいです。　すしが　すきな　人は、いっしょに　(  2  )。 ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 1.1,
+    "question": "(　1　)",
+    "answer0": "行くから",
+    "answer1": "行ってから",
+    "answer2": "来るから",
+    "answer3": "来てから",
+    "correct-index": "answer3",
+    "correct-value": "来てから"
+}, {
+    "id": 1.2,
+    "question": "(　2　)",
+    "answer0": "行きましたか",
+    "answer1": "行きませんか",
+    "answer2": "行って　いましたか",
+    "answer3": "行って　いませんか",
+    "correct-index": "answer1",
+    "correct-value": "行きませんか"
 }, {
     "id": 2,
-    "question": "（電話で） 　本田　「はい、　本田です。」   　北山　「あ、　北山花子です。　すみません。　（　　）。」   　本田　「はい、　ちょっと　まって　くださいね。」 ",
-    "answer0": "ひろこさんを　おねがいします",
-    "answer1": "ひろこさんを　ください",
-    "answer2": "ひろこさんを　話しますか",
-    "answer3": "ひろこさんと　話しませんか",
-    "correct": "answer0",
-    "correct-value": "ひろこさんを　おねがいします"
+    "question": " つぎの　ぶんしょうは　学生　書いた　さくぶん　です。<br>      木よう日、学校の　じゅぎょうで　パンの　こうじょう（注1）を　見に　行きました。こうじょうに　入る　前に　よく　手を　あらいました。<br>      こうじょうで　(　1　)　人は、みんな　(　2　)　ふくを　着て、あたまに　ぼうしを　かぶっていました。<br>      こうじょうの　中には　大きな　きかいが　たくさん　ありました　(　3　)、人は　少なかったです。<br>      パンは　「こむぎこ（注2）」に　水、しおなど　(　4　)　入れて　つくります。パンを　つくるのは　とても　時間が　かかる　ことが　わかりました。<br>      みなさん、これから　パンを　ぜんぶ　きれいに　(　5　)。  （注1）　こうじょう＝きかいなどを　つかって、たくさん　ものを　つくる　ところ  （注2）　こむぎこ＝「こむぎ」から　つくる　しろい　こな",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 2.1,
+    "question": "(　1　)",
+    "answer0": "はたらきます",
+    "answer1": "はたらいている",
+    "answer2": "はたらいてある",
+    "answer3": "はたらきました",
+    "correct-index": "answer1",
+    "correct-value": "はたらいている"
+}, {
+    "id": 2.2,
+    "question": "(　2　)　",
+    "answer0": "しろくて　きれいくて",
+    "answer1": "しろいで　きれい",
+    "answer2": "しろくて　きれいな",
+    "answer3": "しろな　きれいな",
+    "correct-index": "answer2",
+    "correct-value": "しろくて　きれいな"
+}, {
+    "id": 2.3,
+    "question": "(　3　)　",
+    "answer0": "ながら",
+    "answer1": "が",
+    "answer2": "という",
+    "answer3": "とき",
+    "correct-index": "answer1",
+    "correct-value": "が"
+}, {
+    "id": 2.4,
+    "question": "(　4　)　",
+    "answer0": "に",
+    "answer1": "を",
+    "answer2": "へ",
+    "answer3": "が",
+    "correct-index": "answer1",
+    "correct-value": "を"
+}, {
+    "id": 2.5,
+    "question": "(　5　)　",
+    "answer0": "食べる　ことが　できます",
+    "answer1": "食べないで　ください",
+    "answer2": "食べましょう",
+    "answer3": "食べたいです",
+    "correct-index": "answer2",
+    "correct-value": "食べましょう"
 }, {
     "id": 3,
-    "question": "父が　すきな　おさけは、これ（　　　）、あれです。",
-    "answer0": "でも",
-    "answer1": "ではなくて",
-    "answer2": "だったか",
-    "answer3": "だという",
-    "correct": "answer1",
-    "correct-value": "ではなくて"
+    "question": " つぎの　ぶんしょう　学生が　じぶんの　いけんを　書いた　ものです。<br>      先週の　日よう日、しんぶんに　出ていた　ぶんを　(　1　)。「今の　子どもは、もんだいを　見て　わからない　とき、すぐに　先生に　こたえを　聞く。また、こたえが　１つ　(　2　)　もんだいは　きらいだ。」      でも、おとなに　なって　からは、かんがえ（注1）ても　すぐに　こたえが　出ない　ことが　(　3 - a　)。こたえが　１つでは　なく　いろいろ　ある　ことも　(　3 - b　)。それは　きもちが　わるい　ことだ。しかし、かんがえて　こたえが　出なくて　つかれる。でも、また　(　4　)。そういう　れんしゅうを　子どもの　時　(　5　)　した　ほうが　いい。わたしは　そう　かんがえる。  （注1）　かんがえる＝あたまの　中で　どうしたら　いいか、こたえを　みつけようとする ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 3.1,
+    "question": "　(　1　)",
+    "answer0": "読みたい",
+    "answer1": "読みませんか",
+    "answer2": "読まなかった",
+    "answer3": "読んだ",
+    "correct-index": "answer3",
+    "correct-value": "読んだ"
+}, {
+    "id": 3.2,
+    "question": "(　2　)　",
+    "answer0": "では　ありませんでした",
+    "answer1": "では　ない",
+    "answer2": "では　なかった",
+    "answer3": "では　ありません",
+    "correct-index": "answer1",
+    "correct-value": "では　ない"
+}, {
+    "id": 3.3,
+    "question": "(　3　)　",
+    "answer0": "ａ　多い／ｂ　少ない",
+    "answer1": "ａ　多い／ｂ　少なくない",
+    "answer2": "ａ　少ない／ｂ　少なくない",
+    "answer3": "ａ　少ない／ｂ　多い",
+    "correct-index": "answer1",
+    "correct-value": "ａ　多い／ｂ　少なくない"
+}, {
+    "id": 3.4,
+    "question": "(　4　)　",
+    "answer0": "かんがえる",
+    "answer1": "かんがえない",
+    "answer2": "つかれない",
+    "answer3": "つかれる",
+    "correct-index": "answer0",
+    "correct-value": "かんがえる"
+}, {
+    "id": 3.5,
+    "question": "(　5　)　",
+    "answer0": "で",
+    "answer1": "を",
+    "answer2": "まで",
+    "answer3": "から",
+    "correct-index": "answer3",
+    "correct-value": "から"
 }, {
     "id": 4,
-    "question": "この　スカートは、あまり　（　　　）ね。 ",
-    "answer0": "かわいいです",
-    "answer1": "かわいくありません",
-    "answer2": "かわいないです",
-    "answer3": "かわいいではありません",
-    "correct": "answer1",
-    "correct-value": "かわいくありません"
+    "question": " つぎの　ぶんしょうは　学生が　書いた　ものです。      わたしは　まだ　ことばを　たくさん　しらな　(　1 - a　)、　じょうずに　話すことが　できな　(　1 - b　)　する。でも、わたしたち　学生は　おとなだ。その　ことを　(　2　)、子どもが　読む　本を　(　3　)　という　先生は　多い。それは　つまらない。わたしたちは　もっと　(　4　)　読みたい。やさしい　ことばで　書いて　あって、おとなが　読んで　(　5　)。そういう　ぶんしょうを　読みたい。  ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 4.1,
+    "question": "  　(　1　)",
+    "answer0": "ａ　かったり／ｂ　かったり",
+    "answer1": "ａ　いも／ｂ　いも",
+    "answer2": "ａ　いで／ｂ　いで",
+    "answer3": "ａ　くて／ｂ　くて",
+    "correct-index": "answer0",
+    "correct-value": "ａ　かったり／ｂ　かったり"
+}, {
+    "id": 4.2,
+    "question": "(　2　)　",
+    "answer0": "わすれて　いないから",
+    "answer1": "わすれないで",
+    "answer2": "わすれて",
+    "answer3": "わすれたいから",
+    "correct-index": "answer2",
+    "correct-value": "わすれて"
+}, {
+    "id": 4.3,
+    "question": "(　3　)　",
+    "answer0": "読まないでしょう",
+    "answer1": "読みませんでした",
+    "answer2": "読みました",
+    "answer3": "読みましょう",
+    "correct-index": "answer3",
+    "correct-value": "読みましょう"
+}, {
+    "id": 4.4,
+    "question": "(　4　)　",
+    "answer0": "おとなが　読む　本を",
+    "answer1": "子どもが　書く　本を",
+    "answer2": "おとなが　読まない　本を",
+    "answer3": "子どもが　書かない　本を",
+    "correct-index": "answer0",
+    "correct-value": "おとなが　読む　本を"
+}, {
+    "id": 4.5,
+    "question": "(　5　)　",
+    "answer0": "つまらない",
+    "answer1": "おもしろい",
+    "answer2": "むずかしい",
+    "answer3": "やさしい",
+    "correct-index": "answer1",
+    "correct-value": "おもしろい"
 }, {
     "id": 5,
-    "question": "いすの　下に　ねこ（　　　）。",
-    "answer0": "が　います",
-    "answer1": "の　あります",
-    "answer2": "に　います",
-    "answer3": "が　あります",
-    "correct": "answer0",
-    "correct-value": "が　います"
+    "question": " リンさんと　ソウさんが　じこしょうかいの　文を　書きました。  （１）      みなさん、こんにちは。わたしは　リンです。　中国で　(　1　)。　かぞくは　父、母、それと、兄が　ひとり　います。      日本　(　2　)　来たのは、きょ年の　４月です。      サクラの　花が　たくさん　さいて　いましたが、少し　(　3　)。　来年は、日本人の　ともだちと　花見（注1）に　いきたいです。　      よろしく　おねがいします。  （２）      はじめまして。わたしは　ソウと　いいます。<br>      日本の　まんがが　大すきで、日本語の　べんきょうを　はじめました。でも　(　4　)　まんがだけ　じゃなくて、　じゅうどうが　すきに　なりました。じゅうどうを　ならいたいですが、先生が　いません。　だれか、わたしに　じゅうどうを　(　5　)。      よろしく　おねがいします。<br>  （注1）　花見＝「サクラ」という　花を　見ながら、おべんとうを　食べたり、　おさけを　のんだり　すること ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 5.1,
+    "question": "　(　1　)　",
+    "answer0": "うまれました",
+    "answer1": "うまれています",
+    "answer2": "うまれていました",
+    "answer3": "うまれます",
+    "correct-index": "answer0",
+    "correct-value": "うまれました"
+}, {
+    "id": 5.2,
+    "question": "(　2　)　",
+    "answer0": "で",
+    "answer1": "から",
+    "answer2": "に",
+    "answer3": "も",
+    "correct-index": "answer2",
+    "correct-value": "に"
+}, {
+    "id": 5.3,
+    "question": "(　3　)　",
+    "answer0": "さむいでした",
+    "answer1": "さむいなでした",
+    "answer2": "さむいです",
+    "answer3": "さむかったです",
+    "correct-index": "answer3",
+    "correct-value": "さむかったです"
+}, {
+    "id": 5.4,
+    "question": "(　4　)　",
+    "answer0": "これから",
+    "answer1": "今は",
+    "answer2": "今から",
+    "answer3": "それまで",
+    "correct-index": "answer1",
+    "correct-value": "今は"
+}, {
+    "id": 5.5,
+    "question": "(　5　)　",
+    "answer0": "おしえて　くださいませんか",
+    "answer1": "おしえましょう",
+    "answer2": "おしえませんか",
+    "answer3": "おしえて　います",
+    "correct-index": "answer0",
+    "correct-value": "おしえて　くださいませんか"
 }, {
     "id": 6,
-    "question": "兄は　めがねを　かけて（　　　）、弟は　かけていません。",
-    "answer0": "いながら",
-    "answer1": "いたり",
-    "answer2": "いますから",
-    "answer3": "いますが",
-    "correct": "answer3",
-    "correct-value": "いますが"
+    "question": " つぎの　ぶんしょうは　学生が　書いた　さくぶん　です。      先週、わたしは、ひとりで　うみに　行った。<br>      もう　なつやすみは　おわって　いたから、人が　(　1　)　さびしかった。２時間　ぐらい　ゆっくりと　うみを　見た。(　2　)　うみの　ちかくにある　レストラン　(　3　)　おひるごはんを　食べた。りょうりが　とても　おいしかった。レストランの　人から　ちかくに、足だけ　入る　ことが　できる　おふろが　ある　ことを　聞いた。　それは　「足ゆ」　(　4　)　ものだった。      あたたかくて　きもちが　よかったから、また　行きたい。      ひとり　だったが、(　5　)　りょこう　だった。",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 6.1,
+    "question": "        　(　1　)",
+    "answer0": "とても　いて",
+    "answer1": "たくさん　いて",
+    "answer2": "あまり    いなくて",
+    "answer3": "すこし　いなくて",
+    "correct-index": "answer2",
+    "correct-value": "あまり    いなくて"
+}, {
+    "id": 6.2,
+    "question": "(　2　)　",
+    "answer0": "でも",
+    "answer1": "それから",
+    "answer2": "また",
+    "answer3": "だから",
+    "correct-index": "answer1",
+    "correct-value": "それから"
+}, {
+    "id": 6.3,
+    "question": "(　3　)　",
+    "answer0": "と",
+    "answer1": "に",
+    "answer2": "を",
+    "answer3": "で",
+    "correct-index": "answer3",
+    "correct-value": "で"
+}, {
+    "id": 6.4,
+    "question": "(　4　)　",
+    "answer0": "のとき",
+    "answer1": "という",
+    "answer2": "になる",
+    "answer3": "がある",
+    "correct-index": "answer1",
+    "correct-value": "という"
+}, {
+    "id": 6.5,
+    "question": "(　5　)　",
+    "answer0": "もう　行きたくない",
+    "answer1": "とても　さびしい",
+    "answer2": "また　行くことが　できない",
+    "answer3": "とても　たのしい",
+    "correct-index": "answer3",
+    "correct-value": "とても　たのしい"
 }, {
     "id": 7,
-    "question": "そうじを　したから、へやが　とても　（　　　）なりました。 ",
-    "answer0": "きれいく",
-    "answer1": "きれいに",
-    "answer2": "きれいで",
-    "answer3": "きれい",
-    "correct": "answer1",
-    "correct-value": "きれいに"
+    "question": " つぎの　ぶんしょうは　学生が　じぶんの　ねこに　ついて　書いた　ぶんです。      わたしの　いえには　ねこが　３　(　1 - a　)　います。      ちゃいろの　ねこが　１　(　1 - b　)　、くろい　ねこが　２ひき　います。      ちゃいろの　ねこは　年を　とっていて、しずかです。いつも　へやの　あたたかい　ところで　ねて　います。      くろい　ねこは　まだ　(　2　)。とても　げんきで、よく　２ひきで　(　3　)。ときどき、ちゃいろの　ねこの　そばに　行きますが、ちゃいろの　ねこは　いやな　かおをして　くろい　ねこ　(　4　)　見ます。(　5　)　ちゃいろの　ねこは　へやを　出ていきます。<br>   ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 7.1,
+    "question": " 　(　1　)",
+    "answer0": "ａ　ぴき／ｂ　びき",
+    "answer1": "ａ　ひき／ｂ　びき",
+    "answer2": "ａ　ぴき／ｂ　ひき",
+    "answer3": "ａ　びき／ｂ　ぴき",
+    "correct-index": "answer3",
+    "correct-value": "ａ　びき／ｂ　ぴき"
+}, {
+    "id": 7.2,
+    "question": "(　2　)　",
+    "answer0": "大きく　ありません",
+    "answer1": "大きく　ありました",
+    "answer2": "大きく　ありませんでした",
+    "answer3": "大きく　あります",
+    "correct-index": "answer0",
+    "correct-value": "大きく　ありません"
+}, {
+    "id": 7.3,
+    "question": "(　3　)　",
+    "answer0": "あそびません",
+    "answer1": "あそびたいです",
+    "answer2": "あそんで　います",
+    "answer3": "あそばなかったです",
+    "correct-index": "answer2",
+    "correct-value": "あそんで　います"
+}, {
+    "id": 7.4,
+    "question": "(　4　)　",
+    "answer0": "を",
+    "answer1": "が",
+    "answer2": "に",
+    "answer3": "の",
+    "correct-index": "answer0",
+    "correct-value": "を"
+}, {
+    "id": 7.5,
+    "question": "(　5　)　",
+    "answer0": "また",
+    "answer1": "そして",
+    "answer2": "でも",
+    "answer3": "では",
+    "correct-index": "answer1",
+    "correct-value": "そして"
 }, {
     "id": 8,
-    "question": "＿＿＿ものは　買わないで　ください。",
-    "answer0": "いらなくて",
-    "answer1": "いらない",
-    "answer2": "いらなかったの",
-    "answer3": "いらないの",
-    "correct": "answer1",
-    "correct-value": "いらない"
+    "question": " つぎの　ぶんしょうは　学生が　書いた　さくぶん　です。      わたしは　今から　２年　(　1　)　に　日本に　来ました。      はじめて　電車に　(　2　)　ときの　ことです。      わたしは　(　3　)　きっぷを　買うのか、わかりませんでした。<br>      こまっていた　とき、わかい　男の　人が　わたしに　「だいじょうぶですか」と　言いました。そして　その　人は　わたしに　「どこ　まで　行きますか」と聞きました。      わたしが「コヤママチです」と　言うと、「１９０円ですよ」と　言いました。わたしが　きっぷを　買って　いるとき、男の　人が　のる　電車が　(　4　)。男の　人は　「じゃあ」と　言って　はしって　行きました。<br>      わたしは　そのとき、「ありがとうございます」と　言うことが　(　5　)　ですから、わたしは　今、その　人に　会って　おれいを　言いたいです。  ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 8.1,
+    "question": "　(　1　)　",
+    "answer0": "かん",
+    "answer1": "前",
+    "answer2": "後",
+    "answer3": "ぐらい",
+    "correct-index": "answer1",
+    "correct-value": "前"
+}, {
+    "id": 8.2,
+    "question": "(　2　)　",
+    "answer0": "のらなかった",
+    "answer1": "のっている",
+    "answer2": "のります",
+    "answer3": "のった",
+    "correct-index": "answer3",
+    "correct-value": "のった"
+}, {
+    "id": 8.3,
+    "question": "(　3　)　",
+    "answer0": "いくつの",
+    "answer1": "どなたの",
+    "answer2": "どこの",
+    "answer3": "いくらの",
+    "correct-index": "answer3",
+    "correct-value": "いくらの"
+}, {
+    "id": 8.4,
+    "question": "(　4　)　",
+    "answer0": "来ました",
+    "answer1": "行きました",
+    "answer2": "来ます",
+    "answer3": "行きます",
+    "correct-index": "answer0",
+    "correct-value": "来ました"
+}, {
+    "id": 8.5,
+    "question": "(　5　)　",
+    "answer0": "できて　いました",
+    "answer1": "できませんでした",
+    "answer2": "できました",
+    "answer3": "できないでした",
+    "correct-index": "answer1",
+    "correct-value": "できませんでした"
 }, {
     "id": 9,
-    "question": "おとうとは　きょねんから　アメリカへ　行って　います。日本に　＿＿＿。",
-    "answer0": "かえりました",
-    "answer1": "来て　います",
-    "answer2": "いません",
-    "answer3": "来て　いません",
-    "correct": "answer2",
-    "correct-value": "いません"
+    "question": " わたしは　いま　東京に（　1　）。東京は（　2　）、おもしろいところです。まいにち　日本語学校で　べんきょうして　います。学校は　たのしいです。（　3　）、ときどき　テストが　ありますから、ちょっと　たいへんです。学校で　とった　しゃしんを　おくりますから、（　4　）。  もうすぐ　なつ休みですね。たかしさんに　とても　会いたいです。（　5　）。まって　いますよ。 ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 9.1,
+    "question": "（　1　)",
+    "answer0": "行きます",
+    "answer1": "来ます",
+    "answer2": "います",
+    "answer3": "あります",
+    "correct-index": "answer2",
+    "correct-value": "います"
+}, {
+    "id": 9.2,
+    "question": "（　2　）",
+    "answer0": "にぎやか",
+    "answer1": "にぎやかで",
+    "answer2": "にぎやかだ",
+    "answer3": "にぎやかだから",
+    "correct-index": "answer1",
+    "correct-value": "にぎやかで"
+}, {
+    "id": 9.3,
+    "question": "（　3　）",
+    "answer0": "だから",
+    "answer1": "それから",
+    "answer2": "それでは",
+    "answer3": "でも",
+    "correct-index": "answer3",
+    "correct-value": "でも"
+}, {
+    "id": 9.4,
+    "question": "（　4　）",
+    "answer0": "見ましょう",
+    "answer1": "見て　ください",
+    "answer2": "見たいです",
+    "answer3": "見るでしょう",
+    "correct-index": "answer1",
+    "correct-value": "見て　ください"
+}, {
+    "id": 9.5,
+    "question": "（　5　）",
+    "answer0": "りょうりします",
+    "answer1": "こちらへ来ませんか",
+    "answer2": "そちらに行きましょう",
+    "answer3": "あそびに　行きます",
+    "correct-index": "answer1",
+    "correct-value": "こちらへ来ませんか"
 }, {
     "id": 10,
-    "question": "はじめに　日本語を　べんきょうします。＿＿＿日本の　会社で　はたらきたいです。",
-    "answer0": "それから",
-    "answer1": "だんだん",
-    "answer2": "ちょうど",
-    "answer3": "それでは",
-    "correct": "answer0",
+    "question": " 先週　わたしは（　1　）レストランへ　行きました。あねは　ビールを　飲みましたが、わたしは（　2　）。あねは（　3　）飲みませんでしたが、かおが　あかく　なりました。（　4　）にくの　りょうりと　サラダも　食べました。おなかが　いっぱいに　なりましたから、（　5　）。",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 10.1,
+    "question": " （　1　",
+    "answer0": "あねが",
+    "answer1": "あねを",
+    "answer2": "あねと",
+    "answer3": "あねに",
+    "correct-index": "answer2",
+    "correct-value": "あねと"
+}, {
+    "id": 10.2,
+    "question": "（　2　）",
+    "answer0": "飲みました",
+    "answer1": "飲んで",
+    "answer2": "飲みませんでした",
+    "answer3": "飲んだ",
+    "correct-index": "answer2",
+    "correct-value": "飲みませんでした"
+}, {
+    "id": 10.3,
+    "question": "（　3　）",
+    "answer0": "少ししか",
+    "answer1": "もう",
+    "answer2": "ちょっと",
+    "answer3": "もっと",
+    "correct-index": "answer0",
+    "correct-value": "少ししか"
+}, {
+    "id": 10.4,
+    "question": "（　4　）",
+    "answer0": "だから",
+    "answer1": "それでは",
+    "answer2": "しかし",
+    "answer3": "それから",
+    "correct-index": "answer3",
     "correct-value": "それから"
+}, {
+    "id": 10.5,
+    "question": "（　5　）",
+    "answer0": "もっと　たくさん　食べたかったです",
+    "answer1": "ビールを　もう少し　飲みました",
+    "answer2": "コーヒーは　飲まないで　かえりました",
+    "answer3": "この　レストランに　また　行きたいです",
+    "correct-index": "answer2",
+    "correct-value": "コーヒーは　飲まないで　かえりました"
 }, {
     "id": 11,
-    "question": "「今日の　じゅぎょうは　ここまでです。」 「＿＿＿みなさん　また　あした。さようなら。",
-    "answer0": "それから",
-    "answer1": "それまで",
-    "answer2": "それでは",
-    "answer3": "それでも",
-    "correct": "answer2",
-    "correct-value": "それでは"
+    "question": " ヤンさんは　あした　がっこうで　「わたしの　すきな　こと」について　話します。  「わたしの　すきな　こと」　について　文を　書きました。<br>  わたしは　スポーツが　すきです。 [1]　すいえいを　します。テニスは　土ようびに　かぞくと　します。そして　ときどき　プールに [2]。こどもの　とき　よく　川で　[3]。とても　[4]。　わたしは　今　とても　げんきです。[5]　げんきに　テニスと　すいえいを　したいです。",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 11.1,
+    "question": "  [1",
+    "answer0": "テニスが",
+    "answer1": "テニスと",
+    "answer2": "テニスで",
+    "answer3": "テニスは",
+    "correct-index": "answer1",
+    "correct-value": "テニスと"
+}, {
+    "id": 11.2,
+    "question": "[2] ",
+    "answer0": "行きます",
+    "answer1": "行きません",
+    "answer2": "行きました",
+    "answer3": "行きませんでした",
+    "correct-index": "answer0",
+    "correct-value": "行きます"
+}, {
+    "id": 11.3,
+    "question": "[3] ",
+    "answer0": "およぎます",
+    "answer1": "およぎません",
+    "answer2": "およぎました",
+    "answer3": "およぎませんでした",
+    "correct-index": "answer2",
+    "correct-value": "およぎました"
+}, {
+    "id": 11.4,
+    "question": "[4] ",
+    "answer0": "たのしいです",
+    "answer1": "たのしく　ありません",
+    "answer2": "たのしかったです",
+    "answer3": "たのしく　ありませんでした",
+    "correct-index": "answer2",
+    "correct-value": "たのしかったです"
+}, {
+    "id": 11.5,
+    "question": "[5] ",
+    "answer0": "これからも",
+    "answer1": "それからも",
+    "answer2": "あれからも",
+    "answer3": "いつからも",
+    "correct-index": "answer0",
+    "correct-value": "これからも"
 }, {
     "id": 12,
-    "question": "サンドイッチを　おねがいします。あ、＿＿＿　コーヒーも　おねがいします。",
-    "answer0": "それでは",
-    "answer1": "それも",
-    "answer2": "それまで",
-    "answer3": "それから",
-    "correct": "answer3",
-    "correct-value": "それから"
+    "question": " としょしつの　せつめいを　して　います。<br>  この　へやは　としょしつです。本や　ＣＤを　かりたり、しゅくだいを　したり　できます。日本語の　本が　２０００さつ　あります。外国語の　本 [1] １０００さつ　あります。ＣＤは　５００まい　あります。ＣＤは　５００まい　あります。ＣＤを　聞くときは　ベッドホンを [2]。友だちと　話す　ときは　[3]　こえで　話すように　しましょう。[4]、のみものや　食べものは　この　へやには　もって　[5]。なにか　しつもんは　ありますか。",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
 }, {
-    "id": 13,
-    "question": "「この　ジュースは　つめたくないですね。」 「そうですね。れいぞうこで　つめたく　＿＿＿。)",
-    "answer0": "いましょう",
-    "answer1": "入れましょう",
-    "answer2": "しましょう",
-    "answer3": "なりましょう",
-    "correct": "answer2",
+    "id": 12.1,
+    "question": "  [1",
+    "answer0": "は",
+    "answer1": "で",
+    "answer2": "に",
+    "answer3": "を",
+    "correct-index": "answer0",
+    "correct-value": "は"
+}, {
+    "id": 12.2,
+    "question": "[2] ",
+    "answer0": "するでしょう",
+    "answer1": "しましょう",
+    "answer2": "したでしょう",
+    "answer3": "しません",
+    "correct-index": "answer1",
     "correct-value": "しましょう"
 }, {
+    "id": 12.3,
+    "question": "[3] ",
+    "answer0": "小さ",
+    "answer1": "小さい",
+    "answer2": "小さく",
+    "answer3": "小さかった",
+    "correct-index": "answer1",
+    "correct-value": "小さい"
+}, {
+    "id": 12.4,
+    "question": "[4] ",
+    "answer0": "でも",
+    "answer1": "しかし",
+    "answer2": "だから",
+    "answer3": "それから",
+    "correct-index": "answer3",
+    "correct-value": "それから"
+}, {
+    "id": 12.5,
+    "question": "[5] ",
+    "answer0": "きませんでした",
+    "answer1": "きます",
+    "answer2": "こないで　ください",
+    "answer3": "こないでしょう",
+    "correct-index": "answer2",
+    "correct-value": "こないで　ください"
+}, {
+    "id": 13,
+    "question": " わたしの　かぞくを　しょうかいします。わたしは　父と　母と　あにと　いもうとと　いっしょに　［　1　］。父は　ぎんこうに　［　2　］、あには　かいしゃで　［　3　］。いもうとは　学生です。みんな　しごとや　べんきょうが　いそがしいです。［　4　］まいばん　おそく　かえります。でも、にちようびは　みんな　いっしょに　ごはんを　食べたり、テレビを　［　5　］。",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 13.1,
+    "question": " ［　1　",
+    "answer0": "すみます",
+    "answer1": "あります",
+    "answer2": "いきます",
+    "answer3": "すんで　います",
+    "correct-index": "answer3",
+    "correct-value": "すんで　います"
+}, {
+    "id": 13.2,
+    "question": "［　2　］",
+    "answer0": "しごとを　して",
+    "answer1": "しごとを　します",
+    "answer2": "つとめて　いて",
+    "answer3": "つとめます",
+    "correct-index": "answer2",
+    "correct-value": "つとめて　いて"
+}, {
+    "id": 13.3,
+    "question": "［　3　］",
+    "answer0": "はたらいて　います",
+    "answer1": "行って　います",
+    "answer2": "つとめて　います",
+    "answer3": "来て　います",
+    "correct-index": "answer0",
+    "correct-value": "はたらいて　います"
+}, {
+    "id": 13.4,
+    "question": "［　4　］",
+    "answer0": "だから",
+    "answer1": "それから",
+    "answer2": "しかし",
+    "answer3": "でも",
+    "correct-index": "answer0",
+    "correct-value": "だから"
+}, {
+    "id": 13.5,
+    "question": "［　5　］",
+    "answer0": "見ました",
+    "answer1": "見たりします",
+    "answer2": "見ましょう",
+    "answer3": "見ません",
+    "correct-index": "answer1",
+    "correct-value": "見たりします"
+}, {
     "id": 14,
-    "question": "カーテンを　あけました。へやが　あかるく　＿＿＿。",
-    "answer0": "しました",
-    "answer1": "なりました",
-    "answer2": "やりました",
-    "answer3": "とりました",
-    "correct": "answer1",
-    "correct-value": "なりました"
+    "question": " わたしが　すんでいる　ところは　小さい　まちです。この　まちは　うみの　ちかくに　［　1　］。ここは　さかなの　りょうりが　ゆうめいです。［　2　］、東京の　人も　ここへ　さかなの　りょうりを　［　3　］。  でも、わたしは　さかなが　あまり　［　4　］。こどもの　ときから　まいにち　たくさん　［　5　］。",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 14.1,
+    "question": "       ［　1　",
+    "answer0": "います",
+    "answer1": "あります",
+    "answer2": "です",
+    "answer3": "ある　でしょう",
+    "correct-index": "answer1",
+    "correct-value": "あります"
+}, {
+    "id": 14.2,
+    "question": "［　2　］",
+    "answer0": "たぶん",
+    "answer1": "また",
+    "answer2": "これから",
+    "answer3": "だから",
+    "correct-index": "answer3",
+    "correct-value": "だから"
+}, {
+    "id": 14.3,
+    "question": "［　3　］",
+    "answer0": "食べに　来ます",
+    "answer1": "食べます",
+    "answer2": "食べに　行きます",
+    "answer3": "食べて　います",
+    "correct-index": "answer0",
+    "correct-value": "食べに　来ます"
+}, {
+    "id": 14.4,
+    "question": "［　4　］",
+    "answer0": "すきです",
+    "answer1": "すきではありません",
+    "answer2": "きらいです",
+    "answer3": "きらいではありません",
+    "correct-index": "answer1",
+    "correct-value": "すきではありません"
+}, {
+    "id": 14.5,
+    "question": "［　5　］",
+    "answer0": "さかなを　食べたからです",
+    "answer1": "にくを　食べたからです",
+    "answer2": "さかなを　食べなかったからです",
+    "answer3": "にくを　食べなかったからです",
+    "correct-index": "answer0",
+    "correct-value": "さかなを　食べたからです"
 }, {
     "id": 15,
-    "question": "A「パクさんは　りゅうがくせい（　　　　）か。」 B「はい、わたしは　りゅうがくせい（　　　　）。",
-    "answer0": "です／では　ありません",
-    "answer1": "です／です",
-    "answer2": "では　ありません／です",
-    "answer3": "です／だ",
-    "correct": "answer1",
-    "correct-value": "です／です"
+    "question": " キムさんと　スミスさんが　メールを　書きました。      スミスさん      あさって　［　1　］　日曜日は　ひまですか。いっしょに　駅の　前に　［　2　］デパートへ　行きませんか。いま　服を　とても　［　3　］　売って　います。どうですか？      キム         キムさん      いいですね。［　4　］デパートは　どこに　ありますか。わたしは　よく　知りません。朝10時半に　駅の　前　［　5　］　会って　それから　行きましょう。      よろしくね。 スミス           ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 15.1,
+    "question": "［　1　",
+    "answer0": "が",
+    "answer1": "に",
+    "answer2": "の",
+    "answer3": "は",
+    "correct-index": "answer2",
+    "correct-value": "の"
+}, {
+    "id": 15.2,
+    "question": "［　2　］",
+    "answer0": "ある",
+    "answer1": "いる",
+    "answer2": "あります",
+    "answer3": "います",
+    "correct-index": "answer0",
+    "correct-value": "ある"
+}, {
+    "id": 15.3,
+    "question": "［　3　］",
+    "answer0": "安い",
+    "answer1": "安く",
+    "answer2": "安くて",
+    "answer3": "安かった",
+    "correct-index": "answer1",
+    "correct-value": "安く"
+}, {
+    "id": 15.4,
+    "question": "［　4　］",
+    "answer0": "この",
+    "answer1": "その",
+    "answer2": "あの",
+    "answer3": "どの",
+    "correct-index": "answer1",
+    "correct-value": "その"
+}, {
+    "id": 15.5,
+    "question": "［　5　］",
+    "answer0": "に",
+    "answer1": "で",
+    "answer2": "を",
+    "answer3": "と",
+    "correct-index": "answer1",
+    "correct-value": "で"
 }, {
     "id": 16,
-    "question": "A「田中さんは　いしゃ（　　　　）か。」 B「いいえ、いしゃ（　　　　）。",
-    "answer0": "では　ありませんか／では　ありません",
-    "answer1": "です／です",
-    "answer2": "です／では　ありません",
-    "answer3": "でした／です",
-    "correct": "answer2",
-    "correct-value": "です／では　ありません"
+    "question": " ナンシーさんと　ワンさんは　あした　じこしょうかいを　します。二人は　じこしょうかいの　ぶんしょうを　かきました。  （1）      みなさん、こんにちは。ナンシーです。イギリスから　［　1　］。      わたしは　うたが　好きです。英語の　うたも　日本語の　うたも　すきです。でも、日本語の　うたは　あまり　［　2　］。      みなさんは、どんな　うたが　好きですか。      わたしは　カラオケへ　行きたいです。　みなさん、わたしと　いっしょに　カラオケへ　［　3　］。どうぞ　よろしく　おねがいします。  （2）      こんにちは。はじめまして。ワンです。      中国で　すこし　日本語を　べんきょうしました。ひらがなは　ぜんぶ　おぼえました。でも、カタカナは　まだ　ぜんぶわかりません。      来週から、わたしは　まいにち、午後、レストランで　はたらきます。レストランは　ここから　ちかいです。      ［　4　］、レストランの　りょうりは　安くて　おいしいです。みなさん、レストラン　［　5　］。どうぞ　よろしく　おねがいします。 ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 16.1,
+    "question": " ［　1　",
+    "answer0": "来ませんでした",
+    "answer1": "来ます",
+    "answer2": "来ました",
+    "answer3": "来ません",
+    "correct-index": "answer2",
+    "correct-value": "来ました"
+}, {
+    "id": 16.2,
+    "question": "［　2　］",
+    "answer0": "上手ではありません",
+    "answer1": "上手です",
+    "answer2": "x上手でした",
+    "answer3": "上手だった",
+    "correct-index": "answer0",
+    "correct-value": "上手ではありません"
+}, {
+    "id": 16.3,
+    "question": "［　3　］",
+    "answer0": "行きませんでしたか",
+    "answer1": "行きます",
+    "answer2": "行きたいです",
+    "answer3": "行きませんか",
+    "correct-index": "answer3",
+    "correct-value": "行きませんか"
+}, {
+    "id": 16.4,
+    "question": "［　4　］",
+    "answer0": "でも",
+    "answer1": "だから",
+    "answer2": "そして",
+    "answer3": "それでは",
+    "correct-index": "answer2",
+    "correct-value": "そして"
+}, {
+    "id": 16.5,
+    "question": "［　5　］",
+    "answer0": "食べましたか",
+    "answer1": "食べて　ください",
+    "answer2": "食べて　いきます",
+    "answer3": "食べに　来てください",
+    "correct-index": "answer3",
+    "correct-value": "食べに　来てください"
 }, {
     "id": 17,
-    "question": "A「あの　としょかんは　しずか？」 B「ううん、しずか（　　　　）よ。",
-    "answer0": "だった",
-    "answer1": "じゃない",
-    "answer2": "でした",
-    "answer3": "です",
-    "correct": "answer1",
-    "correct-value": "じゃない"
+    "question": " ロバートさんと　チンさんが　さくぶんを　書きました。  （１）      わたしは　きょねん　大阪へ　来ました。<br>      わたしの　日本の　うちは　とても　きれいです。［　1　］、せまくて、くらいです。<br>      先週、わたしは　電気やで　あたらしい　電気を　［　2　］。　へやは　あかるく　なりました。<br>      来週、わたしは　パーティーを　します。うちへ　おおぜいの　友だちが　［　3　］。わたしは　りょうりを　たくさん　つくります。      みなさんも　うちへ　来ませんか。<br>     （２）      わたしは　今、うみの　ちかくに　すんでいます。<br>      わたしの　国には　うみが　ありません。わたしは　日本で　はじめて　うみを　みました。うみの　水は　きれいです。毎週、休みの日に　うみへ　さんぽに　いきます。おととい、うみに　おおぜいの　人が　いました。にぎやかでした。わたしは　一人［　4　］、つまらなかったです。      みなさん、［ 5　］。　",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
+}, {
+    "id": 17.1,
+    "question": " ［　1　",
+    "answer0": "でも",
+    "answer1": "そして",
+    "answer2": "だから",
+    "answer3": "それから",
+    "correct-index": "answer0",
+    "correct-value": "でも"
+}, {
+    "id": 17.2,
+    "question": "［　2　］",
+    "answer0": "買います",
+    "answer1": "買いませんか",
+    "answer2": "買いました",
+    "answer3": "買ってください",
+    "correct-index": "answer2",
+    "correct-value": "買いました"
+}, {
+    "id": 17.3,
+    "question": "［　3　］",
+    "answer0": "あそびます",
+    "answer1": "かえります",
+    "answer2": "いきます",
+    "answer3": "きます",
+    "correct-index": "answer3",
+    "correct-value": "きます"
+}, {
+    "id": 17.4,
+    "question": "［　4　］",
+    "answer0": "のから",
+    "answer1": "から",
+    "answer2": "だから",
+    "answer3": "にから",
+    "correct-index": "answer2",
+    "correct-value": "だから"
+}, {
+    "id": 17.5,
+    "question": "［　5　］",
+    "answer0": "友だちと　うみで　あそびたいです",
+    "answer1": "いっしょに　うみへ　行きましょう",
+    "answer2": "うみで　およぎました",
+    "answer3": "うみへ　いくからです",
+    "correct-index": "answer1",
+    "correct-value": "いっしょに　うみへ　行きましょう"
 }, {
     "id": 18,
-    "question": "きのう　としょかんへ　行った。としょかんは　とても　しずか（　　　　）。",
-    "answer0": "です",
-    "answer1": "だった",
-    "answer2": "だ",
-    "answer3": "じゃなかった",
-    "correct": "answer1",
-    "correct-value": "だった"
+    "question": " わたしは　こうえんの　そばに　すんで　います。あさ　［　1　］おきて、よく　さんぽします。大きい　木が　あるので、とりが　たくさん　います。目を　とじると、もりの　中に　［　2　］ような　きが　します。いすに　すわって、本を　読んで　いる　人も　います。はしって　いる人も　います。いろいろな　人　［　3　］来て、こうえんは　だんだん　［　4　］。雨の　日は、あまり　人が　来ません。［　5　］、わたしは　雨が　ふっても　さんぽします。  ",
+    "answer0": "",
+    "answer1": "",
+    "answer2": "",
+    "answer3": "",
+    "correct-index": "",
+    "correct-value": ""
 }, {
-    "id": 19,
-    "question": "20年前、コンピューターは　大きくて、あまり　べんり（　　　　）が、今の　コンピューターは　小さくて　べんり（　　　　）。",
-    "answer0": "だった／だ",
-    "answer1": "だ／じゃない",
-    "answer2": "では　ない／だ",
-    "answer3": "じゃなかった／だ",
-    "correct": "answer3",
-    "correct-value": "じゃなかった／だ"
+    "id": 18.1,
+    "question": "  ［1　",
+    "answer0": "はやい",
+    "answer1": "はや",
+    "answer2": "はやめ",
+    "answer3": "はやく",
+    "correct-index": "answer3",
+    "correct-value": "はやく"
 }, {
-    "id": 20,
-    "question": "A「うみへ　行きましたか。うみは　どうでしたか。」 B「まだ、水が　つめた（　　　　）よ。",
-    "answer0": "かった",
-    "answer1": "いでした",
-    "answer2": "くなかった",
-    "answer3": "いい水でした",
-    "correct": "answer0",
-    "correct-value": "かった"
+    "id": 18.2,
+    "question": "［　2　］",
+    "answer0": "いる",
+    "answer1": "いた",
+    "answer2": "ある",
+    "answer3": "あった",
+    "correct-index": "answer0",
+    "correct-value": "いる"
 }, {
-    "id": 21,
-    "question": "「ゆきさん、うたを（　　　　）。」 「はい。じゃ、うたいます。",
-    "answer0": "うたいて　くださいませんか",
-    "answer1": "うたって　くださいませんか",
-    "answer2": "うたった　くださいませんか",
-    "answer3": "うたい　くださいませんか",
-    "correct": "answer1",
-    "correct-value": "うたって　くださいませんか"
+    "id": 18.3,
+    "question": "［　3　］",
+    "answer0": "は",
+    "answer1": "が",
+    "answer2": "で",
+    "answer3": "を",
+    "correct-index": "answer1",
+    "correct-value": "が"
 }, {
-    "id": 22,
-    "question": "「毎日　9時ごろまで　会社で　はたらいて　います。」 「（　　　　）。)",
-    "answer0": "それは　よくできました",
-    "answer1": "そうでしょう",
-    "answer2": "それは　たいへんですね",
-    "answer3": "そうですね",
-    "correct": "answer2",
-    "correct-value": "それは　たいへんですね"
+    "id": 18.4,
+    "question": "［　4　］",
+    "answer0": "にぎやかに　なります",
+    "answer1": "にぎやかでした",
+    "answer2": "にぎやかです",
+    "answer3": "にぎやかそうです",
+    "correct-index": "answer0",
+    "correct-value": "にぎやかに　なります"
 }, {
-    "id": 23,
-    "question": "「かんじが　わかりませんから、ひらがなで　書きます。いいですか。」 「はい。（　　　　）。",
-    "answer0": "すみません",
-    "answer1": "けっこうですよ",
-    "answer2": "どう　いたしまして",
-    "answer3": "こちらこそ",
-    "correct": "answer1",
-    "correct-value": "けっこうですよ"
-}, {
-    "id": 24,
-    "question": "「おそくなって、ごめんなさい。」 「いいえ、（　　　　）。",
-    "answer0": "けっこうです",
-    "answer1": "どう　いたしまして",
-    "answer2": "わかりました",
-    "answer3": "ちがいます",
-    "correct": "answer1",
-    "correct-value": "どう　いたしまして"
-}, {
-    "id": 25,
-    "question": "「どうぞ　たくさん　食べて　ください。」 「はい、（　　　　）。",
-    "answer0": "けっこうです",
-    "answer1": "いただきます",
-    "answer2": "そうです",
-    "answer3": "どうぞ　よろしく",
-    "correct": "answer1",
-    "correct-value": "いただきます"
-}, {
-    "id": 26,
-    "question": "ああ、おいしかった。（　　　　）。",
-    "answer0": "ごちそうさま",
-    "answer1": "いただきます",
-    "answer2": "どうぞ　よろしく",
-    "answer3": "こちらこそ",
-    "correct": "answer0",
-    "correct-value": "ごちそうさま"
-}, {
-    "id": 27,
-    "question": "「はじめまして。わたしは　日本大学の　北山です。」 「はじめまして。（　　　　）。)",
-    "answer0": "どうも　ありがとう",
-    "answer1": "おかげさまで",
-    "answer2": "どうぞ　よろしく",
-    "answer3": "おねがいします",
-    "correct": "answer2",
-    "correct-value": "どうぞ　よろしく"
-}, {
-    "id": 28,
-    "question": "「きのうは　きれいな　花を　どうも　ありがとう　ございました。」 「（　　　　）。",
-    "answer0": "どうぞ　よろしく",
-    "answer1": "ごちそうさま",
-    "answer2": "どう　いたしまして",
-    "answer3": "けっこうです",
-    "correct": "answer2",
-    "correct-value": "どう　いたしまして"
-}, {
-    "id": 29,
-    "question": " 「（　　　　）。ゆうびんきょくは　どこに　ありますか。」  「あそこです",
-    "answer0": "わかりません",
-    "answer1": "すみません",
-    "answer2": "しりません",
-    "answer3": "ありません",
-    "correct": "answer1",
-    "correct-value": "すみません"
-}, {
-    "id": 30,
-    "question": "すみません。50円の　切手を　2まい（　　　　）。",
-    "answer0": "ください",
-    "answer1": "あります",
-    "answer2": "たいです",
-    "answer3": "なります",
-    "correct": "answer0",
-    "correct-value": "ください"
-}, {
-    "id": 31,
-    "question": "つくえの　上に　でがみが　おいて（　　　）。",
-    "answer0": "います",
-    "answer1": "おきます",
-    "answer2": "あります",
-    "answer3": "みます",
-    "correct": "answer2",
-    "correct-value": "あります"
+    "id": 18.5,
+    "question": "［　5　］",
+    "answer0": "それから",
+    "answer1": "それでは",
+    "answer2": "でも",
+    "answer3": "では",
+    "correct-index": "answer2",
+    "correct-value": "でも"
 }]

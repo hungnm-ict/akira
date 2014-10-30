@@ -38,8 +38,6 @@ testApp.config(['$routeProvider',
                         $q.all(dataPromise).then(function(response) {
                             //Resolve object
                             deferred.resolve(response);
-                            console.log("From route resolved" );
-                            console.info(response);
                         });
 
                         return deferred.promise;
@@ -104,11 +102,6 @@ testApp.service('dataService', function($http, $log) {
         url: "../../data/testn4/json/grammar_3.json"
     });
 
-    this.n4grammar4 = $http({
-        method: "GET",
-        url: "../../data/testn4/json/grammar_4.json"
-    });
-
     /*===============================
     =            N4-Read            =
     ===============================*/
@@ -126,11 +119,6 @@ testApp.service('dataService', function($http, $log) {
     this.n4read3 = $http({
         method: "GET",
         url: "../../data/testn4/json/read_3.json"
-    });
-
-    this.n4read4 = $http({
-        method: "GET",
-        url: "../../data/testn4/json/read_4.json"
     });
 
     this.n4write1 = $http({
@@ -202,11 +190,6 @@ testApp.service('dataService', function($http, $log) {
         url: "../../data/testn5/json/grammar_3.json"
     });
 
-    this.n5grammar4 = $http({
-        method: "GET",
-        url: "../../data/testn5/json/grammar_4.json"
-    });
-
     /*===============================
     =            n5-Read            =
     ===============================*/
@@ -224,11 +207,6 @@ testApp.service('dataService', function($http, $log) {
     this.n5read3 = $http({
         method: "GET",
         url: "../../data/testn5/json/read_3.json"
-    });
-
-    this.n5read4 = $http({
-        method: "GET",
-        url: "../../data/testn5/json/read_4.json"
     });
 
     this.n5write1 = $http({
@@ -477,7 +455,7 @@ testApp.service('dataService', function($http, $log) {
 
 testApp.factory('menuFactory', function($rootScope) {
     var navgroup = 0;
-    var nav = 1;
+    var nav = 3;
 
     var menu = {
         "navgroup": navgroup,

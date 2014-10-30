@@ -7,7 +7,7 @@ function chooseAnswer(event, target) {
 </script>
 
 <button style="display:none;" ng-click="removeLife()" id="sublife"></button>
-<div id="grammarChoiceWizard" class="swMain" akirawizard enablestep="false" akrautoplayaudio="true">
+<div id="grammarChoiceWizard" class="swMain akiHide" akirawizard enablestep="false" akrautoplayaudio="true">
     <ul class="hide">
         <li ng-repeat="(key, value) in data">
             <a ng-href="#step-{{key}}" click="partId={{key}}">
