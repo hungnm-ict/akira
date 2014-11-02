@@ -2818,14 +2818,14 @@ a.subdued {
     .bar.bar-assertive.bar-footer {
       background-image: linear-gradient(180deg, #cc2311, #cc2311 50%, transparent 50%); }
   .bar.bar-balanced {
-    border-color: #498f24;
-    background-color: #66cc33;
-    background-image: linear-gradient(0deg, #498f24, #498f24 50%, transparent 50%);
+    border-color: #F2F2F2;
+    background-color: #F2F2F2;
+    background-image: linear-gradient(0deg, #F2F2F2, #F2F2F2 50%, transparent 50%);
     color: #fff; }
     .bar.bar-balanced .title {
       color: #fff; }
     .bar.bar-balanced.bar-footer {
-      background-image: linear-gradient(180deg, #498f24, #145fd7 50%, transparent 50%); }
+      background-image: linear-gradient(180deg, #F2F2F2, #145fd7 50%, transparent 50%); }
   .bar.bar-energized {
     border-color: #d39211;
     background-color: #f0b840;
@@ -3031,8 +3031,8 @@ a.subdued {
     background: none; }
 
 .bar-balanced .button {
-  border-color: #498f24;
-  background-color: #66cc33;
+  border-color: #64C74D;
+  background-color: #64C74D;
   color: #fff; }
   .bar-balanced .button:hover {
     color: #fff;

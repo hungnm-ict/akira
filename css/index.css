@@ -1948,3 +1948,7 @@ ul.anchor li a .stepNumber {
 .scroll, .slider {
     height: 100% !important;
 }
+
+.mb-login-button{
+    width: 80%;
+}
