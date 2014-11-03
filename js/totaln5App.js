@@ -31,6 +31,13 @@ totaln5App.config(['$routeProvider',
                 templateUrl: function(urlAttr) {
                     return 'subtopic.html';
                 },
+                resolve: {
+                    starsData: function($q, restService, $route) {
+                        var deferred = $q.defer();
+                        deferred.resolve(restService.getRestPromise($route.current.params.degree));
+                        return deferred.promise;
+                    }
+                },
                 controller: 'subCtrl'
             })
             .when('/:degree/:lessonId/:partId/write', {
@@ -374,7 +381,7 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
     };
 
     $scope.check = function(lesson) {
-        var pU = [14, 17,1390];
+        var pU = [14, 17, 1390];
         //Get current key point for this courses
         $http({
             method: "GET",
@@ -406,8 +413,16 @@ totaln5App.controller('rootController', function($scope, $timeout, $http, $windo
     };
 
     $scope.$on('$routeChangeStart', function(scope, next, curr) {
+        // preventDefault();
+        //validateStartChanged();
         $scope.isLoading = "true";
     });
+
+    // $scope.$on('$locationChangeStart', function(scope, next, curr) {
+    //     // preventDefault();
+    //     // alert();
+    //     $scope.isLoading = "true";
+    // });
 
     $scope.$on('$routeChangeSuccess', function(scope, next, curr) {
         $scope.isLoading = "false";

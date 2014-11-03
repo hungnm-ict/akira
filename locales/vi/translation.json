@@ -14,7 +14,8 @@
         "support": "Trợ giúp",
         "ios": "iOS",
         "android": "Android",
-        "keyboard": "Phím tắt"
+        "keyboard": "Phím tắt",
+        "instruct":"Hướng dẫn"
     },
     "common": {
         "lesson": "Bài",

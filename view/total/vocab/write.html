@@ -28,7 +28,9 @@
                         <i class="fa fa-volume-up fa-2x write-btn-play"></i>
                         <img ng-src="../../data/{{course}}/vocab/image/{{val.filename}}.png" class="img-responsive" />
                     </div>
-                    <h4 class="center" ng-bind="val.vietnamese"></h4>
+                    <h4 class="center" >
+                        <multilang obj="val"></multilang>   
+                    </h4>
                 </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 ">
@@ -79,7 +81,8 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <span ng-bind="val.vietnamese" class="hint"></span>
+                                                    <multilang obj="val"></multilang>   
+                                                    <!-- <span ng-bind="val.vietnamese" class="hint"></span> -->
                                                 </div>
                                             </td>
                                         </tr>

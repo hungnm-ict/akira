@@ -21,7 +21,9 @@
                     <!-- Question wrapper -->
                     <div id="question-wrapper">
                         <img src="../../data/kanji{{degree}}/image/{{val.filename}}.png" class="img-thumbnail">
-                        <h3>{{val.vietnamese}}</h3>
+                        <h3>
+                            <multilang obj="val"></multilang>
+                        </h3>
                     </div>
                 </div>
 
@@ -99,7 +101,8 @@
 
                                     </div>
                                     <div>
-                                        <span class="hint">{{val.vietnamese}}</span>
+                                        <!-- <span class="hint">{{val.vietnamese}}</span> -->
+                                        <multilang obj="val"></multilang>
                                     </div>
                                 </td>
                             </tr>

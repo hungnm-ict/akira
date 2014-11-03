@@ -1,7 +1,7 @@
 var windowFocus = true;
 var username;
 var chatHeartbeatCount = 0;
-var minChatHeartbeat = 10000;
+var minChatHeartbeat = 5000;
 var maxChatHeartbeat = 33000;
 var chatHeartbeatTime = minChatHeartbeat;
 var originalTitle;
@@ -24,28 +24,6 @@ $(document).ready(function() {
     });
 });
 
-function getUsername(id) {
-    var BASE_URL = 'http://akira.edu.vn/wp-content/plugins/akira-api/id_to_uname.php';
-    $.ajax({
-        url: BASE_URL,
-        data: {
-            uid: id
-        },
-        async: false
-    }).done(function(data) {
-        console.log(data);
-        setTimeout(function(){
-            return data;
-        },200);
-    }).fail(function(err) {
-        console.log(err);
-        setTimeout(function(){
-            return err;
-        },200);
-        return err;
-    });
-}
-
 function restructureChatBoxes() {
     align = 0;
     for (x in chatBoxes) {
@@ -63,13 +41,12 @@ function restructureChatBoxes() {
     }
 }
 
-function chatWith(chatuser, id) {
-    chatuser = id;
-    createChatBox(chatuser);
+function chatWith(chatuser, chatdisplay) {
+    createChatBox(chatuser, chatdisplay);
     $("#chatbox_" + chatuser + " .chatboxtextarea").focus();
 }
 
-function createChatBox(chatboxtitle, minimizeChatBox) {
+function createChatBox(chatboxtitle, chatboxdisplay, minimizeChatBox) {
 
     if ($("#chatbox_" + chatboxtitle).length > 0) {
         if ($("#chatbox_" + chatboxtitle).css('display') == 'none') {
@@ -109,7 +86,7 @@ function createChatBox(chatboxtitle, minimizeChatBox) {
     //TODO: I clicked to a user name
     $(" <div />").attr("id", "chatbox_" + chatboxtitle)
         .addClass("chatbox")
-        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + getUsername(chatboxtitle) + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
+        .html('<div class="chatboxhead" onclick="javascript:toggleChatBoxGrowth(\'' + chatboxtitle + '\')"><div class="chatboxtitle">' + chatboxdisplay + '</div><div class="chatboxoptions" style="width: 20px; height: 20px;"><a href="javascript:void(0)" style="padding-left: 6px;" onclick="javascript:closeChatBox(\'' + chatboxtitle + '\')">✖</a></div><br clear="all"/></div><div id="chatboxcontainer" class="chatboxcontent"></div><div class="chatboxinput"><textarea class="chatboxtextarea" onkeydown="javascript:return checkChatBoxInputKey(event,this,\'' + chatboxtitle + '\');"></textarea></div>')
         .appendTo($("body"));
 
     $("#chatbox_" + chatboxtitle).css('bottom', '0px');
@@ -218,23 +195,24 @@ function chatHeartbeat() {
 
     $.ajax({
         url: "../../chat/chat.php",
-        method:"GET",
-        data:{
-            action :'chatheartbeat',
-            username:getUser().id,
-            display : getUser().displayname
+        method: "GET",
+        data: {
+            action: 'chatheartbeat',
+            username: getUser().id,
+            display: getUser().displayname
         },
         cache: false,
         dataType: "json",
         success: function(data) {
+            updateOnlUser(data);
 
             $.each(data.items, function(i, item) {
                 if (item) { // fix strange ie bug
 
                     chatboxtitle = item.f;
-
+                    chatboxdisplay = item.d;
                     if ($("#chatbox_" + chatboxtitle).length <= 0) {
-                        createChatBox(chatboxtitle);
+                        createChatBox(chatboxtitle,chatboxdisplay);
                     }
                     if ($("#chatbox_" + chatboxtitle).css('display') == 'none') {
                         $("#chatbox_" + chatboxtitle).css('display', 'block');
@@ -251,7 +229,8 @@ function chatHeartbeat() {
                         newMessages[chatboxtitle] = true;
                         newMessagesWin[chatboxtitle] = true;
                         //TODO: User B send message to me so i need to parse User B id to get his/her name
-                        $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.f + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
+                        // $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.f + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
+                        $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.d + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
                     }
 
                     $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
@@ -340,11 +319,12 @@ function checkChatBoxInputKey(event, chatboxtextarea, chatboxtitle) {
             $.post("../../chat/chat.php?action=sendchat", {
                 to: chatboxtitle,
                 message: message,
-                username: username
+                username: username,
+                display: getUser().displayname
             }, function(data) {
                 //TODO: I send use a message to  User B so i have to normalize my user id to my display name to append on the chatbox
                 message = message.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
-                $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + username + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + message + '</span></div>');
+                $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + getUser().displayname + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + message + '</span></div>');
                 $("#chatbox_" + chatboxtitle + " .chatboxcontent").scrollTop($("#chatbox_" + chatboxtitle + " .chatboxcontent")[0].scrollHeight);
             });
         }
@@ -372,15 +352,16 @@ function checkChatBoxInputKey(event, chatboxtextarea, chatboxtitle) {
 function startChatSession() {
     $.ajax({
         url: "../../chat/chat.php",
-        method:"GET",
-        data:{
-            action:'startchatsession',
-            username:getUser().id,
-            display:getUser().displayname
+        method: "GET",
+        data: {
+            action: 'startchatsession',
+            username: getUser().id,
+            display: getUser().displayname
         },
         cache: false,
         dataType: "json",
         success: function(data) {
+            updateOnlUser(data);
 
             username = data.username;
 
@@ -388,9 +369,9 @@ function startChatSession() {
                 if (item) { // fix strange ie bug
 
                     chatboxtitle = item.f;
-
+                    chatboxdisplay = item.d;
                     if ($("#chatbox_" + chatboxtitle).length <= 0) {
-                        createChatBox(chatboxtitle, 1);
+                        createChatBox(chatboxtitle, chatboxdisplay,1);
                     }
 
                     if (item.s == 1) {
@@ -400,7 +381,8 @@ function startChatSession() {
                     if (item.s == 2) {
                         $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxinfo">' + item.m + '</span></div>');
                     } else {
-                        $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.f + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
+                        // $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.f + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
+                        $("#chatbox_" + chatboxtitle + " .chatboxcontent").append('<div class="chatboxmessage"><span class="chatboxmessagefrom">' + item.d + ':&nbsp;&nbsp;</span><span class="chatboxmessagecontent">' + item.m + '</span></div>');
                     }
                 }
             });
@@ -415,6 +397,15 @@ function startChatSession() {
 
         }
     });
+}
+
+function updateOnlUser(data) {
+    var leaderboardScope = angular.element("#leaderboardWizard").scope();
+    var fetchedList = [];
+    $.each(data.online, function(idx, val) {
+        fetchedList.push(val.uid);
+    });
+    leaderboardScope.updOnline(fetchedList);
 }
 
 /**

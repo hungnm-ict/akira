@@ -52,6 +52,8 @@ var app = {
 };
 
 function changeLang(code) {
+    // Here need broadcast changlang action
+    
     var item = (code === undefined || code === "" || code === null) ? "vi" : code;
     i18n.init({
         lng: code,
@@ -388,28 +390,28 @@ function saveScore(course, lesson, subtopic, game, star, exp) {
  * @param  {[type]} wizardId [description]
  * @return {[type]}          [description]
  */
-function akiraStepValidation(id) {
-    //Get user ans
-    var ans = $("#input-" + id).val();
-    var correct = $("#ans-" + id).val();
-    var message = $("#mess-" + id).html();
+// function akiraStepValidation(id) {
+//     //Get user ans
+//     var ans = $("#input-" + id).val();
+//     var correct = $("#ans-" + id).val();
+//     var message = $("#mess-" + id).html();
 
-    $(".mess-holder-" + id + " >div").first().html(message);
-    $(".failed").removeClass("failed");
-    $(".success").removeClass("success");
-    if (compare(ans, correct)) {
-        $(".mess-holder-" + id).addClass("success");
-        $(".mess-holder-" + id + " >div").first().find(".fa").css("color", "green");
-        return true;
+//     $(".mess-holder-" + id + " >div").first().html(message);
+//     $(".failed").removeClass("failed");
+//     $(".success").removeClass("success");
+//     if (compare(ans, correct)) {
+//         $(".mess-holder-" + id).addClass("success");
+//         $(".mess-holder-" + id + " >div").first().find(".fa").css("color", "green");
+//         return true;
 
-    } else {
-        $(".mess-holder-" + id).addClass("failed");
-        $(".mess-holder-" + id + " >div").first().find(".fa").css("color", "red");
-        return false;
+//     } else {
+//         $(".mess-holder-" + id).addClass("failed");
+//         $(".mess-holder-" + id + " >div").first().find(".fa").css("color", "red");
+//         return false;
 
-        // $("#sublife").trigger("click");
-    }
-}
+//         // $("#sublife").trigger("click");
+//     }
+// }
 
 /*=========================================
 =            Validation method            =
@@ -802,9 +804,12 @@ function mergeData(data, type, lesson, itemkey) {
 
 function akrParseInt(str) {
     try {
-        var ret = str.replace(/["']/g, "");
-
-        return parseInt(ret);
+        if (str != null || str != undefined) {
+            var ret = str.replace(/["']/g, "");
+            return parseInt(ret);
+        } else {
+            return 0;
+        }
     } catch (err) {
         console.error(err);
         return 0;
@@ -848,36 +853,36 @@ function akrGetUserInput(id) {
  * @return {[type]}          [description]
  */
 // function testoutOver(status, course, lessonid, type) {
-    // try {
-    //     if (status) {
-    //         $(".testout-over-modal-sm .message").html(i18n.t("message.info.testsucess"));
-    //         $.ajax({
-    //             type: 'POST',
-    //             url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_keypoint.php",
-    //             crossDomain: true,
-    //             data: {
-    //                 userid: getUser().id,
-    //                 course: course,
-    //                 lessonid: lessonid,
-    //                 type: type,
-    //             }
-    //         }).done(function(data) {
-    //             console.info(data);
-    //         }).fail(function(xhr, status, err) {
-    //             console.error(err);
-    //         });
-    //     } else {
-    //         $(".testout-over-modal-sm .message").html(i18n.t("message.info.testfailed"));
-    //     }
-    //     $(".testout-over-modal-sm").modal({
-    //         keyboard: true
-    //     });
-    //     $('.testout-over-modal-sm').on('hide.bs.modal', function(e) {
-    //         window.history.back();
-    //     });
-    // } catch (err) {
-    //     console.error(err);
-    // }
+// try {
+//     if (status) {
+//         $(".testout-over-modal-sm .message").html(i18n.t("message.info.testsucess"));
+//         $.ajax({
+//             type: 'POST',
+//             url: "http://akira.edu.vn/wp-content/plugins/akira-api/save_keypoint.php",
+//             crossDomain: true,
+//             data: {
+//                 userid: getUser().id,
+//                 course: course,
+//                 lessonid: lessonid,
+//                 type: type,
+//             }
+//         }).done(function(data) {
+//             console.info(data);
+//         }).fail(function(xhr, status, err) {
+//             console.error(err);
+//         });
+//     } else {
+//         $(".testout-over-modal-sm .message").html(i18n.t("message.info.testfailed"));
+//     }
+//     $(".testout-over-modal-sm").modal({
+//         keyboard: true
+//     });
+//     $('.testout-over-modal-sm').on('hide.bs.modal', function(e) {
+//         window.history.back();
+//     });
+// } catch (err) {
+//     console.error(err);
+// }
 // }
 
 /**
@@ -1022,9 +1027,9 @@ window.fbAsyncInit = function() {
 }(document));
 
 
-function storedUserId(id){
+function storedUserId(id) {
     var obj = [];
-    if(obj.indexOf(id)== -1){
+    if (obj.indexOf(id) == -1) {
         obj.push(id);
     }
     console.log(obj);

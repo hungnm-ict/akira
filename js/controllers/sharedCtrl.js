@@ -1,6 +1,6 @@
-var commonApp = angular.module('commonCtrls', []);
+var commonApp = angular.module('commonCtrls', ['akrUtilService']);
 
-commonApp.controller('menuCtrl', function($scope, menuFactory, $rootScope) {
+commonApp.controller('menuCtrl', function($scope, menuFactory, $rootScope, utilService) {
     $scope.navgroup = menuFactory.navgroup;
     $scope.nav = menuFactory.nav;
 
@@ -14,11 +14,9 @@ commonApp.controller('menuCtrl', function($scope, menuFactory, $rootScope) {
         menuFactory.nav = nav;
         $rootScope.$broadcast('handleBroadcast');
     };
+
+    $scope.globalLang = function(langCode) {
+        changeLang(langCode)
+        $rootScope.$broadcast('siteLangChanged', {lang:langCode} );
+    }
 });
-
-
-// commonApp.service('ultiService', function ($http,$scope) {
-//     $scope.trans = function(e){
-//         return "transevice";
-//     }
-// });

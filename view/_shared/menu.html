@@ -2,9 +2,9 @@
 <div class="row">
     <div class="col-md-12">
         <div id="site-lang">
-            <span id="vi" onclick="changeLang('vi');">
+            <span id="vi" ng-click="globalLang('vi')">
             </span>
-            <span id="en" onclick="changeLang('en');">
+            <span id="en" ng-click="globalLang('en')">
             </span>
         </div>
     </div>
@@ -128,6 +128,9 @@
                             <li data-toggle="modal" data-target="#keyboardShorcutModal">
                                 <a data-i18n="menu.keyboard"></a>
                             </li>
+                            <li data-toggle="modal" data-target="#instructModal">
+                                <a data-i18n="menu.instruct"></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -138,11 +141,6 @@
 <div class="row" id="social">
     <div class="col-md-12">
         <div>
-<!--             <div class="row">
-                <div class="col-md-12">
-                    <button onclick="facebookShare()">Share custom story</button>
-                </div>
-            </div> -->
             <div class="row center">
                 <div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 ">
                     <a href="https://www.facebook.com/WOW.Japanese" target="_blank" class="social-circle">
@@ -296,7 +294,6 @@
     </div>
 </div>
 
-
 <!-- Redeem code modal -->
 <div class="modal fade" id="redeemModal">
     <div class="modal-dialog  modal-sm">
@@ -321,23 +318,31 @@
 </div>
 <!-- /.modal -->
 
+<!-- Instruction code modal -->
+<div class="modal fade" id="instructModal">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header center">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Hướng dẫn gõ tiếng nhật</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <script type="text/javascript">
 function facebookShare() {
     var score = $(".game-over-modal-sm .game-score").text();
     var title = i18n.t('message.info.sharetitle') + score + "XP";
     var description = i18n.t('message.info.sharedesc');
-
-    console.log(title);
-    console.log(description);
-
-    // FB.ui({
-    //     method: 'share',
-    //     href: 'http://localhost/akira/view/_shared/facebook.html',
-    // }, function(response) {
-    //     console.log(response);
-    //     $(".game-over-modal-sm").modal('hide');
-    // });
 
     FB.ui({
         method: 'share_open_graph',

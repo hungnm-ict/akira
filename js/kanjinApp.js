@@ -29,6 +29,13 @@ app.config(['$routeProvider',
             })
             .when('/:degree/:lessonId', {
                 controller: 'subCtrl',
+                resolve:{
+                    starData: function($q,restService,$route){
+                        var defered = $q.defer();
+                        defered.resolve(restService.getRestPromise("kanji"+$route.current.params.degree));
+                        return defered.promise;
+                    }
+                },
                 templateUrl: 'subtopic.html',
             })
             .when('/:degree/:lessonId/:partId/learn', {

@@ -5,7 +5,7 @@
 var serv = angular.module('akrUtilService', []);
 
 serv.service('utilService', function($http, $rootScope) {
-    var pU = [14, 17,1390];
+    var pU = [14, 17, 1390];
 
     /**
      * Update user related information from server
@@ -102,8 +102,7 @@ serv.service('utilService', function($http, $rootScope) {
     };
 });
 
-
-serv.service('gameService', function(utilService,$window) {
+serv.service('gameService', function(utilService, $window) {
     this.saveScore = function(course, lesson, subtopic, game, star, exp) {
         $.ajax({
             type: 'POST',
@@ -184,4 +183,28 @@ serv.service('gameService', function(utilService,$window) {
             console.error(err);
         }
     };
+});
+
+serv.service('authService', function($http, $rootScope) {
+    this.isAuth = function() {
+        if (getUser().id == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+
+    this.hasViewAuth = function(course,path) {
+        return true;
+        switch (course) {
+            case "kana":
+                break;
+            case "total":
+                break;
+            case "kanji":
+                break;
+            default:
+                return false;
+        }
+    }
 });

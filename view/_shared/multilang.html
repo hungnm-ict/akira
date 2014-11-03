@@ -1,0 +1,11 @@
+<div ng-switch on="lang">
+	<div ng-switch-when="vi">
+		<span ng-bind="obj.vietnamese"></span>
+	</div>
+	<div ng-switch-when="en">
+		<span ng-bind="obj.english"></span>
+	</div>
+	<div ng-switch-default>
+		<span ng-bind="obj.english"></span>
+	</div>
+</div>

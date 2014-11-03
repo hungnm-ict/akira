@@ -21,7 +21,10 @@
                     <!-- Question wrapper -->
                     <div id="question-wrapper">
                         <img src="../../data/{{course}}/vocab/image/{{val.filename}}.png" class="img-thumbnail selected">
-                        <h3 ng-bind="val.vietnamese"></h3>
+                        <!-- ng-bind="val.vietnamese" -->
+                        <h3>
+                            <multilang obj="val">
+                        </h3>
                     </div>
                 </div>
 
@@ -105,7 +108,8 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <span class="hint" ng-bind="val.vietnamese"></span>
+                                                <multilang obj="val">
+                                                <!-- <span class="hint" ng-bind="val.vietnamese"></span> -->
                                             </div>
                                         </td>
                                     </tr>

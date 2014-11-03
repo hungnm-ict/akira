@@ -18,7 +18,10 @@
             <div id="question-wrapper" class="center">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h3 ng-bind="val.vietnamese"></h3>
+                        <!-- ng-bind="val.vietnamese" -->
+                        <h3>
+                            <multilang obj="val">
+                        </h3>
                     </div>
                 </div>
 
@@ -68,7 +71,8 @@
                                             <span class="hint" ng-bind-html="renderHtml(val.kanji)"></span>
                                         </div>
                                         <div>
-                                            <span class="hint" ng-bind-html="renderHtml(val.vietnamese)"></span>
+                                            <!-- <span class="hint" ng-bind-html="renderHtml(val.vietnamese)"></span> -->
+                                            <multilang obj="val">
                                         </div>
                                     </td>
                                 </tr>
@@ -103,27 +107,6 @@
 </div>
 
 <script type="text/javascript">
-// function allowDrop(ev) {
-//     ev.preventDefault();
-// };
-
-// function drag(ev) {
-//     ev.dataTransfer.setData("text/html", ev.target.id);
-// };
-
-// function drop(ev) {
-//     angular.element("#grammarTranslateWizard").scope().stage = 1;
-//     angular.element("#grammarTranslateWizard").scope().$apply();
-//     changeLang();
-
-//     ev.preventDefault();
-//     var data = ev.dataTransfer.getData("text/html");
-//     if (ev.toElement.className == "drop-zone") {
-//         ev.target.appendChild(document.getElementById(data));
-//     }
-// };
-
-
 function move(e) {
     gScope = angular.element("#grammarTranslateWizard").scope();
     if ($(e).parents('.drop-zone').length > 0) {
