@@ -3,10 +3,10 @@
   *
   * Description
   */
- var app = angular.module('root', ['ngRoute', 'ionic']);
+ var appCtrl = angular.module('root', ['ngRoute', 'ionic']);
 
 
- app.config(['$routeProvider', function($routeProvider, $route) {
+ appCtrl.config(['$routeProvider', function($routeProvider, $route) {
      var _isNotMobile = (function() {
          var check = false;
          (function(a) {
@@ -23,10 +23,10 @@
          });
  }]);
 
- app.controller('mainCtrl', function($scope) {});
+ appCtrl.controller('mainCtrl', function($scope) {});
 
 
- app.controller('mobiCtrl', function($scope, $ionicSideMenuDelegate) {
+ appCtrl.controller('mobiCtrl', function($scope, $ionicSideMenuDelegate) {
 
      $scope.toggleLeft = function() {
          $ionicSideMenuDelegate.toggleLeft();

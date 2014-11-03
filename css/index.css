@@ -1117,7 +1117,7 @@ ul.anchor li a .stepNumber {
     margin-top: 24px;
     text-align: center;
     /*border: 2px solid #344c8c;*/
-    
+    font-weight: bold;
     border-radius: 15px;
     background: white;
 }
@@ -1729,6 +1729,7 @@ ul.anchor li a .stepNumber {
 .level-progress:after {
     content: " %)";
 }
+
 #topicWizard #star {
     border: none !important;
 }
@@ -1906,6 +1907,14 @@ ul.anchor li a .stepNumber {
     padding-top: 40px;
     border-radius: 20px;
     padding-bottom: 65px;
+}
+
+.online .leaderboarduname{
+    color: rgb(140, 198, 63);
+}
+
+.offline .leaderboarduname{
+    color: #000;   
 }
 /* MOBI APPS */
 

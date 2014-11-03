@@ -1,6 +1,6 @@
-var app = angular.module('totaln5App', ['ngRoute', 'kanaCtrls', 'commonCtrls', 'akrSharedDirectives']);
+var kanaApp = angular.module('totaln5App', ['ngRoute', 'kanaCtrls', 'commonCtrls', 'akrSharedDirectives', 'akrUtilService']);
 
-app.config(['$routeProvider',
+kanaApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -59,7 +59,7 @@ app.config(['$routeProvider',
     }
 ]);
 
-app.service('dataService', function($http) {
+kanaApp.service('dataService', function($http) {
 
     this.kana1 = $http({
         method: "GET",
@@ -102,7 +102,7 @@ app.service('dataService', function($http) {
     }
 });
 
-app.service('restService', function($http, $q) {
+kanaApp.service('restService', function($http, $q) {
     this.getRestPromise = function(course) {
         switch (course) {
             case "kana":
@@ -118,8 +118,7 @@ app.service('restService', function($http, $q) {
     }
 });
 
-
-app.controller('rootController', function($scope, $timeout, $http, $window, $sce, $location) {
+kanaApp.controller('rootController', function($scope,  $http, $window, $sce, authService, $route, $location) {
     $scope.rootPlay = function(data, course, step, id) {
         try {
             var selId = "choices-" + step + "-" + id;
@@ -133,16 +132,27 @@ app.controller('rootController', function($scope, $timeout, $http, $window, $sce
     };
 
     $scope.$on('$routeChangeStart', function(scope, next, curr) {
-        // Check user auth here and other conditional
         $scope.isLoading = "true";
     });
 
     $scope.$on('$routeChangeSuccess', function(scope, next, curr) {
         $scope.isLoading = "false";
     });
+
+    $scope.$on('$locationChangeStart', function(event, next, curr) {
+        //We will do validation here
+        if (authService.isAuth()) {
+            if (!authService.hasViewAuth()) {
+                event.preventDefault();
+                window.location.href="/akira/view/total";
+            }
+        } else {
+            window.location.href = "/";
+        }
+    });
 });
 
-app.factory('menuFactory', function($rootScope) {
+kanaApp.factory('menuFactory', function($rootScope) {
     var navgroup = 0;
     var nav = 0;
 

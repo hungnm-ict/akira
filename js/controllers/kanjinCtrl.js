@@ -1,6 +1,6 @@
 var kanjinCtrls = angular.module('kanjinCtrls', ['akrUtilService']);
 
-kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootScope, restService, menuFactory) {
+kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootScope, restService, menuFactory,$document) {
 
     switch ($routeParams.degree) {
         case "n5":
@@ -58,7 +58,7 @@ kanjinCtrls.controller('mainCtrl', function($scope, $http, $routeParams, $rootSc
     }
 });
 
-kanjinCtrls.controller('subCtrl', function($scope, $routeParams, $http, restService, $sce) {
+kanjinCtrls.controller('subCtrl', function($scope, $routeParams, $http, restService, $sce,starData) {
     $scope.course = "kanji" + $routeParams.degree;
     $scope.degree = $routeParams.degree;
     $scope.lessonId = $routeParams.lessonId;
@@ -66,11 +66,11 @@ kanjinCtrls.controller('subCtrl', function($scope, $routeParams, $http, restServ
     $scope.starData;
     $scope.enabled;
 
-    restService.getRestPromise($scope.course).then(function(deferred) {
-        $scope.kanjistar = getLessonStar(deferred.data, $scope.course, $routeParams.lessonId);
-        $scope.starData = deferred.data;
+    // restService.getRestPromise($scope.course).then(function(deferred) {
+        $scope.kanjistar = getLessonStar(starData.data, $scope.course, $routeParams.lessonId);
+        $scope.starData = starData.data;
         $scope.enabled = getUnlockedSub($scope.starData, $scope.course, $routeParams.lessonId);
-    });
+    // });
 
     $scope.isEnabled = function(stepNumber) {
         return jQuery.inArray(stepNumber, $scope.enabled) !== -1;

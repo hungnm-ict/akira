@@ -60,7 +60,8 @@
                                             <span>A:</span><span class="hint" ng-bind="val.answer"></span>
                                         </div>
                                         <div>
-                                            <span ng-bind="val.vietnamese"></span>
+                                            <!-- <span ng-bind="val.vietnamese"></span> -->
+                                            <multilang obj="val">
                                         </div>
                                     </td>
                                 </tr>
@@ -95,12 +96,6 @@
 </div>
 
 <script type="text/javascript">
-// $(document).keydown(function(e) {
-//     if (13 == e.keyCode) {
-//         angular.element("#grammarWordWizard").scope().enterPress();
-//     }
-//     changeLang();
-// });
 
 var scope = angular.element("#grammarWordWizard").scope();
 KeyboardJS.on('enter', function() {

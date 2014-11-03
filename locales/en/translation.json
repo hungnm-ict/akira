@@ -14,7 +14,8 @@
         "support": "Help",
         "ios": "iOS",
         "android": "Android",
-        "keyboard": "Keyboard"
+        "keyboard": "Keyboard",
+        "instruct":"Instruction"        
     },
     "common": {
         "lesson": "Lesson",

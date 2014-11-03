@@ -18,11 +18,17 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 */
+/*Local*/
+// define ('DBPATH','localhost');
+// define ('DBUSER','root');
+// define ('DBPASS','');
+// define ('DBNAME','akira');
 
+/*Production*/
 define ('DBPATH','localhost');
-define ('DBUSER','root');
-define ('DBPASS','');
-define ('DBNAME','akira');
+define ('DBUSER','tctelecom');
+define ('DBPASS','Lge6joKR');
+define ('DBNAME','tctelecom_wow');
 
 session_start();
 
@@ -69,7 +75,8 @@ function chatHeartbeat() {
 					   {
 			"s": "0",
 			"f": "{$chat['from']}",
-			"m": "{$chat['message']}"
+			"m": "{$chat['message']}",
+			"d":"{$chat['from_display']}"
 	   },
 EOD;
 
@@ -81,7 +88,8 @@ EOD;
 						   {
 			"s": "0",
 			"f": "{$chat['from']}",
-			"m": "{$chat['message']}"
+			"m": "{$chat['message']}",
+			"d":"{$chat['from_display']}"
 	   },
 EOD;
 		
@@ -101,7 +109,9 @@ EOD;
 {
 "s": "2",
 "f": "$chatbox",
-"m": "{$message}"
+"m": "{$message}",
+"d":"{$chat['from_display']}"
+
 },
 EOD;
 
@@ -134,9 +144,8 @@ header('Content-type: application/json');
 		"items": [
 			<?php echo $items;?>
         ],
-        "online":[
-        	<?php echo json_encode(getUserOnline());?> 
-        ]
+        "online": <?php echo json_encode(getUserOnline());?> 
+        
 }
 
 <?php
@@ -181,9 +190,8 @@ header('Content-type: application/json');
 		"items": [
 			<?php echo $items;?>
         ],
-        "online": [
-			<?php echo json_encode(getUserOnline()); ?>
-        ]
+        "online": <?php echo json_encode(getUserOnline()); ?>
+        
 }
 
 <?php
@@ -196,7 +204,7 @@ function sendChat() {
 	$from = $_POST['username'];
 	$to = $_POST['to'];
 	$message = $_POST['message'];
-
+	$display = $_POST['display'];
 	$_SESSION['openChatBoxes'][$_POST['to']] = date('Y-m-d H:i:s', time());
 	
 	$messagesan = sanitize($message);
@@ -209,14 +217,15 @@ function sendChat() {
 					   {
 			"s": "1",
 			"f": "{$to}",
-			"m": "{$messagesan}"
+			"m": "{$messagesan}",
+			"d": "{$display}"
 	   },
 EOD;
 
 
 	unset($_SESSION['tsChatBoxes'][$_POST['to']]);
 
-	$sql = "insert into wp_chat (wp_chat.from,wp_chat.to,message,sent) values ('".mysql_real_escape_string($from)."', '".mysql_real_escape_string($to)."','".mysql_real_escape_string($message)."',NOW())";
+	$sql = "insert into wp_chat (wp_chat.from,wp_chat.to,message,sent,wp_chat.from_display) values ('".mysql_real_escape_string($from)."', '".mysql_real_escape_string($to)."','".mysql_real_escape_string($message)."',NOW(),'".mysql_real_escape_string($display)."')";
 	$query = mysql_query($sql);
 	echo "1";
 	exit(0);
@@ -240,7 +249,7 @@ function sanitize($text) {
 
 function getUserOnline(){
 	$active = array();
-	$idle = 5000*60;
+	$idle = 45;
 	$sql = "select * from wp_online where (".time()." - last_active) < ".$idle;
 	$query = mysql_query($sql);
 	while ($onl = mysql_fetch_assoc($query)) {

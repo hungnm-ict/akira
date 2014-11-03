@@ -62,17 +62,14 @@ totaln5Ctrls.controller('mainCtrl', function($scope, $http, $window, totalStar, 
 
 });
 
-totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, restService) {
+totaln5Ctrls.controller('subCtrl', function($scope, $routeParams, $http, dataService, starsData) {
     $scope.course = "total" + $routeParams.degree;
-
-    restService.getRestPromise($routeParams.degree).then(function(deferred) {
-        var stars = getTotalLessonStar(deferred.data, $scope.course, $routeParams.lessonId);
-        $scope.vocabstar = stars.vocab;
-        $scope.grammarstar = stars.grammar;
-        $scope.starData = deferred.data;
-        $scope.progress = deferred.data;
-        $scope.enabled = getUnlockedSub($scope.starData, $scope.course, $routeParams.lessonId);
-    });
+    var stars = getTotalLessonStar(starsData.data, $scope.course, $routeParams.lessonId);
+    $scope.vocabstar = stars.vocab;
+    $scope.grammarstar = stars.grammar;
+    $scope.starData = starsData.data;
+    $scope.progress = starsData.data;
+    $scope.enabled = getUnlockedSub($scope.starData, $scope.course, $routeParams.lessonId);
 
     $scope.partId = window.sessionStorage.getItem("subSelected") == null ? 0 : window.sessionStorage.getItem("subSelected");
     $scope.degree = $routeParams.degree;

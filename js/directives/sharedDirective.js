@@ -38,7 +38,6 @@ aDirect.directive('akrprofile', function($window) {
                     $scope.userProgress = levelProgress(akrParseInt(user.exp));
                     $scope.mentorLevel = calculateLevel(akrParseInt(user.mentor_exp));
                     $scope.mentorProgress = levelProgress(akrParseInt(user.mentor_exp));
-                    $scope.test = 1;
                 } else {
                     $scope.user = "Anonymous";
                 }
@@ -57,7 +56,6 @@ aDirect.directive('akrprofile', function($window) {
     };
 });
 
-
 aDirect.directive('akrleaderboard', function($http) {
     var urlStr = "http://akira.edu.vn/wp-content/plugins/akira-api/akira_rank.php";
 
@@ -74,14 +72,29 @@ aDirect.directive('akrleaderboard', function($http) {
         restrict: 'E',
         link: link,
         controller: function($q,$scope, $sce) {
+            $scope.onl = [];
+
             $scope.renderHtml = function(e) {
                 return $sce.trustAsHtml(e);
             }
 
             $scope.callChat = function(uname,uid) {
                 if (uid != getUser().id){
-                	chatWith(uname,uid);
+                	chatWith(uid,uname);
                 }
+            }
+
+            $scope.isOn=function(uid){
+                if($scope.onl.indexOf(uid.toString())!=-1){
+                    return true
+                }else{
+                    return false;
+                }
+            }
+
+            $scope.updOnline =function(lst){
+                $scope.onl = lst;
+                $scope.$apply();
             }
         },
         templateUrl: '../../view/_shared/leaderboard.html'
@@ -251,4 +264,24 @@ aDirect.directive('mobiansitem', function() {
             }
         }
     };   
+});
+
+aDirect.directive('multilang', function() {
+    function link(scope, element, attrs) {
+
+    };
+
+    return {
+        restrict: 'E',
+        link: link,
+        templateUrl: '../../view/_shared/multilang.html',
+        scope:{
+            obj: '=' 
+        },
+        controller:function($scope,$rootScope){
+            $scope.$on("siteLangChanged",function(e,args){
+                $scope.lang = args.lang;
+            });
+        }
+    };
 });
