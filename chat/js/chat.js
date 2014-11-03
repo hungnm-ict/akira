@@ -1,7 +1,7 @@
 var windowFocus = true;
 var username;
 var chatHeartbeatCount = 0;
-var minChatHeartbeat = 1000;
+var minChatHeartbeat = 10000;
 var maxChatHeartbeat = 33000;
 var chatHeartbeatTime = minChatHeartbeat;
 var originalTitle;
@@ -217,7 +217,13 @@ function chatHeartbeat() {
     }
 
     $.ajax({
-        url: "../../chat/chat.php?action=chatheartbeat&username=" + getUser().id,
+        url: "../../chat/chat.php",
+        method:"GET",
+        data:{
+            action :'chatheartbeat',
+            username:getUser().id,
+            display : getUser().displayname
+        },
         cache: false,
         dataType: "json",
         success: function(data) {
@@ -365,7 +371,13 @@ function checkChatBoxInputKey(event, chatboxtextarea, chatboxtitle) {
 
 function startChatSession() {
     $.ajax({
-        url: "../../chat/chat.php?action=startchatsession&username=" + getUser().id,
+        url: "../../chat/chat.php",
+        method:"GET",
+        data:{
+            action:'startchatsession',
+            username:getUser().id,
+            display:getUser().displayname
+        },
         cache: false,
         dataType: "json",
         success: function(data) {

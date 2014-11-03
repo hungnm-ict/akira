@@ -43,12 +43,15 @@ if (!isset($_SESSION['openChatBoxes'])) {
 	$_SESSION['openChatBoxes'] = array();	
 }
 
-if (!isset($_SESSION['onlines'])) {
-	$_SESSION['onlines'] = array();	
-}
-
+/**
+ * Frequenly get new message from DB
+ * Frequenly update timestamp
+ * Return array of user has last active in five mins
+ * @return [type] [description]
+ */
 function chatHeartbeat() {
-
+	saveOrUpdateUserOnline($_GET['username'],$_GET['display']);
+	
 	$sql = "select * from wp_chat where (wp_chat.to = '".mysql_real_escape_string($_GET['username'])."' AND recd = 0) order by id ASC";
 	$query = mysql_query($sql);
 	$items = '';
@@ -132,7 +135,7 @@ header('Content-type: application/json');
 			<?php echo $items;?>
         ],
         "online":[
-        	<?php echo json_encode($_SESSION['onlines']);?> 
+        	<?php echo json_encode(getUserOnline());?> 
         ]
 }
 
@@ -151,13 +154,13 @@ function chatBoxSession($chatbox) {
 	return $items;
 }
 
+/**
+ * Update your credential to DB
+ * @return [type] [description]
+ */
 function startChatSession() {
-	if(!in_array($_GET['username'], $_SESSION["onlines"])){
-		$_SESSION["onlines"][] = $_GET['username'];	
-	}
-	if(!in_array($_GET['username'], $online)){
-		$online[]= $_GET['username'];
-	}
+	//TODO update user instance
+	saveOrUpdateUserOnline($_GET["username"],$_GET["display"]);
 
 	$items = '';
 	if (!empty($_SESSION['openChatBoxes'])) {
@@ -178,8 +181,8 @@ header('Content-type: application/json');
 		"items": [
 			<?php echo $items;?>
         ],
-        "online":[
-        	<?php echo json_encode($online);?> 
+        "online": [
+			<?php echo json_encode(getUserOnline()); ?>
         ]
 }
 
@@ -233,4 +236,20 @@ function sanitize($text) {
 	$text = str_replace("\r\n","\n",$text);
 	$text = str_replace("\n","<br>",$text);
 	return $text;
+}
+
+function getUserOnline(){
+	$active = array();
+	$idle = 5000*60;
+	$sql = "select * from wp_online where (".time()." - last_active) < ".$idle;
+	$query = mysql_query($sql);
+	while ($onl = mysql_fetch_assoc($query)) {
+		$active[] = $onl;
+	}
+	return $active;
+}
+
+function saveOrUpdateUserOnline($uid,$uname){
+	$insert = "insert into wp_online (wp_online.uid,wp_online.uname,wp_online.last_active) values (".$uid.",'".$uname."',".time().") on duplicate key update wp_online.last_active = ".time();
+	$result = mysql_query($insert);
 }
